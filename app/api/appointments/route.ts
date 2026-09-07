@@ -578,6 +578,9 @@ export async function POST(request: NextRequest) {
     const requestedSlot =
       appointmentTime.slice(0, 5);
 
+    const requestedMinutes =
+      timeToMinutes(appointmentTime);
+
     if (
       normalizedBlockedSlots.includes(
         requestedSlot
@@ -641,9 +644,6 @@ export async function POST(request: NextRequest) {
           { status: 409 }
         );
       }
-
-      const requestedMinutes =
-        timeToMinutes(appointmentTime);
 
       const validSchedule =
         (schedules as Schedule[]).find(
