@@ -10,6 +10,7 @@ const emailjsPatientTemplateId =
 const emailjsDoctorTemplateId =
   process.env.EMAILJS_DOCTOR_TEMPLATE_ID;
 const emailjsPublicKey = process.env.EMAILJS_PUBLIC_KEY;
+const emailjsPrivateKey = process.env.EMAILJS_PRIVATE_KEY;
 
 const doctorEmail =
   process.env.DOCTOR_EMAIL || "equal.society@gmail.com";
@@ -46,6 +47,58 @@ function timeToMinutes(value: string): number {
     .map(Number);
 
   return hours * 60 + minutes;
+}
+
+/**
+ * Get the current date/time components in India.
+ */
+function getIndiaDateTime() {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Kolkata",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+  }).formatToParts(new Date());
+
+  const values = Object.fromEntries(
+    parts
+      .filter((part) => part.type !== "literal")
+      .map((part) => [part.type, part.value])
+  );
+
+  return {
+    date: `${values.year}-${values.month}-${values.day}`,
+    hours: Number(values.hour),
+    minutes: Number(values.minute),
+  };
+}
+
+/**
+ * Get weekday for an appointment date in India.
+ * JavaScript getDay(): Sunday = 0 ... Saturday = 6.
+ */
+function getIndiaDayOfWeek(dateString: string): number {
+  const date = new Date(`${dateString}T12:00:00Z`);
+
+  const weekday = new Intl.DateTimeFormat("en-US", {
+    timeZone: "Asia/Kolkata",
+    weekday: "short",
+  }).format(date);
+
+  const weekdays: Record<string, number> = {
+    Sun: 0,
+    Mon: 1,
+    Tue: 2,
+    Wed: 3,
+    Thu: 4,
+    Fri: 5,
+    Sat: 6,
+  };
+
+  return weekdays[weekday];
 }
 
 /**
@@ -102,6 +155,7 @@ async function sendEmailJS(
   if (
     !emailjsServiceId ||
     !emailjsPublicKey ||
+    !emailjsPrivateKey ||
     !templateId
   ) {
     throw new Error(
@@ -120,6 +174,7 @@ async function sendEmailJS(
         service_id: emailjsServiceId,
         template_id: templateId,
         user_id: emailjsPublicKey,
+        accessToken: emailjsPrivateKey,
         template_params: templateParams,
       }),
       cache: "no-store",
@@ -161,7 +216,8 @@ export async function POST(request: NextRequest) {
       !emailjsServiceId ||
       !emailjsPatientTemplateId ||
       !emailjsDoctorTemplateId ||
-      !emailjsPublicKey
+      !emailjsPublicKey ||
+      !emailjsPrivateKey
     ) {
       return NextResponse.json(
         {
@@ -381,14 +437,8 @@ export async function POST(request: NextRequest) {
     // PREVENT PAST DATES
     // ==================================================
 
-    const now = new Date();
-
-    const todayString =
-      `${now.getFullYear()}-${String(
-        now.getMonth() + 1
-      ).padStart(2, "0")}-${String(
-        now.getDate()
-      ).padStart(2, "0")}`;
+    const indiaNow = getIndiaDateTime();
+    const todayString = indiaNow.date;
 
     if (appointmentDate < todayString) {
       return NextResponse.json(
@@ -406,25 +456,46 @@ export async function POST(request: NextRequest) {
     // ==================================================
 
     const dayOfWeek =
-      selectedDate.getDay();
+      getIndiaDayOfWeek(appointmentDate);
 
     // ==================================================
     // CHECK DOCTOR AVAILABILITY
     // ==================================================
 
-    const {
-      data: schedules,
-      error: scheduleError,
-    } = await supabase
-      .from("availability_schedule")
-      .select(
-        "day_of_week, start_time, end_time, slot_duration_minutes, active"
-      )
-      .eq("day_of_week", dayOfWeek)
-      .eq("active", true)
-      .order("start_time", {
-        ascending: true,
-      });
+    const [
+      { data: schedules, error: scheduleError },
+      { data: availabilityOverride, error: overrideError },
+      { data: blockedDate, error: blockedDateError },
+    ] = await Promise.all([
+      // Weekly schedule
+      supabase
+        .from("availability_schedule")
+        .select(
+          "day_of_week, start_time, end_time, slot_duration_minutes, active"
+        )
+        .eq("day_of_week", dayOfWeek)
+        .eq("active", true)
+        .order("start_time", {
+          ascending: true,
+        }),
+
+      // Date-specific custom availability
+      supabase
+        .from("availability_overrides")
+        .select("appointment_date, slots, active")
+        .eq("appointment_date", appointmentDate)
+        .eq("active", true)
+        .maybeSingle(),
+
+      // Blocked date / blocked slots
+      supabase
+        .from("blocked_dates")
+        .select(
+          "date, blocked_slots, is_full_day_blocked"
+        )
+        .eq("date", appointmentDate)
+        .maybeSingle(),
+    ]);
 
     if (scheduleError) {
       console.error(
@@ -442,10 +513,43 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (
-      !schedules ||
-      schedules.length === 0
-    ) {
+    if (overrideError) {
+      console.error(
+        "Availability override lookup error:",
+        overrideError
+      );
+
+      return NextResponse.json(
+        {
+          success: false,
+          error:
+            "Unable to verify date-specific availability.",
+        },
+        { status: 500 }
+      );
+    }
+
+    if (blockedDateError) {
+      console.error(
+        "Blocked date lookup error:",
+        blockedDateError
+      );
+
+      return NextResponse.json(
+        {
+          success: false,
+          error:
+            "Unable to verify blocked dates.",
+        },
+        { status: 500 }
+      );
+    }
+
+    // ==================================================
+    // FULL-DAY BLOCK
+    // ==================================================
+
+    if (blockedDate?.is_full_day_blocked === true) {
       return NextResponse.json(
         {
           success: false,
@@ -457,44 +561,28 @@ export async function POST(request: NextRequest) {
     }
 
     // ==================================================
-    // VERIFY VALID SLOT
+    // BLOCKED SLOT
     // ==================================================
 
-    const requestedMinutes =
-      timeToMinutes(appointmentTime);
+    const blockedSlots = Array.isArray(
+      blockedDate?.blocked_slots
+    )
+      ? blockedDate.blocked_slots
+      : [];
 
-    const validSchedule =
-      (schedules as Schedule[]).find(
-        (schedule) => {
-          const startMinutes =
-            timeToMinutes(
-              schedule.start_time
-            );
-
-          const endMinutes =
-            timeToMinutes(
-              schedule.end_time
-            );
-
-          const duration =
-            Number(
-              schedule.slot_duration_minutes
-            ) || 15;
-
-          return (
-            requestedMinutes >=
-              startMinutes &&
-            requestedMinutes + duration <=
-              endMinutes &&
-            (requestedMinutes -
-              startMinutes) %
-              duration ===
-              0
-          );
-        }
+    const normalizedBlockedSlots =
+      blockedSlots.map((slot: unknown) =>
+        String(slot).slice(0, 5)
       );
 
-    if (!validSchedule) {
+    const requestedSlot =
+      appointmentTime.slice(0, 5);
+
+    if (
+      normalizedBlockedSlots.includes(
+        requestedSlot
+      )
+    ) {
       return NextResponse.json(
         {
           success: false,
@@ -506,13 +594,108 @@ export async function POST(request: NextRequest) {
     }
 
     // ==================================================
+    // CUSTOM AVAILABILITY OVERRIDE
+    // ==================================================
+
+    if (availabilityOverride) {
+      const customSlots = Array.isArray(
+        availabilityOverride.slots
+      )
+        ? availabilityOverride.slots
+        : [];
+
+      const normalizedCustomSlots =
+        customSlots.map((slot: unknown) =>
+          String(slot).slice(0, 5)
+        );
+
+      if (
+        !normalizedCustomSlots.includes(
+          requestedSlot
+        )
+      ) {
+        return NextResponse.json(
+          {
+            success: false,
+            error:
+              "The selected appointment time is not available.",
+          },
+          { status: 409 }
+        );
+      }
+    } else {
+      // ==================================================
+      // NORMAL WEEKLY SCHEDULE
+      // ==================================================
+
+      if (
+        !schedules ||
+        schedules.length === 0
+      ) {
+        return NextResponse.json(
+          {
+            success: false,
+            error:
+              "The doctor is not available on the selected date.",
+          },
+          { status: 409 }
+        );
+      }
+
+      const requestedMinutes =
+        timeToMinutes(appointmentTime);
+
+      const validSchedule =
+        (schedules as Schedule[]).find(
+          (schedule) => {
+            const startMinutes =
+              timeToMinutes(
+                schedule.start_time
+              );
+
+            const endMinutes =
+              timeToMinutes(
+                schedule.end_time
+              );
+
+            const duration =
+              Number(
+                schedule.slot_duration_minutes
+              ) || 15;
+
+            return (
+              requestedMinutes >=
+                startMinutes &&
+              requestedMinutes + duration <=
+                endMinutes &&
+              (requestedMinutes -
+                startMinutes) %
+                duration ===
+                0
+            );
+          }
+        );
+
+      if (!validSchedule) {
+        return NextResponse.json(
+          {
+            success: false,
+            error:
+              "The selected appointment time is not available.",
+          },
+          { status: 409 }
+        );
+      }
+    }
+
+    // ==================================================
     // IF TODAY, PREVENT PAST TIME
     // ==================================================
 
     if (appointmentDate === todayString) {
       const currentMinutes =
-        now.getHours() * 60 +
-        now.getMinutes();
+        indiaNow.hours * 60 +
+        indiaNow.minutes;
 
       if (
         requestedMinutes <=
