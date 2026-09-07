@@ -20,7 +20,10 @@ export async function GET(request: NextRequest) {
       );
     }
 
+    // --------------------------------------------------
     // Server-side Supabase client
+    // --------------------------------------------------
+
     const supabase = createClient(
       supabaseUrl,
       supabaseSecretKey,
@@ -33,7 +36,7 @@ export async function GET(request: NextRequest) {
     );
 
     // --------------------------------------------------
-    // Get date from URL
+    // Get date
     // --------------------------------------------------
 
     const { searchParams } = new URL(request.url);
@@ -50,8 +53,18 @@ export async function GET(request: NextRequest) {
     }
 
     // --------------------------------------------------
-    // Validate date
+    // Validate date format
     // --------------------------------------------------
+
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Invalid date format.",
+        },
+        { status: 400 }
+      );
+    }
 
     const selectedDate = new Date(`${date}T00:00:00`);
 
@@ -80,7 +93,7 @@ export async function GET(request: NextRequest) {
     const dayOfWeek = selectedDate.getDay();
 
     // --------------------------------------------------
-    // Get doctor's schedule
+    // Get weekly schedule
     // --------------------------------------------------
 
     const {
@@ -98,35 +111,96 @@ export async function GET(request: NextRequest) {
       });
 
     if (scheduleError) {
-      console.error(
-        "Schedule error:",
-        scheduleError
-      );
+      console.error("Schedule error:", scheduleError);
 
       return NextResponse.json(
         {
           success: false,
-          error:
-            "Unable to load doctor's availability.",
+          error: "Unable to load doctor's availability.",
         },
         { status: 500 }
       );
     }
 
     // --------------------------------------------------
-    // No availability
+    // Get date-specific availability override
     // --------------------------------------------------
 
-    if (!schedules || schedules.length === 0) {
+    const {
+      data: override,
+      error: overrideError,
+    } = await supabase
+      .from("availability_overrides")
+      .select(
+        "appointment_date, slots, active"
+      )
+      .eq("appointment_date", date)
+      .eq("active", true)
+      .maybeSingle();
+
+    if (overrideError) {
+      console.error(
+        "Availability override error:",
+        overrideError
+      );
+
+      return NextResponse.json(
+        {
+          success: false,
+          error:
+            "Unable to load date-specific availability.",
+        },
+        { status: 500 }
+      );
+    }
+
+    // --------------------------------------------------
+    // Get blocked date / blocked slots
+    // --------------------------------------------------
+
+    const {
+      data: blockedDate,
+      error: blockedDateError,
+    } = await supabase
+      .from("blocked_dates")
+      .select(
+        "date, blocked_slots, is_full_day_blocked"
+      )
+      .eq("date", date)
+      .maybeSingle();
+
+    if (blockedDateError) {
+      console.error(
+        "Blocked date error:",
+        blockedDateError
+      );
+
+      return NextResponse.json(
+        {
+          success: false,
+          error:
+            "Unable to check blocked dates.",
+        },
+        { status: 500 }
+      );
+    }
+
+    // --------------------------------------------------
+    // Full day blocked
+    // --------------------------------------------------
+
+    if (blockedDate?.is_full_day_blocked) {
       return NextResponse.json({
         success: true,
         date,
         dayOfWeek,
-        schedule: [],
+        schedule: schedules ?? [],
         bookedSlots: [],
+        blockedSlots:
+          blockedDate.blocked_slots ?? [],
         slots: [],
         message:
-          "No availability configured for this day.",
+          "No appointments are available on this date.",
       });
     }
 
@@ -139,9 +213,7 @@ export async function GET(request: NextRequest) {
       error: appointmentsError,
     } = await supabase
       .from("appointments")
-      .select(
-        "appointment_time, status"
-      )
+      .select("appointment_time, status")
       .eq("appointment_date", date)
       .neq("status", "cancelled");
 
@@ -166,11 +238,20 @@ export async function GET(request: NextRequest) {
     // --------------------------------------------------
 
     const bookedSlots = new Set(
-      (appointments ?? []).map(
-        (appointment) =>
-          String(
-            appointment.appointment_time
-          ).slice(0, 5)
+      (appointments ?? []).map((appointment) =>
+        String(
+          appointment.appointment_time
+        ).slice(0, 5)
+      )
+    );
+
+    // --------------------------------------------------
+    // Store blocked times
+    // --------------------------------------------------
+
+    const blockedSlots = new Set(
+      (blockedDate?.blocked_slots ?? []).map(
+        (slot: string) => String(slot).slice(0, 5)
       )
     );
 
@@ -187,13 +268,8 @@ export async function GET(request: NextRequest) {
       return hours * 60 + minutes;
     };
 
-    const minutesToTime = (
-      minutes: number
-    ) => {
-      const hours = Math.floor(
-        minutes / 60
-      );
-
+    const minutesToTime = (minutes: number) => {
+      const hours = Math.floor(minutes / 60);
       const mins = minutes % 60;
 
       return `${String(hours).padStart(
@@ -206,50 +282,76 @@ export async function GET(request: NextRequest) {
     };
 
     // --------------------------------------------------
-    // Generate slots
+    // Generate base slots
     // --------------------------------------------------
 
-    const slots: string[] = [];
+    let slots: string[] = [];
 
-    for (const schedule of schedules) {
-      const startMinutes =
-        timeToMinutes(
+    // --------------------------------------------------
+    // If date-specific override exists,
+    // use those slots instead of weekly schedule
+    // --------------------------------------------------
+
+    if (override) {
+      slots = Array.isArray(override.slots)
+        ? override.slots.map((slot: string) =>
+            String(slot).slice(0, 5)
+          )
+        : [];
+    } else {
+      // ------------------------------------------------
+      // Otherwise use normal weekly schedule
+      // ------------------------------------------------
+
+      for (const schedule of schedules ?? []) {
+        const startMinutes = timeToMinutes(
           schedule.start_time
         );
 
-      const endMinutes =
-        timeToMinutes(
+        const endMinutes = timeToMinutes(
           schedule.end_time
         );
 
-      const slotDuration =
-        Number(
-          schedule.slot_duration_minutes
-        ) || 15;
+        const slotDuration =
+          Number(
+            schedule.slot_duration_minutes
+          ) || 15;
 
-      for (
-        let current = startMinutes;
-        current + slotDuration <=
-          endMinutes;
-        current += slotDuration
-      ) {
-        const slot =
-          minutesToTime(current);
-
-        // Don't show booked slots
-        if (!bookedSlots.has(slot)) {
-          slots.push(slot);
+        for (
+          let current = startMinutes;
+          current + slotDuration <= endMinutes;
+          current += slotDuration
+        ) {
+          slots.push(
+            minutesToTime(current)
+          );
         }
       }
     }
 
     // --------------------------------------------------
-    // Remove duplicates
+    // Remove duplicate slots
     // --------------------------------------------------
 
     let availableSlots = [
       ...new Set(slots),
     ].sort();
+
+    // --------------------------------------------------
+    // Remove booked slots
+    // --------------------------------------------------
+
+    availableSlots = availableSlots.filter(
+      (slot) => !bookedSlots.has(slot)
+    );
+
+    // --------------------------------------------------
+    // Remove blocked slots
+    // --------------------------------------------------
+
+    availableSlots = availableSlots.filter(
+      (slot) => !blockedSlots.has(slot)
+    );
 
     // --------------------------------------------------
     // Today's date
@@ -265,8 +367,7 @@ export async function GET(request: NextRequest) {
       ).padStart(2, "0")}`;
 
     // --------------------------------------------------
-    // If today:
-    // remove times that already passed
+    // If today, remove past times
     // --------------------------------------------------
 
     if (date === todayString) {
@@ -283,7 +384,7 @@ export async function GET(request: NextRequest) {
     }
 
     // --------------------------------------------------
-    // Return available slots
+    // Return availability
     // --------------------------------------------------
 
     return NextResponse.json({
@@ -291,10 +392,22 @@ export async function GET(request: NextRequest) {
       date,
       dayOfWeek,
 
-      schedule: schedules,
+      schedule: schedules ?? [],
+
+      override: override
+        ? {
+            appointment_date:
+              override.appointment_date,
+            slots: override.slots ?? [],
+          }
+        : null,
 
       bookedSlots: [
         ...bookedSlots,
+      ],
+
+      blockedSlots: [
+        ...blockedSlots,
       ],
 
       slots: availableSlots,

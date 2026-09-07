@@ -166,88 +166,87 @@ export default function BookAppointmentPage() {
     )} ${suffix}`;
   };
 
- const handleSubmit = async (
-  event: React.FormEvent<HTMLFormElement>
-) => {
-  event.preventDefault();
+  const handleSubmit = async (
+    event: React.FormEvent<HTMLFormElement>
+  ) => {
+    event.preventDefault();
 
-  if (!form.time) {
-    setSlotError("Please select an appointment time.");
-    return;
-  }
-
-  setSubmitting(true);
-  setSlotError("");
-  setSuccess(false);
-
-  try {
-    const response = await fetch("/api/appointments", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(form),
-    });
-
-    const contentType =
-      response.headers.get("content-type") || "";
-
-    if (!contentType.includes("application/json")) {
-      const text = await response.text();
-
-      console.error(
-        "Booking API returned non-JSON:",
-        text
-      );
-
-      throw new Error(
-        `Booking API returned an unexpected response (${response.status}).`
-      );
+    if (!form.time) {
+      setSlotError("Please select an appointment time.");
+      return;
     }
 
-    const data = await response.json();
-
-    if (!response.ok || !data.success) {
-      throw new Error(
-        data.error ||
-          data.message ||
-          "Unable to create appointment."
-      );
-    }
-
-    // ==========================================
-    // BOOKING SUCCESS
-    // ==========================================
-
-    setSuccess(true);
+    setSubmitting(true);
     setSlotError("");
+    setSuccess(false);
 
-    // Clear ALL form inputs
-    setForm({
-      name: "",
-      email: "",
-      phone: "",
-      gender: "",
-      age: "",
-      date: "",
-      time: "",
-    });
+    try {
+      const response = await fetch("/api/appointments", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
 
-    // Clear available slots
-    setSlots([]);
+      const contentType =
+        response.headers.get("content-type") || "";
 
-  } catch (error) {
-    console.error("Booking error:", error);
+      if (!contentType.includes("application/json")) {
+        const text = await response.text();
 
-    setSlotError(
-      error instanceof Error
-        ? error.message
-        : "Something went wrong. Please try again."
-    );
-  } finally {
-    setSubmitting(false);
-  }
-};
+        console.error(
+          "Booking API returned non-JSON:",
+          text
+        );
+
+        throw new Error(
+          `Booking API returned an unexpected response (${response.status}).`
+        );
+      }
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(
+          data.error ||
+            data.message ||
+            "Unable to create appointment."
+        );
+      }
+
+      // ==========================================
+      // BOOKING SUCCESS
+      // ==========================================
+
+      setSuccess(true);
+      setSlotError("");
+
+      // Clear ALL form inputs
+      setForm({
+        name: "",
+        email: "",
+        phone: "",
+        gender: "",
+        age: "",
+        date: "",
+        time: "",
+      });
+
+      // Clear available slots
+      setSlots([]);
+    } catch (error) {
+      console.error("Booking error:", error);
+
+      setSlotError(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again."
+      );
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <main className="min-h-screen bg-[#FAF8F1]">
@@ -575,27 +574,29 @@ export default function BookAppointmentPage() {
                     )}
 
                     {/* ================= SUCCESS ================= */}
-                   {success && (
-  <div className="mt-6 rounded-2xl border border-[#65966F]/20 bg-[#EAF1E7] p-5">
-    <div className="flex items-start gap-3">
-      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#65966F] text-sm font-bold text-white">
-        ✓
-      </div>
+                    {success && (
+                      <div className="mt-6 rounded-2xl border border-[#65966F]/20 bg-[#EAF1E7] p-5">
+                        <div className="flex items-start gap-3">
+                          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#65966F] text-sm font-bold text-white">
+                            ✓
+                          </div>
 
-      <div>
-        <p className="font-semibold text-[#173F35]">
-          Appointment confirmed
-        </p>
+                          <div>
+                            <p className="font-semibold text-[#173F35]">
+                              Appointment confirmed
+                            </p>
 
-        <p className="mt-1 text-xs leading-5 text-[#536A62]">
-          Your appointment has been successfully booked.
-          Confirmation details have been sent to your email.
-          If you don't see the email in your inbox, please check your Spam or Junk folder.
-        </p>
-      </div>
-    </div>
-  </div>
-)}
+                            <p className="mt-1 text-xs leading-5 text-[#536A62]">
+                              Your appointment has been successfully
+                              booked. Confirmation details have been sent
+                              to your email. If you don't see the email in
+                              your inbox, please check your Spam or Junk
+                              folder.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
 
                     {/* ================= SUBMIT ================= */}
                     <button

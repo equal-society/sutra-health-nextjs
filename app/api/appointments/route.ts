@@ -1,13 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
-import nodemailer from "nodemailer";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_SECRET_KEY;
 
-const gmailUser = process.env.GMAIL_USER;
-const gmailAppPassword = process.env.GMAIL_APP_PASSWORD;
-const doctorEmail = process.env.DOCTOR_EMAIL;
+const emailjsServiceId = process.env.EMAILJS_SERVICE_ID;
+const emailjsPatientTemplateId =
+  process.env.EMAILJS_PATIENT_TEMPLATE_ID;
+const emailjsDoctorTemplateId =
+  process.env.EMAILJS_DOCTOR_TEMPLATE_ID;
+const emailjsPublicKey = process.env.EMAILJS_PUBLIC_KEY;
+
+const doctorEmail =
+  process.env.DOCTOR_EMAIL || "equal.society@gmail.com";
+
+const enrollmentFormUrl =
+  process.env.ENROLLMENT_FORM_URL ||
+  "https://docs.google.com/forms/d/e/1FAIpQLSfcyoJRA-FH5XsXQ-mN6kzYNy0z3WpR7vPU_4BPr8nday_7TQ/viewform?pli=1";
 
 type AppointmentBody = {
   name?: string;
@@ -28,18 +37,6 @@ type Schedule = {
 };
 
 /**
- * Escape values before inserting them into HTML emails.
- */
-function escapeHtml(value: string | number): string {
-  return String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-}
-
-/**
  * Convert HH:MM into minutes.
  */
 function timeToMinutes(value: string): number {
@@ -55,21 +52,21 @@ function timeToMinutes(value: string): number {
  * Format date for India.
  */
 function formatDate(dateString: string): string {
-  return new Date(`${dateString}T00:00:00`).toLocaleDateString(
-    "en-IN",
-    {
-      day: "numeric",
-      month: "long",
-      year: "numeric",
-    },
-  );
+  return new Date(
+    `${dateString}T00:00:00`
+  ).toLocaleDateString("en-IN", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
 }
 
 /**
  * Format HH:MM into 12-hour time.
  */
 function formatTime(timeString: string): string {
-  const [hourString, minuteString] = timeString.split(":");
+  const [hourString, minuteString] =
+    timeString.split(":");
 
   const hour = Number(hourString);
   const minute = Number(minuteString);
@@ -79,8 +76,65 @@ function formatTime(timeString: string): string {
 
   return `${displayHour}:${String(minute).padStart(
     2,
-    "0",
+    "0"
   )} ${ampm}`;
+}
+
+/**
+ * Small delay used between EmailJS requests.
+ *
+ * EmailJS has request-rate limits, so we don't
+ * fire both emails at exactly the same time.
+ */
+function delay(ms: number) {
+  return new Promise((resolve) =>
+    setTimeout(resolve, ms)
+  );
+}
+
+/**
+ * Send an email through EmailJS REST API.
+ */
+async function sendEmailJS(
+  templateId: string,
+  templateParams: Record<string, string>
+) {
+  if (
+    !emailjsServiceId ||
+    !emailjsPublicKey ||
+    !templateId
+  ) {
+    throw new Error(
+      "EmailJS environment variables are missing."
+    );
+  }
+
+  const response = await fetch(
+    "https://api.emailjs.com/api/v1.0/email/send",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        service_id: emailjsServiceId,
+        template_id: templateId,
+        user_id: emailjsPublicKey,
+        template_params: templateParams,
+      }),
+      cache: "no-store",
+    }
+  );
+
+  if (!response.ok) {
+    const errorText = await response.text();
+
+    throw new Error(
+      `EmailJS failed (${response.status}): ${errorText}`
+    );
+  }
+
+  return true;
 }
 
 /**
@@ -99,22 +153,23 @@ export async function POST(request: NextRequest) {
           error:
             "Supabase environment variables are missing.",
         },
-        { status: 500 },
+        { status: 500 }
       );
     }
 
     if (
-      !gmailUser ||
-      !gmailAppPassword ||
-      !doctorEmail
+      !emailjsServiceId ||
+      !emailjsPatientTemplateId ||
+      !emailjsDoctorTemplateId ||
+      !emailjsPublicKey
     ) {
       return NextResponse.json(
         {
           success: false,
           error:
-            "Gmail email environment variables are missing.",
+            "EmailJS environment variables are missing.",
         },
-        { status: 500 },
+        { status: 500 }
       );
     }
 
@@ -130,20 +185,8 @@ export async function POST(request: NextRequest) {
           autoRefreshToken: false,
           persistSession: false,
         },
-      },
+      }
     );
-
-    // ==================================================
-    // GMAIL SMTP
-    // ==================================================
-
-    const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: gmailUser,
-    pass: gmailAppPassword,
-  },
-});
 
     // ==================================================
     // READ REQUEST
@@ -159,7 +202,7 @@ export async function POST(request: NextRequest) {
           success: false,
           error: "Invalid request body.",
         },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
@@ -193,7 +236,7 @@ export async function POST(request: NextRequest) {
           error:
             "Please provide all required appointment information.",
         },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
@@ -210,6 +253,23 @@ export async function POST(request: NextRequest) {
     const appointmentTime = String(time).trim();
 
     // ==================================================
+    // VALIDATE NAME
+    // ==================================================
+
+    if (
+      patientName.length < 2 ||
+      patientName.length > 100
+    ) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Please enter a valid name.",
+        },
+        { status: 400 }
+      );
+    }
+
+    // ==================================================
     // VALIDATE AGE
     // ==================================================
 
@@ -223,7 +283,7 @@ export async function POST(request: NextRequest) {
           success: false,
           error: "Please enter a valid age.",
         },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
@@ -241,7 +301,7 @@ export async function POST(request: NextRequest) {
           error:
             "Please enter a valid email address.",
         },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
@@ -251,7 +311,7 @@ export async function POST(request: NextRequest) {
 
     if (
       !/^\d{4}-\d{2}-\d{2}$/.test(
-        appointmentDate,
+        appointmentDate
       )
     ) {
       return NextResponse.json(
@@ -259,12 +319,12 @@ export async function POST(request: NextRequest) {
           success: false,
           error: "Invalid appointment date.",
         },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
     const selectedDate = new Date(
-      `${appointmentDate}T00:00:00`,
+      `${appointmentDate}T00:00:00`
     );
 
     if (
@@ -275,7 +335,7 @@ export async function POST(request: NextRequest) {
           success: false,
           error: "Invalid appointment date.",
         },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
@@ -285,7 +345,7 @@ export async function POST(request: NextRequest) {
 
     if (
       !/^\d{2}:\d{2}$/.test(
-        appointmentTime,
+        appointmentTime
       )
     ) {
       return NextResponse.json(
@@ -293,7 +353,7 @@ export async function POST(request: NextRequest) {
           success: false,
           error: "Invalid appointment time.",
         },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
@@ -313,7 +373,7 @@ export async function POST(request: NextRequest) {
           success: false,
           error: "Invalid appointment time.",
         },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
@@ -325,9 +385,9 @@ export async function POST(request: NextRequest) {
 
     const todayString =
       `${now.getFullYear()}-${String(
-        now.getMonth() + 1,
+        now.getMonth() + 1
       ).padStart(2, "0")}-${String(
-        now.getDate(),
+        now.getDate()
       ).padStart(2, "0")}`;
 
     if (appointmentDate < todayString) {
@@ -337,7 +397,7 @@ export async function POST(request: NextRequest) {
           error:
             "You cannot book an appointment for a past date.",
         },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
@@ -358,7 +418,7 @@ export async function POST(request: NextRequest) {
     } = await supabase
       .from("availability_schedule")
       .select(
-        "day_of_week, start_time, end_time, slot_duration_minutes, active",
+        "day_of_week, start_time, end_time, slot_duration_minutes, active"
       )
       .eq("day_of_week", dayOfWeek)
       .eq("active", true)
@@ -369,7 +429,7 @@ export async function POST(request: NextRequest) {
     if (scheduleError) {
       console.error(
         "Schedule lookup error:",
-        scheduleError,
+        scheduleError
       );
 
       return NextResponse.json(
@@ -378,7 +438,7 @@ export async function POST(request: NextRequest) {
           error:
             "Unable to verify doctor's availability.",
         },
-        { status: 500 },
+        { status: 500 }
       );
     }
 
@@ -392,7 +452,7 @@ export async function POST(request: NextRequest) {
           error:
             "The doctor is not available on the selected date.",
         },
-        { status: 409 },
+        { status: 409 }
       );
     }
 
@@ -408,17 +468,17 @@ export async function POST(request: NextRequest) {
         (schedule) => {
           const startMinutes =
             timeToMinutes(
-              schedule.start_time,
+              schedule.start_time
             );
 
           const endMinutes =
             timeToMinutes(
-              schedule.end_time,
+              schedule.end_time
             );
 
           const duration =
             Number(
-              schedule.slot_duration_minutes,
+              schedule.slot_duration_minutes
             ) || 15;
 
           return (
@@ -431,7 +491,7 @@ export async function POST(request: NextRequest) {
               duration ===
               0
           );
-        },
+        }
       );
 
     if (!validSchedule) {
@@ -441,7 +501,7 @@ export async function POST(request: NextRequest) {
           error:
             "The selected appointment time is not available.",
         },
-        { status: 409 },
+        { status: 409 }
       );
     }
 
@@ -464,7 +524,7 @@ export async function POST(request: NextRequest) {
             error:
               "That appointment time has already passed.",
           },
-          { status: 409 },
+          { status: 409 }
         );
       }
     }
@@ -481,11 +541,11 @@ export async function POST(request: NextRequest) {
       .select("id, status")
       .eq(
         "appointment_date",
-        appointmentDate,
+        appointmentDate
       )
       .eq(
         "appointment_time",
-        appointmentTime,
+        appointmentTime
       )
       .neq("status", "cancelled")
       .limit(1)
@@ -494,7 +554,7 @@ export async function POST(request: NextRequest) {
     if (existingError) {
       console.error(
         "Existing appointment error:",
-        existingError,
+        existingError
       );
 
       return NextResponse.json(
@@ -503,7 +563,7 @@ export async function POST(request: NextRequest) {
           error:
             "Unable to verify the selected appointment time.",
         },
-        { status: 500 },
+        { status: 500 }
       );
     }
 
@@ -514,7 +574,7 @@ export async function POST(request: NextRequest) {
           error:
             "This appointment slot has already been booked. Please select another time.",
         },
-        { status: 409 },
+        { status: 409 }
       );
     }
 
@@ -553,14 +613,10 @@ export async function POST(request: NextRequest) {
       .select()
       .single();
 
-    // ==================================================
-    // INSERT ERROR
-    // ==================================================
-
     if (insertError) {
       console.error(
         "Appointment insert error:",
-        insertError,
+        insertError
       );
 
       if (
@@ -572,19 +628,28 @@ export async function POST(request: NextRequest) {
             error:
               "This appointment slot was just booked by another patient. Please select another time.",
           },
-          { status: 409 },
+          { status: 409 }
         );
       }
 
       return NextResponse.json(
         {
           success: false,
-          error: insertError.message,
-          code: insertError.code,
-          details: insertError.details,
-          hint: insertError.hint,
+          error:
+            "Unable to save the appointment.",
         },
-        { status: 500 },
+        { status: 500 }
+      );
+    }
+
+    if (!appointment) {
+      return NextResponse.json(
+        {
+          success: false,
+          error:
+            "Appointment could not be created.",
+        },
+        { status: 500 }
       );
     }
 
@@ -599,223 +664,79 @@ export async function POST(request: NextRequest) {
       formatTime(appointmentTime);
 
     // ==================================================
-    // ESCAPE EMAIL VALUES
-    // ==================================================
-
-    const safePatientName =
-      escapeHtml(patientName);
-
-    const safePatientEmail =
-      escapeHtml(patientEmail);
-
-    const safePatientPhone =
-      escapeHtml(patientPhone);
-
-    const safePatientGender =
-      escapeHtml(patientGender);
-
-    const safePatientAge =
-      escapeHtml(patientAge);
-
-    const safeFormattedDate =
-      escapeHtml(formattedDate);
-
-    const safeFormattedTime =
-      escapeHtml(formattedTime);
-
-    const safeMeetingUrl =
-      encodeURI(meetingUrl);
-
-    // ==================================================
     // PATIENT EMAIL
     // ==================================================
 
-    const patientEmailPromise =
-      transporter.sendMail({
-        from: `"Sutra Health" <${gmailUser}>`,
-        to: patientEmail,
-        subject:
-          "Your Sutra Health Appointment is Confirmed",
-        html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #173F35;">
-            <div style="padding: 32px 24px; background: #FAF8F1;">
+    let patientEmailStatus:
+      | "sent"
+      | "failed" = "failed";
 
-              <h1 style="margin: 0 0 8px; font-size: 28px;">
-                Appointment Confirmed
-              </h1>
+    try {
+      await sendEmailJS(
+        emailjsPatientTemplateId,
+        {
+          to_name: patientName,
+          to_email: patientEmail,
+          email: patientEmail,
+          date: formattedDate,
+          time: formattedTime,
+          meeting_link: meetingUrl,
+          enrollment_link:
+            enrollmentFormUrl,
+        }
+      );
 
-              <p style="color: #687A73; line-height: 1.6;">
-                Dear ${safePatientName},
-              </p>
+      patientEmailStatus = "sent";
 
-              <p style="color: #687A73; line-height: 1.6;">
-                Your appointment with Sutra Health has been successfully confirmed.
-              </p>
+      console.log(
+        "PATIENT EMAIL SENT:",
+        patientEmail
+      );
+    } catch (error) {
+      console.error(
+        "PATIENT EMAIL FAILED:",
+        error
+      );
+    }
 
-              <div style="margin: 24px 0; padding: 20px; background: #F1F4ED; border-radius: 12px;">
+    // ==================================================
+    // WAIT BEFORE SECOND EMAIL
+    // ==================================================
 
-                <p style="margin: 0 0 10px;">
-                  <strong>Date:</strong> ${safeFormattedDate}
-                </p>
-
-                <p style="margin: 0 0 10px;">
-                  <strong>Time:</strong> ${safeFormattedTime}
-                </p>
-
-                <p style="margin: 0;">
-                  <strong>Consultation:</strong> Online
-                </p>
-
-              </div>
-
-              <a
-                href="${safeMeetingUrl}"
-                style="display: inline-block; padding: 13px 22px; background: #173F35; color: #ffffff; text-decoration: none; border-radius: 24px; font-weight: bold;"
-              >
-                Join Appointment
-              </a>
-
-              <p style="margin-top: 24px; color: #71817A; font-size: 13px; line-height: 1.6;">
-                Please keep this email for your appointment details.
-              </p>
-
-              <p style="margin-top: 28px; color: #536A62;">
-                Regards,<br />
-                Sutra Health
-              </p>
-
-            </div>
-          </div>
-        `,
-      });
+    await delay(1100);
 
     // ==================================================
     // DOCTOR EMAIL
     // ==================================================
 
-    const doctorEmailPromise =
-      transporter.sendMail({
-        from: `"Sutra Health" <${gmailUser}>`,
-        to: doctorEmail,
-        subject:
-          `New Appointment — ${patientName}`,
-        html: `
-          <div style="font-family: Arial, sans-serif; max-width: 650px; margin: 0 auto; color: #173F35;">
-            <div style="padding: 32px 24px; background: #FAF8F1;">
+    let doctorEmailStatus:
+      | "sent"
+      | "failed" = "failed";
 
-              <h1 style="margin: 0 0 8px; font-size: 28px;">
-                New Appointment
-              </h1>
-
-              <p style="color: #687A73; line-height: 1.6;">
-                A new appointment has been booked through the Sutra Health website.
-              </p>
-
-              <div style="margin: 24px 0; padding: 20px; background: #F1F4ED; border-radius: 12px;">
-
-                <h2 style="font-size: 18px; margin: 0 0 16px;">
-                  Patient Details
-                </h2>
-
-                <p style="margin: 0 0 8px;">
-                  <strong>Name:</strong> ${safePatientName}
-                </p>
-
-                <p style="margin: 0 0 8px;">
-                  <strong>Email:</strong> ${safePatientEmail}
-                </p>
-
-                <p style="margin: 0 0 8px;">
-                  <strong>Phone:</strong> ${safePatientPhone}
-                </p>
-
-                <p style="margin: 0 0 8px;">
-                  <strong>Age:</strong> ${safePatientAge}
-                </p>
-
-                <p style="margin: 0 0 8px;">
-                  <strong>Gender:</strong> ${safePatientGender}
-                </p>
-
-                <p style="margin: 0 0 8px;">
-                  <strong>Date:</strong> ${safeFormattedDate}
-                </p>
-
-                <p style="margin: 0;">
-                  <strong>Time:</strong> ${safeFormattedTime}
-                </p>
-
-              </div>
-
-              <a
-                href="${safeMeetingUrl}"
-                style="display: inline-block; padding: 13px 22px; background: #173F35; color: #ffffff; text-decoration: none; border-radius: 24px; font-weight: bold;"
-              >
-                Open Meeting
-              </a>
-
-              <p style="margin-top: 24px; color: #71817A; font-size: 13px;">
-                Appointment ID: ${appointment.id}
-              </p>
-
-            </div>
-          </div>
-        `,
-      });
-
-    // ==================================================
-    // SEND BOTH EMAILS IN PARALLEL
-    // ==================================================
-
-    const [
-      patientResult,
-      doctorResult,
-    ] = await Promise.allSettled([
-      patientEmailPromise,
-      doctorEmailPromise,
-    ]);
-
-    const patientEmailStatus =
-      patientResult.status === "fulfilled"
-        ? "sent"
-        : "failed";
-
-    const doctorEmailStatus =
-      doctorResult.status === "fulfilled"
-        ? "sent"
-        : "failed";
-
-    // ==================================================
-    // EMAIL LOGS
-    // ==================================================
-
-    if (
-      patientResult.status ===
-      "fulfilled"
-    ) {
-      console.log(
-        "PATIENT EMAIL SENT:",
-        patientEmail,
+    try {
+      await sendEmailJS(
+        emailjsDoctorTemplateId,
+        {
+          to_email: doctorEmail,
+          patient_name: patientName,
+          patient_email: patientEmail,
+          patient_phone: patientPhone,
+          date: formattedDate,
+          time: formattedTime,
+          meeting_link: meetingUrl,
+        }
       );
-    } else {
-      console.error(
-        "PATIENT EMAIL FAILED:",
-        patientResult.reason,
-      );
-    }
 
-    if (
-      doctorResult.status ===
-      "fulfilled"
-    ) {
+      doctorEmailStatus = "sent";
+
       console.log(
         "DOCTOR EMAIL SENT:",
-        doctorEmail,
+        doctorEmail
       );
-    } else {
+    } catch (error) {
       console.error(
         "DOCTOR EMAIL FAILED:",
-        doctorResult.reason,
+        error
       );
     }
 
@@ -826,7 +747,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         success: true,
-
         message:
           "Appointment booked successfully.",
 
@@ -850,12 +770,12 @@ export async function POST(request: NextRequest) {
           meeting_url: meetingUrl,
         },
       },
-      { status: 201 },
+      { status: 201 }
     );
   } catch (error) {
     console.error(
       "Appointment API error:",
-      error,
+      error
     );
 
     return NextResponse.json(
@@ -866,7 +786,7 @@ export async function POST(request: NextRequest) {
             ? error.message
             : "Unable to create appointment.",
       },
-      { status: 500 },
+      { status: 500 }
     );
   }
 }

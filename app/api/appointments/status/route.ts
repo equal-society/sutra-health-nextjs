@@ -10,8 +10,11 @@ const supabasePublishableKey =
 const supabaseSecretKey =
   process.env.SUPABASE_SECRET_KEY;
 
+const doctorEmail =
+  process.env.DOCTOR_EMAIL;
+
 export async function PATCH(
-  request: NextRequest,
+  request: NextRequest
 ) {
   try {
     // ==================================================
@@ -21,15 +24,16 @@ export async function PATCH(
     if (
       !supabaseUrl ||
       !supabasePublishableKey ||
-      !supabaseSecretKey
+      !supabaseSecretKey ||
+      !doctorEmail
     ) {
       return NextResponse.json(
         {
           success: false,
           error:
-            "Supabase environment variables are missing.",
+            "Required environment variables are missing.",
         },
-        { status: 500 },
+        { status: 500 }
       );
     }
 
@@ -45,7 +49,7 @@ export async function PATCH(
           autoRefreshToken: false,
           persistSession: false,
         },
-      },
+      }
     );
 
     // ==================================================
@@ -61,15 +65,15 @@ export async function PATCH(
           success: false,
           error: "Authentication required.",
         },
-        { status: 401 },
+        { status: 401 }
       );
     }
 
     const token =
       authorization.replace(
         /^Bearer\s+/i,
-        "",
-      );
+        ""
+      ).trim();
 
     if (!token) {
       return NextResponse.json(
@@ -77,7 +81,7 @@ export async function PATCH(
           success: false,
           error: "Authentication required.",
         },
-        { status: 401 },
+        { status: 401 }
       );
     }
 
@@ -88,17 +92,12 @@ export async function PATCH(
     const {
       data: { user },
       error: userError,
-    } = await authClient.auth.getUser(
-      token,
-    );
+    } = await authClient.auth.getUser(token);
 
-    if (
-      userError ||
-      !user
-    ) {
+    if (userError || !user) {
       console.error(
         "Authentication error:",
-        userError,
+        userError
       );
 
       return NextResponse.json(
@@ -106,7 +105,25 @@ export async function PATCH(
           success: false,
           error: "Unauthorized.",
         },
-        { status: 401 },
+        { status: 401 }
+      );
+    }
+
+    // ==================================================
+    // VERIFY DOCTOR
+    // ==================================================
+
+    if (
+      !user.email ||
+      user.email.toLowerCase() !==
+        doctorEmail.toLowerCase()
+    ) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Doctor access required.",
+        },
+        { status: 403 }
       );
     }
 
@@ -127,7 +144,7 @@ export async function PATCH(
           success: false,
           error: "Invalid request body.",
         },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
@@ -148,7 +165,7 @@ export async function PATCH(
           error:
             "Appointment ID and status are required.",
         },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
@@ -162,7 +179,7 @@ export async function PATCH(
           error:
             "Invalid appointment status.",
         },
-        { status: 400 },
+        { status: 400 }
       );
     }
 
@@ -178,11 +195,11 @@ export async function PATCH(
           autoRefreshToken: false,
           persistSession: false,
         },
-      },
+      }
     );
 
     // ==================================================
-    // CHECK APPOINTMENT EXISTS
+    // CHECK APPOINTMENT
     // ==================================================
 
     const {
@@ -191,7 +208,7 @@ export async function PATCH(
     } = await adminClient
       .from("appointments")
       .select(
-        "id, patient_name, status",
+        "id, patient_name, status"
       )
       .eq("id", id)
       .maybeSingle();
@@ -199,7 +216,7 @@ export async function PATCH(
     if (appointmentError) {
       console.error(
         "Appointment lookup error:",
-        appointmentError,
+        appointmentError
       );
 
       return NextResponse.json(
@@ -208,7 +225,7 @@ export async function PATCH(
           error:
             "Unable to find appointment.",
         },
-        { status: 500 },
+        { status: 500 }
       );
     }
 
@@ -216,10 +233,9 @@ export async function PATCH(
       return NextResponse.json(
         {
           success: false,
-          error:
-            "Appointment not found.",
+          error: "Appointment not found.",
         },
-        { status: 404 },
+        { status: 404 }
       );
     }
 
@@ -228,10 +244,8 @@ export async function PATCH(
     // ==================================================
 
     if (
-      appointment.status ===
-        "cancelled" ||
-      appointment.status ===
-        "completed"
+      appointment.status === "cancelled" ||
+      appointment.status === "completed"
     ) {
       return NextResponse.json(
         {
@@ -241,7 +255,7 @@ export async function PATCH(
             appointment.status +
             ".",
         },
-        { status: 409 },
+        { status: 409 }
       );
     }
 
@@ -256,17 +270,18 @@ export async function PATCH(
       .from("appointments")
       .update({
         status,
+        updated_at: new Date().toISOString(),
       })
       .eq("id", id)
       .select(
-        "id, patient_name, status",
+        "id, patient_name, status"
       )
       .single();
 
     if (updateError) {
       console.error(
         "Appointment update error:",
-        updateError,
+        updateError
       );
 
       return NextResponse.json(
@@ -275,7 +290,7 @@ export async function PATCH(
           error:
             "Unable to update appointment.",
         },
-        { status: 500 },
+        { status: 500 }
       );
     }
 
@@ -291,12 +306,12 @@ export async function PATCH(
         appointment:
           updatedAppointment,
       },
-      { status: 200 },
+      { status: 200 }
     );
   } catch (error) {
     console.error(
       "Appointment status API error:",
-      error,
+      error
     );
 
     return NextResponse.json(
@@ -307,7 +322,7 @@ export async function PATCH(
             ? error.message
             : "Something went wrong.",
       },
-      { status: 500 },
+      { status: 500 }
     );
   }
 }

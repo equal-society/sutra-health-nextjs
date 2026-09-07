@@ -18,34 +18,51 @@ export default function DoctorLoginPage() {
   const [error, setError] = useState("");
 
   async function handleLogin(
-    event: React.FormEvent<HTMLFormElement>,
+  event: React.FormEvent<HTMLFormElement>,
+) {
+  event.preventDefault();
+
+  setLoading(true);
+  setError("");
+
+  const loginEmail = email.trim();
+
+  const doctorEmail =
+    process.env.NEXT_PUBLIC_DOCTOR_EMAIL;
+
+  if (
+    !doctorEmail ||
+    loginEmail.toLowerCase() !==
+      doctorEmail.toLowerCase()
   ) {
-    event.preventDefault();
-
-    setLoading(true);
-    setError("");
-
-    const { error: loginError } =
-      await supabase.auth.signInWithPassword({
-        email: email.trim(),
-        password,
-      });
-
-    if (loginError) {
-      console.error("Login error:", loginError);
-
-      setError(
-        loginError.message ||
-          "Invalid email or password.",
-      );
-
-      setLoading(false);
-      return;
-    }
-
-    router.push("/doctor-dashboard");
-    router.refresh();
+    setError(
+      "This account is not authorized for doctor access.",
+    );
+    setLoading(false);
+    return;
   }
+
+  const { error: loginError } =
+    await supabase.auth.signInWithPassword({
+      email: loginEmail,
+      password,
+    });
+
+  if (loginError) {
+    console.error("Login error:", loginError);
+
+    setError(
+      loginError.message ||
+        "Invalid email or password.",
+    );
+
+    setLoading(false);
+    return;
+  }
+
+  router.push("/doctor-dashboard");
+  router.refresh();
+}
 
   return (
     <div className="min-h-screen bg-[#FAF8F1] flex items-center justify-center p-6">

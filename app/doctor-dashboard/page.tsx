@@ -45,13 +45,27 @@ export default function DoctorDashboard() {
 
   try {
     const {
-      data: { user },
-    } = await supabase.auth.getUser();
+  data: { user },
+} = await supabase.auth.getUser();
 
-    if (!user) {
-      router.replace("/doctor-login");
-      return;
-    }
+if (!user) {
+  router.replace("/doctor-login");
+  return;
+}
+
+const doctorEmail =
+  process.env.NEXT_PUBLIC_DOCTOR_EMAIL;
+
+if (
+  !doctorEmail ||
+  !user.email ||
+  user.email.toLowerCase() !==
+    doctorEmail.toLowerCase()
+) {
+  await supabase.auth.signOut();
+  router.replace("/doctor-login");
+  return;
+}
 
     const { data, error: fetchError } = await supabase
       .from("appointments")
