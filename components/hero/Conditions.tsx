@@ -9,7 +9,7 @@ const conditions = [
     description:
       "Not another crash diet. A plan built around food you'll actually keep eating.",
     href: "/conditions/weight-management",
-    image: "/images/conditions/weight-management.png",
+    image: "/images/conditions/weight-management.webp",
   },
   {
     number: "02",
@@ -17,7 +17,7 @@ const conditions = [
     description:
       "A closer look at your diet, movement, and daily routine — alongside your existing medical care.",
     href: "/conditions/metabolic-health",
-    image: "/images/conditions/metabolic-health.png",
+    image: "/images/conditions/metabolic-health.webp",
   },
   {
     number: "03",
@@ -25,7 +25,7 @@ const conditions = [
     description:
       "Lifestyle changes worth exploring, done in coordination with your doctor.",
     href: "/conditions/high-blood-pressure",
-    image: "/images/conditions/high-blood-pressure.png",
+    image: "/images/conditions/high-blood-pressure.webp",
   },
   {
     number: "04",
@@ -33,7 +33,7 @@ const conditions = [
     description:
       "Movement-based practices adapted for your body and everyday mobility.",
     href: "/conditions/arthritis-joint-pain",
-    image: "/images/conditions/arthritis-joint-pain.png",
+    image: "/images/conditions/arthritis-joint-pain.webp",
   },
 ];
 

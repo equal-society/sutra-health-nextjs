@@ -183,7 +183,7 @@ export default function ConditionsPage() {
                 <div className="relative overflow-hidden rounded-[28px] bg-[#EAF0E7]">
                   <div className="relative aspect-[4/4.5]">
                     <Image
-                      src="/images/conditions/conditions.png"
+                      src="/images/conditions/conditions.webp"
                       alt="Lifestyle-focused integrative health support"
                       fill
                       priority
@@ -235,7 +235,7 @@ export default function ConditionsPage() {
                 >
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <Image
-                      src={`/images/conditions/${condition.slug}.png`}
+                      src={`/images/conditions/${condition.slug}.webp`}
                       alt={`${condition.title} - health information`}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

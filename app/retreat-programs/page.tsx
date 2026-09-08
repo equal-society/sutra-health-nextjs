@@ -36,7 +36,7 @@ const programs = [
       "Lifestyle-focused recommendations",
       "Opportunity to discuss ongoing health concerns",
     ],
-    image: "/images/retreat/doctor.jpg",
+    image: "/images/retreat/doctor.webp",
     imageAlt: "Sutra Health physician consultation",
   },
   {
@@ -51,7 +51,7 @@ const programs = [
       "Food and lifestyle discussion",
       "Suggestions that fit everyday life",
     ],
-    image: "/images/retreat/diet.jpeg",
+    image: "/images/retreat/diet.webp",
     imageAlt: "Nutrition and healthy food guidance",
   },
   {
@@ -81,7 +81,7 @@ const programs = [
       "Conversation and companionship",
       "Support for walks and activities",
     ],
-    image: "/images/retreat/my-buddy.png",
+    image: "/images/retreat/my-buddy.webp",
     imageAlt: "Wellness companionship at Sutra Health Retreat",
   },
   {
@@ -96,7 +96,7 @@ const programs = [
       "Music and creative participation",
       "Rooftop sessions",
     ],
-    image: "/images/retreat/Kirtan.png",
+    image: "/images/retreat/Kirtan.webp",
     imageAlt: "Rooftop wellness experience at Sutra Health Retreat",
   },
   {
@@ -111,7 +111,7 @@ const programs = [
       "Mindfulness practices",
       "Quiet retreat environment",
     ],
-    image: "/images/retreat/meditation.png",
+    image: "/images/retreat/meditation.webp",
     imageAlt: "Meditation practice at Sutra Health Retreat",
   },
   {
@@ -126,7 +126,7 @@ const programs = [
       "Guided breathing practice",
       "Breath awareness",
     ],
-    image: "/images/retreat/pranayama.png",
+    image: "/images/retreat/pranayama.webp",
     imageAlt: "Breathing and yoga practice at Sutra Health Retreat",
   },
   {
@@ -141,7 +141,7 @@ const programs = [
       "Guided Asana practice",
       "Rooftop practice when appropriate",
     ],
-    image: "/images/retreat/yoga-asana.png",
+    image: "/images/retreat/yoga-asana.webp",
     imageAlt: "Yoga Asana practice at Sutra Health Retreat",
   },
 ];

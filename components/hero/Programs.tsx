@@ -7,28 +7,28 @@ const programs = [
     title: "Lifestyle Medicine",
     description:
       "One-on-one guidance on the daily habits that are actually moving the needle for you.",
-    image: "/images/program-lifestyle.png",
+    image: "/images/program-lifestyle.webp",
     href: "/programs/lifestyle-counselling",
   },
   {
     title: "Nutrition Counselling",
     description:
       "Practical food guidance — built around your preferences, not a rulebook you'll abandon.",
-    image: "/images/program-nutrition.png",
+    image: "/images/program-nutrition.webp",
     href: "/programs/dietary-advice",
   },
   {
     title: "Therapeutic Yoga",
     description:
       "Adapted movement for your body, not a generic class. Built for strength, mobility, and balance.",
-    image: "/images/program-yoga.png",
+    image: "/images/program-yoga.webp",
     href: "/programs/therapeutic-yoga",
   },
   {
     title: "Pranayama & Breathwork",
     description:
       "Breathing practices that measurably calm your nervous system — and take five minutes.",
-    image: "/images/program-breath.png",
+    image: "/images/program-breath.webp",
     href: "/programs/pranayama",
   },
 ];

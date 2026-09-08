@@ -37,7 +37,7 @@ export default function Footer() {
             >
               <div className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white sm:h-12 sm:w-12">
                 <Image
-                  src="/logo/sutra-health-logo.png"
+                  src="/logo/sutra-health-logo.webp"
                   alt="Sutra Health"
                   width={48}
                   height={48}

@@ -28,7 +28,7 @@ const experts = [
     role: "MBBS, MPH, DrPH (Johns Hopkins), Therapeutic Yoga Consultant",
     description:
       "Public Health physician, Professor of Community Medicine and Head of the Integrated Health Clinic at ESIC Medical College & Hospital, Faridabad. His academic work spans lifestyle medicine, nutrition, yoga, health systems for universal health coverage and public health policy.",
-    image: "/images/doctor.jpeg",
+    image: "/images/doctor.webp",
     profileUrl: "https://academic.lifequality.org.in/",
     featured: true,
   },
@@ -37,7 +37,7 @@ const experts = [
     role: "Wellness Practitioner",
     description:
       "30+ years experience in wellness, healthy diet, yoga and natural living — inspiring communities toward sustainable health.",
-    image: "/images/doctor-icon.png",
+    image: "/images/doctor-icon.webp",
     featured: false,
   },
   {
@@ -45,7 +45,7 @@ const experts = [
     role: "MBBS, MD",
     description:
       "Experienced healthcare professional with a focus on maternal and family healthcare delivery.",
-    image: "/images/doctor-icon.png",
+    image: "/images/doctor-icon.webp",
     featured: false,
   },
 ];

@@ -247,7 +247,7 @@ export default function AboutPage() {
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <div className="relative h-[320px] overflow-hidden rounded-[28px] bg-[#EAF1E7] sm:h-[400px] lg:h-[460px]">
               <Image
-                src="/images/about-us.png"
+                src="/images/about-us.webp"
                 alt="Yoga and lifestyle medicine practice at Sutra Health"
                 fill
                 sizes="(max-width:1024px) 100vw, 50vw"
@@ -416,7 +416,7 @@ export default function AboutPage() {
             <div className="mx-auto w-full max-w-[360px] overflow-hidden rounded-[28px] bg-[#EAF1E7]">
               <div className="relative h-[380px] sm:h-[440px]">
                 <Image
-                  src="/images/doctor.jpeg"
+                  src="/images/doctor.webp"
                   alt="Dr. Rakesh Sarwal"
                   fill
                   sizes="360px"
@@ -692,7 +692,7 @@ export default function AboutPage() {
 
                 <div className="mx-auto mt-6 flex aspect-square w-full max-w-[250px] items-center justify-center rounded-2xl bg-white p-3">
                   <Image
-                    src="/images/QR-code.png"
+                    src="/images/QR-code.webp"
                     alt="QR code to donate to EQUAL Society"
                     width={250}
                     height={250}

@@ -9,18 +9,12 @@ export default function Hero() {
           DESKTOP BACKGROUND
       ================================================== */}
       <Image
-        src="/images/hero-desktop5.png"
+        src="/images/hero-desktop5.webp"
         alt="Sutra Health consultation"
         fill
         priority
         sizes="100vw"
-        className="
-          z-0
-          hidden
-          object-cover
-          object-center
-          lg:block
-        "
+        className="z-0 hidden object-cover object-center lg:block"
       />
 
       {/* ==================================================
@@ -42,19 +36,12 @@ export default function Hero() {
         "
       >
         <Image
-          src="/images/hero-desktop56.png"
+          src="/images/hero-desktop56.webp"
           alt="Sutra Health consultation"
           fill
           priority
-          sizes="
-            (max-width: 480px) 100vw,
-            (max-width: 640px) 100vw,
-            100vw
-          "
-          className="
-            object-cover
-            object-[50%_18%]
-          "
+          sizes="100vw"
+          className="object-cover object-[50%_18%]"
         />
 
         {/* Mobile image fade */}

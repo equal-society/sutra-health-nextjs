@@ -238,7 +238,7 @@ export default async function ConditionPage({
               <div className="relative overflow-hidden rounded-[24px]">
                 <div className="relative aspect-[4/3] bg-[#EAF0E7]">
                   <Image
-                    src={`/images/conditions/${condition.slug}.png`}
+                    src={`/images/conditions/${condition.slug}.webp`}
                     alt={`${condition.title} - Sutra Health`}
                     fill
                     priority
@@ -690,7 +690,7 @@ export default async function ConditionPage({
                     >
                       <div className="relative aspect-[16/10] overflow-hidden">
                         <Image
-                          src={`/images/conditions/${related.slug}.png`}
+                          src={`/images/conditions/${related.slug}.webp`}
                           alt={`${related.title} - Sutra Health`}
                           fill
                           sizes="(max-width: 767px) 82vw, (max-width: 1024px) 50vw, 33vw"

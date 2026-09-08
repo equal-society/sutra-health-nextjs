@@ -11,7 +11,7 @@ const expert = {
   expertise: "Lifestyle Medicine · Nutrition · Yoga",
   description:
     "Dr. Rakesh Sarwal brings public-health, academic and therapeutic-yoga experience to Sutra Health, with a focus on lifestyle medicine, nutrition and healthier everyday practices.",
-  image: "/images/doctor.jpeg",
+  image: "/images/doctor.webp",
   profileUrl: "https://academic.lifequality.org.in/",
 };
 

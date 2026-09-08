@@ -368,8 +368,10 @@ export default function Header() {
         >
           <div className="brandLogo">
             <img
-              src="/logo/sutra-health-logo.png"
+              src="/logo/sutra-health-logo.webp"
               alt="Sutra Health"
+              width="48"
+              height="48"
             />
           </div>
 
