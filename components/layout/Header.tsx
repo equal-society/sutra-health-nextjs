@@ -474,7 +474,7 @@ export default function Header() {
           </Link>
 
           <Link
-            href="/gallery"
+            href="/archive"
             className="navLink"
           >
             Gallery
@@ -614,7 +614,7 @@ export default function Header() {
           </Link>
 
           <Link
-            href="/gallery"
+            href="/archive"
             className="mobileNavLink"
             onClick={closeNavigation}
           >

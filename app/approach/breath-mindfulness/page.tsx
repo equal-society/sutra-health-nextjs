@@ -4,73 +4,68 @@ import Container from "@/components/shared/Container";
 import FAQ from "@/components/shared/FAQ";
 
 export const metadata: Metadata = {
-  title: "Nutrition | Sutra Health",
+  title: "Breath & Mindfulness | Sutra Health",
   description:
-    "Evidence-based nutrition guidance grounded in DASH and Mediterranean-style dietary patterns — reviewed by Dr. Rakesh Sarwal, MBBS, MPH, DrPH.",
+    "Evidence-based breathing and mindfulness practices — including measured effects on stress hormones — reviewed by Dr. Rakesh Sarwal, MBBS, MPH, DrPH.",
   alternates: {
-    canonical: "https://lifequality.org.in/approach/nutrition",
+    canonical: "https://lifequality.org.in/approach/breath-mindfulness",
   },
 };
 
 const factors = [
   {
-    title: "Dietary pattern, not a single food",
+    title: "Pranayama (breathing practice)",
     description:
-      "The strongest evidence supports whole eating patterns (like DASH or Mediterranean-style diets), not individual 'superfoods' or single ingredients.",
+      "Slow, controlled breathing activates the parasympathetic nervous system — a specific, studied mechanism used in the blood pressure and migraine protocols on this site.",
   },
   {
-    title: "Sodium and processed food",
+    title: "Mindfulness-based stress reduction",
     description:
-      "Sodium reduction specifically is one of the most consistently evidence-backed single changes across multiple conditions.",
+      "An 8-week structured program with a substantial trial base, including measured effects on stress hormones, not just self-reported calm.",
   },
   {
-    title: "What's realistic for you",
+    title: "Applied to a specific condition",
     description:
-      "A dietary pattern you can actually sustain matters more than a theoretically perfect one you'll abandon in three weeks.",
+      "Which practice we use depends on what you're addressing — a migraine protocol looks different from a general stress-management program.",
   },
   {
-    title: "Coordinated with your other habits",
+    title: "A skill, not a one-time relaxation session",
     description:
-      "Diet doesn't work in isolation from sleep, stress, and activity — the research on multicomponent interventions backs this up.",
+      "The trials showing measurable benefit involve consistent practice over weeks, the same pattern seen across yoga and lifestyle interventions on this site.",
   },
 ];
 
 const faqs = [
   {
-    question: "Is there real evidence behind dietary pattern recommendations, or is it mostly opinion?",
+    question: "Does mindfulness meditation have measurable physical effects, or just a subjective feeling of calm?",
     answer:
-      "There's substantial randomized controlled trial evidence, particularly for two well-studied patterns: the DASH diet and the Mediterranean diet. A meta-analysis of DASH diet trials found it reduced systolic blood pressure by an average of 6.74 mmHg and diastolic by 3.54 mmHg compared to control diets — evidence strong enough that the American Heart Association's 2025 guidelines specifically endorse it.",
+      "It has measurable physical effects. A three-arm randomized controlled trial in health workers found Mindfulness-Based Stress Reduction (MBSR) was specifically associated with a 23% reduction in the cortisol awakening response — a physical stress-hormone marker — while a comparison psychoeducation program showed no such effect. A separate RCT during the COVID-19 pandemic found MBSR significantly reduced cortisol levels in healthcare workers under high occupational stress.",
   },
   {
-    question: "What is the DASH diet, and does it actually lower blood pressure?",
+    question: "What is MBSR (Mindfulness-Based Stress Reduction)?",
     answer:
-      "DASH (Dietary Approaches to Stop Hypertension) is a dietary pattern emphasizing fruits, vegetables, whole grains, lean protein, and low-fat dairy, while limiting sodium and saturated fat. Multiple meta-analyses of randomized trials confirm it lowers blood pressure — a 2024 trial published in JAMA found a DASH-style diet combined with sodium reduction lowered systolic blood pressure by 4.6 mmHg specifically in people with type 2 diabetes.",
+      "MBSR is a structured 8-week program developed by Jon Kabat-Zinn, combining meditation, body awareness, and gentle movement. It's one of the most extensively studied mindfulness programs, with trial evidence across stress, anxiety, and — relevant to cardiac patients specifically — a pilot RCT that found significant improvements in depression and anxiety among people eligible for cardiac rehabilitation.",
   },
   {
-    question: "Does the Mediterranean diet have real trial evidence, or is it based on observation only?",
+    question: "How is pranayama (breathing practice) different from mindfulness meditation?",
     answer:
-      "Both. Long-term observational data initially identified the pattern, but it's since been tested in randomized controlled trials — including PREDIMED, a large Spanish multicenter RCT — with evidence supporting reduced cardiovascular risk factors. We're direct that some individual studies within this body of research have had data-integrity concerns that required correction, which is part of why we cite specific trials rather than making a blanket claim.",
+      "Pranayama is specifically about controlled breathing technique — used in the clinical protocols behind our blood pressure and migraine content on this site, where slow breathing is understood to activate the parasympathetic nervous system directly. Mindfulness meditation is broader, involving sustained attention and awareness practice, with its own separate evidence base, including measured effects on stress hormones. We use both, chosen based on what a person's specific concern calls for.",
   },
   {
-    question: "Is sodium reduction alone enough, or does the whole diet matter?",
+    question: "How long before breath and mindfulness practices make a difference?",
     answer:
-      "Sodium reduction alone helps, but the strongest results come from combining it with a broader dietary pattern. The 2024 DASH4D trial found that combining a DASH-style pattern with sodium reduction achieved a clinically meaningful blood pressure reduction — more than either change alone would typically achieve.",
-  },
-  {
-    question: "Can nutrition counselling replace medication?",
-    answer:
-      "No. Dietary changes are studied and used as a complement to medical care, particularly for blood pressure and blood sugar management — not a replacement for prescribed medication. Any medication changes should go through your doctor.",
+      "The trials showing measurable benefit generally involved 8-week structured programs with regular practice, not one-off sessions. Some physical markers (like cortisol) have shown change within that timeframe; other outcomes take longer and depend on consistency.",
   },
 ];
 
 const pageSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalWebPage",
-  name: "Nutrition | Sutra Health",
+  name: "Breath & Mindfulness | Sutra Health",
   description:
-    "Evidence-based nutrition guidance grounded in DASH and Mediterranean-style dietary patterns.",
-  url: "https://lifequality.org.in/approach/nutrition",
-  about: { "@type": "MedicalSpecialty", name: "Nutrition" },
+    "Evidence-based breathing and mindfulness practices, including measured effects on stress hormones.",
+  url: "https://lifequality.org.in/approach/breath-mindfulness",
+  about: { "@type": "MedicalSpecialty", name: "Integrative Medicine" },
   author: {
     "@type": "Person",
     name: "Dr. Rakesh Sarwal",
@@ -92,7 +87,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://lifequality.org.in/" },
     { "@type": "ListItem", position: 2, name: "Our Approach", item: "https://lifequality.org.in/approach" },
-    { "@type": "ListItem", position: 3, name: "Nutrition", item: "https://lifequality.org.in/approach/nutrition" },
+    { "@type": "ListItem", position: 3, name: "Breath & Mindfulness", item: "https://lifequality.org.in/approach/breath-mindfulness" },
   ],
 };
 
@@ -106,7 +101,7 @@ const faqSchema = {
   })),
 };
 
-export default function NutritionPage() {
+export default function BreathMindfulnessPage() {
   return (
     <main className="bg-[#FAF8F1] text-[#173F35]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
@@ -120,19 +115,19 @@ export default function NutritionPage() {
         <Container>
           <div className="py-14 sm:py-18 lg:py-20">
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
-              Our Approach → Nutrition
+              Our Approach → Breath & Mindfulness
             </p>
 
             <h1 className="mt-4 max-w-[780px] font-serif text-[42px] leading-[1.02] tracking-[-0.04em] text-[#123F35] sm:text-[56px] lg:text-[68px]">
-              Dietary patterns, not{" "}
-              <span className="italic text-[#65966F]">superfoods.</span>
+              Calm you can{" "}
+              <span className="italic text-[#65966F]">measure, not just feel.</span>
             </h1>
 
             <p className="mt-6 max-w-[680px] text-[14px] leading-7 text-[#687A73] sm:text-[16px] sm:leading-8">
-              The strongest nutrition evidence supports whole dietary
-              patterns — like DASH and Mediterranean-style eating — tested
-              in real clinical trials, not individual ingredients marketed
-              as cures. Reviewed by Dr. Rakesh Sarwal, MBBS, MPH, DrPH.
+              Breathing and mindfulness practices have measurable effects
+              on stress hormones and the nervous system — this isn&apos;t
+              just a subjective sense of relaxation. Reviewed by Dr.
+              Rakesh Sarwal, MBBS, MPH, DrPH.
             </p>
 
             <div className="mt-7 flex flex-wrap gap-3">
@@ -159,36 +154,42 @@ export default function NutritionPage() {
                 What the research shows
               </p>
               <h2 className="mt-3 font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[44px]">
-                Two dietary patterns with real <span className="italic text-[#65966F]">trial evidence.</span>
+                A measurable effect on <span className="italic text-[#65966F]">stress hormones.</span>
               </h2>
 
               <div className="mt-6 space-y-4 text-[14px] leading-7 text-[#687A73] sm:text-[15px] sm:leading-8">
                 <p>
-                  <strong className="text-[#173F35]">DASH diet.</strong> A
-                  meta-analysis of randomized controlled trials found the
-                  DASH diet reduced systolic blood pressure by an average
-                  of 6.74 mmHg and diastolic by 3.54 mmHg compared to
-                  control diets. A 2024 trial published in JAMA, conducted
-                  specifically in people with type 2 diabetes, found a
-                  DASH-style diet combined with sodium reduction lowered
-                  systolic blood pressure by 4.6 mmHg — evidence strong
-                  enough that the American Heart Association&apos;s 2025
-                  guidelines specifically recommend it.
+                  A three-arm randomized controlled trial in health workers
+                  found Mindfulness-Based Stress Reduction (MBSR) was
+                  specifically associated with a 23% reduction in the
+                  cortisol awakening response — a physical marker of
+                  stress-hormone activity — while a comparison
+                  psychoeducation program produced no such effect. A
+                  separate randomized trial conducted among healthcare
+                  workers during the COVID-19 pandemic found MBSR
+                  significantly reduced cortisol levels under sustained
+                  high-stress conditions.
                 </p>
                 <p>
-                  <strong className="text-[#173F35]">
-                    Mediterranean-style diet.
-                  </strong>{" "}
-                  The PREDIMED trial — a large Spanish multicenter
-                  randomized controlled trial — tested a Mediterranean
-                  dietary pattern (rich in olive oil, vegetables, legumes,
-                  and fish; limited red and processed meat) against a
-                  control diet for cardiovascular risk reduction. We note,
-                  in the interest of being straightforward about the
-                  evidence, that some individual studies within this
-                  broader body of research required later correction for
-                  data-integrity issues — which is exactly why we cite
-                  specific trials rather than making an unqualified claim.
+                  In cardiac patients eligible for rehabilitation, a pilot
+                  randomized controlled trial found an 8-week MBSR program
+                  produced significant improvements in depression and
+                  anxiety at 3 months, with better retention of
+                  cardiovascular risk-factor improvements in patients who
+                  started with higher depression scores.
+                </p>
+                <p>
+                  Separately, pranayama (controlled breathing) is used
+                  directly within the clinical protocols behind our{" "}
+                  <Link href="/conditions/high-blood-pressure" className="font-semibold underline decoration-[#B7CCB8] underline-offset-2 hover:text-[#173F35]">
+                    blood pressure
+                  </Link>{" "}
+                  and{" "}
+                  <Link href="/conditions/migraine-headache" className="font-semibold underline decoration-[#B7CCB8] underline-offset-2 hover:text-[#173F35]">
+                    migraine
+                  </Link>{" "}
+                  research — a distinct but related mechanism, targeting
+                  the nervous system directly through breath control.
                 </p>
               </div>
             </div>
@@ -208,7 +209,7 @@ export default function NutritionPage() {
                   What we look at
                 </p>
                 <h2 className="mt-3 max-w-[420px] font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[44px]">
-                  Pattern first, <span className="italic text-[#65966F]">specifics second.</span>
+                  Chosen for the <span className="italic text-[#65966F]">condition, not preference.</span>
                 </h2>
               </div>
 
@@ -226,36 +227,36 @@ export default function NutritionPage() {
       </section>
 
       {/* ==================================================
-          RELATED CONDITIONS
+          RELATED APPROACHES
       ================================================== */}
       <section className="bg-[#F0F4ED]">
         <Container>
           <div className="py-14 sm:py-16 lg:py-20">
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-              Where nutrition matters most
+              Part of the wider method
             </p>
             <h2 className="mt-3 max-w-[600px] font-serif text-[32px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[40px]">
-              See the condition-specific evidence.
+              Breath works alongside movement, nutrition, and daily routine.
             </h2>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
-                href="/conditions/high-blood-pressure"
+                href="/approach/therapeutic-yoga"
                 className="inline-flex items-center gap-2 rounded-full border border-[#173F35]/15 bg-white px-6 py-3 text-[13px] font-semibold text-[#173F35] hover:bg-[#FAF8F1]"
               >
-                High Blood Pressure →
+                Therapeutic Yoga & Movement →
               </Link>
               <Link
-                href="/conditions/metabolic-health"
+                href="/approach/lifestyle"
                 className="inline-flex items-center gap-2 rounded-full border border-[#173F35]/15 bg-white px-6 py-3 text-[13px] font-semibold text-[#173F35] hover:bg-[#FAF8F1]"
               >
-                Metabolic Health →
+                Lifestyle Medicine →
               </Link>
               <Link
-                href="/conditions/weight-management"
+                href="/approach/nutrition"
                 className="inline-flex items-center gap-2 rounded-full border border-[#173F35]/15 bg-white px-6 py-3 text-[13px] font-semibold text-[#173F35] hover:bg-[#FAF8F1]"
               >
-                Weight Management →
+                Nutrition →
               </Link>
             </div>
           </div>
@@ -269,21 +270,21 @@ export default function NutritionPage() {
         <Container>
           <div className="mx-auto max-w-[720px] py-14 text-center sm:py-16 lg:py-20">
             <h2 className="font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#FAF8F1] sm:text-[44px]">
-              Build a dietary pattern you can actually keep.
+              See the six-stage method these disciplines fit into.
             </h2>
             <div className="mt-7 flex flex-wrap justify-center gap-3">
               <Link
-                href="/book-appointment"
+                href="/approach"
                 className="inline-flex items-center gap-2 rounded-full bg-[#FAF8F1] px-6 py-3.5 text-[13px] font-semibold text-[#173F35] transition-colors hover:bg-white"
               >
-                Book a Consultation
+                Back to Our Approach
                 <span aria-hidden="true">→</span>
               </Link>
               <Link
-                href="/conditions"
+                href="/book-appointment"
                 className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-white/10"
               >
-                Explore Health Conditions
+                Book a Consultation
                 <span aria-hidden="true">→</span>
               </Link>
             </div>

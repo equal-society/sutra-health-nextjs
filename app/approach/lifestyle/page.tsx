@@ -1,57 +1,37 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/shared/Container";
+import FAQ from "@/components/shared/FAQ";
 
 export const metadata: Metadata = {
   title: "Lifestyle Medicine | Sutra Health",
   description:
-    "Explore Sutra Health's practical approach to lifestyle medicine, focusing on everyday habits, routines and sustainable health changes.",
+    "Evidence-based lifestyle medicine for sleep, stress, and daily routine — reviewed by Dr. Rakesh Sarwal, MBBS, MPH, DrPH.",
   alternates: {
     canonical: "https://lifequality.org.in/approach/lifestyle",
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
 };
 
-const pillars = [
+const factors = [
   {
-    number: "01",
-    title: "Daily routines",
+    title: "Sleep",
     description:
-      "Looking at the rhythms and routines that shape how health fits into everyday life.",
+      "Sleep consistency and quality, addressed as a lifestyle factor in its own right — not an afterthought to diet and exercise.",
   },
   {
-    number: "02",
-    title: "Movement",
+    title: "Stress and routine",
     description:
-      "Finding practical ways to stay active that fit individual needs and abilities.",
+      "How daily structure and stress patterns affect everything from blood pressure to digestion.",
   },
   {
-    number: "03",
-    title: "Sleep & recovery",
+    title: "Movement in daily life",
     description:
-      "Considering rest, recovery and regular sleep as important parts of overall wellbeing.",
+      "Everyday activity levels, separate from structured exercise or yoga practice specifically.",
   },
   {
-    number: "04",
-    title: "Stress",
+    title: "Behaviour change",
     description:
-      "Exploring practical ways to respond to everyday stress and create space for recovery.",
-  },
-  {
-    number: "05",
-    title: "Habits",
-    description:
-      "Turning healthy intentions into repeatable actions that can become part of daily life.",
-  },
-  {
-    number: "06",
-    title: "Environment",
-    description:
-      "Recognising how home, work and everyday surroundings can influence health choices.",
+      "How changes actually stick — the difference between a plan you follow for two weeks and one that becomes part of life.",
   },
 ];
 
@@ -59,278 +39,256 @@ const faqs = [
   {
     question: "What is lifestyle medicine?",
     answer:
-      "Lifestyle medicine focuses on the everyday behaviours and routines that influence health, including movement, sleep, stress, nutrition and other habits that shape daily life.",
+      "Lifestyle medicine is an evidence-based approach that uses changes to sleep, stress management, physical activity, and daily routine — alongside nutrition — to prevent, manage, and sometimes reverse the impact of chronic conditions. It's a recognized medical specialty, not a wellness marketing term.",
   },
   {
-    question: "Is lifestyle medicine the same for everyone?",
+    question: "Does lifestyle medicine actually have research behind it, or is it just common sense?",
     answer:
-      "No. A practical lifestyle approach should be adapted to the individual's needs, abilities, goals and circumstances rather than using a single plan for everyone.",
+      "It has real trial evidence, and the effects aren't always what you'd assume from 'common sense.' A meta-analysis of 23 randomized controlled trials (2,534 participants) found multicomponent lifestyle medicine interventions significantly improved sleep quality, with the largest effect in people who had clinically disturbed sleep to begin with. A separate pilot RCT found a 6-week group lifestyle medicine program produced a significant reduction in depressive symptoms compared to usual care.",
   },
   {
-    question: "Can lifestyle medicine replace medical treatment?",
+    question: "How is sleep addressed as part of lifestyle medicine?",
     answer:
-      "No. Lifestyle-focused support is intended to complement appropriate healthcare. Medical diagnosis, treatment and prescribed medication should continue to be managed with qualified healthcare professionals.",
+      "Sleep is treated as its own lifestyle factor with its own evidence base, not just a side effect of eating and exercising better. The research shows multicomponent interventions — addressing sleep alongside stress and activity together — produce better sleep quality than addressing sleep in isolation.",
   },
   {
-    question: "Why does Sutra Health focus on habits?",
+    question: "Can lifestyle changes really affect stress and mental wellbeing?",
     answer:
-      "Long-term health is shaped by what people do repeatedly. The focus is therefore on practical habits that can be sustained over time rather than short-term routines.",
+      "Yes, with real effect sizes behind it. RCTs combining diet and physical activity changes have shown significant improvements in depressive symptoms and day-to-day functioning, and separate trials have shown meaningful reductions in anxiety and insomnia symptoms alongside the primary outcome being measured.",
+  },
+  {
+    question: "How long does it take to see results from lifestyle changes?",
+    answer:
+      "The trials showing meaningful results generally ran 6 to 12 weeks of consistent intervention, with some showing effects sustained at follow-up beyond that. Individual results depend on your starting point and consistency — this isn't a one-week fix, and we won't promise it is.",
   },
 ];
 
-export default function LifestyleMedicinePage() {
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  name: "Lifestyle Medicine | Sutra Health",
+  description:
+    "Evidence-based lifestyle medicine for sleep, stress, movement, and daily routine.",
+  url: "https://lifequality.org.in/approach/lifestyle",
+  about: { "@type": "MedicalSpecialty", name: "Lifestyle Medicine" },
+  author: {
+    "@type": "Person",
+    name: "Dr. Rakesh Sarwal",
+    honorificSuffix: "MBBS, MPH, DrPH",
+    url: "https://academic.lifequality.org.in/",
+  },
+  reviewedBy: {
+    "@type": "Person",
+    name: "Dr. Rakesh Sarwal",
+    honorificSuffix: "MBBS, MPH, DrPH",
+    url: "https://academic.lifequality.org.in/",
+  },
+  lastReviewed: "2026-09-08", // TODO: update on substantive revision
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://lifequality.org.in/" },
+    { "@type": "ListItem", position: 2, name: "Our Approach", item: "https://lifequality.org.in/approach" },
+    { "@type": "ListItem", position: 3, name: "Lifestyle Medicine", item: "https://lifequality.org.in/approach/lifestyle" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
+export default function LifestylePage() {
   return (
-    <main className="bg-[#FAF8F1]">
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-[#FAF8F1]">
+    <main className="bg-[#FAF8F1] text-[#173F35]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
+      {/* ==================================================
+          HERO
+      ================================================== */}
+      <section className="border-b border-[#173F35]/10">
         <Container>
-          <div className="grid min-h-[560px] items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-24">
-            <div className="max-w-2xl">
+          <div className="py-14 sm:py-18 lg:py-20">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
+              Our Approach → Lifestyle Medicine
+            </p>
+
+            <h1 className="mt-4 max-w-[780px] font-serif text-[42px] leading-[1.02] tracking-[-0.04em] text-[#123F35] sm:text-[56px] lg:text-[68px]">
+              The habits doing the most damage{" "}
+              <span className="italic text-[#65966F]">are usually the boring ones.</span>
+            </h1>
+
+            <p className="mt-6 max-w-[680px] text-[14px] leading-7 text-[#687A73] sm:text-[16px] sm:leading-8">
+              Lifestyle medicine looks at sleep, stress, and daily routine
+              as health factors in their own right — with a real evidence
+              base behind them, reviewed by Dr. Rakesh Sarwal, MBBS, MPH,
+              DrPH.
+            </p>
+
+            <div className="mt-7 flex flex-wrap gap-3">
               <Link
-                href="/approach"
-                className="text-[11px] font-semibold text-[#65966F]"
+                href="/book-appointment"
+                className="inline-flex items-center gap-2 rounded-full bg-[#173F35] px-6 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-[#12352D]"
               >
-                ← The Sutra Health Method
+                Book a Consultation
+                <span aria-hidden="true">→</span>
               </Link>
-
-              <p className="mt-10 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#65966F]">
-                Lifestyle Medicine
-              </p>
-
-              <h1 className="mt-5 font-serif text-[46px] leading-[0.98] tracking-[-0.045em] text-[#123F35] sm:text-[58px] lg:text-[68px]">
-                Health is shaped
-                <br />
-                by everyday
-                <br />
-                <span className="italic text-[#65966F]">life.</span>
-              </h1>
-
-              <p className="mt-7 max-w-xl text-[14px] leading-7 text-[#687A73] sm:text-[16px]">
-                Lifestyle medicine looks at the routines, behaviours and
-                circumstances that influence health and helps turn healthy
-                intentions into practical changes that can be sustained.
-              </p>
-
-              <div className="mt-8 border-l-2 border-[#9DB9A0] pl-5">
-                <p className="max-w-md text-[12px] leading-6 text-[#71817A]">
-                  Small, practical changes that fit real life are often easier
-                  to sustain than dramatic short-term routines.
-                </p>
-              </div>
-            </div>
-
-            <div className="relative mx-auto w-full max-w-[500px] lg:ml-auto">
-              <div className="relative overflow-hidden rounded-[32px] bg-[#EAF0E7]">
-                <div className="relative aspect-[4/4.5]">
-                  <Image
-                    src="/images/approach/lifestyle.png"
-                    alt="Lifestyle medicine at Sutra Health"
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 90vw, 500px"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#173F35]/30 via-transparent to-transparent" />
-                </div>
-              </div>
-
-              <div className="absolute -bottom-5 left-5 rounded-2xl border border-[#173F35]/10 bg-white/95 px-5 py-4 shadow-[0_16px_40px_rgba(23,63,53,0.12)]">
-                <p className="font-serif text-[24px] text-[#173F35]">
-                  Everyday habits
-                </p>
-                <p className="mt-1 text-[10px] text-[#71817A]">
-                  Practical changes for real life
-                </p>
-              </div>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* INTRO */}
-      <section className="bg-[#173F35] py-16 sm:py-20 lg:py-24">
+      {/* ==================================================
+          WHAT THE RESEARCH SHOWS
+      ================================================== */}
+      <section className="bg-[#F0F4ED]">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B5CEB6]">
-                Our perspective
+          <div className="py-14 sm:py-16 lg:py-20">
+            <div className="max-w-[720px]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
+                What the research shows
               </p>
-
-              <h2 className="mt-3 font-serif text-[38px] leading-[1.05] tracking-[-0.035em] text-[#FAF8F1] sm:text-[46px]">
-                The goal is not perfection.
+              <h2 className="mt-3 font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[44px]">
+                Not just common sense — <span className="italic text-[#65966F]">measured effects.</span>
               </h2>
-            </div>
 
-            <div className="max-w-2xl">
-              <p className="text-[16px] leading-8 text-[#D5E0D8]">
-                Lifestyle medicine starts with understanding how a person's
-                everyday life influences health.
-              </p>
-
-              <p className="mt-6 text-[14px] leading-7 text-[#BFD0C5]">
-                Rather than focusing on one behaviour in isolation, Sutra
-                Health considers routines, movement, sleep, stress and the
-                environment around a person. The aim is to identify practical
-                changes that can become part of everyday life.
-              </p>
+              <div className="mt-6 space-y-4 text-[14px] leading-7 text-[#687A73] sm:text-[15px] sm:leading-8">
+                <p>
+                  A meta-analysis of 23 randomized controlled trials (2,534
+                  participants) found multicomponent lifestyle medicine
+                  interventions significantly improved sleep quality
+                  compared to inactive controls, both immediately after the
+                  intervention and at short-term follow-up — with the
+                  largest effect seen in people who had clinically
+                  disturbed sleep at the start.
+                </p>
+                <p>
+                  A pilot randomized controlled trial testing a 6-week,
+                  group-based lifestyle medicine program — covering diet,
+                  exercise, mindfulness, and sleep management together —
+                  found a significant reduction in depressive symptoms
+                  compared to usual care, sustained at 12-week follow-up,
+                  alongside improvements in anxiety and insomnia.
+                </p>
+                <p>
+                  Separate trials combining diet and physical activity
+                  changes have shown significant improvements in both
+                  depressive symptoms and day-to-day functioning — evidence
+                  that addressing these factors together, not one at a
+                  time, produces better results than isolated changes.
+                </p>
+              </div>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* PILLARS */}
-      <section className="bg-[#F1F4ED] py-16 sm:py-20 lg:py-24">
+      {/* ==================================================
+          WHAT WE LOOK AT
+      ================================================== */}
+      <section className="border-b border-[#173F35]/10">
         <Container>
-          <div className="mb-10 max-w-2xl">
+          <div className="py-14 sm:py-16 lg:py-20">
+            <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
+                  What we look at
+                </p>
+                <h2 className="mt-3 max-w-[420px] font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[44px]">
+                  Four factors, considered <span className="italic text-[#65966F]">together.</span>
+                </h2>
+              </div>
+
+              <div className="divide-y divide-[#173F35]/10 border-y border-[#173F35]/10">
+                {factors.map((factor) => (
+                  <article key={factor.title} className="grid gap-2 py-7 sm:grid-cols-[220px_1fr] sm:items-center sm:py-8">
+                    <h3 className="font-serif text-[24px] tracking-[-0.02em] text-[#173F35]">{factor.title}</h3>
+                    <p className="text-[13px] leading-6 text-[#687A73] sm:text-[14px]">{factor.description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* ==================================================
+          RELATED APPROACHES
+      ================================================== */}
+      <section className="bg-[#F0F4ED]">
+        <Container>
+          <div className="py-14 sm:py-16 lg:py-20">
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-              What we consider
+              Part of the wider method
             </p>
-
-            <h2 className="mt-3 font-serif text-3xl tracking-[-0.025em] text-[#173F35] sm:text-4xl">
-              The patterns behind everyday health.
+            <h2 className="mt-3 max-w-[600px] font-serif text-[32px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[40px]">
+              Lifestyle change works alongside nutrition, movement, and breath.
             </h2>
 
-            <p className="mt-4 text-sm leading-7 text-[#71817A]">
-              These areas are not separate boxes. They often influence one
-              another and are considered together according to the individual.
-            </p>
-          </div>
-
-          <div className="grid gap-x-10 md:grid-cols-2 lg:grid-cols-3">
-            {pillars.map((pillar) => (
-              <article
-                key={pillar.number}
-                className="border-t border-[#173F35]/15 py-7"
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href="/approach/therapeutic-yoga"
+                className="inline-flex items-center gap-2 rounded-full border border-[#173F35]/15 bg-white px-6 py-3 text-[13px] font-semibold text-[#173F35] hover:bg-[#FAF8F1]"
               >
-                <span className="text-[10px] font-semibold tracking-[0.14em] text-[#9AA9A1]">
-                  {pillar.number}
-                </span>
-
-                <h3 className="mt-7 font-serif text-[27px] leading-tight tracking-[-0.02em] text-[#173F35]">
-                  {pillar.title}
-                </h3>
-
-                <p className="mt-3 text-[13px] leading-6 text-[#71817A]">
-                  {pillar.description}
-                </p>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* PROCESS */}
-      <section className="bg-[#FAF8F1] py-20 sm:py-24 lg:py-28">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-[0.75fr_1.5fr] lg:gap-20">
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                How it works
-              </p>
-
-              <h2 className="mt-3 max-w-md font-serif text-[38px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[46px]">
-                From intention to practice.
-              </h2>
-            </div>
-
-            <div className="space-y-8">
-              {[
-                "Understand the person's health concerns, routines and goals.",
-                "Identify the everyday patterns that may be most relevant.",
-                "Choose a small number of practical changes that fit real life.",
-                "Review what is working and adapt when circumstances change.",
-              ].map((item, index) => (
-                <div
-                  key={item}
-                  className="grid gap-4 border-t border-[#173F35]/15 pt-6 sm:grid-cols-[70px_1fr]"
-                >
-                  <span className="text-[10px] font-semibold tracking-[0.14em] text-[#A2ADA7]">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-
-                  <p className="text-[15px] leading-7 text-[#687A73]">
-                    {item}
-                  </p>
-                </div>
-              ))}
+                Therapeutic Yoga & Movement →
+              </Link>
+              <Link
+                href="/approach/nutrition"
+                className="inline-flex items-center gap-2 rounded-full border border-[#173F35]/15 bg-white px-6 py-3 text-[13px] font-semibold text-[#173F35] hover:bg-[#FAF8F1]"
+              >
+                Nutrition →
+              </Link>
+              <Link
+                href="/approach/breath-mindfulness"
+                className="inline-flex items-center gap-2 rounded-full border border-[#173F35]/15 bg-white px-6 py-3 text-[13px] font-semibold text-[#173F35] hover:bg-[#FAF8F1]"
+              >
+                Breath & Mindfulness →
+              </Link>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* FAQ */}
-      <section className="bg-[#FAF8F1] py-20 sm:py-24 lg:py-28">
+      {/* ==================================================
+          FINAL CTA
+      ================================================== */}
+      <section className="bg-[#173F35]">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-[0.75fr_1.5fr] lg:gap-20">
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                Common questions
-              </p>
-
-              <h2 className="mt-3 max-w-md font-serif text-[38px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[46px]">
-                Understanding lifestyle medicine.
-              </h2>
-            </div>
-
-            <div className="border-t border-[#173F35]/15">
-              {faqs.map((faq, index) => (
-                <details
-                  key={faq.question}
-                  className="group border-b border-[#173F35]/15"
-                >
-                  <summary className="flex cursor-pointer list-none items-center gap-4 py-5 sm:py-6 [&::-webkit-details-marker]:hidden">
-                    <span className="w-7 shrink-0 text-[10px] font-semibold tracking-[0.12em] text-[#A2ADA7]">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-
-                    <span className="flex-1 text-[15px] font-medium leading-6 text-[#173F35] sm:text-[16px]">
-                      {faq.question}
-                    </span>
-
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#173F35]/10 text-[#65966F] transition-transform duration-300 group-open:rotate-45">
-                      +
-                    </span>
-                  </summary>
-
-                  <div className="pb-6 pl-11 pr-10">
-                    <p className="text-[13px] leading-7 text-[#687A73] sm:text-[14px]">
-                      {faq.answer}
-                    </p>
-                  </div>
-                </details>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-[#173F35] py-16 sm:py-20 lg:py-24">
-        <Container>
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#B5CEB6]">
-              Take the next step
-            </p>
-
-            <h2 className="mt-4 font-serif text-4xl leading-[1.05] text-[#FAF8F1] sm:text-5xl">
-              Build healthier routines that fit your life.
+          <div className="mx-auto max-w-[720px] py-14 text-center sm:py-16 lg:py-20">
+            <h2 className="font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#FAF8F1] sm:text-[44px]">
+              Start with where your daily routine actually stands.
             </h2>
-
-            <p className="mx-auto mt-5 max-w-xl text-sm leading-6 text-[#CBDAD1]">
-              Talk with the Sutra Health team about your goals, routines and
-              the changes that may be practical for you.
-            </p>
-
-            <Link
-              href="/book-appointment"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#FAF8F1] px-7 py-3.5 text-sm font-semibold text-[#173F35]"
-            >
-              Book an Appointment
-              <span>→</span>
-            </Link>
+            <div className="mt-7 flex flex-wrap justify-center gap-3">
+              <Link
+                href="/score"
+                className="inline-flex items-center gap-2 rounded-full bg-[#FAF8F1] px-6 py-3.5 text-[13px] font-semibold text-[#173F35] transition-colors hover:bg-white"
+              >
+                Take the 21-Point Assessment
+                <span aria-hidden="true">→</span>
+              </Link>
+              <Link
+                href="/book-appointment"
+                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-white/10"
+              >
+                Book a Consultation
+                <span aria-hidden="true">→</span>
+              </Link>
+            </div>
           </div>
         </Container>
       </section>
+
+      <FAQ faqs={faqs} />
     </main>
   );
 }

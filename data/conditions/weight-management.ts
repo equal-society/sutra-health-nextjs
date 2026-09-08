@@ -6,144 +6,124 @@ export const weightManagement: Condition = {
   title: "Weight Management",
 
   shortDescription:
-    "Personalized lifestyle and nutrition support focused on sustainable habits, healthy routines and long-term wellbeing.",
+    "An honest look at what actually helps with weight — nutrition and behavioral change more than yoga alone — grounded in real research.",
 
   introduction:
-    "Healthy weight management is influenced by more than food or exercise alone. Sleep, stress, physical activity, eating patterns, daily routines and other aspects of lifestyle can all play a role. At Sutra Health, we take a personalized approach to weight management that focuses on practical changes you can build into everyday life rather than short-term restrictive plans.",
+    "We want to be direct about something most wellness sites aren't: yoga alone has not been shown, in the largest available research, to significantly reduce weight, body fat, or waist circumference. What does have real evidence behind it — dietary pattern, sleep, stress, and behavioral support around eating — is what we actually build a plan around, informed by Dr. Rakesh Sarwal, MBBS, MPH, DrPH.",
 
   concerns: [
     "Difficulty maintaining a healthy weight",
     "Repeated weight-loss and weight-gain cycles",
-    "Challenges maintaining consistent lifestyle habits",
-    "Questions about nutrition and eating patterns",
-    "Difficulty becoming physically active",
-    "Lifestyle factors affecting weight and wellbeing",
+    "Stress eating or emotional eating patterns",
+    "Wanting an honest picture, not a miracle claim",
+    "Difficulty sustaining nutrition and activity changes long-term",
+    "Weight goals connected to a broader health concern (blood pressure, blood sugar)",
   ],
 
   lifestyleFactors: [
     {
-      title: "Nutrition and eating patterns",
+      title: "Dietary pattern",
       description:
-        "Eating patterns and nutrition guidance can be considered as part of a sustainable weight-management plan.",
+        "The strongest evidence for weight-related outcomes comes from sustained dietary pattern change, not any single practice — see our Nutrition approach.",
     },
     {
-      title: "Movement and physical activity",
+      title: "Sleep and stress",
       description:
-        "Regular, appropriate movement can be built around individual abilities, preferences and routine.",
+        "Sleep and stress affect eating behavior and hunger regulation, independent of diet and exercise.",
     },
     {
-      title: "Sleep and recovery",
+      title: "Eating behavior and self-regulation",
       description:
-        "Sleep routines and recovery can be considered alongside nutrition and activity.",
+        "Reducing dietary lapses — stress eating, overeating, loss of control around food — has real supporting evidence, distinct from weight loss itself.",
     },
     {
-      title: "Stress and daily routines",
+      title: "Movement, including but not limited to yoga",
       description:
-        "Stress, routines and other everyday habits may be relevant to sustainable lifestyle change.",
+        "Physical activity matters for weight management broadly; yoga specifically plays a more limited, behavioral-support role than a direct metabolic one.",
     },
   ],
 
   sections: [
     {
-      title: "Understanding Weight Management",
+      title: "Being honest: what the largest research actually shows about yoga and weight",
       content: [
-        "Weight management is not simply about following a diet or increasing exercise for a short period of time. A person's weight and overall health can be influenced by eating patterns, physical activity, sleep, stress, routines and many other aspects of everyday life.",
-        "A sustainable approach therefore looks at the bigger picture. The goal is to understand which lifestyle factors are relevant to your health and identify practical changes that can be maintained over time.",
+        "A systematic review and meta-analysis of 30 randomized controlled trials (2,173 participants) found yoga did not significantly affect weight, body fat percentage, or waist circumference across the general population studied. Some effect on BMI was found specifically in overweight or obese participants compared to usual care, but this finding wasn't robust against risk of bias in the underlying studies.",
+        "We're saying this plainly because a lot of wellness marketing implies yoga is a weight-loss tool, and the strongest available evidence doesn't support that claim as stated. This doesn't mean yoga has no role — it means the role is different from what's often implied.",
       ],
     },
     {
-      title: "Nutrition and Eating Habits",
+      title: "Where yoga's real value shows up: eating behavior, not the scale directly",
       content: [
-        "Nutrition is an important part of healthy weight management. Rather than relying on highly restrictive diets, personalized nutrition guidance can help you understand your current eating patterns and identify realistic changes that fit your preferences and routine.",
-        "Small and consistent improvements can be easier to maintain than temporary changes. Nutrition counselling can therefore focus on developing habits that support your broader health goals.",
+        "A randomized trial studying yoga alongside behavioral weight-loss treatment found yoga participants reported fewer lapses from their dietary plan — less overeating, less stress eating, less difficulty resisting food temptations — compared to a contact-matched control group.",
+        "In that same research, among participants who had already lost a meaningful amount of weight (5% or more) in the first three months, those also practicing yoga went on to lose significantly more weight by 6 months, alongside greater improvements in distress tolerance, mindfulness, and self-compassion. This suggests yoga's role may be supporting the psychological and behavioral side of weight management, for people already engaged in a structured plan — not acting as a standalone weight-loss method.",
       ],
     },
     {
-      title: "Movement and Physical Activity",
+      title: "What actually has stronger evidence: nutrition and sustained habits",
       content: [
-        "Regular physical activity can form an important part of a healthy lifestyle. The appropriate type and amount of movement depends on individual health, physical ability, preferences and circumstances.",
-        "Movement can include everyday activity, structured exercise or appropriately adapted therapeutic yoga. The emphasis should be on creating a routine that is realistic and sustainable.",
+        "The dietary pattern evidence — particularly DASH and Mediterranean-style eating — has a considerably stronger and more consistent research base for weight-related outcomes than yoga does specifically. See our Nutrition approach page for the actual trial evidence behind these patterns.",
+        "Sleep and stress management also have real, separate evidence connecting them to eating behavior and weight regulation, covered on our Lifestyle Medicine page.",
       ],
     },
     {
-      title: "Sleep and Recovery",
+      title: "How Sutra Health builds a plan around this",
       content: [
-        "Sleep and recovery are important components of overall wellbeing. Sleep routines can therefore be considered as part of a broader approach to weight management and healthy lifestyle habits.",
-        "Improving consistency around sleep and recovery may be one practical area to explore when developing an individualized lifestyle plan.",
-      ],
-    },
-    {
-      title: "Stress and Lifestyle Habits",
-      content: [
-        "Stress can affect everyday routines, eating patterns, sleep and physical activity. Understanding these connections can be useful when working toward sustainable lifestyle changes.",
-        "Breathing practices, mindfulness, relaxation and other healthy routines may be incorporated where appropriate as part of a whole-person approach.",
-      ],
-    },
-    {
-      title: "How Sutra Health Can Support Weight Management",
-      content: [
-        "Sutra Health can consider nutrition, lifestyle habits, movement, sleep, stress and other relevant factors when developing personalized support around your health goals.",
-        "Support may include nutrition counselling, lifestyle guidance, therapeutic yoga and movement practices, breath and mindfulness practices, and ongoing support for sustainable habits.",
+        "We build weight-related plans around dietary pattern, sleep, stress, and behavioral support — with yoga included specifically for its role in reducing dietary lapses and supporting self-regulation, not marketed as a direct weight-loss method it hasn't been shown to be.",
+        "This is not a replacement for medical evaluation where weight is connected to another diagnosed condition; we coordinate with your physician where relevant.",
       ],
     },
   ],
 
   approach: [
-    "Lifestyle habits",
-    "Nutrition",
-    "Movement and yoga",
-    "Sleep and recovery",
-    "Stress and mind",
+    "Dietary pattern (DASH / Mediterranean-style)",
+    "Sleep and stress management",
+    "Eating-behavior and self-regulation support",
+    "Movement, including yoga for its behavioral role",
   ],
 
   support: [
-    "Personalized lifestyle guidance",
-    "Nutrition counselling",
-    "Therapeutic yoga and movement",
-    "Breath and mindfulness practices",
-    "Ongoing support around sustainable habits",
+    "Personalized nutrition counselling",
+    "Sleep and stress-management guidance",
+    "Yoga and mindfulness practices supporting eating behavior",
+    "Coordination with medical care where weight connects to another condition",
   ],
 
-  // TODO: this condition has not yet had the capture-and-triage research
-  // process run on it (see the High Blood Pressure pilot brief). The FAQs
-  // and content above are the original vague-hedge version — carried over
-  // as-is for now so the site still builds, but this is a priority
-  // candidate for the same research-and-rewrite treatment.
+  evidence: [
+    {
+      claim:
+        "A systematic review and meta-analysis of 30 RCTs (2,173 participants) found yoga did not significantly affect weight, body fat percentage, or waist circumference in general populations studied.",
+      source: "Systematic review and meta-analysis",
+      url: "https://www.sciencedirect.com/science/article/abs/pii/S0091743516300366",
+    },
+    {
+      claim:
+        "In a randomized trial, participants combining yoga with behavioral weight-loss treatment reported fewer dietary lapses (less overeating, stress eating, and difficulty resisting temptation) than a contact-matched control group.",
+      source: "PATH Trial protocol and preliminary findings, RCT",
+      url: "https://www.researchgate.net/publication/401230703",
+    },
+    {
+      claim:
+        "Among participants with high initial weight loss (5%+ in the first 3 months), those also practicing yoga lost significantly more weight by 6 months (-9.0kg vs -6.7kg) than a non-yoga control group.",
+      source: "Randomized trial on long-term weight loss",
+      url: "https://pubmed.ncbi.nlm.nih.gov/35120162/",
+    },
+  ],
+
   faqs: [
     {
-      question: "What is a healthy approach to weight management?",
+      question: "Does yoga help with weight loss?",
       answer:
-        "Healthy weight management can involve nutrition, physical activity, sleep, stress management and sustainable daily habits. The most appropriate approach depends on your individual health, lifestyle and goals.",
+        "The largest available evidence — a meta-analysis of 30 RCTs with over 2,000 participants — found yoga alone did not significantly reduce weight, body fat, or waist circumference. Where yoga does show a real, evidence-backed role is in supporting eating behavior: reducing dietary lapses and stress eating, particularly when combined with a structured nutrition plan. We won't claim yoga drives weight loss on its own, because the research doesn't support that.",
     },
     {
-      question: "Is weight management only about diet?",
+      question: "What actually works for weight management, if not yoga alone?",
       answer:
-        "No. Weight can be influenced by several aspects of everyday life, including eating patterns, physical activity, sleep, stress and daily routines.",
+        "Sustained dietary pattern change (see our Nutrition approach, particularly DASH and Mediterranean-style evidence), sleep and stress management, and behavioral support around eating have stronger, more consistent evidence than yoga specifically for weight-related outcomes.",
     },
     {
-      question: "Can nutrition counselling help with weight management?",
+      question: "Is there any role for yoga in a weight management plan?",
       answer:
-        "Personalized nutrition counselling can help you understand your eating patterns and make practical changes that fit your preferences, routine and health goals.",
-    },
-    {
-      question: "Can exercise be part of a weight management plan?",
-      answer:
-        "Appropriate physical activity can be an important part of a healthy lifestyle. The type and amount of activity should be suited to your individual abilities, health and circumstances.",
-    },
-    {
-      question: "Can yoga support weight management?",
-      answer:
-        "Therapeutic yoga can be included as part of an individualized lifestyle approach. Depending on the person, yoga may support movement, strength, mobility, body awareness and overall wellbeing.",
-    },
-    {
-      question: "How important is sleep for weight management?",
-      answer:
-        "Sleep is an important part of overall health and healthy routines. Sleep patterns can therefore be considered when developing a broader lifestyle approach to weight management.",
-    },
-    {
-      question: "Can stress affect weight management?",
-      answer:
-        "Stress can influence everyday habits, eating patterns, sleep and activity. Understanding stress and developing sustainable ways to manage it may therefore be relevant to an individualized lifestyle plan.",
+        "Yes, but a specific one: supporting self-regulation and reducing dietary lapses like stress eating and overeating, rather than acting as a direct weight-loss method. One trial found this effect was strongest for people who had already started losing weight through a structured plan.",
     },
   ],
 
@@ -152,7 +132,7 @@ export const weightManagement: Condition = {
   internalLinks: [
     { label: "Nutrition", href: "/approach/nutrition" },
     { label: "Lifestyle Medicine", href: "/approach/lifestyle" },
-    { label: "Therapeutic Yoga", href: "/approach/therapeutic-yoga" },
+    { label: "Breath & Mindfulness", href: "/approach/breath-mindfulness" },
     { label: "Metabolic Health", href: "/conditions/metabolic-health" },
   ],
 };

@@ -6,7 +6,7 @@ import FAQ from "@/components/shared/FAQ";
 export const metadata: Metadata = {
   title: "Our Approach | The Sutra Health Method",
   description:
-    "Explore the Sutra Health approach to sustainable health through lifestyle, nutrition, therapeutic yoga, breath and mindfulness, and behaviour change.",
+    "The Sutra Health Method: a 6-stage, whole-person approach combining lifestyle medicine, nutrition, therapeutic yoga, and breath & mindfulness.",
   alternates: {
     canonical: "https://lifequality.org.in/approach",
   },
@@ -22,36 +22,12 @@ export const metadata: Metadata = {
 };
 
 const stages = [
-  {
-    number: "01",
-    title: "Understand",
-    description: "See the whole picture.",
-  },
-  {
-    number: "02",
-    title: "Identify",
-    description: "Recognise the patterns.",
-  },
-  {
-    number: "03",
-    title: "Personalise",
-    description: "Create a plan that fits real life.",
-  },
-  {
-    number: "04",
-    title: "Practise",
-    description: "Turn understanding into action.",
-  },
-  {
-    number: "05",
-    title: "Sustain",
-    description: "Build habits, not temporary routines.",
-  },
-  {
-    number: "06",
-    title: "Adapt",
-    description: "Keep learning and evolving.",
-  },
+  { number: "01", title: "Understand", description: "See the whole picture." },
+  { number: "02", title: "Identify", description: "Recognise the patterns." },
+  { number: "03", title: "Personalise", description: "Create a plan that fits real life." },
+  { number: "04", title: "Practise", description: "Turn understanding into action." },
+  { number: "05", title: "Sustain", description: "Build habits, not temporary routines." },
+  { number: "06", title: "Adapt", description: "Keep learning and evolving." },
 ];
 
 const disciplines = [
@@ -75,7 +51,7 @@ const disciplines = [
     number: "03",
     title: "Therapeutic Yoga & Movement",
     description:
-      "Use appropriately adapted movement and yoga practices to support mobility, body awareness and sustainable activity.",
+      "Use clinically-studied yoga and movement practices to support mobility, blood pressure, blood sugar, and stress — see the specific evidence behind each.",
     href: "/approach/therapeutic-yoga",
     linkLabel: "Explore Yoga & Movement",
   },
@@ -90,84 +66,133 @@ const disciplines = [
 ];
 
 const principles = [
-  {
-    title: "Whole person",
-    text: "Health is considered in the context of the person, their everyday life and their goals.",
-  },
-  {
-    title: "Personalised",
-    text: "There is no single routine or plan that fits everyone.",
-  },
-  {
-    title: "Practical",
-    text: "The focus is on changes that can work within real routines and responsibilities.",
-  },
-  {
-    title: "Sustainable",
-    text: "Progress is built through habits that can be practised and adapted over time.",
-  },
+  { title: "Whole person", text: "Health is considered in the context of the person, their everyday life and their goals." },
+  { title: "Personalised", text: "There is no single routine or plan that fits everyone." },
+  { title: "Practical", text: "The focus is on changes that can work within real routines and responsibilities." },
+  { title: "Sustainable", text: "Progress is built through habits that can be practised and adapted over time." },
 ];
 
+// ─────────────────────────────────────────────────────────────────
+// Structured data
+// ─────────────────────────────────────────────────────────────────
 
-  const pageSchema = {
-    "@context": "https://schema.org",
-    "@type": "MedicalWebPage",
-    name: "The Sutra Health Method | Sutra Health",
-    description:
-      "Learn how the Sutra Health Method brings lifestyle medicine, nutrition, therapeutic yoga, breath and mindfulness together through a personalised, practical and sustainable pathway.",
-    url: "https://lifequality.org.in/approach",
-    isPartOf: {
-      "@type": "WebSite",
-      name: "Sutra Health",
-      url: "https://lifequality.org.in/",
-    },
-    about: {
-      "@type": "MedicalSpecialty",
-      name: "Lifestyle Medicine",
-    },
-  };
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  name: "The Sutra Health Method | Sutra Health",
+  description:
+    "Learn how the Sutra Health Method brings lifestyle medicine, nutrition, therapeutic yoga, breath and mindfulness together through a personalised, practical and sustainable pathway.",
+  url: "https://lifequality.org.in/approach",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Sutra Health",
+    url: "https://lifequality.org.in/",
+  },
+  about: {
+    "@type": "MedicalSpecialty",
+    name: "Lifestyle Medicine",
+  },
+  author: {
+    "@type": "Person",
+    name: "Dr. Rakesh Sarwal",
+    honorificSuffix: "MBBS, MPH, DrPH",
+    url: "https://academic.lifequality.org.in/",
+  },
+  reviewedBy: {
+    "@type": "Person",
+    name: "Dr. Rakesh Sarwal",
+    honorificSuffix: "MBBS, MPH, DrPH",
+    url: "https://academic.lifequality.org.in/",
+  },
+  lastReviewed: "2026-09-08", // TODO: update whenever content is substantively revised
+};
 
+// HowTo schema for the 6-stage method — this is the single highest-value
+// AEO addition on this page. AI Overviews and answer engines frequently
+// render HowTo as a numbered step card directly in search results.
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "The Sutra Health Method",
+  description:
+    "The six-stage process Sutra Health uses to build a personalised, sustainable health plan.",
+  step: stages.map((stage) => ({
+    "@type": "HowToStep",
+    position: Number(stage.number),
+    name: stage.title,
+    text: stage.description,
+  })),
+};
 
+// DefinedTerm — signals that "21-Point Lifestyle Assessment" is a
+// specific, named, proprietary tool Sutra Health created, not generic
+// advice. Without this, an AI has no structured reason to treat the
+// term as anything other than a marketing phrase.
+const definedTermSchema = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  name: "21-Point Lifestyle Assessment",
+  description:
+    "A structured lifestyle-review tool used by Sutra Health to identify practical, individualised areas for health improvement. It is a lifestyle guidance tool, not a substitute for clinical diagnosis.",
+  inDefinedTermSet: "https://lifequality.org.in/approach",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://lifequality.org.in/" },
+    { "@type": "ListItem", position: 2, name: "Our Approach", item: "https://lifequality.org.in/approach" },
+  ],
+};
+
+// FAQ answers tightened for AEO: each answer now states the actual
+// content in the first sentence rather than pointing elsewhere on the
+// page. "The approach follows six stages: Understand, Identify..." is
+// independently quotable; "the approach follows six stages" (full stop)
+// is not — it forces a reader (or an AI) to go find the stages
+// elsewhere, which is exactly what breaks extraction.
 const approachFAQs = [
   {
     question: "What is the Sutra Health Method?",
     answer:
-      "The Sutra Health Method is Sutra Health's whole-person pathway to sustainable health. It brings lifestyle medicine, nutrition, therapeutic yoga and movement, breath and mindfulness, behaviour change and health education into a practical process of understanding, personalisation, practice, sustainability and adaptation.",
+      "The Sutra Health Method is a six-stage, whole-person pathway to sustainable health: Understand, Identify, Personalise, Practise, Sustain, and Adapt. It brings together lifestyle medicine, nutrition, therapeutic yoga, and breath and mindfulness into one coordinated plan, developed and reviewed by Dr. Rakesh Sarwal (MBBS, MPH, DrPH).",
   },
   {
-    question: "How does the Sutra Health approach work?",
+    question: "What are the six stages of the Sutra Health Method?",
     answer:
-      "The approach follows six stages: Understand, Identify, Personalise, Practise, Sustain and Adapt. The aim is to understand the person's health and everyday context, identify relevant patterns, develop practical changes, practise them, sustain useful habits and adapt the approach as circumstances change.",
+      "The six stages are: (1) Understand — see the whole picture of a person's health and everyday life; (2) Identify — recognise the specific patterns driving a health concern; (3) Personalise — build a plan around that individual, not a generic template; (4) Practise — turn the plan into daily action; (5) Sustain — build lasting habits rather than a short-term routine; (6) Adapt — revisit and adjust the plan as circumstances change.",
   },
   {
     question: "Is the Sutra Health approach personalised?",
     answer:
-      "Yes. Sutra Health describes its approach as individualised rather than based on one routine for everyone. Recommendations can take account of health concerns, goals, routines, preferences, abilities and practical circumstances.",
+      "Yes. Sutra Health builds an individualised plan rather than applying one routine to everyone, taking into account a person's specific health concerns, goals, daily routine, physical ability, and preferences.",
   },
   {
-    question: "What approaches are included in the Sutra Health Method?",
+    question: "What disciplines are included in the Sutra Health Method?",
     answer:
-      "The core approaches are lifestyle medicine, nutrition, therapeutic yoga and movement, and breath and mindfulness. These are considered within a wider framework that also includes behaviour change and health education.",
+      "Four core disciplines: lifestyle medicine, nutrition, therapeutic yoga and movement, and breath and mindfulness. These are coordinated together rather than delivered as separate, disconnected services.",
   },
   {
     question: "What is the 21-Point Lifestyle Assessment?",
     answer:
-      "The 21-Point Lifestyle Assessment is a structured way to review lifestyle factors and identify areas where practical changes may be useful. It is a lifestyle guidance tool and should not be treated as a substitute for clinical diagnosis.",
+      "The 21-Point Lifestyle Assessment is a structured, 21-question review across sleep, food, movement, digestion, and stress, developed by Sutra Health to identify specific, individual areas for lifestyle improvement. It is a guidance tool, not a clinical diagnostic test.",
   },
   {
     question: "Is the Sutra Health Method a replacement for medical treatment?",
     answer:
-      "No. Lifestyle and complementary practices should not be presented as a replacement for appropriate medical diagnosis, medication or treatment. People with health concerns should receive appropriate care from qualified healthcare professionals.",
+      "No. The Sutra Health Method is designed to complement appropriate medical care, not replace it. People with existing health conditions should continue working with their treating physician, particularly around medication.",
   },
 ];
 
 export default function ApproachPage() {
   return (
     <main className="bg-[#FAF8F1] text-[#173F35]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+
       {/* ==================================================
           HERO
       ================================================== */}
@@ -182,15 +207,23 @@ export default function ApproachPage() {
               <h1 className="mt-4 max-w-[780px] font-serif text-[46px] leading-[0.98] tracking-[-0.045em] text-[#123F35] sm:text-[60px] lg:text-[76px]">
                 A different way
                 <br />
-                to approach{" "}
-                <span className="italic text-[#65966F]">health.</span>
+                to approach <span className="italic text-[#65966F]">health.</span>
               </h1>
 
               <p className="mt-6 max-w-[650px] text-[14px] leading-7 text-[#687A73] sm:text-[16px] sm:leading-8">
                 The Sutra Health Method brings together lifestyle, nutrition,
                 therapeutic yoga, breath, mindfulness, behaviour change and
                 health education to help make healthy living practical and
-                sustainable.
+                sustainable — developed and reviewed by{" "}
+                <a
+                  href="https://academic.lifequality.org.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold underline decoration-[#B7CCB8] underline-offset-2 hover:text-[#65966F]"
+                >
+                  Dr. Rakesh Sarwal, MBBS, MPH, DrPH
+                </a>
+                .
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
@@ -239,18 +272,17 @@ export default function ApproachPage() {
 
               <h2 className="mt-3 max-w-[440px] font-serif text-[36px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[48px]">
                 Understand the person. Change the patterns.{" "}
-                <span className="italic text-[#65966F]">
-                  Sustain the change.
-                </span>
+                <span className="italic text-[#65966F]">Sustain the change.</span>
               </h2>
             </div>
 
             <div className="max-w-[720px]">
               <p className="text-[14px] leading-7 text-[#687A73] sm:text-[15px] sm:leading-8">
-                The Sutra Health Method is the way Sutra Health approaches
-                sustainable health. It starts with understanding the whole
-                picture, then moves toward practical changes that can become
-                part of everyday life.
+                The Sutra Health Method is a six-stage process — Understand,
+                Identify, Personalise, Practise, Sustain, and Adapt — that
+                starts with understanding the whole picture, then moves
+                toward practical changes that can become part of everyday
+                life.
               </p>
 
               <p className="mt-4 text-[14px] leading-7 text-[#687A73] sm:text-[15px] sm:leading-8">
@@ -275,8 +307,7 @@ export default function ApproachPage() {
               </p>
 
               <h2 className="mt-3 font-serif text-[36px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[48px]">
-                From understanding to{" "}
-                <span className="italic text-[#65966F]">lasting practice.</span>
+                From understanding to <span className="italic text-[#65966F]">lasting practice.</span>
               </h2>
             </div>
 
@@ -286,17 +317,11 @@ export default function ApproachPage() {
                   key={stage.number}
                   className="grid gap-3 py-7 sm:grid-cols-[90px_0.8fr_1.2fr] sm:items-center sm:py-8"
                 >
-                  <p className="font-serif text-[28px] tracking-[-0.025em] text-[#65966F]">
-                    {stage.number}
-                  </p>
-
+                  <p className="font-serif text-[28px] tracking-[-0.025em] text-[#65966F]">{stage.number}</p>
                   <h3 className="font-serif text-[27px] tracking-[-0.025em] text-[#173F35] sm:text-[32px]">
                     {stage.title}
                   </h3>
-
-                  <p className="text-[13px] leading-6 text-[#687A73] sm:text-[14px]">
-                    {stage.description}
-                  </p>
+                  <p className="text-[13px] leading-6 text-[#687A73] sm:text-[14px]">{stage.description}</p>
                 </article>
               ))}
             </div>
@@ -315,12 +340,8 @@ export default function ApproachPage() {
                 <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
                   Core disciplines
                 </p>
-
                 <h2 className="mt-3 max-w-[430px] font-serif text-[36px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[48px]">
-                  Different disciplines,{" "}
-                  <span className="italic text-[#65966F]">
-                    one whole-person approach.
-                  </span>
+                  Different disciplines, <span className="italic text-[#65966F]">one whole-person approach.</span>
                 </h2>
               </div>
 
@@ -330,19 +351,14 @@ export default function ApproachPage() {
                     key={discipline.number}
                     className="grid gap-5 py-8 sm:grid-cols-[70px_1fr] sm:gap-7 sm:py-9"
                   >
-                    <p className="font-serif text-[25px] text-[#65966F]">
-                      {discipline.number}
-                    </p>
-
+                    <p className="font-serif text-[25px] text-[#65966F]">{discipline.number}</p>
                     <div>
                       <h3 className="font-serif text-[29px] leading-tight tracking-[-0.025em] text-[#173F35] sm:text-[34px]">
                         {discipline.title}
                       </h3>
-
                       <p className="mt-3 max-w-[650px] text-[13px] leading-6 text-[#687A73] sm:text-[14px] sm:leading-7">
                         {discipline.description}
                       </p>
-
                       <Link
                         href={discipline.href}
                         className="mt-4 inline-flex items-center gap-2 text-[12px] font-semibold text-[#173F35] hover:text-[#65966F]"
@@ -366,28 +382,17 @@ export default function ApproachPage() {
         <Container>
           <div className="grid gap-10 py-14 sm:py-16 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20 lg:py-20">
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                How we work
-              </p>
-
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">How we work</p>
               <h2 className="mt-3 max-w-[430px] font-serif text-[36px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[46px]">
-                Personalised enough for real{" "}
-                <span className="italic text-[#65966F]">life.</span>
+                Personalised enough for real <span className="italic text-[#65966F]">life.</span>
               </h2>
             </div>
 
             <div className="grid gap-x-8 gap-y-8 sm:grid-cols-2">
               {principles.map((principle) => (
-                <article
-                  key={principle.title}
-                  className="border-t border-[#173F35]/10 pt-5"
-                >
-                  <h3 className="font-serif text-[25px] tracking-[-0.02em] text-[#173F35]">
-                    {principle.title}
-                  </h3>
-                  <p className="mt-2 text-[13px] leading-6 text-[#687A73]">
-                    {principle.text}
-                  </p>
+                <article key={principle.title} className="border-t border-[#173F35]/10 pt-5">
+                  <h3 className="font-serif text-[25px] tracking-[-0.02em] text-[#173F35]">{principle.title}</h3>
+                  <p className="mt-2 text-[13px] leading-6 text-[#687A73]">{principle.text}</p>
                 </article>
               ))}
             </div>
@@ -405,16 +410,14 @@ export default function ApproachPage() {
               <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
                 Start with understanding
               </p>
-
               <h2 className="mt-3 max-w-[680px] font-serif text-[38px] leading-[1.03] tracking-[-0.035em] text-[#123F35] sm:text-[52px]">
-                See where your everyday health patterns{" "}
-                <span className="italic text-[#65966F]">stand today.</span>
+                See where your everyday health patterns <span className="italic text-[#65966F]">stand today.</span>
               </h2>
-
               <p className="mt-5 max-w-[650px] text-[14px] leading-7 text-[#687A73] sm:text-[15px] sm:leading-8">
-                The 21-Point Lifestyle Assessment is a starting point for
-                looking at different areas of everyday health. Explore the
-                assessment before deciding what you may want to work on.
+                The 21-Point Lifestyle Assessment is a 21-question review
+                across sleep, food, movement, digestion, and stress — a
+                starting point for identifying where to focus, not a
+                clinical diagnosis.
               </p>
             </div>
 
@@ -437,15 +440,11 @@ export default function ApproachPage() {
       <section className="bg-[#173F35]">
         <Container>
           <div className="mx-auto max-w-[760px] py-14 text-center sm:py-16 lg:py-20">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B7CCB8]">
-              Explore Sutra Health
-            </p>
-
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B7CCB8]">Explore Sutra Health</p>
             <h2 className="mt-3 font-serif text-[38px] leading-[1.05] tracking-[-0.035em] text-[#FAF8F1] sm:text-[50px]">
               Understand your health. Build the habits.{" "}
               <span className="italic text-[#B7CCB8]">Sustain the change.</span>
             </h2>
-
             <p className="mx-auto mt-5 max-w-[620px] text-[14px] leading-7 text-[#C5D2CC] sm:text-[15px] sm:leading-8">
               Explore the individual approaches or speak with Sutra Health
               about what may be appropriate for your health goals.
@@ -459,7 +458,6 @@ export default function ApproachPage() {
                 Book a Consultation
                 <span aria-hidden="true">→</span>
               </Link>
-
               <Link
                 href="/conditions"
                 className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-white/10"
@@ -472,9 +470,7 @@ export default function ApproachPage() {
         </Container>
       </section>
 
-
-      {/* FAQ */}
       <FAQ faqs={approachFAQs} />
-</main>
+    </main>
   );
 }
