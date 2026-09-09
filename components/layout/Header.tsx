@@ -2,152 +2,69 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import type { LucideIcon } from "lucide-react";
+import {
+  Activity,
+  Apple,
+  Archive,
+  Bone,
+  Brain,
+  ClipboardCheck,
+  Database,
+  FileText,
+  FlaskConical,
+  HeartPulse,
+  PersonStanding,
+  Scale,
+  Sparkles,
+  UserRound,
+  UsersRound,
+} from "lucide-react";
+
+const whatWeDo = [
+  { label: "Lifestyle Medicine", href: "/approach/lifestyle", icon: HeartPulse },
+  { label: "Nutrition Counselling", href: "/approach/nutrition", icon: Apple }, 
+  { label: "Therapeutic Yoga", href: "/approach/therapeutic-yoga", icon: PersonStanding },
+  { label: "Breath & Mindfulness", href: "/approach/therapeutic-yoga", icon: PersonStanding },
+
+];
 
 const conditions = [
-  {
-    label: "Weight Management",
-    href: "/conditions/weight-management",
-  },
-  {
-    label: "Metabolic Health",
-    href: "/conditions/metabolic-health",
-  },
-  {
-    label: "High Blood Pressure",
-    href: "/conditions/high-blood-pressure",
-  },
-  {
-    label: "Arthritis & Joint Pain",
-    href: "/conditions/arthritis-joint-pain",
-  },
-  {
-    label: "Migraine & Headache",
-    href: "/conditions/migraine-headache",
-  },
-  {
-    label: "Digestive & Gut Health",
-    href: "/conditions/digestive-gut-health",
-  },
+  { label: "Weight Management", href: "/conditions/weight-management", icon: Scale },
+  { label: "Metabolic Health", href: "/conditions/metabolic-health", icon: Activity },
+  { label: "High Blood Pressure", href: "/conditions/high-blood-pressure", icon: HeartPulse },
+  { label: "Arthritis & Joint Pain", href: "/conditions/arthritis-joint-pain", icon: Bone },
+  { label: "Migraine & Headache", href: "/conditions/migraine-headache", icon: Brain },
+  { label: "Digestive & Gut Health", href: "/conditions/digestive-gut-health", icon: Apple },
+  { label: "Women's Health", href: "/conditions/womens-health", icon: Sparkles },
 ];
 
 const about = [
-  {
-    label: "About Sutra Health",
-    href: "/about",
-  },
-  {
-    label: "Doctors & Experts",
-    href: "/doctors",
-  },
-  {
-    label: "Volunteer",
-    href: "/volunteer",
-  },
-];
-
-const approach = [
-  {
-    label: "The Sutra Health Method",
-    href: "/approach",
-  },
-  {
-    label: "Lifestyle Medicine",
-    href: "/approach/lifestyle",
-  },
-  {
-    label: "Nutrition",
-    href: "/approach/nutrition",
-  },
-  {
-    label: "Therapeutic Yoga & Movement",
-    href: "/approach/therapeutic-yoga",
-  },
-  {
-    label: "Breath & Mindfulness",
-    href: "/approach/breath-mindfulness",
-  },
-  {
-    label: "21-Point Lifestyle Assessment",
-    href: "/score",
-  },
-];
-
-const programs = [
-  {
-    label: "Physician Consultation",
-    href: "/programs/physician-consultation",
-  },
-  {
-    label: "Dietary Advice",
-    href: "/programs/dietary-advice",
-  },
-  {
-    label: "Lifestyle Counselling",
-    href: "/programs/lifestyle-counselling",
-  },
-  {
-    label: "Therapeutic Yoga",
-    href: "/programs/therapeutic-yoga",
-  },
-  {
-    label: "Pranayama",
-    href: "/programs/pranayama",
-  },
-  {
-    label: "Meditation",
-    href: "/programs/meditation",
-  },
-  {
-    label: "Shirodhara",
-    href: "/programs/shirodhara",
-  },
-  {
-    label: "My Buddy",
-    href: "/programs/my-buddy",
-  },
-  {
-    label: "Singing, Kirtan & Dance",
-    href: "/programs/singing-kirtan-dance",
-  },
+  { label: "About Sutra Health", href: "/about", icon: Sparkles },
+  { label: "Doctor & Experts", href: "/doctors", icon: UserRound },
+  { label: "Volunteer", href: "/volunteer", icon: UsersRound },
 ];
 
 const resources = [
-  {
-    label: "Health Articles",
-    href: "/resources/articles",
-  },
-  {
-    label: "Research & Publications",
-    href: "/resources/research",
-  },
-  {
-    label: "Practice Knowledge System",
-    href: "/resources/knowledge-system",
-  },
-  {
-    label: "21-Point Assessment",
-    href: "/score",
-  },
+  { label: "Health Articles", href: "/resources/articles", icon: FileText },
+  { label: "Research & Publications", href: "/resources/research", icon: FlaskConical },
+  { label: "Practice Knowledge System", href: "/resources/knowledge-system", icon: Database },
+  { label: "21-Question Lifestyle Assessment", href: "/score", icon: ClipboardCheck },
+  { label: "Gallery", href: "/archive", icon: Archive },
 ];
 
 type DropdownName =
-  | "about"
+  | "whatWeDo"
   | "conditions"
-  | "approach"
-  | "programs"
+  | "about"
   | "resources"
   | null;
 
 interface DropdownProps {
   name: Exclude<DropdownName, null>;
   label: string;
-  eyebrow: string;
-  title: string;
-  items: { label: string; href: string }[];
-  viewAll?: {
-    label: string;
-    href: string;
-  };
+  items: { label: string; href: string; icon: LucideIcon }[];
+  viewAll?: { label: string; href: string };
   className?: string;
   openDropdown: DropdownName;
   toggleDropdown: (name: DropdownName) => void;
@@ -158,8 +75,6 @@ interface DropdownProps {
 function DesktopDropdown({
   name,
   label,
-  eyebrow,
-  title,
   items,
   viewAll,
   className = "",
@@ -178,56 +93,32 @@ function DesktopDropdown({
     >
       <button
         type="button"
-        className={`navDropdownButton ${
-          isOpen ? "navDropdownButtonOpen" : ""
-        }`}
+        className={`navDropdownButton ${isOpen ? "navDropdownButtonOpen" : ""}`}
         aria-expanded={isOpen}
         onClick={() => toggleDropdown(name)}
       >
         <span>{label}</span>
-
-        <span
-          className={`chevron ${isOpen ? "chevronOpen" : ""}`}
-          aria-hidden="true"
-        />
+        <span className={`chevron ${isOpen ? "chevronOpen" : ""}`} aria-hidden="true" />
       </button>
 
       {isOpen && (
         <div className={`dropdownMenu ${className}`}>
-          <div className="dropdownHeader">
-            <div>
-              <span className="dropdownEyebrow">{eyebrow}</span>
-              <span className="dropdownTitle">{title}</span>
-            </div>
-
+          <div className="dropdownList">
+            {items.map((item) => (
+              <Link key={item.href} href={item.href} className="dropdownItem" onClick={closeNavigation}>
+                <span className="dropdownItemMain">
+                  <span className="dropdownItemIcon" aria-hidden="true"><item.icon size={14} strokeWidth={1.7} /></span>
+                  <span>{item.label}</span>
+                </span>
+                <span className="dropdownArrow" aria-hidden="true">→</span>
+              </Link>
+            ))}
             {viewAll && (
-              <Link href={viewAll.href} onClick={closeNavigation}>
+              <Link href={viewAll.href} className="dropdownViewAll" onClick={closeNavigation}>
                 {viewAll.label}
                 <span aria-hidden="true">→</span>
               </Link>
             )}
-          </div>
-
-          <div className="dropdownGrid">
-            {items.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="dropdownItem"
-                onClick={closeNavigation}
-              >
-                <span className="dropdownItemTitle">
-                  {item.label}
-                </span>
-
-                <span
-                  className="dropdownArrow"
-                  aria-hidden="true"
-                >
-                  →
-                </span>
-              </Link>
-            ))}
           </div>
         </div>
       )}
@@ -238,7 +129,7 @@ function DesktopDropdown({
 interface MobileDropdownProps {
   name: Exclude<DropdownName, null>;
   label: string;
-  items: { label: string; href: string }[];
+  items: { label: string; href: string; icon: LucideIcon }[];
   viewAll?: {
     label: string;
     href: string;
@@ -268,11 +159,8 @@ function MobileDropdown({
         aria-expanded={isOpen}
       >
         <span>{label}</span>
-
         <span
-          className={`mobileChevron ${
-            isOpen ? "mobileChevronOpen" : ""
-          }`}
+          className={`mobileChevron ${isOpen ? "mobileChevronOpen" : ""}`}
           aria-hidden="true"
         />
       </button>
@@ -294,7 +182,10 @@ function MobileDropdown({
             href={item.href}
             onClick={closeNavigation}
           >
-            {item.label}
+            <span className="mobileDropdownItemIcon" aria-hidden="true">
+              <item.icon size={14} strokeWidth={1.7} />
+            </span>
+            <span>{item.label}</span>
           </Link>
         ))}
       </div>
@@ -322,10 +213,7 @@ export default function Header() {
     document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
-      document.removeEventListener(
-        "mousedown",
-        handleClickOutside
-      );
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
@@ -345,9 +233,7 @@ export default function Header() {
   }, []);
 
   function toggleDropdown(name: DropdownName) {
-    setOpenDropdown((current) =>
-      current === name ? null : name
-    );
+    setOpenDropdown((current) => (current === name ? null : name));
   }
 
   function closeNavigation() {
@@ -358,7 +244,6 @@ export default function Header() {
   return (
     <header ref={navRef} className="siteHeader">
       <div className="navbarContainer">
-
         {/* BRAND */}
         <Link
           href="/"
@@ -376,10 +261,7 @@ export default function Header() {
           </div>
 
           <div className="brandText">
-            <span className="brandName">
-              Sutra Health
-            </span>
-
+            <span className="brandName">Sutra Health</span>
             <span className="brandTagline">
               Integrative Lifestyle Healthcare
             </span>
@@ -387,19 +269,53 @@ export default function Header() {
         </Link>
 
         {/* DESKTOP NAV */}
-        <nav
-          className="desktopNav"
-          aria-label="Main navigation"
-        >
-          <Link href="/" className="navLink">
+        <nav className="desktopNav" aria-label="Main navigation">
+          <Link href="/" className="navLink" onClick={closeNavigation}>
             Home
+          </Link>
+
+          <DesktopDropdown
+            name="whatWeDo"
+            label="What We Do"
+            items={whatWeDo}
+            openDropdown={openDropdown}
+            toggleDropdown={toggleDropdown}
+            closeNavigation={closeNavigation}
+            setOpenDropdown={setOpenDropdown}
+            className="whatWeDoMenu"
+          />
+
+          <DesktopDropdown
+            name="conditions"
+            label="Conditions"
+            items={conditions}
+            viewAll={{ label: "View all", href: "/conditions" }}
+            openDropdown={openDropdown}
+            toggleDropdown={toggleDropdown}
+            closeNavigation={closeNavigation}
+            setOpenDropdown={setOpenDropdown}
+            className="conditionsMenu"
+          />
+
+          <Link
+            href="/approach"
+            className="navLink"
+            onClick={closeNavigation}
+          >
+            Our Approach
+          </Link>
+
+          <Link
+            href="/retreat-programs"
+            className="navLink"
+            onClick={closeNavigation}
+          >
+            Retreats
           </Link>
 
           <DesktopDropdown
             name="about"
             label="About"
-            eyebrow="Who we are"
-            title="About Sutra Health"
             items={about}
             openDropdown={openDropdown}
             toggleDropdown={toggleDropdown}
@@ -409,57 +325,8 @@ export default function Header() {
           />
 
           <DesktopDropdown
-            name="conditions"
-            label="Conditions"
-            eyebrow="Health concerns"
-            title="Conditions"
-            items={conditions}
-            viewAll={{
-              label: "View all",
-              href: "/conditions",
-            }}
-            openDropdown={openDropdown}
-            toggleDropdown={toggleDropdown}
-            closeNavigation={closeNavigation}
-            setOpenDropdown={setOpenDropdown}
-            className="conditionsMenu"
-          />
-
-          <DesktopDropdown
-            name="approach"
-            label="Approach"
-            eyebrow="How we work"
-            title="The Sutra Health Method"
-            items={approach}
-            viewAll={{
-              label: "View all",
-              href: "/approach",
-            }}
-            openDropdown={openDropdown}
-            toggleDropdown={toggleDropdown}
-            closeNavigation={closeNavigation}
-            setOpenDropdown={setOpenDropdown}
-            className="approachMenu"
-          />
-
-          <DesktopDropdown
-            name="programs"
-            label="Programs"
-            eyebrow="What we offer"
-            title="Health & Wellness Programs"
-            items={programs}
-            openDropdown={openDropdown}
-            toggleDropdown={toggleDropdown}
-            closeNavigation={closeNavigation}
-            setOpenDropdown={setOpenDropdown}
-            className="programsMenu"
-          />
-
-          <DesktopDropdown
             name="resources"
             label="Resources"
-            eyebrow="Learn & explore"
-            title="Resources"
             items={resources}
             openDropdown={openDropdown}
             toggleDropdown={toggleDropdown}
@@ -467,37 +334,18 @@ export default function Header() {
             setOpenDropdown={setOpenDropdown}
             className="resourcesMenu"
           />
-
-          <Link
-            href="/retreat-programs"
-            className="navLink"
-          >
-            Retreat
-          </Link>
-
-          <Link
-            href="/archive"
-            className="navLink"
-          >
-            Gallery
-          </Link>
-
-            <Link href="/contact" className="navLink">
+          <Link href="/contact" className="navLink" onClick={closeNavigation}>
             Contact
           </Link>
-
         </nav>
 
-        
-
-        {/* DESKTOP CTA */}
-        <Link
-          href="/book-appointment"
-          className="desktopBookButton"
-        >
-          <span>Book Appointment</span>
-          <span aria-hidden="true">→</span>
-        </Link>
+        {/* DESKTOP ACTIONS */}
+        <div className="desktopNavActions">
+          <Link href="/book-appointment" className="desktopBookButton">
+            <span>Book Consultation</span>
+            <span aria-hidden="true">→</span>
+          </Link>
+        </div>
 
         {/* MOBILE MENU BUTTON */}
         <button
@@ -511,57 +359,26 @@ export default function Header() {
           }}
           aria-expanded={mobileOpen}
           aria-label={
-            mobileOpen
-              ? "Close navigation menu"
-              : "Open navigation menu"
+            mobileOpen ? "Close navigation menu" : "Open navigation menu"
           }
         >
-          <span
-            className={
-              mobileOpen
-                ? "line lineOneOpen"
-                : "line"
-            }
-          />
-
-          <span
-            className={
-              mobileOpen
-                ? "line lineTwoOpen"
-                : "line"
-            }
-          />
-
-          <span
-            className={
-              mobileOpen
-                ? "line lineThreeOpen"
-                : "line"
-            }
-          />
+          <span className={mobileOpen ? "line lineOneOpen" : "line"} />
+          <span className={mobileOpen ? "line lineTwoOpen" : "line"} />
+          <span className={mobileOpen ? "line lineThreeOpen" : "line"} />
         </button>
       </div>
 
       {/* MOBILE NAV */}
-      <div
-        className={`mobileNav ${
-          mobileOpen ? "mobileNavOpen" : ""
-        }`}
-      >
+      <div className={`mobileNav ${mobileOpen ? "mobileNavOpen" : ""}`}>
         <div className="mobileNavInner">
-
-          <Link
-            href="/"
-            className="mobileNavLink"
-            onClick={closeNavigation}
-          >
+          <Link href="/" className="mobileNavLink" onClick={closeNavigation}>
             Home
           </Link>
 
           <MobileDropdown
-            name="about"
-            label="About"
-            items={about}
+            name="whatWeDo"
+            label="What We Do"
+            items={whatWeDo}
             openDropdown={openDropdown}
             toggleDropdown={toggleDropdown}
             closeNavigation={closeNavigation}
@@ -571,28 +388,32 @@ export default function Header() {
             name="conditions"
             label="Conditions"
             items={conditions}
-            viewAll={{
-              label: "All Conditions",
-              href: "/conditions",
-            }}
+            viewAll={{ label: "All Conditions", href: "/conditions" }}
             openDropdown={openDropdown}
             toggleDropdown={toggleDropdown}
             closeNavigation={closeNavigation}
           />
 
-          <MobileDropdown
-            name="approach"
-            label="Approach"
-            items={approach}
-            openDropdown={openDropdown}
-            toggleDropdown={toggleDropdown}
-            closeNavigation={closeNavigation}
-          />
+          <Link
+            href="/approach"
+            className="mobileNavLink"
+            onClick={closeNavigation}
+          >
+            Our Approach
+          </Link>
+
+          <Link
+            href="/retreat-programs"
+            className="mobileNavLink"
+            onClick={closeNavigation}
+          >
+            Retreats
+          </Link>
 
           <MobileDropdown
-            name="programs"
-            label="Programs"
-            items={programs}
+            name="about"
+            label="About"
+            items={about}
             openDropdown={openDropdown}
             toggleDropdown={toggleDropdown}
             closeNavigation={closeNavigation}
@@ -607,27 +428,7 @@ export default function Header() {
             closeNavigation={closeNavigation}
           />
 
-          <Link
-            href="/retreat-programs"
-            className="mobileNavLink"
-            onClick={closeNavigation}
-          >
-            Retreat
-          </Link>
-
-          <Link
-            href="/archive"
-            className="mobileNavLink"
-            onClick={closeNavigation}
-          >
-            Gallery
-          </Link>
-
-          <Link
-            href="/contact"
-            className="mobileNavLink"
-            onClick={closeNavigation}
-          >
+           <Link href="/contact" className="mobileNavLink" onClick={closeNavigation}>
             Contact
           </Link>
 
@@ -636,7 +437,7 @@ export default function Header() {
             className="mobileBookButton"
             onClick={closeNavigation}
           >
-            <span>Book Appointment</span>
+            <span>Book Consultation</span>
             <span aria-hidden="true">→</span>
           </Link>
         </div>

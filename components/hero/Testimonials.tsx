@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import Container from "@/components/shared/Container";
 
 const testimonials = [
@@ -64,198 +65,181 @@ const testimonials = [
   },
 ];
 
-export default function Testimonials() {
-  // Desktop: 2 slides (3 + 3)
-  const [desktopSlide, setDesktopSlide] = useState(0);
+const DESKTOP_PER_SLIDE = 3;
+const desktopSlides = Math.ceil(testimonials.length / DESKTOP_PER_SLIDE);
 
-  // Mobile: 6 slides (1 + 1 + 1 + 1 + 1 + 1)
+export default function Testimonials() {
+  const [desktopSlide, setDesktopSlide] = useState(0);
   const [mobileSlide, setMobileSlide] = useState(0);
 
-  const desktopSlides = 2;
-  const mobileSlides = testimonials.length;
-
-  /* ==================================================
-     DESKTOP AUTO SLIDE
-     ================================================== */
+  const desktopGroups = useMemo(() => {
+    return Array.from({ length: desktopSlides }, (_, index) =>
+      testimonials.slice(
+        index * DESKTOP_PER_SLIDE,
+        index * DESKTOP_PER_SLIDE + DESKTOP_PER_SLIDE,
+      ),
+    );
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setDesktopSlide((previous) =>
-        previous === desktopSlides - 1
-          ? 0
-          : previous + 1,
-      );
-    }, 5000);
+      setDesktopSlide((current) => (current + 1) % desktopSlides);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, []);
 
-  /* ==================================================
-     MOBILE AUTO SLIDE
-     ================================================== */
-
   useEffect(() => {
     const interval = setInterval(() => {
-      setMobileSlide((previous) =>
-        previous === mobileSlides - 1
-          ? 0
-          : previous + 1,
-      );
-    }, 5000);
+      setMobileSlide((current) => (current + 1) % testimonials.length);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, []);
+
+  const previousMobile = () => {
+    setMobileSlide((current) =>
+      current === 0 ? testimonials.length - 1 : current - 1,
+    );
+  };
+
+  const nextMobile = () => {
+    setMobileSlide((current) => (current + 1) % testimonials.length);
+  };
+
+  const previousDesktop = () => {
+    setDesktopSlide((current) =>
+      current === 0 ? desktopSlides - 1 : current - 1,
+    );
+  };
+
+  const nextDesktop = () => {
+    setDesktopSlide((current) => (current + 1) % desktopSlides);
+  };
 
   return (
-    <section className="bg-[#FAF8F1] py-20 sm:py-24 lg:py-28">
+    <section className="bg-[#F0F4ED] py-20 sm:py-24 lg:py-28">
       <Container>
-
-        {/* ==================================================
-            HEADING
-            ================================================== */}
-
         <div className="mx-auto max-w-2xl text-center">
           <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#6B9573]">
-            What people say
+            Patient experiences
           </p>
 
-          <h2 className="font-serif text-[40px] leading-[1.05] tracking-[-0.035em] text-[#173F35] sm:text-[48px]">
-            Real people. Real terrace. Real results.
+          <h2 className="font-serif text-[40px] leading-[1.08] tracking-[-0.035em] text-[#173F35] sm:text-[48px]">
+            What patients remember
           </h2>
 
           <p className="mx-auto mt-5 max-w-xl text-[15px] leading-7 text-[#687A73]">
-            Real experiences shared by people who have visited or engaged with Sutra Health.
+            A selection of experiences shared by people who have spent time with
+            Sutra Health.
           </p>
         </div>
 
-        {/* ==================================================
-            DESKTOP
-            3 CARDS → 3 CARDS
-            ================================================== */}
-
-        <div className="mt-12 hidden overflow-hidden lg:mt-14 md:block">
-
-          <div
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{
-              transform: `translateX(-${desktopSlide * 100}%)`,
-            }}
-          >
-
-            {/* Slide 1 — first 3 */}
-
-            <div className="grid w-full shrink-0 grid-cols-3 gap-5">
-
-              {testimonials.slice(0, 3).map((testimonial) => (
-                <TestimonialCard
-                  key={testimonial.name}
-                  testimonial={testimonial}
-                />
+        {/* Desktop */}
+        <div className="relative mt-12 hidden md:block lg:mt-14">
+          <div className="overflow-hidden">
+            <div
+              className="flex transition-transform duration-500 ease-out"
+              style={{ transform: `translateX(-${desktopSlide * 100}%)` }}
+            >
+              {desktopGroups.map((group, groupIndex) => (
+                <div
+                  key={groupIndex}
+                  className="grid w-full shrink-0 grid-cols-3 gap-5"
+                >
+                  {group.map((testimonial) => (
+                    <TestimonialCard
+                      key={testimonial.name}
+                      testimonial={testimonial}
+                    />
+                  ))}
+                </div>
               ))}
-
             </div>
-
-            {/* Slide 2 — next 3 */}
-
-            <div className="grid w-full shrink-0 grid-cols-3 gap-5">
-
-              {testimonials.slice(3, 6).map((testimonial) => (
-                <TestimonialCard
-                  key={testimonial.name}
-                  testimonial={testimonial}
-                />
-              ))}
-
-            </div>
-
           </div>
 
-        </div>
+          <CarouselButton
+            direction="previous"
+            onClick={previousDesktop}
+            className="absolute -left-5 top-1/2 hidden -translate-y-1/2 lg:flex"
+          />
+          <CarouselButton
+            direction="next"
+            onClick={nextDesktop}
+            className="absolute -right-5 top-1/2 hidden -translate-y-1/2 lg:flex"
+          />
 
-        {/* ==================================================
-            DESKTOP INDICATORS
-            ================================================== */}
-
-        <div className="mt-8 hidden justify-center gap-2 md:flex">
-
-          {Array.from({ length: desktopSlides }).map((_, index) => (
-            <button
-              key={index}
-              type="button"
-              aria-label={`Show testimonial group ${index + 1}`}
-              aria-current={desktopSlide === index}
-              onClick={() => setDesktopSlide(index)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                desktopSlide === index
-                  ? "w-6 bg-[#173F35]"
-                  : "w-1.5 bg-[#B9C8BA]"
-              }`}
-            />
-          ))}
-
-        </div>
-
-        {/* ==================================================
-            MOBILE
-            1 CARD → 1 CARD
-            ================================================== */}
-
-        <div className="mt-12 overflow-hidden md:hidden">
-
-          <div
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{
-              transform: `translateX(-${mobileSlide * 100}%)`,
-            }}
-          >
-
-            {testimonials.map((testimonial) => (
-              <div
-                key={testimonial.name}
-                className="w-full shrink-0 px-0.5"
-              >
-                <TestimonialCard
-                  testimonial={testimonial}
-                />
-              </div>
+          <div className="mt-8 flex items-center justify-center gap-2">
+            {desktopGroups.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                aria-label={`Show testimonial group ${index + 1}`}
+                aria-current={desktopSlide === index}
+                onClick={() => setDesktopSlide(index)}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  desktopSlide === index
+                    ? "w-7 bg-[#173F35]"
+                    : "w-1.5 bg-[#B9C8BA]"
+                }`}
+              />
             ))}
+          </div>
+        </div>
 
+        {/* Mobile */}
+        <div className="mt-10 md:hidden">
+          <div className="overflow-hidden">
+            <div
+              className="flex transition-transform duration-500 ease-out"
+              style={{ transform: `translateX(-${mobileSlide * 100}%)` }}
+            >
+              {testimonials.map((testimonial) => (
+                <div key={testimonial.name} className="w-full shrink-0 px-0.5">
+                  <TestimonialCard testimonial={testimonial} />
+                </div>
+              ))}
+            </div>
           </div>
 
+          <div className="mt-6 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <CarouselButton direction="previous" onClick={previousMobile} />
+              <CarouselButton direction="next" onClick={nextMobile} />
+            </div>
+
+            <p className="text-[11px] font-medium tracking-[0.12em] text-[#687A73]">
+              {String(mobileSlide + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}
+            </p>
+          </div>
         </div>
-
-        {/* ==================================================
-            MOBILE INDICATORS
-            ================================================== */}
-
-        <div className="mt-8 flex justify-center gap-2 md:hidden">
-
-          {testimonials.map((testimonial, index) => (
-            <button
-              key={testimonial.name}
-              type="button"
-              aria-label={`Show testimonial ${index + 1}`}
-              aria-current={mobileSlide === index}
-              onClick={() => setMobileSlide(index)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                mobileSlide === index
-                  ? "w-6 bg-[#173F35]"
-                  : "w-1.5 bg-[#B9C8BA]"
-              }`}
-            />
-          ))}
-
-        </div>
-
       </Container>
     </section>
   );
 }
 
+function CarouselButton({
+  direction,
+  onClick,
+  className = "",
+}: {
+  direction: "previous" | "next";
+  onClick: () => void;
+  className?: string;
+}) {
+  const Icon = direction === "previous" ? ChevronLeft : ChevronRight;
 
-/* ==================================================
-   TESTIMONIAL CARD
-   ================================================== */
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={direction === "previous" ? "Previous testimonials" : "Next testimonials"}
+      className={`flex h-10 w-10 items-center justify-center rounded-full border border-[#173F35]/12 bg-[#FAF8F1] text-[#173F35] transition-colors duration-200 hover:border-[#173F35]/25 hover:bg-white ${className}`}
+    >
+      <Icon size={16} strokeWidth={1.6} />
+    </button>
+  );
+}
 
 function TestimonialCard({
   testimonial,
@@ -267,42 +251,28 @@ function TestimonialCard({
   };
 }) {
   return (
-    <article className="flex min-h-[260px] flex-col rounded-2xl border border-[#173F35]/10 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_35px_rgba(23,63,53,0.07)]">
+    <article className="flex min-h-[300px] flex-col border border-[#173F35]/10 bg-[#FAF8F1] p-7 sm:p-8">
+      <Quote size={19} strokeWidth={1.35} className="text-[#65966F]" aria-hidden="true" />
 
-      {/* Quote */}
-
-      <div className="text-[34px] leading-none text-[#79A083]">
-        “
-      </div>
-
-      {/* Text */}
-
-      <p className="mt-3 text-[14px] leading-7 text-[#5E7069]">
+      <p className="mt-6 text-[15px] leading-7 text-[#52645D]">
         {testimonial.quote}
       </p>
 
-      {/* Patient */}
-
-      <div className="mt-auto flex items-center gap-3 border-t border-[#173F35]/10 pt-5">
-
-        <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#EAF0E7] font-serif text-[15px] text-[#47765B]">
-          {testimonial.name.charAt(0)}
-        </div>
-
+      <div className="mt-auto flex items-end justify-between gap-4 border-t border-[#173F35]/10 pt-6">
         <div>
-
-          <p className="text-[12px] font-semibold text-[#173F35]">
+          <p className="text-[13px] font-semibold text-[#173F35]">
             {testimonial.name}
           </p>
-
-          <p className="mt-0.5 text-[11px] text-[#7A8983]">
+          <p className="mt-1 text-[11px] text-[#7A8983]">
             {testimonial.source}
           </p>
-
         </div>
 
+        <span
+          className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#65966F]"
+          aria-hidden="true"
+        />
       </div>
-
     </article>
   );
 }

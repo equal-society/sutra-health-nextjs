@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Sparkles } from "lucide-react";
 import Link from "next/link";
 import "./chatbot.css";
 
@@ -118,12 +119,20 @@ export default function Chatbot() {
               <span className="sutra-chatbot__eyebrow">SUTRA HEALTH</span>
               <strong>Health Assistant</strong>
             </div>
-            <button aria-label="Close chatbot" onClick={() => setOpen(false)}>×</button>
+            <button
+              aria-label="Close chatbot"
+              onClick={() => setOpen(false)}
+            >
+              ×
+            </button>
           </header>
 
           <div className="sutra-chatbot__messages">
             {messages.map((message) => (
-              <div key={message.id} className={`sutra-chatbot__message sutra-chatbot__message--${message.role}`}>
+              <div
+                key={message.id}
+                className={`sutra-chatbot__message sutra-chatbot__message--${message.role}`}
+              >
                 {message.text}
               </div>
             ))}
@@ -146,11 +155,15 @@ export default function Chatbot() {
 
       <button
         className="sutra-chatbot__launcher"
-        aria-label={open ? "Close Sutra Health Assistant" : "Open Sutra Health Assistant"}
+        aria-label={
+          open ? "Close Sutra Health Assistant" : "Open Sutra Health Assistant"
+        }
         aria-expanded={open}
         onClick={() => setOpen((value) => !value)}
       >
-        <span className="sutra-chatbot__launcher-icon">✦</span>
+        <span className="sutra-chatbot__launcher-icon" aria-hidden="true">
+          <Sparkles size={15} strokeWidth={2.1} />
+        </span>
         <span className="sutra-chatbot__launcher-text">Ask Sutra</span>
       </button>
     </>

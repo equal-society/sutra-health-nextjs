@@ -1,66 +1,45 @@
-import Link from "next/link";
-
 const steps = [
   {
     number: "01",
     title: "Understand",
     subtitle: "See the whole picture.",
     description:
-      "We start with you, not your symptom. Food, sleep, stress, movement — the whole context, before anything else.",
+      "We begin with the person, not just the health concern. We consider everyday factors such as food, movement, sleep, stress, breathing and routines to understand the wider picture.",
   },
   {
     number: "02",
     title: "Identify",
     subtitle: "Recognise the patterns.",
     description:
-      "We find the patterns actually driving the problem. Not guesses — patterns specific to your life.",
+      "We look at everyday habits and lifestyle patterns that may be relevant to health. This helps clarify where change may be useful and where to begin.",
   },
   {
     number: "03",
     title: "Personalise",
     subtitle: "Create a plan that fits real life.",
     description:
-      "We combine the right elements of lifestyle medicine, nutrition, and yoga therapy for your situation. There's no single plan that fits everyone.",
+      "There is no single routine that suits everyone. We bring together appropriate elements of Lifestyle Medicine, Nutrition, Yoga Therapy and lifestyle modification according to individual needs, circumstances and goals.",
   },
   {
     number: "04",
     title: "Practise",
     subtitle: "Turn understanding into action.",
     description:
-      "Advice you can't use is worthless. We turn every recommendation into something you can do this week.",
+      "Knowledge matters when it can be used in everyday life. We translate health education into practical actions involving areas such as food, movement, breathing, rest and other healthy behaviours.",
   },
   {
     number: "05",
     title: "Sustain",
     subtitle: "Build habits that can last.",
     description:
-      "Change that lasts is built slowly. We're not selling you a 21-day reset. We help you build habits that can last a lifetime.",
+      "Lasting change is built gradually. We focus on realistic habits that can become part of everyday life rather than relying on short-term routines or perfection.",
   },
   {
     number: "06",
     title: "Adapt",
     subtitle: "Review and keep moving forward.",
     description:
-      "Your life will change. Your plan should too. We check in and adjust — this isn't a one-time fix.",
-  },
-];
-
-const approaches = [
-  {
-    title: "Lifestyle Medicine",
-    href: "/approach/lifestyle",
-  },
-  {
-    title: "Nutrition",
-    href: "/approach/nutrition",
-  },
-  {
-    title: "Therapeutic Yoga",
-    href: "/approach/therapeutic-yoga",
-  },
-  {
-    title: "Breath & Mindfulness",
-    href: "/approach/breath-mindfulness",
+      "Life changes, and a health plan may need to change with it. We encourage reflection, review and adjustment as needs, circumstances and experience evolve.",
   },
 ];
 
@@ -172,8 +151,8 @@ export default function SutraHealthMethod() {
           <span aria-hidden="true">→</span>
         </div>
 
-        {/* Philosophy + internal links */}
-        <div className="mt-12 grid gap-10 border-t border-[#173F35]/15 pt-10 lg:grid-cols-[1fr_0.9fr] lg:items-start lg:gap-16">
+        {/* Philosophy + full approach CTA */}
+        <div className="mt-12 grid gap-10 border-t border-[#173F35]/15 pt-10 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-16">
           <div>
             <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#65966F] sm:text-[11px]">
               The philosophy
@@ -190,40 +169,14 @@ export default function SutraHealthMethod() {
             </blockquote>
           </div>
 
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
-              Explore the approach
-            </p>
-
-            <nav
-              aria-label="Sutra Health approach"
-              className="mt-4 divide-y divide-[#173F35]/10 border-y border-[#173F35]/10"
-            >
-              {approaches.map((approach) => (
-                <Link
-                  key={approach.href}
-                  href={approach.href}
-                  className="group flex items-center justify-between py-3.5 text-[13px] font-medium text-[#365B50] transition-colors hover:text-[#173F35] sm:py-4 sm:text-[14px]"
-                >
-                  <span>{approach.title}</span>
-
-                  <span
-                    aria-hidden="true"
-                    className="text-[#65966F] transition-transform duration-200 group-hover:translate-x-1"
-                  >
-                    →
-                  </span>
-                </Link>
-              ))}
-            </nav>
-
-            <Link
+          <div className="lg:pb-1">
+            <a
               href="/approach"
-              className="mt-6 inline-flex items-center gap-2 text-[13px] font-semibold text-[#173F35] transition-colors hover:text-[#65966F]"
+              className="inline-flex items-center gap-3 rounded-full border border-[#173F35]/20 px-5 py-3 text-[13px] font-semibold text-[#173F35] transition-colors hover:border-[#173F35] hover:bg-[#173F35] hover:text-[#F8F5EE]"
             >
-              See the full Sutra Health Method
+              Explore Our Approach
               <span aria-hidden="true">→</span>
-            </Link>
+            </a>
           </div>
         </div>
       </div>

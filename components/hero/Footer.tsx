@@ -2,6 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/shared/Container";
 
+const services = [
+  { label: "Lifestyle Medicine", href: "/approach/lifestyle" },
+  { label: "Nutrition Counselling", href: "/approach/nutrition" },
+  { label: "Therapeutic Yoga", href: "/approach/therapeutic-yoga" },
+  { label: "Breath & Mindfulness", href: "/approach/breath-mindfulness" },
+];
+
 const conditions = [
   { label: "Weight Management", href: "/conditions/weight-management" },
   { label: "Metabolic Health", href: "/conditions/metabolic-health" },
@@ -9,19 +16,51 @@ const conditions = [
   { label: "Arthritis & Joint Pain", href: "/conditions/arthritis-joint-pain" },
 ];
 
-const approaches = [
-  { label: "Lifestyle Medicine", href: "/approach/lifestyle" },
-  { label: "Nutrition", href: "/approach/nutrition" },
-  { label: "Therapeutic Yoga", href: "/approach/therapeutic-yoga" },
-  { label: "Breath & Mindfulness", href: "/approach/breath-mindfulness" },
+const resources = [
+  { label: "Health Resources", href: "/resources" },
+  { label: "21 Point Questionnaire", href: "/score" },
+  { label: "Retreats", href: "/retreat-programs" },
+  { label: "Archive", href: "/archive" },
 ];
 
-const programs = [
-  { label: "Physician Consultation", href: "/programs/physician-consultation" },
-  { label: "Dietary Advice", href: "/programs/dietary-advice" },
-  { label: "Lifestyle Counselling", href: "/programs/lifestyle-counselling" },
-  { label: "Therapeutic Yoga", href: "/programs/therapeutic-yoga" },
-];
+function FooterColumn({
+  title,
+  items,
+  footerLink,
+}: {
+  title: string;
+  items: { label: string; href: string }[];
+  footerLink?: { label: string; href: string };
+}) {
+  return (
+    <div>
+      <h2 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#B7CFC0] sm:text-[12px]">
+        {title}
+      </h2>
+
+      <nav className="mt-4 flex flex-col gap-1 sm:mt-5 sm:gap-3">
+        {items.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="inline-flex min-h-9 items-center text-[12px] text-[#D0DDD5] transition-colors hover:text-white sm:min-h-0 sm:text-[13px]"
+          >
+            {item.label}
+          </Link>
+        ))}
+
+        {footerLink && (
+          <Link
+            href={footerLink.href}
+            className="mt-1 inline-flex min-h-9 items-center text-[12px] font-semibold text-white sm:min-h-0 sm:text-[13px]"
+          >
+            {footerLink.label} →
+          </Link>
+        )}
+      </nav>
+    </div>
+  );
+}
 
 export default function Footer() {
   return (
@@ -65,113 +104,69 @@ export default function Footer() {
               href="/book-appointment"
               className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-[#FAF8F1] px-5 py-2.5 text-[12px] font-semibold text-[#123F35] transition hover:bg-white sm:mt-7 sm:px-6 sm:py-3 sm:text-[13px]"
             >
-              Book Appointment
+              Book Consultation
               <span aria-hidden="true">→</span>
             </Link>
           </div>
 
+          {/* What We Do */}
+          <FooterColumn
+            title="What We Do"
+            items={services}
+          />
+
           {/* Conditions */}
-          <div>
-            <h2 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#B7CFC0] sm:text-[12px]">
-              Conditions
-            </h2>
+          <FooterColumn
+            title="Conditions"
+            items={conditions}
+            footerLink={{ label: "View all conditions", href: "/conditions" }}
+          />
 
-            <nav className="mt-4 flex flex-col gap-1 sm:mt-5 sm:gap-3">
-              {conditions.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="inline-flex min-h-9 items-center text-[12px] text-[#D0DDD5] transition-colors hover:text-white sm:min-h-0 sm:text-[13px]"
-                >
-                  {item.label}
-                </Link>
-              ))}
+          {/* Resources */}
+          <FooterColumn title="Resources" items={resources} />
+        </div>
 
-              <Link
-                href="/conditions"
-                className="mt-1 inline-flex min-h-9 items-center text-[12px] font-semibold text-white sm:min-h-0 sm:text-[13px]"
-              >
-                View all conditions →
-              </Link>
-            </nav>
-          </div>
+        {/* Contact CTA */}
+        <div className="border-t border-white/10 py-8 sm:py-10 lg:py-12">
+          <div className="rounded-[18px] border border-white/10 bg-white/[0.035] px-5 py-6 sm:px-7 sm:py-7 lg:px-9 lg:py-8">
+            <div className="flex flex-col gap-7 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+              <div className="max-w-[540px]">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#B7CFC0] sm:text-[11px]">
+                  Get in touch
+                </p>
 
-          {/* Approach */}
-          <div>
-            <h2 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#B7CFC0] sm:text-[12px]">
-              Our Approach
-            </h2>
+                <h2 className="mt-2 font-serif text-[25px] leading-tight tracking-[-0.02em] text-white sm:text-[29px]">
+                  Have a question about where to start?
+                </h2>
 
-            <nav className="mt-4 flex flex-col gap-1 sm:mt-5 sm:gap-3">
-              {approaches.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="inline-flex min-h-9 items-center text-[12px] text-[#D0DDD5] transition-colors hover:text-white sm:min-h-0 sm:text-[13px]"
-                >
-                  {item.label}
-                </Link>
-              ))}
+                <p className="mt-2 max-w-[500px] text-[12px] leading-6 text-[#C1D1C8] sm:text-[13px] sm:leading-6">
+                  We&apos;re here to help you find the right next step for your
+                  health.
+                </p>
+              </div>
 
-              <Link
-                href="/approach"
-                className="mt-1 inline-flex min-h-9 items-center text-[12px] font-semibold text-white sm:min-h-0 sm:text-[13px]"
-              >
-                Explore our method →
-              </Link>
-            </nav>
-          </div>
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6 lg:shrink-0">
+                <div className="space-y-1.5 text-[12px] leading-5 sm:text-[13px]">
+                  <a
+                    href="tel:+919013103676"
+                    className="block text-[#D0DDD5] transition-colors hover:text-white"
+                  >
+                    +91 90131 03676
+                  </a>
 
-          {/* Programs & Contact */}
-          <div>
-            <h2 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#B7CFC0] sm:text-[12px]">
-              Programs
-            </h2>
-
-            <nav className="mt-4 flex flex-col gap-1 sm:mt-5 sm:gap-3">
-              {programs.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="inline-flex min-h-9 items-center text-[12px] text-[#D0DDD5] transition-colors hover:text-white sm:min-h-0 sm:text-[13px]"
-                >
-                  {item.label}
-                </Link>
-              ))}
-
-              <Link
-                href="/programs"
-                className="mt-1 inline-flex min-h-9 items-center text-[12px] font-semibold text-white sm:min-h-0 sm:text-[13px]"
-              >
-                View all programs →
-              </Link>
-            </nav>
-
-            <div className="mt-7 border-t border-white/10 pt-6">
-              <h2 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#B7CFC0] sm:text-[12px]">
-                Get in touch
-              </h2>
-
-              <div className="mt-3 space-y-2 text-[12px] leading-5 text-[#D0DDD5] sm:text-[13px]">
-                <a
-                  href="tel:+919013103676"
-                  className="block transition-colors hover:text-white"
-                >
-                  +91 90131 03676
-                </a>
-
-                <a
-                  href="mailto:info@lifequality.org.in"
-                  className="block break-all transition-colors hover:text-white sm:break-normal"
-                >
-                  info@lifequality.org.in
-                </a>
+                  <a
+                    href="mailto:info@lifequality.org.in"
+                    className="block break-all text-[#D0DDD5] transition-colors hover:text-white sm:break-normal"
+                  >
+                    info@lifequality.org.in
+                  </a>
+                </div>
 
                 <Link
                   href="/contact"
-                  className="inline-flex pt-1 font-semibold text-white"
+                  className="inline-flex min-h-10 w-fit items-center justify-center rounded-full border border-white/20 px-5 py-2 text-[11px] font-semibold text-white transition hover:border-white/40 hover:bg-white/5 sm:min-h-11 sm:px-6 sm:text-[12px]"
                 >
-                  Contact us →
+                  Contact us <span className="ml-2" aria-hidden="true">→</span>
                 </Link>
               </div>
             </div>
