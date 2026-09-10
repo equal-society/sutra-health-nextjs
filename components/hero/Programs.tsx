@@ -3,10 +3,10 @@ import Link from "next/link";
 import Container from "@/components/shared/Container";
 
 const services = [
-  { title: "Lifestyle Medicine", description: "Understand the daily patterns that may be affecting your health and build practical changes alongside appropriate medical care.", image: "/images/services/lifestyle-medicine.webp", href: "/approach/lifestyle" },
-  { title: "Nutrition Counselling", description: "Practical food guidance shaped around your preferences, health goals and real routine.", image: "/images/services/nutrition-counselling.webp", href: "/approach/nutrition" },
-  { title: "Therapeutic Yoga", description: "Adapted movement and yoga practices designed around your body, needs and capacity.", image: "/images/services/therapeutic-yoga.webp", href: "/approach/therapeutic-yoga" },
-  { title: "Breath & Mindfulness", description: "Simple practices that can support awareness, breathing and the ability to work with everyday stress.", image: "/images/services/meditation-stress-support.webp", href: "/approach/breath-mindfulness" },
+  { title: "Lifestyle Medicine", description: "Understand the daily patterns that may be affecting your health and build practical changes alongside appropriate medical care.", image: "/images/services/lifestyle-medicine.webp", href: "/what-we-do/lifestyle" },
+  { title: "Nutrition Counselling", description: "Practical food guidance shaped around your preferences, health goals and real routine.", image: "/images/services/nutrition-counselling.webp", href: "/what-we-do/nutrition" },
+  { title: "Therapeutic Yoga", description: "Adapted movement and yoga practices designed around your body, needs and capacity.", image: "/images/services/therapeutic-yoga.webp", href: "/what-we-do/therapeutic-yoga" },
+  { title: "Breath & Mindfulness", description: "Simple practices that can support awareness, breathing and the ability to work with everyday stress.", image: "/images/services/meditation-stress-support.webp", href: "/what-we-do/breath-mindfulness" },
 ];
 
 export default function Programs() {

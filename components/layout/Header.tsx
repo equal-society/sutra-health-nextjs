@@ -19,13 +19,14 @@ import {
   Sparkles,
   UserRound,
   UsersRound,
+  Wind,
 } from "lucide-react";
 
 const whatWeDo = [
-  { label: "Lifestyle Medicine", href: "/approach/lifestyle", icon: HeartPulse },
-  { label: "Nutrition Counselling", href: "/approach/nutrition", icon: Apple }, 
-  { label: "Therapeutic Yoga", href: "/approach/therapeutic-yoga", icon: PersonStanding },
-  { label: "Breath & Mindfulness", href: "/approach/therapeutic-yoga", icon: PersonStanding },
+  { label: "Lifestyle Medicine", href: "/what-we-do/lifestyle", icon: HeartPulse },
+  { label: "Nutrition Counselling", href: "/what-we-do/nutrition", icon: Apple }, 
+  { label: "Therapeutic Yoga", href: "/what-we-do/therapeutic-yoga", icon: PersonStanding },
+  { label: "Breath & Mindfulness", href: "/what-we-do/breath-mindfulness", icon: Wind},
 
 ];
 
@@ -41,7 +42,7 @@ const conditions = [
 
 const about = [
   { label: "About Sutra Health", href: "/about", icon: Sparkles },
-  { label: "Doctor & Experts", href: "/doctors", icon: UserRound },
+  { label: "Doctors & Experts", href: "/doctors", icon: UserRound },
   { label: "Volunteer", href: "/volunteer", icon: UsersRound },
 ];
 
