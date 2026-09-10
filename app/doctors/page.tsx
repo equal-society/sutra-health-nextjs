@@ -92,7 +92,55 @@ export default function DoctorsPage() {
       {/* =====================================================
             HERO
         ===================================================== */}
-        <section className="border-b border-[#173F35]/10">
+<section className="relative isolate overflow-hidden border-b border-[#173F35]/10">
+  {/* Background */}
+  <div
+    aria-hidden="true"
+    className="absolute inset-0 -z-20 bg-[linear-gradient(135deg,#FAF8F1_0%,#F4F2E8_42%,#E7EFE7_100%)]"
+  />
+
+  {/* Organic gradient shapes */}
+  <div
+    aria-hidden="true"
+    className="absolute -right-32 -top-32 -z-10 h-[420px] w-[420px] rounded-full bg-[#A9C5AC]/35 blur-3xl sm:h-[520px] sm:w-[520px]"
+  />
+
+  <div
+    aria-hidden="true"
+    className="absolute -bottom-48 left-[38%] -z-10 h-[420px] w-[420px] rounded-full bg-[#D8C9A9]/25 blur-3xl"
+  />
+
+  <div
+    aria-hidden="true"
+    className="absolute -left-32 top-[28%] -z-10 h-[260px] w-[260px] rounded-full bg-[#C6D9CA]/25 blur-3xl"
+  />
+
+  {/* Fine editorial grid */}
+  <div
+    aria-hidden="true"
+    className="absolute inset-0 -z-10 opacity-[0.035]"
+    style={{
+      backgroundImage:
+        "linear-gradient(#173F35 1px, transparent 1px), linear-gradient(90deg, #173F35 1px, transparent 1px)",
+      backgroundSize: "56px 56px",
+    }}
+  />
+
+  {/* Decorative rings */}
+  <div
+    aria-hidden="true"
+    className="absolute right-[7%] top-[16%] -z-10 hidden h-44 w-44 rounded-full border border-[#173F35]/10 lg:block"
+  />
+
+  <div
+    aria-hidden="true"
+    className="absolute right-[10%] top-[21%] -z-10 hidden h-28 w-28 rounded-full border border-[#65966F]/15 lg:block"
+  />
+
+  <div
+    aria-hidden="true"
+    className="absolute bottom-[13%] left-[8%] -z-10 hidden h-20 w-20 rounded-full border border-[#173F35]/10 lg:block"
+  />
           <Container>
             <div className="py-14 sm:py-18 lg:py-20">
               <div className="mx-auto max-w-[900px] text-center">

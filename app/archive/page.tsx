@@ -82,8 +82,10 @@ function archiveThumbUrl(identifier: string) {
 export default function ArchivePage() {
   return (
     <main className={styles.gallery}>
+      
       <section className={styles.hero} aria-labelledby="archive-title">
         <div className={styles.heroInner}>
+          
           <span className={styles.eyebrow}>Sutra Health</span>
           <h1 id="archive-title">Sutra Health Archive</h1>
           <p>

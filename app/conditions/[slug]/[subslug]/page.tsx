@@ -185,7 +185,57 @@ export default async function ConditionSubpage({
         </section>
 
         {/* Hero / Direct Answer */}
-        <section className="bg-[#f7f5f1] py-16 md:py-24">
+        <section className="relative isolate overflow-hidden ">
+  {/* Background */}
+  <div
+    aria-hidden="true"
+    className="absolute inset-0 -z-20 bg-[linear-gradient(135deg,#FAF8F1_0%,#F4F2E8_42%,#E7EFE7_100%)]"
+  />
+
+  {/* Organic gradient shapes */}
+  <div
+    aria-hidden="true"
+    className="absolute -right-32 -top-32 -z-10 h-[420px] w-[420px] rounded-full bg-[#A9C5AC]/35 blur-3xl sm:h-[520px] sm:w-[520px]"
+  />
+
+  <div
+    aria-hidden="true"
+    className="absolute -bottom-48 left-[38%] -z-10 h-[420px] w-[420px] rounded-full bg-[#D8C9A9]/25 blur-3xl"
+  />
+
+  <div
+    aria-hidden="true"
+    className="absolute -left-32 top-[28%] -z-10 h-[260px] w-[260px] rounded-full bg-[#C6D9CA]/25 blur-3xl"
+  />
+
+  {/* Fine editorial grid */}
+  <div
+    aria-hidden="true"
+    className="absolute inset-0 -z-10 opacity-[0.035]"
+    style={{
+      backgroundImage:
+        "linear-gradient(#173F35 1px, transparent 1px), linear-gradient(90deg, #173F35 1px, transparent 1px)",
+      backgroundSize: "56px 56px",
+    }}
+  />
+
+  {/* Decorative rings */}
+  <div
+    aria-hidden="true"
+    className="absolute right-[7%] top-[16%] -z-10 hidden h-44 w-44 rounded-full border border-[#173F35]/10 lg:block"
+  />
+
+  <div
+    aria-hidden="true"
+    className="absolute right-[10%] top-[21%] -z-10 hidden h-28 w-28 rounded-full border border-[#65966F]/15 lg:block"
+  />
+
+  <div
+    aria-hidden="true"
+    className="absolute bottom-[13%] left-[8%] -z-10 hidden h-20 w-20 rounded-full border border-[#173F35]/10 lg:block"
+  />
+
+        <section className=" py-16 md:py-24">
           <Container>
             <div className="mx-auto max-w-4xl">
               <p className="mb-5 text-sm font-medium uppercase tracking-[0.16em] text-[#55705b]">
@@ -203,6 +253,7 @@ export default async function ConditionSubpage({
               </div>
             </div>
           </Container>
+        </section>
         </section>
 
         {/* Main Content */}
