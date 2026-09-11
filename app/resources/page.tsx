@@ -1,537 +1,409 @@
-import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  ArrowRight,
-  BookOpen,
-  ClipboardCheck,
-  FlaskConical,
-  Library,
-} from "lucide-react";
-
+import { ArrowRight, Search } from "lucide-react";
 import Container from "@/components/shared/Container";
 
-export const metadata: Metadata = {
-  title: "Health Resources | Articles, Research & Guidance | Sutra Health",
-  description:
-    "Explore Sutra Health resources including health articles, research and publications, practical lifestyle guidance, and the 21-question lifestyle assessment.",
-  keywords: [
-    "Sutra Health resources",
-    "health articles",
-    "lifestyle medicine resources",
-    "integrative health resources",
-    "nutrition health guidance",
-    "therapeutic yoga resources",
-    "health research publications",
-    "21 question lifestyle assessment",
-  ],
-  alternates: {
-    canonical: "https://lifequality.org.in/resources",
-  },
-  openGraph: {
-    title: "Health Resources | Articles, Research & Guidance | Sutra Health",
-    description:
-      "Health education, research, practical guidance and the 21-question lifestyle assessment from Sutra Health.",
-    url: "https://lifequality.org.in/resources",
-    siteName: "Sutra Health",
-    type: "website",
-    locale: "en_IN",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Health Resources | Sutra Health",
-    description:
-      "Explore health articles, research, practical guidance and the 21-question lifestyle assessment.",
-  },
-};
-
-const resources = [
+const topics = [
   {
-    number: "01",
-    icon: BookOpen,
-    title: "Health Articles",
-    description:
-      "Clear, evidence-informed articles answering practical questions about lifestyle, nutrition, movement, sleep, stress and everyday health.",
-    href: "/resources/articles",
-    action: "Explore health articles",
+    label: "Stress & Mindfulness",
+    href: "/resources/articles/stress",
   },
   {
-    number: "02",
-    icon: FlaskConical,
-    title: "Research & Publications",
-    description:
-      "Research and publications connected with lifestyle medicine, health behaviour, therapeutic yoga and the work behind Sutra Health.",
-    href: "/resources/research",
-    action: "Explore research",
+    label: "Gut Health & Digestion",
+    href: "/resources/articles/gut-health",
   },
   {
-    number: "03",
-    icon: Library,
-    title: "Practice Knowledge",
-    description:
-      "Practical knowledge that translates health concepts into understandable ideas, habits and practices for everyday life.",
-    href: "/resources/knowledge-system",
-    action: "Explore practice knowledge",
+    label: "Nutrition",
+    href: "/resources/articles/nutrition",
+  },
+  {
+    label: "Yoga & Movement",
+    href: "/resources/articles/yoga-movement",
+  },
+  {
+    label: "Sleep & Recovery",
+    href: "/resources/articles/sleep",
+  },
+  {
+    label: "Healthy Habits",
+    href: "/resources/articles/healthy-habits",
+  },
+  {
+    label: "Women's Health",
+    href: "/resources/articles/womens-health",
+  },
+  {
+    label: "Men's Health",
+    href: "/resources/articles/mens-health",
+  },
+  {
+    label: "Health Conditions",
+    href: "/conditions",
+  },
+  {
+    label: "Preventive Health",
+    href: "/resources/articles/preventive-health",
+  },
+  {
+    label: "Ayurveda & Indian Wellness",
+    href: "/resources/articles/ayurveda",
+  },
+  {
+    label: "Retreat & Wellbeing",
+    href: "/resources/articles/retreat-wellbeing",
   },
 ];
 
-const practices = [
+const articleTypes = [
   {
-    number: "01",
-    title: "Lifestyle Medicine",
-    description: "Everyday patterns and sustainable health change.",
-    href: "/what-we-do/lifestyle",
+    label: "Health Guides",
+    description: "Practical guides for understanding everyday health questions.",
   },
   {
-    number: "02",
-    title: "Nutrition Counselling",
-    description: "Practical food guidance around your health and routine.",
-    href: "/what-we-do/nutrition",
+    label: "Explainers",
+    description: "Clear explanations of health concepts, approaches and practices.",
   },
   {
-    number: "03",
-    title: "Therapeutic Yoga",
-    description: "Adapted movement and yoga for individual needs.",
-    href: "/what-we-do/therapeutic-yoga",
+    label: "How-to Guides",
+    description: "Simple, practical steps you can consider in everyday life.",
   },
   {
-    number: "04",
-    title: "Breath & Mindfulness",
-    description: "Breathing, awareness and everyday stress support.",
-    href: "/what-we-do/breath-mindfulness",
-  },
-];
-
-const conditions = [
-  { label: "Weight Management", href: "/conditions/weight-management" },
-  { label: "Metabolic Health", href: "/conditions/metabolic-health" },
-  {
-    label: "High Blood Pressure",
-    href: "/conditions/high-blood-pressure",
+    label: "Yoga & Movement",
+    description: "Articles about yoga, movement, mobility and physical wellbeing.",
   },
   {
-    label: "Arthritis & Joint Pain",
-    href: "/conditions/arthritis-joint-pain",
+    label: "Breathing & Mindfulness",
+    description: "Breathing practices, mindfulness and approaches to stress.",
   },
   {
-    label: "Migraine & Headache",
-    href: "/conditions/migraine-headache",
+    label: "Nutrition",
+    description: "Food, eating patterns and practical nutrition guidance.",
   },
   {
-    label: "Digestive & Gut Health",
-    href: "/conditions/digestive-gut-health",
+    label: "Condition Guides",
+    description: "Lifestyle and wellbeing information related to health conditions.",
+  },
+  {
+    label: "Research & Evidence",
+    description: "Evidence-informed perspectives on health and wellbeing.",
+  },
+  {
+    label: "Wellness",
+    description: "Everyday practices that support rest, recovery and wellbeing.",
+  },
+  {
+    label: "Sutra Perspective",
+    description: "How we think about sustainable and personalised health change.",
   },
 ];
 
-const faqs = [
+const articles = [
   {
-    question: "What can I find in Sutra Health Resources?",
-    answer:
-      "The Resources section brings together health articles, research and publications, practical practice knowledge, and the 21-question lifestyle assessment. Older material is preserved separately in the Sutra Health Archive.",
+    category: "Stress & Mindfulness",
+    type: "Health Guide",
+    title: "How to Manage Stress Naturally",
+    description:
+      "Practical ways to approach everyday stress through breathing, movement, sleep and sustainable routines.",
+    href: "/resources/articles/how-to-manage-stress",
+    date: "September 2026",
+    readTime: "7 min read",
   },
   {
-    question: "Are Sutra Health resources medical advice?",
-    answer:
-      "Sutra Health resources are intended for health education and practical information. They do not replace an individual medical assessment, diagnosis or treatment plan from an appropriate healthcare professional.",
+    category: "Yoga & Movement",
+    type: "Yoga Guide",
+    title: "Yoga for Stress Relief",
+    description:
+      "Understand how yoga, mindful movement and breathing may fit into a broader approach to stress management.",
+    href: "/resources/articles/yoga-for-stress-relief",
+    date: "September 2026",
+    readTime: "6 min read",
   },
   {
-    question: "Where should I start if I have a health concern?",
-    answer:
-      "If you want to understand a specific concern, start with the relevant Conditions page. If you want to understand the practices Sutra Health offers, explore What We Do. The 21-question lifestyle assessment can also help you reflect on everyday health patterns.",
+    category: "Breathing & Mindfulness",
+    type: "How-to Guide",
+    title: "Deep Breathing Exercises for Stress Relief",
+    description:
+      "A practical introduction to breathing exercises and how they can become part of a daily relaxation routine.",
+    href: "/resources/articles/deep-breathing-exercises-for-stress-relief",
+    date: "September 2026",
+    readTime: "6 min read",
   },
   {
-    question: "Where can I find older Sutra Health material?",
-    answer:
-      "Older wellness, lifestyle, clinic, yoga, food and publication material is preserved in the Sutra Health Archive.",
+    category: "Gut Health & Digestion",
+    type: "Health Guide",
+    title: "How to Improve Gut Health",
+    description:
+      "Explore everyday lifestyle and nutrition factors that may support digestive and gut health.",
+    href: "/resources/articles/how-to-improve-gut-health",
+    date: "September 2026",
+    readTime: "7 min read",
+  },
+  {
+    category: "Nutrition",
+    type: "Nutrition Guide",
+    title: "Healthy Diet Tips for Everyday Health",
+    description:
+      "Simple principles for building balanced eating habits that are practical and sustainable.",
+    href: "/resources/articles/healthy-diet-tips",
+    date: "September 2026",
+    readTime: "6 min read",
+  },
+  {
+    category: "Yoga & Movement",
+    type: "Movement Guide",
+    title: "Yoga for Back Pain Relief",
+    description:
+      "What to consider when using yoga and movement as part of a thoughtful approach to back health.",
+    href: "/resources/articles/yoga-for-back-pain-relief",
+    date: "September 2026",
+    readTime: "7 min read",
   },
 ];
 
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      name: "Sutra Health Resources",
-      description:
-        "Health articles, research and publications, practical practice knowledge, and the 21-question lifestyle assessment.",
-      url: "https://lifequality.org.in/resources",
-      isPartOf: {
-        "@type": "WebSite",
-        name: "Sutra Health",
-        url: "https://lifequality.org.in/",
-      },
-      publisher: {
-        "@type": "Organization",
-        name: "Sutra Health",
-        url: "https://lifequality.org.in/",
-      },
-    },
+const questions = [
+  {
+    question: "How can I improve my gut health?",
+    href: "/resources/articles/how-to-improve-gut-health",
+  },
+  {
+    question: "How can I manage stress naturally?",
+    href: "/resources/articles/how-to-manage-stress",
+  },
+  {
+    question: "Can yoga help with stress?",
+    href: "/resources/articles/yoga-for-stress-relief",
+  },
+  {
+    question: "How can I improve my digestion?",
+    href: "/resources/articles/how-to-improve-digestion",
+  },
+  {
+    question: "How can I improve my sleep quality?",
+    href: "/resources/articles/how-to-improve-sleep-quality",
+  },
+  {
+    question: "How can I build healthier habits?",
+    href: "/resources/articles/how-to-build-good-habits",
+  },
+];
 
-    {
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: "https://lifequality.org.in/",
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Resources",
-          item: "https://lifequality.org.in/resources",
-        },
-      ],
-    },
-
-    {
-      "@type": "ItemList",
-      name: "Sutra Health Resources",
-      itemListElement: [
-        ...resources.map((resource, index) => ({
-          "@type": "ListItem",
-          position: index + 1,
-          name: resource.title,
-          url: `https://lifequality.org.in${resource.href}`,
-        })),
-        {
-          "@type": "ListItem",
-          position: 4,
-          name: "21-Question Lifestyle Assessment",
-          url: "https://lifequality.org.in/score",
-        },
-        {
-          "@type": "ListItem",
-          position: 5,
-          name: "Sutra Health Archive",
-          url: "https://lifequality.org.in/archive",
-        },
-      ],
-    },
-
-    {
-      "@type": "FAQPage",
-      mainEntity: faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer,
-        },
-      })),
-    },
-  ],
-};
-
-export default function ResourcesPage() {
+export default function ArticlesPage() {
   return (
     <main className="bg-[#FAF8F1] text-[#173F35]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(schema),
-        }}
-      />
+      {/* =========================================================
+          HERO
+      ========================================================= */}
 
-      {/* HERO */}
-<section className="relative isolate overflow-hidden border-b border-[#173F35]/10">
-  {/* Background */}
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 -z-20 bg-[linear-gradient(135deg,#FAF8F1_0%,#F4F2E8_42%,#E7EFE7_100%)]"
-  />
-
-  {/* Organic gradient shapes */}
-  <div
-    aria-hidden="true"
-    className="absolute -right-32 -top-32 -z-10 h-[420px] w-[420px] rounded-full bg-[#A9C5AC]/35 blur-3xl sm:h-[520px] sm:w-[520px]"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute -bottom-48 left-[38%] -z-10 h-[420px] w-[420px] rounded-full bg-[#D8C9A9]/25 blur-3xl"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute -left-32 top-[28%] -z-10 h-[260px] w-[260px] rounded-full bg-[#C6D9CA]/25 blur-3xl"
-  />
-
-  {/* Fine editorial grid */}
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 -z-10 opacity-[0.035]"
-    style={{
-      backgroundImage:
-        "linear-gradient(#173F35 1px, transparent 1px), linear-gradient(90deg, #173F35 1px, transparent 1px)",
-      backgroundSize: "56px 56px",
-    }}
-  />
-
-  {/* Decorative rings */}
-  <div
-    aria-hidden="true"
-    className="absolute right-[7%] top-[16%] -z-10 hidden h-44 w-44 rounded-full border border-[#173F35]/10 lg:block"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute right-[10%] top-[21%] -z-10 hidden h-28 w-28 rounded-full border border-[#65966F]/15 lg:block"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute bottom-[13%] left-[8%] -z-10 hidden h-20 w-20 rounded-full border border-[#173F35]/10 lg:block"
-  />
-
-  <Container>
-    <div className="relative min-h-[570px] py-16 sm:min-h-[610px] sm:py-20 lg:min-h-[650px] lg:py-24">
-      <div className="grid items-center gap-12  lg:gap-16">
-
-        {/* CONTENT */}
-        <div className="relative z-10 max-w-4xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#173F35]/10 bg-white/45 px-3 py-1.5 backdrop-blur-sm">
-            <span
-              aria-hidden="true"
-              className="h-1.5 w-1.5 rounded-full bg-[#65966F]"
-            />
-
-            <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#52745E] sm:text-[11px]">
-              Sutra Health → Resources
-            </span>
-          </div>
-
-          <h1 className="mt-7 max-w-4xl font-serif text-[43px] leading-[1.02] tracking-[-0.04em] text-[#173F35] sm:text-[57px] lg:text-[70px]">
-            Understand your health.
-            <br />
-            <span className="text-[#52745E]">
-              Explore what supports it.
-            </span>
-          </h1>
-
-          <p className="mt-7 max-w-2xl text-[16px] leading-7 text-[#526A62] sm:text-[18px] sm:leading-8">
-            Explore health education, research and practical guidance from
-            Sutra Health — designed to help you understand lifestyle,
-            nutrition, movement, stress and everyday health more clearly.
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/resources/articles"
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#173F35] px-6 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(23,63,53,0.14)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_34px_rgba(23,63,53,0.18)]"
-            >
-              Explore health articles
-              <ArrowRight
-                className="ml-2 h-4 w-4"
-                aria-hidden="true"
-              />
-            </Link>
-
-            <Link
-              href="/score"
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#173F35]/15 bg-white/55 px-6 text-sm font-semibold text-[#173F35] backdrop-blur-sm transition duration-300 hover:bg-white"
-            >
-              Take the 21-question assessment
-            </Link>
-          </div>
-        </div>
-
-        
-      </div>
-
-     
-    </div>
-  </Container>
-</section>
-
-      {/* DIRECT ANSWER */}
-      <section className="border-b border-[#173F35]/10 bg-white/50">
+      <section className="border-b border-[#173F35]/10">
         <Container>
-          <div className="grid gap-8 py-14 sm:py-16 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:py-20">
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                In brief
+          <div className="py-12 sm:py-16 lg:py-20">
+            <a
+              href="/resources"
+              className="inline-flex items-center gap-2 text-[11px] font-medium text-[#65966F] transition-colors hover:text-[#173F35]"
+            >
+              <span aria-hidden="true">←</span>
+              Resources
+            </a>
+
+            <div className="mt-10 max-w-[900px]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
+                Sutra Health · Health Articles
               </p>
 
-              <h2 className="mt-3 max-w-md font-serif text-3xl leading-tight tracking-[-0.025em] sm:text-4xl">
-                What are Sutra Health Resources?
-              </h2>
+              <h1 className="mt-4 font-serif text-[46px] leading-[0.98] tracking-[-0.045em] text-[#123F35] sm:text-[60px] lg:text-[72px]">
+                Practical health knowledge
+                <br />
+                for{" "}
+                <span className="italic text-[#65966F]">
+                  everyday life.
+                </span>
+              </h1>
+
+              <p className="mt-6 max-w-[720px] text-[15px] leading-7 text-[#687A73] sm:text-[17px] sm:leading-8">
+                Explore evidence-informed health articles about nutrition,
+                stress, gut health, yoga, movement, breathing, sleep,
+                healthy habits and more. Each article is designed to answer
+                practical health questions in clear, accessible language.
+              </p>
             </div>
 
-            <div className="max-w-3xl">
-              <p className="text-[17px] leading-8 text-[#36554C]">
-                Sutra Health Resources is a knowledge hub for evidence-informed
-                health education. It brings together practical health articles,
-                research and publications, practice knowledge and a simple
-                21-question lifestyle assessment.
-              </p>
+            {/* Search */}
+            <div className="mt-10 max-w-[620px]">
+              <div className="flex items-center gap-3 rounded-full border border-[#173F35]/10 bg-white/60 px-5 py-3.5">
+                <Search
+                  size={17}
+                  strokeWidth={1.6}
+                  className="shrink-0 text-[#65966F]"
+                />
 
-              <p className="mt-5 text-[15px] leading-7 text-[#687A73]">
-                The purpose is not to replace a consultation. It is to help
-                you understand a health question, explore relevant approaches
-                and decide what your next step may be.
-              </p>
+                <input
+                  type="search"
+                  placeholder="Search health articles..."
+                  aria-label="Search health articles"
+                  className="w-full bg-transparent text-[13px] text-[#173F35] outline-none placeholder:text-[#8A9892]"
+                />
+              </div>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* RESOURCE TYPES */}
-      <section aria-labelledby="resource-types">
+      {/* =========================================================
+          BROWSE BY TOPIC
+      ========================================================= */}
+
+      <section className="border-b border-[#173F35]/10">
         <Container>
-          <div className="py-16 sm:py-20 lg:py-24">
-            <div className="flex flex-col gap-3 border-b border-[#173F35]/10 pb-7 sm:flex-row sm:items-end sm:justify-between">
+          <div className="py-12 sm:py-16 lg:py-20">
+            <div className="max-w-[650px]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
+                Browse the collection
+              </p>
+
+              <h2 className="mt-3 font-serif text-[32px] leading-tight tracking-[-0.035em] sm:text-[42px]">
+                Explore articles by topic.
+              </h2>
+
+              <p className="mt-4 text-[14px] leading-7 text-[#71817A]">
+                Start with the area closest to your health question and
+                explore related information from there.
+              </p>
+            </div>
+
+            <div className="mt-10 divide-y divide-[#173F35]/10 border-y border-[#173F35]/10">
+              {topics.map((topic, index) => (
+                <Link
+                  key={topic.href}
+                  href={topic.href}
+                  className="group flex items-center justify-between gap-6 py-5"
+                >
+                  <div className="flex items-center gap-5">
+                    <span className="w-7 font-serif text-[14px] text-[#A2B1A9]">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    <span className="font-serif text-[20px] tracking-[-0.02em] sm:text-[23px]">
+                      {topic.label}
+                    </span>
+                  </div>
+
+                  <ArrowRight
+                    size={16}
+                    aria-hidden="true"
+                    className="shrink-0 text-[#65966F] transition-transform group-hover:translate-x-1"
+                  />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* =========================================================
+          ARTICLE TYPES
+      ========================================================= */}
+
+      <section className="border-b border-[#173F35]/10">
+        <Container>
+          <div className="py-12 sm:py-16 lg:py-20">
+            <div className="max-w-[650px]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
+                Article types
+              </p>
+
+              <h2 className="mt-3 font-serif text-[32px] leading-tight tracking-[-0.035em] sm:text-[42px]">
+                Choose the kind of information you need.
+              </h2>
+            </div>
+
+            <div className="mt-10 divide-y divide-[#173F35]/10 border-y border-[#173F35]/10">
+              {articleTypes.map((type, index) => (
+                <div
+                  key={type.label}
+                  className="grid gap-3 py-6 sm:grid-cols-[55px_0.75fr_1.25fr] sm:items-center sm:gap-8"
+                >
+                  <span className="font-serif text-[15px] text-[#A2B1A9]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <h3 className="font-serif text-[21px] tracking-[-0.02em] sm:text-[24px]">
+                    {type.label}
+                  </h3>
+
+                  <p className="text-[13px] leading-6 text-[#71817A]">
+                    {type.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* =========================================================
+          ALL ARTICLES
+      ========================================================= */}
+
+      <section className="border-b border-[#173F35]/10">
+        <Container>
+          <div className="py-12 sm:py-16 lg:py-20">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                  Explore
+                  Health article collection
                 </p>
 
-                <h2
-                  id="resource-types"
-                  className="mt-2 font-serif text-3xl tracking-[-0.025em] sm:text-4xl"
-                >
-                  Knowledge for different questions.
+                <h2 className="mt-3 font-serif text-[32px] leading-tight tracking-[-0.035em] sm:text-[42px]">
+                  All articles.
                 </h2>
               </div>
 
-              <p className="max-w-md text-sm leading-6 text-[#687A73]">
-                Start with the format that matches what you are trying to
-                understand.
+              <p className="text-[12px] text-[#8A9892]">
+                {articles.length} articles
               </p>
             </div>
 
-            <div>
-              {resources.map((resource) => {
-                const Icon = resource.icon;
-
-                return (
-                  <article
-                    key={resource.number}
-                    className="group border-b border-[#173F35]/10 py-8 sm:py-10"
-                  >
-                    <div className="grid gap-5 sm:grid-cols-[64px_52px_minmax(0,1fr)_auto] sm:items-center sm:gap-7">
-                      <span className="text-xs font-semibold tracking-[0.12em] text-[#65966F]">
-                        {resource.number}
-                      </span>
-
-                      <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#173F35]/15">
-                        <Icon
-                          className="h-5 w-5"
-                          strokeWidth={1.7}
-                          aria-hidden="true"
-                        />
-                      </div>
-
-                      <div>
-                        <h3 className="font-serif text-2xl tracking-[-0.02em] sm:text-3xl">
-                          {resource.title}
-                        </h3>
-
-                        <p className="mt-2 max-w-2xl text-sm leading-6 text-[#687A73] sm:text-[15px]">
-                          {resource.description}
-                        </p>
-                      </div>
-
-                      <Link
-                        href={resource.href}
-                        className="inline-flex items-center text-sm font-semibold text-[#173F35] transition group-hover:translate-x-1"
-                      >
-                        {resource.action}
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* ASSESSMENT */}
-      <section className="bg-[#173F35] text-white">
-        <Container>
-          <div className="grid gap-10 py-14 sm:py-16 lg:grid-cols-[1fr_1.1fr] lg:items-center lg:gap-20 lg:py-20">
-            <div>
-              <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20">
-                <ClipboardCheck className="h-5 w-5" />
-              </div>
-
-              <p className="mt-6 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#A8C7AE]">
-                A useful starting point
-              </p>
-
-              <h2 className="mt-3 max-w-xl font-serif text-3xl leading-tight tracking-[-0.025em] sm:text-4xl lg:text-5xl">
-                Review your everyday health patterns.
-              </h2>
-            </div>
-
-            <div>
-              <p className="text-[16px] leading-7 text-white/75 sm:text-[17px] sm:leading-8">
-                The 21-question lifestyle assessment helps you reflect on
-                areas such as food, movement, sleep and other everyday
-                lifestyle patterns.
-              </p>
-
-              <p className="mt-4 text-sm leading-6 text-white/60">
-                It is a starting point for reflection, not a diagnosis or a
-                substitute for medical care.
-              </p>
-
-              <Link
-                href="/score"
-                className="mt-7 inline-flex min-h-11 items-center rounded-full bg-white px-6 text-sm font-semibold text-[#173F35] transition hover:-translate-y-0.5"
-              >
-                Take the assessment
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* WHAT WE DO */}
-      <section className="border-b border-[#173F35]/10">
-        <Container>
-          <div className="py-16 sm:py-20 lg:py-24">
-            <div className="max-w-2xl">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                Continue exploring
-              </p>
-
-              <h2 className="mt-3 font-serif text-3xl tracking-[-0.025em] sm:text-4xl">
-                Explore the practices behind the work.
-              </h2>
-
-              <p className="mt-4 text-sm leading-6 text-[#687A73] sm:text-[15px]">
-                Move from learning about health to understanding the practices
-                Sutra Health brings together.
-              </p>
-            </div>
-
-            <div className="mt-8">
-              {practices.map((practice) => (
+            <div className="mt-10 divide-y divide-[#173F35]/10 border-y border-[#173F35]/10">
+              {articles.map((article, index) => (
                 <Link
-                  key={practice.href}
-                  href={practice.href}
-                  className="group block border-b border-[#173F35]/10 py-6"
+                  key={article.href}
+                  href={article.href}
+                  className="group block py-8"
                 >
-                  <div className="grid gap-2 sm:grid-cols-[52px_minmax(0,1fr)_auto] sm:items-center sm:gap-6">
-                    <span className="text-xs font-semibold tracking-[0.12em] text-[#65966F]">
-                      {practice.number}
+                  <div className="grid gap-5 sm:grid-cols-[55px_0.9fr_1.1fr_auto] sm:items-center sm:gap-8">
+                    <span className="font-serif text-[16px] text-[#A2B1A9]">
+                      {String(index + 1).padStart(2, "0")}
                     </span>
 
                     <div>
-                      <h3 className="font-serif text-xl sm:text-2xl">
-                        {practice.title}
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                        <span className="text-[9px] font-semibold uppercase tracking-[0.17em] text-[#65966F]">
+                          {article.category}
+                        </span>
+
+                        <span className="text-[10px] text-[#A2AAA5]">
+                          {article.type}
+                        </span>
+                      </div>
+
+                      <h3 className="mt-2 font-serif text-[23px] leading-tight tracking-[-0.025em] sm:text-[27px]">
+                        {article.title}
                       </h3>
 
-                      <p className="mt-1 text-sm leading-6 text-[#687A73]">
-                        {practice.description}
+                      <p className="mt-2 text-[10px] text-[#8A9892]">
+                        {article.date} · {article.readTime}
                       </p>
                     </div>
 
-                    <ArrowRight className="h-5 w-5 transition group-hover:translate-x-1" />
+                    <p className="max-w-[520px] text-[13px] leading-6 text-[#71817A]">
+                      {article.description}
+                    </p>
+
+                    <span
+                      aria-hidden="true"
+                      className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#173F35]/10 transition-all group-hover:translate-x-1 group-hover:border-[#173F35]/20"
+                    >
+                      <ArrowRight size={14} />
+                    </span>
                   </div>
                 </Link>
               ))}
@@ -540,38 +412,44 @@ export default function ResourcesPage() {
         </Container>
       </section>
 
-      {/* CONDITIONS */}
-      <section className="bg-[#F0F4ED]">
+      {/* =========================================================
+          COMMON QUESTIONS
+      ========================================================= */}
+
+      <section className="border-b border-[#173F35]/10">
         <Container>
-          <div className="py-14 sm:py-16 lg:py-20">
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                  Health concerns
-                </p>
+          <div className="grid gap-10 py-12 sm:py-16 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20 lg:py-20">
+            <div>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
+                Common health questions
+              </p>
 
-                <h2 className="mt-2 font-serif text-3xl tracking-[-0.025em] sm:text-4xl">
-                  Looking for something specific?
-                </h2>
-              </div>
+              <h2 className="mt-3 max-w-[440px] font-serif text-[32px] leading-tight tracking-[-0.035em] sm:text-[40px]">
+                Looking for a specific answer?
+              </h2>
 
-              <Link
-                href="/conditions"
-                className="inline-flex items-center text-sm font-semibold"
-              >
-                View all conditions
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+              <p className="mt-5 max-w-[440px] text-[14px] leading-7 text-[#71817A]">
+                Start with a question. Our health articles explain common
+                topics in a practical and easy-to-follow way.
+              </p>
             </div>
 
-            <div className="mt-8 flex gap-3 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              {conditions.map((condition) => (
+            <div className="divide-y divide-[#173F35]/10 border-y border-[#173F35]/10">
+              {questions.map((item) => (
                 <Link
-                  key={condition.href}
-                  href={condition.href}
-                  className="shrink-0 rounded-full border border-[#173F35]/15 bg-white/60 px-4 py-2.5 text-sm text-[#36554C] transition hover:bg-white"
+                  key={item.href}
+                  href={item.href}
+                  className="group flex items-center justify-between gap-6 py-5"
                 >
-                  {condition.label}
+                  <span className="font-serif text-[18px] tracking-[-0.02em] sm:text-[21px]">
+                    {item.question}
+                  </span>
+
+                  <ArrowRight
+                    size={15}
+                    aria-hidden="true"
+                    className="shrink-0 text-[#65966F] transition-transform group-hover:translate-x-1"
+                  />
                 </Link>
               ))}
             </div>
@@ -579,143 +457,136 @@ export default function ResourcesPage() {
         </Container>
       </section>
 
-      {/* APPROACH */}
-      <section className="border-b border-[#173F35]/10">
-        <Container>
-          <div className="grid gap-8 py-14 sm:py-16 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:py-20">
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                How it connects
-              </p>
+      {/* =========================================================
+          EXPLORE SUTRA HEALTH
+      ========================================================= */}
 
-              <h2 className="mt-3 max-w-md font-serif text-3xl leading-tight sm:text-4xl">
-                Information is useful when it leads somewhere.
-              </h2>
-            </div>
-
-            <div>
-              <p className="text-[16px] leading-7 text-[#36554C] sm:text-[17px] sm:leading-8">
-                Resources help you understand the questions. The Sutra Health
-                Method explains how those insights can become part of a
-                practical, personalised health journey.
-              </p>
-
-              <Link
-                href="/approach"
-                className="mt-6 inline-flex items-center text-sm font-semibold"
-              >
-                Explore the Sutra Health Method
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* ARCHIVE */}
       <section>
         <Container>
-          <div className="grid gap-8 py-14 sm:py-16 lg:grid-cols-[1fr_auto] lg:items-center lg:py-20">
-            <div>
+          <div className="py-12 sm:py-16 lg:py-20">
+            <div className="max-w-[650px]">
               <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                Preserved material
+                Explore Sutra Health
               </p>
 
-              <h2 className="mt-2 font-serif text-3xl sm:text-4xl">
-                Sutra Health Archive
+              <h2 className="mt-3 font-serif text-[32px] leading-tight tracking-[-0.035em] sm:text-[42px]">
+                Go beyond the articles.
               </h2>
 
-              <p className="mt-3 max-w-2xl text-sm leading-6 text-[#687A73] sm:text-[15px]">
-                Explore older wellness, lifestyle, clinic, yoga, food and
-                publication material preserved in the Sutra Health Archive.
+              <p className="mt-4 max-w-[620px] text-[14px] leading-7 text-[#71817A]">
+                Learn about our approach, explore our medical and wellness
+                services, meet our doctor, or take the next step with a
+                consultation or retreat.
               </p>
             </div>
 
-            <Link
-              href="/archive"
-              className="inline-flex min-h-11 items-center justify-center rounded-full border border-[#173F35]/20 px-6 text-sm font-semibold transition hover:bg-white"
-            >
-              Explore the archive
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </div>
-        </Container>
-      </section>
-
-      {/* FAQ */}
-      <section className="border-t border-[#173F35]/10 bg-white/50">
-        <Container>
-          <div className="py-16 sm:py-20 lg:py-24">
-            <div className="max-w-2xl">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                Questions
-              </p>
-
-              <h2 className="mt-3 font-serif text-3xl sm:text-4xl">
-                About Sutra Health Resources
-              </h2>
-            </div>
-
-            <div className="mt-8 max-w-4xl">
-              {faqs.map((faq) => (
-                <details
-                  key={faq.question}
-                  className="group border-b border-[#173F35]/10 py-5"
-                >
-                  <summary className="cursor-pointer list-none pr-8 text-[15px]">
-                    <span className="relative block">
-                      {faq.question}
-
-                      <span className="absolute right-0 top-0 text-xl font-normal text-[#65966F] transition group-open:rotate-45">
-                        +
-                      </span>
-                    </span>
-                  </summary>
-
-                  <p className="max-w-3xl pt-3 text-sm leading-6 text-[#687A73]">
-                    {faq.answer}
-                  </p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
-      
-
-      {/* FINAL CTA */}
-      <section className="bg-[#F0F4ED]">
-        <Container>
-          <div className="flex flex-col gap-7 py-14 sm:py-16 lg:flex-row lg:items-end lg:justify-between lg:py-20">
-            <div className="max-w-2xl">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                Your next step
-              </p>
-
-              <h2 className="mt-3 font-serif text-3xl leading-tight sm:text-4xl">
-                Need help deciding where to start?
-              </h2>
-
-              <p className="mt-3 text-sm leading-6 text-[#687A73] sm:text-[15px]">
-                Explore the approach, review your lifestyle patterns, or book a
-                consultation for personalised guidance.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-3">
-              <Link
-                href="/approach"
-                className="inline-flex min-h-11 items-center rounded-full border border-[#173F35]/20 px-6 text-sm font-semibold transition hover:bg-white"
+            <div className="mt-10 divide-y divide-[#173F35]/10 border-y border-[#173F35]/10">
+              {/* Doctor */}
+              <a
+                href="/doctor"
+                className="group flex items-center justify-between gap-6 py-6"
               >
-                Our Approach
+                <div>
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#65966F]">
+                    Medical Expertise
+                  </p>
+
+                  <h3 className="mt-1 font-serif text-[22px] tracking-[-0.02em]">
+                    Meet Our Doctor
+                  </h3>
+
+                  <p className="mt-1 max-w-[650px] text-[13px] leading-6 text-[#71817A]">
+                    Explore the doctor&apos;s academic background,
+                    qualifications and professional expertise.
+                  </p>
+                </div>
+
+                <ArrowRight
+                  size={16}
+                  aria-hidden="true"
+                  className="shrink-0 text-[#65966F] transition-transform group-hover:translate-x-1"
+                />
+              </a>
+
+              {/* What We Do */}
+              <Link
+                href="/what-we-do"
+                className="group flex items-center justify-between gap-6 py-6"
+              >
+                <div>
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#65966F]">
+                    Our Services
+                  </p>
+
+                  <h3 className="mt-1 font-serif text-[22px] tracking-[-0.02em]">
+                    Explore What We Do
+                  </h3>
+
+                  <p className="mt-1 max-w-[650px] text-[13px] leading-6 text-[#71817A]">
+                    Discover lifestyle medicine, nutrition, therapeutic yoga,
+                    breath & mindfulness and other Sutra Health services.
+                  </p>
+                </div>
+
+                <ArrowRight
+                  size={16}
+                  aria-hidden="true"
+                  className="shrink-0 text-[#65966F] transition-transform group-hover:translate-x-1"
+                />
               </Link>
 
+              {/* Appointment */}
               <Link
                 href="/book-appointment"
-                className="inline-flex min-h-11 items-center rounded-full bg-[#173F35] px-6 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+                className="group flex items-center justify-between gap-6 py-6"
               >
-                Book a Consultation
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <div>
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#65966F]">
+                    Personalised Support
+                  </p>
+
+                  <h3 className="mt-1 font-serif text-[22px] tracking-[-0.02em]">
+                    Book an Appointment
+                  </h3>
+
+                  <p className="mt-1 max-w-[650px] text-[13px] leading-6 text-[#71817A]">
+                    Discuss your health goals and explore whether Sutra Health
+                    may be appropriate for you.
+                  </p>
+                </div>
+
+                <ArrowRight
+                  size={16}
+                  aria-hidden="true"
+                  className="shrink-0 text-[#65966F] transition-transform group-hover:translate-x-1"
+                />
+              </Link>
+
+              {/* Retreat */}
+              <Link
+                href="/retreat"
+                className="group flex items-center justify-between gap-6 py-6"
+              >
+                <div>
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#65966F]">
+                    Retreat
+                  </p>
+
+                  <h3 className="mt-1 font-serif text-[22px] tracking-[-0.02em]">
+                    Book a Retreat
+                  </h3>
+
+                  <p className="mt-1 max-w-[650px] text-[13px] leading-6 text-[#71817A]">
+                    Step away from your routine with yoga, nutrition,
+                    mindfulness, wellness and restorative time near Delhi.
+                  </p>
+                </div>
+
+                <ArrowRight
+                  size={16}
+                  aria-hidden="true"
+                  className="shrink-0 text-[#65966F] transition-transform group-hover:translate-x-1"
+                />
               </Link>
             </div>
           </div>
