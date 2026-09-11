@@ -662,7 +662,7 @@ export default function ResourcesPage() {
                   key={faq.question}
                   className="group border-b border-[#173F35]/10 py-5"
                 >
-                  <summary className="cursor-pointer list-none pr-8 text-[15px] font-semibold">
+                  <summary className="cursor-pointer list-none pr-8 text-[15px]">
                     <span className="relative block">
                       {faq.question}
 

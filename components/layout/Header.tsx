@@ -279,6 +279,7 @@ export default function Header() {
             name="whatWeDo"
             label="What We Do"
             items={whatWeDo}
+            viewAll={{ label: "View all", href: "/what-we-do" }}
             openDropdown={openDropdown}
             toggleDropdown={toggleDropdown}
             closeNavigation={closeNavigation}
@@ -329,6 +330,7 @@ export default function Header() {
             name="resources"
             label="Resources"
             items={resources}
+            viewAll={{ label: "View all", href: "/resources" }}
             openDropdown={openDropdown}
             toggleDropdown={toggleDropdown}
             closeNavigation={closeNavigation}
