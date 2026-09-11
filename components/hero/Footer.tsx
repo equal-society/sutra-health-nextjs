@@ -3,10 +3,10 @@ import Link from "next/link";
 import Container from "@/components/shared/Container";
 
 const services = [
-  { label: "Lifestyle Medicine", href: "/approach/lifestyle" },
-  { label: "Nutrition Counselling", href: "/approach/nutrition" },
-  { label: "Therapeutic Yoga", href: "/approach/therapeutic-yoga" },
-  { label: "Breath & Mindfulness", href: "/approach/breath-mindfulness" },
+  { label: "Lifestyle Medicine", href: "/what-we-do/lifestyle" },
+  { label: "Nutrition Counselling", href: "/what-we-do/nutrition" },
+  { label: "Therapeutic Yoga", href: "/what-we-do/therapeutic-yoga" },
+  { label: "Breath & Mindfulness", href: "/what-we-do/breath-mindfulness" },
 ];
 
 const conditions = [
@@ -17,7 +17,7 @@ const conditions = [
 ];
 
 const resources = [
-  { label: "Health Resources", href: "/resources" },
+  { label: "Health Articles", href: "/resources" },
   { label: "21 Point Questionnaire", href: "/score" },
   { label: "Retreats", href: "/retreat-programs" },
   { label: "Archive", href: "/archive" },
@@ -123,7 +123,11 @@ export default function Footer() {
           />
 
           {/* Resources */}
-          <FooterColumn title="Resources" items={resources} />
+          <FooterColumn title="Resources" items={resources}
+          footerLink={{ label: "View all Resources", href: "/resources" }}
+
+          />
+          
         </div>
 
         {/* Contact CTA */}
