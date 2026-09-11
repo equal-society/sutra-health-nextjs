@@ -55,8 +55,11 @@ export default function Hero() {
               <span className="italic text-[#65966F]">the whole picture.</span>
               </h1>
 
-            <p className="mt-4 max-w-[610px] text-[12px] leading-[1.55] text-[#536A62] sm:text-[14px] sm:leading-7 lg:text-[15px] lg:leading-7">
-              Sutra Health brings lifestyle medicine, nutrition counselling and therapeutic yoga together in a practical plan shaped around your health, habits and everyday life.
+           
+
+            <p className="mt-3 max-w-[610px] rounded-lg bg-[#F0F4ED] px-4 py-3 text-[12px] leading-6 text-[#3A4A44] sm:text-[13px] sm:leading-7">
+              <strong className="font-semibold text-[#173F35]">In short:</strong>{" "}
+              we combine your existing medical care with evidence-informed lifestyle changes — coordinated by a doctor, not a replacement for one. Best suited if you want practical, doctor-led support alongside treatment you&apos;re already receiving.
             </p>
 
             <div className="mt-5 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3">
