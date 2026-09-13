@@ -16,7 +16,7 @@ export const yogaForStressRelief: Article = {
   excerpt:
     "Explore how gentle yoga, comfortable breathing and mindful movement can become part of a practical routine for managing everyday stress.",
 
-  image: "/images/resources/yoga.png",
+  image: "/images/resources/yoga.webp",
 
   content: {
     introduction:

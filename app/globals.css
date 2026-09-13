@@ -1,8 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F7F5EF;
+  --foreground: #202522;
+
+  --sutra-porcelain: #F7F5EF;
+  --sutra-white: #FFFFFF;
+  --sutra-ink: #202522;
+  --sutra-teal: #17413D;
+  --sutra-sage: #91A298;
+  --sutra-pale-sage: #E7EDE8;
+  --sutra-sand: #C8BDA7;
+  --sutra-muted: #65736D;
 }
 
 @theme inline {
@@ -12,17 +21,12 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--sutra-porcelain);
+  color: var(--sutra-ink);
   font-family: Arial, Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* =========================================
@@ -35,7 +39,7 @@ body {
   top: 0;
   z-index: 50;
   width: 100%;
-  background: #faf8f1;
+  background: #F7F5EF;
   border-bottom: 1px solid rgba(23, 63, 53, 0.1);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -59,7 +63,7 @@ body {
   align-items: center;
   gap: 11px;
   flex-shrink: 0;
-  color: #173f35;
+  color: #17413D;
   text-decoration: none;
 }
 
@@ -98,7 +102,7 @@ body {
   font-size: 9px;
   line-height: 1;
   letter-spacing: 0.04em;
-  color: #71817a;
+  color: #65736D;
 }
 
 /* =========================================
@@ -125,7 +129,7 @@ body {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: -0.005em;
-  color: #263f39;
+  color: #314641;
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
@@ -139,7 +143,7 @@ body {
   right: 0;
   bottom: 3px;
   height: 1px;
-  background: #65966f;
+  background: #91A298;
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 180ms ease;
@@ -148,7 +152,7 @@ body {
 .navLink:hover,
 .navDropdownButton:hover,
 .navDropdownButtonOpen {
-  color: #65966f;
+  color: #91A298;
 }
 
 .navLink:hover::after {
@@ -199,7 +203,7 @@ body {
   width: 330px;
   padding: 9px;
   transform: translateX(-50%);
-  background: #faf8f1;
+  background: #F7F5EF;
   border: 1px solid rgba(23, 63, 53, 0.11);
   border-radius: 12px;
   box-shadow: 0 10px 24px rgba(23, 63, 53, 0.08), 0 1px 3px rgba(23, 63, 53, 0.04);
@@ -219,7 +223,7 @@ body {
   left: 50%;
   width: 7px;
   height: 7px;
-  background: #fffefb;
+  background: #FFFFFF;
   border-left: 1px solid rgba(23, 63, 53, 0.11);
   border-top: 1px solid rgba(23, 63, 53, 0.11);
   transform: translateX(-50%) rotate(45deg);
@@ -248,7 +252,7 @@ body {
   gap: 10px;
   padding: 0 11px;
   border-radius: 8px;
-  color: #28433c;
+  color: #334A45;
   text-decoration: none;
   font-size: 12.5px;
   font-weight: 600;
@@ -271,21 +275,21 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #6b9275;
+  color: #80958A;
 }
 
 .dropdownItem:hover {
-  background: #f3f6f0;
-  color: #123f35;
+  background: #E7EDE8;
+  color: #17413D;
 }
 
 .dropdownItem:hover .dropdownItemIcon {
-  color: #173f35;
+  color: #17413D;
 }
 
 .dropdownArrow {
   flex: 0 0 auto;
-  color: #91a099;
+  color: #91A298;
   font-size: 14px;
   line-height: 1;
   opacity: 0;
@@ -306,7 +310,7 @@ body {
   align-items: center;
   justify-content: space-between;
   border-top: 1px solid rgba(23, 63, 53, 0.07);
-  color: #65966f;
+  color: #91A298;
   text-decoration: none;
   font-size: 10px;
   font-weight: 700;
@@ -319,7 +323,7 @@ body {
   transition: transform 140ms ease;
 }
 
-.dropdownViewAll:hover { color: #173f35; }
+.dropdownViewAll:hover { color: #17413D; }
 .dropdownViewAll:hover span { transform: translateX(3px); }
 
 @media (prefers-reduced-motion: reduce) {
@@ -355,8 +359,8 @@ body {
   min-height: 47px;
   padding: 0 21px;
   border-radius: 999px;
-  background: #123f35;
-  color: #ffffff;
+  background: #17413D;
+  color: #FFFFFF;
   font-size: 12.5px;
   font-weight: 700;
   letter-spacing: -0.005em;
@@ -365,7 +369,7 @@ body {
 }
 
 .desktopBookButton:hover {
-  background: #0d332c;
+  background: #12332F;
   transform: translateY(-1px);
   box-shadow: 0 9px 22px rgba(18, 63, 53, 0.16);
 }
@@ -405,7 +409,7 @@ body {
 
 .mobileMenuButton:hover,
 .mobileMenuButtonOpen {
-  background: #edf3e9;
+  background: #E7EDE8;
   border-color: rgba(23, 63, 53, 0.18);
 }
 
@@ -413,7 +417,7 @@ body {
   width: 18px;
   height: 1.5px;
   border-radius: 999px;
-  background: #173f35;
+  background: #17413D;
   transition: transform 180ms ease, opacity 180ms ease;
 }
 
@@ -488,7 +492,7 @@ body {
     height: 0;
     max-height: 0;
     overflow: hidden;
-    background: #faf8f1;
+    background: #F7F5EF;
     border-top: 0 solid rgba(23, 63, 53, 0.08);
     transition: height 300ms ease, max-height 300ms ease, border-color 300ms ease;
   }
@@ -520,14 +524,14 @@ body {
     font-size: 14px;
     font-weight: 600;
     letter-spacing: -0.005em;
-    color: #173f35;
+    color: #17413D;
     text-decoration: none;
     cursor: pointer;
   }
 
   .mobileNavLink:hover,
   .mobileDropdownButton:hover {
-    color: #65966f;
+    color: #91A298;
   }
 
   .mobileDropdownButton {
@@ -568,16 +572,16 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #6b9275;
+    color: #80958A;
   }
 
   .mobileDropdownContent a:first-child {
-    color: #65966f;
+    color: #91A298;
     font-weight: 600;
   }
 
   .mobileDropdownContent a:hover {
-    color: #173f35;
+    color: #17413D;
   }
 
   .mobileBookButton {
@@ -595,13 +599,13 @@ body {
   .mobileBookButton {
     gap: 9px;
     margin-top: 10px;
-    background: #123f35;
-    color: #ffffff;
+    background: #17413D;
+    color: #FFFFFF;
     transition: background 180ms ease, transform 180ms ease;
   }
 
   .mobileBookButton:hover {
-    background: #0d332c;
+    background: #12332F;
     transform: translateY(-1px);
   }
 
@@ -680,3 +684,60 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* =========================================
+   SUTRA HEALTH — APPROVED VISUAL TOKENS
+   Porcelain + Ink + Deep Teal + Sage + Sand
+========================================= */
+
+:root {
+  --sutra-border: rgba(32, 37, 34, 0.10);
+  --sutra-border-strong: rgba(32, 37, 34, 0.16);
+  --sutra-teal-hover: #12332F;
+  --sutra-shadow-soft: 0 10px 30px rgba(32, 37, 34, 0.07);
+}
+
+::selection {
+  background: #E7EDE8;
+  color: #17413D;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
+}
+
+.sutraHomeEditorial {
+  background: var(--sutra-porcelain);
+  color: var(--sutra-ink);
+}
+
+.sutra-premium-surface {
+  background: var(--sutra-white);
+  border: 1px solid var(--sutra-border);
+}
+
+.sutra-premium-divider {
+  border-color: var(--sutra-border);
+}
+
+.sutra-premium-teal {
+  background: var(--sutra-teal);
+  color: var(--sutra-white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+

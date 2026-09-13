@@ -1,7 +1,7 @@
-"use client";
+ "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { useEffect, useState } from "react";
+import Link from "next/link";
 import Container from "@/components/shared/Container";
 
 const testimonials = [
@@ -9,270 +9,225 @@ const testimonials = [
     quote:
       "Amazing consultation experience. The doctors patiently listened to my concerns and provided practical Natural solutions.",
     name: "Rahul Sharma",
-    source: "Google Review",
   },
   {
     quote:
       "Yoga therapy helped reduce my back pain significantly. Professional staff and peaceful environment.",
     name: "Priya Verma",
-    source: "Google Review",
   },
   {
     quote:
       "Highly recommend Sutra Health. The holistic treatment approach actually delivers long-term benefits.",
     name: "Ankit Mehta",
-    source: "Google Review",
   },
   {
     quote:
       "Meditation sessions transformed my daily routine. Stress levels are much lower now.",
     name: "Neha Kapoor",
-    source: "Google Review",
   },
   {
     quote:
-      "I had the pleasure of getting guidance from Dr. Rakesh, a humble therapeutic Yoga consultant who is an MBBS doctor as well. He guided me and my son through our Yoga journey with a smile on his face, and my 14-year-old son became an instant fan. Sessions are held on a terrace facing the Aravallis with cold, fresh breeze even today. Will come back again and again.",
+      "I had the pleasure of getting guidance from Dr. Rakesh, a humble therapeutic Yoga consultant who is an MBBS doctor as well. He guided me and my son through our Yoga journey with a smile on his face.",
     name: "Puneet Kulshrestha",
-    source: "Google Review",
   },
   {
     quote:
-      "I stayed at Sutra Health with my family and it was the best decision we made. Every morning you can join yoga with Dr. Rakesh on the rooftop terrace as the sun rises. When my father needed a wheelchair, Dr. Rakesh personally arranged it within one phone call. A beautifully decorated stay with thoughtful little details everywhere.",
+      "I stayed at Sutra Health with my family and it was the best decision we made. Every morning you can join yoga with Dr. Rakesh on the rooftop terrace as the sun rises.",
     name: "Adheer Dixit",
-    source: "Google Review",
   },
   {
     quote:
       "Very good service at Sutra Health, full care given to patients — bahut accha laga. Thank you Sutra Health!",
     name: "Sumit Kashyap",
-    source: "Google Review",
   },
   {
     quote: "Excellent experience.",
     name: "Anil Passi",
-    source: "Google Review",
   },
   {
     quote: "Mind blowing experience.",
     name: "Arpit Krishan",
-    source: "Google Review",
   },
   {
     quote:
-      "I'm from Argentina and had the privilege of staying at Dr. Rakesh's place, sharing yoga classes with him every morning on his terrace. A wonderful way to start the day — the terrace is spectacular and so are the classes. Highly recommend it!",
+      "I'm from Argentina and had the privilege of staying at Dr. Rakesh's place, sharing yoga classes with him every morning on his terrace. A wonderful way to start the day.",
     name: "Flor Riboldi",
-    source: "Google Review · Translated from Spanish",
   },
 ];
 
-const DESKTOP_PER_SLIDE = 3;
-const desktopSlides = Math.ceil(testimonials.length / DESKTOP_PER_SLIDE);
-
 export default function Testimonials() {
-  const [desktopSlide, setDesktopSlide] = useState(0);
-  const [mobileSlide, setMobileSlide] = useState(0);
-
-  const desktopGroups = useMemo(() => {
-    return Array.from({ length: desktopSlides }, (_, index) =>
-      testimonials.slice(
-        index * DESKTOP_PER_SLIDE,
-        index * DESKTOP_PER_SLIDE + DESKTOP_PER_SLIDE,
-      ),
-    );
-  }, []);
+  const [active, setActive] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setDesktopSlide((current) => (current + 1) % desktopSlides);
-    }, 6000);
+    const timer = setInterval(() => {
+      setActive((current) => (current + 1) % testimonials.length);
+    }, 5500);
 
-    return () => clearInterval(interval);
+    return () => clearInterval(timer);
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setMobileSlide((current) => (current + 1) % testimonials.length);
-    }, 6000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const previousMobile = () => {
-    setMobileSlide((current) =>
-      current === 0 ? testimonials.length - 1 : current - 1,
-    );
-  };
-
-  const nextMobile = () => {
-    setMobileSlide((current) => (current + 1) % testimonials.length);
-  };
-
-  const previousDesktop = () => {
-    setDesktopSlide((current) =>
-      current === 0 ? desktopSlides - 1 : current - 1,
-    );
-  };
-
-  const nextDesktop = () => {
-    setDesktopSlide((current) => (current + 1) % desktopSlides);
-  };
+  const testimonial = testimonials[active];
 
   return (
-    <section className="bg-[#F0F4ED] py-20 sm:py-24 lg:py-28">
+    <section
+      aria-labelledby="stories-title"
+      className="relative overflow-hidden bg-[#F7F5EF] py-20 sm:py-24 lg:py-32"
+    >
       <Container>
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#6B9573]">
-            Patient experiences
-          </p>
+        <div className="relative">
+          {/* Header */}
+          <div className="grid gap-7 lg:grid-cols-[0.8fr_1.2fr] lg:items-end lg:gap-24">
+            <div>
+              <div className="flex items-center gap-3">
+                <span aria-hidden="true" className="h-px w-10 bg-[#82978C]" />
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#5E7168] sm:text-[11px]">
+                  Patient stories
+                </p>
+              </div>
 
-          <h2 className="font-serif text-[40px] leading-[1.08] tracking-[-0.035em] text-[#173F35] sm:text-[48px]">
-            What patients remember
-          </h2>
+              <h2
+                id="stories-title"
+                className="mt-5 max-w-[590px] font-serif text-[42px] font-medium leading-[0.98] tracking-[-0.045em] text-[#202522] sm:text-[52px] lg:text-[62px]"
+              >
+                What people
+                <br />
+                <span className="italic font-normal text-[#17413D]">
+                  have shared.
+                </span>
+              </h2>
+            </div>
 
-          <p className="mx-auto mt-5 max-w-xl text-[15px] leading-7 text-[#687A73]">
-            A selection of experiences shared by people who have spent time with
-            Sutra Health.
-          </p>
-        </div>
+            <div className="max-w-[620px]">
+              <p className="text-[14px] leading-7 text-[#53605B] sm:text-[15px] sm:leading-8">
+                Real experiences from people who have spent time with Sutra
+                Health and its practitioners.
+              </p>
+              <p className="mt-3 text-[11px] leading-5.5 text-[#71817B] sm:text-[12px] sm:leading-6">
+                Shared publicly as Google reviews. Individual experiences are
+                personal and should not be interpreted as a guarantee of
+                outcomes.
+              </p>
+            </div>
+          </div>
 
-        {/* Desktop */}
-        <div className="relative mt-12 hidden md:block lg:mt-14">
-          <div className="overflow-hidden">
-            <div
-              className="flex transition-transform duration-500 ease-out"
-              style={{ transform: `translateX(-${desktopSlide * 100}%)` }}
-            >
-              {desktopGroups.map((group, groupIndex) => (
-                <div
-                  key={groupIndex}
-                  className="grid w-full shrink-0 grid-cols-3 gap-5"
+          {/* Featured testimonial */}
+          <div className="mt-10 sm:mt-14 lg:mt-16">
+            <div className="relative min-h-[360px] overflow-hidden rounded-[26px] bg-[#E9EDE6] px-6 py-8 sm:min-h-[390px] sm:px-10 sm:py-10 lg:min-h-[420px] lg:px-16 lg:py-14">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -right-20 -top-24 font-serif text-[300px] leading-none text-[#17413D]/[0.045] sm:text-[360px]"
+              >
+                “
+              </div>
+
+              <div className="relative flex h-full min-h-[300px] flex-col justify-between sm:min-h-[310px]">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65736D]">
+                    Google review
+                  </span>
+
+                  <div className="flex gap-1" aria-label="5 stars">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <span
+                        key={star}
+                        aria-hidden="true"
+                        className="text-[13px] text-[#17413D]"
+                      >
+                        ★
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="max-w-[930px]">
+                  <blockquote
+                    key={active}
+                    className="font-serif text-[25px] leading-[1.25] tracking-[-0.025em] text-[#17413D] sm:text-[32px] sm:leading-[1.22] lg:text-[42px]"
+                  >
+                    “{testimonial.quote}”
+                  </blockquote>
+
+                  <p className="mt-6 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#65736D]">
+                    — {testimonial.name}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Controls */}
+            <div className="mt-5 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                {testimonials.map((item, index) => (
+                  <button
+                    key={item.name}
+                    type="button"
+                    aria-label={`Show review from ${item.name}`}
+                    aria-current={active === index}
+                    onClick={() => setActive(index)}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      active === index
+                        ? "w-8 bg-[#17413D]"
+                        : "w-1.5 bg-[#17413D]/20"
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <div className="flex items-center gap-4">
+                <button
+                  type="button"
+                  aria-label="Previous review"
+                  onClick={() =>
+                    setActive(
+                      (current) =>
+                        (current - 1 + testimonials.length) %
+                        testimonials.length,
+                    )
+                  }
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-[#17413D]/12 text-[#17413D] transition-colors hover:bg-[#EEF2EC]"
                 >
-                  {group.map((testimonial) => (
-                    <TestimonialCard
-                      key={testimonial.name}
-                      testimonial={testimonial}
-                    />
-                  ))}
-                </div>
+                  ←
+                </button>
+
+                <button
+                  type="button"
+                  aria-label="Next review"
+                  onClick={() =>
+                    setActive((current) => (current + 1) % testimonials.length)
+                  }
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-[#17413D]/12 text-[#17413D] transition-colors hover:bg-[#EEF2EC]"
+                >
+                  →
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile swipeable review strip */}
+          <div className="mt-8 sm:hidden">
+            <div className="-mx-5 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {testimonials.map((item) => (
+                <article
+                  key={item.name}
+                  className="w-[78vw] max-w-[300px] shrink-0 snap-start rounded-[18px] border border-[#17413D]/10 bg-[#EEF2EC] p-5"
+                >
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#71817B]">
+                    Google review
+                  </p>
+                  <p className="mt-5 font-serif text-[20px] leading-[1.3] tracking-[-0.02em] text-[#17413D]">
+                    “{item.quote}”
+                  </p>
+                  <p className="mt-5 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#65736D]">
+                    — {item.name}
+                  </p>
+                </article>
               ))}
             </div>
           </div>
 
-          <CarouselButton
-            direction="previous"
-            onClick={previousDesktop}
-            className="absolute -left-5 top-1/2 hidden -translate-y-1/2 lg:flex"
-          />
-          <CarouselButton
-            direction="next"
-            onClick={nextDesktop}
-            className="absolute -right-5 top-1/2 hidden -translate-y-1/2 lg:flex"
-          />
-
-          <div className="mt-8 flex items-center justify-center gap-2">
-            {desktopGroups.map((_, index) => (
-              <button
-                key={index}
-                type="button"
-                aria-label={`Show testimonial group ${index + 1}`}
-                aria-current={desktopSlide === index}
-                onClick={() => setDesktopSlide(index)}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
-                  desktopSlide === index
-                    ? "w-7 bg-[#173F35]"
-                    : "w-1.5 bg-[#B9C8BA]"
-                }`}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* Mobile */}
-        <div className="mt-10 md:hidden">
-          <div className="overflow-hidden">
-            <div
-              className="flex transition-transform duration-500 ease-out"
-              style={{ transform: `translateX(-${mobileSlide * 100}%)` }}
-            >
-              {testimonials.map((testimonial) => (
-                <div key={testimonial.name} className="w-full shrink-0 px-0.5">
-                  <TestimonialCard testimonial={testimonial} />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-6 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <CarouselButton direction="previous" onClick={previousMobile} />
-              <CarouselButton direction="next" onClick={nextMobile} />
-            </div>
-
-            <p className="text-[11px] font-medium tracking-[0.12em] text-[#687A73]">
-              {String(mobileSlide + 1).padStart(2, "0")} / {String(testimonials.length).padStart(2, "0")}
-            </p>
-          </div>
+         
         </div>
       </Container>
     </section>
-  );
-}
-
-function CarouselButton({
-  direction,
-  onClick,
-  className = "",
-}: {
-  direction: "previous" | "next";
-  onClick: () => void;
-  className?: string;
-}) {
-  const Icon = direction === "previous" ? ChevronLeft : ChevronRight;
-
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-label={direction === "previous" ? "Previous testimonials" : "Next testimonials"}
-      className={`flex h-10 w-10 items-center justify-center rounded-full border border-[#173F35]/12 bg-[#FAF8F1] text-[#173F35] transition-colors duration-200 hover:border-[#173F35]/25 hover:bg-white ${className}`}
-    >
-      <Icon size={16} strokeWidth={1.6} />
-    </button>
-  );
-}
-
-function TestimonialCard({
-  testimonial,
-}: {
-  testimonial: {
-    quote: string;
-    name: string;
-    source: string;
-  };
-}) {
-  return (
-    <article className="flex min-h-[300px] flex-col border border-[#173F35]/10 bg-[#FAF8F1] p-7 sm:p-8">
-      <Quote size={19} strokeWidth={1.35} className="text-[#65966F]" aria-hidden="true" />
-
-      <p className="mt-6 text-[15px] leading-7 text-[#52645D]">
-        {testimonial.quote}
-      </p>
-
-      <div className="mt-auto flex items-end justify-between gap-4 border-t border-[#173F35]/10 pt-6">
-        <div>
-          <p className="text-[13px] font-semibold text-[#173F35]">
-            {testimonial.name}
-          </p>
-          <p className="mt-1 text-[11px] text-[#7A8983]">
-            {testimonial.source}
-          </p>
-        </div>
-
-        <span
-          className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#65966F]"
-          aria-hidden="true"
-        />
-      </div>
-    </article>
   );
 }

@@ -19,9 +19,10 @@ const defaultFaqs: FAQItem[] = [
       "It's healthcare built around your daily habits - food, movement, sleep, stress - rather than just prescriptions. It works alongside your existing medical care, not instead of it.",
   },
   {
-    question: "Can yoga therapy be part of managing something like diabetes or blood pressure?",
+    question:
+      "Can yoga therapy be part of managing something like diabetes or blood pressure?",
     answer:
-      "It can be one part of your overall care, alongside your doctor - not a replacement for it. Any medication changes should always go through your physician."
+      "It can be one part of your overall care, alongside your doctor - not a replacement for it. Any medication changes should always go through your physician.",
   },
   {
     question: "Do you offer online consultations?",
@@ -46,37 +47,48 @@ export default function FAQ({ faqs = defaultFaqs }: FAQProps) {
   return (
     <section
       id="faq"
-      className="bg-[#FAF8F1] py-16 sm:py-20 lg:py-24"
       aria-labelledby="faq-heading"
+      className="bg-[#F7F5EF] py-16 sm:py-20 lg:py-24"
     >
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
-          <div className="max-w-md">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
-              Frequently asked questions
-            </p>
+        <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20 xl:gap-24">
+          {/* Intro */}
+          <div className="max-w-[480px] lg:pt-1">
+            <div className="flex items-center gap-3">
+              <span
+                aria-hidden="true"
+                className="h-px w-8 bg-[#91A298]"
+              />
+              <p className="text-[9px] font-semibold uppercase tracking-[0.21em] text-[#65736D] sm:text-[10px]">
+                Frequently asked questions
+              </p>
+            </div>
 
             <h2
               id="faq-heading"
-              className="mt-3 font-serif text-[38px] leading-[1.06] tracking-[-0.035em] text-[#123F35] sm:text-[46px]"
+              className="mt-5 font-serif text-[39px] font-medium leading-[0.99] tracking-[-0.045em] text-[#202522] sm:text-[47px] lg:text-[53px]"
             >
-              A few things you may want to know.
+              A few things you may
+              <span className="italic font-normal text-[#17413D]">
+                {" "}want to know.
+              </span>
             </h2>
 
-            <p className="mt-5 text-[14px] leading-7 text-[#687A73]">
+            <p className="mt-6 max-w-[390px] text-[13px] leading-7 text-[#687A73] sm:text-[14px]">
               Simple answers about our lifestyle-focused and integrative
               approach.
             </p>
           </div>
 
-          <div className="border-t border-[#173F35]/15">
+          {/* Questions */}
+          <div className="border-t border-[#202522]/12">
             {faqs.map((faq, index) => {
               const isOpen = openIndex === index;
 
               return (
                 <div
                   key={faq.question}
-                  className="border-b border-[#173F35]/15"
+                  className="border-b border-[#202522]/12"
                 >
                   <button
                     type="button"
@@ -84,15 +96,15 @@ export default function FAQ({ faqs = defaultFaqs }: FAQProps) {
                     onClick={() =>
                       setOpenIndex(isOpen ? null : index)
                     }
-                    className="flex w-full items-center justify-between gap-6 py-5 text-left sm:py-6"
+                    className="group flex w-full items-center justify-between gap-6 py-5 text-left sm:py-6"
                   >
-                    <span className="text-[14px] font-medium leading-6 text-[#173F35] sm:text-[15px]">
+                    <span className="max-w-[680px] text-[14px] font-medium leading-6 text-[#17413D] transition-colors group-hover:text-[#4F8060] sm:text-[15px] sm:leading-7">
                       {faq.question}
                     </span>
 
                     <span
                       aria-hidden="true"
-                      className={`shrink-0 text-xl font-light text-[#65966F] transition-transform ${
+                      className={`relative flex h-6 w-6 shrink-0 items-center justify-center text-[19px] font-light text-[#65966F] transition-transform duration-300 ${
                         isOpen ? "rotate-45" : ""
                       }`}
                     >
@@ -100,13 +112,19 @@ export default function FAQ({ faqs = defaultFaqs }: FAQProps) {
                     </span>
                   </button>
 
-                  {isOpen && (
-                    <div className="pb-5 pr-8 sm:pb-6">
-                      <p className="max-w-2xl text-[13px] leading-7 text-[#687A73] sm:text-[14px]">
+                  <div
+                    className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                      isOpen
+                        ? "grid-rows-[1fr] opacity-100"
+                        : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
+                    <div className="min-h-0 overflow-hidden">
+                      <p className="max-w-[690px] pb-5 pr-8 text-[13px] leading-7 text-[#687A73] sm:pb-6 sm:text-[14px]">
                         {faq.answer}
                       </p>
                     </div>
-                  )}
+                  </div>
                 </div>
               );
             })}

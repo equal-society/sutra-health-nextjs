@@ -20,7 +20,7 @@ export const howToManageStress: Article = {
   excerpt:
     "Understand everyday stress and explore practical ways to support calm, recovery and healthier routines.",
 
-  image: "/images/resources/stress.png",
+  image: "/images/resources/stress.webp",
 
 
   /* =========================================================

@@ -3,18 +3,50 @@ import Container from "@/components/shared/Container";
 
 export default function BookingCTA() {
   return (
-    <section className="bg-[#173F35] py-20 sm:py-24 lg:py-28">
+    <section className="bg-[#F7F5EF] py-14 sm:py-18 lg:py-20">
       <Container>
-        <div className="relative overflow-hidden rounded-[24px] bg-[#214D42] px-6 py-14 text-center sm:px-12 sm:py-16 lg:px-20 lg:py-20">
-          <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full border border-white/10" />
-          <div aria-hidden="true" className="pointer-events-none absolute -bottom-32 -left-20 h-72 w-72 rounded-full border border-white/10" />
-          <div className="relative z-10 mx-auto max-w-3xl">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B5CEB6] sm:text-[11px]">Take the next step</p>
-            <h2 className="mt-4 font-serif text-[38px] leading-[1.05] tracking-[-0.035em] text-[#FAF8F1] sm:text-[48px] lg:text-[54px]">Start with a conversation about your health.</h2>
-            <p className="mx-auto mt-5 max-w-xl text-[14px] leading-6 text-[#D0DDD5] sm:text-[15px] sm:leading-7">Tell us what you are dealing with, what you have tried, and what you would like to change. We can help you understand a sensible place to begin.</p>
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <Link href="/book-appointment" className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#FAF8F1] px-7 text-[13px] font-semibold text-[#173F35] hover:bg-white">Book a Consultation <span aria-hidden="true">→</span></Link>
-              <Link href="/contact" className="inline-flex h-12 items-center justify-center rounded-full border border-white/25 px-7 text-[13px] font-semibold text-white hover:bg-white/10">Contact Sutra Health</Link>
+        <div className="relative overflow-hidden rounded-[22px] bg-[#17413D] px-6 py-12 sm:px-10 sm:py-14 lg:px-16 lg:py-16">
+          {/* Very subtle editorial detail */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-20 -top-20 h-52 w-52 rounded-full border border-white/[0.08]"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full border border-white/[0.06]"
+          />
+
+          <div className="relative z-10 mx-auto max-w-[760px] text-center">
+            <p className="text-[9px] font-semibold uppercase tracking-[0.22em] text-[#B7CDBB] sm:text-[10px]">
+              Take the next step
+            </p>
+
+            <h2 className="mt-4 font-serif text-[35px] font-medium leading-[1.02] tracking-[-0.04em] text-[#F7F5EF] sm:text-[43px] lg:text-[50px]">
+              Start with a conversation
+              <br className="hidden sm:block" /> about your health.
+            </h2>
+
+            <p className="mx-auto mt-5 max-w-[600px] text-[12px] leading-6 text-[#D5E0D9] sm:text-[13px] sm:leading-7">
+              Tell us what you are dealing with, what you have tried, and what
+              you would like to change. We can help you understand a sensible
+              place to begin.
+            </p>
+
+            <div className="mt-7 flex flex-col justify-center gap-2.5 sm:flex-row sm:gap-3">
+              <Link
+                href="/book-appointment"
+                className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-[#F7F5EF] px-6 text-[11px] font-semibold text-[#17413D] transition-colors duration-300 hover:bg-white sm:h-12 sm:px-7 sm:text-[12px]"
+              >
+                Book a Consultation
+                <span aria-hidden="true">→</span>
+              </Link>
+
+              <Link
+                href="/contact"
+                className="inline-flex h-11 items-center justify-center rounded-full border border-white/20 px-6 text-[11px] font-semibold text-white transition-colors duration-300 hover:bg-white/[0.08] sm:h-12 sm:px-7 sm:text-[12px]"
+              >
+                Contact Sutra Health
+              </Link>
             </div>
           </div>
         </div>

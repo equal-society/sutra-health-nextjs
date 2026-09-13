@@ -3,14 +3,16 @@ import type { Metadata } from "next";
 import Hero from "@/components/hero/Hero";
 import Credibility from "@/components/hero/Credibility";
 import Problem from "@/components/hero/Problem";
-import Programs from "@/components/hero/Programs";
-import Approach from "@/components/hero/Approach";
-import HeroFramework from "@/components/hero/HeroFramework";
+import Programs from "@/components/hero/WhatWeDo";
+import Approach from "@/components/hero/HowItWorks";
+import HeroFramework from "@/components/hero/Assessment";
 import Conditions from "@/components/hero/Conditions";
 import Experts from "@/components/hero/Experts";
+import WhySutra from "@/components/hero/WhySutra";
 import Testimonials from "@/components/hero/Testimonials";
 import FAQ from "@/components/shared/FAQ";
 import BookingCTA from "@/components/hero/BookingCTA";
+import Resources from "@/components/hero/Resources";
 
 export const metadata: Metadata = {
   // Lightly adjusted for title/H1 alignment (report flagged: title said
@@ -179,7 +181,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <main>
+      <main className="sutraHomeEditorial">
         <Hero />
         <Credibility />
         <Problem />
@@ -188,7 +190,9 @@ export default function Home() {
         <HeroFramework />
         <Conditions />
         <Experts />
+        <WhySutra />
         <Testimonials />
+        <Resources />
         <FAQ />
         <BookingCTA />
       </main>

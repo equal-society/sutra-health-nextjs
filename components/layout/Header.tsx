@@ -243,16 +243,16 @@ export default function Header() {
   }
 
   return (
-    <header ref={navRef} className="siteHeader">
-      <div className="navbarContainer">
+    <header ref={navRef} className="siteHeader siteHeaderPremium">
+      <div className="navbarContainer navbarContainerPremium">
         {/* BRAND */}
         <Link
           href="/"
-          className="brand"
+          className="brand brandPremium"
           onClick={closeNavigation}
           aria-label="Sutra Health Home"
         >
-          <div className="brandLogo">
+          <div className="brandLogo brandLogoPremium">
             <img
               src="/logo/sutra-health-logo.webp"
               alt="Sutra Health"
@@ -261,17 +261,17 @@ export default function Header() {
             />
           </div>
 
-          <div className="brandText">
-            <span className="brandName">Sutra Health</span>
-            <span className="brandTagline">
+          <div className="brandText brandTextPremium">
+            <span className="brandName brandNamePremium">Sutra Health</span>
+            <span className="brandTagline brandTaglinePremium">
               Integrative Lifestyle Healthcare
             </span>
           </div>
         </Link>
 
         {/* DESKTOP NAV */}
-        <nav className="desktopNav" aria-label="Main navigation">
-          <Link href="/" className="navLink" onClick={closeNavigation}>
+        <nav className="desktopNav desktopNavPremium" aria-label="Main navigation">
+          <Link href="/" className="navLink navLinkPremium" onClick={closeNavigation}>
             Home
           </Link>
 
@@ -301,7 +301,7 @@ export default function Header() {
 
           <Link
             href="/approach"
-            className="navLink"
+            className="navLink navLinkPremium"
             onClick={closeNavigation}
           >
             Our Approach
@@ -309,7 +309,7 @@ export default function Header() {
 
           <Link
             href="/retreat-programs"
-            className="navLink"
+            className="navLink navLinkPremium"
             onClick={closeNavigation}
           >
             Retreats
@@ -337,14 +337,14 @@ export default function Header() {
             setOpenDropdown={setOpenDropdown}
             className="resourcesMenu"
           />
-          <Link href="/contact" className="navLink" onClick={closeNavigation}>
+          <Link href="/contact" className="navLink navLinkPremium" onClick={closeNavigation}>
             Contact
           </Link>
         </nav>
 
         {/* DESKTOP ACTIONS */}
-        <div className="desktopNavActions">
-          <Link href="/book-appointment" className="desktopBookButton">
+        <div className="desktopNavActions desktopNavActionsPremium">
+          <Link href="/book-appointment" className="desktopBookButton desktopBookButtonPremium">
             <span>Book Consultation</span>
             <span aria-hidden="true">→</span>
           </Link>
@@ -353,7 +353,7 @@ export default function Header() {
         {/* MOBILE MENU BUTTON */}
         <button
           type="button"
-          className={`mobileMenuButton ${
+          className={`mobileMenuButton mobileMenuButtonPremium ${
             mobileOpen ? "mobileMenuButtonOpen" : ""
           }`}
           onClick={() => {
