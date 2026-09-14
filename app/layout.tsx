@@ -29,8 +29,7 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title:
-      "Sutra Health | Integrative Lifestyle Healthcare",
+    title: "Sutra Health | Integrative Lifestyle Healthcare",
 
     description:
       "Personalized healthcare focused on lifestyle, nutrition, movement, breath and mind.",
@@ -43,8 +42,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title:
-      "Sutra Health | Integrative Lifestyle Healthcare",
+    title: "Sutra Health | Integrative Lifestyle Healthcare",
     description:
       "Personalized healthcare focused on lifestyle, nutrition, movement, breath and mind.",
   },
@@ -57,13 +55,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Font Awesome */}
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        />
+      </head>
+
       <body>
         <Header />
+
         {children}
+
         <WhatsAppFloat />
         <Chatbot />
+
         <Footer />
-      </body>
+     </body>
     </html>
   );
 }
