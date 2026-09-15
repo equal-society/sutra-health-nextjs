@@ -16,28 +16,28 @@ const defaultFaqs: FAQItem[] = [
   {
     question: "What is lifestyle medicine?",
     answer:
-      "It's healthcare built around your daily habits - food, movement, sleep, stress - rather than just prescriptions. It works alongside your existing medical care, not instead of it.",
+      "Lifestyle medicine uses evidence-informed changes in areas such as food, physical activity, sleep and stress management alongside appropriate medical care.",
   },
   {
     question:
       "Can yoga therapy be part of managing something like diabetes or blood pressure?",
     answer:
-      "It can be one part of your overall care, alongside your doctor - not a replacement for it. Any medication changes should always go through your physician.",
+      "It can be one part of your overall care, alongside your doctor — not a replacement for it. Any medication changes should always go through your physician.",
   },
   {
     question: "Do you offer online consultations?",
     answer:
-      "Yes. We work with people across India, not just Gurugram. Online consultations are available for lifestyle medicine, nutrition counselling, and yoga therapy. In-person sessions are also available in Gurugram.",
+      "Yes. We work with people across India, not just Faridabad. Online consultations are available for lifestyle medicine, nutrition counselling, and yoga therapy. In-person sessions are also available in Faridabad.",
   },
   {
     question: "How long before I see results?",
     answer:
-      "Depends on you and your consistency - some people feel different within weeks, some things take longer. We won't promise a timeline nobody can guarantee.",
+      "It depends on you and your consistency. Some people notice changes within weeks, while other improvements take longer. We do not promise a timeline that cannot be guaranteed.",
   },
   {
     question: "Is this right for everyone?",
     answer:
-      "If you're managing a serious medical condition or on medication, talk to your doctor before starting. This is built to complement medical care, not replace it.",
+      "If you are managing a serious medical condition or taking medication, talk to your doctor before starting. Sutra Health is designed to complement appropriate medical care, not replace it.",
   },
 ];
 
@@ -59,6 +59,7 @@ export default function FAQ({ faqs = defaultFaqs }: FAQProps) {
                 aria-hidden="true"
                 className="h-px w-8 bg-[#91A298]"
               />
+
               <p className="text-[9px] font-semibold uppercase tracking-[0.21em] text-[#65736D] sm:text-[10px]">
                 Frequently asked questions
               </p>
@@ -75,8 +76,8 @@ export default function FAQ({ faqs = defaultFaqs }: FAQProps) {
             </h2>
 
             <p className="mt-6 max-w-[390px] text-[13px] leading-7 text-[#687A73] sm:text-[14px]">
-              Simple answers about our lifestyle-focused and integrative
-              approach.
+              Simple answers about Sutra Health, our doctor-led integrative
+              approach, and how our consultations work.
             </p>
           </div>
 
@@ -93,6 +94,7 @@ export default function FAQ({ faqs = defaultFaqs }: FAQProps) {
                   <button
                     type="button"
                     aria-expanded={isOpen}
+                    aria-controls={`faq-answer-${index}`}
                     onClick={() =>
                       setOpenIndex(isOpen ? null : index)
                     }
@@ -112,7 +114,12 @@ export default function FAQ({ faqs = defaultFaqs }: FAQProps) {
                     </span>
                   </button>
 
+                  {/* Answer remains in the DOM for search/AEO,
+                      while the accordion controls its visual display. */}
                   <div
+                    id={`faq-answer-${index}`}
+                    role="region"
+                    aria-hidden={!isOpen}
                     className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
                       isOpen
                         ? "grid-rows-[1fr] opacity-100"

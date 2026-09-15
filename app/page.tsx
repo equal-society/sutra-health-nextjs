@@ -17,7 +17,7 @@ import BookingCTA from "@/components/hero/BookingCTA";
 const siteUrl = "https://lifequality.org.in";
 
 export const metadata: Metadata = {
-  title: "Sutra Health | Understand Your Health, Build Lasting Habits",
+  title: "Sutra Health | Understand the Whole Picture of Your Health",
 
   description:
     "Doctor-led integrative lifestyle healthcare combining lifestyle medicine, nutrition counselling, therapeutic yoga, and practical behaviour change.",
@@ -32,16 +32,19 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Sutra Health | Understand Your Health, Build Lasting Habits",
+    title: "Sutra Health | Understand the Whole Picture of Your Health",
+
     description:
       "Doctor-led integrative lifestyle healthcare combining lifestyle medicine, nutrition counselling, therapeutic yoga, and practical behaviour change.",
+
     url: siteUrl,
     siteName: "Sutra Health",
     type: "website",
     locale: "en_IN",
+
     images: [
       {
-        url: `${siteUrl}/images/hero-desktop5.webp`,
+        url: `${siteUrl}/images/hero-desktop.webp`,
         width: 1200,
         height: 630,
         alt: "Doctor-led consultation at Sutra Health",
@@ -51,10 +54,13 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Sutra Health | Understand Your Health, Build Lasting Habits",
+
+    title: "Sutra Health | Understand the Whole Picture of Your Health",
+
     description:
       "Doctor-led integrative lifestyle healthcare combining lifestyle medicine, nutrition counselling, therapeutic yoga, and practical behaviour change.",
-    images: [`${siteUrl}/images/hero-desktop5.webp`],
+
+    images: [`${siteUrl}/images/hero-desktop.webp`],
   },
 };
 
@@ -62,7 +68,7 @@ const homepageFaqs = [
   {
     question: "What is lifestyle medicine?",
     answer:
-      "It's healthcare built around your daily habits - food, movement, sleep, stress - rather than just prescriptions. It works alongside your existing medical care, not instead of it.",
+    "Lifestyle medicine uses evidence-informed changes in areas such as food, physical activity, sleep and stress management alongside appropriate medical care.",
   },
   {
     question:
@@ -142,7 +148,7 @@ const structuredData = {
     {
       "@type": "WebPage",
       "@id": `${siteUrl}/#webpage`,
-      name: "Sutra Health | Understand Your Health, Build Lasting Habits",
+      name: "Sutra Health | Understand the Whole Picture of Your Health",
       url: siteUrl,
       isPartOf: {
         "@id": `${siteUrl}/#website`,
@@ -150,6 +156,22 @@ const structuredData = {
       about: {
         "@id": `${siteUrl}/#organization`,
       },
+      breadcrumb: {
+        "@id": `${siteUrl}/#breadcrumb`,
+      },
+    },
+
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${siteUrl}/#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${siteUrl}/`,
+        },
+      ],
     },
 
     {
@@ -210,6 +232,8 @@ const structuredData = {
     },
   ],
 };
+
+    
 
 export default function Home() {
   return (

@@ -73,7 +73,7 @@ export default function Resources() {
                     {article.image ? (
                       <Image
                         src={article.image}
-                        alt=""
+                        alt={article.title}
                         fill
                         sizes="(max-width: 639px) 120px, (max-width: 1023px) 135px, 155px"
                         className="object-cover transition-transform duration-500 group-hover:scale-[1.035]"
