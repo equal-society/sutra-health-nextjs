@@ -229,9 +229,26 @@ export default function WhatWeDoPage() {
       <main className="bg-[#F7F5EF] text-[#202522]">
 
         {/* HERO */}
-        <section className="border-b border-[#202522]/10">
+        <section className="relative overflow-hidden border-b border-[#202522]/10 bg-[#F7F5EF]">
+          {/* Soft organic background shape */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-32 -top-40 h-[520px] w-[520px] rounded-full bg-[#E7EDE8]/70 blur-[2px] sm:h-[620px] sm:w-[620px]"
+          />
+
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute right-[8%] top-[18%] h-[280px] w-[280px] rounded-full bg-[#91A298]/10 blur-3xl sm:h-[380px] sm:w-[380px]"
+          />
+
+          {/* Very subtle bottom fade */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#E7EDE8]/20 to-transparent"
+          />
+
           <Container>
-            <div className="max-w-[900px] py-20 sm:py-24 lg:py-28">
+            <div className="relative max-w-[900px] py-20 sm:py-24 lg:py-28">
               <div className="flex items-center gap-3">
                 <span
                   aria-hidden="true"
@@ -243,7 +260,7 @@ export default function WhatWeDoPage() {
                 </p>
               </div>
 
-              <h1 className="mt-6 max-w-[850px] font-serif text-[46px] font-medium leading-[0.98] tracking-[-0.045em] sm:text-[60px] lg:text-[72px]">
+              <h1 className="mt-6 max-w-[850px] font-serif text-[46px] font-medium leading-[0.98] tracking-[-0.045em] text-[#202522] sm:text-[60px] lg:text-[72px]">
                 Integrative health services for lasting health.
               </h1>
 
