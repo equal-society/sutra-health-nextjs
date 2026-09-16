@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import FAQ from "@/components/shared/FAQ";
 import Container from "@/components/shared/Container";
 
 const siteUrl = "https://lifequality.org.in";
 
 export const metadata: Metadata = {
-  title: "What We Do | Integrative Health Services",
+  title: "Integrative Health Services",
   description:
-    "Explore Sutra Health's four core services: lifestyle medicine, nutrition counselling, therapeutic yoga, and behaviour and mind practices.",
+    "Sutra Health offers doctor-led lifestyle medicine, nutrition counselling, therapeutic yoga, and behaviour and mind practices for personalised health support.",
 
   metadataBase: new URL(siteUrl),
 
@@ -22,9 +21,9 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "What We Do | Integrative Health Services",
+    title: "Integrative Health Services",
     description:
-      "Explore Sutra Health's four core services: lifestyle medicine, nutrition counselling, therapeutic yoga, and behaviour and mind practices.",
+      "Sutra Health offers doctor-led lifestyle medicine, nutrition counselling, therapeutic yoga, and behaviour and mind practices for personalised health support.",
     url: `${siteUrl}/what-we-do`,
     siteName: "Sutra Health",
     type: "website",
@@ -41,9 +40,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "What We Do | Integrative Health Services",
+    title: "Integrative Health Services",
     description:
-      "Explore Sutra Health's four core services: lifestyle medicine, nutrition counselling, therapeutic yoga, and behaviour and mind practices.",
+      "Sutra Health offers doctor-led lifestyle medicine, nutrition counselling, therapeutic yoga, and behaviour and mind practices for personalised health support.",
     images: [`${siteUrl}/images/hero-desktop.webp`],
   },
 };
@@ -53,36 +52,36 @@ const services = [
     number: "01",
     title: "Lifestyle Medicine",
     description:
-      "Doctor-led care that looks at everyday factors such as food, movement, sleep, stress and other habits alongside appropriate medical care.",
+      "Doctor-led care that looks at food, movement, sleep, stress and other daily habits alongside appropriate medical care.",
     bestFor:
-      "People looking to understand lifestyle factors that may be affecting their health or long-term condition management.",
+      "People who want to understand how lifestyle factors may be affecting their health or a long-term condition.",
     href: "/what-we-do/lifestyle",
   },
   {
     number: "02",
     title: "Nutrition Counselling",
     description:
-      "Practical, personalised nutrition guidance designed around your health needs, preferences, routines and real-life circumstances.",
+      "Practical, personalised guidance on food and eating habits based on your health needs, preferences and everyday life.",
     bestFor:
-      "People who want clearer, sustainable nutrition habits rather than restrictive or one-size-fits-all advice.",
+      "People who want clearer and more sustainable nutrition habits without one-size-fits-all advice.",
     href: "/what-we-do/nutrition",
   },
   {
     number: "03",
     title: "Therapeutic Yoga",
     description:
-      "Structured yoga-based practices used as part of a broader health plan, with attention to movement, breathing, relaxation and individual needs.",
+      "Structured yoga, movement and breathing practices used as part of a broader health plan and adapted to individual needs.",
     bestFor:
-      "People who may benefit from a structured movement and mind-body practice alongside their existing healthcare.",
+      "People who may benefit from a structured mind-body practice alongside their existing healthcare.",
     href: "/what-we-do/therapeutic-yoga",
   },
   {
     number: "04",
     title: "Behaviour & Mind Practices",
     description:
-      "Practical support for understanding habits, stress, routines and behaviour patterns that can influence whether health changes become sustainable.",
+      "Practical support for understanding habits, stress, routines and behaviour patterns that can affect lasting health changes.",
     bestFor:
-      "People who understand what they should do but find it difficult to turn good intentions into consistent habits.",
+      "People who know what they want to change but find it difficult to turn good intentions into consistent habits.",
     href: "/what-we-do/behaviour-mind",
   },
 ];
@@ -91,22 +90,22 @@ const faqs = [
   {
     question: "What services does Sutra Health provide?",
     answer:
-      "Sutra Health provides four core services: lifestyle medicine, nutrition counselling, therapeutic yoga, and behaviour and mind practices. They can be used individually or combined into a personalised health plan.",
+      "Sutra Health provides four core services: lifestyle medicine, nutrition counselling, therapeutic yoga, and behaviour and mind practices. They can be used individually or combined when appropriate.",
   },
   {
     question: "Who are Sutra Health services for?",
     answer:
-      "They are designed for people who want structured, personalised support with lifestyle-related health concerns, nutrition, movement, stress, habits and long-term behaviour change, while continuing appropriate medical care.",
+      "They are designed for people looking for personalised support with lifestyle-related health concerns, nutrition, movement, stress, habits and long-term behaviour change, while continuing appropriate medical care.",
   },
   {
     question: "How do I know which Sutra Health service is right for me?",
     answer:
-      "The right starting point depends on your goals and health needs. If you want a broader medical and lifestyle assessment, lifestyle medicine is often the starting point. Nutrition, therapeutic yoga or behaviour and mind practices can then be used where appropriate.",
+      "It depends on your health needs and goals. Lifestyle medicine may be a useful starting point when you want a broader health and lifestyle assessment. Nutrition, therapeutic yoga or behaviour and mind practices can be included when appropriate.",
   },
   {
     question: "Can different Sutra Health services be combined?",
     answer:
-      "Yes. The services are designed to work together when appropriate. Your plan may combine medical and lifestyle guidance with nutrition, therapeutic yoga and behaviour-focused practices rather than treating each area in isolation.",
+      "Yes. Different services can be combined when appropriate. A personalised plan may bring together lifestyle guidance, nutrition, therapeutic yoga and behaviour-focused practices.",
   },
 ];
 
@@ -118,12 +117,14 @@ const structuredData = {
       "@id": `${siteUrl}/#organization`,
       name: "Sutra Health",
       url: siteUrl,
+
       founder: {
         "@type": "Person",
         name: "Dr. Rakesh Sarwal",
         honorificSuffix: "MBBS, MPH, DrPH",
         url: "https://academic.lifequality.org.in/",
       },
+
       sameAs: [
         "https://academic.lifequality.org.in/",
         "https://www.instagram.com/sutrahealth/",
@@ -148,7 +149,7 @@ const structuredData = {
     {
       "@type": "WebPage",
       "@id": `${siteUrl}/what-we-do#webpage`,
-      name: "What We Do | Integrative Health Services | Sutra Health",
+      name: "Integrative Health Services | Sutra Health",
       url: `${siteUrl}/what-we-do`,
       isPartOf: {
         "@id": `${siteUrl}/#website`,
@@ -227,7 +228,6 @@ export default function WhatWeDoPage() {
       />
 
       <main className="bg-[#F7F5EF] text-[#202522]">
-
         {/* HERO */}
         <section className="relative overflow-hidden border-b border-[#202522]/10 bg-[#F7F5EF]">
           {/* Soft organic background shape */}
@@ -241,7 +241,6 @@ export default function WhatWeDoPage() {
             className="pointer-events-none absolute right-[8%] top-[18%] h-[280px] w-[280px] rounded-full bg-[#91A298]/10 blur-3xl sm:h-[380px] sm:w-[380px]"
           />
 
-          {/* Very subtle bottom fade */}
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#E7EDE8]/20 to-transparent"
@@ -264,12 +263,13 @@ export default function WhatWeDoPage() {
                 Integrative health services for lasting health.
               </h1>
 
-              <p className="mt-7 max-w-[720px] text-[17px] leading-8 text-[#4E5B56] sm:text-[19px] sm:leading-9">
-                Sutra Health provides doctor-led integrative healthcare through lifestyle
-                medicine, nutrition counselling, therapeutic yoga, and behaviour and mind
-                practices. These services are for people looking for personalised support
-                with lifestyle-related health concerns, long-term condition management,
-                nutrition, movement, stress, or sustainable behaviour change.
+              <p className="mt-7 max-w-[720px] text-[17px] leading-7 text-[#4E5B56] sm:text-[19px] sm:leading-7">
+                Sutra Health provides doctor-led integrative healthcare through
+                lifestyle medicine, nutrition counselling, therapeutic yoga,
+                and behaviour and mind practices. These services are for people
+                looking for personalised support with lifestyle-related health
+                concerns, long-term condition management, nutrition, movement,
+                stress, or sustainable behaviour change.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-x-7 gap-y-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#65736D]">
@@ -292,8 +292,13 @@ export default function WhatWeDoPage() {
                 </p>
 
                 <h2 className="mt-4 max-w-[360px] font-serif text-[38px] leading-[1.02] tracking-[-0.04em] sm:text-[46px]">
-                  One health picture, connected support.
+                  Four ways to work on your health.
                 </h2>
+
+                <p className="mt-5 max-w-[360px] text-[15px] leading-7 text-[#4E5B56]">
+                  Each service can stand alone or become part of a broader,
+                  personalised health plan.
+                </p>
               </div>
 
               <div className="divide-y divide-[#202522]/10 border-y border-[#202522]/10">
@@ -362,10 +367,22 @@ export default function WhatWeDoPage() {
 
             <div className="mt-10 grid gap-px overflow-hidden rounded-[16px] border border-[#202522]/10 bg-[#202522]/10 sm:grid-cols-2 lg:grid-cols-4">
               {[
-                ["Need a broader health picture?", "Start with Lifestyle Medicine."],
-                ["Need practical food guidance?", "Explore Nutrition Counselling."],
-                ["Want structured mind-body practice?", "Explore Therapeutic Yoga."],
-                ["Struggling with consistency?", "Explore Behaviour & Mind Practices."],
+                [
+                  "Need a broader health picture?",
+                  "Start with Lifestyle Medicine.",
+                ],
+                [
+                  "Need practical food guidance?",
+                  "Explore Nutrition Counselling.",
+                ],
+                [
+                  "Want structured mind-body practice?",
+                  "Explore Therapeutic Yoga.",
+                ],
+                [
+                  "Struggling with consistency?",
+                  "Explore Behaviour & Mind Practices.",
+                ],
               ].map(([question, answer]) => (
                 <div
                   key={question}
@@ -406,10 +423,19 @@ export default function WhatWeDoPage() {
                 </p>
 
                 <div className="mt-7 space-y-3 text-[13px] text-[#4E5B56]">
-                  <p>→ Lifestyle assessment can identify important patterns.</p>
-                  <p>→ Nutrition can translate findings into practical food habits.</p>
-                  <p>→ Therapeutic yoga can support movement and mind-body practice.</p>
-                  <p>→ Behaviour work can help make changes more sustainable.</p>
+                  <p>
+                    → Lifestyle assessment can identify important patterns.
+                  </p>
+                  <p>
+                    → Nutrition can turn findings into practical food habits.
+                  </p>
+                  <p>
+                    → Therapeutic yoga can support movement and mind-body
+                    practice.
+                  </p>
+                  <p>
+                    → Behaviour work can help make changes more sustainable.
+                  </p>
                 </div>
 
                 <Link
@@ -477,49 +503,52 @@ export default function WhatWeDoPage() {
 
         {/* FAQ */}
         <section className="bg-[#FAF8F1] py-20 sm:py-24 lg:py-28">
-                  <Container>
-                    <div className="grid gap-12 lg:grid-cols-[0.75fr_1.5fr] lg:gap-20">
-                      <div>
-                        <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
-                          Common questions
-                        </p>
-        
-                        <h2 className="mt-3 max-w-md font-serif text-[38px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[46px]">
-                          Before you begin.
-                        </h2>
-        
-                      
-                      </div>
-        
-                      <div className="border-t border-[#173F35]/15">
-                        {faqs.map((faq) => (
-                          <details
-                            key={faq.question}
-                            className="group border-b border-[#173F35]/15"
-                          >
-                            <summary className="flex cursor-pointer list-none items-center gap-4 py-5 sm:py-6 [&::-webkit-details-marker]:hidden">
-                              <span className="flex-1 text-[15px] font-medium leading-6 tracking-[-0.01em] text-[#173F35] sm:text-[16px]">
-                                {faq.question}
-                              </span>
-        
-                              <span
-                                aria-hidden="true"
-                                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#173F35]/10 text-[#65966F] transition-transform duration-300 group-open:rotate-45"
-                              >
-                                +
-                              </span>
-                            </summary>
-        
-                            <div className="pb-6 pr-10 sm:pb-7">
-                              <p className="max-w-2xl text-[13px] leading-7 text-[#687A73] sm:text-[14px]">
-                                {faq.answer}
-                              </p>
-                            </div>
-                          </details>
-                        ))}
-                      </div>
+          <Container>
+            <div className="grid gap-12 lg:grid-cols-[0.75fr_1.5fr] lg:gap-20">
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
+                  Common questions
+                </p>
+
+                <h2 className="mt-3 max-w-md font-serif text-[38px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[46px]">
+                  Before you begin.
+                </h2>
+
+                <p className="mt-5 max-w-md text-[14px] leading-7 text-[#687A73]">
+                  A few simple answers to common questions about our services
+                  and where to begin.
+                </p>
+              </div>
+
+              <div className="border-t border-[#173F35]/15">
+                {faqs.map((faq) => (
+                  <details
+                    key={faq.question}
+                    className="group border-b border-[#173F35]/15"
+                  >
+                    <summary className="flex cursor-pointer list-none items-center gap-4 py-5 sm:py-6 [&::-webkit-details-marker]:hidden">
+                      <span className="flex-1 text-[15px] font-medium leading-6 tracking-[-0.01em] text-[#173F35] sm:text-[16px]">
+                        {faq.question}
+                      </span>
+
+                      <span
+                        aria-hidden="true"
+                        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#173F35]/10 text-[#65966F] transition-transform duration-300 group-open:rotate-45"
+                      >
+                        +
+                      </span>
+                    </summary>
+
+                    <div className="pb-6 pr-10 sm:pb-7">
+                      <p className="max-w-2xl text-[13px] leading-7 text-[#687A73] sm:text-[14px]">
+                        {faq.answer}
+                      </p>
                     </div>
-                  </Container>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </Container>
         </section>
 
         {/* CTA */}

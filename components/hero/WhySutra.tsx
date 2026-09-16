@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import Container from "@/components/shared/Container";
 
@@ -5,27 +6,22 @@ const principles = [
   {
     number: "01",
     title: "Doctor-led",
-    text: "Healthcare remains central, with lifestyle practices coordinated alongside appropriate medical care.",
+    text: "Healthcare remains central to the way we work.",
   },
   {
     number: "02",
     title: "Evidence-informed",
-    text: "Recommendations are grounded in health knowledge and practical lifestyle approaches rather than quick fixes.",
+    text: "Recommendations are grounded in health knowledge and practical lifestyle approaches.",
   },
   {
     number: "03",
     title: "Whole-person",
-    text: "We look beyond a single symptom to the patterns, habits and circumstances that shape everyday health.",
+    text: "We look beyond a single symptom to understand the patterns that shape everyday health.",
   },
   {
     number: "04",
     title: "Practical",
-    text: "The focus is on manageable changes that can fit into real life, not an idealised routine.",
-  },
-  {
-    number: "05",
-    title: "Long-term",
-    text: "The aim is to build understanding and habits that can be sustained and adapted over time.",
+    text: "The focus is on manageable changes that can fit into real life.",
   },
 ];
 
@@ -33,140 +29,158 @@ export default function WhySutra() {
   return (
     <section
       aria-labelledby="why-sutra-title"
-      className="relative overflow-hidden bg-[#173F35] py-20 text-[#F7F5EF] sm:py-24 lg:py-32"
+      className="bg-[#E7EDE8] py-20 sm:py-24 lg:py-32"
     >
       <Container>
-        <div className="relative">
-          {/* Header */}
-          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end lg:gap-24">
-            <div>
-              <div className="flex items-center gap-3">
-                <span aria-hidden="true" className="h-px w-10 bg-[#A9BDB1]" />
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#B8C8BF] sm:text-[11px]">
-                  Why Sutra?
-                </p>
-              </div>
+        {/* Header */}
+        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end lg:gap-20">
+          <div>
+            <div className="flex items-center gap-3">
+              <span
+                aria-hidden="true"
+                className="h-px w-9 bg-[#91A298]"
+              />
 
-              <h2
-                id="why-sutra-title"
-                className="mt-5 max-w-[580px] font-serif text-[43px] font-medium leading-[0.98] tracking-[-0.045em] sm:text-[53px] lg:text-[63px]"
-              >
-                Care that sees
-                <br />
-                <span className="italic font-normal text-[#C7D5CC]">
-                  the whole person.
-                </span>
-              </h2>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.21em] text-[#65736D] sm:text-[11px]">
+                Why Sutra
+              </p>
             </div>
 
-            <p className="max-w-[680px] text-[15px] leading-8 text-[#D4DED8] sm:text-[16px] sm:leading-8.5">
-              Sutra Health brings doctor-led medical care together with
-              evidence-informed lifestyle practices, helping people understand
-              the patterns that influence health and make changes that can last.
-            </p>
+            <h2
+              id="why-sutra-title"
+              className="mt-5 max-w-[620px] font-serif text-[42px] font-medium leading-[1.02] tracking-[-0.045em] text-[#202522] sm:text-[52px] lg:text-[62px]"
+            >
+              A different way to care for{" "}
+              <span className="font-normal italic text-[#17413D]">
+                your health.
+              </span>
+            </h2>
           </div>
 
-          {/* Principles */}
-          <div className="mt-14 hidden border-y border-white/15 sm:block lg:mt-20">
-            <div className="grid grid-cols-5">
-              {principles.map((principle, index) => (
-                <article
-                  key={principle.number}
-                  className={`group min-h-[285px] px-5 py-7 lg:px-6 lg:py-9 ${
-                    index < principles.length - 1
-                      ? "border-r border-white/10"
-                      : ""
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="font-serif text-[18px] text-[#A9BDB1]">
-                      {principle.number}
-                    </span>
-                    <span
-                      aria-hidden="true"
-                      className="h-px w-6 bg-[#718E82] transition-all duration-300 group-hover:w-10 group-hover:bg-[#C7D5CC]"
-                    />
-                  </div>
+          <p className="max-w-[650px] text-[16px] leading-7 text-[#4E5B56] sm:text-[18px] sm:leading-8 lg:pb-1">
+            We look beyond a single symptom to understand the habits, patterns
+            and circumstances that shape your health, and focus on changes
+            that can work in real life.
+          </p>
+        </div>
 
-                  <h3 className="mt-12 font-serif text-[25px] leading-none tracking-[-0.025em] text-[#F7F5EF] lg:text-[29px]">
+        {/* Desktop principles */}
+        <div className="mt-14 hidden border-t border-[#202522]/12 sm:block lg:mt-20">
+          {principles.map((principle) => (
+            <article
+              key={principle.number}
+              className="grid gap-5 border-b border-[#202522]/12 py-7 sm:grid-cols-[70px_220px_1fr] sm:items-center sm:gap-8 lg:grid-cols-[90px_270px_1fr] lg:gap-10 lg:py-8"
+            >
+              <span className="font-serif text-[18px] text-[#91A298]">
+                {principle.number}
+              </span>
+
+              <h3 className="font-serif text-[27px] leading-tight tracking-[-0.025em] text-[#17413D] sm:text-[29px] lg:text-[32px]">
+                {principle.title}
+              </h3>
+
+              <p className="max-w-[650px] text-[16px] leading-7 text-[#65736D] sm:text-[17px] sm:leading-8">
+                {principle.text}
+              </p>
+            </article>
+          ))}
+        </div>
+
+        {/* Mobile one-by-one swipe */}
+        <div className="mt-10 sm:hidden">
+          <div
+            className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            aria-label="Why Sutra principles"
+          >
+            {principles.map((principle) => (
+              <article
+                key={principle.number}
+                className="flex min-h-[330px] w-[86vw] max-w-[360px] shrink-0 snap-center flex-col border border-[#202522]/12 bg-[#F7F5EF] px-6 py-6"
+              >
+                {/* Top */}
+                <div className="flex items-center justify-between">
+                  <span className="font-serif text-[18px] text-[#91A298]">
+                    {principle.number}
+                  </span>
+
+                  <span
+                    aria-hidden="true"
+                    className="h-px w-10 bg-[#91A298]"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="mt-auto">
+                  <h3 className="max-w-[300px] font-serif text-[36px] leading-[1.02] tracking-[-0.035em] text-[#17413D]">
                     {principle.title}
                   </h3>
 
-                  <p className="mt-4 text-[12px] leading-6 text-[#B8C8BF] lg:text-[13px] lg:leading-7">
+                  <p className="mt-4 max-w-[300px] text-[16px] leading-7 text-[#65736D]">
                     {principle.text}
                   </p>
-                </article>
-              ))}
-            </div>
+                </div>
+
+                {/* Bottom */}
+                <div className="mt-8 flex items-center justify-between">
+                  <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-[#91A298]">
+                    Why Sutra
+                  </span>
+
+                  <span
+                    aria-hidden="true"
+                    className="flex h-9 w-9 items-center justify-center rounded-full border border-[#17413D]/15 text-[16px] text-[#17413D]"
+                  >
+                    →
+                  </span>
+                </div>
+              </article>
+            ))}
           </div>
 
-          {/* Mobile slider */}
-          <div className="mt-10 sm:hidden">
+          {/* Mobile pagination */}
+          <div className="mt-5 flex items-center justify-between px-1">
             <div
-              className="-mx-5 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-              aria-label="Why Sutra Health"
+              className="flex items-center gap-1.5"
+              aria-hidden="true"
             >
-              {principles.map((principle) => (
-                <article
+              {principles.map((principle, index) => (
+                <span
                   key={principle.number}
-                  className="flex min-h-[270px] w-[82vw] max-w-[310px] shrink-0 snap-start flex-col rounded-[20px] border border-white/12 bg-white/[0.06] p-5"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 font-serif text-[14px] text-[#C7D5CC]">
-                      {principle.number}
-                    </span>
-                    <span
-                      aria-hidden="true"
-                      className="h-px w-9 bg-[#718E82]"
-                    />
-                  </div>
-
-                  <div className="mt-auto">
-                    <h3 className="font-serif text-[30px] leading-none tracking-[-0.03em]">
-                      {principle.title}
-                    </h3>
-
-                    <p className="mt-3 text-[12px] leading-5.5 text-[#C1D0C8]">
-                      {principle.text}
-                    </p>
-                  </div>
-                </article>
+                  className={`h-1.5 rounded-full ${
+                    index === 0
+                      ? "w-6 bg-[#17413D]"
+                      : "w-1.5 bg-[#91A298]/60"
+                  }`}
+                />
               ))}
             </div>
 
-            <div className="flex items-center justify-between px-1">
-              <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-[#9FB4A9]">
-                Swipe through the principles
-              </p>
-              <span aria-hidden="true" className="text-[16px] text-[#C7D5CC]">
-                →
-              </span>
-            </div>
+            <span
+              aria-hidden="true"
+              className="text-[10px] font-medium uppercase tracking-[0.14em] text-[#65736D]"
+            >
+              Swipe
+            </span>
           </div>
+        </div>
 
-          {/* Closing line */}
-          <div className="mt-12 border-t border-white/12 pt-7 sm:mt-16 sm:pt-8 lg:mt-20">
-            <div className="grid gap-5 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-10">
-              <p className="max-w-[720px] font-serif text-[21px] leading-[1.25] tracking-[-0.02em] text-[#E1E8E3] sm:text-[25px]">
-                Not a quick fix. A more thoughtful way to work on health.
-              </p>
-
-              <Link
-                href="/approach"
-                className="group inline-flex items-center gap-3 text-[12px] font-semibold text-[#F7F5EF] sm:text-[13px]"
-              >
-                See how our approach works
-                <span
-                  aria-hidden="true"
-                  className="transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  →
-                </span>
-              </Link>
-            </div>
-          </div>
+        {/* Approach link */}
+        <div className="mt-9 flex justify-start sm:mt-10 sm:justify-end">
+          <Link
+            href="/approach"
+            className="group inline-flex items-center gap-3 border-b border-[#17413D]/25 pb-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-[#17413D] transition-colors duration-300 hover:border-[#17413D] sm:text-[13px]"
+          >
+            See our approach
+            <span
+              aria-hidden="true"
+              className="transition-transform duration-300 group-hover:translate-x-1"
+            >
+              →
+            </span>
+          </Link>
         </div>
       </Container>
     </section>
   );
 }
+

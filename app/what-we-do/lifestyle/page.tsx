@@ -2,93 +2,69 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/shared/Container";
-import FAQ from "@/components/shared/FAQ";
 
 const baseUrl = "https://lifequality.org.in";
 const pageUrl = `${baseUrl}/what-we-do/lifestyle`;
 
-export const metadata: Metadata = {
-  title: "Lifestyle Medicine for Better Health | Sutra Health",
-  description:
-    "Lifestyle medicine at Sutra Health combines evidence-informed support around nutrition, movement, sleep, stress, habits and everyday environment to help build sustainable health changes.",
-  keywords: [
-    "lifestyle medicine",
-    "lifestyle medicine India",
-    "lifestyle medicine Delhi NCR",
-    "lifestyle healthcare",
-    "lifestyle medicine for chronic conditions",
-    "healthy lifestyle support",
-    "preventive health",
-    "evidence-informed lifestyle medicine",
-    "Sutra Health",
-  ],
-  alternates: {
-    canonical: pageUrl,
+const faqItems = [
+  {
+    question: "What is lifestyle medicine?",
+    answer:
+      "Lifestyle medicine is healthcare built around everyday factors such as food, movement, sleep and stress. At Sutra Health, it is used alongside appropriate medical care, not instead of it.",
   },
-  openGraph: {
-    title: "Lifestyle Medicine for Better Health | Sutra Health",
-    description:
-      "Practical lifestyle medicine focused on nutrition, movement, sleep, stress, habits and sustainable everyday health changes.",
-    url: pageUrl,
-    siteName: "Sutra Health",
-    type: "website",
-    locale: "en_IN",
-    images: [
-      {
-        url: `${baseUrl}/images/services/lifestyle-medicine.webp`,
-        alt: "Lifestyle medicine at Sutra Health",
-      },
-    ],
+  {
+    question:
+      "Can yoga therapy be part of managing something like diabetes or blood pressure?",
+    answer:
+      "Yoga therapy can be one supportive part of an overall care plan alongside appropriate medical care. Medication changes should always be discussed with the treating physician.",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Lifestyle Medicine for Better Health | Sutra Health",
-    description:
-      "Practical lifestyle medicine focused on everyday habits and sustainable health changes.",
-    images: [`${baseUrl}/images/services/lifestyle-medicine.webp`],
+  {
+    question: "Do you offer online consultations?",
+    answer:
+      "Yes. Sutra Health offers online consultations across India for lifestyle medicine, nutrition counselling and yoga therapy. In-person sessions are also available in Gurugram.",
   },
-  robots: {
-    index: true,
-    follow: true,
+  {
+    question: "How long before I see results?",
+    answer:
+      "The timeline depends on the person, the goal and consistency with the plan. Sutra Health does not promise a fixed timeline because health changes differ from person to person.",
   },
-};
+  {
+    question: "Is this right for everyone?",
+    answer:
+      "Sutra Health is designed to complement appropriate medical care. People managing serious conditions or taking medication should discuss new lifestyle or movement practices with their doctor.",
+  },
+];
 
 const focusAreas = [
   {
-    number: "01",
     title: "Nutrition",
     description:
-      "Understanding everyday food patterns and identifying practical nutrition changes that fit health needs, preferences and routine.",
+      "Understand everyday food patterns and identify practical changes that fit your health needs, preferences and routine.",
   },
   {
-    number: "02",
     title: "Movement",
     description:
-      "Finding realistic ways to stay active and build movement into daily life according to individual ability and circumstances.",
+      "Find realistic ways to stay active and build movement into daily life according to your ability and circumstances.",
   },
   {
-    number: "03",
     title: "Sleep & recovery",
     description:
-      "Looking at sleep patterns, rest and recovery as part of the wider picture of health and everyday functioning.",
+      "Look at sleep patterns, rest and recovery as part of the wider picture of health and everyday functioning.",
   },
   {
-    number: "04",
-    title: "Stress & emotional wellbeing",
+    title: "Stress",
     description:
-      "Considering how stress, workload, routines and emotional demands may influence health behaviours and recovery.",
+      "Consider how stress, workload, routines and emotional demands may affect health behaviours and recovery.",
   },
   {
-    number: "05",
     title: "Habits & behaviour",
     description:
-      "Turning health goals into small, repeatable actions that are realistic enough to continue beyond a short-term programme.",
+      "Turn health goals into small, repeatable actions that are realistic enough to continue over time.",
   },
   {
-    number: "06",
     title: "Daily environment",
     description:
-      "Recognising how home, work, schedules and surroundings can make healthier choices easier or harder to sustain.",
+      "Recognise how home, work, schedules and surroundings can make healthier choices easier or harder to sustain.",
   },
 ];
 
@@ -121,21 +97,21 @@ const relevantAreas = [
 
 const otherPractices = [
   {
-    number: "01",
+    number: "02",
     title: "Nutrition Counselling",
     description:
       "Practical food guidance shaped around your health needs, preferences and everyday routine.",
     href: "/what-we-do/nutrition",
   },
   {
-    number: "02",
+    number: "03",
     title: "Therapeutic Yoga",
     description:
       "Adapted movement, breathing and relaxation practices considered around your needs and health goals.",
     href: "/what-we-do/therapeutic-yoga",
   },
   {
-    number: "03",
+    number: "04",
     title: "Breath & Mindfulness",
     description:
       "Simple practices that support breathing awareness, attention and useful ways of working with everyday stress.",
@@ -143,682 +119,634 @@ const otherPractices = [
   },
 ];
 
-const faqs = [
-  {
-    question: "How does lifestyle medicine support health?",
-    answer:
-      "Lifestyle medicine is an evidence-informed approach that uses healthy lifestyle behaviours as part of prevention and management of health conditions. It may consider nutrition, physical activity, sleep, stress management and other everyday factors alongside appropriate medical care.",
-  },
-  {
-    question: "What does lifestyle medicine include?",
-    answer:
-      "Lifestyle medicine can include support around nutrition, movement, sleep and recovery, stress management, healthy habits and the environment in which those habits take place. The priorities depend on the person's health concerns, goals and circumstances.",
-  },
-  {
-    question: "Is lifestyle medicine the same for everyone?",
-    answer:
-      "No. Sutra Health does not use one lifestyle plan for everyone. The focus is on understanding the person's health, routines, priorities and practical circumstances before identifying changes that may be useful and sustainable.",
-  },
-  {
-    question: "Can lifestyle medicine replace medicines or medical treatment?",
-    answer:
-      "No. Lifestyle medicine is intended to complement appropriate healthcare. It should not be used as a substitute for diagnosis, prescribed medication, emergency care or treatment from a qualified healthcare professional.",
-  },
-  {
-    question: "How does lifestyle medicine fit with Sutra Health's other practices?",
-    answer:
-      "Lifestyle medicine is one of Sutra Health's core practices. Depending on the person's needs, it may be complemented by nutrition counselling, therapeutic yoga, or breath and mindfulness practices within a coordinated plan.",
-  },
-];
-
-const pageSchema = {
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "MedicalWebPage",
-  name: "Lifestyle Medicine | Sutra Health",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${baseUrl}/#organization`,
+      name: "Sutra Health",
+      url: baseUrl,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${baseUrl}/#website`,
+      name: "Sutra Health",
+      url: baseUrl,
+      publisher: {
+        "@id": `${baseUrl}/#organization`,
+      },
+    },
+    {
+      "@type": "MedicalWebPage",
+      "@id": `${pageUrl}#webpage`,
+      name: "Lifestyle Medicine | Sutra Health",
+      description:
+        "Explore lifestyle medicine at Sutra Health, with practical support around nutrition, movement, sleep, stress, habits and sustainable everyday health changes.",
+      url: pageUrl,
+      inLanguage: "en-IN",
+      isPartOf: {
+        "@id": `${baseUrl}/#website`,
+      },
+      publisher: {
+        "@id": `${baseUrl}/#organization`,
+      },
+      about: {
+        "@type": "MedicalTherapy",
+        name: "Lifestyle Medicine",
+      },
+    },
+    {
+      "@type": "Service",
+      "@id": `${pageUrl}#service`,
+      name: "Lifestyle Medicine",
+      description:
+        "Doctor-led lifestyle medicine supporting practical changes in nutrition, movement, sleep, stress and everyday habits alongside appropriate medical care.",
+      provider: {
+        "@id": `${baseUrl}/#organization`,
+      },
+      url: pageUrl,
+      areaServed: {
+        "@type": "Country",
+        name: "India",
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${baseUrl}/`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "What We Do",
+          item: `${baseUrl}/what-we-do`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: "Lifestyle Medicine",
+          item: pageUrl,
+        },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqItems.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    },
+  ],
+};
+
+export const metadata: Metadata = {
+  title: "Lifestyle Medicine | Sutra Health",
   description:
-    "Explore lifestyle medicine at Sutra Health, with practical support around nutrition, movement, sleep, stress, habits and everyday health.",
-  url: pageUrl,
-  inLanguage: "en-IN",
-  about: {
-    "@type": "MedicalTherapy",
-    name: "Lifestyle Medicine",
+    "Doctor-led lifestyle medicine supporting practical changes in nutrition, movement, sleep, stress and everyday habits alongside medical care.",
+  alternates: {
+    canonical: pageUrl,
   },
-  author: {
-    "@type": "Person",
-    name: "Dr. Rakesh Sarwal",
-    honorificSuffix: "MBBS, MPH, DrPH",
-    url: "https://academic.lifequality.org.in/",
+  robots: {
+    index: true,
+    follow: true,
   },
-  reviewedBy: {
-    "@type": "Person",
-    name: "Dr. Rakesh Sarwal",
-    honorificSuffix: "MBBS, MPH, DrPH",
-    url: "https://academic.lifequality.org.in/",
+  openGraph: {
+    title: "Lifestyle Medicine | Sutra Health",
+    description:
+      "Doctor-led lifestyle medicine supporting practical changes in nutrition, movement, sleep, stress and everyday habits alongside medical care.",
+    url: pageUrl,
+    siteName: "Sutra Health",
+    type: "website",
+    locale: "en_IN",
+    images: [
+      {
+        url: `${baseUrl}/images/services/lifestyle-medicine.webp`,
+        width: 1200,
+        height: 630,
+        alt: "Lifestyle medicine at Sutra Health",
+      },
+    ],
   },
-  publisher: {
-    "@type": "Organization",
-    name: "Sutra Health",
-    url: baseUrl,
-    sameAs: ["https://academic.lifequality.org.in/"],
+  twitter: {
+    card: "summary_large_image",
+    title: "Lifestyle Medicine | Sutra Health",
+    description:
+      "Doctor-led lifestyle medicine supporting practical changes in everyday health.",
+    images: [`${baseUrl}/images/services/lifestyle-medicine.webp`],
   },
-  isPartOf: {
-    "@type": "WebSite",
-    name: "Sutra Health",
-    url: baseUrl,
-  },
-  subjectOf: [
-    {
-      "@type": "WebPage",
-      name: "Lifestyle Medicine",
-      url: "https://islm.org.in/WhatisLifestyleMedicine/",
-    },
-    {
-      "@type": "ScholarlyArticle",
-      name: "A traffic light approach to lifestyle change: Health building guideline for NCD outpatients in India",
-      url: "https://academic.lifequality.org.in/publication/2026-a-traffic-light-approach-to-lifestyle-change-health-building",
-      datePublished: "2026",
-    },
-  ],
-  dateModified: "2026-09-10",
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: `${baseUrl}/` },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "What We Do",
-      item: `${baseUrl}/what-we-do`,
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Lifestyle Medicine",
-      item: pageUrl,
-    },
-  ],
-};
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((faq) => ({
-    "@type": "Question",
-    name: faq.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: faq.answer,
-    },
-  })),
 };
 
 export default function LifestyleMedicinePage() {
   return (
-    <main className="bg-[#FAF8F1] text-[#173F35]">
+    <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
       />
 
-      {/* HERO */}
-      <section className="relative isolate overflow-hidden border-b border-[#173F35]/10">
-  {/* Background */}
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 -z-20 bg-[linear-gradient(135deg,#FAF8F1_0%,#F4F2E8_42%,#E7EFE7_100%)]"
-  />
+      <main className="bg-[#F7F5EF] text-[#202522]">
+        {/* =====================================================
+            HERO
+        ===================================================== */}
+        <section className="border-b border-[#202522]/10">
+          <Container>
+            <div className="grid items-center gap-12 py-14 sm:py-18 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20 lg:py-24">
+              <div className="max-w-[700px]">
+                <Link
+                  href="/what-we-do"
+                  className="text-[11px] font-medium text-[#65736D] transition-colors hover:text-[#17413D]"
+                >
+                  ← What we do
+                </Link>
 
-  {/* Organic gradient shapes */}
-  <div
-    aria-hidden="true"
-    className="absolute -right-32 -top-32 -z-10 h-[420px] w-[420px] rounded-full bg-[#A9C5AC]/35 blur-3xl sm:h-[520px] sm:w-[520px]"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute -bottom-48 left-[38%] -z-10 h-[420px] w-[420px] rounded-full bg-[#D8C9A9]/25 blur-3xl"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute -left-32 top-[28%] -z-10 h-[260px] w-[260px] rounded-full bg-[#C6D9CA]/25 blur-3xl"
-  />
-
-  {/* Fine editorial grid */}
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 -z-10 opacity-[0.035]"
-    style={{
-      backgroundImage:
-        "linear-gradient(#173F35 1px, transparent 1px), linear-gradient(90deg, #173F35 1px, transparent 1px)",
-      backgroundSize: "56px 56px",
-    }}
-  />
-
-  {/* Decorative rings */}
-  <div
-    aria-hidden="true"
-    className="absolute right-[7%] top-[16%] -z-10 hidden h-44 w-44 rounded-full border border-[#173F35]/10 lg:block"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute right-[10%] top-[21%] -z-10 hidden h-28 w-28 rounded-full border border-[#65966F]/15 lg:block"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute bottom-[13%] left-[8%] -z-10 hidden h-20 w-20 rounded-full border border-[#173F35]/10 lg:block"
-  />
-
-        <Container>
-          <div className="py-10 sm:py-14 lg:py-16">
-            <Link
-              href="/what-we-do"
-              className="inline-flex text-[12px] font-medium text-[#65966F] transition-colors hover:text-[#173F35]"
-            >
-              ← What We Do
-            </Link>
-
-            <div className="mt-10 grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
-              <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
+                <p className="mt-10 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#65736D]">
                   Lifestyle Medicine
                 </p>
 
-                <h1 className="mt-4 max-w-[700px] font-serif text-[42px] leading-[1.02] tracking-[-0.04em] text-[#123F35] sm:text-[56px] lg:text-[64px]">
-                  Lifestyle Medicine for Better Health
+                <h1 className="mt-5 max-w-[680px] font-serif text-[48px] font-medium leading-[0.96] tracking-[-0.05em] text-[#202522] sm:text-[62px] lg:text-[76px]">
+                  Lifestyle medicine
+                  <br />
+                  for{" "}
+                  <span className="italic font-normal text-[#17413D]">
+                    lasting health.
+                  </span>
                 </h1>
 
-                <p className="mt-6 max-w-[650px] text-[14px] leading-7 text-[#687A73] sm:text-[16px] sm:leading-8">
-                  Lifestyle medicine is an evidence-informed approach that
-                  considers everyday behaviours, routines and circumstances as
-                  part of a wider plan for health. At Sutra Health, the focus is
-                  on practical changes that can fit real life.
+                <p className="mt-7 max-w-[610px] text-[16px] leading-8 text-[#4E5B56] sm:text-[18px] sm:leading-9">
+                  Lifestyle medicine looks at the everyday factors that
+                  influence health — including food, movement, sleep, stress
+                  and habits — and helps turn health goals into practical
+                  changes that can fit real life.
                 </p>
 
-                <div className="mt-7 flex flex-wrap gap-3">
-                  <Link
-                    href="/book-appointment"
-                    className="inline-flex items-center gap-2 rounded-full bg-[#173F35] px-6 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-[#12352D]"
-                  >
-                    Book a Consultation
-                    <span aria-hidden="true">→</span>
-                  </Link>
+                <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#65736D]">
+                  <span>Doctor-led</span>
+                  <span>Evidence-informed</span>
+                  <span>Personalised</span>
                 </div>
+
+                <Link
+                  href="/book-appointment"
+                  className="mt-9 inline-flex items-center gap-3 border border-[#17413D] bg-[#17413D] px-6 py-3.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-white transition-colors hover:bg-[#202522]"
+                >
+                  Book a consultation
+                  <span aria-hidden="true">→</span>
+                </Link>
               </div>
 
-              <div className="relative overflow-hidden rounded-[28px] bg-[#E9EFE7]">
-                <div className="relative aspect-[4/3]">
+              <div className="relative">
+                <div className="relative aspect-[4/3] overflow-hidden bg-[#E7EDE8]">
                   <Image
                     src="/images/services/lifestyle-medicine.webp"
                     alt="Lifestyle medicine at Sutra Health"
                     fill
                     priority
-                    sizes="(max-width: 1024px) 100vw, 52vw"
+                    sizes="(max-width: 1023px) 100vw, 48vw"
                     className="object-cover"
                   />
                 </div>
+
+                <div className="absolute -bottom-5 left-5 bg-[#F7F5EF] px-5 py-4 sm:left-8">
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#65736D]">
+                    A whole-person approach
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        </Container>
-      </section>
+          </Container>
+        </section>
 
-      {/* DIRECT ANSWER */}
-      <section className="bg-[#F0F4ED]">
-        <Container>
-          <div className="py-14 sm:py-16 lg:py-20">
-            <div className="max-w-[820px]">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                Lifestyle medicine in brief
-              </p>
-
-              <h2 className="mt-3 max-w-[720px] font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[44px]">
-                Health change starts with understanding everyday life.
-              </h2>
-
-              <p className="mt-6 text-[15px] leading-8 text-[#687A73] sm:text-[16px]">
-                Lifestyle medicine uses evidence-informed lifestyle changes as
-                part of prevention and management of health conditions. It can
-                include nutrition, physical activity, sleep, stress management,
-                habits and the surrounding environment. At Sutra Health, these
-                areas are considered alongside appropriate medical care.
-              </p>
-
-              <ul className="mt-7 grid gap-3 text-[14px] leading-7 text-[#687A73] sm:grid-cols-2">
-                <li className="border-l-2 border-[#65966F] pl-4">
-                  Understand everyday health patterns
-                </li>
-                <li className="border-l-2 border-[#65966F] pl-4">
-                  Identify realistic areas for change
-                </li>
-                <li className="border-l-2 border-[#65966F] pl-4">
-                  Personalise changes around real circumstances
-                </li>
-                <li className="border-l-2 border-[#65966F] pl-4">
-                  Build habits that can be sustained
-                </li>
-              </ul>
-
-              <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3 text-[12px] font-medium text-[#173F35]">
-                <a
-                  href="https://islm.org.in/WhatisLifestyleMedicine/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline decoration-[#65966F]/50 underline-offset-4 hover:text-[#65966F]"
-                >
-                  Indian Society of Lifestyle Medicine →
-                </a>
-                <a
-                  href="https://academic.lifequality.org.in/publication/2026-a-traffic-light-approach-to-lifestyle-change-health-building"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline decoration-[#65966F]/50 underline-offset-4 hover:text-[#65966F]"
-                >
-                  Sutra Health research →
-                </a>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* WHO IT IS FOR */}
-      <section className="border-b border-[#173F35]/10">
-        <Container>
-          <div className="py-14 sm:py-16 lg:py-20">
-            <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+        {/* =====================================================
+            DIRECT ANSWER
+        ===================================================== */}
+        <section className="border-b border-[#202522]/10 bg-[#E7EDE8]">
+          <Container>
+            <div className="grid gap-8 py-12 sm:py-14 lg:grid-cols-[0.65fr_1.35fr] lg:gap-20 lg:py-16">
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                  Who it is for
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#65736D]">
+                  In simple terms
                 </p>
-                <h2 className="mt-3 max-w-[430px] font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[44px]">
-                  Practical support for people ready to work on everyday health.
+
+                <h2 className="mt-4 max-w-[360px] font-serif text-[34px] font-medium leading-[1.02] tracking-[-0.04em] text-[#17413D] sm:text-[42px]">
+                  What is lifestyle medicine?
                 </h2>
               </div>
 
-              <div className="divide-y divide-[#173F35]/10 border-y border-[#173F35]/10">
-                {[
-                  ["Healthier routines", "For people who want to understand and improve everyday habits around food, movement, sleep and stress."],
-                  ["Weight management", "For people looking for sustainable lifestyle changes rather than short-term restrictive approaches."],
-                  ["Metabolic health", "For people working on lifestyle factors that may be relevant to blood sugar and metabolic health."],
-                  ["Blood pressure", "For people who want lifestyle support as part of a broader approach to cardiovascular health."],
-                  ["Long-term health", "For people who want practical changes that can be practised, sustained and adapted over time."],
-                ].map(([title, description]) => (
-                  <article
-                    key={title}
-                    className="grid gap-2 py-6 sm:grid-cols-[220px_1fr] sm:items-center sm:py-7"
-                  >
-                    <h3 className="font-serif text-[21px] tracking-[-0.02em] text-[#173F35]">
-                      {title}
-                    </h3>
-                    <p className="text-[13px] leading-6 text-[#687A73] sm:text-[14px]">
-                      {description}
-                    </p>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* EVIDENCE / ORIGINAL SUTRA SIGNAL */}
-      <section className="bg-[#173F35] text-[#FAF8F1]">
-        <Container>
-          <div className="py-14 sm:py-16 lg:py-20">
-            <div className="max-w-[850px]">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#9BBDA1]">
-                Evidence & Sutra Health
-              </p>
-
-              <h2 className="mt-3 max-w-[760px] font-serif text-[34px] leading-[1.05] tracking-[-0.035em] sm:text-[44px]">
-                Lifestyle change is practical, structured and evidence-informed.
-              </h2>
-
-              <div className="mt-7 space-y-5 text-[14px] leading-7 text-white/70 sm:text-[15px] sm:leading-8">
-                <p>
-                  Lifestyle medicine considers behaviours and circumstances
-                  that influence health rather than treating a single habit in
-                  isolation. Nutrition, movement, sleep, stress and other
-                  lifestyle factors can interact with one another.
+              <div className="max-w-[760px]">
+                <p className="text-[17px] leading-8 text-[#4E5B56] sm:text-[19px] sm:leading-9">
+                  Lifestyle medicine is an evidence-informed approach to
+                  healthcare that uses practical lifestyle changes as part of
+                  preventing and managing health conditions.
                 </p>
 
-                <p>
-                  Sutra Health also connects this work with its{" "}
-                  <strong className="text-white">
-                    21-question lifestyle assessment
-                  </strong>{" "}
-                  and a structured six-step method: Understand, Identify,
-                  Personalise, Practise, Sustain and Adapt.
-                </p>
-
-                <p>
-                  Sutra Health's academic work includes a 2026 publication on a
-                  traffic-light approach to lifestyle change for NCD outpatients
-                  in India. This provides a first-party research connection for
-                  the approach while keeping individual care decisions with
-                  qualified healthcare professionals.
+                <p className="mt-5 text-[15px] leading-7 text-[#65736D] sm:text-[16px] sm:leading-8">
+                  At Sutra Health, this means understanding your health and
+                  everyday life before deciding what changes may be useful.
+                  Lifestyle support is provided alongside appropriate medical
+                  care, not as a replacement for it.
                 </p>
               </div>
+            </div>
+          </Container>
+        </section>
 
-              <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-[12px]">
-                <a
-                  href="https://islm.org.in/WhatisLifestyleMedicine/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#B8D0BC] underline underline-offset-4 hover:text-white"
-                >
-                  ISLM — Lifestyle Medicine
-                </a>
-                <a
-                  href="https://academic.lifequality.org.in/publication/2026-a-traffic-light-approach-to-lifestyle-change-health-building"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#B8D0BC] underline underline-offset-4 hover:text-white"
-                >
-                  Sutra Health — 2026 research
-                </a>
+        {/* =====================================================
+            WHAT WE LOOK AT
+        ===================================================== */}
+        <section id="focus-areas" className="border-b border-[#202522]/10">
+          <Container>
+            <div className="py-16 sm:py-20 lg:py-24">
+              <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#65736D]">
+                    What we consider
+                  </p>
+
+                  <h2 className="mt-4 max-w-[430px] font-serif text-[38px] font-medium leading-[0.98] tracking-[-0.045em] text-[#202522] sm:text-[50px]">
+                    Health is connected.
+                  </h2>
+
+                  <p className="mt-5 max-w-[400px] text-[14px] leading-7 text-[#65736D]">
+                    These areas influence each other. The focus depends on your
+                    health concerns, goals and circumstances.
+                  </p>
+                </div>
+
+                <div className="border-t border-[#202522]/10">
+                  {focusAreas.map((area, index) => (
+                    <div
+                      key={area.title}
+                      className="grid gap-3 border-b border-[#202522]/10 py-6 sm:grid-cols-[55px_1fr] sm:gap-6"
+                    >
+                      <span className="text-[9px] font-semibold tracking-[0.15em] text-[#91A298]">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+
+                      <div>
+                        <h3 className="font-serif text-[23px] leading-tight tracking-[-0.025em] text-[#17413D]">
+                          {area.title}
+                        </h3>
+
+                        <p className="mt-2 max-w-[650px] text-[14px] leading-7 text-[#65736D] sm:text-[15px]">
+                          {area.description}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        </Container>
-      </section>
+          </Container>
+        </section>
 
-      {/* WHAT WE LOOK AT */}
-      <section className="border-b border-[#173F35]/10">
-        <Container>
-          <div className="py-14 sm:py-16 lg:py-20">
-            <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
-              <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                  What we look at
-                </p>
-                <h2 className="mt-3 max-w-[420px] font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[44px]">
-                  The patterns behind everyday health.
-                </h2>
+        {/* =====================================================
+            HOW WE WORK
+        ===================================================== */}
+        <section className="bg-[#17413D] text-[#F7F5EF]">
+          <Container>
+            <div className="py-16 sm:py-20 lg:py-24">
+              <div className="grid gap-10 lg:grid-cols-[0.65fr_1.35fr] lg:gap-20">
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#91A298]">
+                    The Sutra approach
+                  </p>
+
+                  <h2 className="mt-4 max-w-[440px] font-serif text-[38px] font-medium leading-[0.98] tracking-[-0.045em] sm:text-[50px]">
+                    We start with understanding.
+                  </h2>
+
+                  <p className="mt-5 max-w-[430px] text-[14px] leading-7 text-[#C8D3CD]">
+                    The aim is not to give everyone the same lifestyle plan.
+                    We first understand what matters to you, then decide what
+                    is practical to work on.
+                  </p>
+                </div>
+
+                <div className="border-t border-[#F7F5EF]/15">
+                  {[
+                    ["01", "Understand", "Your health, concerns and everyday reality."],
+                    ["02", "Identify", "The patterns that may be influencing your health."],
+                    ["03", "Personalise", "Changes that make sense for your situation."],
+                    ["04", "Practise", "Actions that can work in everyday life."],
+                    ["05", "Sustain", "Review, adapt and continue what is useful."],
+                  ].map(([number, title, text]) => (
+                    <div
+                      key={number}
+                      className="grid gap-3 border-b border-[#F7F5EF]/15 py-5 sm:grid-cols-[55px_150px_1fr] sm:items-start sm:gap-6"
+                    >
+                      <span className="text-[9px] font-semibold tracking-[0.15em] text-[#91A298]">
+                        {number}
+                      </span>
+
+                      <h3 className="font-serif text-[23px] leading-tight text-[#F7F5EF]">
+                        {title}
+                      </h3>
+
+                      <p className="text-[14px] leading-7 text-[#C8D3CD]">
+                        {text}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* =====================================================
+            WHERE IT MAY HELP
+        ===================================================== */}
+        <section
+          id="relevant-areas"
+          className="border-b border-[#202522]/10 bg-white"
+        >
+          <Container>
+            <div className="py-16 sm:py-20 lg:py-24">
+              <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#65736D]">
+                    Where it may be relevant
+                  </p>
+
+                  <h2 className="mt-4 max-w-[430px] font-serif text-[38px] font-medium leading-[0.98] tracking-[-0.045em] text-[#202522] sm:text-[50px]">
+                    Support can be part of a wider health plan.
+                  </h2>
+
+                  <p className="mt-5 max-w-[400px] text-[14px] leading-7 text-[#65736D]">
+                    Lifestyle factors may be relevant across many health
+                    concerns. Explore these areas for more specific
+                    information.
+                  </p>
+                </div>
+
+                <div className="border-t border-[#202522]/10">
+                  {relevantAreas.map((area) => (
+                    <Link
+                      key={area.href}
+                      href={area.href}
+                      className="group flex items-start justify-between gap-8 border-b border-[#202522]/10 py-6"
+                    >
+                      <div>
+                        <h3 className="font-serif text-[23px] leading-tight tracking-[-0.025em] text-[#17413D]">
+                          {area.title}
+                        </h3>
+
+                        <p className="mt-2 max-w-[620px] text-[14px] leading-7 text-[#65736D]">
+                          {area.description}
+                        </p>
+                      </div>
+
+                      <span
+                        aria-hidden="true"
+                        className="mt-1 shrink-0 text-[#91A298] transition-transform duration-300 group-hover:translate-x-1"
+                      >
+                        →
+                      </span>
+                    </Link>
+                  ))}
+                </div>
               </div>
 
-              <div className="divide-y divide-[#173F35]/10 border-y border-[#173F35]/10">
-                {focusAreas.map((item) => (
-                  <article
-                    key={item.number}
-                    className="grid gap-3 py-6 sm:grid-cols-[72px_220px_1fr] sm:items-center sm:py-7"
-                  >
-                    <span className="text-[11px] font-semibold tracking-[0.16em] text-[#65966F]">
-                      {item.number}
-                    </span>
-                    <h3 className="font-serif text-[21px] tracking-[-0.02em] text-[#173F35]">
-                      {item.title}
-                    </h3>
-                    <p className="text-[13px] leading-6 text-[#687A73] sm:text-[14px]">
-                      {item.description}
-                    </p>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* HOW IT FITS */}
-      <section className="bg-[#F0F4ED]">
-        <Container>
-          <div className="py-14 sm:py-16 lg:py-20">
-            <div className="max-w-[760px]">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                How it fits
-              </p>
-              <h2 className="mt-3 font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[44px]">
-                Lifestyle medicine is the practice. The method connects the work.
-              </h2>
-              <p className="mt-6 text-[14px] leading-7 text-[#687A73] sm:text-[15px] sm:leading-8">
-                The Sutra Health Method describes how we work: understand,
-                identify, personalise, practise, sustain and adapt. Lifestyle
-                medicine is considered as part of that wider process.
-              </p>
-            </div>
-
-            <div className="mt-9 grid gap-0 border-y border-[#173F35]/10 sm:grid-cols-3 lg:grid-cols-6">
-              {["Understand", "Identify", "Personalise", "Practise", "Sustain", "Adapt"].map(
-                (step, index) => (
-                  <div
-                    key={step}
-                    className="border-b border-[#173F35]/10 py-5 last:border-b-0 sm:border-b-0 sm:border-r sm:px-5 sm:last:border-r-0 lg:py-6"
-                  >
-                    <span className="text-[10px] font-semibold tracking-[0.16em] text-[#65966F]">
-                      0{index + 1}
-                    </span>
-                    <p className="mt-2 font-serif text-[20px] text-[#173F35]">
-                      {step}
-                    </p>
-                  </div>
-                ),
-              )}
-            </div>
-
-            <div className="mt-7">
               <Link
-                href="/approach"
-                className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#173F35] underline decoration-[#65966F]/50 underline-offset-4"
+                href="/conditions"
+                className="mt-7 inline-flex text-[11px] font-semibold uppercase tracking-[0.14em] text-[#17413D] transition-colors hover:text-[#65736D]"
               >
-                Explore the Sutra Health Method →
+                Explore all health conditions →
               </Link>
             </div>
-          </div>
-        </Container>
-      </section>
+          </Container>
+        </section>
 
-      {/* ASSESSMENT */}
-      <section className="border-b border-[#173F35]/10">
-        <Container>
-          <div className="py-14 sm:py-16 lg:py-20">
-            <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+        {/* =====================================================
+            ASSESSMENT
+        ===================================================== */}
+        <section
+          id="assessment"
+          className="border-b border-[#202522]/10 bg-[#F7F5EF]"
+        >
+          <Container>
+            <div className="grid gap-8 py-14 sm:py-18 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-20 lg:py-20">
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#65736D]">
                   Start with understanding
                 </p>
-                <h2 className="mt-3 max-w-[430px] font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[44px]">
-                  A structured starting point for your health.
+
+                <h2 className="mt-4 max-w-[460px] font-serif text-[38px] font-medium leading-[0.98] tracking-[-0.045em] text-[#202522] sm:text-[50px]">
+                  Not sure where to start?
                 </h2>
               </div>
 
-              <div className="border-y border-[#173F35]/10 py-7 sm:py-8">
-                <p className="text-[14px] leading-7 text-[#687A73] sm:text-[15px] sm:leading-8">
-                  The 21-question lifestyle assessment helps you reflect on
-                  everyday health patterns before deciding what support may be
-                  useful. It is a starting point for understanding, not a
-                  diagnosis.
+              <div className="max-w-[680px]">
+                <p className="text-[16px] leading-8 text-[#4E5B56] sm:text-[18px] sm:leading-9">
+                  Sutra Health's 21-question lifestyle assessment can help you
+                  reflect on everyday health patterns before deciding what kind
+                  of support may be useful.
+                </p>
+
+                <p className="mt-4 text-[13px] leading-6 text-[#65736D]">
+                  It is a starting point for understanding, not a diagnosis.
                 </p>
 
                 <Link
                   href="/score"
-                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#173F35] px-6 py-3.5 text-[13px] font-semibold text-white hover:bg-[#12352D]"
+                  className="mt-7 inline-flex items-center gap-2 border-b border-[#17413D]/30 pb-1 text-[12px] font-semibold uppercase tracking-[0.13em] text-[#17413D] transition-colors hover:border-[#17413D] hover:text-[#65736D]"
                 >
-                  Take the Assessment
+                  Take the 21-question assessment
                   <span aria-hidden="true">→</span>
                 </Link>
               </div>
             </div>
-          </div>
-        </Container>
-      </section>
+          </Container>
+        </section>
 
-      {/* RELATED CONDITIONS */}
-      <section className="bg-[#F0F4ED]">
-        <Container>
-          <div className="py-14 sm:py-16 lg:py-20">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-              Explore by health area
-            </p>
-            <h2 className="mt-3 max-w-[620px] font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[44px]">
-              See where lifestyle medicine may be relevant.
-            </h2>
-
-            <div className="mt-8 divide-y divide-[#173F35]/10 border-y border-[#173F35]/10">
-              {relevantAreas.map((area) => (
-                <Link
-                  key={area.href}
-                  href={area.href}
-                  className="grid gap-2 py-6 transition-colors hover:bg-white/50 sm:grid-cols-[280px_1fr_auto] sm:items-center sm:gap-6 sm:py-7"
-                >
-                  <h3 className="font-serif text-[21px] text-[#173F35]">
-                    {area.title}
-                  </h3>
-                  <p className="text-[13px] leading-6 text-[#687A73] sm:text-[14px]">
-                    {area.description}
+        {/* =====================================================
+            OTHER PRACTICES
+        =====================================================
+        */}
+        <section
+          id="other-practices"
+          className="border-b border-[#202522]/10 bg-white"
+        >
+          <Container>
+            <div className="py-16 sm:py-20 lg:py-24">
+              <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#65736D]">
+                    What we do
                   </p>
-                  <span className="text-[13px] font-semibold text-[#173F35]">
-                    Explore →
-                  </span>
-                </Link>
-              ))}
-            </div>
 
-            <Link
-              href="/conditions"
-              className="mt-5 inline-flex items-center gap-2 text-[13px] font-semibold text-[#173F35] hover:text-[#65966F]"
-            >
-              Explore all health conditions →
-            </Link>
-          </div>
-        </Container>
-      </section>
+                  <h2 className="mt-4 max-w-[420px] font-serif text-[38px] font-medium leading-[0.98] tracking-[-0.045em] text-[#202522] sm:text-[50px]">
+                    Lifestyle medicine is one part of Sutra Health.
+                  </h2>
+                </div>
 
-      {/* OTHER PRACTICES */}
-      <section className="border-b border-[#173F35]/10">
-        <Container>
-          <div className="py-14 sm:py-16 lg:py-20">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-              What We Do
-            </p>
-            <h2 className="mt-3 max-w-[650px] font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[44px]">
-              Other practices that may form part of your plan.
-            </h2>
-
-            <div className="mt-8 divide-y divide-[#173F35]/10 border-y border-[#173F35]/10">
-              {otherPractices.map((practice) => (
-                <Link
-                  key={practice.href}
-                  href={practice.href}
-                  className="grid gap-2 py-6 sm:grid-cols-[72px_280px_1fr_auto] sm:items-center sm:gap-5 sm:py-7"
-                >
-                  <span className="text-[11px] font-semibold tracking-[0.16em] text-[#65966F]">
-                    {practice.number}
-                  </span>
-                  <h3 className="font-serif text-[21px] text-[#173F35]">
-                    {practice.title}
-                  </h3>
-                  <p className="text-[13px] leading-6 text-[#687A73] sm:text-[14px]">
-                    {practice.description}
-                  </p>
-                  <span className="text-[13px] font-semibold text-[#173F35]">
-                    Explore →
-                  </span>
-                </Link>
-              ))}
-            </div>
-
-            <Link
-              href="/what-we-do"
-              className="mt-5 inline-flex items-center gap-2 text-[13px] font-semibold text-[#173F35] hover:text-[#65966F]"
-            >
-              View all What We Do services →
-            </Link>
-          </div>
-        </Container>
-      </section>
-
-      {/* FAQ */}
-      <section className="bg-[#FAF8F1]">
-        <Container>
-          <div className="py-14 sm:py-16 lg:py-20">
-            <div className="mx-auto max-w-[820px]">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                Frequently asked questions
-              </p>
-              <h2 className="mt-3 font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[44px]">
-                Questions about lifestyle medicine?
-              </h2>
-
-              <div className="mt-7 divide-y divide-[#173F35]/10 border-y border-[#173F35]/10">
-                {faqs.map((faq, index) => (
-                  <details key={faq.question} className="group">
-                    <summary className="flex cursor-pointer list-none items-center gap-4 py-5 [&::-webkit-details-marker]:hidden">
-                      <span className="w-7 shrink-0 text-[10px] font-semibold tracking-[0.12em] text-[#A2ADA7]">
-                        {String(index + 1).padStart(2, "0")}
+                <div className="border-t border-[#202522]/10">
+                  {otherPractices.map((practice) => (
+                    <Link
+                      key={practice.href}
+                      href={practice.href}
+                      className="group grid gap-4 border-b border-[#202522]/10 py-6 sm:grid-cols-[55px_1fr_auto] sm:items-center"
+                    >
+                      <span className="text-[9px] font-semibold tracking-[0.15em] text-[#91A298]">
+                        {practice.number}
                       </span>
-                      <span className="flex-1 text-[15px] font-medium leading-6 text-[#173F35] sm:text-[16px]">
-                        {faq.question}
-                      </span>
+
+                      <div>
+                        <h3 className="font-serif text-[23px] leading-tight text-[#17413D]">
+                          {practice.title}
+                        </h3>
+
+                        <p className="mt-2 max-w-[620px] text-[14px] leading-7 text-[#65736D]">
+                          {practice.description}
+                        </p>
+                      </div>
+
                       <span
                         aria-hidden="true"
-                        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#173F35]/10 text-[#65966F] transition-transform duration-300 group-open:rotate-45"
+                        className="text-[#91A298] transition-transform duration-300 group-hover:translate-x-1"
                       >
-                        +
+                        →
                       </span>
-                    </summary>
-
-                    <div className="pb-6 pl-11 pr-8">
-                      <p className="max-w-3xl text-[15px] leading-7 text-[#687A73] sm:text-[16px] sm:leading-8">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  </details>
-                ))}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
-          </div>
-        </Container>
-      </section>
 
-      {/* FINAL CTA */}
-      <section className="bg-[#173F35]">
-        <Container>
-          <div className="mx-auto max-w-[760px] py-14 text-center sm:py-16 lg:py-20">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#9BBDA1]">
-              Take the next step
-            </p>
-            <h2 className="mt-3 font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#FAF8F1] sm:text-[44px]">
-              Build healthier routines that can fit real life.
-            </h2>
-            <p className="mx-auto mt-5 max-w-[600px] text-[14px] leading-7 text-white/65">
-              Start with a conversation about your health, current routines
-              and what you would like to change.
-            </p>
-
-            <div className="mt-7 flex flex-wrap justify-center gap-3">
-              <Link
-                href="/book-appointment"
-                className="inline-flex items-center gap-2 rounded-full bg-[#FAF8F1] px-6 py-3.5 text-[13px] font-semibold text-[#173F35] transition-colors hover:bg-white"
-              >
-                Book a Consultation
-                <span aria-hidden="true">→</span>
-              </Link>
               <Link
                 href="/what-we-do"
-                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-white/10"
+                className="mt-7 inline-flex text-[11px] font-semibold uppercase tracking-[0.14em] text-[#17413D] transition-colors hover:text-[#65736D]"
               >
-                Explore What We Do
-                <span aria-hidden="true">→</span>
+                View all services →
               </Link>
             </div>
-          </div>
-        </Container>
-      </section>
-    </main>
+          </Container>
+        </section>
+
+        {/* =====================================================
+            FAQ
+        =====================================================
+        */}
+        <section id="faq" className="bg-[#F7F5EF]">
+          <Container>
+            <div className="py-16 sm:py-20 lg:py-24">
+              <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#65736D]">
+                    Frequently asked questions
+                  </p>
+
+                  <h2 className="mt-4 max-w-[430px] font-serif text-[38px] font-medium leading-[0.98] tracking-[-0.045em] text-[#202522] sm:text-[50px]">
+                    Lifestyle medicine,
+                    <br />
+                    made clear.
+                  </h2>
+                </div>
+
+                <div className="border-t border-[#202522]/10">
+                  {faqItems.map((faq, index) => (
+                    <details
+                      key={faq.question}
+                      className="group border-b border-[#202522]/10"
+                    >
+                      <summary className="flex cursor-pointer list-none items-center gap-5 py-6 [&::-webkit-details-marker]:hidden">
+                        <span className="w-6 shrink-0 text-[9px] tracking-[0.14em] text-[#91A298]">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+
+                        <span className="flex-1 font-serif text-[21px] leading-[1.2] tracking-[-0.02em] text-[#17413D] sm:text-[23px]">
+                          {faq.question}
+                        </span>
+
+                        <span
+                          aria-hidden="true"
+                          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-[#202522]/10 text-[17px] font-normal text-[#65736D] transition-transform duration-300 group-open:rotate-45"
+                        >
+                          +
+                        </span>
+                      </summary>
+
+                      <div className="pb-6 pl-11 pr-4">
+                        <p className="max-w-[700px] text-[15px] leading-7 text-[#65736D] sm:text-[16px] sm:leading-8">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Container>
+        </section>
+        
+
+        {/* =====================================================
+            CTA
+        =====================================================
+        */}
+        <section className="bg-[#17413D]">
+          <Container>
+            <div className="py-16 sm:py-20 lg:py-24">
+              <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-16">
+                <div>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#91A298]">
+                    Take the next step
+                  </p>
+
+                  <h2 className="mt-4 max-w-[760px] font-serif text-[40px] font-medium leading-[0.98] tracking-[-0.045em] text-[#F7F5EF] sm:text-[56px]">
+                    Start with understanding your health.
+                  </h2>
+
+                  <p className="mt-5 max-w-[600px] text-[15px] leading-7 text-[#C8D3CD] sm:text-[16px] sm:leading-8">
+                    Book a consultation to discuss your health concerns, goals
+                    and the kind of support that may be appropriate for you.
+                  </p>
+                </div>
+
+                <Link
+                  href="/book-appointment"
+                  className="inline-flex w-fit items-center gap-3 border border-[#F7F5EF]/30 bg-[#F7F5EF] px-6 py-3.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#17413D] transition-colors hover:bg-white"
+                >
+                  Book a consultation
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </div>
+            </div>
+          </Container>
+        </section>
+
+        {/* =====================================================
+            BACK TO HUB
+        =====================================================
+        */}
+        <section className="bg-[#F7F5EF]">
+          <Container>
+            <div className="flex flex-col gap-3 py-7 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-[9px] font-semibold uppercase tracking-[0.17em] text-[#65736D]">
+                Sutra Health / Lifestyle Medicine
+              </p>
+
+              <Link
+                href="/what-we-do"
+                className="text-[11px] font-semibold text-[#17413D] transition-colors hover:text-[#65736D]"
+              >
+                Back to What We Do →
+              </Link>
+            </div>
+          </Container>
+        </section>
+      </main>
+    </>
   );
 }

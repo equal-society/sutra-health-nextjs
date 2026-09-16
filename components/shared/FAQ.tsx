@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Container from "@/components/shared/Container";
 
 type FAQItem = {
@@ -42,13 +41,11 @@ const defaultFaqs: FAQItem[] = [
 ];
 
 export default function FAQ({ faqs = defaultFaqs }: FAQProps) {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
-
   return (
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="bg-[#F7F5EF] py-16 sm:py-20 lg:py-24"
+      className="bg-[#FAF8F1] py-20 sm:py-24 lg:py-32"
     >
       <Container>
         <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20 xl:gap-24">
@@ -57,84 +54,58 @@ export default function FAQ({ faqs = defaultFaqs }: FAQProps) {
             <div className="flex items-center gap-3">
               <span
                 aria-hidden="true"
-                className="h-px w-8 bg-[#91A298]"
+                className="h-px w-9 bg-[#91A298]"
               />
 
-              <p className="text-[9px] font-semibold uppercase tracking-[0.21em] text-[#65736D] sm:text-[10px]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.21em] text-[#65736D] sm:text-[11px]">
                 Frequently asked questions
               </p>
             </div>
 
             <h2
               id="faq-heading"
-              className="mt-5 font-serif text-[39px] font-medium leading-[0.99] tracking-[-0.045em] text-[#202522] sm:text-[47px] lg:text-[53px]"
+              className="mt-5 max-w-[520px] font-serif text-[40px] font-medium leading-[1.02] tracking-[-0.045em] text-[#202522] sm:text-[50px] lg:text-[56px]"
             >
-              A few things you may
-              <span className="italic font-normal text-[#17413D]">
-                {" "}want to know.
+              A few things you may{" "}
+              <span className="font-normal italic text-[#17413D]">
+                want to know.
               </span>
             </h2>
 
-            <p className="mt-6 max-w-[390px] text-[13px] leading-7 text-[#687A73] sm:text-[14px]">
-              Simple answers about Sutra Health, our doctor-led integrative
-              approach, and how our consultations work.
+            <p className="mt-6 max-w-[400px] text-[16px] leading-7 text-[#65736D] sm:text-[17px] sm:leading-8">
+              Simple answers about Sutra Health, our approach, and how
+              consultations work.
             </p>
           </div>
 
-          {/* Questions */}
+          {/* FAQ list */}
           <div className="border-t border-[#202522]/12">
-            {faqs.map((faq, index) => {
-              const isOpen = openIndex === index;
+            {faqs.map((faq, index) => (
+              <details
+                key={faq.question}
+                className="group border-b border-[#202522]/12"
+                open={index === 0}
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-left marker:hidden sm:py-7 [&::-webkit-details-marker]:hidden">
+                  <span className="max-w-[720px] pr-2 text-[16px] font-medium leading-7 text-[#17413D] sm:text-[17px] sm:leading-7">
+                    {faq.question}
+                  </span>
 
-              return (
-                <div
-                  key={faq.question}
-                  className="border-b border-[#202522]/12"
-                >
-                  <button
-                    type="button"
-                    aria-expanded={isOpen}
-                    aria-controls={`faq-answer-${index}`}
-                    onClick={() =>
-                      setOpenIndex(isOpen ? null : index)
-                    }
-                    className="group flex w-full items-center justify-between gap-6 py-5 text-left sm:py-6"
+                  <span
+                    aria-hidden="true"
+                    className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#17413D]/15 text-[20px] font-light leading-none text-[#17413D] transition-transform duration-300 group-open:rotate-45"
                   >
-                    <span className="max-w-[680px] text-[14px] font-medium leading-6 text-[#17413D] transition-colors group-hover:text-[#4F8060] sm:text-[15px] sm:leading-7">
-                      {faq.question}
-                    </span>
+                    +
+                  </span>
+                </summary>
 
-                    <span
-                      aria-hidden="true"
-                      className={`relative flex h-6 w-6 shrink-0 items-center justify-center text-[19px] font-light text-[#65966F] transition-transform duration-300 ${
-                        isOpen ? "rotate-45" : ""
-                      }`}
-                    >
-                      +
-                    </span>
-                  </button>
-
-                  {/* Answer remains in the DOM for search/AEO,
-                      while the accordion controls its visual display. */}
-                  <div
-                    id={`faq-answer-${index}`}
-                    role="region"
-                    aria-hidden={!isOpen}
-                    className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
-                      isOpen
-                        ? "grid-rows-[1fr] opacity-100"
-                        : "grid-rows-[0fr] opacity-0"
-                    }`}
-                  >
-                    <div className="min-h-0 overflow-hidden">
-                      <p className="max-w-[690px] pb-5 pr-8 text-[13px] leading-7 text-[#687A73] sm:pb-6 sm:text-[14px]">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  </div>
+                <div className="pb-6 pr-12 sm:pb-7 sm:pr-14">
+                  <p className="max-w-[720px] text-[16px] leading-7 text-[#65736D] sm:text-[17px] sm:leading-8">
+                    {faq.answer}
+                  </p>
                 </div>
-              );
-            })}
+              </details>
+            ))}
           </div>
         </div>
       </Container>

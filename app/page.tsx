@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
 
 import Hero from "@/components/hero/Hero";
-import Credibility from "@/components/hero/Credibility";
-import Problem from "@/components/hero/Problem";
-import Programs from "@/components/hero/WhatWeDo";
-import Approach from "@/components/hero/HowItWorks";
-import HeroFramework from "@/components/hero/Assessment";
 import Conditions from "@/components/hero/Conditions";
 import Experts from "@/components/hero/Experts";
 import WhySutra from "@/components/hero/WhySutra";
@@ -13,14 +8,17 @@ import Testimonials from "@/components/hero/Testimonials";
 import Resources from "@/components/hero/Resources";
 import FAQ from "@/components/shared/FAQ";
 import BookingCTA from "@/components/hero/BookingCTA";
+import HowItWorks from "@/components/hero/HowItWorks";
+import Assessment from "@/components/hero/Assessment";
+import WhatWeDo from "@/components/hero/WhatWeDo";
 
 const siteUrl = "https://lifequality.org.in";
 
 export const metadata: Metadata = {
-  title: "Sutra Health | Understand the Whole Picture of Your Health",
+  title: "Sutra Health | Doctor-Led Integrative Healthcare",
 
   description:
-    "Doctor-led integrative lifestyle healthcare combining lifestyle medicine, nutrition counselling, therapeutic yoga, and practical behaviour change.",
+    "Sutra Health provides doctor-led integrative healthcare through lifestyle medicine, nutrition counselling, therapeutic yoga, and practical behaviour support.",
 
   alternates: {
     canonical: siteUrl,
@@ -32,10 +30,10 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Sutra Health | Understand the Whole Picture of Your Health",
+    title: "Sutra Health | Doctor-Led Integrative Healthcare",
 
     description:
-      "Doctor-led integrative lifestyle healthcare combining lifestyle medicine, nutrition counselling, therapeutic yoga, and practical behaviour change.",
+      "Doctor-led integrative healthcare through lifestyle medicine, nutrition counselling, therapeutic yoga, and practical behaviour support.",
 
     url: siteUrl,
     siteName: "Sutra Health",
@@ -55,10 +53,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title: "Sutra Health | Understand the Whole Picture of Your Health",
+    title: "Sutra Health | Doctor-Led Integrative Healthcare",
 
     description:
-      "Doctor-led integrative lifestyle healthcare combining lifestyle medicine, nutrition counselling, therapeutic yoga, and practical behaviour change.",
+      "Doctor-led integrative healthcare through lifestyle medicine, nutrition counselling, therapeutic yoga, and practical behaviour support.",
 
     images: [`${siteUrl}/images/hero-desktop.webp`],
   },
@@ -68,28 +66,55 @@ const homepageFaqs = [
   {
     question: "What is lifestyle medicine?",
     answer:
-    "Lifestyle medicine uses evidence-informed changes in areas such as food, physical activity, sleep and stress management alongside appropriate medical care.",
+      "Lifestyle medicine uses evidence-informed changes in areas such as food, physical activity, sleep and stress management alongside appropriate medical care.",
   },
   {
     question:
       "Can yoga therapy be part of managing something like diabetes or blood pressure?",
     answer:
-      "It can be one part of your overall care, alongside your doctor - not a replacement for it. Any medication changes should always go through your physician.",
+      "It can be one part of your overall care alongside your doctor, but it is not a replacement for medical treatment. Medication changes should always be discussed with your physician.",
   },
   {
     question: "Do you offer online consultations?",
     answer:
-      "Yes. We work with people across India, not just Faridabad. Online consultations are available for lifestyle medicine, nutrition counselling, and yoga therapy. In-person sessions are also available in Faridabad.",
+      "Yes. Sutra Health works with people across India. Online consultations are available for lifestyle medicine, nutrition counselling and yoga therapy. In-person sessions are also available in Faridabad.",
   },
   {
     question: "How long before I see results?",
     answer:
-      "Depends on you and your consistency - some people feel different within weeks, some things take longer. We won't promise a timeline nobody can guarantee.",
+      "There is no single timeline. Some people notice changes within weeks, while other improvements take longer. Results depend on the individual, the health concern and consistency with the plan.",
   },
   {
-    question: "Is this right for everyone?",
+    question: "Is Sutra Health right for everyone?",
     answer:
-      "If you're managing a serious medical condition or on medication, talk to your doctor before starting. This is built to complement medical care, not replace it.",
+      "Sutra Health is designed to complement appropriate medical care. If you have a serious medical condition or take medication, discuss new lifestyle or movement practices with your doctor.",
+  },
+];
+
+const services = [
+  {
+    name: "Lifestyle Medicine",
+    description:
+      "Practical support around nutrition, movement, sleep, stress and everyday habits alongside appropriate medical care.",
+    url: `${siteUrl}/what-we-do/lifestyle`,
+  },
+  {
+    name: "Nutrition Counselling",
+    description:
+      "Personalised guidance on food and eating habits shaped around individual health needs and daily life.",
+    url: `${siteUrl}/what-we-do/nutrition`,
+  },
+  {
+    name: "Therapeutic Yoga",
+    description:
+      "Adapted yoga, movement, breathing and relaxation practices designed around individual needs.",
+    url: `${siteUrl}/what-we-do/therapeutic-yoga`,
+  },
+  {
+    name: "Behaviour & Mind Practices",
+    description:
+      "Practical support for habits, stress, routines and making health changes more sustainable.",
+    url: `${siteUrl}/what-we-do/behaviour-mind`,
   },
 ];
 
@@ -143,13 +168,16 @@ const structuredData = {
       publisher: {
         "@id": `${siteUrl}/#organization`,
       },
+      inLanguage: "en-IN",
     },
 
     {
       "@type": "WebPage",
       "@id": `${siteUrl}/#webpage`,
-      name: "Sutra Health | Understand the Whole Picture of Your Health",
+      name: "Sutra Health | Doctor-Led Integrative Healthcare",
       url: siteUrl,
+      description:
+        "Sutra Health provides doctor-led integrative healthcare through lifestyle medicine, nutrition counselling, therapeutic yoga and practical behaviour support.",
       isPartOf: {
         "@id": `${siteUrl}/#website`,
       },
@@ -159,6 +187,7 @@ const structuredData = {
       breadcrumb: {
         "@id": `${siteUrl}/#breadcrumb`,
       },
+      inLanguage: "en-IN",
     },
 
     {
@@ -174,8 +203,29 @@ const structuredData = {
       ],
     },
 
+    /*
+     * Homepage service entities
+     * Helps search engines and AI systems understand
+     * exactly what Sutra Health offers.
+     */
+    ...services.map((service) => ({
+      "@type": "Service",
+      "@id": `${service.url}#service`,
+      name: service.name,
+      description: service.description,
+      url: service.url,
+      provider: {
+        "@id": `${siteUrl}/#organization`,
+      },
+      areaServed: {
+        "@type": "Country",
+        name: "India",
+      },
+    })),
+
     {
       "@type": "FAQPage",
+      "@id": `${siteUrl}/#faq`,
       mainEntity: homepageFaqs.map((faq) => ({
         "@type": "Question",
         name: faq.question,
@@ -188,9 +238,10 @@ const structuredData = {
 
     {
       "@type": "HowTo",
+      "@id": `${siteUrl}/#sutra-method`,
       name: "The Sutra Health Method",
       description:
-        "The six-stage process Sutra Health uses to build a personalised, sustainable health plan.",
+        "The six-stage process Sutra Health uses to build a personalised and sustainable health plan.",
       step: [
         {
           "@type": "HowToStep",
@@ -233,8 +284,6 @@ const structuredData = {
   ],
 };
 
-    
-
 export default function Home() {
   return (
     <>
@@ -249,40 +298,34 @@ export default function Home() {
         {/* 1. Introduction */}
         <Hero />
 
-        {/* 2. Trust */}
-        <Credibility />
+        {/* 2. Services */}
+        <WhatWeDo />
 
-        {/* 3. Problem / why this matters */}
-        <Problem />
+        {/* 3. Process */}
+        <HowItWorks />
 
-        {/* 4. Services */}
-        <Programs />
+        {/* 4. Assessment */}
+        <Assessment />
 
-        {/* 5. Process */}
-        <Approach />
-
-        {/* 6. Assessment / personalised framework */}
-        <HeroFramework />
-
-        {/* 7. Conditions */}
-        <Conditions />
-
-        {/* 8. Experts */}
+        {/* 5. Experts */}
         <Experts />
 
-        {/* 9. Differentiation */}
+        {/* 6. Conditions */}
+        <Conditions />
+
+        {/* 7. Differentiation */}
         <WhySutra />
 
-        {/* 10. Social proof */}
+        {/* 8. Social proof */}
         <Testimonials />
 
-        {/* 11. Health education */}
+        {/* 9. Health education */}
         <Resources />
 
-        {/* 12. Common questions */}
+        {/* 10. Common questions */}
         <FAQ />
 
-        {/* 13. Final conversion */}
+        {/* 11. Final conversion */}
         <BookingCTA />
       </main>
     </>
