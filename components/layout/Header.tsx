@@ -23,35 +23,110 @@ import {
 } from "lucide-react";
 
 const whatWeDo = [
-  { label: "Lifestyle Medicine", href: "/what-we-do/lifestyle", icon: HeartPulse },
-  { label: "Nutrition Counselling", href: "/what-we-do/nutrition", icon: Apple }, 
-  { label: "Therapeutic Yoga", href: "/what-we-do/therapeutic-yoga", icon: PersonStanding },
-  { label: "Breath & Mindfulness", href: "/what-we-do/breath-mindfulness", icon: Wind},
-
+  {
+    label: "Lifestyle Medicine",
+    href: "/what-we-do/lifestyle",
+    icon: HeartPulse,
+  },
+  {
+    label: "Nutrition Counselling",
+    href: "/what-we-do/nutrition",
+    icon: Apple,
+  },
+  {
+    label: "Therapeutic Yoga",
+    href: "/what-we-do/therapeutic-yoga",
+    icon: PersonStanding,
+  },
+  {
+    label: "Breath & Mindfulness",
+    href: "/what-we-do/breath-mindfulness",
+    icon: Wind,
+  },
 ];
 
 const conditions = [
-  { label: "Weight Management", href: "/conditions/weight-management", icon: Scale },
-  { label: "Metabolic Health", href: "/conditions/metabolic-health", icon: Activity },
-  { label: "High Blood Pressure", href: "/conditions/high-blood-pressure", icon: HeartPulse },
-  { label: "Arthritis & Joint Pain", href: "/conditions/arthritis-joint-pain", icon: Bone },
-  { label: "Migraine & Headache", href: "/conditions/migraine-headache", icon: Brain },
-  { label: "Digestive & Gut Health", href: "/conditions/digestive-gut-health", icon: Apple },
-  { label: "Women's Health", href: "/conditions/womens-health", icon: Sparkles },
+  {
+    label: "Weight Management",
+    href: "/conditions/weight-management",
+    icon: Scale,
+  },
+  {
+    label: "Metabolic Health",
+    href: "/conditions/metabolic-health",
+    icon: Activity,
+  },
+  {
+    label: "High Blood Pressure",
+    href: "/conditions/high-blood-pressure",
+    icon: HeartPulse,
+  },
+  {
+    label: "Arthritis & Joint Pain",
+    href: "/conditions/arthritis-joint-pain",
+    icon: Bone,
+  },
+  {
+    label: "Migraine & Headache",
+    href: "/conditions/migraine-headache",
+    icon: Brain,
+  },
+  {
+    label: "Digestive & Gut Health",
+    href: "/conditions/digestive-gut-health",
+    icon: Apple,
+  },
+  {
+    label: "Women's Health",
+    href: "/conditions/womens-health",
+    icon: Sparkles,
+  },
 ];
 
 const about = [
-  { label: "About Sutra Health", href: "/about", icon: Sparkles },
-  { label: "Doctors & Experts", href: "/doctors", icon: UserRound },
-  { label: "Volunteer", href: "/volunteer", icon: UsersRound },
+  {
+    label: "About Sutra Health",
+    href: "/about",
+    icon: Sparkles,
+  },
+  {
+    label: "Doctors & Experts",
+    href: "/doctors",
+    icon: UserRound,
+  },
+  {
+    label: "Volunteer",
+    href: "/volunteer",
+    icon: UsersRound,
+  },
 ];
 
 const resources = [
-  { label: "Health Articles", href: "/resources/articles", icon: FileText },
-  { label: "Research & Publications", href: "/resources/research", icon: FlaskConical },
-  { label: "Practice Knowledge System", href: "/resources/knowledge-system", icon: Database },
-  { label: "21-Question Lifestyle Assessment", href: "/score", icon: ClipboardCheck },
-  { label: "Gallery", href: "/archive", icon: Archive },
+  {
+    label: "Health Articles",
+    href: "/resources/articles",
+    icon: FileText,
+  },
+  {
+    label: "Research & Publications",
+    href: "/resources/research",
+    icon: FlaskConical,
+  },
+  {
+    label: "Practice Knowledge System",
+    href: "/resources/knowledge-system",
+    icon: Database,
+  },
+  {
+    label: "21-Question Lifestyle Assessment",
+    href: "/score",
+    icon: ClipboardCheck,
+  },
+  {
+    label: "Gallery",
+    href: "/archive",
+    icon: Archive,
+  },
 ];
 
 type DropdownName =
@@ -64,8 +139,15 @@ type DropdownName =
 interface DropdownProps {
   name: Exclude<DropdownName, null>;
   label: string;
-  items: { label: string; href: string; icon: LucideIcon }[];
-  viewAll?: { label: string; href: string };
+  items: {
+    label: string;
+    href: string;
+    icon: LucideIcon;
+  }[];
+  viewAll?: {
+    label: string;
+    href: string;
+  };
   className?: string;
   openDropdown: DropdownName;
   toggleDropdown: (name: DropdownName) => void;
@@ -94,29 +176,58 @@ function DesktopDropdown({
     >
       <button
         type="button"
-        className={`navDropdownButton ${isOpen ? "navDropdownButtonOpen" : ""}`}
+        className={`navDropdownButton ${
+          isOpen ? "navDropdownButtonOpen" : ""
+        }`}
         aria-expanded={isOpen}
         onClick={() => toggleDropdown(name)}
       >
         <span>{label}</span>
-        <span className={`chevron ${isOpen ? "chevronOpen" : ""}`} aria-hidden="true" />
+
+        <span
+          className={`chevron ${isOpen ? "chevronOpen" : ""}`}
+          aria-hidden="true"
+        />
       </button>
 
       {isOpen && (
         <div className={`dropdownMenu ${className}`}>
           <div className="dropdownList">
             {items.map((item) => (
-              <Link key={item.href} href={item.href} className="dropdownItem" onClick={closeNavigation}>
+              <Link
+                key={item.href}
+                href={item.href}
+                className="dropdownItem"
+                onClick={closeNavigation}
+              >
                 <span className="dropdownItemMain">
-                  <span className="dropdownItemIcon" aria-hidden="true"><item.icon size={14} strokeWidth={1.7} /></span>
+                  <span
+                    className="dropdownItemIcon"
+                    aria-hidden="true"
+                  >
+                    <item.icon size={14} strokeWidth={1.7} />
+                  </span>
+
                   <span>{item.label}</span>
                 </span>
-                <span className="dropdownArrow" aria-hidden="true">→</span>
+
+                <span
+                  className="dropdownArrow"
+                  aria-hidden="true"
+                >
+                  →
+                </span>
               </Link>
             ))}
+
             {viewAll && (
-              <Link href={viewAll.href} className="dropdownViewAll" onClick={closeNavigation}>
+              <Link
+                href={viewAll.href}
+                className="dropdownViewAll"
+                onClick={closeNavigation}
+              >
                 {viewAll.label}
+
                 <span aria-hidden="true">→</span>
               </Link>
             )}
@@ -130,7 +241,11 @@ function DesktopDropdown({
 interface MobileDropdownProps {
   name: Exclude<DropdownName, null>;
   label: string;
-  items: { label: string; href: string; icon: LucideIcon }[];
+  items: {
+    label: string;
+    href: string;
+    icon: LucideIcon;
+  }[];
   viewAll?: {
     label: string;
     href: string;
@@ -160,8 +275,11 @@ function MobileDropdown({
         aria-expanded={isOpen}
       >
         <span>{label}</span>
+
         <span
-          className={`mobileChevron ${isOpen ? "mobileChevronOpen" : ""}`}
+          className={`mobileChevron ${
+            isOpen ? "mobileChevronOpen" : ""
+          }`}
           aria-hidden="true"
         />
       </button>
@@ -172,7 +290,10 @@ function MobileDropdown({
         }`}
       >
         {viewAll && (
-          <Link href={viewAll.href} onClick={closeNavigation}>
+          <Link
+            href={viewAll.href}
+            onClick={closeNavigation}
+          >
             {viewAll.label}
           </Link>
         )}
@@ -183,9 +304,13 @@ function MobileDropdown({
             href={item.href}
             onClick={closeNavigation}
           >
-            <span className="mobileDropdownItemIcon" aria-hidden="true">
+            <span
+              className="mobileDropdownItemIcon"
+              aria-hidden="true"
+            >
               <item.icon size={14} strokeWidth={1.7} />
             </span>
+
             <span>{item.label}</span>
           </Link>
         ))}
@@ -211,10 +336,16 @@ export default function Header() {
       }
     }
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener(
+      "mousedown",
+      handleClickOutside
+    );
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener(
+        "mousedown",
+        handleClickOutside
+      );
     };
   }, []);
 
@@ -226,15 +357,23 @@ export default function Header() {
       }
     }
 
-    document.addEventListener("keydown", handleEscape);
+    document.addEventListener(
+      "keydown",
+      handleEscape
+    );
 
     return () => {
-      document.removeEventListener("keydown", handleEscape);
+      document.removeEventListener(
+        "keydown",
+        handleEscape
+      );
     };
   }, []);
 
   function toggleDropdown(name: DropdownName) {
-    setOpenDropdown((current) => (current === name ? null : name));
+    setOpenDropdown((current) =>
+      current === name ? null : name
+    );
   }
 
   function closeNavigation() {
@@ -243,7 +382,10 @@ export default function Header() {
   }
 
   return (
-    <header ref={navRef} className="siteHeader siteHeaderPremium">
+    <header
+      ref={navRef}
+      className="siteHeader siteHeaderPremium"
+    >
       <div className="navbarContainer navbarContainerPremium">
         {/* BRAND */}
         <Link
@@ -262,7 +404,10 @@ export default function Header() {
           </div>
 
           <div className="brandText brandTextPremium">
-            <span className="brandName brandNamePremium">Sutra Health</span>
+            <span className="brandName brandNamePremium">
+              Sutra Health
+            </span>
+
             <span className="brandTagline brandTaglinePremium">
               Integrative Lifestyle Healthcare
             </span>
@@ -270,8 +415,15 @@ export default function Header() {
         </Link>
 
         {/* DESKTOP NAV */}
-        <nav className="desktopNav desktopNavPremium" aria-label="Main navigation">
-          <Link href="/" className="navLink navLinkPremium" onClick={closeNavigation}>
+        <nav
+          className="desktopNav desktopNavPremium"
+          aria-label="Main navigation"
+        >
+          <Link
+            href="/"
+            className="navLink navLinkPremium"
+            onClick={closeNavigation}
+          >
             Home
           </Link>
 
@@ -279,7 +431,10 @@ export default function Header() {
             name="whatWeDo"
             label="What We Do"
             items={whatWeDo}
-            viewAll={{ label: "View all", href: "/what-we-do" }}
+            viewAll={{
+              label: "View all",
+              href: "/what-we-do",
+            }}
             openDropdown={openDropdown}
             toggleDropdown={toggleDropdown}
             closeNavigation={closeNavigation}
@@ -291,7 +446,10 @@ export default function Header() {
             name="conditions"
             label="Conditions"
             items={conditions}
-            viewAll={{ label: "View all", href: "/conditions" }}
+            viewAll={{
+              label: "View all",
+              href: "/conditions",
+            }}
             openDropdown={openDropdown}
             toggleDropdown={toggleDropdown}
             closeNavigation={closeNavigation}
@@ -330,23 +488,38 @@ export default function Header() {
             name="resources"
             label="Resources"
             items={resources}
-            viewAll={{ label: "View all", href: "/resources" }}
+            viewAll={{
+              label: "View all",
+              href: "/resources",
+            }}
             openDropdown={openDropdown}
             toggleDropdown={toggleDropdown}
             closeNavigation={closeNavigation}
             setOpenDropdown={setOpenDropdown}
             className="resourcesMenu"
           />
-          <Link href="/contact" className="navLink navLinkPremium" onClick={closeNavigation}>
+
+          <Link
+            href="/contact"
+            className="navLink navLinkPremium"
+            onClick={closeNavigation}
+          >
             Contact
           </Link>
         </nav>
 
         {/* DESKTOP ACTIONS */}
         <div className="desktopNavActions desktopNavActionsPremium">
-          <Link href="/book-appointment" className="desktopBookButton desktopBookButtonPremium">
+          <Link
+            href="/book-appointment"
+            className="desktopBookButton desktopBookButtonPremium"
+            onClick={closeNavigation}
+          >
             <span>Book Consultation</span>
-            <span aria-hidden="true">→</span>
+
+            <span aria-hidden="true">
+              →
+            </span>
           </Link>
         </div>
 
@@ -354,7 +527,9 @@ export default function Header() {
         <button
           type="button"
           className={`mobileMenuButton mobileMenuButtonPremium ${
-            mobileOpen ? "mobileMenuButtonOpen" : ""
+            mobileOpen
+              ? "mobileMenuButtonOpen"
+              : ""
           }`}
           onClick={() => {
             setMobileOpen((value) => !value);
@@ -362,19 +537,49 @@ export default function Header() {
           }}
           aria-expanded={mobileOpen}
           aria-label={
-            mobileOpen ? "Close navigation menu" : "Open navigation menu"
+            mobileOpen
+              ? "Close navigation menu"
+              : "Open navigation menu"
           }
         >
-          <span className={mobileOpen ? "line lineOneOpen" : "line"} />
-          <span className={mobileOpen ? "line lineTwoOpen" : "line"} />
-          <span className={mobileOpen ? "line lineThreeOpen" : "line"} />
+          <span
+            className={
+              mobileOpen
+                ? "line lineOneOpen"
+                : "line"
+            }
+          />
+
+          <span
+            className={
+              mobileOpen
+                ? "line lineTwoOpen"
+                : "line"
+            }
+          />
+
+          <span
+            className={
+              mobileOpen
+                ? "line lineThreeOpen"
+                : "line"
+            }
+          />
         </button>
       </div>
 
       {/* MOBILE NAV */}
-      <div className={`mobileNav ${mobileOpen ? "mobileNavOpen" : ""}`}>
+      <div
+        className={`mobileNav ${
+          mobileOpen ? "mobileNavOpen" : ""
+        }`}
+      >
         <div className="mobileNavInner">
-          <Link href="/" className="mobileNavLink" onClick={closeNavigation}>
+          <Link
+            href="/"
+            className="mobileNavLink"
+            onClick={closeNavigation}
+          >
             Home
           </Link>
 
@@ -382,7 +587,10 @@ export default function Header() {
             name="whatWeDo"
             label="What We Do"
             items={whatWeDo}
-            viewAll={{ label: "View All", href: "/what-we-do" }}
+            viewAll={{
+              label: "View All",
+              href: "/what-we-do",
+            }}
             openDropdown={openDropdown}
             toggleDropdown={toggleDropdown}
             closeNavigation={closeNavigation}
@@ -392,7 +600,10 @@ export default function Header() {
             name="conditions"
             label="Conditions"
             items={conditions}
-            viewAll={{ label: "All Conditions", href: "/conditions" }}
+            viewAll={{
+              label: "All Conditions",
+              href: "/conditions",
+            }}
             openDropdown={openDropdown}
             toggleDropdown={toggleDropdown}
             closeNavigation={closeNavigation}
@@ -427,13 +638,20 @@ export default function Header() {
             name="resources"
             label="Resources"
             items={resources}
-            viewAll={{ label: "All Resources", href: "/resources" }}
+            viewAll={{
+              label: "All Resources",
+              href: "/resources",
+            }}
             openDropdown={openDropdown}
             toggleDropdown={toggleDropdown}
             closeNavigation={closeNavigation}
           />
 
-           <Link href="/contact" className="mobileNavLink" onClick={closeNavigation}>
+          <Link
+            href="/contact"
+            className="mobileNavLink"
+            onClick={closeNavigation}
+          >
             Contact
           </Link>
 
@@ -443,7 +661,10 @@ export default function Header() {
             onClick={closeNavigation}
           >
             <span>Book Consultation</span>
-            <span aria-hidden="true">→</span>
+
+            <span aria-hidden="true">
+              →
+            </span>
           </Link>
         </div>
       </div>

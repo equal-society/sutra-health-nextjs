@@ -1,88 +1,94 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
-import Container from "@/components/shared/Container";
-
-const siteUrl = "https://lifequality.org.in";
-
-export const metadata: Metadata = {
-  title: "Integrative Health Services",
-  description:
-    "Sutra Health offers doctor-led lifestyle medicine, nutrition counselling, therapeutic yoga, and behaviour and mind practices for personalised health support.",
-
-  metadataBase: new URL(siteUrl),
-
-  alternates: {
-    canonical: `${siteUrl}/what-we-do`,
-  },
-
-  robots: {
-    index: true,
-    follow: true,
-  },
-
-  openGraph: {
-    title: "Integrative Health Services",
-    description:
-      "Sutra Health offers doctor-led lifestyle medicine, nutrition counselling, therapeutic yoga, and behaviour and mind practices for personalised health support.",
-    url: `${siteUrl}/what-we-do`,
-    siteName: "Sutra Health",
-    type: "website",
-    locale: "en_IN",
-    images: [
-      {
-        url: `${siteUrl}/images/hero-desktop.webp`,
-        width: 1200,
-        height: 630,
-        alt: "Sutra Health integrative healthcare",
-      },
-    ],
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Integrative Health Services",
-    description:
-      "Sutra Health offers doctor-led lifestyle medicine, nutrition counselling, therapeutic yoga, and behaviour and mind practices for personalised health support.",
-    images: [`${siteUrl}/images/hero-desktop.webp`],
-  },
-};
+import { ArrowRight } from "lucide-react";
 
 const services = [
   {
     number: "01",
     title: "Lifestyle Medicine",
     description:
-      "Doctor-led care that looks at food, movement, sleep, stress and other daily habits alongside appropriate medical care.",
-    bestFor:
-      "People who want to understand how lifestyle factors may be affecting their health or a long-term condition.",
+      "Doctor-led support that looks at food, yoga, sleep, stress and everyday habits as part of your overall health.",
     href: "/what-we-do/lifestyle",
   },
   {
     number: "02",
     title: "Nutrition Counselling",
     description:
-      "Practical, personalised guidance on food and eating habits based on your health needs, preferences and everyday life.",
-    bestFor:
-      "People who want clearer and more sustainable nutrition habits without one-size-fits-all advice.",
+      "Personalised guidance to make food choices clearer, practical and easier to sustain.",
     href: "/what-we-do/nutrition",
   },
   {
     number: "03",
     title: "Therapeutic Yoga",
     description:
-      "Structured yoga, movement and breathing practices used as part of a broader health plan and adapted to individual needs.",
-    bestFor:
-      "People who may benefit from a structured mind-body practice alongside their existing healthcare.",
+      "Yoga, breathing and relaxation practices adapted around your needs and health goals.",
     href: "/what-we-do/therapeutic-yoga",
   },
   {
     number: "04",
     title: "Behaviour & Mind Practices",
     description:
-      "Practical support for understanding habits, stress, routines and behaviour patterns that can affect lasting health changes.",
-    bestFor:
-      "People who know what they want to change but find it difficult to turn good intentions into consistent habits.",
+      "Practical support for habits, stress and routines that can make healthy changes easier to maintain.",
     href: "/what-we-do/behaviour-mind",
+  },
+];
+
+const conditions = [
+  {
+    name: "Weight Management",
+    href: "/conditions/weight-management",
+  },
+  {
+    name: "Metabolic Health",
+    href: "/conditions/metabolic-health",
+  },
+  {
+    name: "High Blood Pressure",
+    href: "/conditions/high-blood-pressure",
+  },
+  {
+    name: "Arthritis & Joint Pain",
+    href: "/conditions/arthritis-joint-pain",
+  },
+  {
+    name: "Migraine & Headache",
+    href: "/conditions/migraine-headache",
+  },
+  {
+    name: "Digestive & Gut Health",
+    href: "/conditions/digestive-gut-health",
+  },
+  {
+    name: "Women's Health",
+    href: "/conditions/womens-health",
+  },
+];
+
+const approachPoints = [
+  {
+    number: "01",
+    title: "Understand",
+    description:
+      "Look at your health, everyday life and priorities.",
+  },
+  {
+    number: "02",
+    title: "Personalise",
+    description:
+      "Build a practical plan around your needs and goals.",
+  },
+  {
+    number: "03",
+    title: "Practise",
+    description:
+      "Turn the plan into manageable everyday actions.",
+  },
+  {
+    number: "04",
+    title: "Sustain",
+    description:
+      "Build habits that are realistic enough to continue.",
   },
 ];
 
@@ -90,491 +96,471 @@ const faqs = [
   {
     question: "What services does Sutra Health provide?",
     answer:
-      "Sutra Health provides four core services: lifestyle medicine, nutrition counselling, therapeutic yoga, and behaviour and mind practices. They can be used individually or combined when appropriate.",
+      "Sutra Health provides lifestyle medicine, nutrition counselling, therapeutic yoga, and behaviour and mind practices.",
   },
   {
-    question: "Who are Sutra Health services for?",
+    question: "Who are these services for?",
     answer:
-      "They are designed for people looking for personalised support with lifestyle-related health concerns, nutrition, movement, stress, habits and long-term behaviour change, while continuing appropriate medical care.",
+      "These services are for people looking for practical, lifestyle-focused support alongside appropriate healthcare.",
   },
   {
-    question: "How do I know which Sutra Health service is right for me?",
+    question: "Which service should I start with?",
     answer:
-      "It depends on your health needs and goals. Lifestyle medicine may be a useful starting point when you want a broader health and lifestyle assessment. Nutrition, therapeutic yoga or behaviour and mind practices can be included when appropriate.",
+      "It depends on your health concerns, priorities and goals. A consultation can help you understand where to begin.",
   },
   {
-    question: "Can different Sutra Health services be combined?",
+    question: "Can different services be combined?",
     answer:
-      "Yes. Different services can be combined when appropriate. A personalised plan may bring together lifestyle guidance, nutrition, therapeutic yoga and behaviour-focused practices.",
+      "Yes. Different areas can be brought together when they are relevant to your needs and goals.",
   },
 ];
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": `${siteUrl}/#organization`,
-      name: "Sutra Health",
-      url: siteUrl,
-
-      founder: {
-        "@type": "Person",
-        name: "Dr. Rakesh Sarwal",
-        honorificSuffix: "MBBS, MPH, DrPH",
-        url: "https://academic.lifequality.org.in/",
-      },
-
-      sameAs: [
-        "https://academic.lifequality.org.in/",
-        "https://www.instagram.com/sutrahealth/",
-        "https://www.facebook.com/people/Sutrahealth-Equal/",
-        "https://www.youtube.com/@sutra-health",
-        "https://www.linkedin.com/in/equal-society-ngo",
-        "https://sutra-health.medium.com/",
-        "https://in.pinterest.com/equal_society/",
-      ],
-    },
-
-    {
-      "@type": "WebSite",
-      "@id": `${siteUrl}/#website`,
-      name: "Sutra Health",
-      url: siteUrl,
-      publisher: {
-        "@id": `${siteUrl}/#organization`,
-      },
-    },
-
-    {
-      "@type": "WebPage",
-      "@id": `${siteUrl}/what-we-do#webpage`,
-      name: "Integrative Health Services | Sutra Health",
-      url: `${siteUrl}/what-we-do`,
-      isPartOf: {
-        "@id": `${siteUrl}/#website`,
-      },
-      about: {
-        "@id": `${siteUrl}/#organization`,
-      },
-      publisher: {
-        "@id": `${siteUrl}/#organization`,
-      },
-      breadcrumb: {
-        "@id": `${siteUrl}/what-we-do#breadcrumb`,
-      },
-    },
-
-    {
-      "@type": "BreadcrumbList",
-      "@id": `${siteUrl}/what-we-do#breadcrumb`,
-      itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Home",
-          item: `${siteUrl}/`,
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "What We Do",
-          item: `${siteUrl}/what-we-do`,
-        },
-      ],
-    },
-
-    {
-      "@type": "ItemList",
-      "@id": `${siteUrl}/what-we-do#services`,
-      name: "Sutra Health Services",
-      itemListElement: services.map((service, index) => ({
-        "@type": "ListItem",
-        position: index + 1,
-        item: {
-          "@type": "Service",
-          name: service.title,
-          description: service.description,
-          provider: {
-            "@id": `${siteUrl}/#organization`,
-          },
-          url: `${siteUrl}${service.href}`,
-        },
-      })),
-    },
-
-    {
-      "@type": "FAQPage",
-      mainEntity: faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer,
-        },
-      })),
-    },
-  ],
-};
-
 export default function WhatWeDoPage() {
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(structuredData),
-        }}
-      />
+    <main className="min-h-screen bg-[#F7F5EF] text-[#202522]">
 
-      <main className="bg-[#F7F5EF] text-[#202522]">
-        {/* HERO */}
-        <section className="relative overflow-hidden border-b border-[#202522]/10 bg-[#F7F5EF]">
-          {/* Soft organic background shape */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -right-32 -top-40 h-[520px] w-[520px] rounded-full bg-[#E7EDE8]/70 blur-[2px] sm:h-[620px] sm:w-[620px]"
-          />
+      {/* =========================================================
+          HERO
+      ========================================================= */}
+      <section
+        aria-labelledby="what-we-do-heading"
+        className="border-b border-[#202522]/10"
+      >
+        <div className="mx-auto max-w-[1180px] px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+          <div className="max-w-[920px]">
 
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute right-[8%] top-[18%] h-[280px] w-[280px] rounded-full bg-[#91A298]/10 blur-3xl sm:h-[380px] sm:w-[380px]"
-          />
+            {/* Eyebrow */}
+            <div className="flex items-center gap-3">
+              <span
+                aria-hidden="true"
+                className="h-px w-9 bg-[#91A298]"
+              />
 
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#E7EDE8]/20 to-transparent"
-          />
+              <p className="text-[10px] font-semibold uppercase tracking-[0.21em] text-[#65736D] sm:text-[11px]">
+                What we do
+              </p>
+            </div>
 
-          <Container>
-            <div className="relative max-w-[900px] py-20 sm:py-24 lg:py-28">
+            {/* Heading */}
+            <h1
+              id="what-we-do-heading"
+              className="mt-6 max-w-[850px] font-serif text-[43px] font-medium leading-[0.98] tracking-[-0.045em] text-[#202522] sm:text-[55px] lg:text-[70px]"
+            >
+              Healthcare that looks at the{" "}
+              <span className="font-normal italic text-[#17413D]">
+                whole picture.
+              </span>
+            </h1>
+
+            {/* Description */}
+            <p className="mt-7 max-w-[720px] text-[16px] leading-7 text-[#4E5B56] sm:text-[18px] sm:leading-8">
+              Sutra Health brings medical care and practical lifestyle support
+              together. Our services cover lifestyle medicine, nutrition,
+              therapeutic yoga, and behaviour and mind practices, with guidance
+              shaped around your health, needs, and daily life.
+            </p>
+
+            {/* CTA */}
+            <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6">
+              <Link
+                href="/book-appointment"
+                className="group inline-flex min-h-[50px] w-full items-center justify-center gap-4 rounded-full bg-[#17413D] px-7 py-3 text-[12px] font-semibold text-white transition-all duration-300 hover:bg-[#12332F] sm:w-auto sm:text-[13px]"
+              >
+                Book a Consultation
+
+                <span
+                  aria-hidden="true"
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  →
+                </span>
+              </Link>
+
+              <Link
+                href="/approach"
+                className="group inline-flex items-center gap-2 py-2 text-[12px] font-semibold text-[#202522] transition-colors duration-300 hover:text-[#17413D] sm:text-[13px]"
+              >
+                Understand our approach
+
+                <span
+                  aria-hidden="true"
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  →
+                </span>
+              </Link>
+            </div>
+
+            {/* Trust line */}
+            <div className="mt-9 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#202522]/10 pt-5 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#65736D] sm:mt-11">
+              <span>Doctor-led</span>
+              <span>Personalised</span>
+              <span>Whole-person care</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          SERVICES
+      ========================================================= */}
+      <section
+        aria-labelledby="services-heading"
+        className="bg-white"
+      >
+        <div className="mx-auto max-w-[1180px] px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+
+          {/* Section intro */}
+          <div className="max-w-[720px]">
+
+            <div className="flex items-center gap-3">
+              <span
+                aria-hidden="true"
+                className="h-px w-8 bg-[#91A298]"
+              />
+
+              <p className="text-[10px] font-semibold uppercase tracking-[0.21em] text-[#65736D] sm:text-[11px]">
+                Our services
+              </p>
+            </div>
+
+            <h2
+              id="services-heading"
+              className="mt-5 font-serif text-[38px] font-medium leading-[1.06] tracking-[-0.04em] text-[#202522] sm:text-[48px]"
+            >
+              Support that fits around your health.
+            </h2>
+
+            <p className="mt-5 max-w-[700px] text-[16px] leading-7 text-[#4E5B56] sm:text-[18px] sm:leading-8">
+              Each service focuses on a different part of everyday health.
+              Together, they can form a more connected approach to care.
+            </p>
+          </div>
+
+          {/* Service list */}
+          <div className="mt-12 max-w-[1080px] border-y border-[#202522]/10">
+            {services.map((service) => (
+              <Link
+                key={service.number}
+                href={service.href}
+                className="group block border-b border-[#202522]/10 py-8 transition-colors duration-300 last:border-b-0 hover:bg-[#F7F5EF] sm:px-5 sm:py-9"
+              >
+                <div className="grid gap-5 sm:grid-cols-[64px_minmax(0,1fr)_auto] sm:items-center sm:gap-8">
+
+                  {/* Number */}
+                  <span className="text-[11px] font-semibold tracking-[0.12em] text-[#91A298] sm:text-[12px]">
+                    {service.number}
+                  </span>
+
+                  {/* Content */}
+                  <div className="max-w-[700px]">
+                    <h3 className="font-serif text-[25px] font-medium leading-tight tracking-[-0.025em] text-[#202522] sm:text-[30px]">
+                      {service.title}
+                    </h3>
+
+                    <p className="mt-3 text-[15px] leading-7 text-[#4E5B56] sm:text-[17px] sm:leading-8">
+                      {service.description}
+                    </p>
+                  </div>
+
+                  {/* Explore */}
+                  <span className="inline-flex items-center gap-2 text-[12px] font-semibold text-[#17413D] sm:text-[13px]">
+                    Explore
+
+                    <ArrowRight
+                      size={16}
+                      strokeWidth={1.8}
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          APPROACH
+      ========================================================= */}
+      <section
+        aria-labelledby="approach-heading"
+        className="bg-[#F7F5EF]"
+      >
+        <div className="mx-auto max-w-[1180px] px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+
+          <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+
+            {/* Intro */}
+            <div>
               <div className="flex items-center gap-3">
                 <span
                   aria-hidden="true"
                   className="h-px w-8 bg-[#91A298]"
                 />
 
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#65736D]">
-                  What We Do
+                <p className="text-[10px] font-semibold uppercase tracking-[0.21em] text-[#65736D] sm:text-[11px]">
+                  Our approach
                 </p>
               </div>
 
-              <h1 className="mt-6 max-w-[850px] font-serif text-[46px] font-medium leading-[0.98] tracking-[-0.045em] text-[#202522] sm:text-[60px] lg:text-[72px]">
-                Integrative health services for lasting health.
-              </h1>
-
-              <p className="mt-7 max-w-[720px] text-[17px] leading-7 text-[#4E5B56] sm:text-[19px] sm:leading-7">
-                Sutra Health provides doctor-led integrative healthcare through
-                lifestyle medicine, nutrition counselling, therapeutic yoga,
-                and behaviour and mind practices. These services are for people
-                looking for personalised support with lifestyle-related health
-                concerns, long-term condition management, nutrition, movement,
-                stress, or sustainable behaviour change.
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-x-7 gap-y-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#65736D]">
-                <span>Doctor-led</span>
-                <span>Evidence-informed</span>
-                <span>Personalised</span>
-                <span>Whole-person</span>
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        {/* FOUR SERVICES */}
-        <section className="py-20 sm:py-24 lg:py-28">
-          <Container>
-            <div className="grid gap-12 lg:grid-cols-[0.7fr_1.8fr] lg:gap-20">
-              <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#65736D]">
-                  Four areas of care
-                </p>
-
-                <h2 className="mt-4 max-w-[360px] font-serif text-[38px] leading-[1.02] tracking-[-0.04em] sm:text-[46px]">
-                  Four ways to work on your health.
-                </h2>
-
-                <p className="mt-5 max-w-[360px] text-[15px] leading-7 text-[#4E5B56]">
-                  Each service can stand alone or become part of a broader,
-                  personalised health plan.
-                </p>
-              </div>
-
-              <div className="divide-y divide-[#202522]/10 border-y border-[#202522]/10">
-                {services.map((service) => (
-                  <article
-                    key={service.number}
-                    className="py-8 sm:py-9"
-                  >
-                    <div className="grid gap-5 sm:grid-cols-[55px_1fr_auto] sm:gap-7">
-                      <span className="text-[10px] font-semibold tracking-[0.15em] text-[#91A298]">
-                        {service.number}
-                      </span>
-
-                      <div>
-                        <h3 className="font-serif text-[28px] leading-none tracking-[-0.03em] text-[#17413D] sm:text-[32px]">
-                          {service.title}
-                        </h3>
-
-                        <p className="mt-4 max-w-[620px] text-[15px] leading-7 text-[#4E5B56]">
-                          {service.description}
-                        </p>
-
-                        <p className="mt-4 max-w-[620px] text-[13px] leading-6 text-[#65736D]">
-                          <span className="font-semibold text-[#202522]">
-                            Best suited for:
-                          </span>{" "}
-                          {service.bestFor}
-                        </p>
-                      </div>
-
-                      <Link
-                        href={service.href}
-                        className="group inline-flex h-fit items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#17413D]"
-                      >
-                        Explore
-                        <span className="transition-transform group-hover:translate-x-1">
-                          →
-                        </span>
-                      </Link>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        {/* DECISION SUPPORT */}
-        <section className="border-y border-[#202522]/10 bg-[#E7EDE8] py-20 sm:py-24">
-          <Container>
-            <div className="max-w-[760px]">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#65736D]">
-                Choosing where to begin
-              </p>
-
-              <h2 className="mt-4 font-serif text-[38px] leading-[1.02] tracking-[-0.04em] sm:text-[48px]">
-                Which service may be right for you?
+              <h2
+                id="approach-heading"
+                className="mt-5 max-w-[480px] font-serif text-[38px] font-medium leading-[1.04] tracking-[-0.04em] text-[#202522] sm:text-[48px]"
+              >
+                A more connected way to care.
               </h2>
 
-              <p className="mt-5 text-[16px] leading-8 text-[#4E5B56]">
-                There is no single starting point for everyone. Your health
-                concern, goals, current care and daily circumstances can help
-                determine what makes sense first.
+              <p className="mt-5 max-w-[480px] text-[16px] leading-7 text-[#4E5B56] sm:text-[18px] sm:leading-8">
+                Your health is shaped by more than one habit or symptom. We
+                look at the wider picture and help you focus on changes that
+                can work in everyday life.
               </p>
+
+              <Link
+                href="/approach"
+                className="group mt-7 inline-flex items-center gap-2 text-[12px] font-semibold text-[#17413D] transition-colors duration-300 hover:text-[#12332F] sm:text-[13px]"
+              >
+                Learn about our approach
+
+                <ArrowRight
+                  size={16}
+                  strokeWidth={1.8}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </Link>
             </div>
 
-            <div className="mt-10 grid gap-px overflow-hidden rounded-[16px] border border-[#202522]/10 bg-[#202522]/10 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                [
-                  "Need a broader health picture?",
-                  "Start with Lifestyle Medicine.",
-                ],
-                [
-                  "Need practical food guidance?",
-                  "Explore Nutrition Counselling.",
-                ],
-                [
-                  "Want structured mind-body practice?",
-                  "Explore Therapeutic Yoga.",
-                ],
-                [
-                  "Struggling with consistency?",
-                  "Explore Behaviour & Mind Practices.",
-                ],
-              ].map(([question, answer]) => (
+            {/* Approach steps */}
+            <div className="border-y border-[#202522]/10">
+              {approachPoints.map((point) => (
                 <div
-                  key={question}
-                  className="bg-[#F7F5EF] p-6 sm:p-7"
+                  key={point.number}
+                  className="grid grid-cols-[42px_1fr] gap-5 border-b border-[#202522]/10 py-7 last:border-b-0 sm:grid-cols-[56px_1fr] sm:gap-7 sm:py-8"
                 >
-                  <p className="font-serif text-[20px] leading-[1.1] text-[#17413D]">
-                    {question}
-                  </p>
+                  <span className="pt-1 text-[11px] font-semibold tracking-[0.12em] text-[#91A298]">
+                    {point.number}
+                  </span>
 
-                  <p className="mt-3 text-[13px] leading-6 text-[#65736D]">
-                    {answer}
-                  </p>
+                  <div>
+                    <h3 className="font-serif text-[24px] font-medium tracking-[-0.02em] text-[#202522] sm:text-[28px]">
+                      {point.title}
+                    </h3>
+
+                    <p className="mt-2 max-w-[650px] text-[15px] leading-7 text-[#4E5B56] sm:text-[17px] sm:leading-8">
+                      {point.description}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
-          </Container>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        {/* HOW THEY CONNECT */}
-        <section className="py-20 sm:py-24 lg:py-28">
-          <Container>
-            <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-20">
-              <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#65736D]">
-                  Connected care
-                </p>
+      {/* =========================================================
+          CONDITIONS
+      ========================================================= */}
+      <section
+        aria-labelledby="conditions-heading"
+        className="bg-[#E7EDE8]"
+      >
+        <div className="mx-auto max-w-[1180px] px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
 
-                <h2 className="mt-4 max-w-[500px] font-serif text-[38px] leading-[1.02] tracking-[-0.04em] sm:text-[48px]">
-                  The services are designed to work together.
-                </h2>
-              </div>
+          <div className="max-w-[760px]">
 
-              <div>
-                <p className="text-[16px] leading-8 text-[#4E5B56]">
-                  Health rarely fits into one category. A personalised plan
-                  may combine different Sutra Health services according to
-                  your needs rather than asking you to choose just one.
-                </p>
+            <div className="flex items-center gap-3">
+              <span
+                aria-hidden="true"
+                className="h-px w-8 bg-[#91A298]"
+              />
 
-                <div className="mt-7 space-y-3 text-[13px] text-[#4E5B56]">
-                  <p>
-                    → Lifestyle assessment can identify important patterns.
-                  </p>
-                  <p>
-                    → Nutrition can turn findings into practical food habits.
-                  </p>
-                  <p>
-                    → Therapeutic yoga can support movement and mind-body
-                    practice.
-                  </p>
-                  <p>
-                    → Behaviour work can help make changes more sustainable.
-                  </p>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.21em] text-[#65736D] sm:text-[11px]">
+                Where we can help
+              </p>
+            </div>
+
+            <h2
+              id="conditions-heading"
+              className="mt-5 max-w-[720px] font-serif text-[38px] font-medium leading-[1.04] tracking-[-0.04em] text-[#202522] sm:text-[48px]"
+            >
+              Health concerns where lifestyle can play a role.
+            </h2>
+
+            <p className="mt-5 max-w-[700px] text-[16px] leading-7 text-[#4E5B56] sm:text-[18px] sm:leading-8">
+              Explore some of the health concerns people come to Sutra Health
+              with, and learn how lifestyle-focused support may fit into their
+              care.
+            </p>
+          </div>
+
+          {/* Conditions */}
+          <div className="mt-12 max-w-[1080px] border-y border-[#202522]/10">
+            {conditions.map((condition, index) => (
+              <Link
+                key={condition.name}
+                href={condition.href}
+                className="group flex min-h-[70px] items-center justify-between gap-6 border-b border-[#202522]/10 py-5 last:border-b-0"
+              >
+                <div className="flex items-center gap-5 sm:gap-8">
+
+                  <span className="text-[11px] font-semibold tracking-[0.12em] text-[#91A298]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <span className="font-serif text-[19px] font-medium tracking-[-0.015em] text-[#202522] sm:text-[23px]">
+                    {condition.name}
+                  </span>
                 </div>
 
-                <Link
-                  href="/approach"
-                  className="mt-8 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.12em] text-[#17413D]"
-                >
-                  See the Sutra Health approach
-                  <span>→</span>
-                </Link>
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        {/* RELATED */}
-        <section className="border-t border-[#202522]/10 bg-[#F7F5EF] py-16 sm:py-20">
-          <Container>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <Link
-                href="/conditions"
-                className="group rounded-[14px] border border-[#202522]/10 bg-[#E7EDE8] p-7 transition-transform duration-300 hover:-translate-y-1"
-              >
-                <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#65736D]">
-                  Explore
-                </p>
-
-                <h2 className="mt-3 font-serif text-[28px] text-[#17413D]">
-                  Health conditions
-                </h2>
-
-                <p className="mt-3 text-[13px] leading-6 text-[#65736D]">
-                  Understand the health concerns and conditions we discuss
-                  through a whole-person lens.
-                </p>
-
-                <span className="mt-5 inline-flex text-[10px] font-semibold text-[#17413D]">
-                  View conditions →
-                </span>
+                <ArrowRight
+                  size={17}
+                  strokeWidth={1.8}
+                  className="shrink-0 text-[#17413D] transition-transform duration-300 group-hover:translate-x-1"
+                />
               </Link>
+            ))}
+          </div>
 
-              <Link
-                href="/resources/articles"
-                className="group rounded-[14px] border border-[#202522]/10 bg-[#E7EDE8] p-7 transition-transform duration-300 hover:-translate-y-1"
-              >
-                <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#65736D]">
-                  Learn
-                </p>
+          {/* Conditions CTA */}
+          <Link
+            href="/conditions"
+            className="group mt-8 inline-flex min-h-[48px] items-center justify-center gap-3 rounded-full border border-[#17413D]/20 px-6 text-[12px] font-semibold text-[#17413D] transition-colors duration-300 hover:bg-white sm:text-[13px]"
+          >
+            View all conditions
 
-                <h2 className="mt-3 font-serif text-[28px] text-[#17413D]">
-                  Health Journal
-                </h2>
+            <ArrowRight
+              size={16}
+              strokeWidth={1.8}
+              className="transition-transform duration-300 group-hover:translate-x-1"
+            />
+          </Link>
+        </div>
+      </section>
 
-                <p className="mt-3 text-[13px] leading-6 text-[#65736D]">
-                  Read practical health education on lifestyle, nutrition,
-                  movement, habits and related topics.
-                </p>
+      {/* =========================================================
+          FAQ
+      ========================================================= */}
+      <section
+        aria-labelledby="faq-heading"
+        className="bg-white"
+      >
+        <div className="mx-auto max-w-[1180px] px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
 
-                <span className="mt-5 inline-flex text-[10px] font-semibold text-[#17413D]">
-                  Read articles →
-                </span>
-              </Link>
+          <div className="max-w-[720px]">
+
+            <div className="flex items-center gap-3">
+              <span
+                aria-hidden="true"
+                className="h-px w-8 bg-[#91A298]"
+              />
+
+              <p className="text-[10px] font-semibold uppercase tracking-[0.21em] text-[#65736D] sm:text-[11px]">
+                Questions
+              </p>
             </div>
-          </Container>
-        </section>
 
-        {/* FAQ */}
-        <section className="bg-[#FAF8F1] py-20 sm:py-24 lg:py-28">
-          <Container>
-            <div className="grid gap-12 lg:grid-cols-[0.75fr_1.5fr] lg:gap-20">
-              <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
-                  Common questions
-                </p>
+            <h2
+              id="faq-heading"
+              className="mt-5 font-serif text-[38px] font-medium leading-[1.06] tracking-[-0.04em] text-[#202522] sm:text-[48px]"
+            >
+              Common questions
+            </h2>
 
-                <h2 className="mt-3 max-w-md font-serif text-[38px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[46px]">
-                  Before you begin.
-                </h2>
+            <p className="mt-5 max-w-[650px] text-[16px] leading-7 text-[#4E5B56] sm:text-[18px] sm:leading-8">
+              A few simple answers to help you understand how Sutra Health
+              works.
+            </p>
+          </div>
 
-                <p className="mt-5 max-w-md text-[14px] leading-7 text-[#687A73]">
-                  A few simple answers to common questions about our services
-                  and where to begin.
-                </p>
-              </div>
+          {/* FAQ list */}
+          <div className="mt-12 max-w-[1000px] border-y border-[#202522]/10">
+            {faqs.map((faq) => (
+              <details
+                key={faq.question}
+                className="group border-b border-[#202522]/10 last:border-b-0"
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-8 py-6 text-[16px] font-medium leading-7 text-[#202522] marker:hidden sm:py-7 sm:text-[19px]">
+                  <span>{faq.question}</span>
 
-              <div className="border-t border-[#173F35]/15">
-                {faqs.map((faq) => (
-                  <details
-                    key={faq.question}
-                    className="group border-b border-[#173F35]/15"
+                  <span
+                    aria-hidden="true"
+                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#E7EDE8] text-[21px] font-light leading-none text-[#17413D] transition-transform duration-300 group-open:rotate-45"
                   >
-                    <summary className="flex cursor-pointer list-none items-center gap-4 py-5 sm:py-6 [&::-webkit-details-marker]:hidden">
-                      <span className="flex-1 text-[15px] font-medium leading-6 tracking-[-0.01em] text-[#173F35] sm:text-[16px]">
-                        {faq.question}
-                      </span>
+                    +
+                  </span>
+                </summary>
 
-                      <span
-                        aria-hidden="true"
-                        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#173F35]/10 text-[#65966F] transition-transform duration-300 group-open:rotate-45"
-                      >
-                        +
-                      </span>
-                    </summary>
-
-                    <div className="pb-6 pr-10 sm:pb-7">
-                      <p className="max-w-2xl text-[13px] leading-7 text-[#687A73] sm:text-[14px]">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  </details>
-                ))}
-              </div>
-            </div>
-          </Container>
-        </section>
-
-        {/* CTA */}
-        <section className="bg-[#17413D] py-16 sm:py-20">
-          <Container>
-            <div className="flex flex-col gap-7 sm:flex-row sm:items-center sm:justify-between">
-              <div className="max-w-[650px]">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#91A298]">
-                  Ready to begin?
+                <p className="max-w-[850px] pb-7 pr-8 text-[15px] leading-7 text-[#4E5B56] sm:text-[17px] sm:leading-8">
+                  {faq.answer}
                 </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                <h2 className="mt-3 font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#F7F5EF] sm:text-[42px]">
-                  Start with a conversation about your health.
-                </h2>
+      {/* =========================================================
+          FINAL CTA
+      ========================================================= */}
+      <section className="bg-[#F7F5EF]">
+        <div className="mx-auto max-w-[1180px] px-5 pb-16 sm:px-8 sm:pb-20 lg:px-10 lg:pb-24">
+
+          <div className="overflow-hidden rounded-[28px] bg-[#17413D] px-7 py-12 sm:px-10 sm:py-14 lg:px-14 lg:py-16">
+
+            <div className="max-w-[850px]">
+
+              <div className="flex items-center gap-3">
+                <span
+                  aria-hidden="true"
+                  className="h-px w-9 bg-[#91A298]"
+                />
+
+                <p className="text-[10px] font-semibold uppercase tracking-[0.21em] text-[#E7EDE8] sm:text-[11px]">
+                  Start here
+                </p>
               </div>
 
+              <h2 className="mt-5 max-w-[800px] font-serif text-[36px] font-medium leading-[1.04] tracking-[-0.04em] text-[#F7F5EF] sm:text-[48px]">
+                Start with a conversation about your health.
+              </h2>
+
+              <p className="mt-6 max-w-[720px] text-[16px] leading-7 text-[#E7EDE8] sm:text-[18px] sm:leading-8">
+                Tell us what you are dealing with, what you have tried and
+                what you would like to change.
+              </p>
+
+              {/* Inverted CTA — matching approved design */}
               <Link
                 href="/book-appointment"
-                className="inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-[#F7F5EF] px-7 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#17413D]"
+                className="group mt-8 inline-flex min-h-[50px] items-center justify-center gap-4 rounded-full bg-[#F7F5EF] px-7 py-3 text-[12px] font-semibold text-[#17413D] transition-colors duration-300 hover:bg-[#E7EDE8] sm:text-[13px]"
               >
-                Book a consultation →
+                Book a Consultation
+
+                <span
+                  aria-hidden="true"
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  →
+                </span>
               </Link>
             </div>
-          </Container>
-        </section>
-      </main>
-    </>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================
+          DISCLAIMER
+      ========================================================= */}
+      <section className="bg-[#F7F5EF] pb-8">
+        <div className="mx-auto max-w-[1180px] px-5 sm:px-8 lg:px-10">
+          <p className="max-w-[900px] text-[12px] leading-6 text-[#65736D]">
+            Sutra Health provides integrative and lifestyle-focused support
+            alongside appropriate medical care. It does not replace diagnosis,
+            treatment or advice from your doctor.
+          </p>
+        </div>
+      </section>
+    </main>
   );
 }

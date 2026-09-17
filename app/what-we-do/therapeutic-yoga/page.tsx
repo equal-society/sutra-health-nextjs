@@ -54,67 +54,73 @@ export const metadata: Metadata = {
   },
 };
 
-const evidenceSummary = [
-  {
-    number: "01",
-    title: "High Blood Pressure",
-    finding:
-      "The source material reports randomized-trial evidence that yoga added to standard care can reduce blood pressure, with effects varying by the practice and study.",
-    href: "/conditions/high-blood-pressure",
-  },
-  {
-    number: "02",
-    title: "Metabolic Health & Diabetes",
-    finding:
-      "The source material reports evidence from an India-wide trial of a yoga-based lifestyle protocol for reducing progression from prediabetes to diabetes.",
-    href: "/conditions/metabolic-health",
-  },
-  {
-    number: "03",
-    title: "Arthritis & Joint Pain",
-    finding:
-      "A randomized trial reported in the source material found yoga comparable with standard strengthening exercise for knee osteoarthritis pain, while evidence differs for rheumatoid arthritis.",
-    href: "/conditions/arthritis-joint-pain",
-  },
-  {
-    number: "04",
-    title: "Migraine & Headache",
-    finding:
-      "The source material describes a 160-patient New Delhi trial in which yoga added to medical therapy reduced migraine frequency and intensity.",
-    href: "/conditions/migraine-headache",
-  },
+const yogaAreas = [
+  "High blood pressure",
+  "Metabolic health",
+  "Arthritis & joint pain",
+  "Migraine & headache",
+  "Beginners",
 ];
 
 const focusAreas = [
   {
     number: "01",
     title: "Your health condition",
-    description:
-      "The practice starts with what you are addressing. Different conditions can require different movements, intensity, pacing and precautions.",
+    text: "The practice starts with what you are addressing. Different conditions can require different movements, intensity, pacing and precautions.",
   },
   {
     number: "02",
     title: "Your current ability",
-    description:
-      "You do not need to be flexible or experienced. Movements can be modified through gentler variations, reduced range of motion or appropriate support.",
+    text: "You do not need to be flexible or experienced. Movements can be modified through gentler variations, reduced range of motion or appropriate support.",
   },
   {
     number: "03",
     title: "Movement & posture",
-    description:
-      "The selection of postures and movement is considered around your condition, capacity and the purpose of the practice.",
+    text: "The selection of postures and movement is considered around your condition, capacity and the purpose of the practice.",
   },
   {
     number: "04",
     title: "Breathing & awareness",
-    description:
-      "Breathing and attention can form part of a therapeutic practice when appropriate to the person's needs and the intended outcome.",
+    text: "Breathing and attention can form part of a therapeutic practice when appropriate to the person's needs and the intended outcome.",
   },
   {
     number: "05",
     title: "Safety & progression",
-    description:
-      "The practice should be appropriate to your health situation and adapted as your needs, ability and response change.",
+    text: "The practice should be appropriate to your health situation and adapted as your needs, ability and response change.",
+  },
+];
+
+const relatedConditions = [
+  {
+    title: "High Blood Pressure",
+    href: "/conditions/high-blood-pressure",
+  },
+  {
+    title: "Metabolic Health",
+    href: "/conditions/metabolic-health",
+  },
+  {
+    title: "Arthritis & Joint Pain",
+    href: "/conditions/arthritis-joint-pain",
+  },
+  {
+    title: "Migraine & Headache",
+    href: "/conditions/migraine-headache",
+  },
+];
+
+const otherPractices = [
+  {
+    title: "Lifestyle Medicine",
+    href: "/what-we-do/lifestyle",
+  },
+  {
+    title: "Nutrition Counselling",
+    href: "/what-we-do/nutrition",
+  },
+  {
+    title: "Breath & Mindfulness",
+    href: "/what-we-do/breath-mindfulness",
   },
 ];
 
@@ -146,337 +152,374 @@ const faqs = [
   },
 ];
 
-const pageSchema = {
-  "@context": "https://schema.org",
-  "@type": "MedicalWebPage",
-  name: "Therapeutic Yoga | Sutra Health",
-  description:
-    "Condition-specific therapeutic yoga adapted around health needs, ability and relevant clinical evidence.",
-  url: pageUrl,
-  inLanguage: "en-IN",
-  about: {
-    "@type": "MedicalTherapy",
-    name: "Therapeutic Yoga",
-  },
-  author: {
-    "@type": "Person",
-    name: "Dr. Rakesh Sarwal",
-    honorificSuffix: "MBBS, MPH, DrPH",
-    url: "https://academic.lifequality.org.in/",
-  },
-  reviewedBy: {
-    "@type": "Person",
-    name: "Dr. Rakesh Sarwal",
-    honorificSuffix: "MBBS, MPH, DrPH",
-    url: "https://academic.lifequality.org.in/",
-  },
-  publisher: {
-    "@type": "Organization",
-    name: "Sutra Health",
-    url: baseUrl,
-    sameAs: ["https://academic.lifequality.org.in/"],
-  },
-  isPartOf: {
-    "@type": "WebSite",
-    name: "Sutra Health",
-    url: baseUrl,
-  },
-  subjectOf: [
-    {
-      "@type": "ScholarlyArticle",
-      name: "A traffic light approach to lifestyle change: Health building guideline for NCD outpatients in India",
-      url: "https://academic.lifequality.org.in/publication/2026-a-traffic-light-approach-to-lifestyle-change-health-building",
-      datePublished: "2026",
-    },
-  ],
-  dateModified: "2026-09-10",
-};
+function Label({
+  children,
+  light = false,
+}: {
+  children: React.ReactNode;
+  light?: boolean;
+}) {
+  return (
+    <div className="flex items-center gap-3">
+      <span className="h-px w-8 bg-[#91A298]" />
 
-const definedTermSchema = {
-  "@context": "https://schema.org",
-  "@type": "DefinedTerm",
-  name: "Therapeutic Yoga",
-  description:
-    "Yoga practice adapted around a person's health condition, needs and current ability, with the practice informed by relevant clinical evidence.",
-  inDefinedTermSet: pageUrl,
-};
+      <span
+        className={`text-[10px] font-semibold uppercase tracking-[0.2em] sm:text-[11px] ${
+          light ? "text-[#91A298]" : "text-[#65736D]"
+        }`}
+      >
+        {children}
+      </span>
+    </div>
+  );
+}
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: `${baseUrl}/` },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "What We Do",
-      item: `${baseUrl}/what-we-do`,
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Therapeutic Yoga",
-      item: pageUrl,
-    },
-  ],
-};
-
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((faq) => ({
-    "@type": "Question",
-    name: faq.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: faq.answer,
-    },
-  })),
-};
+function Arrow() {
+  return (
+    <span
+      aria-hidden="true"
+      className="transition-transform duration-300 group-hover:translate-x-1"
+    >
+      →
+    </span>
+  );
+}
 
 export default function TherapeuticYogaPage() {
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalWebPage",
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: "Therapeutic Yoga for Better Health | Sutra Health",
+        description:
+          "Condition-specific therapeutic yoga adapted around health needs, ability and relevant clinical evidence.",
+        author: {
+          "@type": "Person",
+          name: "Dr. Rakesh Sarwal",
+        },
+        reviewer: {
+          "@type": "Person",
+          name: "Dr. Rakesh Sarwal",
+          honorificSuffix: "MBBS MPH DrPH",
+        },
+        publisher: {
+          "@type": "Organization",
+          name: "Sutra Health",
+          url: baseUrl,
+        },
+        dateModified: "2026-09-10",
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: baseUrl,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "What We Do",
+            item: `${baseUrl}/what-we-do`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: "Therapeutic Yoga",
+            item: pageUrl,
+          },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${pageUrl}#faq`,
+        mainEntity: faqs.map((faq) => ({
+          "@type": "Question",
+          name: faq.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+          },
+        })),
+      },
+      {
+        "@type": "DefinedTerm",
+        name: "Therapeutic Yoga",
+        description:
+          "Yoga practice adapted around a person's health condition, needs and current ability, with the practice informed by relevant clinical evidence.",
+        inDefinedTermSet: pageUrl,
+      },
+    ],
+  };
+
   return (
-    <main className="bg-[#FAF8F1] text-[#173F35]">
+    <main className="bg-[#F7F5EF] text-[#202522]">
+      {/* =========================================================
+          STRUCTURED DATA
+      ========================================================= */}
+
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema),
+        }}
       />
 
-      {/* HERO */}
-      <section className="border-b border-[#173F35]/10">
+      {/* =========================================================
+          HERO
+      ========================================================= */}
+
+      <section className="bg-[#F7F5EF]">
         <Container>
-          <div className="py-10 sm:py-14 lg:py-16">
-            <Link
-              href="/what-we-do"
-              className="inline-flex text-[12px] font-medium text-[#65966F] transition-colors hover:text-[#173F35]"
-            >
-              ← What We Do
-            </Link>
+          <div className="mx-auto max-w-[1180px] pt-16 sm:pt-20 lg:pt-24">
+            <div className="max-w-[900px]">
+              <Label>Therapeutic Yoga</Label>
 
-            <div className="mt-10 grid items-center gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
-              <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
-                  Therapeutic Yoga
-                </p>
+              <h1 className="mt-6 max-w-[900px] font-serif text-[46px] font-medium leading-[1.04] tracking-[-0.05em] text-[#202522] sm:text-[62px] lg:text-[78px]">
+                Therapeutic Yoga for{" "}
+                <em className="text-[#17413D]">Better Health.</em>
+              </h1>
 
-                <h1 className="mt-4 max-w-[700px] font-serif text-[42px] leading-[1.02] tracking-[-0.04em] text-[#123F35] sm:text-[56px] lg:text-[64px]">
-                  Therapeutic Yoga for Better Health
-                </h1>
-
-                <p className="mt-6 max-w-[650px] text-[14px] leading-7 text-[#687A73] sm:text-[16px] sm:leading-8">
-                  Therapeutic yoga adapts yoga practice around your health
-                  condition, current ability and the evidence relevant to what
-                  you are addressing. It is designed to complement appropriate
-                  medical care, not replace it.
-                </p>
-
-                <div className="mt-7 flex flex-wrap gap-3">
-                  <Link
-                    href="/book-appointment"
-                    className="inline-flex items-center gap-2 rounded-full bg-[#173F35] px-6 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-[#12352D]"
-                  >
-                    Book a Consultation
-                    <span aria-hidden="true">→</span>
-                  </Link>
-                </div>
-              </div>
-
-              <div className="relative overflow-hidden rounded-[28px] bg-[#E9EFE7]">
-                <div className="relative aspect-[4/3]">
-                  <Image
-                    src="/images/services/therapeutic-yoga.webp"
-                    alt="Therapeutic yoga at Sutra Health"
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 52vw"
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* DIRECT ANSWER */}
-      <section className="bg-[#F0F4ED]">
-        <Container>
-          <div className="py-14 sm:py-16 lg:py-20">
-            <div className="max-w-[820px]">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                Therapeutic yoga in brief
+              <p className="mt-7 max-w-[700px] text-[16px] leading-7 text-[#4E5B56] sm:text-[18px] sm:leading-8">
+                Condition-specific yoga practice adapted around your health,
+                current ability and the evidence relevant to what you are
+                addressing.
               </p>
 
-              <h2 className="mt-3 max-w-[720px] font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[44px]">
-                The practice should fit the person, not the other way around.
-              </h2>
-
-              <p className="mt-6 text-[15px] leading-8 text-[#687A73] sm:text-[16px]">
-                Therapeutic yoga is an adapted form of yoga used in relation to
-                a person's health needs. The practice can involve movement,
-                posture, breathing and awareness, with the choice and intensity
-                shaped by the condition, current ability and relevant evidence.
-                At Sutra Health, it is considered within a wider health plan.
-              </p>
-
-              <ul className="mt-7 grid gap-3 text-[14px] leading-7 text-[#687A73] sm:grid-cols-2">
-                <li className="border-l-2 border-[#65966F] pl-4">
-                  Start with the health condition and individual needs
-                </li>
-                <li className="border-l-2 border-[#65966F] pl-4">
-                  Adapt movement to current ability
-                </li>
-                <li className="border-l-2 border-[#65966F] pl-4">
-                  Use condition-specific evidence where available
-                </li>
-                <li className="border-l-2 border-[#65966F] pl-4">
-                  Complement appropriate medical care
-                </li>
-              </ul>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* WHO IT IS FOR */}
-      <section className="border-b border-[#173F35]/10">
-        <Container>
-          <div className="py-14 sm:py-16 lg:py-20">
-            <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
-              <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                  Who it is for
-                </p>
-                <h2 className="mt-3 max-w-[430px] font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[44px]">
-                  Therapeutic yoga for specific health needs.
-                </h2>
-              </div>
-
-              <div className="divide-y divide-[#173F35]/10 border-y border-[#173F35]/10">
-                {[
-                  ["Blood pressure", "For people exploring yoga as part of a wider lifestyle and medical plan for blood pressure."],
-                  ["Metabolic health", "For people considering yoga alongside other lifestyle measures relevant to metabolic health."],
-                  ["Arthritis & joint pain", "For people who need movement adapted around joint symptoms, capacity and the condition being addressed."],
-                  ["Migraine & headache", "For people who may benefit from a gentler, condition-aware practice rather than a generic intensive class."],
-                  ["Beginners", "For people who are new to yoga or do not consider themselves flexible or physically experienced."],
-                ].map(([title, description]) => (
-                  <article
-                    key={title}
-                    className="grid gap-2 py-6 sm:grid-cols-[220px_1fr] sm:items-center sm:py-7"
-                  >
-                    <h3 className="font-serif text-[21px] tracking-[-0.02em] text-[#173F35]">
-                      {title}
-                    </h3>
-                    <p className="text-[13px] leading-6 text-[#687A73] sm:text-[14px]">
-                      {description}
-                    </p>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* EVIDENCE */}
-      <section className="bg-[#173F35] text-[#FAF8F1]">
-        <Container>
-          <div className="py-14 sm:py-16 lg:py-20">
-            <div className="max-w-[850px]">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#9BBDA1]">
-                The evidence, by condition
-              </p>
-
-              <h2 className="mt-3 max-w-[760px] font-serif text-[34px] leading-[1.05] tracking-[-0.035em] sm:text-[44px]">
-                Different conditions,{" "}
-                <span className="italic text-[#9BBDA1]">
-                  different evidence.
-                </span>
-              </h2>
-
-              <p className="mt-5 max-w-[760px] text-[14px] leading-7 text-white/70 sm:text-[15px] sm:leading-8">
-                Research on therapeutic yoga is not equally strong for every
-                condition. We summarise the evidence by health area and link to
-                the relevant condition pages rather than making one broad claim
-                about yoga.
-              </p>
-
-              <div className="mt-8 divide-y divide-white/10 border-y border-white/10">
-                {evidenceSummary.map((item) => (
-                  <article
-                    key={item.title}
-                    className="grid gap-3 py-6 sm:grid-cols-[60px_220px_1fr] sm:items-center sm:py-7"
-                  >
-                    <span className="text-[11px] font-semibold tracking-[0.16em] text-[#9BBDA1]">
-                      {item.number}
-                    </span>
-                    <h3 className="font-serif text-[21px] text-white">
-                      {item.title}
-                    </h3>
-                    <p className="text-[13px] leading-6 text-white/65 sm:text-[14px]">
-                      {item.finding}
-                    </p>
-                  </article>
-                ))}
-              </div>
-
-              <div className="mt-7">
+              <div className="mt-9">
                 <Link
-                  href="/conditions"
-                  className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#FAF8F1] underline decoration-[#9BBDA1]/50 underline-offset-4"
+                  href="/book-appointment"
+                  className="group inline-flex min-h-[50px] w-full items-center justify-center gap-4 rounded-full bg-[#17413D] px-7 py-3 text-[12px] font-semibold text-white transition-all duration-300 hover:bg-[#12332F] sm:w-auto sm:text-[13px]"
                 >
-                  Explore condition-specific evidence →
+                  Book a consultation
+                  <Arrow />
                 </Link>
               </div>
             </div>
+
+            {/* Large editorial image */}
+            <div className="relative mt-14 sm:mt-18 lg:mt-20">
+              <div className="relative aspect-[16/9] overflow-hidden">
+                <Image
+                  src="/images/services/therapeutic-yoga.webp"
+                  alt="Therapeutic yoga at Sutra Health"
+                  fill
+                  priority
+                  sizes="(max-width: 1180px) 100vw, 1180px"
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="absolute bottom-0 left-0 hidden bg-[#F7F5EF] px-7 py-5 lg:block">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#65736D]">
+                  Sutra Health
+                </p>
+
+                <p className="mt-1 text-[13px] text-[#202522]">
+                  Therapeutic yoga
+                </p>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
 
-      {/* WHAT WE LOOK AT */}
-      <section className="border-b border-[#173F35]/10">
+      {/* =========================================================
+          OUR PERSPECTIVE
+      ========================================================= */}
+
+      <section className="bg-white">
         <Container>
-          <div className="py-14 sm:py-16 lg:py-20">
-            <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+          <div className="mx-auto max-w-[1180px] py-20 sm:py-28 lg:py-36">
+            <div className="grid gap-10 lg:grid-cols-[0.28fr_0.72fr] lg:gap-16">
+              <Label>Our perspective</Label>
+
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                  What we look at
+                <p className="max-w-[820px] font-serif text-[34px] font-medium leading-[1.15] tracking-[-0.04em] text-[#202522] sm:text-[46px] lg:text-[56px]">
+                  Therapeutic yoga is not about fitting your body into a
+                  standard practice. It is about finding a practice that fits
+                  your health and ability.
                 </p>
-                <h2 className="mt-3 max-w-[420px] font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[44px]">
-                  Condition first,{" "}
-                  <span className="italic text-[#65966F]">
-                    practice second.
-                  </span>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* =========================================================
+          WHERE IT MAY HELP
+      ========================================================= */}
+
+      <section className="bg-[#F7F5EF]">
+        <Container>
+          <div className="mx-auto max-w-[1180px] py-20 sm:py-28">
+            <div className="grid gap-12 lg:grid-cols-[0.34fr_0.66fr] lg:gap-20">
+              <div>
+                <Label>Where it may help</Label>
+
+                <h2 className="mt-6 max-w-[420px] font-serif text-[38px] font-medium leading-[1.1] tracking-[-0.04em] sm:text-[48px]">
+                  Yoga can have a role across specific areas of health.
                 </h2>
               </div>
 
-              <div className="divide-y divide-[#173F35]/10 border-y border-[#173F35]/10">
-                {focusAreas.map((item) => (
+              <div className="border-t border-[#202522]/10">
+                {yogaAreas.map((area, index) => (
+                  <Link
+                    key={area}
+                    href={
+                      index === 0
+                        ? "/conditions/high-blood-pressure"
+                        : index === 1
+                          ? "/conditions/metabolic-health"
+                          : index === 2
+                            ? "/conditions/arthritis-joint-pain"
+                            : index === 3
+                              ? "/conditions/migraine-headache"
+                              : "/what-we-do/therapeutic-yoga"
+                    }
+                    className="group flex items-center justify-between border-b border-[#202522]/10 py-6 sm:py-7"
+                  >
+                    <div className="flex items-center gap-6">
+                      <span className="text-[10px] font-semibold tracking-[0.15em] text-[#91A298]">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+
+                      <span className="font-serif text-[22px] font-medium tracking-[-0.02em] text-[#202522] sm:text-[26px]">
+                        {area}
+                      </span>
+                    </div>
+
+                    <span className="text-[#17413D] transition-transform duration-300 group-hover:translate-x-1">
+                      →
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* =========================================================
+          WHAT WE LOOK AT
+      ========================================================= */}
+
+      <section className="bg-[#17413D] text-white">
+        <Container>
+          <div className="mx-auto max-w-[1180px] py-20 sm:py-28 lg:py-32">
+            <div className="max-w-[800px]">
+              <Label light>What we look at</Label>
+
+              <h2 className="mt-6 font-serif text-[40px] font-medium leading-[1.08] tracking-[-0.04em] sm:text-[52px] lg:text-[62px]">
+                A therapeutic practice starts with understanding the person
+                behind the condition.
+              </h2>
+            </div>
+
+            <div className="mt-16 border-t border-white/15">
+              {focusAreas.map((item) => (
+                <article
+                  key={item.number}
+                  className="grid gap-5 border-b border-white/15 py-8 sm:py-10 lg:grid-cols-[90px_280px_1fr] lg:gap-8"
+                >
+                  <span className="text-[11px] font-semibold tracking-[0.16em] text-[#91A298]">
+                    {item.number}
+                  </span>
+
+                  <h3 className="font-serif text-[25px] font-medium tracking-[-0.025em] text-white sm:text-[29px]">
+                    {item.title}
+                  </h3>
+
+                  <p className="max-w-[600px] text-[15px] leading-7 text-white/70 sm:text-[16px] sm:leading-8">
+                    {item.text}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* =========================================================
+          EVIDENCE
+      ========================================================= */}
+
+      <section className="bg-[#E7EDE8]">
+        <Container>
+          <div className="mx-auto max-w-[1180px] py-20 sm:py-28 lg:py-32">
+            <div className="grid gap-12 lg:grid-cols-[0.36fr_0.64fr] lg:gap-20">
+              <div>
+                <Label>Evidence</Label>
+
+                <h2 className="mt-6 max-w-[430px] font-serif text-[38px] font-medium leading-[1.1] tracking-[-0.04em] sm:text-[48px]">
+                  What research says, condition by condition.
+                </h2>
+
+                <p className="mt-6 max-w-[400px] text-[15px] leading-7 text-[#65736D] sm:text-[16px] sm:leading-8">
+                  The strength of evidence varies by condition. We look at
+                  therapeutic yoga in the context of the research available
+                  rather than making one broad claim about yoga.
+                </p>
+              </div>
+
+              <div className="border-t border-[#202522]/10">
+                {[
+                  {
+                    number: "01",
+                    title: "High Blood Pressure",
+                    text: "The source material reports randomized-trial evidence that yoga added to standard care can reduce blood pressure, with effects varying by the practice and study.",
+                    href: "/conditions/high-blood-pressure",
+                  },
+                  {
+                    number: "02",
+                    title: "Metabolic Health & Diabetes",
+                    text: "The source material reports evidence from an India-wide trial of a yoga-based lifestyle protocol for reducing progression from prediabetes to diabetes.",
+                    href: "/conditions/metabolic-health",
+                  },
+                  {
+                    number: "03",
+                    title: "Arthritis & Joint Pain",
+                    text: "A randomized trial reported in the source material found yoga comparable with standard strengthening exercise for knee osteoarthritis pain, while evidence differs for rheumatoid arthritis.",
+                    href: "/conditions/arthritis-joint-pain",
+                  },
+                  {
+                    number: "04",
+                    title: "Migraine & Headache",
+                    text: "The source material describes a 160-patient New Delhi trial in which yoga added to medical therapy reduced migraine frequency and intensity.",
+                    href: "/conditions/migraine-headache",
+                  },
+                ].map((item) => (
                   <article
                     key={item.number}
-                    className="grid gap-3 py-6 sm:grid-cols-[72px_220px_1fr] sm:items-center sm:py-7"
+                    className="border-b border-[#202522]/10 py-8 sm:py-10"
                   >
-                    <span className="text-[11px] font-semibold tracking-[0.16em] text-[#65966F]">
-                      {item.number}
-                    </span>
-                    <h3 className="font-serif text-[21px] tracking-[-0.02em] text-[#173F35]">
-                      {item.title}
-                    </h3>
-                    <p className="text-[13px] leading-6 text-[#687A73] sm:text-[14px]">
-                      {item.description}
+                    <div className="flex items-start justify-between gap-6">
+                      <h3 className="font-serif text-[25px] font-medium tracking-[-0.025em] text-[#202522] sm:text-[28px]">
+                        {item.title}
+                      </h3>
+
+                      <span className="text-[10px] font-semibold tracking-[0.14em] text-[#65736D]">
+                        {item.number}
+                      </span>
+                    </div>
+
+                    <p className="mt-4 max-w-[700px] text-[15px] leading-7 text-[#4E5B56] sm:text-[16px] sm:leading-8">
+                      {item.text}
                     </p>
+
+                    <Link
+                      href={item.href}
+                      className="group mt-5 inline-flex items-center gap-2 text-[13px] font-semibold text-[#17413D]"
+                    >
+                      Explore this health area
+                      <Arrow />
+                    </Link>
                   </article>
                 ))}
               </div>
@@ -485,72 +528,80 @@ export default function TherapeuticYogaPage() {
         </Container>
       </section>
 
-      {/* HOW IT FITS */}
-      <section className="bg-[#F0F4ED]">
+      {/* =========================================================
+          HOW IT FITS
+      ========================================================= */}
+
+      <section className="bg-white">
         <Container>
-          <div className="py-14 sm:py-16 lg:py-20">
-            <div className="max-w-[760px]">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                How it fits
-              </p>
-              <h2 className="mt-3 font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[44px]">
-                Therapeutic yoga is one practice within the wider method.
+          <div className="mx-auto max-w-[1180px] py-20 sm:py-28 lg:py-32">
+            <div className="max-w-[820px]">
+              <Label>How it fits</Label>
+
+              <h2 className="mt-6 font-serif text-[40px] font-medium leading-[1.08] tracking-[-0.04em] sm:text-[52px] lg:text-[62px]">
+                Therapeutic yoga can be one part of a wider health plan.
               </h2>
-              <p className="mt-6 text-[14px] leading-7 text-[#687A73] sm:text-[15px] sm:leading-8">
+
+              <p className="mt-6 max-w-[700px] text-[16px] leading-8 text-[#4E5B56] sm:text-[17px]">
                 The Sutra Health Method describes how we work: understand,
                 identify, personalise, practise, sustain and adapt. Therapeutic
                 yoga can form part of that process when it is appropriate to
-                the person's health needs.
+                your health needs.
               </p>
             </div>
 
-            <div className="mt-9 grid gap-0 border-y border-[#173F35]/10 sm:grid-cols-3 lg:grid-cols-6">
-              {["Understand", "Identify", "Personalise", "Practise", "Sustain", "Adapt"].map(
-                (step, index) => (
-                  <div
-                    key={step}
-                    className="border-b border-[#173F35]/10 py-5 last:border-b-0 sm:border-b-0 sm:border-r sm:px-5 sm:last:border-r-0 lg:py-6"
-                  >
-                    <span className="text-[10px] font-semibold tracking-[0.16em] text-[#65966F]">
-                      0{index + 1}
-                    </span>
-                    <p className="mt-2 font-serif text-[20px] text-[#173F35]">
-                      {step}
-                    </p>
-                  </div>
-                ),
-              )}
+            <div className="mt-14 grid border-y border-[#202522]/10 sm:grid-cols-6">
+              {[
+                "Understand",
+                "Identify",
+                "Personalise",
+                "Practise",
+                "Sustain",
+                "Adapt",
+              ].map((step, index) => (
+                <div
+                  key={step}
+                  className="border-b border-[#202522]/10 px-1 py-6 last:border-b-0 sm:border-b-0 sm:border-r sm:px-5 sm:first:pl-0 sm:last:border-r-0"
+                >
+                  <span className="block text-[10px] font-semibold tracking-[0.14em] text-[#91A298]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <span className="mt-3 block font-serif text-[18px] font-medium text-[#202522]">
+                    {step}
+                  </span>
+                </div>
+              ))}
             </div>
 
-            <div className="mt-7">
-              <Link
-                href="/approach"
-                className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#173F35] underline decoration-[#65966F]/50 underline-offset-4"
-              >
-                Explore the Sutra Health Method →
-              </Link>
-            </div>
+            <Link
+              href="/approach"
+              className="group mt-8 inline-flex items-center gap-3 text-[13px] font-semibold text-[#17413D] transition-colors hover:text-[#12332F]"
+            >
+              Explore our approach
+              <Arrow />
+            </Link>
           </div>
         </Container>
       </section>
 
-      {/* ASSESSMENT */}
-      <section className="border-b border-[#173F35]/10">
-        <Container>
-          <div className="py-14 sm:py-16 lg:py-20">
-            <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
-              <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                  Start with understanding
-                </p>
-                <h2 className="mt-3 max-w-[430px] font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[44px]">
-                  The right practice starts with the right context.
-                </h2>
-              </div>
+      {/* =========================================================
+          ASSESSMENT
+      ========================================================= */}
 
-              <div className="border-y border-[#173F35]/10 py-7 sm:py-8">
-                <p className="text-[14px] leading-7 text-[#687A73] sm:text-[15px] sm:leading-8">
-                  The 21-question lifestyle assessment helps you reflect on
+      <section className="bg-[#F7F5EF]">
+        <Container>
+          <div className="mx-auto max-w-[1180px] py-20 sm:py-28">
+            <div className="relative overflow-hidden bg-[#E7EDE8] px-7 py-12 sm:px-12 sm:py-16 lg:px-16 lg:py-20">
+              <div className="max-w-[720px]">
+                <Label>Start with an assessment</Label>
+
+                <h2 className="mt-6 font-serif text-[38px] font-medium leading-[1.1] tracking-[-0.04em] sm:text-[50px]">
+                  Understand where your lifestyle stands today.
+                </h2>
+
+                <p className="mt-5 max-w-[650px] text-[16px] leading-7 text-[#4E5B56] sm:text-[17px] sm:leading-8">
+                  Our 21-question lifestyle assessment helps you reflect on
                   everyday health patterns before deciding what support may be
                   useful. It is a starting point for understanding, not a
                   diagnosis or a substitute for clinical assessment.
@@ -558,153 +609,190 @@ export default function TherapeuticYogaPage() {
 
                 <Link
                   href="/score"
-                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#173F35] px-6 py-3.5 text-[13px] font-semibold text-white hover:bg-[#12352D]"
+                  className="group mt-8 inline-flex min-h-[50px] items-center justify-center gap-4 rounded-full bg-[#17413D] px-7 py-3 text-[12px] font-semibold text-white transition-all duration-300 hover:bg-[#12332F] sm:text-[13px]"
                 >
-                  Take the Assessment
-                  <span aria-hidden="true">→</span>
+                  Take the assessment
+                  <Arrow />
                 </Link>
+              </div>
+
+              <span className="absolute -bottom-8 right-8 hidden font-serif text-[180px] leading-none text-[#17413D]/[0.06] lg:block">
+                21
+              </span>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* =========================================================
+          RELATED CONDITIONS
+      ========================================================= */}
+
+      <section className="bg-white">
+        <Container>
+          <div className="mx-auto max-w-[1180px] py-20 sm:py-28">
+            <div className="grid gap-12 lg:grid-cols-[0.36fr_0.64fr] lg:gap-20">
+              <div>
+                <Label>Related conditions</Label>
+
+                <h2 className="mt-6 max-w-[420px] font-serif text-[38px] font-medium leading-[1.1] tracking-[-0.04em] sm:text-[48px]">
+                  Explore therapeutic yoga in context.
+                </h2>
+              </div>
+
+              <div className="border-t border-[#202522]/10">
+                {relatedConditions.map((condition, index) => (
+                  <Link
+                    key={condition.title}
+                    href={condition.href}
+                    className="group flex items-center justify-between border-b border-[#202522]/10 py-6 sm:py-7"
+                  >
+                    <div className="flex items-center gap-6">
+                      <span className="text-[10px] font-semibold tracking-[0.15em] text-[#91A298]">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+
+                      <span className="font-serif text-[22px] font-medium text-[#202522] sm:text-[26px]">
+                        {condition.title}
+                      </span>
+                    </div>
+
+                    <Arrow />
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* RELATED CONDITIONS */}
-      <section className="bg-[#F0F4ED]">
-        <Container>
-          <div className="py-14 sm:py-16 lg:py-20">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-              Explore by health area
-            </p>
-            <h2 className="mt-3 max-w-[620px] font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[44px]">
-              See where therapeutic yoga may be relevant.
-            </h2>
+      {/* =========================================================
+          OTHER PRACTICES
+      ========================================================= */}
 
-            <div className="mt-8 divide-y divide-[#173F35]/10 border-y border-[#173F35]/10">
-              {evidenceSummary.map((item) => (
+      <section className="bg-[#F7F5EF]">
+        <Container>
+          <div className="mx-auto max-w-[1180px] py-20 sm:py-28">
+            <Label>Other practices</Label>
+
+            <div className="mt-6">
+              <h2 className="max-w-[760px] font-serif text-[38px] font-medium leading-[1.1] tracking-[-0.04em] sm:text-[48px]">
+                Other ways Sutra Health can support your health.
+              </h2>
+            </div>
+
+            <div className="mt-12 grid border-t border-[#202522]/10 sm:grid-cols-3">
+              {otherPractices.map((practice, index) => (
                 <Link
-                  key={item.href}
-                  href={item.href}
-                  className="grid gap-2 py-6 transition-colors hover:bg-white/50 sm:grid-cols-[280px_1fr_auto] sm:items-center sm:gap-6 sm:py-7"
+                  key={practice.title}
+                  href={practice.href}
+                  className="group border-b border-[#202522]/10 py-7 sm:border-b-0 sm:border-r sm:px-7 sm:first:pl-0 sm:last:border-r-0"
                 >
-                  <h3 className="font-serif text-[21px] text-[#173F35]">
-                    {item.title}
-                  </h3>
-                  <p className="text-[13px] leading-6 text-[#687A73] sm:text-[14px]">
-                    Explore the condition-specific information and evidence.
-                  </p>
-                  <span className="text-[13px] font-semibold text-[#173F35]">
-                    Explore →
+                  <span className="text-[10px] font-semibold tracking-[0.15em] text-[#91A298]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <span className="mt-5 flex items-center justify-between gap-4 font-serif text-[22px] font-medium text-[#202522] sm:text-[24px]">
+                    {practice.title}
+                    <Arrow />
                   </span>
                 </Link>
               ))}
             </div>
-
-            <Link
-              href="/conditions"
-              className="mt-5 inline-flex items-center gap-2 text-[13px] font-semibold text-[#173F35] hover:text-[#65966F]"
-            >
-              Explore all health conditions →
-            </Link>
           </div>
         </Container>
       </section>
 
-      {/* OTHER PRACTICES */}
-      <section className="border-b border-[#173F35]/10">
-        <Container>
-          <div className="py-14 sm:py-16 lg:py-20">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-              What We Do
-            </p>
-            <h2 className="mt-3 max-w-[650px] font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[44px]">
-              Other practices that may form part of your plan.
+      {/* =========================================================
+          FAQ
+      ========================================================= */}
+
+      <section aria-labelledby="faq-heading" className="bg-white">
+        <div className="mx-auto max-w-[1180px] px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+          <div className="max-w-[720px]">
+            <Label>Questions</Label>
+
+            <h2
+              id="faq-heading"
+              className="mt-5 font-serif text-[38px] font-medium leading-[1.06] tracking-[-0.04em] text-[#202522] sm:text-[48px]"
+            >
+              Common questions
             </h2>
 
-            <div className="mt-8 divide-y divide-[#173F35]/10 border-y border-[#173F35]/10">
-              {[
-                [
-                  "/what-we-do/lifestyle",
-                  "Lifestyle Medicine",
-                  "Understand the everyday behaviours and circumstances that may influence health.",
-                ],
-                [
-                  "/what-we-do/nutrition",
-                  "Nutrition Counselling",
-                  "Practical food guidance shaped around your health needs, preferences and everyday routine.",
-                ],
-                [
-                  "/what-we-do/breath-mindfulness",
-                  "Breath & Mindfulness",
-                  "Simple practices that support breathing awareness, attention and useful ways of working with everyday stress.",
-                ],
-              ].map(([href, title, description], index) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className="grid gap-2 py-6 sm:grid-cols-[72px_280px_1fr_auto] sm:items-center sm:gap-5 sm:py-7"
-                >
-                  <span className="text-[11px] font-semibold tracking-[0.16em] text-[#65966F]">
-                    0{index + 1}
-                  </span>
-                  <h3 className="font-serif text-[21px] text-[#173F35]">
-                    {title}
-                  </h3>
-                  <p className="text-[13px] leading-6 text-[#687A73] sm:text-[14px]">
-                    {description}
-                  </p>
-                  <span className="text-[13px] font-semibold text-[#173F35]">
-                    Explore →
-                  </span>
-                </Link>
-              ))}
-            </div>
-
-            <Link
-              href="/what-we-do"
-              className="mt-5 inline-flex items-center gap-2 text-[13px] font-semibold text-[#173F35] hover:text-[#65966F]"
-            >
-              View all What We Do services →
-            </Link>
+            <p className="mt-5 max-w-[650px] text-[16px] leading-7 text-[#4E5B56] sm:text-[18px] sm:leading-8">
+              Simple answers to help you understand therapeutic yoga at Sutra
+              Health.
+            </p>
           </div>
-        </Container>
+
+          <div className="mt-12 max-w-[1000px] border-y border-[#202522]/10">
+            {faqs.map((faq) => (
+              <details
+                key={faq.question}
+                className="group border-b border-[#202522]/10 last:border-b-0"
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-8 py-6 text-[16px] font-medium leading-7 text-[#202522] marker:hidden sm:py-7 sm:text-[19px]">
+                  <span>{faq.question}</span>
+
+                  <span
+                    aria-hidden="true"
+                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#E7EDE8] text-[21px] font-light leading-none text-[#17413D] transition-transform duration-300 group-open:rotate-45"
+                  >
+                    +
+                  </span>
+                </summary>
+
+                <p className="max-w-[850px] pb-7 pr-8 text-[16px] leading-7 text-[#4E5B56] sm:text-[17px] sm:leading-8">
+                  {faq.answer}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
       </section>
 
-      {/* FAQ */}
-      <FAQ faqs={faqs} />
+      {/* =========================================================
+          FINAL CTA
+      ========================================================= */}
 
-      {/* FINAL CTA */}
-      <section className="bg-[#173F35]">
+      <section className="bg-[#F7F5EF] px-4 py-6 sm:px-6 sm:py-10">
         <Container>
-          <div className="mx-auto max-w-[760px] py-14 text-center sm:py-16 lg:py-20">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#9BBDA1]">
-              Take the next step
-            </p>
-            <h2 className="mt-3 font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#FAF8F1] sm:text-[44px]">
-              Find a therapeutic yoga practice that fits your health needs.
-            </h2>
-            <p className="mx-auto mt-5 max-w-[600px] text-[14px] leading-7 text-white/65">
-              Start with a conversation about your health, current ability and
-              what you would like support with.
-            </p>
+          <div className="mx-auto max-w-[1180px] rounded-[22px] bg-[#17413D] px-7 py-14 text-white sm:px-12 sm:py-16 lg:px-16 lg:py-20">
+            <Label light>Take the next step</Label>
 
-            <div className="mt-7 flex flex-wrap justify-center gap-3">
+            <div className="mt-6 max-w-[780px]">
+              <h2 className="font-serif text-[40px] font-medium leading-[1.08] tracking-[-0.04em] sm:text-[52px] lg:text-[62px]">
+                Start with a conversation about your health.
+              </h2>
+
+              <p className="mt-5 max-w-[620px] text-[16px] leading-7 text-white/70 sm:text-[17px] sm:leading-8">
+                Understand what may be useful for you and where therapeutic
+                yoga can fit into your wider health plan.
+              </p>
+
               <Link
                 href="/book-appointment"
-                className="inline-flex items-center gap-2 rounded-full bg-[#FAF8F1] px-6 py-3.5 text-[13px] font-semibold text-[#173F35] transition-colors hover:bg-white"
+                className="group mt-8 inline-flex min-h-[50px] items-center justify-center gap-4 rounded-full bg-[#F7F5EF] px-7 py-3 text-[12px] font-semibold text-[#17413D] transition-all duration-300 hover:bg-[#E7EDE8] sm:text-[13px]"
               >
-                Book a Consultation
-                <span aria-hidden="true">→</span>
-              </Link>
-              <Link
-                href="/what-we-do"
-                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-white/10"
-              >
-                Explore What We Do
-                <span aria-hidden="true">→</span>
+                Book a consultation
+                <Arrow />
               </Link>
             </div>
           </div>
+        </Container>
+      </section>
+
+      {/* =========================================================
+          DISCLAIMER
+      ========================================================= */}
+
+      <section className="bg-[#F7F5EF] pb-10">
+        <Container>
+          <p className="mx-auto max-w-[1180px] text-[10px] leading-5 text-[#65736D]">
+            Therapeutic yoga is intended to complement appropriate medical care
+            and does not replace diagnosis, prescribed medication or treatment
+            from a qualified healthcare professional.
+          </p>
         </Container>
       </section>
     </main>

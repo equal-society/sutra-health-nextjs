@@ -5,8 +5,18 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/hero/Footer";
 import Chatbot from "@/components/chatbot/Chatbot";
 import WhatsAppFloat from "@/components/shared/WhatsAppFloat";
+import { Plus_Jakarta_Sans } from "next/font/google";
+
+
 
 const siteUrl = "https://lifequality.org.in";
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -63,7 +73,7 @@ export default function RootLayout({
         />
       </head>
 
-      <body>
+<body className={`${plusJakarta.variable} antialiased`}>
         <Header />
 
         {children}
