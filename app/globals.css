@@ -4,6 +4,7 @@
   --background: #F7F5EF;
   --foreground: #202522;
 
+  /* Sutra Health */
   --sutra-porcelain: #F7F5EF;
   --sutra-white: #FFFFFF;
   --sutra-ink: #202522;
@@ -12,21 +13,68 @@
   --sutra-pale-sage: #E7EDE8;
   --sutra-sand: #C8BDA7;
   --sutra-muted: #65736D;
+
+  /* Typography */
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-dm-serif);
+
+  /* UI */
+  --sutra-border: rgba(32, 37, 34, 0.10);
+  --sutra-border-strong: rgba(32, 37, 34, 0.16);
+  --sutra-teal-hover: #12332F;
+  --sutra-shadow-soft: 0 10px 30px rgba(32, 37, 34, 0.07);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-dm-serif);
+}
+
+/* =========================================
+   GLOBAL
+========================================= */
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--sutra-porcelain);
   color: var(--sutra-ink);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-manrope), sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-dm-serif), Georgia, serif;
+  font-weight: 500;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-manrope), sans-serif;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
 }
 
 /* =========================================
@@ -90,10 +138,9 @@ body {
 }
 
 .brandName {
-  font-family: Georgia, "Times New Roman", serif;
   font-size: 24px;
   line-height: 1;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.02em;
 }
 
@@ -126,8 +173,8 @@ body {
   border: 0;
   background: transparent;
   font-family: inherit;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   letter-spacing: -0.005em;
   color: #314641;
   text-decoration: none;

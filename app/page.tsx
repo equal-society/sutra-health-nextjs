@@ -6,6 +6,7 @@ import Experts from "@/components/hero/Experts";
 import WhySutra from "@/components/hero/WhySutra";
 import Testimonials from "@/components/hero/Testimonials";
 import Resources from "@/components/hero/Resources";
+import HealthBridge from "@/components/hero/HealthBridge";
 import FAQ from "@/components/shared/FAQ";
 import BookingCTA from "@/components/hero/BookingCTA";
 import HowItWorks from "@/components/hero/HowItWorks";
@@ -295,37 +296,17 @@ export default function Home() {
       />
 
       <main className="sutraHomeEditorial">
-        {/* 1. Introduction */}
         <Hero />
-
-        {/* 2. Services */}
+        <HealthBridge />
         <WhatWeDo />
-
-        {/* 3. Process */}
-        <HowItWorks />
-
-        {/* 4. Assessment */}
-        <Assessment />
-
-        {/* 5. Experts */}
-        <Experts />
-
-        {/* 6. Conditions */}
-        <Conditions />
-
-        {/* 7. Differentiation */}
         <WhySutra />
-
-        {/* 8. Social proof */}
+        <Assessment />
+        <HowItWorks />
+        <Conditions />
+        <Experts />
         <Testimonials />
-
-        {/* 9. Health education */}
-        <Resources />
-
-        {/* 10. Common questions */}
         <FAQ />
-
-        {/* 11. Final conversion */}
+        <Resources/>
         <BookingCTA />
       </main>
     </>

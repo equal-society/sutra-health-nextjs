@@ -14,125 +14,105 @@ export default function Resources() {
   return (
     <section
       aria-labelledby="resources-title"
-      className="bg-[#F7F5EF] py-20 sm:py-24 lg:py-28"
+      className="bg-[#F7F5EF]"
     >
       <Container>
         {/* Header */}
-        <div className="grid gap-6 border-b border-[#202522]/12 pb-7 sm:gap-8 sm:pb-8 lg:grid-cols-[1fr_auto] lg:items-end">
-          <div>
+        <div className="grid gap-6 border-b border-[#202522]/10 pb-7 sm:gap-8 sm:pb-8 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div className="max-w-[760px]">
             <div className="flex items-center gap-3">
               <span
                 aria-hidden="true"
-                className="h-px w-9 bg-[#91A298]"
+                className="h-px w-8 bg-[#91A298]"
               />
 
-              <p className="text-[10px] font-semibold uppercase tracking-[0.21em] text-[#65736D] sm:text-[11px]">
+              <p className="font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[#65736D]">
                 Health Journal
               </p>
             </div>
 
             <h2
               id="resources-title"
-              className="mt-5 max-w-[700px] font-serif text-[40px] font-medium leading-[1.02] tracking-[-0.045em] text-[#202522] sm:text-[50px] lg:text-[58px]"
+              className="
+                mt-5
+                font-serif
+                text-[36px]
+                font-medium
+                leading-[1.1]
+                tracking-[-0.025em]
+                text-[#202522]
+                sm:text-[44px]
+                lg:text-[52px]
+              "
             >
               Better health starts with{" "}
-              <span className="font-normal italic text-[#17413D]">
+              <span className="italic text-[#17413D]">
                 better understanding.
               </span>
             </h2>
           </div>
 
+          {/* Desktop link */}
           <Link
             href="/resources/articles"
-            className="group hidden items-center gap-3 border-b border-[#17413D]/20 pb-1.5 text-[12px] font-semibold uppercase tracking-[0.1em] text-[#17413D] transition-colors duration-300 hover:border-[#17413D] sm:inline-flex"
+            className="
+              group
+              hidden
+              items-center
+              gap-2
+              font-sans
+              text-[14px]
+              font-medium
+              text-[#17413D]
+              transition-colors
+              duration-300
+              hover:text-[#12332F]
+              sm:inline-flex
+            "
           >
             View all articles
             <span
               aria-hidden="true"
-              className="transition-transform duration-300 group-hover:translate-x-1"
+              className="text-[17px] transition-transform duration-300 group-hover:translate-x-1"
             >
               →
             </span>
           </Link>
         </div>
 
-        {/* Desktop articles */}
-        <div className="mt-10 hidden sm:grid sm:grid-cols-2 sm:divide-x sm:divide-[#202522]/12 lg:mt-12">
-          {latestArticles.map((article, index) => (
-            <Link
-              key={article.slug}
-              href={`/resources/articles/${article.slug}`}
-              className={`group block ${
-                index === 0
-                  ? "sm:pr-7 lg:pr-10"
-                  : "sm:pl-7 lg:pl-10"
-              }`}
-            >
-              <article>
-                {/* Image */}
-                <div className="relative aspect-[16/9] overflow-hidden bg-[#E7EDE8]">
-                  {article.image ? (
-                    <Image
-                      src={article.image}
-                      alt={article.title}
-                      fill
-                      sizes="(max-width: 1023px) 50vw, 600px"
-                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.025]"
-                    />
-                  ) : (
-                    <div className="absolute inset-0 bg-[#E7EDE8]" />
-                  )}
-                </div>
-
-                {/* Content */}
-                <div className="pt-5">
-                  <div className="flex flex-wrap items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#71817B]">
-                    <span>{article.category}</span>
-                    <span aria-hidden="true">·</span>
-                    <span>{article.readTime}</span>
-                  </div>
-
-                  <h3 className="mt-3 max-w-[540px] font-serif text-[25px] leading-[1.1] tracking-[-0.025em] text-[#17413D] transition-colors duration-300 group-hover:text-[#202522] sm:text-[27px] lg:text-[30px]">
-                    {article.title}
-                  </h3>
-
-                  <span className="mt-4 inline-flex items-center gap-2 border-b border-[#17413D]/20 pb-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#202522]">
-                    Read article
-                    <span
-                      aria-hidden="true"
-                      className="transition-transform duration-300 group-hover:translate-x-1"
-                    >
-                      →
-                    </span>
-                  </span>
-                </div>
-              </article>
-            </Link>
-          ))}
-        </div>
-
-        {/* Mobile swipe */}
-        <div className="mt-9 sm:hidden">
-          <div
-            className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-            aria-label="Latest health articles"
-          >
-            {latestArticles.map((article) => (
+        {/* Articles */}
+        <div className="mt-10 sm:mt-12">
+          {/* Desktop */}
+          <div className="hidden sm:grid sm:grid-cols-2">
+            {latestArticles.map((article, index) => (
               <Link
                 key={article.slug}
                 href={`/resources/articles/${article.slug}`}
-                className="group w-[86vw] max-w-[360px] shrink-0 snap-center"
+                className={`
+                  group
+                  ${
+                    index === 0
+                      ? "border-r border-[#202522]/10 pr-7 lg:pr-10"
+                      : "pl-7 lg:pl-10"
+                  }
+                `}
               >
                 <article>
                   {/* Image */}
-                  <div className="relative aspect-[16/10] overflow-hidden bg-[#E7EDE8]">
+                  <div className="relative aspect-[16/9] overflow-hidden bg-[#E7EDE8]">
                     {article.image ? (
                       <Image
                         src={article.image}
                         alt={article.title}
                         fill
-                        sizes="86vw"
-                        className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.025]"
+                        sizes="(max-width: 1023px) 50vw, 560px"
+                        className="
+                          object-cover
+                          transition-transform
+                          duration-700
+                          ease-out
+                          group-hover:scale-[1.025]
+                        "
                       />
                     ) : (
                       <div className="absolute inset-0 bg-[#E7EDE8]" />
@@ -141,19 +121,64 @@ export default function Resources() {
 
                   {/* Content */}
                   <div className="pt-5">
-                    <div className="flex flex-wrap items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#71817B]">
+                    <div className="flex flex-wrap items-center gap-2 font-sans text-[11px] font-medium uppercase tracking-[0.13em] text-[#65736D]">
                       <span>{article.category}</span>
+
                       <span aria-hidden="true">·</span>
+
                       <span>{article.readTime}</span>
                     </div>
 
-                    <h3 className="mt-3 font-serif text-[25px] leading-[1.1] tracking-[-0.025em] text-[#17413D]">
+                    <h3
+                      className="
+                        mt-3
+                        max-w-[560px]
+                        font-serif
+                        text-[24px]
+                        font-medium
+                        leading-[1.15]
+                        tracking-[-0.015em]
+                        text-[#17413D]
+                        transition-colors
+                        duration-300
+                        group-hover:text-[#202522]
+                        sm:text-[26px]
+                        lg:text-[29px]
+                      "
+                    >
                       {article.title}
                     </h3>
 
-                    <span className="mt-4 inline-flex items-center gap-2 border-b border-[#17413D]/20 pb-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#202522]">
+                    <span
+                      className="
+                        mt-4
+                        inline-flex
+                        items-center
+                        gap-2
+                        border-b
+                        border-[#17413D]/20
+                        pb-1
+                        font-sans
+                        text-[12px]
+                        font-medium
+                        text-[#202522]
+                        transition-colors
+                        duration-300
+                        group-hover:border-[#17413D]
+                      "
+                    >
                       Read article
-                      <span aria-hidden="true">→</span>
+
+                      <span
+                        aria-hidden="true"
+                        className="
+                          transition-transform
+                          duration-300
+                          group-hover:translate-x-1
+                        "
+                      >
+                        →
+                      </span>
                     </span>
                   </div>
                 </article>
@@ -161,35 +186,130 @@ export default function Resources() {
             ))}
           </div>
 
-          {/* Mobile navigation hint */}
-          <div className="mt-4 flex items-center justify-between">
-            <span
-              aria-hidden="true"
-              className="h-px flex-1 bg-[#202522]/10"
-            />
-
-            <span className="px-4 text-[9px] font-semibold uppercase tracking-[0.15em] text-[#65736D]">
-              Swipe
-            </span>
-
-            <span
-              aria-hidden="true"
-              className="h-px flex-1 bg-[#202522]/10"
-            />
-          </div>
-
-          <Link
-            href="/resources/articles"
-            className="group mt-7 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.1em] text-[#17413D]"
-          >
-            View all articles
-            <span
-              aria-hidden="true"
-              className="transition-transform duration-300 group-hover:translate-x-1"
+          {/* Mobile */}
+          <div className="sm:hidden">
+            <div
+              className="
+                -mx-6
+                flex
+                snap-x
+                snap-mandatory
+                gap-5
+                overflow-x-auto
+                px-6
+                pb-2
+                [scrollbar-width:none]
+                [&::-webkit-scrollbar]:hidden
+              "
+              aria-label="Latest health articles"
             >
-              →
-            </span>
-          </Link>
+              {latestArticles.map((article) => (
+                <Link
+                  key={article.slug}
+                  href={`/resources/articles/${article.slug}`}
+                  className="
+                    group
+                    w-[84vw]
+                    max-w-[350px]
+                    shrink-0
+                    snap-start
+                  "
+                >
+                  <article>
+                    {/* Image */}
+                    <div className="relative aspect-[16/10] overflow-hidden bg-[#E7EDE8]">
+                      {article.image ? (
+                        <Image
+                          src={article.image}
+                          alt={article.title}
+                          fill
+                          sizes="84vw"
+                          className="
+                            object-cover
+                            transition-transform
+                            duration-700
+                            ease-out
+                            group-hover:scale-[1.025]
+                          "
+                        />
+                      ) : (
+                        <div className="absolute inset-0 bg-[#E7EDE8]" />
+                      )}
+                    </div>
+
+                    {/* Content */}
+                    <div className="pt-5">
+                      <div className="flex flex-wrap items-center gap-2 font-sans text-[10px] font-medium uppercase tracking-[0.13em] text-[#65736D]">
+                        <span>{article.category}</span>
+
+                        <span aria-hidden="true">·</span>
+
+                        <span>{article.readTime}</span>
+                      </div>
+
+                      <h3
+                        className="
+                          mt-3
+                          font-serif
+                          text-[25px]
+                          font-medium
+                          leading-[1.12]
+                          tracking-[-0.015em]
+                          text-[#17413D]
+                        "
+                      >
+                        {article.title}
+                      </h3>
+
+                      <span
+                        className="
+                          mt-4
+                          inline-flex
+                          items-center
+                          gap-2
+                          border-b
+                          border-[#17413D]/20
+                          pb-1
+                          font-sans
+                          text-[12px]
+                          font-medium
+                          text-[#202522]
+                        "
+                      >
+                        Read article
+                        <span aria-hidden="true">→</span>
+                      </span>
+                    </div>
+                  </article>
+                </Link>
+              ))}
+            </div>
+
+            {/* Mobile article link */}
+            <Link
+              href="/resources/articles"
+              className="
+                group
+                mt-8
+                inline-flex
+                items-center
+                gap-2
+                font-sans
+                text-[14px]
+                font-medium
+                text-[#17413D]
+              "
+            >
+              View all articles
+
+              <span
+                aria-hidden="true"
+                className="text-[17px] transition-transform duration-300 group-hover:translate-x-1"
+              >
+                →
+              </span>
+            </Link>
+          </div>
         </div>
       </Container>
     </section>

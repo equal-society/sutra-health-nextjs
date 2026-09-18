@@ -5,18 +5,27 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/hero/Footer";
 import Chatbot from "@/components/chatbot/Chatbot";
 import WhatsAppFloat from "@/components/shared/WhatsAppFloat";
-import { Plus_Jakarta_Sans } from "next/font/google";
 
-
+import { Lora, Manrope } from "next/font/google";
 
 const siteUrl = "https://lifequality.org.in";
 
-const plusJakarta = Plus_Jakarta_Sans({
+const lora = Lora({
   subsets: ["latin"],
-  variable: "--font-plus-jakarta",
+  weight: ["500"],
+  variable: "--font-serif",
   display: "swap",
-  weight: ["400", "500", "600", "700"],
 });
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
+});
+
+/* =========================
+   Site Metadata
+   ========================= */
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -42,7 +51,7 @@ export const metadata: Metadata = {
     title: "Sutra Health | Integrative Lifestyle Healthcare",
 
     description:
-      "Personalized healthcare focused on lifestyle, nutrition, movement, breath and mind.",
+      "Personalized healthcare focused on lifestyle, nutrition, therapeutic yoga, breath and mind practices.",
 
     url: siteUrl,
     siteName: "Sutra Health",
@@ -54,9 +63,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sutra Health | Integrative Lifestyle Healthcare",
     description:
-      "Personalized healthcare focused on lifestyle, nutrition, movement, breath and mind.",
+      "Personalized healthcare focused on lifestyle, nutrition, therapeutic yoga, breath and mind practices.",
   },
 };
+
+/* =========================
+   Root Layout
+   ========================= */
 
 export default function RootLayout({
   children,
@@ -64,7 +77,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+    >
       <head>
         {/* Font Awesome */}
         <link
@@ -73,8 +88,7 @@ export default function RootLayout({
         />
       </head>
 
-<body className={`${plusJakarta.variable} antialiased`}>
-        <Header />
+<body className={`${lora.variable} ${manrope.variable}`}>        <Header />
 
         {children}
 
@@ -82,7 +96,7 @@ export default function RootLayout({
         <Chatbot />
 
         <Footer />
-     </body>
+      </body>
     </html>
   );
 }

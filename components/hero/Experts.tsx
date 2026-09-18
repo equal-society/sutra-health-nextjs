@@ -1,104 +1,109 @@
-
 import Image from "next/image";
 import Link from "next/link";
-import Container from "@/components/shared/Container";
+import { ArrowUpRight } from "lucide-react";
 
-const credentials = ["MBBS", "MPH", "DrPH"];
-
-export default function Doctor() {
+export default function Experts() {
   return (
     <section
-      aria-labelledby="doctor-title"
-      className="bg-[#F7F5EF] py-20 sm:py-24 lg:py-32"
+      id="experts"
+      aria-labelledby="experts-title"
+      className="bg-white"
     >
-      <Container>
-        <div className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-20">
-          {/* Portrait */}
-          <div className="relative mx-auto w-full max-w-[500px] lg:mx-0 lg:max-w-none">
-            <div className="relative aspect-[4/5] overflow-hidden bg-[#E7EDE8]">
-              <Image
-                src="/images/doctor.webp"
-                alt="Dr. Rakesh Sarwal"
-                fill
-                sizes="(max-width: 1023px) 100vw, 42vw"
-                className="object-cover object-top"
-              />
-            </div>
-          </div>
-
-          {/* Doctor introduction */}
+      <div className="mx-auto max-w-[1180px] px-6 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+        {/* =====================================================
+            SECTION INTRO
+        ====================================================== */}
+        <div className="grid gap-5 lg:grid-cols-[0.55fr_1.45fr] lg:gap-16">
           <div>
             <div className="flex items-center gap-3">
               <span
                 aria-hidden="true"
-                className="h-px w-9 bg-[#91A298]"
+                className="h-px w-8 bg-[#91A298]"
               />
 
-              <p className="text-[10px] font-semibold uppercase tracking-[0.21em] text-[#65736D] sm:text-[11px]">
-                Meet the doctor
-              </p>
+              <span className="font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[#4F5A54]">
+                Our expert
+              </span>
             </div>
+          </div>
 
+          <div className="max-w-[760px]">
             <h2
-              id="doctor-title"
-              className="mt-6 max-w-[650px] font-serif text-[43px] font-medium leading-[0.98] tracking-[-0.045em] text-[#202522] sm:text-[54px] lg:text-[64px]"
+              id="experts-title"
+              className="font-serif text-[36px] font-medium leading-[1.1] tracking-[-0.025em] text-[#202522] sm:text-[44px] lg:text-[52px]"
             >
-              Meet{" "}
-              <span className="font-normal italic text-[#17413D]">
-                Dr. Rakesh Sarwal.
-              </span>
+              Experienced care,
+              <br className="hidden sm:block" />
+              grounded in health science.
             </h2>
+          </div>
+        </div>
 
-            {/* Credentials */}
-            <div className="mt-6 flex items-center gap-4 border-y border-[#202522]/10 py-4">
-              {credentials.map((credential, index) => (
-                <span
-                  key={credential}
-                  className="text-[11px] font-semibold tracking-[0.1em] text-[#17413D] sm:text-[12px]"
-                >
-                  {credential}
-                  {index < credentials.length - 1 && (
-                    <span
-                      aria-hidden="true"
-                      className="ml-4 text-[#91A298]"
-                    >
-                      ·
-                    </span>
-                  )}
-                </span>
-              ))}
+        {/* =====================================================
+            EXPERT PROFILE
+        ====================================================== */}
+        <div className="mt-10 grid gap-8 border-t border-[#202522]/10 pt-8 sm:mt-12 sm:pt-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14 lg:pt-12">
+          {/* Image */}
+          <div className="relative aspect-[4/4.5] w-full overflow-hidden bg-[#E7EDE8]">
+            <Image
+              src="/images/doc.png"
+              alt="Dr. Rakesh Sarwal"
+              fill
+              sizes="(max-width: 1023px) 100vw, 46vw"
+              className="object-cover object-top"
+            />
+          </div>
+
+          {/* Details */}
+          <div className="flex flex-col justify-center">
+            <p className="font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[#65736D]">
+              Sutra Health
+            </p>
+
+            <h3 className="mt-4 font-serif text-[34px] font-medium leading-[1.1] tracking-[-0.025em] text-[#202522] sm:text-[40px] lg:text-[46px]">
+              Dr. Rakesh Sarwal
+            </h3>
+
+            <p className="mt-3 font-sans text-[16px] font-medium text-[#17413D] sm:text-[17px]">
+              MBBS, MPH, DrPH · Therapeutic Yoga Consultant
+            </p>
+
+            <p className="mt-6 max-w-[590px] font-sans text-[16px] leading-[1.72] text-[#4F5A54] sm:text-[17px]">
+              Professor, Community Medicine · Head, Integrated Health Clinic,
+              ESIC Medical College & Hospital, Faridabad.
+            </p>
+
+            {/* Expertise */}
+            <div className="mt-7 border-t border-[#202522]/10 pt-6">
+              <p className="font-sans text-[12px] font-medium uppercase tracking-[0.12em] text-[#65736D]">
+                Areas of expertise
+              </p>
+
+              <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 font-sans text-[15px] font-medium text-[#202522] sm:text-[16px]">
+                <span>Lifestyle Medicine</span>
+                <span>Nutrition</span>
+                <span>Yoga</span>
+              </div>
             </div>
 
-            <p className="mt-7 max-w-[650px] text-[16px] leading-7 text-[#65736D] sm:text-[18px] sm:leading-8">
-              Dr. Rakesh Sarwal is a Public Health physician, Professor of
-              Community Medicine and Head of the Integrated Health Clinic at
-              ESIC Medical College &amp; Hospital, Faridabad. His academic work
-              spans lifestyle medicine, nutrition, yoga, health systems for
-              universal health coverage and public health policy.
-            </p>
-
-            <p className="mt-5 max-w-[610px] text-[15px] leading-7 text-[#65736D]">
-              His work brings together public-health thinking and practical
-              lifestyle approaches, supporting Sutra Health&apos;s doctor-led,
-              whole-person model.
-            </p>
-
+            {/* Profile link */}
             <Link
-              href="/doctors"
-              className="group mt-8 inline-flex items-center gap-3 border-b border-[#17413D]/25 pb-1.5 text-[12px] font-semibold uppercase tracking-[0.12em] text-[#17413D] transition-colors duration-300 hover:border-[#17413D] sm:text-[13px]"
+              href="https://academic.lifequality.org.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mt-8 inline-flex w-fit items-center gap-2 font-sans text-[14px] font-medium text-[#17413D] transition-colors duration-300 hover:text-[#12332F]"
             >
-              Meet Dr. Sarwal
-              <span
-                aria-hidden="true"
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              >
-                →
-              </span>
+              View full profile
+
+              <ArrowUpRight
+                size={17}
+                strokeWidth={1.5}
+                className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+              />
             </Link>
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }
-

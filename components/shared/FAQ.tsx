@@ -1,111 +1,231 @@
 "use client";
 
+import { useState } from "react";
+import { Plus } from "lucide-react";
 import Container from "@/components/shared/Container";
 
-type FAQItem = {
-  question: string;
-  answer: string;
-};
-
-type FAQProps = {
-  faqs?: FAQItem[];
-};
-
-const defaultFaqs: FAQItem[] = [
+const faqs = [
   {
     question: "What is lifestyle medicine?",
     answer:
-      "Lifestyle medicine uses evidence-informed changes in areas such as food, physical activity, sleep and stress management alongside appropriate medical care.",
+      "Lifestyle medicine focuses on everyday factors that influence health, including nutrition, physical activity, sleep, stress and other habits. At Sutra Health, these areas are considered together to build practical changes around your needs and circumstances.",
   },
   {
     question:
-      "Can yoga therapy be part of managing something like diabetes or blood pressure?",
+      "Can yoga therapy be part of managing conditions such as diabetes or high blood pressure?",
     answer:
-      "It can be one part of your overall care, alongside your doctor — not a replacement for it. Any medication changes should always go through your physician.",
+      "Therapeutic yoga can be used as part of a broader lifestyle approach for some health conditions. Practices are adapted to your health, current ability and goals, and may include yoga postures, breathing practices and relaxation.",
   },
   {
     question: "Do you offer online consultations?",
     answer:
-      "Yes. We work with people across India, not just Faridabad. Online consultations are available for lifestyle medicine, nutrition counselling, and yoga therapy. In-person sessions are also available in Faridabad.",
+      "Please contact Sutra Health to confirm current consultation options and availability. The appropriate format depends on your needs and the type of support being considered.",
   },
   {
     question: "How long before I see results?",
     answer:
-      "It depends on you and your consistency. Some people notice changes within weeks, while other improvements take longer. We do not promise a timeline that cannot be guaranteed.",
+      "There is no single timeline. It depends on your health, goals, starting point and the changes you are able to maintain. The focus is on practical habits that can become part of everyday life over time.",
   },
   {
-    question: "Is this right for everyone?",
+    question: "How do I get started with Sutra Health?",
     answer:
-      "If you are managing a serious medical condition or taking medication, talk to your doctor before starting. Sutra Health is designed to complement appropriate medical care, not replace it.",
+      "You can begin by booking a consultation. The first conversation helps you discuss your health concerns, goals and everyday routine so that the next steps can be considered around your needs.",
   },
 ];
 
-export default function FAQ({ faqs = defaultFaqs }: FAQProps) {
+export default function FAQ() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex((current) => (current === index ? null : index));
+  };
+
   return (
     <section
-      id="faq"
-      aria-labelledby="faq-heading"
-      className="bg-[#FAF8F1] py-20 sm:py-24 lg:py-32"
+      aria-labelledby="faq-title"
+      className="bg-white"
     >
       <Container>
-        <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20 xl:gap-24">
-          {/* Intro */}
-          <div className="max-w-[480px] lg:pt-1">
-            <div className="flex items-center gap-3">
-              <span
-                aria-hidden="true"
-                className="h-px w-9 bg-[#91A298]"
-              />
+        <div className="py-10 sm:py-10 lg:py-10">
+          {/* Header */}
+          <div className="grid gap-6 lg:grid-cols-[0.55fr_1.45fr] lg:gap-16">
+            <div>
+              <div className="flex items-center gap-3">
+                <span
+                  aria-hidden="true"
+                  className="h-px w-8 bg-[#91A298]"
+                />
 
-              <p className="text-[10px] font-semibold uppercase tracking-[0.21em] text-[#65736D] sm:text-[11px]">
-                Frequently asked questions
-              </p>
+                <p className="font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[#65736D]">
+                  Frequently asked
+                </p>
+              </div>
             </div>
 
-            <h2
-              id="faq-heading"
-              className="mt-5 max-w-[520px] font-serif text-[40px] font-medium leading-[1.02] tracking-[-0.045em] text-[#202522] sm:text-[50px] lg:text-[56px]"
-            >
-              A few things you may{" "}
-              <span className="font-normal italic text-[#17413D]">
-                want to know.
-              </span>
-            </h2>
+            <div className="max-w-[760px]">
+              <h2
+                id="faq-title"
+                className="
+                  font-serif
+                  text-[36px]
+                  font-medium
+                  leading-[1.1]
+                  tracking-[-0.025em]
+                  text-[#202522]
+                  sm:text-[44px]
+                  lg:text-[52px]
+                "
+              >
+                Questions, answered
+                <br className="hidden sm:block" />
+                <span className="text-[#17413D]"> simply.</span>
+              </h2>
 
-            <p className="mt-6 max-w-[400px] text-[16px] leading-7 text-[#65736D] sm:text-[17px] sm:leading-8">
-              Simple answers about Sutra Health, our approach, and how
-              consultations work.
-            </p>
+              <p
+                className="
+                  mt-4
+                  max-w-[620px]
+                  font-sans
+                  text-[16px]
+                  leading-[1.7]
+                  text-[#4F5A54]
+                  sm:text-[17px]
+                "
+              >
+                A few things people commonly want to know before
+                getting started with Sutra Health.
+              </p>
+            </div>
           </div>
 
           {/* FAQ list */}
-          <div className="border-t border-[#202522]/12">
-            {faqs.map((faq, index) => (
-              <details
-                key={faq.question}
-                className="group border-b border-[#202522]/12"
-                open={index === 0}
-              >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-left marker:hidden sm:py-7 [&::-webkit-details-marker]:hidden">
-                  <span className="max-w-[720px] pr-2 text-[16px] font-medium leading-7 text-[#17413D] sm:text-[17px] sm:leading-7">
-                    {faq.question}
-                  </span>
+          <div className="mt-9 border-t border-[#202522]/10 sm:mt-10 lg:mt-12">
+            {faqs.map((faq, index) => {
+              const isOpen = openIndex === index;
 
-                  <span
-                    aria-hidden="true"
-                    className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#17413D]/15 text-[20px] font-light leading-none text-[#17413D] transition-transform duration-300 group-open:rotate-45"
+              return (
+                <div
+                  key={faq.question}
+                  className="border-b border-[#202522]/10"
+                >
+                  <button
+                    type="button"
+                    onClick={() => toggleFAQ(index)}
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-answer-${index}`}
+                    className="
+                      flex
+                      w-full
+                      items-center
+                      justify-between
+                      gap-6
+                      py-5
+                      text-left
+                      sm:py-6
+                      lg:py-7
+                    "
                   >
-                    +
-                  </span>
-                </summary>
+                    <span
+                      className="
+                        max-w-[900px]
+                        font-sans
+                        text-[17px]
+                        font-medium
+                        leading-[1.45]
+                        tracking-[-0.005em]
+                        text-[#202522]
+                        sm:text-[18px]
+                        lg:text-[19px]
+                      "
+                    >
+                      {faq.question}
+                    </span>
 
-                <div className="pb-6 pr-12 sm:pb-7 sm:pr-14">
-                  <p className="max-w-[720px] text-[16px] leading-7 text-[#65736D] sm:text-[17px] sm:leading-8">
-                    {faq.answer}
-                  </p>
+                    <span
+                      className={`
+                        flex
+                        h-9
+                        w-9
+                        shrink-0
+                        items-center
+                        justify-center
+                        border
+                        border-[#202522]/12
+                        text-[#17413D]
+                        transition-all
+                        duration-300
+                        ${
+                          isOpen
+                            ? "rotate-45 border-[#17413D]/30 bg-[#E7EDE8]"
+                            : ""
+                        }
+                      `}
+                    >
+                      <Plus
+                        size={17}
+                        strokeWidth={1.4}
+                      />
+                    </span>
+                  </button>
+
+                  {/* Answer */}
+                  <div
+                    id={`faq-answer-${index}`}
+                    className={`
+                      grid
+                      transition-[grid-template-rows,opacity]
+                      duration-300
+                      ease-out
+                      ${
+                        isOpen
+                          ? "grid-rows-[1fr] opacity-100"
+                          : "grid-rows-[0fr] opacity-0"
+                      }
+                    `}
+                  >
+                    <div className="overflow-hidden">
+                      <p
+                        className="
+                          max-w-[760px]
+                          pb-6
+                          pr-8
+                          font-sans
+                          text-[16px]
+                          leading-[1.72]
+                          text-[#4F5A54]
+                          sm:pb-7
+                          sm:text-[17px]
+                        "
+                      >
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </details>
-            ))}
+              );
+            })}
+          </div>
+
+          {/* Contact */}
+          <div className="mt-6">
+            <p className="font-sans text-[13px] leading-[1.6] text-[#65736D]">
+              Have another question?{" "}
+              <a
+                href="/contact"
+                className="
+                  font-medium
+                  text-[#17413D]
+                  underline
+                  decoration-[#17413D]/25
+                  underline-offset-4
+                  transition-colors
+                  hover:decoration-[#17413D]
+                "
+              >
+                Contact Sutra Health
+              </a>
+              .
+            </p>
           </div>
         </div>
       </Container>

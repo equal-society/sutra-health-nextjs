@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { DM_Serif_Display, Manrope } from "next/font/google";
 import type { LucideIcon } from "lucide-react";
 import {
   Activity,
@@ -10,7 +11,6 @@ import {
   Bone,
   Brain,
   ClipboardCheck,
-  Database,
   FileText,
   FlaskConical,
   HeartPulse,
@@ -21,6 +21,27 @@ import {
   UsersRound,
   Wind,
 } from "lucide-react";
+
+/* =========================================================
+   SUTRA HEALTH FONTS
+   ========================================================= */
+
+const dmSerif = DM_Serif_Display({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-dm-serif",
+  display: "swap",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
+});
+
+/* =========================================================
+   NAVIGATION DATA
+   ========================================================= */
 
 const whatWeDo = [
   {
@@ -113,11 +134,6 @@ const resources = [
     icon: FlaskConical,
   },
   {
-    label: "Practice Knowledge System",
-    href: "/resources/knowledge-system",
-    icon: Database,
-  },
-  {
     label: "21-Question Lifestyle Assessment",
     href: "/score",
     icon: ClipboardCheck,
@@ -128,6 +144,10 @@ const resources = [
     icon: Archive,
   },
 ];
+
+/* =========================================================
+   TYPES
+   ========================================================= */
 
 type DropdownName =
   | "whatWeDo"
@@ -154,6 +174,27 @@ interface DropdownProps {
   closeNavigation: () => void;
   setOpenDropdown: (name: DropdownName) => void;
 }
+
+interface MobileDropdownProps {
+  name: Exclude<DropdownName, null>;
+  label: string;
+  items: {
+    label: string;
+    href: string;
+    icon: LucideIcon;
+  }[];
+  viewAll?: {
+    label: string;
+    href: string;
+  };
+  openDropdown: DropdownName;
+  toggleDropdown: (name: DropdownName) => void;
+  closeNavigation: () => void;
+}
+
+/* =========================================================
+   DESKTOP DROPDOWN
+   ========================================================= */
 
 function DesktopDropdown({
   name,
@@ -238,22 +279,9 @@ function DesktopDropdown({
   );
 }
 
-interface MobileDropdownProps {
-  name: Exclude<DropdownName, null>;
-  label: string;
-  items: {
-    label: string;
-    href: string;
-    icon: LucideIcon;
-  }[];
-  viewAll?: {
-    label: string;
-    href: string;
-  };
-  openDropdown: DropdownName;
-  toggleDropdown: (name: DropdownName) => void;
-  closeNavigation: () => void;
-}
+/* =========================================================
+   MOBILE DROPDOWN
+   ========================================================= */
 
 function MobileDropdown({
   name,
@@ -319,6 +347,10 @@ function MobileDropdown({
   );
 }
 
+/* =========================================================
+   HEADER
+   ========================================================= */
+
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] =
@@ -326,6 +358,7 @@ export default function Header() {
 
   const navRef = useRef<HTMLElement>(null);
 
+  /* Close dropdown when clicking outside */
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -349,6 +382,7 @@ export default function Header() {
     };
   }, []);
 
+  /* Escape key */
   useEffect(() => {
     function handleEscape(event: KeyboardEvent) {
       if (event.key === "Escape") {
@@ -384,10 +418,15 @@ export default function Header() {
   return (
     <header
       ref={navRef}
-      className="siteHeader siteHeaderPremium"
+      className={`${dmSerif.variable} ${manrope.variable} siteHeader siteHeaderPremium`}
+      style={{
+        fontFamily: "var(--font-manrope)",
+      }}
     >
       <div className="navbarContainer navbarContainerPremium">
-        {/* BRAND */}
+        {/* =================================================
+            BRAND
+        ================================================= */}
         <Link
           href="/"
           className="brand brandPremium"
@@ -404,7 +443,12 @@ export default function Header() {
           </div>
 
           <div className="brandText brandTextPremium">
-            <span className="brandName brandNamePremium">
+            <span
+              className="brandName brandNamePremium"
+              style={{
+                fontFamily: "var(--font-dm-serif)",
+              }}
+            >
               Sutra Health
             </span>
 
@@ -414,7 +458,9 @@ export default function Header() {
           </div>
         </Link>
 
-        {/* DESKTOP NAV */}
+        {/* =================================================
+            DESKTOP NAV
+        ================================================= */}
         <nav
           className="desktopNav desktopNavPremium"
           aria-label="Main navigation"
@@ -508,7 +554,9 @@ export default function Header() {
           </Link>
         </nav>
 
-        {/* DESKTOP ACTIONS */}
+        {/* =================================================
+            DESKTOP ACTION
+        ================================================= */}
         <div className="desktopNavActions desktopNavActionsPremium">
           <Link
             href="/book-appointment"
@@ -517,19 +565,17 @@ export default function Header() {
           >
             <span>Book Consultation</span>
 
-            <span aria-hidden="true">
-              →
-            </span>
+            <span aria-hidden="true">→</span>
           </Link>
         </div>
 
-        {/* MOBILE MENU BUTTON */}
+        {/* =================================================
+            MOBILE MENU BUTTON
+        ================================================= */}
         <button
           type="button"
           className={`mobileMenuButton mobileMenuButtonPremium ${
-            mobileOpen
-              ? "mobileMenuButtonOpen"
-              : ""
+            mobileOpen ? "mobileMenuButtonOpen" : ""
           }`}
           onClick={() => {
             setMobileOpen((value) => !value);
@@ -568,7 +614,9 @@ export default function Header() {
         </button>
       </div>
 
-      {/* MOBILE NAV */}
+      {/* =================================================
+          MOBILE NAV
+      ================================================= */}
       <div
         className={`mobileNav ${
           mobileOpen ? "mobileNavOpen" : ""
@@ -662,9 +710,7 @@ export default function Header() {
           >
             <span>Book Consultation</span>
 
-            <span aria-hidden="true">
-              →
-            </span>
+            <span aria-hidden="true">→</span>
           </Link>
         </div>
       </div>
