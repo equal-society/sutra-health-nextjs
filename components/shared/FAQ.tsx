@@ -4,7 +4,16 @@ import { useState } from "react";
 import { Plus } from "lucide-react";
 import Container from "@/components/shared/Container";
 
-const faqs = [
+type FAQItem = {
+  question: string;
+  answer: string;
+};
+
+type FAQProps = {
+  faqs?: FAQItem[];
+};
+
+const defaultFaqs: FAQItem[] = [
   {
     question: "What is lifestyle medicine?",
     answer:
@@ -33,7 +42,7 @@ const faqs = [
   },
 ];
 
-export default function FAQ() {
+export default function FAQ({ faqs = defaultFaqs }: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
@@ -46,7 +55,7 @@ export default function FAQ() {
       className="bg-white"
     >
       <Container>
-        <div className="py-10 sm:py-10 lg:py-10">
+        <div className="py-14 sm:py-16 lg:py-20">
           {/* Header */}
           <div className="grid gap-6 lg:grid-cols-[0.55fr_1.45fr] lg:gap-16">
             <div>
@@ -105,7 +114,7 @@ export default function FAQ() {
 
               return (
                 <div
-                  key={faq.question}
+                  key={`${faq.question}-${index}`}
                   className="border-b border-[#202522]/10"
                 >
                   <button
