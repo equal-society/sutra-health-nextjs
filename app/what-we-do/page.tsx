@@ -1,278 +1,208 @@
-"use client";
+// app/what-we-do/page.tsx
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowUpRight,
+  Check,
+} from "lucide-react";
 
-const services = [
+const practices = [
   {
     number: "01",
     title: "Lifestyle Medicine",
     description:
-      "Doctor-led support that looks at food, yoga, sleep, stress and everyday habits as part of your overall health.",
+      "Practical support around nutrition, sleep, stress and everyday habits.",
+    image: "/images/what-we-do/lifestyle-medicine.webp",
     href: "/what-we-do/lifestyle",
   },
   {
     number: "02",
     title: "Nutrition Counselling",
     description:
-      "Personalised guidance to make food choices clearer, practical and easier to sustain.",
+      "Personalised guidance around food and eating habits that fits your daily life.",
+    image: "/images/what-we-do/nutrition-counselling.webp",
     href: "/what-we-do/nutrition",
   },
   {
     number: "03",
     title: "Therapeutic Yoga",
     description:
-      "Yoga, breathing and relaxation practices adapted around your needs and health goals.",
+      "Adapted yoga practices shaped around your health, ability and comfort.",
+    image: "/images/what-we-do/therapeutic-yoga.webp",
     href: "/what-we-do/therapeutic-yoga",
   },
   {
     number: "04",
     title: "Behaviour & Mind Practices",
     description:
-      "Practical support for habits, stress and routines that can make healthy changes easier to maintain.",
-    href: "/what-we-do/behaviour-mind",
+      "Practical support for habits, stress and changes you can sustain.",
+    image: "/images/what-we-do/behaviour-mind.webp",
+    href: "/what-we-do/breath-mindfulness",
   },
 ];
 
-const conditions = [
-  {
-    name: "Weight Management",
-    href: "/conditions/weight-management",
-  },
-  {
-    name: "Metabolic Health",
-    href: "/conditions/metabolic-health",
-  },
-  {
-    name: "High Blood Pressure",
-    href: "/conditions/high-blood-pressure",
-  },
-  {
-    name: "Arthritis & Joint Pain",
-    href: "/conditions/arthritis-joint-pain",
-  },
-  {
-    name: "Migraine & Headache",
-    href: "/conditions/migraine-headache",
-  },
-  {
-    name: "Digestive & Gut Health",
-    href: "/conditions/digestive-gut-health",
-  },
-  {
-    name: "Women's Health",
-    href: "/conditions/womens-health",
-  },
-];
-
-const approachPoints = [
+const waysOfWorking = [
   {
     number: "01",
     title: "Understand",
     description:
-      "Look at your health, everyday life and priorities.",
+      "Start with your health, concerns, goals and everyday routine.",
   },
   {
     number: "02",
-    title: "Personalise",
+    title: "Identify",
     description:
-      "Build a practical plan around your needs and goals.",
+      "Look at lifestyle factors that may be relevant to your health.",
   },
   {
     number: "03",
-    title: "Practise",
+    title: "Personalise",
     description:
-      "Turn the plan into manageable everyday actions.",
+      "Build practical recommendations around your needs and ability.",
   },
   {
     number: "04",
+    title: "Practise",
+    description:
+      "Introduce changes through nutrition, yoga and lifestyle practices.",
+  },
+  {
+    number: "05",
     title: "Sustain",
     description:
-      "Build habits that are realistic enough to continue.",
+      "Focus on habits that can work in everyday life over time.",
+  },
+  {
+    number: "06",
+    title: "Adapt",
+    description:
+      "Adjust the approach as your needs and circumstances change.",
   },
 ];
 
-const faqs = [
+const healthAreas = [
   {
-    question: "What services does Sutra Health provide?",
-    answer:
-      "Sutra Health provides lifestyle medicine, nutrition counselling, therapeutic yoga, and behaviour and mind practices.",
+    title: "High Blood Pressure",
+    href: "/conditions/high-blood-pressure",
   },
   {
-    question: "Who are these services for?",
-    answer:
-      "These services are for people looking for practical, lifestyle-focused support alongside appropriate healthcare.",
+    title: "Metabolic Health",
+    href: "/conditions/metabolic-health",
   },
   {
-    question: "Which service should I start with?",
-    answer:
-      "It depends on your health concerns, priorities and goals. A consultation can help you understand where to begin.",
+    title: "Weight Management",
+    href: "/conditions/weight-management",
   },
   {
-    question: "Can different services be combined?",
-    answer:
-      "Yes. Different areas can be brought together when they are relevant to your needs and goals.",
+    title: "Digestive & Gut Health",
+    href: "/conditions/digestive-gut-health",
+  },
+  {
+    title: "Arthritis & Joint Pain",
+    href: "/conditions/arthritis-joint-pain",
+  },
+  {
+    title: "Migraine & Headache",
+    href: "/conditions/migraine-headache",
+  },
+  {
+    title: "Women's Health & Wellbeing",
+    href: "/conditions/womens-health",
+  },
+  {
+    title: "Stress & Wellbeing",
+    href: "/conditions/stress-wellbeing",
   },
 ];
 
 export default function WhatWeDoPage() {
   return (
-    <main className="min-h-screen bg-[#F7F5EF] text-[#202522]">
-
-      {/* =========================================================
-          HERO
-      ========================================================= */}
-      <section
-        aria-labelledby="what-we-do-heading"
-        className="border-b border-[#202522]/10"
-      >
-        <div className="mx-auto max-w-[1180px] px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
-          <div className="max-w-[920px]">
-
-            {/* Eyebrow */}
-            <div className="flex items-center gap-3">
-              <span
-                aria-hidden="true"
-                className="h-px w-9 bg-[#91A298]"
-              />
-
-              <p className="text-[10px] font-semibold uppercase tracking-[0.21em] text-[#65736D] sm:text-[11px]">
-                What we do
-              </p>
-            </div>
-
-            {/* Heading */}
-            <h1
-              id="what-we-do-heading"
-              className="mt-6 max-w-[850px] font-serif text-[43px] font-medium leading-[0.98] tracking-[-0.045em] text-[#202522] sm:text-[55px] lg:text-[70px]"
-            >
-              Healthcare that looks at the{" "}
-              <span className="font-normal italic text-[#17413D]">
-                whole picture.
-              </span>
-            </h1>
-
-            {/* Description */}
-            <p className="mt-7 max-w-[720px] text-[16px] leading-7 text-[#4E5B56] sm:text-[18px] sm:leading-8">
-              Sutra Health brings medical care and practical lifestyle support
-              together. Our services cover lifestyle medicine, nutrition,
-              therapeutic yoga, and behaviour and mind practices, with guidance
-              shaped around your health, needs, and daily life.
+    <main className="bg-[#F7F5EF] text-[#202522]">
+      {/* HERO */}
+      <section className="border-b border-[#202522]/10">
+        <div className="mx-auto max-w-[1180px] px-6 pb-16 pt-14 sm:px-8 sm:pb-20 sm:pt-20 lg:px-10 lg:pb-24 lg:pt-24">
+          <div className="max-w-[850px]">
+            <p className="font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[#65736D]">
+              What we do
             </p>
 
-            {/* CTA */}
-            <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6">
-              <Link
-                href="/book-appointment"
-                className="group inline-flex min-h-[50px] w-full items-center justify-center gap-4 rounded-full bg-[#17413D] px-7 py-3 text-[12px] font-semibold text-white transition-all duration-300 hover:bg-[#12332F] sm:w-auto sm:text-[13px]"
-              >
-                Book a Consultation
+            <h1 className="mt-5 max-w-[800px] font-serif text-[43px] font-medium leading-[1.08] tracking-[-0.025em] text-[#202522] sm:text-[54px] lg:text-[64px]">
+              Care built around
+              <br />
+              the whole you.
+            </h1>
 
-                <span
-                  aria-hidden="true"
-                  className="transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  →
-                </span>
-              </Link>
+            <p className="mt-6 max-w-[690px] font-sans text-[17px] leading-[1.75] text-[#4F5A54] sm:text-[18px]">
+              Sutra Health brings together lifestyle medicine, nutrition,
+              therapeutic yoga and mind practices to help you understand your
+              health and build healthier habits around everyday life.
+            </p>
 
-              <Link
-                href="/approach"
-                className="group inline-flex items-center gap-2 py-2 text-[12px] font-semibold text-[#202522] transition-colors duration-300 hover:text-[#17413D] sm:text-[13px]"
-              >
-                Understand our approach
-
-                <span
-                  aria-hidden="true"
-                  className="transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  →
-                </span>
-              </Link>
-            </div>
-
-            {/* Trust line */}
-            <div className="mt-9 flex flex-wrap gap-x-6 gap-y-2 border-t border-[#202522]/10 pt-5 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#65736D] sm:mt-11">
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 font-sans text-[14px] text-[#65736D]">
               <span>Doctor-led</span>
-              <span>Personalised</span>
+              <span>Evidence-informed</span>
               <span>Whole-person care</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* =========================================================
-          SERVICES
-      ========================================================= */}
-      <section
-        aria-labelledby="services-heading"
-        className="bg-white"
-      >
-        <div className="mx-auto max-w-[1180px] px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
-
-          {/* Section intro */}
-          <div className="max-w-[720px]">
-
-            <div className="flex items-center gap-3">
-              <span
-                aria-hidden="true"
-                className="h-px w-8 bg-[#91A298]"
-              />
-
-              <p className="text-[10px] font-semibold uppercase tracking-[0.21em] text-[#65736D] sm:text-[11px]">
-                Our services
-              </p>
-            </div>
+      {/* PRACTICES */}
+      <section aria-labelledby="practices-title" className="bg-white">
+        <div className="mx-auto max-w-[1180px] px-6 py-14 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+          <div className="max-w-[700px]">
+            <p className="font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[#65736D]">
+              Our practices
+            </p>
 
             <h2
-              id="services-heading"
-              className="mt-5 font-serif text-[38px] font-medium leading-[1.06] tracking-[-0.04em] text-[#202522] sm:text-[48px]"
+              id="practices-title"
+              className="mt-4 font-serif text-[32px] font-medium leading-[1.15] tracking-[-0.02em] text-[#202522] sm:text-[40px]"
             >
-              Support that fits around your health.
+              Ways we can support you.
             </h2>
-
-            <p className="mt-5 max-w-[700px] text-[16px] leading-7 text-[#4E5B56] sm:text-[18px] sm:leading-8">
-              Each service focuses on a different part of everyday health.
-              Together, they can form a more connected approach to care.
-            </p>
           </div>
 
-          {/* Service list */}
-          <div className="mt-12 max-w-[1080px] border-y border-[#202522]/10">
-            {services.map((service) => (
+          <div className="mt-9 grid gap-4 sm:mt-10 lg:grid-cols-2 lg:gap-5">
+            {practices.map((practice) => (
               <Link
-                key={service.number}
-                href={service.href}
-                className="group block border-b border-[#202522]/10 py-8 transition-colors duration-300 last:border-b-0 hover:bg-[#F7F5EF] sm:px-5 sm:py-9"
+                key={practice.number}
+                href={practice.href}
+                className="group border border-[#202522]/10 bg-[#F7F5EF] transition-colors duration-300 hover:border-[#17413D]/30"
               >
-                <div className="grid gap-5 sm:grid-cols-[64px_minmax(0,1fr)_auto] sm:items-center sm:gap-8">
-
-                  {/* Number */}
-                  <span className="text-[11px] font-semibold tracking-[0.12em] text-[#91A298] sm:text-[12px]">
-                    {service.number}
-                  </span>
-
-                  {/* Content */}
-                  <div className="max-w-[700px]">
-                    <h3 className="font-serif text-[25px] font-medium leading-tight tracking-[-0.025em] text-[#202522] sm:text-[30px]">
-                      {service.title}
-                    </h3>
-
-                    <p className="mt-3 text-[15px] leading-7 text-[#4E5B56] sm:text-[17px] sm:leading-8">
-                      {service.description}
-                    </p>
+                <div className="flex gap-5 p-5 sm:gap-6 sm:p-6">
+                  {/* IMAGE */}
+                  <div className="h-[120px] w-[120px] shrink-0 overflow-hidden sm:h-[128px] sm:w-[128px]">
+                    <img
+                      src={practice.image}
+                      alt=""
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
                   </div>
 
-                  {/* Explore */}
-                  <span className="inline-flex items-center gap-2 text-[12px] font-semibold text-[#17413D] sm:text-[13px]">
-                    Explore
+                  {/* CONTENT */}
+                  <div className="flex min-w-0 flex-1 flex-col">
+                    <span className="font-sans text-[11px] font-medium tracking-[0.12em] text-[#65736D]">
+                      {practice.number}
+                    </span>
 
-                    <ArrowRight
-                      size={16}
-                      strokeWidth={1.8}
-                      className="transition-transform duration-300 group-hover:translate-x-1"
-                    />
-                  </span>
+                    <h3 className="mt-2 font-serif text-[23px] font-medium leading-[1.2] tracking-[-0.015em] text-[#202522] sm:text-[25px]">
+                      {practice.title}
+                    </h3>
+
+                    <p className="mt-3 font-sans text-[16px] leading-[1.72] text-[#4F5A54]">
+                      {practice.description}
+                    </p>
+
+                    <div className="mt-5 flex items-center gap-2 font-sans text-[14px] font-medium text-[#17413D]">
+                      <span>Explore</span>
+                      <ArrowUpRight
+                        size={15}
+                        strokeWidth={1.7}
+                        className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                      />
+                    </div>
+                  </div>
                 </div>
               </Link>
             ))}
@@ -280,75 +210,49 @@ export default function WhatWeDoPage() {
         </div>
       </section>
 
-      {/* =========================================================
-          APPROACH
-      ========================================================= */}
+      {/* HOW WE WORK */}
       <section
-        aria-labelledby="approach-heading"
+        aria-labelledby="how-we-work-title"
         className="bg-[#F7F5EF]"
       >
-        <div className="mx-auto max-w-[1180px] px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
-
-          <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
-
-            {/* Intro */}
+        <div className="mx-auto max-w-[1180px] px-6 py-14 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <div>
-              <div className="flex items-center gap-3">
-                <span
-                  aria-hidden="true"
-                  className="h-px w-8 bg-[#91A298]"
-                />
-
-                <p className="text-[10px] font-semibold uppercase tracking-[0.21em] text-[#65736D] sm:text-[11px]">
-                  Our approach
-                </p>
-              </div>
-
-              <h2
-                id="approach-heading"
-                className="mt-5 max-w-[480px] font-serif text-[38px] font-medium leading-[1.04] tracking-[-0.04em] text-[#202522] sm:text-[48px]"
-              >
-                A more connected way to care.
-              </h2>
-
-              <p className="mt-5 max-w-[480px] text-[16px] leading-7 text-[#4E5B56] sm:text-[18px] sm:leading-8">
-                Your health is shaped by more than one habit or symptom. We
-                look at the wider picture and help you focus on changes that
-                can work in everyday life.
+              <p className="font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[#65736D]">
+                How we work
               </p>
 
-              <Link
-                href="/approach"
-                className="group mt-7 inline-flex items-center gap-2 text-[12px] font-semibold text-[#17413D] transition-colors duration-300 hover:text-[#12332F] sm:text-[13px]"
+              <h2
+                id="how-we-work-title"
+                className="mt-4 max-w-[480px] font-serif text-[32px] font-medium leading-[1.15] tracking-[-0.02em] text-[#202522] sm:text-[40px]"
               >
-                Learn about our approach
+                Start where you are.
+              </h2>
 
-                <ArrowRight
-                  size={16}
-                  strokeWidth={1.8}
-                  className="transition-transform duration-300 group-hover:translate-x-1"
-                />
-              </Link>
+              <p className="mt-5 max-w-[450px] font-sans text-[16px] leading-[1.75] text-[#4F5A54] sm:text-[17px]">
+                Your care begins with understanding your health, your routine
+                and what matters to you. From there, we build practical steps
+                that can fit into everyday life.
+              </p>
             </div>
 
-            {/* Approach steps */}
-            <div className="border-y border-[#202522]/10">
-              {approachPoints.map((point) => (
+            <div className="border-t border-[#202522]/10">
+              {waysOfWorking.map((step) => (
                 <div
-                  key={point.number}
-                  className="grid grid-cols-[42px_1fr] gap-5 border-b border-[#202522]/10 py-7 last:border-b-0 sm:grid-cols-[56px_1fr] sm:gap-7 sm:py-8"
+                  key={step.number}
+                  className="grid grid-cols-[42px_1fr] gap-4 border-b border-[#202522]/10 py-5 sm:grid-cols-[52px_1fr] sm:gap-5 sm:py-6"
                 >
-                  <span className="pt-1 text-[11px] font-semibold tracking-[0.12em] text-[#91A298]">
-                    {point.number}
+                  <span className="pt-1 font-sans text-[11px] font-medium tracking-[0.1em] text-[#65736D]">
+                    {step.number}
                   </span>
 
                   <div>
-                    <h3 className="font-serif text-[24px] font-medium tracking-[-0.02em] text-[#202522] sm:text-[28px]">
-                      {point.title}
+                    <h3 className="font-serif text-[21px] font-medium leading-[1.25] text-[#202522] sm:text-[23px]">
+                      {step.title}
                     </h3>
 
-                    <p className="mt-2 max-w-[650px] text-[15px] leading-7 text-[#4E5B56] sm:text-[17px] sm:leading-8">
-                      {point.description}
+                    <p className="mt-2 font-sans text-[16px] leading-[1.7] text-[#4F5A54]">
+                      {step.description}
                     </p>
                   </div>
                 </div>
@@ -358,209 +262,176 @@ export default function WhatWeDoPage() {
         </div>
       </section>
 
-      {/* =========================================================
-          CONDITIONS
-      ========================================================= */}
+      {/* HEALTH AREAS */}
       <section
-        aria-labelledby="conditions-heading"
-        className="bg-[#E7EDE8]"
-      >
-        <div className="mx-auto max-w-[1180px] px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
-
-          <div className="max-w-[760px]">
-
-            <div className="flex items-center gap-3">
-              <span
-                aria-hidden="true"
-                className="h-px w-8 bg-[#91A298]"
-              />
-
-              <p className="text-[10px] font-semibold uppercase tracking-[0.21em] text-[#65736D] sm:text-[11px]">
-                Where we can help
-              </p>
-            </div>
-
-            <h2
-              id="conditions-heading"
-              className="mt-5 max-w-[720px] font-serif text-[38px] font-medium leading-[1.04] tracking-[-0.04em] text-[#202522] sm:text-[48px]"
-            >
-              Health concerns where lifestyle can play a role.
-            </h2>
-
-            <p className="mt-5 max-w-[700px] text-[16px] leading-7 text-[#4E5B56] sm:text-[18px] sm:leading-8">
-              Explore some of the health concerns people come to Sutra Health
-              with, and learn how lifestyle-focused support may fit into their
-              care.
-            </p>
-          </div>
-
-          {/* Conditions */}
-          <div className="mt-12 max-w-[1080px] border-y border-[#202522]/10">
-            {conditions.map((condition, index) => (
-              <Link
-                key={condition.name}
-                href={condition.href}
-                className="group flex min-h-[70px] items-center justify-between gap-6 border-b border-[#202522]/10 py-5 last:border-b-0"
-              >
-                <div className="flex items-center gap-5 sm:gap-8">
-
-                  <span className="text-[11px] font-semibold tracking-[0.12em] text-[#91A298]">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-
-                  <span className="font-serif text-[19px] font-medium tracking-[-0.015em] text-[#202522] sm:text-[23px]">
-                    {condition.name}
-                  </span>
-                </div>
-
-                <ArrowRight
-                  size={17}
-                  strokeWidth={1.8}
-                  className="shrink-0 text-[#17413D] transition-transform duration-300 group-hover:translate-x-1"
-                />
-              </Link>
-            ))}
-          </div>
-
-          {/* Conditions CTA */}
-          <Link
-            href="/conditions"
-            className="group mt-8 inline-flex min-h-[48px] items-center justify-center gap-3 rounded-full border border-[#17413D]/20 px-6 text-[12px] font-semibold text-[#17413D] transition-colors duration-300 hover:bg-white sm:text-[13px]"
-          >
-            View all conditions
-
-            <ArrowRight
-              size={16}
-              strokeWidth={1.8}
-              className="transition-transform duration-300 group-hover:translate-x-1"
-            />
-          </Link>
-        </div>
-      </section>
-
-      {/* =========================================================
-          FAQ
-      ========================================================= */}
-      <section
-        aria-labelledby="faq-heading"
+        aria-labelledby="health-areas-title"
         className="bg-white"
       >
-        <div className="mx-auto max-w-[1180px] px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
-
-          <div className="max-w-[720px]">
-
-            <div className="flex items-center gap-3">
-              <span
-                aria-hidden="true"
-                className="h-px w-8 bg-[#91A298]"
-              />
-
-              <p className="text-[10px] font-semibold uppercase tracking-[0.21em] text-[#65736D] sm:text-[11px]">
-                Questions
+        <div className="mx-auto max-w-[1180px] px-6 py-14 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+          <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+            <div>
+              <p className="font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[#65736D]">
+                Health areas
               </p>
+
+              <h2
+                id="health-areas-title"
+                className="mt-4 font-serif text-[32px] font-medium leading-[1.15] tracking-[-0.02em] text-[#202522] sm:text-[40px]"
+              >
+                Explore the areas we support.
+              </h2>
             </div>
 
-            <h2
-              id="faq-heading"
-              className="mt-5 font-serif text-[38px] font-medium leading-[1.06] tracking-[-0.04em] text-[#202522] sm:text-[48px]"
+            <Link
+              href="/conditions"
+              className="inline-flex shrink-0 items-center gap-2 font-sans text-[14px] font-medium text-[#17413D]"
             >
-              Common questions
-            </h2>
-
-            <p className="mt-5 max-w-[650px] text-[16px] leading-7 text-[#4E5B56] sm:text-[18px] sm:leading-8">
-              A few simple answers to help you understand how Sutra Health
-              works.
-            </p>
+              <span>All health areas</span>
+              <ArrowUpRight size={15} strokeWidth={1.7} />
+            </Link>
           </div>
 
-          {/* FAQ list */}
-          <div className="mt-12 max-w-[1000px] border-y border-[#202522]/10">
-            {faqs.map((faq) => (
-              <details
-                key={faq.question}
-                className="group border-b border-[#202522]/10 last:border-b-0"
+          <div className="mt-9 grid border-t border-[#202522]/10 sm:mt-10 sm:grid-cols-2">
+            {healthAreas.map((area, index) => (
+              <Link
+                key={area.title}
+                href={area.href}
+                className={`group flex items-center justify-between gap-5 border-b border-[#202522]/10 py-5 sm:py-6 ${
+                  index % 2 === 0
+                    ? "sm:border-r sm:pr-7 lg:pr-10"
+                    : "sm:pl-7 lg:pl-10"
+                }`}
               >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-8 py-6 text-[16px] font-medium leading-7 text-[#202522] marker:hidden sm:py-7 sm:text-[19px]">
-                  <span>{faq.question}</span>
+                <span className="font-serif text-[20px] font-medium leading-[1.3] text-[#202522] transition-colors duration-300 group-hover:text-[#17413D] sm:text-[22px]">
+                  {area.title}
+                </span>
 
-                  <span
-                    aria-hidden="true"
-                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#E7EDE8] text-[21px] font-light leading-none text-[#17413D] transition-transform duration-300 group-open:rotate-45"
-                  >
-                    +
-                  </span>
-                </summary>
-
-                <p className="max-w-[850px] pb-7 pr-8 text-[15px] leading-7 text-[#4E5B56] sm:text-[17px] sm:leading-8">
-                  {faq.answer}
-                </p>
-              </details>
+                <ArrowUpRight
+                  size={17}
+                  strokeWidth={1.5}
+                  className="shrink-0 text-[#65736D] transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#17413D]"
+                />
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* =========================================================
-          FINAL CTA
-      ========================================================= */}
-      <section className="bg-[#F7F5EF]">
-        <div className="mx-auto max-w-[1180px] px-5 pb-16 sm:px-8 sm:pb-20 lg:px-10 lg:pb-24">
-
-          <div className="overflow-hidden rounded-[28px] bg-[#17413D] px-7 py-12 sm:px-10 sm:py-14 lg:px-14 lg:py-16">
-
-            <div className="max-w-[850px]">
-
-              <div className="flex items-center gap-3">
-                <span
-                  aria-hidden="true"
-                  className="h-px w-9 bg-[#91A298]"
-                />
-
-                <p className="text-[10px] font-semibold uppercase tracking-[0.21em] text-[#E7EDE8] sm:text-[11px]">
-                  Start here
-                </p>
-              </div>
-
-              <h2 className="mt-5 max-w-[800px] font-serif text-[36px] font-medium leading-[1.04] tracking-[-0.04em] text-[#F7F5EF] sm:text-[48px]">
-                Start with a conversation about your health.
-              </h2>
-
-              <p className="mt-6 max-w-[720px] text-[16px] leading-7 text-[#E7EDE8] sm:text-[18px] sm:leading-8">
-                Tell us what you are dealing with, what you have tried and
-                what you would like to change.
+      {/* ASSESSMENT */}
+      <section className="bg-[#E7EDE8]">
+        <div className="mx-auto max-w-[1180px] px-6 py-14 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+          <div className="grid gap-10 lg:grid-cols-[1fr_0.75fr] lg:items-center lg:gap-20">
+            <div>
+              <p className="font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[#65736D]">
+                A simple place to start
               </p>
 
-              {/* Inverted CTA — matching approved design */}
-              <Link
-                href="/book-appointment"
-                className="group mt-8 inline-flex min-h-[50px] items-center justify-center gap-4 rounded-full bg-[#F7F5EF] px-7 py-3 text-[12px] font-semibold text-[#17413D] transition-colors duration-300 hover:bg-[#E7EDE8] sm:text-[13px]"
-              >
-                Book a Consultation
+              <h2 className="mt-4 max-w-[650px] font-serif text-[32px] font-medium leading-[1.12] tracking-[-0.02em] text-[#202522] sm:text-[42px]">
+                Understand your health before changing it.
+              </h2>
 
-                <span
-                  aria-hidden="true"
-                  className="transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  →
-                </span>
+              <p className="mt-5 max-w-[620px] font-sans text-[16px] leading-[1.75] text-[#4F5A54] sm:text-[17px]">
+                The Sutra 21-Point Health Assessment looks at key lifestyle
+                factors that can influence your everyday health and wellbeing.
+              </p>
+
+              <Link
+                href="/assessment"
+                className="mt-7 inline-flex h-[50px] items-center gap-2 bg-[#17413D] px-6 font-sans text-[14px] font-medium text-white transition-colors duration-300 hover:bg-[#12332F]"
+              >
+                Take the assessment
+                <ArrowUpRight size={15} strokeWidth={1.7} />
               </Link>
+
+              <p className="mt-4 font-sans text-[13px] leading-[1.6] text-[#65736D]">
+                The assessment is for health and lifestyle awareness and is not
+                a medical diagnosis.
+              </p>
+            </div>
+
+            <div className="border border-[#202522]/10 bg-white p-6 sm:p-8">
+              <div className="flex items-end gap-3 border-b border-[#202522]/10 pb-6">
+                <span className="font-serif text-[64px] font-medium leading-none text-[#17413D] sm:text-[76px]">
+                  21
+                </span>
+
+                <span className="pb-1 font-sans text-[13px] uppercase tracking-[0.12em] text-[#65736D]">
+                  points
+                </span>
+              </div>
+
+              <div className="grid gap-0 sm:grid-cols-2">
+                {[
+                  "Nutrition",
+                  "Sleep",
+                  "Digestion",
+                  "Physical activity",
+                  "Mental wellbeing",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-3 border-b border-[#202522]/10 py-4 last:border-b-0 sm:even:pl-5"
+                  >
+                    <Check
+                      size={15}
+                      strokeWidth={1.7}
+                      className="shrink-0 text-[#17413D]"
+                    />
+                    <span className="font-sans text-[15px] leading-[1.5] text-[#4F5A54]">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* =========================================================
-          DISCLAIMER
-      ========================================================= */}
-      <section className="bg-[#F7F5EF] pb-8">
-        <div className="mx-auto max-w-[1180px] px-5 sm:px-8 lg:px-10">
-          <p className="max-w-[900px] text-[12px] leading-6 text-[#65736D]">
-            Sutra Health provides integrative and lifestyle-focused support
-            alongside appropriate medical care. It does not replace diagnosis,
-            treatment or advice from your doctor.
-          </p>
+      {/* FINAL CTA */}
+      <section className="bg-[#17413D] text-white">
+        <div className="mx-auto max-w-[1180px] px-6 py-14 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
+            <div className="max-w-[700px]">
+              <p className="font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-white/60">
+                Your next step
+              </p>
+
+              <h2 className="mt-4 font-serif text-[34px] font-medium leading-[1.12] tracking-[-0.02em] sm:text-[44px]">
+                Start with a conversation.
+              </h2>
+
+              <p className="mt-5 max-w-[620px] font-sans text-[16px] leading-[1.75] text-white/75 sm:text-[17px]">
+                Get practical, evidence-informed support to build healthier
+                habits that fit your life.
+              </p>
+
+              <p className="mt-5 font-sans text-[13px] text-white/55">
+                Doctor-led · Evidence-informed · Whole-person care
+              </p>
+            </div>
+
+            <Link
+              href="/book-appointment"
+              className="inline-flex h-[52px] shrink-0 items-center justify-center gap-2 bg-white px-7 font-sans text-[14px] font-medium text-[#17413D] transition-colors duration-300 hover:bg-[#F7F5EF]"
+            >
+              Book a Consultation
+              <ArrowUpRight size={16} strokeWidth={1.7} />
+            </Link>
+          </div>
         </div>
       </section>
+
+      {/* DISCLAIMER */}
+      <div className="bg-[#F7F5EF]">
+        <div className="mx-auto max-w-[1180px] px-6 py-5 sm:px-8 lg:px-10">
+          <p className="font-sans text-[12px] leading-[1.6] text-[#65736D]">
+            Sutra Health&apos;s lifestyle and wellness practices are
+            complementary and are not a substitute for emergency care, medical
+            diagnosis or treatment. Individual results may vary.
+          </p>
+        </div>
+      </div>
     </main>
   );
 }

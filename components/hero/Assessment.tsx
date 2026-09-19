@@ -53,7 +53,7 @@ export default function Assessment() {
 
               {/* CTA */}
               <Link
-                href="/score"
+                href="/assessment"
                 className="group mt-7 inline-flex h-[52px] items-center justify-center bg-[#17413D] px-6 font-sans text-[14px] font-medium text-white transition-colors duration-300 hover:bg-[#12332F]"
               >
                 Take the 21-Point Assessment
