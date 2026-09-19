@@ -207,31 +207,7 @@ export default function Conditions() {
             
           ))}
 
-        <div className="mt-8 border-t border-[#202522]/10 pt-6 sm:mt-10 sm:pt-7">
-        <Link
-          href="/conditions"
-          className="
-            group inline-flex items-center gap-2
-            font-sans text-[14px] font-medium
-            text-[#17413D]
-            transition-colors duration-300
-            hover:text-[#12332F]
-          "
-        >
-          Explore all health areas
-
-          <ArrowUpRight
-            size={16}
-            strokeWidth={1.5}
-            className="
-              transition-transform duration-300
-              group-hover:translate-x-0.5
-              group-hover:-translate-y-0.5
-            "
-          />
-        </Link>
-      </div>
-          
+     
         </div>
 
         
@@ -256,7 +232,7 @@ export default function Conditions() {
               <div className="relative h-[120px] w-full overflow-hidden bg-[#E7EDE8]">
                 <img
                   src={currentCondition.image}
-                  alt=""
+                  alt={currentCondition.title}
                   className="
                     h-full w-full
                     object-cover
@@ -392,36 +368,7 @@ export default function Conditions() {
           </Link>
         </div>
 
-        {/* Bottom note */}
-        <div className="mt-8 flex flex-col gap-4 sm:mt-10 sm:flex-row sm:items-center sm:justify-between">
-          <p className="max-w-[620px] font-sans text-[14px] leading-[1.65] text-[#4F5A54] sm:text-[15px]">
-            Explore an area of health or start with a broader
-            conversation about what you are experiencing.
-          </p>
-
-          <Link
-            href="/book-appointment"
-            className="
-              group inline-flex w-fit items-center gap-2
-              font-sans text-[14px] font-medium
-              text-[#17413D]
-              transition-colors duration-300
-              hover:text-[#12332F]
-            "
-          >
-            Talk to our team
-
-            <ArrowUpRight
-              size={16}
-              strokeWidth={1.5}
-              className="
-                transition-transform duration-300
-                group-hover:translate-x-1
-                group-hover:-translate-y-1
-              "
-            />
-          </Link>
-        </div>
+        
       </div>
     </section>
   );
