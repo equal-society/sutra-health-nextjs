@@ -18,7 +18,7 @@ export default function Resources() {
     >
       <Container>
         {/* Header */}
-        <div className="grid gap-6 border-b border-[#202522]/10 pb-7 sm:gap-8 sm:pb-8 lg:grid-cols-[1fr_auto] lg:items-end">
+        <div className="grid gap-6 border-b border-[#202522]/10 pb-7 sm:gap-8 sm:pb-8 lg:grid-cols-[1fr_auto] lg:items-end py-4">
           <div className="max-w-[760px]">
             <div className="flex items-center gap-3">
               <span
@@ -190,7 +190,6 @@ export default function Resources() {
           <div className="sm:hidden">
             <div
               className="
-                -mx-6
                 flex
                 snap-x
                 snap-mandatory
