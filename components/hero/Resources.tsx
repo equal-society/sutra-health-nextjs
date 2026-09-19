@@ -190,10 +190,11 @@ export default function Resources() {
           <div className="sm:hidden">
             <div
               className="
+                -mx-2
                 flex
                 snap-x
                 snap-mandatory
-                gap-5
+                gap-4
                 overflow-x-auto
                 px-6
                 pb-2

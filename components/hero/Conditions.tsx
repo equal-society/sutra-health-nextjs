@@ -202,9 +202,39 @@ export default function Conditions() {
                   />
                 </span>
               </div>
+              
             </Link>
+            
           ))}
+
+        <div className="mt-8 border-t border-[#202522]/10 pt-6 sm:mt-10 sm:pt-7">
+        <Link
+          href="/conditions"
+          className="
+            group inline-flex items-center gap-2
+            font-sans text-[14px] font-medium
+            text-[#17413D]
+            transition-colors duration-300
+            hover:text-[#12332F]
+          "
+        >
+          Explore all health areas
+
+          <ArrowUpRight
+            size={16}
+            strokeWidth={1.5}
+            className="
+              transition-transform duration-300
+              group-hover:translate-x-0.5
+              group-hover:-translate-y-0.5
+            "
+          />
+        </Link>
+      </div>
+          
         </div>
+
+        
 
         {/* =========================================================
             MOBILE — ONE CONDITION AT A TIME
@@ -335,6 +365,31 @@ export default function Conditions() {
               </button>
             </div>
           </div>
+        </div>
+
+        <div className="mt-8 border-t border-[#202522]/10 pt-6 sm:mt-10 sm:pt-7">
+          <Link
+            href="/conditions"
+            className="
+              group inline-flex items-center gap-2
+              font-sans text-[14px] font-medium
+              text-[#17413D]
+              transition-colors duration-300
+              hover:text-[#12332F]
+            "
+          >
+            Explore all health areas
+
+            <ArrowUpRight
+              size={16}
+              strokeWidth={1.5}
+              className="
+                transition-transform duration-300
+                group-hover:translate-x-0.5
+                group-hover:-translate-y-0.5
+              "
+            />
+          </Link>
         </div>
 
         {/* Bottom note */}
