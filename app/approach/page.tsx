@@ -1,217 +1,135 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Container from "@/components/shared/Container";
-import FAQ from "@/components/shared/FAQ";
+
+const SITE_URL = "https://lifequality.org.in";
 
 export const metadata: Metadata = {
-  title: "Our Approach | The Sutra Health Method",
+  title: "Our Approach",
   description:
-    "Learn how the Sutra Health Method brings lifestyle medicine, nutrition, therapeutic yoga, and breath & mindfulness together through a personalised, practical and sustainable six-stage approach.",
+    "Discover Sutra Health's whole-person approach to healthcare, bringing medical care, lifestyle, nutrition, movement and behaviour into one connected view.",
   alternates: {
-    canonical: "https://lifequality.org.in/approach",
+    canonical: `${SITE_URL}/approach`,
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
   openGraph: {
-    title: "Our Approach | The Sutra Health Method",
+    title: "Our Approach | Sutra Health",
     description:
-      "Understand the six-stage Sutra Health Method and how its core practices work together around your health, goals and everyday life.",
-    url: "https://lifequality.org.in/approach",
+      "A whole-person approach to healthcare that connects medical care with lifestyle, nutrition, movement and behaviour.",
+    url: `${SITE_URL}/approach`,
     siteName: "Sutra Health",
     type: "website",
-    locale: "en_IN",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Our Approach | The Sutra Health Method",
+    title: "Our Approach | Sutra Health",
     description:
-      "A personalised, practical and sustainable six-stage approach to health at Sutra Health.",
+      "A whole-person approach to healthcare that connects medical care with lifestyle, nutrition, movement and behaviour.",
   },
 };
-
-const stages = [
-  {
-    number: "01",
-    title: "Understand",
-    description:
-      "See the whole picture — your health concerns, everyday routines, habits, priorities and goals.",
-  },
-  {
-    number: "02",
-    title: "Identify",
-    description:
-      "Recognise the patterns and practical areas that may be most useful to work on.",
-  },
-  {
-    number: "03",
-    title: "Personalise",
-    description:
-      "Create a plan around your needs, preferences, physical ability, responsibilities and real life.",
-  },
-  {
-    number: "04",
-    title: "Practise",
-    description:
-      "Turn understanding into manageable actions that can be practised in everyday life.",
-  },
-  {
-    number: "05",
-    title: "Sustain",
-    description:
-      "Build habits that are realistic enough to continue rather than relying on short-term routines.",
-  },
-  {
-    number: "06",
-    title: "Adapt",
-    description:
-      "Review what is working, learn from experience and adjust the plan as circumstances change.",
-  },
-];
-
-const practices = [
-  {
-    number: "01",
-    title: "Lifestyle Medicine",
-    description:
-      "Look at everyday patterns such as nutrition, movement, sleep, stress, habits and recovery.",
-    href: "/what-we-do/lifestyle",
-    linkLabel: "Explore Lifestyle Medicine",
-  },
-  {
-    number: "02",
-    title: "Nutrition Counselling",
-    description:
-      "Build practical food habits around individual needs, preferences, routines and health goals.",
-    href: "/what-we-do/nutrition",
-    linkLabel: "Explore Nutrition Counselling",
-  },
-  {
-    number: "03",
-    title: "Therapeutic Yoga",
-    description:
-      "Use adapted yoga and movement practices as part of a broader, health-focused plan.",
-    href: "/what-we-do/therapeutic-yoga",
-    linkLabel: "Explore Therapeutic Yoga",
-  },
-  {
-    number: "04",
-    title: "Breath & Mindfulness",
-    description:
-      "Develop practical breathing, awareness and mindfulness practices that can support stress and wellbeing.",
-    href: "/what-we-do/breath-mindfulness",
-    linkLabel: "Explore Breath & Mindfulness",
-  },
-];
 
 const principles = [
   {
     number: "01",
-    title: "Whole person",
-    text:
-      "Health is considered in the context of the person, their everyday life and their goals.",
+    title: "Medical care",
+    description:
+      "Start with an understanding of your health concerns, medical history and the care that may be appropriate for you.",
   },
   {
     number: "02",
-    title: "Personalised",
-    text:
-      "There is no single routine or plan that fits everyone.",
+    title: "Lifestyle",
+    description:
+      "Look at the everyday patterns that can influence health, including sleep, activity, routines and habits.",
   },
   {
     number: "03",
-    title: "Practical",
-    text:
-      "The focus is on changes that can work within real routines and responsibilities.",
+    title: "Nutrition",
+    description:
+      "Understand food and eating patterns in the context of your health, preferences and everyday life.",
   },
   {
     number: "04",
-    title: "Sustainable",
-    text:
-      "Progress is built through habits that can be practised and adapted over time.",
+    title: "Movement",
+    description:
+      "Consider appropriate movement and practices that can support physical wellbeing and regular activity.",
+  },
+  {
+    number: "05",
+    title: "Behaviour & stress",
+    description:
+      "Recognise the role of stress, behaviour, emotions and daily circumstances in the way we experience health.",
   },
 ];
 
-const approachFAQs = [
+const process = [
   {
-    question: "What is the Sutra Health Method?",
-    answer:
-      "The Sutra Health Method is a six-stage, whole-person pathway: Understand, Identify, Personalise, Practise, Sustain and Adapt. It brings Sutra Health's core practices together into one coordinated approach to sustainable health change.",
+    number: "01",
+    title: "Understand",
+    description:
+      "Begin with your health concerns, history, routines, priorities and the factors that matter to you.",
   },
   {
-    question: "What are the six stages of the Sutra Health Method?",
-    answer:
-      "The six stages are Understand, Identify, Personalise, Practise, Sustain and Adapt. The process starts by understanding the whole picture, identifies useful areas to work on, creates a personalised plan, turns it into practice, builds sustainable habits and adapts the plan as circumstances change.",
+    number: "02",
+    title: "Personalise",
+    description:
+      "Bring the relevant pieces together and identify an approach that fits your individual circumstances.",
   },
   {
-    question: "Is the Sutra Health approach personalised?",
-    answer:
-      "Yes. The approach is designed around an individual's health concerns, goals, daily routine, physical ability, preferences and responsibilities rather than applying one generic routine to everyone.",
+    number: "03",
+    title: "Practise",
+    description:
+      "Turn recommendations into practical steps that can be understood and incorporated into everyday life.",
   },
   {
-    question: "What practices are part of the Sutra Health approach?",
-    answer:
-      "The four core practices are lifestyle medicine, nutrition counselling, therapeutic yoga, and breath & mindfulness. They can be brought together according to the person's needs rather than treated as disconnected services.",
-  },
-  {
-    question: "What is the 21-Point Lifestyle Assessment?",
-    answer:
-      "The 21-Point Lifestyle Assessment is a structured 21-question review across areas including sleep, food, movement, digestion and stress. It is intended as a lifestyle guidance tool and is not a clinical diagnostic test.",
-  },
-  {
-    question: "Does the Sutra Health Method replace medical treatment?",
-    answer:
-      "No. The Sutra Health Method is designed to complement appropriate medical care, not replace it. People with existing health conditions should continue working with their treating physician, particularly regarding diagnosis and medication.",
+    number: "04",
+    title: "Review",
+    description:
+      "Look at what is working, what needs adjustment and what support may be useful as your needs change.",
   },
 ];
 
-const pageSchema = {
+const faqs = [
+  {
+    question: "What does whole-person healthcare mean?",
+    answer:
+      "Whole-person healthcare considers a person's medical needs alongside relevant lifestyle, nutrition, movement, behaviour and everyday factors rather than looking at one issue in isolation.",
+  },
+  {
+    question: "Does Sutra Health replace conventional medical care?",
+    answer:
+      "No. Sutra Health's approach can include appropriate medical care alongside lifestyle and other supportive practices. Individual care depends on the person's health needs.",
+  },
+  {
+    question: "Is the approach the same for everyone?",
+    answer:
+      "No. The approach is intended to be personalised. Different people may need different combinations of medical, lifestyle, nutrition, movement or behavioural support.",
+  },
+  {
+    question: "Can I start with a physician consultation?",
+    answer:
+      "Yes. A physician consultation can provide an opportunity to discuss your health concerns, medical history and possible next steps.",
+  },
+  {
+    question: "Where is Sutra Health based?",
+    answer:
+      "Sutra Health is based in Faridabad and also provides selected services through online consultations.",
+  },
+];
+
+const medicalWebPageSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalWebPage",
-  name: "The Sutra Health Method | Sutra Health",
+  name: "Our Approach",
+  url: `${SITE_URL}/approach`,
   description:
-    "Learn how the Sutra Health Method brings lifestyle medicine, nutrition, therapeutic yoga, breath and mindfulness together through a personalised, practical and sustainable pathway.",
-  url: "https://lifequality.org.in/approach",
+    "Sutra Health's whole-person approach to healthcare, connecting medical care with lifestyle, nutrition, movement and behaviour.",
   isPartOf: {
     "@type": "WebSite",
     name: "Sutra Health",
-    url: "https://lifequality.org.in/",
+    url: SITE_URL,
   },
-  about: {
-    "@type": "MedicalSpecialty",
-    name: "Lifestyle Medicine",
-  },
-  author: {
-    "@type": "Person",
-    name: "Dr. Rakesh Sarwal",
-    honorificSuffix: "MBBS, MPH, DrPH",
-    url: "https://academic.lifequality.org.in/",
-  },
-  reviewedBy: {
-    "@type": "Person",
-    name: "Dr. Rakesh Sarwal",
-    honorificSuffix: "MBBS, MPH, DrPH",
-    url: "https://academic.lifequality.org.in/",
-  },
-};
-
-const howToSchema = {
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  name: "The Sutra Health Method",
-  description:
-    "The six-stage process used by Sutra Health to support personalised and sustainable health change.",
-  step: stages.map((stage) => ({
-    "@type": "HowToStep",
-    position: Number(stage.number),
-    name: stage.title,
-    text: stage.description,
-  })),
-};
-
-const definedTermSchema = {
-  "@context": "https://schema.org",
-  "@type": "DefinedTerm",
-  name: "21-Point Lifestyle Assessment",
-  description:
-    "A structured lifestyle-review tool used by Sutra Health to identify practical, individualised areas for health improvement. It is a lifestyle guidance tool, not a substitute for clinical diagnosis.",
-  inDefinedTermSet: "https://lifequality.org.in/approach",
 };
 
 const breadcrumbSchema = {
@@ -222,13 +140,13 @@ const breadcrumbSchema = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://lifequality.org.in/",
+      item: SITE_URL,
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Our Approach",
-      item: "https://lifequality.org.in/approach",
+      item: `${SITE_URL}/approach`,
     },
   ],
 };
@@ -236,7 +154,7 @@ const breadcrumbSchema = {
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: approachFAQs.map((faq) => ({
+  mainEntity: faqs.map((faq) => ({
     "@type": "Question",
     name: faq.question,
     acceptedAnswer: {
@@ -246,380 +164,386 @@ const faqSchema = {
   })),
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalOrganization",
+  name: "Sutra Health",
+  url: SITE_URL,
+  areaServed: {
+    "@type": "City",
+    name: "Faridabad",
+  },
+};
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    medicalWebPageSchema,
+    breadcrumbSchema,
+    faqSchema,
+    organizationSchema,
+  ],
+};
+
 export default function ApproachPage() {
   return (
-    <main className="bg-[#FAF8F1] text-[#173F35]">
+    <main className="bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(pageSchema),
+        }}
       />
 
       {/* HERO */}
-      <section className="relative isolate overflow-hidden border-b border-[#173F35]/10">
-  {/* Background */}
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 -z-20 bg-[linear-gradient(135deg,#FAF8F1_0%,#F4F2E8_42%,#E7EFE7_100%)]"
-  />
-
-  {/* Organic gradient shapes */}
-  <div
-    aria-hidden="true"
-    className="absolute -right-32 -top-32 -z-10 h-[420px] w-[420px] rounded-full bg-[#A9C5AC]/35 blur-3xl sm:h-[520px] sm:w-[520px]"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute -bottom-48 left-[38%] -z-10 h-[420px] w-[420px] rounded-full bg-[#D8C9A9]/25 blur-3xl"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute -left-32 top-[28%] -z-10 h-[260px] w-[260px] rounded-full bg-[#C6D9CA]/25 blur-3xl"
-  />
-
-  {/* Fine editorial grid */}
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 -z-10 opacity-[0.035]"
-    style={{
-      backgroundImage:
-        "linear-gradient(#173F35 1px, transparent 1px), linear-gradient(90deg, #173F35 1px, transparent 1px)",
-      backgroundSize: "56px 56px",
-    }}
-  />
-
-  {/* Decorative rings */}
-  <div
-    aria-hidden="true"
-    className="absolute right-[7%] top-[16%] -z-10 hidden h-44 w-44 rounded-full border border-[#173F35]/10 lg:block"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute right-[10%] top-[21%] -z-10 hidden h-28 w-28 rounded-full border border-[#65966F]/15 lg:block"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute bottom-[13%] left-[8%] -z-10 hidden h-20 w-20 rounded-full border border-[#173F35]/10 lg:block"
-  />
-
-        <Container>
-          <div className="grid gap-10 py-14 sm:py-18 lg:grid-cols-[1fr_0.72fr] lg:items-end lg:gap-20 lg:py-20">
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
-                Our Approach
-              </p>
-
-              <h1 className="mt-4 max-w-[780px] font-serif text-[46px] leading-[0.98] tracking-[-0.045em] text-[#123F35] sm:text-[60px] lg:text-[76px]">
-                A different way
-                <br />
-                to approach{" "}
-                <span className="italic text-[#65966F]">health.</span>
-              </h1>
-
-              <p className="mt-6 max-w-[650px] text-[14px] leading-7 text-[#687A73] sm:text-[16px] sm:leading-8">
-                The Sutra Health Method brings together lifestyle medicine,
-                nutrition counselling, therapeutic yoga, breath & mindfulness,
-                behaviour change and health education through a practical,
-                personalised and sustainable process.
-              </p>
-
-              <div className="mt-7 flex flex-wrap gap-3">
-                <a
-                  href="#method"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#173F35] px-6 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-[#12352D]"
-                >
-                  Explore the Method
-                  <span aria-hidden="true">↓</span>
-                </a>
-
-                <Link
-                  href="/book-appointment"
-                  className="inline-flex items-center gap-2 rounded-full border border-[#173F35]/15 px-6 py-3.5 text-[13px] font-semibold text-[#173F35] transition-colors hover:bg-[#F0F4ED]"
-                >
-                  Book a Consultation
-                  <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-            </div>
-
-            <div className="border-l border-[#173F35]/10 pl-6 lg:mb-2 lg:pl-8">
-              <p className="font-serif text-[30px] leading-tight tracking-[-0.025em] text-[#173F35] sm:text-[36px]">
-                Health changes when everyday life changes.
-              </p>
-              <p className="mt-5 text-[13px] leading-6 text-[#71817A] sm:text-[14px] sm:leading-7">
-                The aim is not another short-term routine. It is to understand
-                what matters, practise useful changes and keep adapting as life
-                changes.
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* DIRECT ANSWER */}
-      <section className="border-b border-[#173F35]/10">
-        <Container>
-          <div className="grid gap-8 py-14 sm:py-16 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20 lg:py-20">
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                In brief
-              </p>
-              <h2 className="mt-3 max-w-[430px] font-serif text-[36px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[48px]">
-                What is the Sutra Health{" "}
-                <span className="italic text-[#65966F]">Method?</span>
-              </h2>
-            </div>
-
-            <div className="max-w-[720px]">
-              <p className="text-[15px] leading-8 text-[#687A73] sm:text-[17px]">
-                The Sutra Health Method is a six-stage whole-person approach:
-                <strong className="font-semibold text-[#173F35]">
-                  {" "}
-                  Understand, Identify, Personalise, Practise, Sustain and
-                  Adapt.
-                </strong>{" "}
-                It connects the right practices around the person rather than
-                treating lifestyle, nutrition, movement and wellbeing as
-                separate pieces.
-              </p>
-              <p className="mt-4 text-[14px] leading-7 text-[#687A73] sm:text-[15px] sm:leading-8">
-                The process can be revisited as health goals, circumstances and
-                priorities change. It is designed to complement appropriate
-                medical care, not replace it.
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* SIX STAGES */}
-      <section id="method" className="scroll-mt-24 bg-[#F0F4ED]">
-        <Container>
-          <div className="py-14 sm:py-16 lg:py-20">
-            <div className="max-w-[700px]">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                The six stages
-              </p>
-              <h2 className="mt-3 font-serif text-[36px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[48px]">
-                From understanding to{" "}
-                <span className="italic text-[#65966F]">
-                  lasting practice.
-                </span>
-              </h2>
-              <p className="mt-5 max-w-[650px] text-[14px] leading-7 text-[#687A73] sm:text-[15px] sm:leading-8">
-                The method gives health change a clear sequence without forcing
-                every person into the same plan.
-              </p>
-            </div>
-
-            <div className="mt-10 divide-y divide-[#173F35]/10 border-y border-[#173F35]/10">
-              {stages.map((stage) => (
-                <article
-                  key={stage.number}
-                  className="grid gap-3 py-7 sm:grid-cols-[90px_0.8fr_1.2fr] sm:items-center sm:py-8"
-                >
-                  <p className="font-serif text-[28px] tracking-[-0.025em] text-[#65966F]">
-                    {stage.number}
-                  </p>
-                  <h3 className="font-serif text-[27px] tracking-[-0.025em] text-[#173F35] sm:text-[32px]">
-                    {stage.title}
-                  </h3>
-                  <p className="text-[13px] leading-6 text-[#687A73] sm:text-[14px]">
-                    {stage.description}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* HOW THE PRACTICES CONNECT */}
-      <section className="border-b border-[#173F35]/10">
-        <Container>
-          <div className="py-14 sm:py-16 lg:py-20">
-            <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
-              <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                  How the practices connect
-                </p>
-                <h2 className="mt-3 max-w-[440px] font-serif text-[36px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[48px]">
-                  Different practices,{" "}
-                  <span className="italic text-[#65966F]">
-                    one coordinated plan.
-                  </span>
-                </h2>
-                <p className="mt-5 max-w-[420px] text-[13px] leading-6 text-[#687A73] sm:text-[14px] sm:leading-7">
-                  The practices are the tools. The Sutra Health Method is the
-                  process that helps decide how they fit together for the
-                  individual.
-                </p>
-              </div>
-
-              <div className="divide-y divide-[#173F35]/10 border-y border-[#173F35]/10">
-                {practices.map((practice) => (
-                  <article
-                    key={practice.number}
-                    className="grid gap-5 py-8 sm:grid-cols-[70px_1fr] sm:gap-7 sm:py-9"
-                  >
-                    <p className="font-serif text-[25px] text-[#65966F]">
-                      {practice.number}
-                    </p>
-
-                    <div>
-                      <h3 className="font-serif text-[29px] leading-tight tracking-[-0.025em] text-[#173F35] sm:text-[34px]">
-                        {practice.title}
-                      </h3>
-                      <p className="mt-3 max-w-[650px] text-[13px] leading-6 text-[#687A73] sm:text-[14px] sm:leading-7">
-                        {practice.description}
-                      </p>
-                      <Link
-                        href={practice.href}
-                        className="mt-4 inline-flex items-center gap-2 text-[12px] font-semibold text-[#173F35] hover:text-[#65966F]"
-                      >
-                        {practice.linkLabel}
-                        <span aria-hidden="true">→</span>
-                      </Link>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* PRINCIPLES */}
-      <section className="bg-[#F0F4ED]">
-        <Container>
-          <div className="grid gap-10 py-14 sm:py-16 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20 lg:py-20">
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                How we work
-              </p>
-              <h2 className="mt-3 max-w-[430px] font-serif text-[36px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[46px]">
-                Personalised enough for real{" "}
-                <span className="italic text-[#65966F]">life.</span>
-              </h2>
-            </div>
-
-            <div className="divide-y divide-[#173F35]/10 border-y border-[#173F35]/10">
-              {principles.map((principle) => (
-                <article
-                  key={principle.number}
-                  className="grid gap-3 py-6 sm:grid-cols-[70px_1fr_1.5fr] sm:items-center sm:py-7"
-                >
-                  <p className="font-serif text-[23px] text-[#65966F]">
-                    {principle.number}
-                  </p>
-                  <h3 className="font-serif text-[25px] tracking-[-0.02em] text-[#173F35]">
-                    {principle.title}
-                  </h3>
-                  <p className="text-[13px] leading-6 text-[#687A73]">
-                    {principle.text}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* 21-POINT ASSESSMENT */}
-      <section className="border-t border-[#173F35]/10">
-        <Container>
-          <div className="grid gap-8 py-14 sm:py-16 lg:grid-cols-[1fr_0.75fr] lg:items-center lg:gap-20 lg:py-20">
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                Start with understanding
-              </p>
-              <h2 className="mt-3 max-w-[680px] font-serif text-[38px] leading-[1.03] tracking-[-0.035em] text-[#123F35] sm:text-[52px]">
-                See where your everyday health patterns{" "}
-                <span className="italic text-[#65966F]">stand today.</span>
-              </h2>
-              <p className="mt-5 max-w-[650px] text-[14px] leading-7 text-[#687A73] sm:text-[15px] sm:leading-8">
-                The 21-Point Lifestyle Assessment is a 21-question review
-                across sleep, food, movement, digestion and stress. It is a
-                starting point for identifying where to focus, not a clinical
-                diagnosis.
-              </p>
-            </div>
-
-            <div className="lg:justify-self-end">
-              <Link
-                href="/score"
-                className="inline-flex items-center gap-2 rounded-full bg-[#173F35] px-7 py-4 text-[13px] font-semibold text-white transition-colors hover:bg-[#12352D]"
-              >
-                Explore the 21-Point Assessment
-                <span aria-hidden="true">→</span>
-              </Link>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* FAQ */}
-      <FAQ faqs={approachFAQs} />
-
-      {/* FINAL CTA */}
-      <section className="bg-[#173F35]">
-        <Container>
-          <div className="mx-auto max-w-[760px] py-14 text-center sm:py-16 lg:py-20">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B7CCB8]">
-              Explore Sutra Health
+      <section className="border-b border-[var(--sutra-border)]">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+          <div className="max-w-5xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+              Our Approach
             </p>
 
-            <h2 className="mt-3 font-serif text-[38px] leading-[1.05] tracking-[-0.035em] text-[#FAF8F1] sm:text-[50px]">
-              Understand your health. Build the habits.{" "}
-              <span className="italic text-[#B7CCB8]">
-                Sustain the change.
-              </span>
-            </h2>
+            <h1 className="mt-5 max-w-4xl font-[var(--font-serif)] text-5xl leading-[1.02] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
+              Healthcare that looks at the whole picture.
+            </h1>
 
-            <p className="mx-auto mt-5 max-w-[620px] text-[14px] leading-7 text-[#C5D2CC] sm:text-[15px] sm:leading-8">
-              Explore the practices that may fit your needs, take the
-              21-Point Lifestyle Assessment, or speak with Sutra Health about
-              the right next step.
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-[var(--sutra-muted)] sm:text-xl sm:leading-9">
+              Sutra Health brings medical understanding together with the
+              everyday factors that shape health — including lifestyle,
+              nutrition, movement and behaviour.
             </p>
 
-            <div className="mt-7 flex flex-wrap justify-center gap-3">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/book-appointment"
-                className="inline-flex items-center gap-2 rounded-full bg-[#FAF8F1] px-6 py-3.5 text-[13px] font-semibold text-[#173F35] transition-colors hover:bg-white"
+                className="inline-flex items-center justify-center rounded-none bg-[var(--sutra-teal)] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--sutra-teal-hover)]"
               >
                 Book a Consultation
-                <span aria-hidden="true">→</span>
               </Link>
 
               <Link
                 href="/what-we-do"
-                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-white/10"
+                className="inline-flex items-center justify-center rounded-none border border-[var(--sutra-border-strong)] px-6 py-3 text-sm font-semibold text-[var(--sutra-ink)] transition-colors hover:border-[var(--sutra-teal)] hover:text-[var(--sutra-teal)]"
               >
-                Explore What We Do
-                <span aria-hidden="true">→</span>
+                See What We Do
+              </Link>
+            </div>
+
+            <div className="mt-9 flex flex-wrap gap-x-6 gap-y-2 text-sm text-[var(--sutra-muted)]">
+              <span>Doctor-led</span>
+              <span>Evidence-informed</span>
+              <span>Whole-person care</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY THIS APPROACH */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+          <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+                Why This Approach
+              </p>
+
+              <h2 className="mt-4 max-w-md font-[var(--font-serif)] text-3xl leading-tight tracking-[-0.025em] sm:text-4xl">
+                Health rarely comes down to one factor.
+              </h2>
+            </div>
+
+            <div className="max-w-2xl">
+              <p className="text-lg leading-8 text-[var(--sutra-muted)]">
+                A health concern may have a medical dimension, but the way it
+                affects everyday life can also be connected to food, movement,
+                sleep, stress, behaviour and other circumstances.
+              </p>
+
+              <p className="mt-6 text-lg leading-8 text-[var(--sutra-muted)]">
+                Looking at these factors does not mean replacing medical care.
+                It means considering the wider context when those factors are
+                relevant to the person.
+              </p>
+
+              <p className="mt-6 text-lg leading-8 text-[var(--sutra-muted)]">
+                This is the thinking behind Sutra Health: understand the
+                individual first, then connect the parts of care that are
+                relevant to them.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FIVE DIMENSIONS */}
+      <section className="border-y border-[var(--sutra-border)] bg-[var(--sutra-porcelain)]">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+          <div className="max-w-2xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+              A Connected View
+            </p>
+
+            <h2 className="mt-4 font-[var(--font-serif)] text-3xl leading-tight tracking-[-0.025em] sm:text-4xl">
+              The parts of care can inform one another.
+            </h2>
+
+            <p className="mt-5 max-w-xl text-base leading-7 text-[var(--sutra-muted)]">
+              Not every person needs every form of support. The relevant areas
+              depend on the individual's health, circumstances and priorities.
+            </p>
+          </div>
+
+          <div className="mt-10 border-t border-[var(--sutra-border-strong)]">
+            {principles.map((principle) => (
+              <div
+                key={principle.number}
+                className="grid gap-5 border-b border-[var(--sutra-border-strong)] py-7 sm:grid-cols-[80px_0.8fr_1.2fr] sm:gap-8 sm:py-8"
+              >
+                <span className="text-sm font-semibold tracking-[0.12em] text-[var(--sutra-sage)]">
+                  {principle.number}
+                </span>
+
+                <h3 className="font-[var(--font-serif)] text-2xl leading-tight tracking-[-0.02em]">
+                  {principle.title}
+                </h3>
+
+                <p className="max-w-xl text-base leading-7 text-[var(--sutra-muted)]">
+                  {principle.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* HOW CARE COMES TOGETHER */}
+      <section className="bg-[var(--sutra-teal)] text-white">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+          <div className="max-w-2xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
+              How Sutra Works
+            </p>
+
+            <h2 className="mt-4 font-[var(--font-serif)] text-3xl leading-tight tracking-[-0.025em] sm:text-4xl">
+              Understand. Personalise. Practise. Review.
+            </h2>
+
+            <p className="mt-5 max-w-xl text-base leading-7 text-white/70 sm:text-lg sm:leading-8">
+              The approach is designed to move from understanding your current
+              situation towards practical steps that can be reviewed over time.
+            </p>
+          </div>
+
+          <div className="mt-10 border-t border-white/20">
+            {process.map((step) => (
+              <div
+                key={step.number}
+                className="grid gap-5 border-b border-white/20 py-7 sm:grid-cols-[80px_0.8fr_1.2fr] sm:gap-8 sm:py-8"
+              >
+                <span className="text-sm font-semibold tracking-[0.12em] text-white/50">
+                  {step.number}
+                </span>
+
+                <h3 className="font-[var(--font-serif)] text-2xl leading-tight">
+                  {step.title}
+                </h3>
+
+                <p className="max-w-xl text-base leading-7 text-white/70">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-9">
+            <Link
+              href="/book-appointment"
+              className="inline-flex items-center justify-center rounded-none bg-white px-6 py-3 text-sm font-semibold text-[var(--sutra-teal)] transition-colors hover:bg-[var(--sutra-porcelain)]"
+            >
+              Start a Conversation
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* PRACTICAL CARE */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+                Practical, Not Prescriptive
+              </p>
+
+              <h2 className="mt-4 max-w-3xl font-[var(--font-serif)] text-4xl leading-[1.08] tracking-[-0.03em] sm:text-5xl">
+                Recommendations have to make sense in real life.
+              </h2>
+            </div>
+
+            <div className="max-w-2xl">
+              <p className="text-lg leading-8 text-[var(--sutra-muted)]">
+                Health advice is easier to use when it fits the person's
+                circumstances. Work, family responsibilities, preferences,
+                routines and resources can all influence what is realistic.
+              </p>
+
+              <p className="mt-6 text-lg leading-8 text-[var(--sutra-muted)]">
+                The goal is therefore not to create a perfect routine. It is
+                to identify practical steps that can be understood, practised
+                and adjusted.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CLINICAL PERSPECTIVE */}
+      <section className="border-y border-[var(--sutra-border)] bg-[var(--sutra-porcelain)]">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+                Clinical Perspective
+              </p>
+
+              <h2 className="mt-4 font-[var(--font-serif)] text-3xl leading-tight tracking-[-0.025em] sm:text-4xl">
+                Grounded in medicine, informed by public health.
+              </h2>
+            </div>
+
+            <div className="max-w-2xl">
+              <p className="font-[var(--font-serif)] text-2xl leading-tight">
+                Dr. Rakesh Sarwal
+              </p>
+
+              <p className="mt-2 text-sm font-medium text-[var(--sutra-muted)]">
+                MBBS, MPH, DrPH
+              </p>
+
+              <p className="mt-5 text-lg leading-8 text-[var(--sutra-muted)]">
+                Sutra Health's approach is rooted in the idea that good
+                healthcare should understand both the clinical picture and the
+                circumstances in which people live.
+              </p>
+
+              <Link
+                href="/doctors"
+                className="mt-7 inline-flex items-center justify-center rounded-none border border-[var(--sutra-border-strong)] px-6 py-3 text-sm font-semibold text-[var(--sutra-ink)] transition-colors hover:border-[var(--sutra-teal)] hover:text-[var(--sutra-teal)]"
+              >
+                Meet the Clinical Team
               </Link>
             </div>
           </div>
-        </Container>
+        </div>
+      </section>
+
+      {/* LOCAL ACCESS */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:px-12 lg:py-20">
+          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-20">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+                Access
+              </p>
+
+              <h2 className="mt-4 font-[var(--font-serif)] text-3xl leading-tight tracking-[-0.025em] sm:text-4xl">
+                Whole-person healthcare in Faridabad and online.
+              </h2>
+            </div>
+
+            <div>
+              <p className="max-w-2xl text-lg leading-8 text-[var(--sutra-muted)]">
+                Sutra Health is based in Faridabad and offers selected services
+                through online consultations. The appropriate format depends
+                on the service and your individual needs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-[var(--sutra-porcelain)]">
+        <div className="mx-auto max-w-4xl px-5 py-16 sm:px-8 sm:py-20 lg:py-24">
+          <div className="text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+              Frequently Asked Questions
+            </p>
+
+            <h2 className="mt-4 font-[var(--font-serif)] text-3xl leading-tight tracking-[-0.025em] sm:text-4xl">
+              About our approach
+            </h2>
+          </div>
+
+          <div className="mt-10 border-t border-[var(--sutra-border-strong)]">
+            {faqs.map((faq) => (
+              <details
+                key={faq.question}
+                className="group border-b border-[var(--sutra-border-strong)]"
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 font-[var(--font-serif)] text-xl leading-tight marker:hidden">
+                  <span>{faq.question}</span>
+
+                  <span
+                    className="relative flex h-5 w-5 shrink-0 items-center justify-center text-[var(--sutra-teal)]"
+                    aria-hidden="true"
+                  >
+                    <span className="absolute h-px w-4 bg-current" />
+                    <span className="absolute h-4 w-px bg-current transition-transform duration-200 group-open:rotate-90" />
+                  </span>
+                </summary>
+
+                <div className="max-w-3xl pb-6 pr-8 text-base leading-7 text-[var(--sutra-muted)]">
+                  {faq.answer}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="bg-[var(--sutra-teal)] text-white">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-16">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
+                Your Next Step
+              </p>
+
+              <h2 className="mt-4 max-w-3xl font-[var(--font-serif)] text-4xl leading-[1.08] tracking-[-0.03em] sm:text-5xl">
+                Start with a conversation about your health.
+              </h2>
+
+              <p className="mt-5 max-w-2xl text-base leading-7 text-white/75 sm:text-lg sm:leading-8">
+                Begin with what matters to you and explore the care and
+                support that may be relevant to your needs.
+              </p>
+            </div>
+
+            <div>
+              <Link
+                href="/book-appointment"
+                className="inline-flex items-center justify-center rounded-none bg-white px-7 py-3 text-sm font-semibold text-[var(--sutra-teal)] transition-colors hover:bg-[var(--sutra-porcelain)]"
+              >
+                Book a Consultation
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* MEDICAL DISCLAIMER */}
+      <section className="bg-[var(--sutra-porcelain)]">
+        <div className="mx-auto max-w-7xl px-5 py-7 sm:px-8 lg:px-12">
+          <p className="max-w-5xl text-xs leading-6 text-[var(--sutra-muted)]">
+            Medical information on this page is provided for general
+            information and does not replace individual medical advice,
+            diagnosis or treatment. Please consult an appropriately qualified
+            healthcare professional for advice about your individual health
+            needs.
+          </p>
+        </div>
       </section>
     </main>
   );

@@ -102,14 +102,14 @@ const healthAreas = [
 ];
 
 export const metadata = {
-  title: "What We Do | Sutra Health",
+  title: "What We Do",
   description:
     "Explore Sutra Health's physician consultation, lifestyle medicine, nutrition, therapeutic yoga, and behaviour, stress and mind practices.",
   alternates: {
     canonical: "https://lifequality.org.in/what-we-do",
   },
   openGraph: {
-    title: "What We Do | Sutra Health",
+    title: "What We Do",
     description:
       "Doctor-led integrative healthcare combining medical care with lifestyle, nutrition, therapeutic yoga and behaviour support.",
     url: "https://lifequality.org.in/what-we-do",
