@@ -18,7 +18,7 @@ export default function HealthBridge() {
             lg:grid-cols-[1.15fr_0.85fr]
             lg:gap-16
             lg:py-24
-            xl:py-28
+            xl:py-24
           "
         >
           {/* Main introduction */}

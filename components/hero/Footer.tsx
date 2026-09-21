@@ -43,59 +43,49 @@ const socialLinks = [
     href: "https://www.linkedin.com/in/equal-society-ngo",
     icon: "fa-brands fa-linkedin-in",
   },
-  {
-    name: "Medium",
-    href: "https://sutra-health.medium.com/",
-    icon: "fa-brands fa-medium",
-  },
-  {
-    name: "Pinterest",
-    href: "https://in.pinterest.com/equal_society/",
-    icon: "fa-brands fa-pinterest",
-  },
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-[#17413D] text-[#F7F5EF]">
+    <footer className="bg-[var(--sutra-teal)] text-[var(--sutra-porcelain)]">
       <Container>
         <div className="py-14 sm:py-16 lg:py-20">
-          {/* Main footer */}
-          <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.6fr_0.8fr_0.9fr_1fr] lg:gap-14">
+          <div className="grid gap-12 lg:grid-cols-[1.7fr_0.75fr_0.9fr_1fr] lg:gap-14">
             {/* Brand */}
-            <div className="max-w-[420px]">
+            <div className="max-w-[440px]">
               <Link
                 href="/"
                 aria-label="Sutra Health home"
-                className="font-serif text-[30px] leading-none tracking-[-0.035em] text-[#F7F5EF]"
+                className="inline-block font-[var(--font-manrope)] text-[26px] font-bold leading-none tracking-[-0.035em] text-[var(--sutra-porcelain)] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--sutra-teal)]"
               >
                 Sutra Health
               </Link>
 
-              <p className="mt-5 max-w-[390px] text-[15px] leading-7 text-[#D4DED8] sm:text-[16px] sm:leading-7.5">
+              <p className="mt-5 max-w-[400px] text-[15px] leading-7 text-white/70 sm:text-base sm:leading-7">
                 Doctor-led, personalised healthcare that brings medical care,
                 lifestyle and everyday wellbeing into one connected approach.
               </p>
 
-              {/* Social links */}
-              <div className="mt-6 flex flex-wrap gap-2">
+              <div
+                aria-label="Sutra Health social links"
+                className="mt-7 flex flex-wrap gap-2"
+              >
                 {socialLinks.map((social) => (
                   <a
                     key={social.name}
                     href={social.href}
-                    target={
-                      social.href.startsWith("mailto:")
-                        ? undefined
-                        : "_blank"
-                    }
+                    target={social.href.startsWith("mailto:") ? undefined : "_blank"}
                     rel={
                       social.href.startsWith("mailto:")
                         ? undefined
                         : "noopener noreferrer"
                     }
-                    aria-label={`Sutra Health on ${social.name}`}
-                    title={social.name}
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-[13px] text-[#C7D5CC] transition-all duration-300 hover:border-white/30 hover:bg-white/[0.07] hover:text-[#F7F5EF]"
+                    aria-label={
+                      social.name === "Email"
+                        ? "Email Sutra Health"
+                        : `Sutra Health on ${social.name}`
+                    }
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-[13px] text-white/65 transition-colors duration-200 hover:border-white/30 hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--sutra-teal)]"
                   >
                     <i className={social.icon} aria-hidden="true" />
                   </a>
@@ -105,19 +95,16 @@ export default function Footer() {
 
             {/* Explore */}
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B8C8BF]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/55">
                 Explore
               </p>
 
-              <nav
-                aria-label="Explore"
-                className="mt-5 flex flex-col gap-3"
-              >
+              <nav aria-label="Explore" className="mt-5 flex flex-col gap-3">
                 {exploreLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="w-fit text-[14px] text-[#D4DED8] transition-colors duration-300 hover:text-[#F7F5EF]"
+                    className="w-fit text-sm text-white/70 transition-colors duration-200 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--sutra-teal)]"
                   >
                     {link.label}
                   </Link>
@@ -127,19 +114,16 @@ export default function Footer() {
 
             {/* Connect */}
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B8C8BF]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/55">
                 Connect
               </p>
 
-              <nav
-                aria-label="Connect"
-                className="mt-5 flex flex-col gap-3"
-              >
+              <nav aria-label="Connect" className="mt-5 flex flex-col gap-3">
                 {connectLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="w-fit text-[14px] text-[#D4DED8] transition-colors duration-300 hover:text-[#F7F5EF]"
+                    className="w-fit text-sm text-white/70 transition-colors duration-200 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--sutra-teal)]"
                   >
                     {link.label}
                   </Link>
@@ -149,14 +133,14 @@ export default function Footer() {
 
             {/* Contact */}
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B8C8BF]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/55">
                 Contact
               </p>
 
-              <div className="mt-5 flex flex-col gap-3 text-[14px] leading-6 text-[#D4DED8]">
+              <div className="mt-5 flex flex-col gap-3 text-sm leading-6 text-white/70">
                 <a
                   href="mailto:equal.society@gmail.com"
-                  className="w-fit break-words transition-colors duration-300 hover:text-[#F7F5EF]"
+                  className="w-fit break-words transition-colors duration-200 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--sutra-teal)]"
                 >
                   equal.society@gmail.com
                 </a>
@@ -165,7 +149,7 @@ export default function Footer() {
                   href="https://wa.me/919013103676"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-fit transition-colors duration-300 hover:text-[#F7F5EF]"
+                  className="w-fit transition-colors duration-200 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--sutra-teal)]"
                 >
                   WhatsApp us
                 </a>
@@ -173,18 +157,18 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Bottom */}
           <div className="mt-14 border-t border-white/10 pt-6 sm:mt-16">
-            <div className="flex flex-col gap-4 text-[11px] leading-5 text-[#AFC0B7] sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-col gap-3 text-[11px] leading-5 text-white/50 sm:flex-row sm:items-center sm:justify-between">
               <p>
                 © {new Date().getFullYear()} Sutra Health. All rights reserved.
               </p>
 
-              
+              <p>
+                Rooted in the work of EQUAL Society since 1997.
+              </p>
             </div>
 
-            {/* Small disclaimer */}
-            <p className="mt-5 max-w-[920px] text-[10px] leading-5 text-[#91AAA0]">
+            <p className="mt-5 max-w-[920px] text-[10px] leading-5 text-white/40">
               Sutra Health provides integrative and lifestyle-focused support
               alongside appropriate medical care. It does not replace
               diagnosis, treatment or advice from your doctor.

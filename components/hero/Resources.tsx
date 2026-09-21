@@ -81,7 +81,7 @@ export default function Resources() {
                   </span>
                 </div>
 
-                <p className="mt-12 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
+                <p className="mt-8 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
                   {resource.type}
                 </p>
 

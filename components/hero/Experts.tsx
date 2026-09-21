@@ -1,181 +1,104 @@
+import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/shared/Container";
 
-const exploreLinks = [
-  { label: "Our Approach", href: "/approach" },
-  { label: "Conditions", href: "/conditions" },
-  { label: "Resources", href: "/resources" },
-];
-
-const connectLinks = [
-  { label: "Book a Consultation", href: "/book-appointment" },
-  { label: "Contact Us", href: "/contact" },
-];
-
-const socialLinks = [
-  {
-    name: "Instagram",
-    href: "https://www.instagram.com/sutrahealth/",
-    icon: "fa-brands fa-instagram",
-  },
-  {
-    name: "Facebook",
-    href: "https://www.facebook.com/people/Sutrahealth-Equal/",
-    icon: "fa-brands fa-facebook-f",
-  },
-  {
-    name: "YouTube",
-    href: "https://www.youtube.com/@sutra-health",
-    icon: "fa-brands fa-youtube",
-  },
-  {
-    name: "Email",
-    href: "mailto:equal.society@gmail.com",
-    icon: "fa-solid fa-envelope",
-  },
-  {
-    name: "WhatsApp",
-    href: "https://wa.me/919013103676",
-    icon: "fa-brands fa-whatsapp",
-  },
-  {
-    name: "LinkedIn",
-    href: "https://www.linkedin.com/in/equal-society-ngo",
-    icon: "fa-brands fa-linkedin-in",
-  },
-];
-
-export default function Footer() {
+export default function Experts() {
   return (
-    <footer className="bg-[var(--sutra-teal)] text-[var(--sutra-porcelain)]">
+    <section
+      id="clinical-team"
+      aria-labelledby="clinical-team-heading"
+      className="bg-[var(--sutra-porcelain)]"
+    >
       <Container>
-        <div className="py-14 sm:py-16 lg:py-20">
-          <div className="grid gap-12 lg:grid-cols-[1.7fr_0.75fr_0.9fr_1fr] lg:gap-14">
-            {/* Brand */}
-            <div className="max-w-[440px]">
-              <Link
-                href="/"
-                aria-label="Sutra Health home"
-                className="inline-block font-[var(--font-manrope)] text-[26px] font-bold leading-none tracking-[-0.035em] text-[var(--sutra-porcelain)] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--sutra-teal)]"
-              >
-                Sutra Health
-              </Link>
-
-              <p className="mt-5 max-w-[400px] text-[15px] leading-7 text-white/70 sm:text-base sm:leading-7">
-                Doctor-led, personalised healthcare that brings medical care,
-                lifestyle and everyday wellbeing into one connected approach.
-              </p>
-
-              <div
-                aria-label="Sutra Health social links"
-                className="mt-7 flex flex-wrap gap-2"
-              >
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target={social.href.startsWith("mailto:") ? undefined : "_blank"}
-                    rel={
-                      social.href.startsWith("mailto:")
-                        ? undefined
-                        : "noopener noreferrer"
-                    }
-                    aria-label={
-                      social.name === "Email"
-                        ? "Email Sutra Health"
-                        : `Sutra Health on ${social.name}`
-                    }
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-[13px] text-white/65 transition-colors duration-200 hover:border-white/30 hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--sutra-teal)]"
-                  >
-                    <i className={social.icon} aria-hidden="true" />
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Explore */}
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/55">
-                Explore
-              </p>
-
-              <nav aria-label="Explore" className="mt-5 flex flex-col gap-3">
-                {exploreLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="w-fit text-sm text-white/70 transition-colors duration-200 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--sutra-teal)]"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </nav>
-            </div>
-
-            {/* Connect */}
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/55">
-                Connect
-              </p>
-
-              <nav aria-label="Connect" className="mt-5 flex flex-col gap-3">
-                {connectLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="w-fit text-sm text-white/70 transition-colors duration-200 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--sutra-teal)]"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </nav>
-            </div>
-
-            {/* Contact */}
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/55">
-                Contact
-              </p>
-
-              <div className="mt-5 flex flex-col gap-3 text-sm leading-6 text-white/70">
-                <a
-                  href="mailto:equal.society@gmail.com"
-                  className="w-fit break-words transition-colors duration-200 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--sutra-teal)]"
-                >
-                  equal.society@gmail.com
-                </a>
-
-                <a
-                  href="https://wa.me/919013103676"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-fit transition-colors duration-200 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--sutra-teal)]"
-                >
-                  WhatsApp us
-                </a>
-              </div>
+        <div className="grid gap-10 py-16 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16 lg:py-24">
+          <div className="relative">
+            <div className="relative aspect-[4/4.7] w-full max-w-[520px] overflow-hidden">
+              <Image
+                src="/images/doctors.png"
+                alt="Dr. Rakesh Sarwal, public health physician and Therapeutic Yoga Consultant"
+                fill
+                sizes="(max-width: 1023px) 100vw, 42vw"
+                className="object-cover object-center"
+              />
             </div>
           </div>
 
-          <div className="mt-14 border-t border-white/10 pt-6 sm:mt-16">
-            <div className="flex flex-col gap-3 text-[11px] leading-5 text-white/50 sm:flex-row sm:items-center sm:justify-between">
-              <p>
-                © {new Date().getFullYear()} Sutra Health. All rights reserved.
-              </p>
+          <div className="max-w-[650px]">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+              Meet the Clinical Team
+            </p>
 
-              <p>
-                Rooted in the work of EQUAL Society since 1997.
+            <h2
+              id="clinical-team-heading"
+              className="mt-5 max-w-xl font-[var(--font-dm-serif)] text-4xl leading-[1.05] tracking-[-0.025em] text-[var(--sutra-ink)] sm:text-5xl lg:text-6xl"
+            >
+              Clinical guidance grounded in public health.
+            </h2>
+
+            <div className="mt-7">
+              <p className="text-base font-semibold leading-7 text-[var(--sutra-teal)] sm:text-lg">
+                Dr. Rakesh Sarwal, MBBS, MPH, DrPH
+              </p>
+              <p className="mt-1 text-sm text-[var(--sutra-muted)] sm:text-base">
+                Therapeutic Yoga Consultant
               </p>
             </div>
 
-            <p className="mt-5 max-w-[920px] text-[10px] leading-5 text-white/40">
-              Sutra Health provides integrative and lifestyle-focused support
-              alongside appropriate medical care. It does not replace
-              diagnosis, treatment or advice from your doctor.
+            <div className="mt-6 max-w-xl space-y-4 text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
+              <p>
+                Dr. Rakesh Sarwal is a public health physician and Therapeutic
+                Yoga Consultant whose work focuses on prevention and
+                evidence-informed lifestyle change alongside appropriate
+                medical care.
+              </p>
+
+              <p>
+                Sutra Health brings these perspectives together to help people
+                make practical changes that can fit into everyday life.
+              </p>
+            </div>
+
+            <div className="mt-8 flex flex-wrap items-center gap-x-7 gap-y-4">
+              <Link
+                href="/doctors"
+                className="group inline-flex min-h-11 items-center gap-3 text-sm font-semibold text-[var(--sutra-teal)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--sutra-teal)] focus-visible:ring-offset-4"
+              >
+                <span className="border-b border-[var(--sutra-teal)] pb-1">
+                  Meet our clinical team
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="transition-transform duration-200 group-hover:translate-x-1"
+                >
+                  →
+                </span>
+              </Link>
+
+              <a
+                href="https://academic.lifequality.org.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex min-h-11 items-center gap-3 text-sm font-semibold text-[var(--sutra-muted)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--sutra-teal)] focus-visible:ring-offset-4"
+              >
+                <span className="border-b border-[var(--sutra-muted)] pb-1">
+                  Academic profile
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="transition-transform duration-200 group-hover:translate-x-1"
+                >
+                  ↗
+                </span>
+              </a>
+            </div>
+
+            <p className="mt-7 max-w-xl border-t border-[var(--sutra-border)] pt-5 text-xs leading-5 text-[var(--sutra-muted)]">
+              Lifestyle and therapeutic approaches complement appropriate
+              medical care.
             </p>
           </div>
         </div>
       </Container>
-    </footer>
+    </section>
   );
 }

@@ -32,10 +32,9 @@ export default function HowItWorks() {
     <section
       id="how-it-works"
       aria-labelledby="how-it-works-heading"
-      className="bg-[var(--sutra-teal)] py-20 text-[var(--sutra-white)] sm:py-24 lg:py-28"
+      className="bg-[var(--sutra-teal)] py-16 text-[var(--sutra-white)] sm:py-20 lg:py-20"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        {/* Section introduction */}
         <div className="max-w-3xl">
           <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-sage)]">
             How Sutra Works
@@ -54,14 +53,13 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        {/* Process */}
-        <ol className="mt-16 grid gap-px overflow-hidden border border-white/15 bg-white/15 md:grid-cols-2 lg:mt-20 lg:grid-cols-4">
+        <ol className="mt-12 grid overflow-hidden border border-white/15 md:grid-cols-2 lg:mt-14 lg:grid-cols-4">
           {steps.map((step) => (
             <li
               key={step.number}
-              className="group bg-[var(--sutra-teal)] p-7 transition-colors duration-300 hover:bg-[var(--sutra-teal-hover)] sm:p-8 lg:min-h-[330px] lg:p-9"
+              className="border-b border-white/15 p-6 last:border-b-0 md:nth-[odd]:border-r md:nth-[3]:border-b-0 md:nth-[4]:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0 lg:p-8"
             >
-              <div className="flex h-full flex-col">
+              <div className="flex min-h-[245px] flex-col">
                 <span className="text-xs font-semibold tracking-[0.14em] text-[var(--sutra-sage)]">
                   {step.number}
                 </span>
@@ -69,14 +67,14 @@ export default function HowItWorks() {
                 <div className="mt-auto">
                   <div
                     aria-hidden="true"
-                    className="mb-7 h-px w-10 bg-white/30 transition-all duration-300 group-hover:w-16"
+                    className="mb-6 h-px w-10 bg-white/30"
                   />
 
                   <h3 className="font-[var(--font-dm-serif)] text-3xl leading-tight">
                     {step.title}
                   </h3>
 
-                  <p className="mt-4 text-sm leading-6 text-white/65 sm:text-base">
+                  <p className="mt-3 text-sm leading-6 text-white/65 sm:text-base">
                     {step.description}
                   </p>
                 </div>
@@ -85,10 +83,10 @@ export default function HowItWorks() {
           ))}
         </ol>
 
-        <div className="mt-8">
+        <div className="mt-7">
           <Link
             href="/approach"
-            className="group inline-flex items-center gap-3 text-sm font-semibold text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--sutra-teal)]"
+            className="group inline-flex min-h-11 items-center gap-3 text-sm font-semibold text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--sutra-teal)]"
           >
             <span className="border-b border-white pb-1">
               Explore our approach

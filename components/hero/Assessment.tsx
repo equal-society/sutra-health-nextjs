@@ -5,7 +5,7 @@ export default function Assessment() {
     <section
       id="assessment"
       aria-labelledby="assessment-heading"
-      className="bg-[var(--sutra-porcelain)] py-20 sm:py-24 lg:py-28"
+      className="bg-[var(--sutra-porcelain)] py-20 sm:py-24 lg:py-24"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
