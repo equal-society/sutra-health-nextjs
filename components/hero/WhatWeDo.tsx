@@ -4,31 +4,38 @@ import { ArrowUpRight } from "lucide-react";
 const services = [
   {
     number: "01",
-    title: "Lifestyle Medicine",
+    title: "Physician Consultation",
     description:
-      "Evidence-informed support around nutrition, sleep, stress and everyday habits to help build healthier routines.",
-    href: "/what-we-do/lifestyle",
+      "Doctor-led consultation to understand your health and discuss appropriate next steps.",
+    href: "/book-appointment",
   },
   {
     number: "02",
-    title: "Nutrition Counselling",
+    title: "Lifestyle Medicine",
     description:
-      "Personalised guidance on food and eating habits shaped around your health, needs and daily life.",
-    href: "/what-we-do/nutrition",
+      "Practical support around nutrition, sleep, stress and everyday habits.",
+    href: "/what-we-do/lifestyle",
   },
   {
     number: "03",
-    title: "Therapeutic Yoga",
+    title: "Nutrition",
     description:
-      "Adapted yoga practices including asana, pranayama and relaxation, shaped around your health and ability.",
-    href: "/what-we-do/therapeutic-yoga",
+      "Personalised guidance around food and healthier eating habits.",
+    href: "/what-we-do/nutrition",
   },
   {
     number: "04",
-    title: "Behaviour & Mind Practices",
+    title: "Therapeutic Yoga",
     description:
-      "Practical support for habits, stress, routines and behaviour changes that are easier to sustain over time.",
-    href: "/what-we-do/breath-mindfulness",
+      "Adapted yoga practices shaped around your health and ability.",
+    href: "/what-we-do/therapeutic-yoga",
+  },
+  {
+    number: "05",
+    title: "Behaviour, Stress & Mind",
+    description:
+      "Practical support for habits, stress and sustainable behaviour change.",
+    href: "/what-we-do/behaviour-stress-mind",
   },
 ];
 
@@ -39,89 +46,110 @@ export default function WhatWeDo() {
       aria-labelledby="what-we-do-title"
       className="bg-white"
     >
-      <div className="mx-auto max-w-[1180px] px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
-        {/* =====================================================
-            SECTION INTRO
-        ====================================================== */}
-        <div className="grid gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:gap-16">
-          {/* Eyebrow */}
-          <div>
-            <div className="flex items-center gap-3">
-              <span
-                aria-hidden="true"
-                className="h-px w-8 bg-[#91A298]"
-              />
+      <div className="mx-auto max-w-[1180px] px-6 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-20">
+        {/* Introduction */}
+        <div className="max-w-[760px]">
+          <p className="font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[#65736D]">
+            What we do
+          </p>
 
-              <span className="font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[#4F5A54]">
-                What we do
-              </span>
-            </div>
-          </div>
+          <h2
+            id="what-we-do-title"
+            className="
+              mt-4
+              font-serif
+              text-[36px]
+              font-medium
+              leading-[1.08]
+              tracking-[-0.025em]
+              text-[#202522]
+              sm:text-[44px]
+              lg:text-[52px]
+            "
+          >
+            Care that brings different parts of your health together.
+          </h2>
 
-          {/* Heading + Intro */}
-          <div className="max-w-[720px]">
-            <h2
-              id="what-we-do-title"
-              className="font-serif text-[36px] font-medium leading-[1.12] tracking-[-0.02em] text-[#202522] sm:text-[44px] lg:text-[54px]"
-            >
-              A practical approach
-              <br className="hidden sm:block" />
-              to better health.
-            </h2>
-
-            <p className="mt-6 max-w-[640px] font-sans text-[17px] leading-[1.72] text-[#4F5A54] sm:mt-7 sm:text-[18px]">
-              Sutra Health brings together different areas of lifestyle care
-              to help you make healthier choices that fit your health, needs
-              and everyday life.
-            </p>
-          </div>
+          <p className="mt-5 max-w-[650px] font-sans text-[16px] leading-[1.65] text-[#65736D] sm:text-[17px]">
+            Our care combines medical guidance with practical support for the
+            everyday factors that influence your health.
+          </p>
         </div>
 
-        {/* =====================================================
-            SERVICES
-        ====================================================== */}
-        <div className="mt-12 border-t border-[#202522]/12 sm:mt-14 lg:mt-16">
+        {/* Services */}
+        <div className="mt-10 border-t border-[#202522]/10">
           {services.map((service) => (
             <Link
               key={service.number}
               href={service.href}
-              className="group block border-b border-[#202522]/12 transition-colors duration-300 hover:bg-[#F7F5EF]"
+              className="
+                group block
+                border-b border-[#202522]/10
+                transition-colors duration-300
+                hover:bg-[#F7F5EF]
+                focus-visible:bg-[#F7F5EF]
+                focus-visible:outline-none
+              "
             >
-              <div className="grid gap-5 py-8 sm:py-9 lg:grid-cols-[60px_minmax(240px,0.9fr)_minmax(300px,1fr)_44px] lg:items-center lg:gap-10 lg:py-10">
-                {/* Number */}
-                <span className="font-sans text-[12px] font-medium tracking-[0.08em] text-[#65736D]">
+              <div
+                className="
+                  grid gap-3 py-6
+                  sm:grid-cols-[52px_minmax(220px,0.9fr)_minmax(300px,1fr)]
+                  sm:items-center
+                  sm:gap-6
+                  lg:grid-cols-[60px_minmax(240px,0.9fr)_minmax(320px,1fr)_40px]
+                  lg:gap-8
+                "
+              >
+                <span className="font-sans text-[11px] font-medium tracking-[0.08em] text-[#91A298]">
                   {service.number}
                 </span>
 
-                {/* Title */}
-                <h3 className="font-sans text-[22px] font-medium leading-[1.3] tracking-[-0.01em] text-[#202522] transition-colors duration-300 group-hover:text-[#17413D] sm:text-[24px] lg:text-[27px]">
+                <h3
+                  className="
+                    font-sans
+                    text-[20px]
+                    font-medium
+                    leading-[1.3]
+                    tracking-[-0.01em]
+                    text-[#202522]
+                    transition-colors duration-300
+                    group-hover:text-[#17413D]
+                    sm:text-[21px]
+                  "
+                >
                   {service.title}
                 </h3>
 
-                {/* Description */}
-                <p className="max-w-[500px] font-sans text-[16px] leading-[1.72] text-[#4F5A54] sm:text-[17px]">
+                <p className="max-w-[500px] font-sans text-[14px] leading-[1.55] text-[#65736D] sm:text-[15px]">
                   {service.description}
                 </p>
 
-                {/* Desktop Arrow */}
                 <span
                   aria-hidden="true"
-                  className="hidden h-10 w-10 items-center justify-center rounded-full border border-[#202522]/12 text-[#17413D] transition-all duration-300 group-hover:border-[#17413D]/30 group-hover:bg-[#E7EDE8] lg:flex lg:justify-self-end"
+                  className="
+                    hidden h-9 w-9 items-center justify-center
+                    text-[#17413D]
+                    transition-transform duration-300
+                    group-hover:translate-x-1
+                    lg:flex lg:justify-self-end
+                  "
                 >
-                  <ArrowUpRight
-                    size={17}
-                    strokeWidth={1.5}
-                    className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  />
+                  <ArrowUpRight size={17} strokeWidth={1.5} />
                 </span>
 
-                {/* Mobile Explore */}
-                <span className="inline-flex items-center gap-2 font-sans text-[14px] font-medium text-[#17413D] lg:hidden">
+                <span
+                  className="
+                    inline-flex items-center gap-2
+                    font-sans text-[13px] font-medium text-[#17413D]
+                    sm:hidden
+                  "
+                >
                   Explore
                   <ArrowUpRight
                     size={15}
                     strokeWidth={1.5}
-                    className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    aria-hidden="true"
                   />
                 </span>
               </div>
@@ -129,14 +157,32 @@ export default function WhatWeDo() {
           ))}
         </div>
 
-        {/* =====================================================
-            SUPPORTING COPY
-        ====================================================== */}
-        <div className="mt-10 sm:mt-12">
-          <p className="max-w-[640px] font-sans text-[16px] leading-[1.72] text-[#4F5A54]">
-            Our approach is personalised to your health, circumstances and
-            everyday life.
-          </p>
+        {/* All services */}
+        <div className="mt-6">
+          <Link
+            href="/what-we-do"
+            className="
+              group inline-flex items-center gap-2
+              font-sans text-[14px] font-medium text-[#17413D]
+              transition-colors duration-300 hover:text-[#12332F]
+              focus-visible:outline-none
+              focus-visible:ring-2
+              focus-visible:ring-[#17413D]
+              focus-visible:ring-offset-4
+            "
+          >
+            Explore all services
+            <ArrowUpRight
+              size={16}
+              strokeWidth={1.5}
+              aria-hidden="true"
+              className="
+                transition-transform duration-300
+                group-hover:translate-x-1
+                group-hover:-translate-y-1
+              "
+            />
+          </Link>
         </div>
       </div>
     </section>

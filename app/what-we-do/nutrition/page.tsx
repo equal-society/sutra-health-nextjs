@@ -1,20 +1,36 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import Container from "@/components/shared/Container";
+import { DM_Serif_Display, Manrope } from "next/font/google";
 
-export const metadata = {
+import Container from "@/components/shared/Container";
+import FAQ from "@/components/shared/FAQ";
+
+const dmSerif = DM_Serif_Display({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-dm-serif",
+});
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+});
+
+export const metadata: Metadata = {
   title: "Nutrition Counselling for Better Health | Sutra Health",
   description:
     "Nutrition counselling at Sutra Health uses evidence-informed dietary patterns and practical guidance to support healthier eating, sustainable habits and better health.",
   keywords: [
     "nutrition counselling",
     "nutrition counselling India",
-    "nutrition counselling Faridabad",
+    "nutritionist Faridabad",
     "healthy diet counselling",
     "DASH diet",
     "Mediterranean diet",
-    "nutrition for blood pressure",
+    "nutrition for high blood pressure",
     "nutrition for metabolic health",
+    "healthy eating habits",
   ],
   alternates: {
     canonical: "https://lifequality.org.in/what-we-do/nutrition",
@@ -22,53 +38,185 @@ export const metadata = {
   openGraph: {
     title: "Nutrition Counselling for Better Health | Sutra Health",
     description:
-      "Evidence-informed nutrition counselling focused on practical eating habits and sustainable changes.",
+      "Evidence-informed nutrition counselling focused on practical dietary patterns, sustainable eating habits and your wider health needs.",
     url: "https://lifequality.org.in/what-we-do/nutrition",
+    siteName: "Sutra Health",
     type: "website",
+    locale: "en_IN",
     images: [
       {
-        url: "/images/services/nutrition-counselling.webp",
-        width: 1200,
-        height: 800,
+        url: "https://lifequality.org.in/images/services/nutrition-counselling.webp",
         alt: "Nutrition counselling at Sutra Health",
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nutrition Counselling for Better Health | Sutra Health",
+    description:
+      "Evidence-informed nutrition counselling focused on practical dietary patterns and sustainable eating habits.",
+    images: [
+      "https://lifequality.org.in/images/services/nutrition-counselling.webp",
+    ],
+  },
 };
-
-const nutritionAreas = [
-  "Everyday healthy eating",
-  "Weight management",
-  "Metabolic health",
-  "Blood pressure",
-  "Digestive health",
-];
 
 const focusAreas = [
   {
     number: "01",
     title: "Dietary pattern",
-    text: "We look at the overall pattern of eating rather than focusing on individual foods. This can include vegetables, fruits, whole grains, protein and healthy fats.",
+    description:
+      "We look beyond individual foods and consider the overall pattern of eating, including vegetables, fruits, whole grains, protein, healthy fats and the foods you regularly rely on.",
   },
   {
     number: "02",
     title: "Sodium & processed food",
-    text: "Reducing sodium and highly processed foods can be part of a broader nutrition plan, particularly when blood pressure is a concern.",
+    description:
+      "For people who need it, reducing sodium and highly processed foods can be an important part of a broader nutrition plan, particularly when supporting blood pressure management.",
   },
   {
     number: "03",
     title: "Your real routine",
-    text: "Food choices need to work within your preferences, schedule, culture, budget, cooking habits and the foods available to you.",
+    description:
+      "A nutrition plan needs to work with your preferences, schedule, culture, budget, cooking habits and the foods that are realistically available to you.",
   },
   {
     number: "04",
     title: "Health needs",
-    text: "Nutrition guidance considers your health goals and individual needs rather than following a one-size-fits-all diet.",
+    description:
+      "Nutrition is considered in the context of your health goals and relevant conditions rather than as a one-size-fits-all diet.",
   },
   {
     number: "05",
     title: "Habits that last",
-    text: "The focus is on practical changes that can become part of everyday life rather than short-term restrictive diets.",
+    description:
+      "The aim is not a short-term restrictive diet. We focus on practical changes that you can understand, practise and sustain over time.",
+  },
+];
+
+const faqs = [
+  {
+    question: "What does nutrition counselling at Sutra Health involve?",
+    answer:
+      "Nutrition counselling focuses on your current eating pattern, health needs, preferences and everyday routine. The goal is to identify practical dietary changes that can support your health and be sustained in real life.",
+  },
+  {
+    question: "Does nutrition counselling mean following a strict diet?",
+    answer:
+      "Not necessarily. Sutra Health focuses on sustainable dietary patterns and practical changes rather than prescribing a rigid diet for everyone. Your recommendations are shaped around your health needs, preferences and routine.",
+  },
+  {
+    question: "What is the DASH diet?",
+    answer:
+      "DASH stands for Dietary Approaches to Stop Hypertension. It is a dietary pattern that emphasises foods such as vegetables, fruits, whole grains and other nutrient-rich foods while paying attention to sodium and overall dietary quality. Research supported by the NHLBI shows that DASH can help lower blood pressure.",
+  },
+  {
+    question: "Can nutrition counselling help with high blood pressure?",
+    answer:
+      "Nutrition can be an important part of blood pressure management. Evidence supports heart-healthy dietary patterns such as DASH, together with appropriate sodium reduction and other lifestyle measures. Nutrition counselling should complement, not replace, medical care.",
+  },
+  {
+    question: "Can nutrition counselling replace medication?",
+    answer:
+      "No. Nutrition counselling is intended to complement appropriate medical care. Do not stop, reduce or change prescribed medication without discussing it with your doctor.",
+  },
+];
+
+const pageSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  name: "Nutrition Counselling | Sutra Health",
+  description:
+    "Evidence-informed nutrition counselling focused on dietary patterns, practical eating habits and sustainable health change.",
+  url: "https://lifequality.org.in/what-we-do/nutrition",
+  about: {
+    "@type": "MedicalTherapy",
+    name: "Nutrition Counselling",
+  },
+  author: {
+    "@type": "Person",
+    name: "Dr. Rakesh Sarwal",
+    honorificSuffix: "MBBS, MPH, DrPH",
+    url: "https://academic.lifequality.org.in/",
+  },
+  reviewedBy: {
+    "@type": "Person",
+    name: "Dr. Rakesh Sarwal",
+    honorificSuffix: "MBBS, MPH, DrPH",
+    url: "https://academic.lifequality.org.in/",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "Sutra Health",
+    url: "https://lifequality.org.in/",
+    sameAs: ["https://academic.lifequality.org.in/"],
+  },
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Sutra Health",
+    url: "https://lifequality.org.in/",
+  },
+  dateModified: "2026-09-10",
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://lifequality.org.in/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "What We Do",
+      item: "https://lifequality.org.in/what-we-do",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Nutrition Counselling",
+      item: "https://lifequality.org.in/what-we-do/nutrition",
+    },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
+const healthAreas = [
+  {
+    title: "Everyday healthy eating",
+    text: "Practical support for improving everyday food choices and eating habits.",
+  },
+  {
+    title: "Weight management",
+    text: "Nutrition changes that can support sustainable weight management.",
+  },
+  {
+    title: "Metabolic health",
+    text: "Food and lifestyle considerations connected with metabolic health.",
+  },
+  {
+    title: "Blood pressure",
+    text: "Dietary patterns and sodium considerations that may support blood pressure care.",
+  },
+  {
+    title: "Digestive health",
+    text: "Nutrition and eating routines considered alongside digestive health needs.",
   },
 ];
 
@@ -86,216 +234,136 @@ const relatedConditions = [
     href: "/conditions/weight-management",
   },
   {
-    title: "Digestive Health",
-    href: "/conditions/digestive-health",
+    title: "Digestive & Gut Health",
+    href: "/conditions/digestive-gut-health",
   },
 ];
 
 const otherPractices = [
   {
     title: "Lifestyle Medicine",
-    href: "/what-we-do/lifestyle-medicine",
+    href: "/what-we-do/lifestyle",
+    text: "Understand the everyday factors that may influence health.",
   },
   {
     title: "Therapeutic Yoga",
     href: "/what-we-do/therapeutic-yoga",
+    text: "Adapted yoga practices considered around your needs and ability.",
   },
   {
     title: "Breath & Mindfulness",
     href: "/what-we-do/breath-mindfulness",
+    text: "Practical breathing and mindfulness practices that may support awareness and stress management.",
   },
 ];
-
-const faqs = [
-  {
-    question: "What does nutrition counselling involve?",
-    answer:
-      "Nutrition counselling looks at your eating pattern, health needs, preferences and everyday routine. The aim is to identify practical changes that can support healthier eating and sustainable habits.",
-  },
-  {
-    question: "Does nutrition counselling mean following a strict diet?",
-    answer:
-      "Not necessarily. The focus is on practical eating habits that fit your routine, preferences and health needs rather than a short-term restrictive diet.",
-  },
-  {
-    question: "What is the DASH diet?",
-    answer:
-      "DASH stands for Dietary Approaches to Stop Hypertension. It is an evidence-informed eating pattern that emphasises foods such as vegetables, fruits, whole grains and other nutrient-rich foods while paying attention to sodium intake.",
-  },
-  {
-    question: "Can nutrition counselling help with high blood pressure?",
-    answer:
-      "Nutrition can be one part of a broader plan for managing blood pressure. Eating patterns such as DASH have been studied in relation to blood pressure and cardiovascular health.",
-  },
-  {
-    question: "Can nutrition counselling replace medication?",
-    answer:
-      "Nutrition counselling is not a substitute for prescribed medication. Any changes to medication should be discussed with your treating clinician.",
-  },
-];
-
-function Label({
-  children,
-  light = false,
-}: {
-  children: React.ReactNode;
-  light?: boolean;
-}) {
-  return (
-    <div className="flex items-center gap-3">
-      <span
-        className={`h-px w-8 ${
-          light ? "bg-[#91A298]" : "bg-[#91A298]"
-        }`}
-      />
-      <span
-        className={`text-[10px] font-semibold uppercase tracking-[0.2em] ${
-          light ? "text-[#91A298]" : "text-[#65736D]"
-        }`}
-      >
-        {children}
-      </span>
-    </div>
-  );
-}
-
-function Arrow() {
-  return (
-    <span
-      aria-hidden="true"
-      className="transition-transform duration-300 group-hover:translate-x-1"
-    >
-      →
-    </span>
-  );
-}
 
 export default function NutritionPage() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "MedicalWebPage",
-        "@id": "https://lifequality.org.in/what-we-do/nutrition#webpage",
-        url: "https://lifequality.org.in/what-we-do/nutrition",
-        name: "Nutrition Counselling for Better Health | Sutra Health",
-        description:
-          "Nutrition counselling at Sutra Health uses evidence-informed dietary patterns and practical guidance to support healthier eating, sustainable habits and better health.",
-        author: {
-          "@type": "Person",
-          name: "Dr. Rakesh Sarwal",
-        },
-        reviewer: {
-          "@type": "Person",
-          name: "Dr. Rakesh Sarwal",
-          honorificSuffix: "MBBS MPH DrPH",
-        },
-        publisher: {
-          "@type": "Organization",
-          name: "Sutra Health",
-          url: "https://lifequality.org.in",
-        },
-        dateModified: "2026-09-10",
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://lifequality.org.in/what-we-do/nutrition#breadcrumb",
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Home",
-            item: "https://lifequality.org.in",
-          },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "What We Do",
-            item: "https://lifequality.org.in/what-we-do",
-          },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: "Nutrition Counselling",
-            item: "https://lifequality.org.in/what-we-do/nutrition",
-          },
-        ],
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://lifequality.org.in/what-we-do/nutrition#faq",
-        mainEntity: faqs.map((faq) => ({
-          "@type": "Question",
-          name: faq.question,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: faq.answer,
-          },
-        })),
-      },
-    ],
-  };
-
   return (
-    <main className="bg-[#F7F5EF] text-[#202522]">
+    <main
+      className={`${dmSerif.variable} ${manrope.variable} bg-[#F7F2EB] text-[#202522]`}
+    >
+      {/* SEO SCHEMAS */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
+      />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(schema),
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
         }}
       />
 
       {/* =========================================================
           HERO
       ========================================================= */}
-      <section className="bg-[#F7F5EF]">
+      <section className="overflow-hidden bg-[#F7F2EB]">
         <Container>
-          <div className="mx-auto max-w-[1180px] pt-16 sm:pt-20 lg:pt-24">
-            <div className="max-w-[850px]">
-              <Label>Nutrition Counselling</Label>
+          <div className="py-8 sm:py-12 lg:py-16">
+            {/* Back link */}
+            <Link
+              href="/what-we-do"
+              className={`${manrope.className} inline-flex items-center gap-2 text-[13px] font-semibold text-[#65736D] transition-colors hover:text-[#8B9A6E]`}
+            >
+              <span>←</span>
+              What We Do
+            </Link>
 
-              <h1 className="mt-6 max-w-[850px] font-serif text-[46px] font-medium leading-[1.04] tracking-[-0.05em] text-[#202522] sm:text-[62px] lg:text-[78px]">
-                Better nutrition starts with{" "}
-                <em className="text-[#17413D]">everyday choices.</em>
-              </h1>
+            <div className="mt-10 grid items-center gap-12 lg:grid-cols-[0.88fr_1.12fr] lg:gap-20">
+              {/* Content */}
+              <div className="max-w-[680px]">
+                <div className="flex items-center gap-3">
+                  <span className="h-px w-9 bg-[#8B9A6E]" />
 
-              <p className="mt-7 max-w-[650px] text-[16px] leading-7 text-[#4E5B56] sm:text-[18px] sm:leading-8">
-                Evidence-informed nutrition counselling focused on practical
-                eating habits that support your health and fit your everyday
-                life.
-              </p>
+                  <p
+                    className={`${manrope.className} text-[11px] font-semibold uppercase tracking-[0.16em] text-[#65736D] sm:text-[12px]`}
+                  >
+                    Nutrition Counselling
+                  </p>
+                </div>
 
-              <div className="mt-9">
-                <Link
-                  href="/book"
-                  className="group inline-flex min-h-[50px] w-full items-center justify-center gap-4 rounded-full bg-[#17413D] px-7 py-3 text-[12px] font-semibold text-white transition-all duration-300 hover:bg-[#12332F] sm:w-auto sm:text-[13px]"
+                <h1
+                  className={`${dmSerif.className} mt-7 text-[46px] font-normal leading-[1.02] tracking-[-0.025em] text-[#202522] sm:text-[58px] md:text-[64px] lg:text-[72px]`}
                 >
-                  Book a consultation
-                  <Arrow />
+                  Better nutrition
+                  <br />
+                  <span className="text-[#8B9A6E]">starts with context.</span>
+                </h1>
+
+                <p
+                  className={`${manrope.className} mt-7 max-w-[610px] text-[17px] leading-[1.75] text-[#65736D] sm:text-[18px]`}
+                >
+                  Nutrition counselling helps turn evidence-informed dietary
+                  guidance into practical changes that fit your health needs,
+                  preferences and everyday routine.
+                </p>
+
+                <Link
+                  href="/book-appointment"
+                  className={`${manrope.className} group mt-9 inline-flex min-h-[52px] items-center gap-4 rounded-full bg-[#8B9A6E] px-7 py-3 text-[14px] font-semibold text-white transition-all duration-300 hover:bg-[#74845B]`}
+                >
+                  Book a Consultation
+
+                  <span className="transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
                 </Link>
               </div>
-            </div>
 
-            {/* Large editorial image */}
-            <div className="relative mt-14 sm:mt-18 lg:mt-20">
-              <div className="relative aspect-[16/9] overflow-hidden">
-                <Image
-                  src="/images/services/nutrition-counselling.webp"
-                  alt="Nutrition counselling at Sutra Health"
-                  fill
-                  priority
-                  sizes="(max-width: 1180px) 100vw, 1180px"
-                  className="object-cover"
-                />
-              </div>
+              {/* Image */}
+              <div className="relative">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-[28px] bg-[#EAE2D6]">
+                  <Image
+                    src="/images/services/nutrition-counselling.webp"
+                    alt="Nutrition counselling at Sutra Health"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 55vw"
+                    className="object-cover"
+                  />
+                </div>
 
-              <div className="absolute bottom-0 left-0 hidden bg-[#F7F5EF] px-7 py-5 lg:block">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#65736D]">
-                  Sutra Health
-                </p>
-                <p className="mt-1 text-[13px] text-[#202522]">
-                  Nutrition counselling
-                </p>
+                <div className="absolute -bottom-5 left-5 max-w-[270px] rounded-2xl bg-white p-5 shadow-[0_18px_45px_rgba(32,37,34,0.08)] sm:left-8 sm:p-6">
+                  <p
+                    className={`${manrope.className} text-[12px] font-semibold uppercase tracking-[0.12em] text-[#8B9A6E]`}
+                  >
+                    The focus
+                  </p>
+
+                  <p
+                    className={`${dmSerif.className} mt-2 text-[22px] leading-[1.15] text-[#202522]`}
+                  >
+                    Practical changes that can last.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -303,19 +371,57 @@ export default function NutritionPage() {
       </section>
 
       {/* =========================================================
-          SIGNATURE STATEMENT
+          INTRODUCTION
       ========================================================= */}
       <section className="bg-white">
         <Container>
-          <div className="mx-auto max-w-[1180px] py-20 sm:py-28 lg:py-36">
-            <div className="grid gap-10 lg:grid-cols-[0.28fr_0.72fr] lg:gap-16">
-              <Label>Our perspective</Label>
-
+          <div className="py-20 sm:py-24 lg:py-32">
+            <div className="grid gap-12 lg:grid-cols-[0.28fr_0.72fr] lg:gap-20">
               <div>
-                <p className="max-w-[820px] font-serif text-[34px] font-medium leading-[1.15] tracking-[-0.04em] text-[#202522] sm:text-[46px] lg:text-[56px]">
-                  Nutrition is not about finding the perfect diet. It is about
-                  finding an approach that can become part of your life.
+                <p
+                  className={`${manrope.className} text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8B9A6E]`}
+                >
+                  Nutrition counselling in brief
                 </p>
+              </div>
+
+              <div className="max-w-[900px]">
+                <h2
+                  className={`${dmSerif.className} text-[36px] leading-[1.08] tracking-[-0.025em] text-[#202522] sm:text-[46px] lg:text-[56px]`}
+                >
+                  Better nutrition is about the pattern, not a perfect plate.
+                </h2>
+
+                <p
+                  className={`${manrope.className} mt-7 max-w-[760px] text-[17px] leading-[1.75] text-[#65736D] sm:text-[18px]`}
+                >
+                  Nutrition counselling is an evidence-informed process of
+                  understanding how you currently eat, identifying what may
+                  support your health goals, and making practical changes you
+                  can maintain. At Sutra Health, dietary guidance is considered
+                  alongside your wider health needs rather than as an isolated
+                  food plan.
+                </p>
+
+                <div className="mt-10 grid gap-4 sm:grid-cols-2">
+                  {[
+                    "Understand your current eating pattern",
+                    "Identify realistic areas for change",
+                    "Connect nutrition with your health needs",
+                    "Build habits you can sustain",
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      className="border-l-2 border-[#8B9A6E] pl-5"
+                    >
+                      <p
+                        className={`${manrope.className} text-[15px] leading-7 text-[#202522]`}
+                      >
+                        {item}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -325,37 +431,47 @@ export default function NutritionPage() {
       {/* =========================================================
           WHAT IT CAN HELP WITH
       ========================================================= */}
-      <section className="bg-[#F7F5EF]">
+      <section className="bg-[#F7F2EB]">
         <Container>
-          <div className="mx-auto max-w-[1180px] py-20 sm:py-28">
+          <div className="py-20 sm:py-24 lg:py-28">
             <div className="grid gap-12 lg:grid-cols-[0.34fr_0.66fr] lg:gap-20">
               <div>
-                <Label>What it can help with</Label>
+                <p
+                  className={`${manrope.className} text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8B9A6E]`}
+                >
+                  What it can help with
+                </p>
 
-                <h2 className="mt-6 max-w-[380px] font-serif text-[38px] font-medium leading-[1.1] tracking-[-0.04em] sm:text-[48px]">
-                  Nutrition has a role across many areas of health.
+                <h2
+                  className={`${dmSerif.className} mt-4 max-w-[480px] text-[38px] leading-[1.07] tracking-[-0.025em] text-[#202522] sm:text-[50px]`}
+                >
+                  Nutrition support for real health needs.
                 </h2>
               </div>
 
-              <div className="border-t border-[#202522]/10">
-                {nutritionAreas.map((area, index) => (
+              <div className="border-y border-[#202522]/10">
+                {healthAreas.map((area, index) => (
                   <div
-                    key={area}
-                    className="group flex items-center justify-between border-b border-[#202522]/10 py-6 sm:py-7"
+                    key={area.title}
+                    className="grid gap-4 border-b border-[#202522]/10 py-7 last:border-b-0 sm:grid-cols-[72px_240px_1fr] sm:items-center sm:py-8"
                   >
-                    <div className="flex items-center gap-6">
-                      <span className="text-[10px] font-semibold tracking-[0.15em] text-[#91A298]">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-
-                      <span className="font-serif text-[22px] font-medium tracking-[-0.02em] text-[#202522] sm:text-[26px]">
-                        {area}
-                      </span>
-                    </div>
-
-                    <span className="text-[#17413D] transition-transform duration-300 group-hover:translate-x-1">
-                      →
+                    <span
+                      className={`${manrope.className} text-[12px] font-semibold tracking-[0.12em] text-[#8B9A6E]`}
+                    >
+                      0{index + 1}
                     </span>
+
+                    <h3
+                      className={`${dmSerif.className} text-[23px] tracking-[-0.02em] text-[#202522]`}
+                    >
+                      {area.title}
+                    </h3>
+
+                    <p
+                      className={`${manrope.className} text-[15px] leading-7 text-[#65736D]`}
+                    >
+                      {area.text}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -367,37 +483,54 @@ export default function NutritionPage() {
       {/* =========================================================
           WHAT WE LOOK AT
       ========================================================= */}
-      <section className="bg-[#17413D] text-white">
+      <section className="bg-white">
         <Container>
-          <div className="mx-auto max-w-[1180px] py-20 sm:py-28 lg:py-32">
-            <div className="max-w-[760px]">
-              <Label light>What we look at</Label>
-
-              <h2 className="mt-6 font-serif text-[40px] font-medium leading-[1.08] tracking-[-0.04em] sm:text-[52px] lg:text-[62px]">
-                Your food choices make more sense when we understand the
-                context around them.
-              </h2>
-            </div>
-
-            <div className="mt-16 border-t border-white/15">
-              {focusAreas.map((item) => (
-                <article
-                  key={item.number}
-                  className="grid gap-5 border-b border-white/15 py-8 sm:py-10 lg:grid-cols-[90px_280px_1fr] lg:gap-8"
+          <div className="py-20 sm:py-24 lg:py-28">
+            <div className="grid gap-12 lg:grid-cols-[0.3fr_0.7fr] lg:gap-20">
+              <div>
+                <p
+                  className={`${manrope.className} text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8B9A6E]`}
                 >
-                  <span className="text-[11px] font-semibold tracking-[0.16em] text-[#91A298]">
-                    {item.number}
+                  What we look at
+                </p>
+
+                <h2
+                  className={`${dmSerif.className} mt-4 max-w-[450px] text-[38px] leading-[1.07] tracking-[-0.025em] text-[#202522] sm:text-[50px]`}
+                >
+                  Pattern first,
+                  <br />
+                  <span className="italic text-[#8B9A6E]">
+                    specifics second.
                   </span>
+                </h2>
+              </div>
 
-                  <h3 className="font-serif text-[25px] font-medium tracking-[-0.025em] text-white sm:text-[29px]">
-                    {item.title}
-                  </h3>
+              <div className="border-y border-[#202522]/10">
+                {focusAreas.map((item) => (
+                  <article
+                    key={item.number}
+                    className="grid gap-4 border-b border-[#202522]/10 py-8 last:border-b-0 sm:grid-cols-[80px_250px_1fr] sm:items-center lg:py-9"
+                  >
+                    <span
+                      className={`${manrope.className} text-[12px] font-semibold tracking-[0.12em] text-[#8B9A6E]`}
+                    >
+                      {item.number}
+                    </span>
 
-                  <p className="max-w-[570px] text-[14px] leading-7 text-white/70 sm:text-[15px]">
-                    {item.text}
-                  </p>
-                </article>
-              ))}
+                    <h3
+                      className={`${dmSerif.className} text-[24px] tracking-[-0.02em] text-[#202522]`}
+                    >
+                      {item.title}
+                    </h3>
+
+                    <p
+                      className={`${manrope.className} text-[15px] leading-7 text-[#65736D]`}
+                    >
+                      {item.description}
+                    </p>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </Container>
@@ -406,97 +539,107 @@ export default function NutritionPage() {
       {/* =========================================================
           EVIDENCE
       ========================================================= */}
-      <section className="bg-[#E7EDE8]">
+      <section className="bg-[#EAE2D6]">
         <Container>
-          <div className="mx-auto max-w-[1180px] py-20 sm:py-28 lg:py-32">
+          <div className="py-20 sm:py-24 lg:py-28">
             <div className="grid gap-12 lg:grid-cols-[0.36fr_0.64fr] lg:gap-20">
               <div>
-                <Label>Evidence</Label>
+                <p
+                  className={`${manrope.className} text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8B9A6E]`}
+                >
+                  Evidence
+                </p>
 
-                <h2 className="mt-6 max-w-[400px] font-serif text-[38px] font-medium leading-[1.1] tracking-[-0.04em] sm:text-[48px]">
-                  Eating patterns that have been studied.
+                <h2
+                  className={`${dmSerif.className} mt-4 max-w-[470px] text-[38px] leading-[1.07] tracking-[-0.025em] text-[#202522] sm:text-[50px]`}
+                >
+                  Dietary patterns have been studied in clinical research.
                 </h2>
               </div>
 
-              <div className="border-t border-[#202522]/10">
-                <article className="border-b border-[#202522]/10 py-8 sm:py-10">
-                  <div className="flex items-start justify-between gap-6">
-                    <h3 className="font-serif text-[27px] font-medium text-[#202522]">
-                      DASH
-                    </h3>
+              <div className="space-y-8">
+                <div>
+                  <h3
+                    className={`${dmSerif.className} text-[26px] text-[#202522]`}
+                  >
+                    DASH
+                  </h3>
 
-                    <span className="text-[10px] font-semibold tracking-[0.14em] text-[#65736D]">
-                      01
-                    </span>
-                  </div>
-
-                  <p className="mt-4 max-w-[650px] text-[15px] leading-7 text-[#4E5B56]">
-                    The Dietary Approaches to Stop Hypertension eating pattern
-                    has been studied in relation to blood pressure and
-                    cardiovascular health.
+                  <p
+                    className={`${manrope.className} mt-3 text-[16px] leading-8 text-[#65736D]`}
+                  >
+                    The National Heart, Lung, and Blood Institute reports that
+                    the DASH eating plan lowers blood pressure, and that
+                    combining DASH with reduced sodium can have a greater
+                    blood-pressure effect than either approach alone.
                   </p>
+                </div>
 
+                <div className="border-t border-[#202522]/10 pt-8">
+                  <h3
+                    className={`${dmSerif.className} text-[26px] text-[#202522]`}
+                  >
+                    DASH4D
+                  </h3>
+
+                  <p
+                    className={`${manrope.className} mt-3 text-[16px] leading-8 text-[#65736D]`}
+                  >
+                    In a 2025 randomized clinical trial involving adults with
+                    type 2 diabetes, a DASH-style diet combined with sodium
+                    reduction lowered systolic blood pressure compared with the
+                    higher-sodium comparison diet.
+                  </p>
+                </div>
+
+                <div className="border-t border-[#202522]/10 pt-8">
+                  <h3
+                    className={`${dmSerif.className} text-[26px] text-[#202522]`}
+                  >
+                    Mediterranean-style eating
+                  </h3>
+
+                  <p
+                    className={`${manrope.className} mt-3 text-[16px] leading-8 text-[#65736D]`}
+                  >
+                    The revised PREDIMED analysis published in the New England
+                    Journal of Medicine reported lower rates of major
+                    cardiovascular events among participants assigned to
+                    Mediterranean diets supplemented with extra-virgin olive
+                    oil or nuts compared with the control diet.
+                  </p>
+                </div>
+
+                <div
+                  className={`${manrope.className} flex flex-wrap gap-x-6 gap-y-3 border-t border-[#202522]/10 pt-6 text-[13px]`}
+                >
                   <a
                     href="https://www.nhlbi.nih.gov/health/dash/health-benefits"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-5 inline-flex text-[12px] font-semibold text-[#17413D] hover:text-[#12332F]"
+                    className="text-[#8B9A6E] underline underline-offset-4"
                   >
-                    NHLBI evidence →
+                    NHLBI — DASH evidence
                   </a>
-                </article>
-
-                <article className="border-b border-[#202522]/10 py-8 sm:py-10">
-                  <div className="flex items-start justify-between gap-6">
-                    <h3 className="font-serif text-[27px] font-medium text-[#202522]">
-                      DASH4D
-                    </h3>
-
-                    <span className="text-[10px] font-semibold tracking-[0.14em] text-[#65736D]">
-                      02
-                    </span>
-                  </div>
-
-                  <p className="mt-4 max-w-[650px] text-[15px] leading-7 text-[#4E5B56]">
-                    Research has also examined the DASH dietary pattern in the
-                    context of diabetes and blood pressure.
-                  </p>
 
                   <a
                     href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2835080"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-5 inline-flex text-[12px] font-semibold text-[#17413D] hover:text-[#12332F]"
+                    className="text-[#8B9A6E] underline underline-offset-4"
                   >
-                    JAMA study →
+                    JAMA Internal Medicine — DASH4D
                   </a>
-                </article>
-
-                <article className="py-8 sm:py-10">
-                  <div className="flex items-start justify-between gap-6">
-                    <h3 className="font-serif text-[27px] font-medium text-[#202522]">
-                      Mediterranean-style eating
-                    </h3>
-
-                    <span className="text-[10px] font-semibold tracking-[0.14em] text-[#65736D]">
-                      03
-                    </span>
-                  </div>
-
-                  <p className="mt-4 max-w-[650px] text-[15px] leading-7 text-[#4E5B56]">
-                    Mediterranean-style dietary patterns have also been studied
-                    for their relationship with cardiovascular health.
-                  </p>
 
                   <a
                     href="https://www.nejm.org/doi/full/10.1056/NEJMoa1800389"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-5 inline-flex text-[12px] font-semibold text-[#17413D] hover:text-[#12332F]"
+                    className="text-[#8B9A6E] underline underline-offset-4"
                   >
-                    PREDIMED study →
+                    NEJM — PREDIMED
                   </a>
-                </article>
+                </div>
               </div>
             </div>
           </div>
@@ -506,23 +649,33 @@ export default function NutritionPage() {
       {/* =========================================================
           HOW IT FITS
       ========================================================= */}
-      <section className="bg-white">
+      <section className="bg-[#F7F2EB]">
         <Container>
-          <div className="mx-auto max-w-[1180px] py-20 sm:py-28 lg:py-32">
-            <div className="max-w-[800px]">
-              <Label>How it fits</Label>
+          <div className="py-20 sm:py-24 lg:py-28">
+            <div className="max-w-[760px]">
+              <p
+                className={`${manrope.className} text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8B9A6E]`}
+              >
+                How it fits
+              </p>
 
-              <h2 className="mt-6 font-serif text-[40px] font-medium leading-[1.08] tracking-[-0.04em] sm:text-[52px] lg:text-[62px]">
-                Nutrition can be one part of a wider health plan.
+              <h2
+                className={`${dmSerif.className} mt-4 text-[38px] leading-[1.07] tracking-[-0.025em] text-[#202522] sm:text-[50px]`}
+              >
+                Nutrition is one part of a wider health plan.
               </h2>
 
-              <p className="mt-6 max-w-[680px] text-[15px] leading-8 text-[#4E5B56] sm:text-[17px]">
-                At Sutra Health, nutrition can sit alongside other lifestyle
-                practices depending on your needs.
+              <p
+                className={`${manrope.className} mt-6 max-w-[700px] text-[17px] leading-[1.75] text-[#65736D]`}
+              >
+                At Sutra Health, nutrition counselling sits within the Sutra
+                Health Method. We first understand your situation, identify
+                relevant factors, personalise the plan, and then work toward
+                changes that can be practised, sustained and adapted.
               </p>
             </div>
 
-            <div className="mt-14 grid border-y border-[#202522]/10 sm:grid-cols-6">
+            <div className="mt-12 grid border-y border-[#202522]/10 sm:grid-cols-3 lg:grid-cols-6">
               {[
                 "Understand",
                 "Identify",
@@ -533,25 +686,31 @@ export default function NutritionPage() {
               ].map((step, index) => (
                 <div
                   key={step}
-                  className="border-b border-[#202522]/10 px-1 py-6 last:border-b-0 sm:border-b-0 sm:border-r sm:px-5 sm:first:pl-0 sm:last:border-r-0"
+                  className="border-b border-[#202522]/10 px-4 py-6 last:border-b-0 sm:border-b-0 sm:border-r sm:px-5 lg:py-7 lg:last:border-r-0"
                 >
-                  <span className="block text-[10px] font-semibold tracking-[0.14em] text-[#91A298]">
-                    {String(index + 1).padStart(2, "0")}
+                  <span
+                    className={`${manrope.className} text-[11px] font-semibold tracking-[0.14em] text-[#8B9A6E]`}
+                  >
+                    0{index + 1}
                   </span>
 
-                  <span className="mt-3 block font-serif text-[18px] font-medium text-[#202522]">
+                  <p
+                    className={`${dmSerif.className} mt-3 text-[22px] text-[#202522]`}
+                  >
                     {step}
-                  </span>
+                  </p>
                 </div>
               ))}
             </div>
 
             <Link
               href="/approach"
-              className="group mt-8 inline-flex items-center gap-3 text-[13px] font-semibold text-[#17413D] transition-colors hover:text-[#12332F]"
+              className={`${manrope.className} group mt-8 inline-flex items-center gap-2 text-[14px] font-semibold text-[#202522] transition-colors hover:text-[#8B9A6E]`}
             >
-              Explore our approach
-              <Arrow />
+              Explore the Sutra Health Method
+              <span className="transition-transform group-hover:translate-x-1">
+                →
+              </span>
             </Link>
           </div>
         </Container>
@@ -560,35 +719,63 @@ export default function NutritionPage() {
       {/* =========================================================
           ASSESSMENT
       ========================================================= */}
-      <section className="bg-[#F7F5EF]">
+      <section className="bg-white">
         <Container>
-          <div className="mx-auto max-w-[1180px] py-20 sm:py-28">
-            <div className="relative overflow-hidden bg-[#E7EDE8] px-7 py-12 sm:px-12 sm:py-16 lg:px-16 lg:py-20">
-              <div className="max-w-[700px]">
-                <Label>Start with an assessment</Label>
+          <div className="py-20 sm:py-24 lg:py-28">
+            <div className="overflow-hidden rounded-[28px] bg-[#EAE2D6]">
+              <div className="grid items-center lg:grid-cols-[0.75fr_1.25fr]">
+                <div className="p-8 sm:p-12 lg:p-16">
+                  <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#8B9A6E] text-white">
+                    <span
+                      className={`${dmSerif.className} text-[34px] leading-none`}
+                    >
+                      21
+                    </span>
+                  </div>
 
-                <h2 className="mt-6 font-serif text-[38px] font-medium leading-[1.1] tracking-[-0.04em] sm:text-[50px]">
-                  Understand where your lifestyle stands today.
-                </h2>
+                  <p
+                    className={`${manrope.className} mt-8 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8B9A6E]`}
+                  >
+                    Start with understanding
+                  </p>
 
-                <p className="mt-5 max-w-[620px] text-[15px] leading-7 text-[#4E5B56] sm:text-[16px]">
-                  Our 21-question lifestyle assessment helps you reflect on
-                  the areas of daily life that may influence your overall
-                  health.
-                </p>
+                  <h2
+                    className={`${dmSerif.className} mt-4 text-[36px] leading-[1.08] tracking-[-0.025em] text-[#202522] sm:text-[46px]`}
+                  >
+                    Your health is more than what is on your plate.
+                  </h2>
 
-                <Link
-                  href="/score"
-                  className="group mt-8 inline-flex min-h-[50px] items-center justify-center gap-4 rounded-full bg-[#17413D] px-7 py-3 text-[12px] font-semibold text-white transition-all duration-300 hover:bg-[#12332F] sm:text-[13px]"
-                >
-                  Take the assessment
-                  <Arrow />
-                </Link>
+                  <p
+                    className={`${manrope.className} mt-6 text-[16px] leading-8 text-[#65736D]`}
+                  >
+                    The 21-question lifestyle assessment can help you reflect
+                    on everyday factors that may be relevant to your health.
+                    Nutrition is considered alongside other parts of your
+                    lifestyle rather than in isolation.
+                  </p>
+
+                  <Link
+                    href="/score"
+                    className={`${manrope.className} group mt-7 inline-flex min-h-[50px] items-center gap-4 rounded-full bg-[#8B9A6E] px-6 py-3 text-[14px] font-semibold text-white transition-colors hover:bg-[#74845B]`}
+                  >
+                    Take the Assessment
+                    <span className="transition-transform group-hover:translate-x-1">
+                      →
+                    </span>
+                  </Link>
+                </div>
+
+                <div className="relative min-h-[360px] lg:min-h-[520px]">
+                  <Image
+                    src="/images/services/nutrition-counselling.webp"
+                    alt=""
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                    aria-hidden="true"
+                  />
+                </div>
               </div>
-
-              <span className="absolute -bottom-8 right-8 hidden font-serif text-[180px] leading-none text-[#17413D]/[0.06] lg:block">
-                21
-              </span>
             </div>
           </div>
         </Container>
@@ -597,36 +784,48 @@ export default function NutritionPage() {
       {/* =========================================================
           RELATED CONDITIONS
       ========================================================= */}
-      <section className="bg-white">
+      <section className="bg-[#F7F2EB]">
         <Container>
-          <div className="mx-auto max-w-[1180px] py-20 sm:py-28">
-            <div className="grid gap-12 lg:grid-cols-[0.36fr_0.64fr] lg:gap-20">
+          <div className="py-20 sm:py-24 lg:py-28">
+            <div className="grid gap-12 lg:grid-cols-[0.35fr_0.65fr] lg:gap-20">
               <div>
-                <Label>Related conditions</Label>
+                <p
+                  className={`${manrope.className} text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8B9A6E]`}
+                >
+                  Explore by health area
+                </p>
 
-                <h2 className="mt-6 max-w-[390px] font-serif text-[38px] font-medium leading-[1.1] tracking-[-0.04em] sm:text-[48px]">
-                  Explore nutrition in context.
+                <h2
+                  className={`${dmSerif.className} mt-4 max-w-[480px] text-[38px] leading-[1.07] tracking-[-0.025em] text-[#202522] sm:text-[50px]`}
+                >
+                  Nutrition can connect with specific health concerns.
                 </h2>
               </div>
 
-              <div className="border-t border-[#202522]/10">
+              <div className="border-y border-[#202522]/10">
                 {relatedConditions.map((condition, index) => (
                   <Link
-                    key={condition.title}
+                    key={condition.href}
                     href={condition.href}
-                    className="group flex items-center justify-between border-b border-[#202522]/10 py-6 sm:py-7"
+                    className="group grid gap-4 border-b border-[#202522]/10 py-7 last:border-b-0 sm:grid-cols-[72px_260px_1fr] sm:items-center sm:py-8"
                   >
-                    <div className="flex items-center gap-6">
-                      <span className="text-[10px] font-semibold tracking-[0.15em] text-[#91A298]">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
+                    <span
+                      className={`${manrope.className} text-[12px] font-semibold tracking-[0.12em] text-[#8B9A6E]`}
+                    >
+                      0{index + 1}
+                    </span>
 
-                      <span className="font-serif text-[22px] font-medium text-[#202522] sm:text-[26px]">
-                        {condition.title}
-                      </span>
-                    </div>
+                    <h3
+                      className={`${dmSerif.className} text-[23px] tracking-[-0.02em] text-[#202522] transition-colors group-hover:text-[#8B9A6E]`}
+                    >
+                      {condition.title}
+                    </h3>
 
-                    <Arrow />
+                    <span
+                      className={`${manrope.className} text-[14px] font-semibold text-[#65736D] transition-transform group-hover:translate-x-1`}
+                    >
+                      Explore →
+                    </span>
                   </Link>
                 ))}
               </div>
@@ -638,31 +837,50 @@ export default function NutritionPage() {
       {/* =========================================================
           OTHER PRACTICES
       ========================================================= */}
-      <section className="bg-[#F7F5EF]">
+      <section className="bg-white">
         <Container>
-          <div className="mx-auto max-w-[1180px] py-20 sm:py-28">
-            <Label>Other practices</Label>
+          <div className="py-20 sm:py-24 lg:py-28">
+            <p
+              className={`${manrope.className} text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8B9A6E]`}
+            >
+              What We Do
+            </p>
 
-            <div className="mt-6 flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
-              <h2 className="max-w-[700px] font-serif text-[38px] font-medium leading-[1.1] tracking-[-0.04em] sm:text-[48px]">
-                Other ways Sutra Health can support your health.
-              </h2>
-            </div>
+            <h2
+              className={`${dmSerif.className} mt-4 max-w-[650px] text-[38px] leading-[1.07] tracking-[-0.025em] text-[#202522] sm:text-[50px]`}
+            >
+              Other practices that may form part of your plan.
+            </h2>
 
-            <div className="mt-12 grid border-t border-[#202522]/10 sm:grid-cols-3">
+            <div className="mt-12 border-y border-[#202522]/10">
               {otherPractices.map((practice, index) => (
                 <Link
-                  key={practice.title}
+                  key={practice.href}
                   href={practice.href}
-                  className="group border-b border-[#202522]/10 py-7 sm:border-b-0 sm:border-r sm:px-7 sm:first:pl-0 sm:last:border-r-0"
+                  className="group grid gap-4 border-b border-[#202522]/10 py-7 last:border-b-0 sm:grid-cols-[72px_280px_1fr_auto] sm:items-center sm:py-8"
                 >
-                  <span className="text-[10px] font-semibold tracking-[0.15em] text-[#91A298]">
-                    {String(index + 1).padStart(2, "0")}
+                  <span
+                    className={`${manrope.className} text-[12px] font-semibold tracking-[0.12em] text-[#8B9A6E]`}
+                  >
+                    0{index + 1}
                   </span>
 
-                  <span className="mt-5 flex items-center justify-between gap-4 font-serif text-[22px] font-medium text-[#202522]">
+                  <h3
+                    className={`${dmSerif.className} text-[23px] text-[#202522] transition-colors group-hover:text-[#8B9A6E]`}
+                  >
                     {practice.title}
-                    <Arrow />
+                  </h3>
+
+                  <p
+                    className={`${manrope.className} text-[15px] leading-7 text-[#65736D]`}
+                  >
+                    {practice.text}
+                  </p>
+
+                  <span
+                    className={`${manrope.className} text-[14px] font-semibold text-[#202522] transition-transform group-hover:translate-x-1`}
+                  >
+                    →
                   </span>
                 </Link>
               ))}
@@ -674,89 +892,45 @@ export default function NutritionPage() {
       {/* =========================================================
           FAQ
       ========================================================= */}
-      <section
-        aria-labelledby="faq-heading"
-        className="bg-white"
-      >
-        <div className="mx-auto max-w-[1180px] px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
-
-          <div className="max-w-[720px]">
-
-            <div className="flex items-center gap-3">
-              <span
-                aria-hidden="true"
-                className="h-px w-8 bg-[#91A298]"
-              />
-
-              <p className="text-[10px] font-semibold uppercase tracking-[0.21em] text-[#65736D] sm:text-[11px]">
-                Questions
-              </p>
-            </div>
-
-            <h2
-              id="faq-heading"
-              className="mt-5 font-serif text-[38px] font-medium leading-[1.06] tracking-[-0.04em] text-[#202522] sm:text-[48px]"
-            >
-              Common questions
-            </h2>
-
-            <p className="mt-5 max-w-[650px] text-[16px] leading-7 text-[#4E5B56] sm:text-[18px] sm:leading-8">
-              A few simple answers to help you understand how Sutra Health
-              works.
-            </p>
-          </div>
-
-          {/* FAQ list */}
-          <div className="mt-12 max-w-[1000px] border-y border-[#202522]/10">
-            {faqs.map((faq) => (
-              <details
-                key={faq.question}
-                className="group border-b border-[#202522]/10 last:border-b-0"
-              >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-8 py-6 text-[16px] font-medium leading-7 text-[#202522] marker:hidden sm:py-7 sm:text-[19px]">
-                  <span>{faq.question}</span>
-
-                  <span
-                    aria-hidden="true"
-                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#E7EDE8] text-[21px] font-light leading-none text-[#17413D] transition-transform duration-300 group-open:rotate-45"
-                  >
-                    +
-                  </span>
-                </summary>
-
-                <p className="max-w-[850px] pb-7 pr-8 text-[15px] leading-7 text-[#4E5B56] sm:text-[17px] sm:leading-8">
-                  {faq.answer}
-                </p>
-              </details>
-            ))}
-          </div>
-        </div>
+      <section className="bg-[#F7F2EB]">
+        <FAQ faqs={faqs} />
       </section>
 
       {/* =========================================================
           FINAL CTA
       ========================================================= */}
-      <section className="bg-[#F7F5EF] px-4 py-6 sm:px-6 sm:py-10">
+      <section className="bg-[#F7F2EB]">
         <Container>
-          <div className="mx-auto max-w-[1180px] rounded-[22px] bg-[#17413D] px-7 py-14 text-white sm:px-12 sm:py-16 lg:px-16 lg:py-20">
-            <Label light>Take the next step</Label>
+          <div className="py-12 sm:py-16 lg:py-20">
+            <div className="rounded-[28px] bg-[#EAE2D6] px-7 py-14 text-center sm:px-12 sm:py-16 lg:px-20 lg:py-20">
+              <p
+                className={`${manrope.className} text-[11px] font-semibold uppercase tracking-[0.16em] text-[#8B9A6E]`}
+              >
+                Take the next step
+              </p>
 
-            <div className="mt-6 max-w-[760px]">
-              <h2 className="font-serif text-[40px] font-medium leading-[1.08] tracking-[-0.04em] sm:text-[52px] lg:text-[62px]">
-                Start with a conversation about your health.
+              <h2
+                className={`${dmSerif.className} mx-auto mt-4 max-w-[800px] text-[38px] leading-[1.07] tracking-[-0.025em] text-[#202522] sm:text-[50px] lg:text-[58px]`}
+              >
+                Build an eating pattern that works for your health and your
+                life.
               </h2>
 
-              <p className="mt-5 max-w-[600px] text-[15px] leading-7 text-white/70 sm:text-[16px] sm:leading-8">
-                Understand what may be useful for you and where nutrition can
-                fit into your wider health plan.
+              <p
+                className={`${manrope.className} mx-auto mt-6 max-w-[620px] text-[17px] leading-[1.75] text-[#65736D]`}
+              >
+                Start with a conversation about your health, current routine
+                and what you would like to change.
               </p>
 
               <Link
-                href="/book"
-                className="group mt-8 inline-flex min-h-[50px] items-center justify-center gap-4 rounded-full bg-[#F7F5EF] px-7 py-3 text-[12px] font-semibold text-[#17413D] transition-all duration-300 hover:bg-[#E7EDE8] sm:text-[13px]"
+                href="/book-appointment"
+                className={`${manrope.className} group mt-8 inline-flex min-h-[52px] items-center gap-4 rounded-full bg-[#8B9A6E] px-7 py-3 text-[14px] font-semibold text-white transition-colors hover:bg-[#74845B]`}
               >
-                Book a consultation
-                <Arrow />
+                Book a Consultation
+                <span className="transition-transform group-hover:translate-x-1">
+                  →
+                </span>
               </Link>
             </div>
           </div>
@@ -764,17 +938,17 @@ export default function NutritionPage() {
       </section>
 
       {/* =========================================================
-          DISCLAIMER
+          MEDICAL DISCLAIMER
       ========================================================= */}
-      <section className="bg-[#F7F5EF] pb-10">
-        <Container>
-          <p className="mx-auto max-w-[1180px] text-[10px] leading-5 text-[#65736D]">
-            Nutrition counselling is intended to support health and wellbeing
-            and does not replace medical diagnosis or treatment. Medication
-            changes should always be discussed with your treating clinician.
-          </p>
-        </Container>
-      </section>
+      <div className="bg-[#F7F2EB] px-6 pb-8 text-center">
+        <p
+          className={`${manrope.className} mx-auto max-w-[900px] text-[11px] leading-5 text-[#65736D]`}
+        >
+          Nutrition counselling is complementary and does not replace medical
+          diagnosis or treatment. Individual recommendations and outcomes may
+          vary.
+        </p>
+      </div>
     </main>
   );
 }

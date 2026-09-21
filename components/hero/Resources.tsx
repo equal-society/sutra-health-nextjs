@@ -1,317 +1,129 @@
-import Image from "next/image";
 import Link from "next/link";
-import Container from "@/components/shared/Container";
-import { articles } from "@/data/articles";
+
+const resources = [
+  {
+    type: "Health Articles",
+    title: "Practical ideas for everyday health",
+    description:
+      "Accessible articles to help you understand health, lifestyle and the everyday factors that can influence wellbeing.",
+    href: "/resources/articles",
+    label: "Read articles",
+  },
+  {
+    type: "Research & Evidence",
+    title: "The evidence behind our approach",
+    description:
+      "Explore research and publications that inform lifestyle-based and integrative approaches to health.",
+    href: "/resources/research",
+    label: "Explore research",
+  },
+  {
+    type: "Health Guides",
+    title: "Understand your health better",
+    description:
+      "Useful information to help you learn more about common health concerns and possible next steps.",
+    href: "/resources",
+    label: "Browse resources",
+  },
+];
 
 export default function Resources() {
-  const latestArticles = [...articles]
-    .sort(
-      (a, b) =>
-        new Date(b.date).getTime() - new Date(a.date).getTime(),
-    )
-    .slice(0, 2);
-
   return (
     <section
-      aria-labelledby="resources-title"
-      className="bg-[#F7F5EF]"
+      id="health-resources"
+      aria-labelledby="health-resources-heading"
+      className="bg-[var(--sutra-porcelain)] py-20 sm:py-24 lg:py-28"
     >
-      <Container>
-        {/* Header */}
-        <div className="grid gap-6 border-b border-[#202522]/10 pb-7 sm:gap-8 sm:pb-8 lg:grid-cols-[1fr_auto] lg:items-end py-4">
-          <div className="max-w-[760px]">
-            <div className="flex items-center gap-3">
-              <span
-                aria-hidden="true"
-                className="h-px w-8 bg-[#91A298]"
-              />
-
-              <p className="font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[#65736D]">
-                Health Journal
-              </p>
-            </div>
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end lg:gap-20">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+              Health Resources
+            </p>
 
             <h2
-              id="resources-title"
-              className="
-                mt-5
-                font-serif
-                text-[36px]
-                font-medium
-                leading-[1.1]
-                tracking-[-0.025em]
-                text-[#202522]
-                sm:text-[44px]
-                lg:text-[52px]
-              "
+              id="health-resources-heading"
+              className="mt-5 max-w-xl font-[var(--font-dm-serif)] text-4xl leading-[1.05] tracking-[-0.025em] text-[var(--sutra-ink)] sm:text-5xl lg:text-6xl"
             >
-              Better health starts with{" "}
-              <span className="italic text-[#17413D]">
-                better understanding.
-              </span>
+              Information you can use.
             </h2>
           </div>
 
-          {/* Desktop link */}
+          <p className="max-w-xl text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
+            Clear health information, research and practical guidance to help
+            you understand your health and make informed choices.
+          </p>
+        </div>
+
+        <div className="mt-14 grid border-t border-[var(--sutra-border-strong)] sm:mt-16 lg:grid-cols-3 lg:divide-x lg:divide-[var(--sutra-border-strong)]">
+          {resources.map((resource, index) => (
+            <article
+              key={resource.type}
+              className="group border-b border-[var(--sutra-border-strong)] py-8 first:pt-8 last:border-b-0 lg:border-b-0 lg:px-8 lg:py-8 lg:first:pl-0 lg:last:pr-0"
+            >
+              <Link
+                href={resource.href}
+                className="block min-h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--sutra-teal)] focus-visible:ring-inset"
+              >
+                <div className="flex items-start justify-between gap-6">
+                  <span
+                    aria-hidden="true"
+                    className="font-[var(--font-dm-serif)] text-4xl leading-none text-[var(--sutra-sage)]"
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <span
+                    aria-hidden="true"
+                    className="text-lg text-[var(--sutra-teal)] transition-transform duration-200 group-hover:translate-x-1"
+                  >
+                    ↗
+                  </span>
+                </div>
+
+                <p className="mt-12 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
+                  {resource.type}
+                </p>
+
+                <h3 className="mt-4 max-w-sm font-[var(--font-dm-serif)] text-2xl leading-tight tracking-[-0.01em] text-[var(--sutra-ink)] sm:text-3xl">
+                  {resource.title}
+                </h3>
+
+                <p className="mt-4 max-w-sm text-sm leading-6 text-[var(--sutra-muted)] sm:text-base">
+                  {resource.description}
+                </p>
+
+                <span className="mt-7 inline-flex min-h-11 items-center text-sm font-semibold text-[var(--sutra-teal)]">
+                  <span className="border-b border-[var(--sutra-teal)] pb-1">
+                    {resource.label}
+                  </span>
+                </span>
+              </Link>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-10 flex flex-col gap-5 border-t border-[var(--sutra-border)] pt-7 sm:flex-row sm:items-center sm:justify-between">
+          <p className="max-w-xl text-sm leading-6 text-[var(--sutra-muted)]">
+            New articles and evidence are added as our knowledge base grows.
+          </p>
+
           <Link
-            href="/resources/articles"
-            className="
-              group
-              hidden
-              items-center
-              gap-2
-              font-sans
-              text-[14px]
-              font-medium
-              text-[#17413D]
-              transition-colors
-              duration-300
-              hover:text-[#12332F]
-              sm:inline-flex
-            "
+            href="/resources"
+            className="group inline-flex min-h-11 shrink-0 items-center gap-3 text-sm font-semibold text-[var(--sutra-teal)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--sutra-teal)] focus-visible:ring-offset-4"
           >
-            View all articles
+            <span className="border-b border-[var(--sutra-teal)] pb-1">
+              Explore all resources
+            </span>
             <span
               aria-hidden="true"
-              className="text-[17px] transition-transform duration-300 group-hover:translate-x-1"
+              className="transition-transform duration-200 group-hover:translate-x-1"
             >
               →
             </span>
           </Link>
         </div>
-
-        {/* Articles */}
-        <div className="mt-10 sm:mt-12">
-          {/* Desktop */}
-          <div className="hidden sm:grid sm:grid-cols-2">
-            {latestArticles.map((article, index) => (
-              <Link
-                key={article.slug}
-                href={`/resources/articles/${article.slug}`}
-                className={`
-                  group
-                  ${
-                    index === 0
-                      ? "border-r border-[#202522]/10 pr-7 lg:pr-10"
-                      : "pl-7 lg:pl-10"
-                  }
-                `}
-              >
-                <article>
-                  {/* Image */}
-                  <div className="relative aspect-[16/9] overflow-hidden bg-[#E7EDE8]">
-                    {article.image ? (
-                      <Image
-                        src={article.image}
-                        alt={article.title}
-                        fill
-                        sizes="(max-width: 1023px) 50vw, 560px"
-                        className="
-                          object-cover
-                          transition-transform
-                          duration-700
-                          ease-out
-                          group-hover:scale-[1.025]
-                        "
-                      />
-                    ) : (
-                      <div className="absolute inset-0 bg-[#E7EDE8]" />
-                    )}
-                  </div>
-
-                  {/* Content */}
-                  <div className="pt-5">
-                    <div className="flex flex-wrap items-center gap-2 font-sans text-[11px] font-medium uppercase tracking-[0.13em] text-[#65736D]">
-                      <span>{article.category}</span>
-
-                      <span aria-hidden="true">·</span>
-
-                      <span>{article.readTime}</span>
-                    </div>
-
-                    <h3
-                      className="
-                        mt-3
-                        max-w-[560px]
-                        font-serif
-                        text-[24px]
-                        font-medium
-                        leading-[1.15]
-                        tracking-[-0.015em]
-                        text-[#17413D]
-                        transition-colors
-                        duration-300
-                        group-hover:text-[#202522]
-                        sm:text-[26px]
-                        lg:text-[29px]
-                      "
-                    >
-                      {article.title}
-                    </h3>
-
-                    <span
-                      className="
-                        mt-4
-                        inline-flex
-                        items-center
-                        gap-2
-                        border-b
-                        border-[#17413D]/20
-                        pb-1
-                        font-sans
-                        text-[12px]
-                        font-medium
-                        text-[#202522]
-                        transition-colors
-                        duration-300
-                        group-hover:border-[#17413D]
-                      "
-                    >
-                      Read article
-
-                      <span
-                        aria-hidden="true"
-                        className="
-                          transition-transform
-                          duration-300
-                          group-hover:translate-x-1
-                        "
-                      >
-                        →
-                      </span>
-                    </span>
-                  </div>
-                </article>
-              </Link>
-            ))}
-          </div>
-
-          {/* Mobile */}
-          <div className="sm:hidden">
-            <div
-              className="
-                -mx-2
-                flex
-                snap-x
-                snap-mandatory
-                gap-4
-                overflow-x-auto
-                px-6
-                pb-2
-                [scrollbar-width:none]
-                [&::-webkit-scrollbar]:hidden
-              "
-              aria-label="Latest health articles"
-            >
-              {latestArticles.map((article) => (
-                <Link
-                  key={article.slug}
-                  href={`/resources/articles/${article.slug}`}
-                  className="
-                    group
-                    w-[84vw]
-                    max-w-[350px]
-                    shrink-0
-                    snap-start
-                  "
-                >
-                  <article>
-                    {/* Image */}
-                    <div className="relative aspect-[16/10] overflow-hidden bg-[#E7EDE8]">
-                      {article.image ? (
-                        <Image
-                          src={article.image}
-                          alt={article.title}
-                          fill
-                          sizes="84vw"
-                          className="
-                            object-cover
-                            transition-transform
-                            duration-700
-                            ease-out
-                            group-hover:scale-[1.025]
-                          "
-                        />
-                      ) : (
-                        <div className="absolute inset-0 bg-[#E7EDE8]" />
-                      )}
-                    </div>
-
-                    {/* Content */}
-                    <div className="pt-5">
-                      <div className="flex flex-wrap items-center gap-2 font-sans text-[10px] font-medium uppercase tracking-[0.13em] text-[#65736D]">
-                        <span>{article.category}</span>
-
-                        <span aria-hidden="true">·</span>
-
-                        <span>{article.readTime}</span>
-                      </div>
-
-                      <h3
-                        className="
-                          mt-3
-                          font-serif
-                          text-[25px]
-                          font-medium
-                          leading-[1.12]
-                          tracking-[-0.015em]
-                          text-[#17413D]
-                        "
-                      >
-                        {article.title}
-                      </h3>
-
-                      <span
-                        className="
-                          mt-4
-                          inline-flex
-                          items-center
-                          gap-2
-                          border-b
-                          border-[#17413D]/20
-                          pb-1
-                          font-sans
-                          text-[12px]
-                          font-medium
-                          text-[#202522]
-                        "
-                      >
-                        Read article
-                        <span aria-hidden="true">→</span>
-                      </span>
-                    </div>
-                  </article>
-                </Link>
-              ))}
-            </div>
-
-            {/* Mobile article link */}
-            <Link
-              href="/resources/articles"
-              className="
-                group
-                mt-8
-                inline-flex
-                items-center
-                gap-2
-                font-sans
-                text-[14px]
-                font-medium
-                text-[#17413D]
-              "
-            >
-              View all articles
-
-              <span
-                aria-hidden="true"
-                className="text-[17px] transition-transform duration-300 group-hover:translate-x-1"
-              >
-                →
-              </span>
-            </Link>
-          </div>
-        </div>
-      </Container>
+      </div>
     </section>
   );
 }

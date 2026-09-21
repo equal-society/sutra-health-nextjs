@@ -1,109 +1,181 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import Container from "@/components/shared/Container";
 
-export default function Experts() {
+const exploreLinks = [
+  { label: "Our Approach", href: "/approach" },
+  { label: "Conditions", href: "/conditions" },
+  { label: "Resources", href: "/resources" },
+];
+
+const connectLinks = [
+  { label: "Book a Consultation", href: "/book-appointment" },
+  { label: "Contact Us", href: "/contact" },
+];
+
+const socialLinks = [
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/sutrahealth/",
+    icon: "fa-brands fa-instagram",
+  },
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/people/Sutrahealth-Equal/",
+    icon: "fa-brands fa-facebook-f",
+  },
+  {
+    name: "YouTube",
+    href: "https://www.youtube.com/@sutra-health",
+    icon: "fa-brands fa-youtube",
+  },
+  {
+    name: "Email",
+    href: "mailto:equal.society@gmail.com",
+    icon: "fa-solid fa-envelope",
+  },
+  {
+    name: "WhatsApp",
+    href: "https://wa.me/919013103676",
+    icon: "fa-brands fa-whatsapp",
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/equal-society-ngo",
+    icon: "fa-brands fa-linkedin-in",
+  },
+];
+
+export default function Footer() {
   return (
-    <section
-      id="experts"
-      aria-labelledby="experts-title"
-      className="bg-white"
-    >
-      <div className="mx-auto max-w-[1180px] px-6 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
-        {/* =====================================================
-            SECTION INTRO
-        ====================================================== */}
-        <div className="grid gap-5 lg:grid-cols-[0.55fr_1.45fr] lg:gap-16">
-          <div>
-            <div className="flex items-center gap-3">
-              <span
-                aria-hidden="true"
-                className="h-px w-8 bg-[#91A298]"
-              />
+    <footer className="bg-[var(--sutra-teal)] text-[var(--sutra-porcelain)]">
+      <Container>
+        <div className="py-14 sm:py-16 lg:py-20">
+          <div className="grid gap-12 lg:grid-cols-[1.7fr_0.75fr_0.9fr_1fr] lg:gap-14">
+            {/* Brand */}
+            <div className="max-w-[440px]">
+              <Link
+                href="/"
+                aria-label="Sutra Health home"
+                className="inline-block font-[var(--font-manrope)] text-[26px] font-bold leading-none tracking-[-0.035em] text-[var(--sutra-porcelain)] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--sutra-teal)]"
+              >
+                Sutra Health
+              </Link>
 
-              <span className="font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[#4F5A54]">
-                Our expert
-              </span>
-            </div>
-          </div>
-
-          <div className="max-w-[760px]">
-            <h2
-              id="experts-title"
-              className="font-serif text-[36px] font-medium leading-[1.1] tracking-[-0.025em] text-[#202522] sm:text-[44px] lg:text-[52px]"
-            >
-              Experienced care,
-              <br className="hidden sm:block" />
-              grounded in health science.
-            </h2>
-          </div>
-        </div>
-
-        {/* =====================================================
-            EXPERT PROFILE
-        ====================================================== */}
-        <div className="mt-10 grid gap-8 border-t border-[#202522]/10 pt-8 sm:mt-12 sm:pt-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-14 lg:pt-12">
-          {/* Image */}
-          <div className="relative aspect-[4/4.5] w-full overflow-hidden bg-[#E7EDE8]">
-            <Image
-              src="/images/doc.png"
-              alt="Dr. Rakesh Sarwal"
-              fill
-              sizes="(max-width: 1023px) 100vw, 46vw"
-              className="object-cover object-top"
-            />
-          </div>
-
-          {/* Details */}
-          <div className="flex flex-col justify-center">
-            <p className="font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[#65736D]">
-              Sutra Health
-            </p>
-
-            <h3 className="mt-4 font-serif text-[34px] font-medium leading-[1.1] tracking-[-0.025em] text-[#202522] sm:text-[40px] lg:text-[46px]">
-              Dr. Rakesh Sarwal
-            </h3>
-
-            <p className="mt-3 font-sans text-[16px] font-medium text-[#17413D] sm:text-[17px]">
-              MBBS, MPH, DrPH · Therapeutic Yoga Consultant
-            </p>
-
-            <p className="mt-6 max-w-[590px] font-sans text-[16px] leading-[1.72] text-[#4F5A54] sm:text-[17px]">
-              Professor, Community Medicine · Head, Integrated Health Clinic,
-              ESIC Medical College & Hospital, Faridabad.
-            </p>
-
-            {/* Expertise */}
-            <div className="mt-7 border-t border-[#202522]/10 pt-6">
-              <p className="font-sans text-[12px] font-medium uppercase tracking-[0.12em] text-[#65736D]">
-                Areas of expertise
+              <p className="mt-5 max-w-[400px] text-[15px] leading-7 text-white/70 sm:text-base sm:leading-7">
+                Doctor-led, personalised healthcare that brings medical care,
+                lifestyle and everyday wellbeing into one connected approach.
               </p>
 
-              <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 font-sans text-[15px] font-medium text-[#202522] sm:text-[16px]">
-                <span>Lifestyle Medicine</span>
-                <span>Nutrition</span>
-                <span>Yoga</span>
+              <div
+                aria-label="Sutra Health social links"
+                className="mt-7 flex flex-wrap gap-2"
+              >
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target={social.href.startsWith("mailto:") ? undefined : "_blank"}
+                    rel={
+                      social.href.startsWith("mailto:")
+                        ? undefined
+                        : "noopener noreferrer"
+                    }
+                    aria-label={
+                      social.name === "Email"
+                        ? "Email Sutra Health"
+                        : `Sutra Health on ${social.name}`
+                    }
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-[13px] text-white/65 transition-colors duration-200 hover:border-white/30 hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--sutra-teal)]"
+                  >
+                    <i className={social.icon} aria-hidden="true" />
+                  </a>
+                ))}
               </div>
             </div>
 
-            {/* Profile link */}
-            <Link
-              href="https://academic.lifequality.org.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group mt-8 inline-flex w-fit items-center gap-2 font-sans text-[14px] font-medium text-[#17413D] transition-colors duration-300 hover:text-[#12332F]"
-            >
-              View full profile
+            {/* Explore */}
+            <div>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/55">
+                Explore
+              </p>
 
-              <ArrowUpRight
-                size={17}
-                strokeWidth={1.5}
-                className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-              />
-            </Link>
+              <nav aria-label="Explore" className="mt-5 flex flex-col gap-3">
+                {exploreLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="w-fit text-sm text-white/70 transition-colors duration-200 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--sutra-teal)]"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            {/* Connect */}
+            <div>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/55">
+                Connect
+              </p>
+
+              <nav aria-label="Connect" className="mt-5 flex flex-col gap-3">
+                {connectLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="w-fit text-sm text-white/70 transition-colors duration-200 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--sutra-teal)]"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/55">
+                Contact
+              </p>
+
+              <div className="mt-5 flex flex-col gap-3 text-sm leading-6 text-white/70">
+                <a
+                  href="mailto:equal.society@gmail.com"
+                  className="w-fit break-words transition-colors duration-200 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--sutra-teal)]"
+                >
+                  equal.society@gmail.com
+                </a>
+
+                <a
+                  href="https://wa.me/919013103676"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-fit transition-colors duration-200 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--sutra-teal)]"
+                >
+                  WhatsApp us
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-14 border-t border-white/10 pt-6 sm:mt-16">
+            <div className="flex flex-col gap-3 text-[11px] leading-5 text-white/50 sm:flex-row sm:items-center sm:justify-between">
+              <p>
+                © {new Date().getFullYear()} Sutra Health. All rights reserved.
+              </p>
+
+              <p>
+                Rooted in the work of EQUAL Society since 1997.
+              </p>
+            </div>
+
+            <p className="mt-5 max-w-[920px] text-[10px] leading-5 text-white/40">
+              Sutra Health provides integrative and lifestyle-focused support
+              alongside appropriate medical care. It does not replace
+              diagnosis, treatment or advice from your doctor.
+            </p>
           </div>
         </div>
-      </div>
-    </section>
+      </Container>
+    </footer>
   );
 }

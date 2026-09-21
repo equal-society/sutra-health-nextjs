@@ -1,30 +1,25 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { DM_Serif_Display, Manrope } from "next/font/google";
 import type { LucideIcon } from "lucide-react";
 import {
   Activity,
   Apple,
-  Archive,
-  Bone,
   Brain,
-  ClipboardCheck,
-  FileText,
-  FlaskConical,
   HeartPulse,
   PersonStanding,
   Scale,
   Sparkles,
   UserRound,
   UsersRound,
-  Wind,
 } from "lucide-react";
 
 /* =========================================================
-   SUTRA HEALTH FONTS
-   ========================================================= */
+   SUTRA HEALTH — TYPOGRAPHY
+========================================================= */
 
 const dmSerif = DM_Serif_Display({
   subsets: ["latin"],
@@ -40,17 +35,35 @@ const manrope = Manrope({
 });
 
 /* =========================================================
-   NAVIGATION DATA
-   ========================================================= */
+   NAVIGATION
+========================================================= */
 
-const whatWeDo = [
+type NavItem = {
+  label: string;
+  href: string;
+  icon: LucideIcon;
+};
+
+type DropdownName =
+  | "whatWeDo"
+  | "conditions"
+  | "about"
+  | "resources"
+  | null;
+
+const whatWeDo: NavItem[] = [
   {
-    label: "Lifestyle Medicine",
-    href: "/what-we-do/lifestyle",
+    label: "Physician Consultation",
+    href: "/what-we-do/physician-consultation",
     icon: HeartPulse,
   },
   {
-    label: "Nutrition Counselling",
+    label: "Lifestyle Medicine",
+    href: "/what-we-do/lifestyle",
+    icon: Activity,
+  },
+  {
+    label: "Nutrition",
     href: "/what-we-do/nutrition",
     icon: Apple,
   },
@@ -60,21 +73,16 @@ const whatWeDo = [
     icon: PersonStanding,
   },
   {
-    label: "Breath & Mindfulness",
-    href: "/what-we-do/breath-mindfulness",
-    icon: Wind,
+    label: "Behaviour, Stress & Mind",
+    href: "/what-we-do/behaviour-stress-mind",
+    icon: Brain,
   },
 ];
 
-const conditions = [
+const conditions: NavItem[] = [
   {
-    label: "Weight Management",
-    href: "/conditions/weight-management",
-    icon: Scale,
-  },
-  {
-    label: "Metabolic Health",
-    href: "/conditions/metabolic-health",
+    label: "Diabetes & Blood Sugar",
+    href: "/conditions/diabetes",
     icon: Activity,
   },
   {
@@ -83,9 +91,14 @@ const conditions = [
     icon: HeartPulse,
   },
   {
+    label: "Weight Management",
+    href: "/conditions/weight-management",
+    icon: Scale,
+  },
+  {
     label: "Arthritis & Joint Pain",
     href: "/conditions/arthritis-joint-pain",
-    icon: Bone,
+    icon: PersonStanding,
   },
   {
     label: "Migraine & Headache",
@@ -104,9 +117,9 @@ const conditions = [
   },
 ];
 
-const about = [
+const about: NavItem[] = [
   {
-    label: "About Sutra Health",
+    label: "Our Story",
     href: "/about",
     icon: Sparkles,
   },
@@ -116,98 +129,72 @@ const about = [
     icon: UserRound,
   },
   {
-    label: "Volunteer",
+    label: "Community & Volunteer",
     href: "/volunteer",
     icon: UsersRound,
   },
 ];
 
-const resources = [
+const resources: NavItem[] = [
   {
     label: "Health Articles",
     href: "/resources/articles",
-    icon: FileText,
+    icon: Activity,
   },
   {
-    label: "Research & Publications",
+    label: "21-Point Health Assessment",
+    href: "/assessment",
+    icon: Scale,
+  },
+  {
+    label: "Research & Evidence",
     href: "/resources/research",
-    icon: FlaskConical,
+    icon: Sparkles,
   },
   {
-    label: "21-Question Lifestyle Assessment",
-    href: "/score",
-    icon: ClipboardCheck,
-  },
-  {
-    label: "Gallery",
-    href: "/archive",
-    icon: Archive,
+    label: "Practice Knowledge System",
+    href: "/resources/knowledge-system",
+    icon: Brain,
   },
 ];
 
-/* =========================================================
-   TYPES
-   ========================================================= */
-
-type DropdownName =
-  | "whatWeDo"
-  | "conditions"
-  | "about"
-  | "resources"
-  | null;
-
-interface DropdownProps {
-  name: Exclude<DropdownName, null>;
-  label: string;
-  items: {
-    label: string;
-    href: string;
-    icon: LucideIcon;
-  }[];
-  viewAll?: {
-    label: string;
-    href: string;
-  };
-  className?: string;
-  openDropdown: DropdownName;
-  toggleDropdown: (name: DropdownName) => void;
-  closeNavigation: () => void;
-  setOpenDropdown: (name: DropdownName) => void;
-}
-
-interface MobileDropdownProps {
-  name: Exclude<DropdownName, null>;
-  label: string;
-  items: {
-    label: string;
-    href: string;
-    icon: LucideIcon;
-  }[];
-  viewAll?: {
-    label: string;
-    href: string;
-  };
-  openDropdown: DropdownName;
-  toggleDropdown: (name: DropdownName) => void;
-  closeNavigation: () => void;
+function isActivePath(pathname: string, href: string) {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
 }
 
 /* =========================================================
    DESKTOP DROPDOWN
-   ========================================================= */
+========================================================= */
+
+interface DesktopDropdownProps {
+  name: Exclude<DropdownName, null>;
+  label: string;
+  items: NavItem[];
+  viewAll?: {
+    label: string;
+    href: string;
+  };
+  openDropdown: DropdownName;
+  setOpenDropdown: (name: DropdownName) => void;
+  closeNavigation: () => void;
+  pathname: string;
+}
 
 function DesktopDropdown({
   name,
   label,
   items,
   viewAll,
-  className = "",
   openDropdown,
-  toggleDropdown,
-  closeNavigation,
   setOpenDropdown,
-}: DropdownProps) {
+  closeNavigation,
+  pathname,
+}: DesktopDropdownProps) {
   const isOpen = openDropdown === name;
+  const hasActiveItem = items.some((item) =>
+    isActivePath(pathname, item.href)
+  );
 
   return (
     <div
@@ -218,61 +205,60 @@ function DesktopDropdown({
       <button
         type="button"
         className={`navDropdownButton ${
-          isOpen ? "navDropdownButtonOpen" : ""
+          isOpen || hasActiveItem ? "navDropdownButtonActive" : ""
         }`}
         aria-expanded={isOpen}
-        onClick={() => toggleDropdown(name)}
+        aria-haspopup="true"
+        onClick={() => setOpenDropdown(isOpen ? null : name)}
       >
         <span>{label}</span>
-
         <span
-          className={`chevron ${isOpen ? "chevronOpen" : ""}`}
+          className={`navChevron ${isOpen ? "navChevronOpen" : ""}`}
           aria-hidden="true"
         />
       </button>
 
       {isOpen && (
-        <div className={`dropdownMenu ${className}`}>
+        <div className={`dropdownMenu ${name}Menu`}>
           <div className="dropdownList">
-            {items.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="dropdownItem"
-                onClick={closeNavigation}
-              >
-                <span className="dropdownItemMain">
-                  <span
-                    className="dropdownItemIcon"
-                    aria-hidden="true"
-                  >
-                    <item.icon size={14} strokeWidth={1.7} />
+            {items.map((item) => {
+              const Icon = item.icon;
+              const active = isActivePath(pathname, item.href);
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`dropdownItem ${
+                    active ? "dropdownItemActive" : ""
+                  }`}
+                  onClick={closeNavigation}
+                >
+                  <span className="dropdownItemMain">
+                    <span className="dropdownItemIcon" aria-hidden="true">
+                      <Icon size={16} strokeWidth={1.7} />
+                    </span>
+                    <span className="dropdownItemLabel">{item.label}</span>
                   </span>
 
-                  <span>{item.label}</span>
-                </span>
-
-                <span
-                  className="dropdownArrow"
-                  aria-hidden="true"
-                >
-                  →
-                </span>
-              </Link>
-            ))}
-
-            {viewAll && (
-              <Link
-                href={viewAll.href}
-                className="dropdownViewAll"
-                onClick={closeNavigation}
-              >
-                {viewAll.label}
-
-                <span aria-hidden="true">→</span>
-              </Link>
-            )}
+                  <span className="dropdownArrow" aria-hidden="true">
+                    →
+                  </span>
+                </Link>
+              );
+            })}
           </div>
+
+          {viewAll && (
+            <Link
+              href={viewAll.href}
+              className="dropdownViewAll"
+              onClick={closeNavigation}
+            >
+              <span>{viewAll.label}</span>
+              <span aria-hidden="true">→</span>
+            </Link>
+          )}
         </div>
       )}
     </div>
@@ -281,7 +267,20 @@ function DesktopDropdown({
 
 /* =========================================================
    MOBILE DROPDOWN
-   ========================================================= */
+========================================================= */
+
+interface MobileDropdownProps {
+  name: Exclude<DropdownName, null>;
+  label: string;
+  items: NavItem[];
+  viewAll?: {
+    label: string;
+    href: string;
+  };
+  openDropdown: DropdownName;
+  toggleDropdown: (name: DropdownName) => void;
+  closeNavigation: () => void;
+}
 
 function MobileDropdown({
   name,
@@ -299,11 +298,10 @@ function MobileDropdown({
       <button
         type="button"
         className="mobileDropdownButton"
-        onClick={() => toggleDropdown(name)}
         aria-expanded={isOpen}
+        onClick={() => toggleDropdown(name)}
       >
         <span>{label}</span>
-
         <span
           className={`mobileChevron ${
             isOpen ? "mobileChevronOpen" : ""
@@ -320,28 +318,29 @@ function MobileDropdown({
         {viewAll && (
           <Link
             href={viewAll.href}
+            className="mobileDropdownViewAll"
             onClick={closeNavigation}
           >
             {viewAll.label}
           </Link>
         )}
 
-        {items.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            onClick={closeNavigation}
-          >
-            <span
-              className="mobileDropdownItemIcon"
-              aria-hidden="true"
-            >
-              <item.icon size={14} strokeWidth={1.7} />
-            </span>
+        {items.map((item) => {
+          const Icon = item.icon;
 
-            <span>{item.label}</span>
-          </Link>
-        ))}
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={closeNavigation}
+            >
+              <span className="mobileDropdownItemIcon" aria-hidden="true">
+                <Icon size={15} strokeWidth={1.7} />
+              </span>
+              <span>{item.label}</span>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
@@ -349,143 +348,116 @@ function MobileDropdown({
 
 /* =========================================================
    HEADER
-   ========================================================= */
+========================================================= */
 
 export default function Header() {
+  const pathname = usePathname();
+  const headerRef = useRef<HTMLElement>(null);
+
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] =
     useState<DropdownName>(null);
 
-  const navRef = useRef<HTMLElement>(null);
-
-  /* Close dropdown when clicking outside */
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
+    const handleOutsideClick = (event: MouseEvent) => {
       if (
-        navRef.current &&
-        !navRef.current.contains(event.target as Node)
+        headerRef.current &&
+        !headerRef.current.contains(event.target as Node)
       ) {
         setOpenDropdown(null);
       }
-    }
+    };
 
-    document.addEventListener(
-      "mousedown",
-      handleClickOutside
-    );
+    document.addEventListener("mousedown", handleOutsideClick);
 
     return () => {
-      document.removeEventListener(
-        "mousedown",
-        handleClickOutside
-      );
+      document.removeEventListener("mousedown", handleOutsideClick);
     };
   }, []);
 
-  /* Escape key */
   useEffect(() => {
-    function handleEscape(event: KeyboardEvent) {
+    const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setMobileOpen(false);
         setOpenDropdown(null);
+        setMobileOpen(false);
       }
-    }
+    };
 
-    document.addEventListener(
-      "keydown",
-      handleEscape
-    );
+    document.addEventListener("keydown", handleEscape);
 
     return () => {
-      document.removeEventListener(
-        "keydown",
-        handleEscape
-      );
+      document.removeEventListener("keydown", handleEscape);
     };
   }, []);
 
-  function toggleDropdown(name: DropdownName) {
-    setOpenDropdown((current) =>
-      current === name ? null : name
-    );
-  }
-
-  function closeNavigation() {
-    setMobileOpen(false);
+  useEffect(() => {
     setOpenDropdown(null);
-  }
+    setMobileOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
+  const closeNavigation = () => {
+    setOpenDropdown(null);
+    setMobileOpen(false);
+  };
+
+  const toggleDropdown = (name: DropdownName) => {
+    setOpenDropdown((current) => (current === name ? null : name));
+  };
+
+  const approachActive = isActivePath(pathname, "/approach");
 
   return (
     <header
-      ref={navRef}
-      className={`${dmSerif.variable} ${manrope.variable} siteHeader siteHeaderPremium`}
-      style={{
-        fontFamily: "var(--font-manrope)",
-      }}
+      ref={headerRef}
+      className={`${dmSerif.variable} ${manrope.variable} siteHeader`}
     >
-      <div className="navbarContainer navbarContainerPremium">
-        {/* =================================================
-            BRAND
-        ================================================= */}
+      <div className="navbarContainer">
+        {/* BRAND */}
         <Link
           href="/"
-          className="brand brandPremium"
+          className="brand"
+          aria-label="Sutra Health — Home"
           onClick={closeNavigation}
-          aria-label="Sutra Health Home"
         >
-          <div className="brandLogo brandLogoPremium">
+          <span className="brandLogo">
             <img
               src="/logo/sutra-health-logo.webp"
-              alt="Sutra Health"
-              width="48"
-              height="48"
+              alt=""
+              width={48}
+              height={48}
             />
-          </div>
+          </span>
 
-          <div className="brandText brandTextPremium">
-            <span
-              className="brandName brandNamePremium"
-              style={{
-                fontFamily: "var(--font-dm-serif)",
-              }}
-            >
-              Sutra Health
-            </span>
-
-            <span className="brandTagline brandTaglinePremium">
+          <span className="brandText">
+            <span className="brandName">Sutra Health</span>
+            <span className="brandTagline">
               Integrative Lifestyle Healthcare
             </span>
-          </div>
+          </span>
         </Link>
 
-        {/* =================================================
-            DESKTOP NAV
-        ================================================= */}
-        <nav
-          className="desktopNav desktopNavPremium"
-          aria-label="Main navigation"
-        >
-          <Link
-            href="/"
-            className="navLink navLinkPremium"
-            onClick={closeNavigation}
-          >
-            Home
-          </Link>
-
+        {/* DESKTOP NAV */}
+        <nav className="desktopNav" aria-label="Primary navigation">
           <DesktopDropdown
             name="whatWeDo"
             label="What We Do"
             items={whatWeDo}
             viewAll={{
-              label: "View all",
+              label: "Explore What We Do",
               href: "/what-we-do",
             }}
             openDropdown={openDropdown}
-            toggleDropdown={toggleDropdown}
-            closeNavigation={closeNavigation}
             setOpenDropdown={setOpenDropdown}
-            className="whatWeDoMenu"
+            closeNavigation={closeNavigation}
+            pathname={pathname}
           />
 
           <DesktopDropdown
@@ -493,30 +465,23 @@ export default function Header() {
             label="Conditions"
             items={conditions}
             viewAll={{
-              label: "View all",
+              label: "Explore All Conditions",
               href: "/conditions",
             }}
             openDropdown={openDropdown}
-            toggleDropdown={toggleDropdown}
-            closeNavigation={closeNavigation}
             setOpenDropdown={setOpenDropdown}
-            className="conditionsMenu"
+            closeNavigation={closeNavigation}
+            pathname={pathname}
           />
 
           <Link
             href="/approach"
-            className="navLink navLinkPremium"
+            className={`navLink ${
+              approachActive ? "navLinkActive" : ""
+            }`}
             onClick={closeNavigation}
           >
             Our Approach
-          </Link>
-
-          <Link
-            href="/retreat-programs"
-            className="navLink navLinkPremium"
-            onClick={closeNavigation}
-          >
-            Retreats
           </Link>
 
           <DesktopDropdown
@@ -524,10 +489,9 @@ export default function Header() {
             label="About"
             items={about}
             openDropdown={openDropdown}
-            toggleDropdown={toggleDropdown}
-            closeNavigation={closeNavigation}
             setOpenDropdown={setOpenDropdown}
-            className="aboutMenu"
+            closeNavigation={closeNavigation}
+            pathname={pathname}
           />
 
           <DesktopDropdown
@@ -535,108 +499,64 @@ export default function Header() {
             label="Resources"
             items={resources}
             viewAll={{
-              label: "View all",
+              label: "Explore Resources",
               href: "/resources",
             }}
             openDropdown={openDropdown}
-            toggleDropdown={toggleDropdown}
-            closeNavigation={closeNavigation}
             setOpenDropdown={setOpenDropdown}
-            className="resourcesMenu"
+            closeNavigation={closeNavigation}
+            pathname={pathname}
           />
-
-          <Link
-            href="/contact"
-            className="navLink navLinkPremium"
-            onClick={closeNavigation}
-          >
-            Contact
-          </Link>
         </nav>
 
-        {/* =================================================
-            DESKTOP ACTION
-        ================================================= */}
-        <div className="desktopNavActions desktopNavActionsPremium">
+        {/* DESKTOP CTA */}
+        <div className="desktopNavActions">
           <Link
             href="/book-appointment"
-            className="desktopBookButton desktopBookButtonPremium"
+            className="desktopBookButton"
             onClick={closeNavigation}
           >
-            <span>Book Consultation</span>
-
-            <span aria-hidden="true">→</span>
+            <span>Book a Consultation</span>
+            <span aria-hidden="true" className="buttonArrow">
+              →
+            </span>
           </Link>
         </div>
 
-        {/* =================================================
-            MOBILE MENU BUTTON
-        ================================================= */}
+        {/* MOBILE MENU */}
         <button
           type="button"
-          className={`mobileMenuButton mobileMenuButtonPremium ${
+          className={`mobileMenuButton ${
             mobileOpen ? "mobileMenuButtonOpen" : ""
           }`}
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-navigation"
+          aria-label={
+            mobileOpen ? "Close navigation" : "Open navigation"
+          }
           onClick={() => {
-            setMobileOpen((value) => !value);
+            setMobileOpen((current) => !current);
             setOpenDropdown(null);
           }}
-          aria-expanded={mobileOpen}
-          aria-label={
-            mobileOpen
-              ? "Close navigation menu"
-              : "Open navigation menu"
-          }
         >
-          <span
-            className={
-              mobileOpen
-                ? "line lineOneOpen"
-                : "line"
-            }
-          />
-
-          <span
-            className={
-              mobileOpen
-                ? "line lineTwoOpen"
-                : "line"
-            }
-          />
-
-          <span
-            className={
-              mobileOpen
-                ? "line lineThreeOpen"
-                : "line"
-            }
-          />
+          <span />
+          <span />
+          <span />
         </button>
       </div>
 
-      {/* =================================================
-          MOBILE NAV
-      ================================================= */}
+      {/* MOBILE NAV */}
       <div
-        className={`mobileNav ${
-          mobileOpen ? "mobileNavOpen" : ""
-        }`}
+        id="mobile-navigation"
+        className={`mobileNav ${mobileOpen ? "mobileNavOpen" : ""}`}
       >
-        <div className="mobileNavInner">
-          <Link
-            href="/"
-            className="mobileNavLink"
-            onClick={closeNavigation}
-          >
-            Home
-          </Link>
-
+        <nav className="mobileNavInner" aria-label="Mobile navigation">
           <MobileDropdown
             name="whatWeDo"
             label="What We Do"
             items={whatWeDo}
             viewAll={{
-              label: "View All",
+              label: "Explore What We Do",
               href: "/what-we-do",
             }}
             openDropdown={openDropdown}
@@ -649,7 +569,7 @@ export default function Header() {
             label="Conditions"
             items={conditions}
             viewAll={{
-              label: "All Conditions",
+              label: "Explore All Conditions",
               href: "/conditions",
             }}
             openDropdown={openDropdown}
@@ -659,18 +579,13 @@ export default function Header() {
 
           <Link
             href="/approach"
-            className="mobileNavLink"
+            className={`mobileNavLink ${
+              approachActive ? "mobileNavLinkActive" : ""
+            }`}
             onClick={closeNavigation}
           >
-            Our Approach
-          </Link>
-
-          <Link
-            href="/retreat-programs"
-            className="mobileNavLink"
-            onClick={closeNavigation}
-          >
-            Retreats
+            <span>Our Approach</span>
+            <span aria-hidden="true">→</span>
           </Link>
 
           <MobileDropdown
@@ -687,7 +602,7 @@ export default function Header() {
             label="Resources"
             items={resources}
             viewAll={{
-              label: "All Resources",
+              label: "Explore Resources",
               href: "/resources",
             }}
             openDropdown={openDropdown}
@@ -696,11 +611,29 @@ export default function Header() {
           />
 
           <Link
-            href="/contact"
-            className="mobileNavLink"
+            href="/retreat-programs"
+            className={`mobileNavLink ${
+              pathname.startsWith("/retreat-programs")
+                ? "mobileNavLinkActive"
+                : ""
+            }`}
             onClick={closeNavigation}
           >
-            Contact
+            <span>Retreats</span>
+            <span aria-hidden="true">→</span>
+          </Link>
+
+          <Link
+            href="/contact"
+            className={`mobileNavLink ${
+              pathname.startsWith("/contact")
+                ? "mobileNavLinkActive"
+                : ""
+            }`}
+            onClick={closeNavigation}
+          >
+            <span>Contact</span>
+            <span aria-hidden="true">→</span>
           </Link>
 
           <Link
@@ -708,11 +641,12 @@ export default function Header() {
             className="mobileBookButton"
             onClick={closeNavigation}
           >
-            <span>Book Consultation</span>
-
-            <span aria-hidden="true">→</span>
+            <span>Book a Consultation</span>
+            <span aria-hidden="true" className="buttonArrow">
+              →
+            </span>
           </Link>
-        </div>
+        </nav>
       </div>
     </header>
   );

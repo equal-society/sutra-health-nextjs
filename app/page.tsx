@@ -1,64 +1,52 @@
 import type { Metadata } from "next";
 
 import Hero from "@/components/hero/Hero";
+import HealthBridge from "@/components/hero/HealthBridge";
 import Conditions from "@/components/hero/Conditions";
+import WhatWeDo from "@/components/hero/WhatWeDo";
+import Assessment from "@/components/hero/Assessment";
+import HowItWorks from "@/components/hero/HowItWorks";
 import Experts from "@/components/hero/Experts";
-import WhySutra from "@/components/hero/WhySutra";
 import Testimonials from "@/components/hero/Testimonials";
 import Resources from "@/components/hero/Resources";
-import HealthBridge from "@/components/hero/HealthBridge";
 import FAQ from "@/components/shared/FAQ";
 import BookingCTA from "@/components/hero/BookingCTA";
-import HowItWorks from "@/components/hero/HowItWorks";
-import Assessment from "@/components/hero/Assessment";
-import WhatWeDo from "@/components/hero/WhatWeDo";
 
 const siteUrl = "https://lifequality.org.in";
 
 export const metadata: Metadata = {
   title: "Sutra Health | Doctor-Led Integrative Healthcare",
-
   description:
-    "Sutra Health provides doctor-led integrative healthcare through lifestyle medicine, nutrition counselling, therapeutic yoga, and practical behaviour support.",
-
+    "Sutra Health provides doctor-led integrative healthcare through medical care, lifestyle medicine, nutrition, therapeutic Yoga and behaviour support.",
   alternates: {
     canonical: siteUrl,
   },
-
   robots: {
     index: true,
     follow: true,
   },
-
   openGraph: {
     title: "Sutra Health | Doctor-Led Integrative Healthcare",
-
     description:
-      "Doctor-led integrative healthcare through lifestyle medicine, nutrition counselling, therapeutic yoga, and practical behaviour support.",
-
+      "Doctor-led integrative healthcare through medical care, lifestyle medicine, nutrition, therapeutic Yoga and behaviour support.",
     url: siteUrl,
     siteName: "Sutra Health",
     type: "website",
     locale: "en_IN",
-
     images: [
       {
         url: `${siteUrl}/images/hero-desktop.webp`,
         width: 1200,
         height: 630,
-        alt: "Doctor-led consultation at Sutra Health",
+        alt: "Sutra Health doctor-led integrative healthcare",
       },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
-
     title: "Sutra Health | Doctor-Led Integrative Healthcare",
-
     description:
-      "Doctor-led integrative healthcare through lifestyle medicine, nutrition counselling, therapeutic yoga, and practical behaviour support.",
-
+      "Doctor-led integrative healthcare through medical care, lifestyle medicine, nutrition, therapeutic Yoga and behaviour support.",
     images: [`${siteUrl}/images/hero-desktop.webp`],
   },
 };
@@ -71,7 +59,7 @@ const homepageFaqs = [
   },
   {
     question:
-      "Can yoga therapy be part of managing something like diabetes or blood pressure?",
+      "Can yoga therapy be part of managing conditions such as diabetes or high blood pressure?",
     answer:
       "It can be one part of your overall care alongside your doctor, but it is not a replacement for medical treatment. Medication changes should always be discussed with your physician.",
   },
@@ -86,13 +74,19 @@ const homepageFaqs = [
       "There is no single timeline. Some people notice changes within weeks, while other improvements take longer. Results depend on the individual, the health concern and consistency with the plan.",
   },
   {
-    question: "Is Sutra Health right for everyone?",
+    question: "How do I get started with Sutra Health?",
     answer:
-      "Sutra Health is designed to complement appropriate medical care. If you have a serious medical condition or take medication, discuss new lifestyle or movement practices with your doctor.",
+      "You can start by booking a consultation. We will discuss your health concerns, goals and current situation and help identify the most appropriate next step.",
   },
 ];
 
 const services = [
+  {
+    name: "Physician Consultation",
+    description:
+      "Doctor-led consultation to understand your health and discuss appropriate next steps.",
+    url: `${siteUrl}/what-we-do/physician-consultation`,
+  },
   {
     name: "Lifestyle Medicine",
     description:
@@ -100,22 +94,22 @@ const services = [
     url: `${siteUrl}/what-we-do/lifestyle`,
   },
   {
-    name: "Nutrition Counselling",
+    name: "Nutrition",
     description:
-      "Personalised guidance on food and eating habits shaped around individual health needs and daily life.",
+      "Personalised guidance around food and healthier eating habits shaped around individual health needs and daily life.",
     url: `${siteUrl}/what-we-do/nutrition`,
   },
   {
     name: "Therapeutic Yoga",
     description:
-      "Adapted yoga, movement, breathing and relaxation practices designed around individual needs.",
+      "Adapted yoga practices shaped around your health, needs and ability.",
     url: `${siteUrl}/what-we-do/therapeutic-yoga`,
   },
   {
-    name: "Behaviour & Mind Practices",
+    name: "Behaviour, Stress & Mind",
     description:
-      "Practical support for habits, stress, routines and making health changes more sustainable.",
-    url: `${siteUrl}/what-we-do/behaviour-mind`,
+      "Practical support for habits, stress and sustainable behaviour change.",
+    url: `${siteUrl}/what-we-do/behaviour-stress-mind`,
   },
 ];
 
@@ -127,14 +121,12 @@ const structuredData = {
       "@id": `${siteUrl}/#organization`,
       name: "Sutra Health",
       url: siteUrl,
-
       founder: {
         "@type": "Person",
         name: "Dr. Rakesh Sarwal",
         honorificSuffix: "MBBS, MPH, DrPH",
         url: "https://academic.lifequality.org.in/",
       },
-
       address: {
         "@type": "PostalAddress",
         streetAddress: "House No. 229, Roof-Top, Sector 46",
@@ -143,9 +135,7 @@ const structuredData = {
         postalCode: "121010",
         addressCountry: "IN",
       },
-
       telephone: "+91-9013103676",
-
       sameAs: [
         "https://academic.lifequality.org.in/",
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC12975079/",
@@ -157,10 +147,8 @@ const structuredData = {
         "https://www.linkedin.com/in/equal-society-ngo",
         "https://sutra-health.medium.com/",
         "https://in.pinterest.com/equal_society/",
-        "https://wa.me/919013103676",
       ],
     },
-
     {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
@@ -171,14 +159,13 @@ const structuredData = {
       },
       inLanguage: "en-IN",
     },
-
     {
       "@type": "WebPage",
       "@id": `${siteUrl}/#webpage`,
       name: "Sutra Health | Doctor-Led Integrative Healthcare",
       url: siteUrl,
       description:
-        "Sutra Health provides doctor-led integrative healthcare through lifestyle medicine, nutrition counselling, therapeutic yoga and practical behaviour support.",
+        "Sutra Health provides doctor-led integrative healthcare through medical care, lifestyle medicine, nutrition, therapeutic Yoga and behaviour support.",
       isPartOf: {
         "@id": `${siteUrl}/#website`,
       },
@@ -190,7 +177,6 @@ const structuredData = {
       },
       inLanguage: "en-IN",
     },
-
     {
       "@type": "BreadcrumbList",
       "@id": `${siteUrl}/#breadcrumb`,
@@ -203,12 +189,6 @@ const structuredData = {
         },
       ],
     },
-
-    /*
-     * Homepage service entities
-     * Helps search engines and AI systems understand
-     * exactly what Sutra Health offers.
-     */
     ...services.map((service) => ({
       "@type": "Service",
       "@id": `${service.url}#service`,
@@ -223,7 +203,6 @@ const structuredData = {
         name: "India",
       },
     })),
-
     {
       "@type": "FAQPage",
       "@id": `${siteUrl}/#faq`,
@@ -236,49 +215,40 @@ const structuredData = {
         },
       })),
     },
-
     {
       "@type": "HowTo",
       "@id": `${siteUrl}/#sutra-method`,
-      name: "The Sutra Health Method",
+      name: "How Sutra Health Works",
       description:
-        "The six-stage process Sutra Health uses to build a personalised and sustainable health plan.",
+        "The four-stage process used by Sutra Health to help people understand their health, personalise a plan, practise changes and review progress.",
       step: [
         {
           "@type": "HowToStep",
           position: 1,
           name: "Understand",
-          text: "See the whole picture.",
+          text:
+            "Start with your health, your concerns and the everyday factors that may influence them.",
         },
         {
           "@type": "HowToStep",
           position: 2,
-          name: "Identify",
-          text: "Recognise the patterns.",
+          name: "Personalise",
+          text:
+            "Build a practical plan around your health needs, priorities and real life.",
         },
         {
           "@type": "HowToStep",
           position: 3,
-          name: "Personalise",
-          text: "Create a plan that fits real life.",
+          name: "Practise",
+          text:
+            "Turn the plan into manageable changes around food, movement, sleep, stress and daily habits.",
         },
         {
           "@type": "HowToStep",
           position: 4,
-          name: "Practise",
-          text: "Turn understanding into action.",
-        },
-        {
-          "@type": "HowToStep",
-          position: 5,
-          name: "Sustain",
-          text: "Build habits that can last.",
-        },
-        {
-          "@type": "HowToStep",
-          position: 6,
-          name: "Adapt",
-          text: "Review and keep moving forward.",
+          name: "Review",
+          text:
+            "Look at what is changing, what is working and what needs adaptation.",
         },
       ],
     },
@@ -298,15 +268,14 @@ export default function Home() {
       <main className="sutraHomeEditorial">
         <Hero />
         <HealthBridge />
+        <Conditions />
         <WhatWeDo />
-        <WhySutra />
         <Assessment />
         <HowItWorks />
-        <Conditions />
         <Experts />
         <Testimonials />
+        <Resources />
         <FAQ />
-        <Resources/>
         <BookingCTA />
       </main>
     </>

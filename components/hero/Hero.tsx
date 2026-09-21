@@ -15,7 +15,6 @@ export default function Hero() {
             grid
             items-center
             gap-10
-            
             py-12
             sm:py-14
             lg:grid-cols-[1.08fr_0.92fr]
@@ -25,23 +24,19 @@ export default function Hero() {
             xl:gap-16
           "
         >
-          {/* =====================================================
-              CONTENT
-          ====================================================== */}
+          {/* Content */}
           <div className="max-w-[650px]">
-            {/* Eyebrow */}
             <div className="flex items-center gap-3">
               <span
                 aria-hidden="true"
                 className="h-px w-9 bg-[#91A298]"
               />
 
-              <p className="font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[#4F5A54]">
+              <p className="font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[#65736D]">
                 Doctor-led integrative healthcare
               </p>
             </div>
 
-            {/* Heading */}
             <h1
               id="hero-title"
               className="
@@ -67,7 +62,6 @@ export default function Hero() {
               <em className="not-italic text-[#17413D]">you.</em>
             </h1>
 
-            {/* Supporting copy */}
             <p
               className="
                 mt-7
@@ -75,17 +69,16 @@ export default function Hero() {
                 font-sans
                 text-[17px]
                 leading-[1.7]
-                text-[#4F5A54]
+                text-[#65736D]
                 sm:mt-8
                 sm:text-[18px]
               "
             >
-              Sutra Health brings together evidence-informed lifestyle
-              medicine, nutrition and therapeutic yoga to help you build
-              healthier habits and support long-term wellbeing.
+              Sutra Health brings together medical care, lifestyle medicine,
+              nutrition, therapeutic Yoga and behaviour support to help you
+              work on the factors that shape your health.
             </p>
 
-            {/* Actions */}
             <div
               className="
                 mt-8
@@ -116,6 +109,10 @@ export default function Hero() {
                   transition-colors
                   duration-300
                   hover:bg-[#12332F]
+                  focus-visible:outline
+                  focus-visible:outline-2
+                  focus-visible:outline-offset-3
+                  focus-visible:outline-[#17413D]
                 "
               >
                 Book a Consultation
@@ -123,6 +120,7 @@ export default function Hero() {
                 <ArrowUpRight
                   size={17}
                   strokeWidth={1.5}
+                  aria-hidden="true"
                   className="
                     ml-3
                     transition-transform
@@ -134,7 +132,7 @@ export default function Hero() {
               </Link>
 
               <Link
-                href="/what-we-do"
+                href="/assessment"
                 className="
                   group
                   inline-flex
@@ -146,13 +144,18 @@ export default function Hero() {
                   transition-colors
                   duration-300
                   hover:text-[#17413D]
+                  focus-visible:outline
+                  focus-visible:outline-2
+                  focus-visible:outline-offset-4
+                  focus-visible:outline-[#17413D]
                 "
               >
-                See how we can help
+                Take the 21-Point Health Assessment
 
                 <ArrowUpRight
                   size={16}
                   strokeWidth={1.5}
+                  aria-hidden="true"
                   className="
                     ml-2
                     transition-transform
@@ -164,7 +167,6 @@ export default function Hero() {
               </Link>
             </div>
 
-            {/* Trust line */}
             <div
               className="
                 mt-8
@@ -207,9 +209,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* =====================================================
-              IMAGE
-          ====================================================== */}
+          {/* Hero image */}
           <div className="relative lg:ml-auto lg:w-full">
             <div
               className="
@@ -221,44 +221,22 @@ export default function Hero() {
                 lg:aspect-[4/4.35]
               "
             >
-              {/* Desktop image */}
               <Image
                 src="/images/dr.png"
                 alt="Doctor-led consultation at Sutra Health"
                 fill
                 priority
-                sizes="(max-width: 1023px) 0vw, 44vw"
+                sizes="(max-width: 1023px) 100vw, 44vw"
                 className="
-                  hidden
                   object-cover
                   object-center
                   transition-transform
                   duration-700
                   hover:scale-[1.015]
-                  lg:block
-                "
-              />
-
-              {/* Mobile image */}
-              <Image
-                src="/images/dr.png"
-                alt="Doctor-led consultation at Sutra Health"
-                fill
-                priority
-                sizes="(max-width: 1023px) 100vw, 0vw"
-                className="
-                  block
-                  object-cover
-                  object-center
-                  transition-transform
-                  duration-700
-                  hover:scale-[1.015]
-                  lg:hidden
                 "
               />
             </div>
 
-            {/* Editorial image label */}
             <div
               className="
                 absolute
@@ -271,7 +249,7 @@ export default function Hero() {
                 sm:left-5
               "
             >
-              <p className="font-sans text-[11px] font-medium uppercase tracking-[0.12em] text-[#4F5A54]">
+              <p className="font-sans text-[11px] font-medium uppercase tracking-[0.12em] text-[#65736D]">
                 Care designed around you
               </p>
             </div>

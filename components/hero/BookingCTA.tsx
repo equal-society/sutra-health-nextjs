@@ -1,123 +1,85 @@
+"use client";
+
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-import Container from "@/components/shared/Container";
 
 export default function BookingCTA() {
   return (
     <section
-      aria-labelledby="booking-cta-title"
-      className="bg-[#F7F5EF]"
+      id="book-consultation"
+      aria-labelledby="booking-cta-heading"
+      className="bg-[var(--sutra-teal)] text-[var(--sutra-white)]"
     >
-      <Container>
-        <div className="py-10 sm:py-14 lg:py-18">
-          <div className="grid overflow-hidden lg:grid-cols-[1.35fr_0.65fr]">
-            {/* Main statement */}
-            <div className="relative bg-[#17413D] px-6 py-12 sm:px-10 sm:py-14 lg:px-14 lg:py-16 xl:px-16">
-              {/* Subtle editorial detail */}
-              <div
-                aria-hidden="true"
-                className="absolute right-8 top-8 h-16 w-16 border-r border-t border-white/10 sm:right-10 sm:top-10 lg:right-12 lg:top-12"
-              />
+      <div className="mx-auto max-w-7xl px-6 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
+        <div className="relative overflow-hidden">
+          {/* Subtle editorial accent */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-20 -top-28 hidden h-72 w-72 rounded-full border border-white/10 lg:block"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-8 -top-16 hidden h-48 w-48 rounded-full border border-white/10 lg:block"
+          />
 
-              <div className="relative z-10">
-                {/* Eyebrow */}
-                <div className="flex items-center gap-3">
-                  <span
-                    aria-hidden="true"
-                    className="h-px w-8 bg-[#C8BDA7]"
-                  />
+          <div className="relative grid gap-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-20">
+            <div className="max-w-3xl">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-sage)]">
+                Ready to get started?
+              </p>
 
-                  <p className="font-sans text-[11px] font-medium uppercase tracking-[0.15em] text-white/65">
-                    Start with Sutra Health
-                  </p>
-                </div>
+              <h2
+                id="booking-cta-heading"
+                className="mt-5 max-w-3xl font-[var(--font-dm-serif)] text-4xl leading-[1.04] tracking-[-0.025em] sm:text-5xl lg:text-6xl"
+              >
+                Start with a conversation about your health.
+              </h2>
 
-                {/* Heading */}
-                <h2
-                  id="booking-cta-title"
-                  className="
-                    mt-7
-                    max-w-[720px]
-                    font-serif
-                    text-[40px]
-                    font-medium
-                    leading-[1.04]
-                    tracking-[-0.03em]
-                    text-white
-                    sm:text-[52px]
-                    lg:text-[62px]
-                  "
-                >
-                  Your health is built
-                  <br className="hidden sm:block" />
-                  <span className="text-[#C8BDA7]">
-                    {" "}
-                    every day.
-                  </span>
-                </h2>
-              </div>
+              <p className="mt-6 max-w-2xl text-base leading-7 text-white/70 sm:text-lg sm:leading-8">
+                Share what you are dealing with, what you want to change and
+                what support you are looking for. We can then discuss the most
+                appropriate next step for you.
+              </p>
             </div>
 
-            {/* Action panel */}
-            <div className="flex flex-col justify-between bg-[#E7EDE8] px-6 py-10 sm:px-10 sm:py-12 lg:px-10 lg:py-12 xl:px-12">
-              <div>
-                <p className="font-sans text-[11px] font-medium uppercase tracking-[0.14em] text-[#65736D]">
-                  A practical place to begin
-                </p>
-
-                <p className="mt-5 max-w-[390px] font-sans text-[16px] leading-[1.7] text-[#4F5A54] sm:text-[17px]">
-                  Get practical, evidence-informed support to build
-                  healthier habits that fit your life.
-                </p>
-              </div>
-
-              <div className="mt-10">
-                <Link
-                  href="/book-appointment"
-                  className="
-                    group
-                    inline-flex
-                    h-[52px]
-                    w-full
-                    items-center
-                    justify-between
-                    bg-[#17413D]
-                    px-5
-                    font-sans
-                    text-[14px]
-                    font-medium
-                    text-white
-                    transition-colors
-                    duration-300
-                    hover:bg-[#12332F]
-                    sm:w-auto
-                    sm:min-w-[220px]
-                  "
+            <div className="flex flex-col items-start gap-5 lg:min-w-[280px] lg:items-start">
+              <Link
+                href="/book-appointment"
+                className="group inline-flex min-h-12 w-full items-center justify-center gap-3 bg-[var(--sutra-white)] px-7 text-sm font-semibold text-[var(--sutra-teal)] transition-colors duration-200 hover:bg-[var(--sutra-pale-sage)] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--sutra-teal)] sm:w-auto"
+              >
+                Book a Consultation
+                <span
+                  aria-hidden="true"
+                  className="transition-transform duration-200 group-hover:translate-x-1"
                 >
-                  <span>Book a Consultation</span>
+                  →
+                </span>
+              </Link>
 
-                  <ArrowUpRight
-                    size={17}
-                    strokeWidth={1.5}
-                    className="
-                      transition-transform
-                      duration-300
-                      group-hover:translate-x-0.5
-                      group-hover:-translate-y-0.5
-                    "
-                  />
-                </Link>
-
-                <div className="mt-6 border-t border-[#202522]/10 pt-5">
-                  <p className="font-sans text-[11px] leading-[1.6] text-[#65736D]">
-                    Doctor-led · Evidence-informed · Whole-person care
-                  </p>
-                </div>
-              </div>
+              <Link
+                href="/assessment"
+                className="group inline-flex min-h-11 items-center gap-3 text-sm font-semibold text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--sutra-teal)]"
+              >
+                <span className="border-b border-white/70 pb-1">
+                  Take the 21-Point Health Assessment
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="transition-transform duration-200 group-hover:translate-x-1"
+                >
+                  →
+                </span>
+              </Link>
             </div>
           </div>
+
+          <div className="relative mt-12 border-t border-white/15 pt-5 sm:mt-16">
+            <p className="max-w-2xl text-xs leading-5 text-white/55">
+              Online consultations are available for people across India.
+              In-person sessions are available in Faridabad.
+            </p>
+          </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

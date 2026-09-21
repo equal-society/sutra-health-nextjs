@@ -1,10 +1,13 @@
 @import "tailwindcss";
 
+/* =========================================================
+   SUTRA HEALTH — GLOBAL DESIGN TOKENS
+========================================================= */
+
 :root {
   --background: #F7F5EF;
   --foreground: #202522;
 
-  /* Sutra Health */
   --sutra-porcelain: #F7F5EF;
   --sutra-white: #FFFFFF;
   --sutra-ink: #202522;
@@ -14,11 +17,9 @@
   --sutra-sand: #C8BDA7;
   --sutra-muted: #65736D;
 
-  /* Typography */
   --font-sans: var(--font-manrope);
   --font-serif: var(--font-dm-serif);
 
-  /* UI */
   --sutra-border: rgba(32, 37, 34, 0.10);
   --sutra-border-strong: rgba(32, 37, 34, 0.16);
   --sutra-teal-hover: #12332F;
@@ -28,20 +29,20 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
   --font-sans: var(--font-manrope);
   --font-serif: var(--font-dm-serif);
 }
 
-/* =========================================
+/* =========================================================
    GLOBAL
-========================================= */
+========================================================= */
 
 html {
   scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   background: var(--sutra-porcelain);
   color: var(--sutra-ink);
   font-family: var(--font-manrope), sans-serif;
@@ -57,7 +58,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-dm-serif), Georgia, serif;
-  font-weight: 500;
+  font-weight: 400;
   text-rendering: optimizeLegibility;
 }
 
@@ -77,52 +78,57 @@ img {
   max-width: 100%;
 }
 
-/* =========================================
-   SUTRA HEALTH NAVBAR
-   Keep the existing navbar structure and visual language.
-========================================= */
+::selection {
+  background: var(--sutra-pale-sage);
+  color: var(--sutra-teal);
+}
+
+/* =========================================================
+   SUTRA HEALTH — HEADER
+   Premium editorial / Clayo-inspired
+========================================================= */
 
 .siteHeader {
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 100;
   width: 100%;
-  background: #F7F5EF;
-  border-bottom: 1px solid rgba(23, 63, 53, 0.1);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(247, 245, 239, 0.94);
+  border-bottom: 1px solid var(--sutra-border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .navbarContainer {
-  width: min(1500px, calc(100% - 48px));
-  min-height: 75px;
+  width: min(1440px, calc(100% - 64px));
+  min-height: 78px;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 32px;
 }
 
-/* =========================================
+/* =========================================================
    BRAND
-========================================= */
+========================================================= */
 
 .brand {
   display: inline-flex;
   align-items: center;
   gap: 11px;
-  flex-shrink: 0;
-  color: #17413D;
+  flex: 0 0 auto;
+  color: var(--sutra-teal);
   text-decoration: none;
 }
 
 .brandLogo {
-  width: 52px;
-  height: 52px;
-  display: flex;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border-radius: 50%;
 }
 
 .brandLogo img {
@@ -138,29 +144,59 @@ img {
 }
 
 .brandName {
-  font-size: 24px;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 23px;
   line-height: 1;
-  font-weight: 500;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  color: var(--sutra-teal);
+  white-space: nowrap;
 }
 
 .brandTagline {
   margin-top: 5px;
-  font-size: 9px;
+  color: var(--sutra-muted);
+  font-size: 8.5px;
   line-height: 1;
-  letter-spacing: 0.04em;
-  color: #65736D;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
-/* =========================================
+.heroShape {
+  position: absolute;
+  right: -10%;
+  top: 8%;
+  width: 58%;
+  height: 82%;
+  background: #E7EDE8;
+  border-radius: 42% 58% 62% 38% / 38% 44% 56% 62%;
+  opacity: 0.72;
+  z-index: 0;
+}
+
+.heroShapeAccent {
+  position: absolute;
+  right: 30%;
+  bottom: 4%;
+  width: 180px;
+  height: 180px;
+  background: #C8BDA7;
+  border-radius: 50%;
+  opacity: 0.12;
+  filter: blur(2px);
+}
+
+/* =========================================================
    DESKTOP NAV
-========================================= */
+========================================================= */
 
 .desktopNav {
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 23px;
+  gap: 25px;
 }
 
 .navLink,
@@ -168,41 +204,47 @@ img {
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 9px 0;
+  gap: 8px;
+  min-height: 42px;
+  padding: 8px 0;
   border: 0;
   background: transparent;
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: -0.005em;
-  color: #314641;
+  color: var(--sutra-ink);
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 13.5px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
-  transition: color 180ms ease, opacity 180ms ease;
+  transition: color 180ms ease;
 }
 
-.navLink::after {
+.navLink::after,
+.navDropdownButton::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 3px;
+  bottom: 4px;
   height: 1px;
-  background: #91A298;
+  background: var(--sutra-sage);
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 180ms ease;
 }
 
 .navLink:hover,
+.navLinkActive,
 .navDropdownButton:hover,
-.navDropdownButtonOpen {
-  color: #91A298;
+.navDropdownButtonActive {
+  color: var(--sutra-teal);
 }
 
-.navLink:hover::after {
+.navLink:hover::after,
+.navLinkActive::after,
+.navDropdownButtonActive::after {
   transform: scaleX(1);
 }
 
@@ -213,78 +255,99 @@ img {
 .navDropdown::after {
   content: "";
   position: absolute;
-  left: -8px;
-  right: -8px;
+  left: -12px;
+  right: -12px;
   top: 100%;
-  height: 9px;
+  height: 15px;
 }
 
-/* =========================================
+/* =========================================================
    CHEVRON
-========================================= */
+========================================================= */
 
-.chevron,
+.navChevron,
 .mobileChevron {
   width: 7px;
   height: 7px;
-  display: inline-block;
-  border-right: 1.5px solid currentColor;
-  border-bottom: 1.5px solid currentColor;
+  flex: 0 0 7px;
+  border-right: 1.35px solid currentColor;
+  border-bottom: 1.35px solid currentColor;
   transform: rotate(45deg) translateY(-2px);
-  transition: transform 180ms ease, color 180ms ease;
+  transition: transform 180ms ease;
 }
 
-.chevronOpen,
+.navChevronOpen,
 .mobileChevronOpen {
   transform: rotate(225deg) translateY(-1px);
 }
 
-/* =========================================
-   COMPACT PREMIUM DROPDOWNS
-========================================= */
+/* =========================================================
+   DROPDOWN
+   Same UI character as the existing design, improved readability.
+========================================================= */
 
 .dropdownMenu {
   position: absolute;
-  top: calc(100% + 17px);
+  top: calc(100% + 16px);
   left: 50%;
-  width: 330px;
-  padding: 9px;
+  width: 360px;
+  padding: 11px;
   transform: translateX(-50%);
-  background: #F7F5EF;
-  border: 1px solid rgba(23, 63, 53, 0.11);
-  border-radius: 12px;
-  box-shadow: 0 10px 24px rgba(23, 63, 53, 0.08), 0 1px 3px rgba(23, 63, 53, 0.04);
-  animation: dropdownIn 140ms ease-out;
-  z-index: 50;
+  background: var(--sutra-porcelain);
+  border: 1px solid var(--sutra-border-strong);
+  border-radius: 14px;
+  box-shadow:
+    0 16px 38px rgba(32, 37, 34, 0.08),
+    0 3px 8px rgba(32, 37, 34, 0.04);
+  animation: sutraDropdownIn 150ms ease-out;
+  z-index: 110;
 }
 
-.whatWeDoMenu { width: 320px; }
-.conditionsMenu { width: 520px; }
-.aboutMenu { width: 320px; }
-.resourcesMenu { width: 350px; }
+.whatWeDoMenu {
+  width: 370px;
+}
+
+.conditionsMenu {
+  width: 570px;
+}
+
+.aboutMenu {
+  width: 345px;
+}
+
+.resourcesMenu {
+  width: 375px;
+}
 
 .dropdownMenu::before {
   content: "";
   position: absolute;
-  top: -4px;
+  top: -5px;
   left: 50%;
-  width: 7px;
-  height: 7px;
-  background: #FFFFFF;
-  border-left: 1px solid rgba(23, 63, 53, 0.11);
-  border-top: 1px solid rgba(23, 63, 53, 0.11);
+  width: 9px;
+  height: 9px;
+  background: var(--sutra-porcelain);
+  border-left: 1px solid var(--sutra-border-strong);
+  border-top: 1px solid var(--sutra-border-strong);
   transform: translateX(-50%) rotate(45deg);
 }
 
-@keyframes dropdownIn {
-  from { opacity: 0; transform: translateX(-50%) translateY(-3px); }
-  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+@keyframes sutraDropdownIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 .dropdownList {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1px;
+  gap: 2px;
 }
 
 .conditionsMenu .dropdownList {
@@ -292,151 +355,153 @@ img {
 }
 
 .dropdownItem {
-  min-height: 46px;
+  min-height: 52px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  padding: 0 11px;
-  border-radius: 8px;
-  color: #334A45;
+  gap: 12px;
+  padding: 7px 13px;
+  border-radius: 9px;
+  color: #33413D;
   text-decoration: none;
-  font-size: 12.5px;
-  font-weight: 600;
-  letter-spacing: -0.008em;
-  transition: background 140ms ease, color 140ms ease;
+  transition:
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.dropdownItem:hover,
+.dropdownItemActive {
+  background: var(--sutra-pale-sage);
+  color: var(--sutra-teal);
 }
 
 .dropdownItemMain {
   min-width: 0;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 11px;
 }
 
-/* Small, simple line icon — intentionally no icon box */
 .dropdownItemIcon {
-  width: 16px;
-  height: 16px;
-  flex: 0 0 16px;
+  width: 19px;
+  height: 19px;
+  flex: 0 0 19px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #80958A;
+  color: var(--sutra-sage);
 }
 
-.dropdownItem:hover {
-  background: #E7EDE8;
-  color: #17413D;
+.dropdownItem:hover .dropdownItemIcon,
+.dropdownItemActive .dropdownItemIcon {
+  color: var(--sutra-teal);
 }
 
-.dropdownItem:hover .dropdownItemIcon {
-  color: #17413D;
+.dropdownItemLabel {
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 600;
+  letter-spacing: -0.008em;
 }
 
 .dropdownArrow {
   flex: 0 0 auto;
-  color: #91A298;
-  font-size: 14px;
+  color: var(--sutra-sage);
+  font-size: 16px;
   line-height: 1;
   opacity: 0;
-  transform: translateX(-2px);
-  transition: opacity 140ms ease, transform 140ms ease;
+  transform: translateX(-3px);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
 }
 
-.dropdownItem:hover .dropdownArrow {
+.dropdownItem:hover .dropdownArrow,
+.dropdownItemActive .dropdownArrow {
   opacity: 1;
   transform: translateX(0);
 }
 
 .dropdownViewAll {
-  min-height: 32px;
-  margin: 4px 2px 0;
-  padding: 0 6px;
+  min-height: 42px;
+  margin: 6px 2px 0;
+  padding: 0 9px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid rgba(23, 63, 53, 0.07);
-  color: #91A298;
+  gap: 12px;
+  border-top: 1px solid var(--sutra-border);
+  color: var(--sutra-teal);
   text-decoration: none;
-  font-size: 10px;
+  font-size: 11px;
+  line-height: 1;
   font-weight: 700;
-  letter-spacing: .045em;
+  letter-spacing: 0.055em;
   text-transform: uppercase;
 }
 
-.dropdownViewAll span {
-  font-size: 13px;
-  transition: transform 140ms ease;
+.dropdownViewAll span:last-child {
+  font-size: 15px;
+  transition: transform 160ms ease;
 }
 
-.dropdownViewAll:hover { color: #17413D; }
-.dropdownViewAll:hover span { transform: translateX(3px); }
-
-@media (prefers-reduced-motion: reduce) {
-  .dropdownMenu, .dropdownItem, .dropdownArrow, .dropdownViewAll span, .dropdownItemIcon {
-    animation: none;
-    transition: none;
-  }
+.dropdownViewAll:hover span:last-child {
+  transform: translateX(3px);
 }
 
-/* =========================================
-   DESKTOP ACTIONS
-========================================= */
-
+/* =========================================================
+   DESKTOP CTA
+========================================================= */
 
 .desktopNavActions {
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
-  gap: 14px;
-  flex-shrink: 0;
   margin-left: auto;
 }
 
-/* =========================================
-   BOOK CONSULTATION
-========================================= */
-
 .desktopBookButton {
-  flex-shrink: 0;
+  min-height: 45px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 9px;
-  min-height: 47px;
-  padding: 0 21px;
+  padding: 0 20px;
   border-radius: 999px;
-  background: #17413D;
-  color: #FFFFFF;
+  background: var(--sutra-teal);
+  color: var(--sutra-white);
   font-size: 12.5px;
+  line-height: 1;
   font-weight: 700;
   letter-spacing: -0.005em;
   text-decoration: none;
-  transition: background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+  white-space: nowrap;
+  transition:
+    background 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .desktopBookButton:hover {
-  background: #12332F;
+  background: var(--sutra-teal-hover);
   transform: translateY(-1px);
-  box-shadow: 0 9px 22px rgba(18, 63, 53, 0.16);
+  box-shadow: 0 9px 22px rgba(23, 65, 61, 0.14);
 }
 
-.desktopBookButton span:last-child {
-  font-size: 14px;
+.buttonArrow {
+  font-size: 15px;
+  line-height: 1;
   transition: transform 180ms ease;
 }
 
-.desktopBookButton:hover span:last-child {
+.desktopBookButton:hover .buttonArrow,
+.mobileBookButton:hover .buttonArrow {
   transform: translateX(3px);
 }
 
-
-
-/* =========================================
-   MOBILE BUTTON
-========================================= */
-
-
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
 
 .mobileMenuButton {
   display: none;
@@ -447,59 +512,60 @@ img {
   justify-content: center;
   flex-direction: column;
   gap: 5px;
-  border: 1px solid rgba(23, 63, 53, 0.12);
+  border: 1px solid var(--sutra-border-strong);
   border-radius: 50%;
   background: transparent;
+  color: var(--sutra-teal);
   cursor: pointer;
-  transition: background 180ms ease, border-color 180ms ease;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease;
 }
 
 .mobileMenuButton:hover,
 .mobileMenuButtonOpen {
-  background: #E7EDE8;
-  border-color: rgba(23, 63, 53, 0.18);
+  background: var(--sutra-pale-sage);
+  border-color: var(--sutra-border-strong);
 }
 
-.line {
+.mobileMenuButton span {
   width: 18px;
   height: 1.5px;
   border-radius: 999px;
-  background: #17413D;
-  transition: transform 180ms ease, opacity 180ms ease;
+  background: currentColor;
+  transition:
+    transform 180ms ease,
+    opacity 180ms ease;
 }
 
-.lineOneOpen {
+.mobileMenuButtonOpen span:nth-child(1) {
   transform: translateY(6.5px) rotate(45deg);
 }
 
-.lineTwoOpen {
+.mobileMenuButtonOpen span:nth-child(2) {
   opacity: 0;
 }
 
-.lineThreeOpen {
+.mobileMenuButtonOpen span:nth-child(3) {
   transform: translateY(-6.5px) rotate(-45deg);
 }
 
-/* =========================================
+/* =========================================================
    MOBILE NAV
-========================================= */
+========================================================= */
 
 .mobileNav {
   display: none;
 }
 
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 1250px) {
+@media (max-width: 1180px) {
   .navbarContainer {
-    width: min(100% - 32px, 1500px);
-    gap: 17px;
+    width: min(100% - 40px, 1440px);
+    gap: 22px;
   }
 
   .desktopNav {
-    gap: 15px;
+    gap: 17px;
   }
 
   .navLink,
@@ -508,19 +574,11 @@ img {
   }
 
   .desktopBookButton {
-    padding: 0 17px;
-  }
-
-  .desktopNavActions {
-    gap: 11px;
+    padding-inline: 16px;
   }
 }
 
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 1050px) {
+@media (max-width: 1020px) {
   .navbarContainer {
     min-height: 74px;
   }
@@ -539,224 +597,161 @@ img {
     height: 0;
     max-height: 0;
     overflow: hidden;
-    background: #F7F5EF;
-    border-top: 0 solid rgba(23, 63, 53, 0.08);
-    transition: height 300ms ease, max-height 300ms ease, border-color 300ms ease;
+    background: var(--sutra-porcelain);
+    border-top: 0 solid var(--sutra-border);
+    transition:
+      max-height 280ms ease,
+      border-color 280ms ease;
   }
 
   .mobileNavOpen {
-    height: calc(100vh - 74px);
-    max-height: calc(100vh - 74px);
+    height: calc(100dvh - 74px);
+    max-height: calc(100dvh - 74px);
     overflow-y: auto;
     border-top-width: 1px;
   }
 
   .mobileNavInner {
-    width: min(100% - 32px, 700px);
+    width: min(100% - 40px, 700px);
     margin: 0 auto;
-    padding: 8px 0 24px;
+    padding: 8px 0 28px;
   }
 
   .mobileNavLink,
   .mobileDropdownButton {
     width: 100%;
-    min-height: 53px;
+    min-height: 58px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0;
     border: 0;
-    border-bottom: 1px solid rgba(23, 63, 53, 0.08);
+    border-bottom: 1px solid var(--sutra-border);
     background: transparent;
-    font-family: inherit;
-    font-size: 14px;
+    color: var(--sutra-ink);
+    font-family: var(--font-manrope), sans-serif;
+    font-size: 15px;
+    line-height: 1.3;
     font-weight: 600;
-    letter-spacing: -0.005em;
-    color: #17413D;
+    letter-spacing: -0.01em;
     text-decoration: none;
+    text-align: left;
     cursor: pointer;
   }
 
+  .mobileNavLinkActive,
   .mobileNavLink:hover,
   .mobileDropdownButton:hover {
-    color: #91A298;
-  }
-
-  .mobileDropdownButton {
-    text-align: left;
+    color: var(--sutra-teal);
   }
 
   .mobileDropdownContent {
-    display: flex;
-    flex-direction: column;
     max-height: 0;
     overflow: hidden;
-    padding-left: 12px;
-    transition: max-height 260ms ease, padding-bottom 260ms ease;
+    padding-left: 10px;
+    opacity: 0;
+    transition:
+      max-height 280ms ease,
+      opacity 180ms ease,
+      padding-bottom 280ms ease;
   }
 
   .mobileDropdownContentOpen {
-    max-height: 900px;
+    max-height: 800px;
     padding-bottom: 5px;
+    opacity: 1;
   }
 
   .mobileDropdownContent a {
-    min-height: 42px;
+    min-height: 49px;
     display: flex;
     align-items: center;
-    gap: 9px;
-    padding-left: 15px;
-    border-bottom: 1px solid rgba(23, 63, 53, 0.05);
-    color: #687a73;
-    text-decoration: none;
-    font-size: 13px;
+    gap: 10px;
+    padding: 0 5px 0 12px;
+    border-bottom: 1px solid rgba(32, 37, 34, 0.065);
+    color: var(--sutra-muted);
+    font-size: 13.5px;
+    line-height: 1.35;
     font-weight: 500;
-  }
-
-  .mobileDropdownItemIcon {
-    width: 15px;
-    height: 15px;
-    flex: 0 0 16px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: #80958A;
-  }
-
-  .mobileDropdownContent a:first-child {
-    color: #91A298;
-    font-weight: 600;
+    text-decoration: none;
   }
 
   .mobileDropdownContent a:hover {
-    color: #17413D;
+    color: var(--sutra-teal);
+  }
+
+  .mobileDropdownViewAll {
+    color: var(--sutra-teal) !important;
+    font-weight: 700 !important;
+  }
+
+  .mobileDropdownItemIcon {
+    width: 17px;
+    height: 17px;
+    flex: 0 0 17px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sutra-sage);
+  }
+
+  .mobileDropdownViewAll .mobileDropdownItemIcon {
+    display: none;
   }
 
   .mobileBookButton {
+    min-height: 53px;
+    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 51px;
-    border-radius: 999px;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 700;
-  }
-
-
-  .mobileBookButton {
     gap: 9px;
-    margin-top: 10px;
-    background: #17413D;
-    color: #FFFFFF;
-    transition: background 180ms ease, transform 180ms ease;
+    border-radius: 999px;
+    background: var(--sutra-teal);
+    color: var(--sutra-white);
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+      background 180ms ease,
+      transform 180ms ease;
   }
 
   .mobileBookButton:hover {
-    background: #12332F;
+    background: var(--sutra-teal-hover);
     transform: translateY(-1px);
-  }
-
-  .mobileBookButton span:last-child {
-    font-size: 14px;
   }
 }
 
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media (max-width: 480px) {
+@media (max-width: 520px) {
   .navbarContainer {
-    width: calc(100% - 24px);
+    width: calc(100% - 28px);
   }
 
   .brandLogo {
     width: 44px;
     height: 44px;
+    flex-basis: 44px;
   }
 
   .brandName {
-    font-size: 20px;
+    font-size: 21px;
   }
 
   .brandTagline {
-    font-size: 8px;
+    font-size: 7.5px;
+    letter-spacing: 0.055em;
   }
 
   .mobileNavInner {
-    width: calc(100% - 24px);
+    width: calc(100% - 28px);
   }
 }
 
-/* =========================================
-   GLOBAL FADE
-========================================= */
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(4px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.5s ease-out;
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in 0.5s ease-out;
-}
-
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
-/* =========================================
-   SUTRA HEALTH — APPROVED VISUAL TOKENS
-   Porcelain + Ink + Deep Teal + Sage + Sand
-========================================= */
-
-:root {
-  --sutra-border: rgba(32, 37, 34, 0.10);
-  --sutra-border-strong: rgba(32, 37, 34, 0.16);
-  --sutra-teal-hover: #12332F;
-  --sutra-shadow-soft: 0 10px 30px rgba(32, 37, 34, 0.07);
-}
-
-::selection {
-  background: #E7EDE8;
-  color: #17413D;
-}
-
-a,
-button {
-  -webkit-tap-highlight-color: transparent;
-}
-
-img {
-  max-width: 100%;
-}
+/* =========================================================
+   OTHER GLOBAL UTILITIES FROM CURRENT PROJECT
+========================================================= */
 
 .sutraHomeEditorial {
   background: var(--sutra-porcelain);
@@ -777,14 +772,45 @@ img {
   color: var(--sutra-white);
 }
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================================================
+   ACCESSIBILITY / REDUCED MOTION
+========================================================= */
+
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   *,
   *::before,
   *::after {
-    scroll-behavior: auto !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }
-

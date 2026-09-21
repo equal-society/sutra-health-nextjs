@@ -1,127 +1,105 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 
 const steps = [
   {
     number: "01",
     title: "Understand",
     description:
-      "Start with your health, concerns, goals and everyday routine.",
+      "Start with your health, your concerns and the everyday factors that may be affecting how you feel.",
   },
   {
     number: "02",
-    title: "Identify",
+    title: "Personalise",
     description:
-      "Look at lifestyle factors that may be relevant to your health.",
+      "Build a practical plan around your health needs, priorities and real life.",
   },
   {
     number: "03",
-    title: "Personalise",
+    title: "Practise",
     description:
-      "Build practical recommendations around your needs and ability.",
+      "Turn the plan into manageable changes around food, movement, sleep, stress and other daily habits.",
   },
   {
     number: "04",
-    title: "Practise",
+    title: "Review",
     description:
-      "Introduce changes through nutrition, yoga and lifestyle practices.",
-  },
-  {
-    number: "05",
-    title: "Sustain",
-    description:
-      "Focus on habits that can work in everyday life over time.",
-  },
-  {
-    number: "06",
-    title: "Adapt",
-    description:
-      "Adjust the approach as your needs and circumstances change.",
+      "Look at what is changing, what is working and what needs to be adapted as you move forward.",
   },
 ];
 
 export default function HowItWorks() {
   return (
     <section
-      id="our-approach"
-      aria-labelledby="our-approach-title"
-      className="bg-[#F7F5EF]"
+      id="how-it-works"
+      aria-labelledby="how-it-works-heading"
+      className="bg-[var(--sutra-teal)] py-20 text-[var(--sutra-white)] sm:py-24 lg:py-28"
     >
-      <div className="mx-auto max-w-[1180px] px-5 py-18 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
-        {/* =====================================================
-            INTRO
-        ====================================================== */}
-        <div className="grid gap-7 lg:grid-cols-[0.65fr_1.35fr] lg:gap-16">
-          {/* Eyebrow */}
-          <div>
-            <div className="flex items-center gap-3">
-              <span
-                aria-hidden="true"
-                className="h-px w-8 bg-[#91A298]"
-              />
+      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        {/* Section introduction */}
+        <div className="max-w-3xl">
+          <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-sage)]">
+            How Sutra Works
+          </p>
 
-              <span className="font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[#4F5A54]">
-                Our approach
-              </span>
-            </div>
-          </div>
+          <h2
+            id="how-it-works-heading"
+            className="max-w-2xl font-[var(--font-dm-serif)] text-4xl leading-[1.05] tracking-[-0.025em] sm:text-5xl lg:text-6xl"
+          >
+            A practical approach to making health changes.
+          </h2>
 
-          {/* Heading */}
-          <div className="max-w-[720px]">
-            <h2
-              id="our-approach-title"
-              className="font-serif text-[36px] font-medium leading-[1.1] tracking-[-0.025em] text-[#202522] sm:text-[44px] lg:text-[52px]"
-            >
-              Understanding your health
-              <br className="hidden sm:block" />
-              comes before changing it.
-            </h2>
-
-            <p className="mt-5 max-w-[620px] font-sans text-[17px] leading-[1.7] text-[#4F5A54] sm:mt-6 sm:text-[18px]">
-              We look at the everyday factors that influence health and build
-              practical changes around your needs, circumstances and goals.
-            </p>
-
-            <Link
-              href="/approach"
-              className="group mt-5 inline-flex items-center gap-2 font-sans text-[14px] font-medium text-[#17413D] transition-colors duration-300 hover:text-[#12332F]"
-            >
-              Explore our approach
-
-              <ArrowUpRight
-                size={16}
-                strokeWidth={1.5}
-                className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
-              />
-            </Link>
-          </div>
+          <p className="mt-6 max-w-2xl text-base leading-7 text-white/70 sm:text-lg">
+            We help you understand where you are, decide what matters most,
+            and work through changes that can fit into everyday life.
+          </p>
         </div>
 
-        {/* =====================================================
-            SIX STEPS
-        ====================================================== */}
-        <div className="mt-10 border-t border-[#202522]/12 sm:mt-12 lg:mt-14">
+        {/* Process */}
+        <ol className="mt-16 grid gap-px overflow-hidden border border-white/15 bg-white/15 md:grid-cols-2 lg:mt-20 lg:grid-cols-4">
           {steps.map((step) => (
-            <div
+            <li
               key={step.number}
-              className="grid gap-3 border-b border-[#202522]/12 py-6 sm:py-7 lg:grid-cols-[60px_0.65fr_1fr] lg:items-center lg:gap-10 lg:py-7"
+              className="group bg-[var(--sutra-teal)] p-7 transition-colors duration-300 hover:bg-[var(--sutra-teal-hover)] sm:p-8 lg:min-h-[330px] lg:p-9"
             >
-              {/* Number */}
-              <span className="font-sans text-[12px] font-medium tracking-[0.08em] text-[#65736D]">
-                {step.number}
-              </span>
+              <div className="flex h-full flex-col">
+                <span className="text-xs font-semibold tracking-[0.14em] text-[var(--sutra-sage)]">
+                  {step.number}
+                </span>
 
-              {/* Title */}
-              <h3 className="font-sans text-[21px] font-medium leading-[1.3] tracking-[-0.01em] text-[#202522] sm:text-[22px] lg:text-[24px]">
-                {step.title}
-              </h3>
+                <div className="mt-auto">
+                  <div
+                    aria-hidden="true"
+                    className="mb-7 h-px w-10 bg-white/30 transition-all duration-300 group-hover:w-16"
+                  />
 
-              {/* Description */}
-              <p className="max-w-[560px] font-sans text-[16px] leading-[1.65] text-[#4F5A54] sm:text-[17px]">
-                {step.description}
-              </p>
-            </div>
+                  <h3 className="font-[var(--font-dm-serif)] text-3xl leading-tight">
+                    {step.title}
+                  </h3>
+
+                  <p className="mt-4 text-sm leading-6 text-white/65 sm:text-base">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            </li>
           ))}
+        </ol>
+
+        <div className="mt-8">
+          <Link
+            href="/approach"
+            className="group inline-flex items-center gap-3 text-sm font-semibold text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--sutra-teal)]"
+          >
+            <span className="border-b border-white pb-1">
+              Explore our approach
+            </span>
+            <span
+              aria-hidden="true"
+              className="transition-transform duration-200 group-hover:translate-x-1"
+            >
+              →
+            </span>
+          </Link>
         </div>
       </div>
     </section>
