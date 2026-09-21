@@ -32,7 +32,7 @@ export default function Resources() {
     <section
       id="health-resources"
       aria-labelledby="health-resources-heading"
-      className="bg-[var(--sutra-porcelain)] py-20 sm:py-24 lg:py-28"
+      className="bg-[var(--sutra-porcelain)] py-15 sm:py-15 lg:py-15"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end lg:gap-20">

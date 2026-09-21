@@ -1,8 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import Link from "next/link";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const testimonials = [
   {
@@ -80,11 +79,11 @@ export default function Testimonials() {
     <section
       id="patient-stories"
       aria-labelledby="patient-stories-heading"
-      className="bg-[var(--sutra-porcelain)] py-16 sm:py-20 lg:py-24"
+      className="bg-[var(--sutra-porcelain)] py-8 sm:py-10 lg:py-12"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         {/* Header */}
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
               Patient Stories
@@ -92,12 +91,12 @@ export default function Testimonials() {
 
             <h2
               id="patient-stories-heading"
-              className="mt-4 font-[var(--font-serif)] text-4xl leading-[1.05] tracking-[-0.025em] text-[var(--sutra-ink)] sm:text-5xl lg:text-6xl"
+              className="mt-3 font-[var(--font-serif)] text-3xl leading-[1.05] tracking-[-0.025em] text-[var(--sutra-ink)] sm:text-4xl lg:text-5xl"
             >
               What people have shared.
             </h2>
 
-            <p className="mt-5 max-w-xl text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
+            <p className="mt-3 max-w-xl text-sm leading-6 text-[var(--sutra-muted)] sm:text-base sm:leading-7">
               Experiences shared by people who have interacted with Sutra
               Health and its practitioners.
             </p>
@@ -110,7 +109,7 @@ export default function Testimonials() {
               onClick={() => scrollReviews("left")}
               aria-label="Previous reviews"
               className="
-                flex h-11 w-11 items-center justify-center
+                flex h-10 w-10 items-center justify-center
                 border border-[var(--sutra-border-strong)]
                 text-[var(--sutra-teal)]
                 transition-all duration-200
@@ -120,10 +119,9 @@ export default function Testimonials() {
                 focus:outline-none
                 focus-visible:ring-2
                 focus-visible:ring-[var(--sutra-teal)]
-                focus-visible:ring-offset-2
               "
             >
-              <ArrowLeft size={18} strokeWidth={1.5} />
+              <ArrowLeft size={17} strokeWidth={1.5} />
             </button>
 
             <button
@@ -131,7 +129,7 @@ export default function Testimonials() {
               onClick={() => scrollReviews("right")}
               aria-label="Next reviews"
               className="
-                flex h-11 w-11 items-center justify-center
+                flex h-10 w-10 items-center justify-center
                 border border-[var(--sutra-border-strong)]
                 text-[var(--sutra-teal)]
                 transition-all duration-200
@@ -141,29 +139,28 @@ export default function Testimonials() {
                 focus:outline-none
                 focus-visible:ring-2
                 focus-visible:ring-[var(--sutra-teal)]
-                focus-visible:ring-offset-2
               "
             >
-              <ArrowRight size={18} strokeWidth={1.5} />
+              <ArrowRight size={17} strokeWidth={1.5} />
             </button>
           </div>
         </div>
 
         {/* Reviews slider */}
-        <div
+       <div
           ref={sliderRef}
           className="
-            mt-10
+            mt-6
             flex
             snap-x
             snap-mandatory
             gap-5
             overflow-x-auto
             scroll-smooth
-            pb-3
+            pb-1
             [scrollbar-width:none]
             [&::-webkit-scrollbar]:hidden
-            sm:mt-12
+            sm:mt-7
           "
         >
           {testimonials.map((testimonial, index) => (
@@ -178,32 +175,32 @@ export default function Testimonials() {
                 border
                 border-[var(--sutra-border-strong)]
                 bg-[var(--sutra-white)]
-                p-6
+                p-5
                 sm:min-w-[calc((100%-20px)/2)]
-                sm:p-7
+                sm:p-6
                 lg:min-w-[calc((100%-40px)/3)]
-                lg:p-8
+                lg:p-7
               "
             >
-              {/* Quote mark */}
+              {/* Quote */}
               <div
                 aria-hidden="true"
-                className="font-[var(--font-serif)] text-5xl leading-none text-[var(--sutra-sage)]"
+                className="font-[var(--font-serif)] text-4xl leading-none text-[var(--sutra-sage)]"
               >
                 “
               </div>
 
-              <blockquote className="mt-5 flex flex-1 flex-col">
-                <p className="font-[var(--font-serif)] text-xl leading-[1.35] tracking-[-0.01em] text-[var(--sutra-ink)] sm:text-2xl">
+              <blockquote className="mt-3 flex flex-1 flex-col">
+                <p className="font-[var(--font-serif)] text-lg leading-[1.35] tracking-[-0.01em] text-[var(--sutra-ink)] sm:text-xl">
                   {testimonial.quote}
                 </p>
 
-                <footer className="mt-8 border-t border-[var(--sutra-border)] pt-5">
+                <footer className="mt-6 border-t border-[var(--sutra-border)] pt-4">
                   <cite className="not-italic text-sm font-semibold text-[var(--sutra-teal)]">
                     {testimonial.name}
                   </cite>
 
-                  <p className="mt-1 text-xs text-[var(--sutra-muted)]">
+                  <p className="mt-1 text-[11px] text-[var(--sutra-muted)]">
                     Patient experience
                   </p>
                 </footer>
@@ -212,11 +209,11 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {/* Mobile arrows */}
-        <div className="mt-4 flex items-center justify-between sm:hidden">
-          <div className="text-xs text-[var(--sutra-muted)]">
+        {/* Mobile controls */}
+        <div className="mt-3 flex items-center justify-between sm:hidden">
+          <p className="text-[11px] text-[var(--sutra-muted)]">
             Swipe to explore reviews
-          </div>
+          </p>
 
           <div className="flex gap-2">
             <button
@@ -224,14 +221,12 @@ export default function Testimonials() {
               onClick={() => scrollReviews("left")}
               aria-label="Previous review"
               className="
-                flex h-10 w-10 items-center justify-center
+                flex h-9 w-9 items-center justify-center
                 border border-[var(--sutra-border-strong)]
                 text-[var(--sutra-teal)]
-                transition-colors
-                hover:border-[var(--sutra-teal)]
               "
             >
-              <ArrowLeft size={17} strokeWidth={1.5} />
+              <ArrowLeft size={16} strokeWidth={1.5} />
             </button>
 
             <button
@@ -239,14 +234,12 @@ export default function Testimonials() {
               onClick={() => scrollReviews("right")}
               aria-label="Next review"
               className="
-                flex h-10 w-10 items-center justify-center
+                flex h-9 w-9 items-center justify-center
                 border border-[var(--sutra-border-strong)]
                 text-[var(--sutra-teal)]
-                transition-colors
-                hover:border-[var(--sutra-teal)]
               "
             >
-              <ArrowRight size={17} strokeWidth={1.5} />
+              <ArrowRight size={16} strokeWidth={1.5} />
             </button>
           </div>
         </div>
