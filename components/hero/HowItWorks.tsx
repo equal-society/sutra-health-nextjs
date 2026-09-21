@@ -35,6 +35,7 @@ export default function HowItWorks() {
       className="bg-[var(--sutra-teal)] py-16 text-[var(--sutra-white)] sm:py-20 lg:py-20"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
+        {/* Introduction */}
         <div className="max-w-3xl">
           <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-sage)]">
             How Sutra Works
@@ -53,11 +54,86 @@ export default function HowItWorks() {
           </p>
         </div>
 
-        <ol className="mt-12 grid overflow-hidden border border-white/15 md:grid-cols-2 lg:mt-14 lg:grid-cols-4">
+        {/* Mobile: one step per swipe */}
+        <div
+          className="
+            mt-10
+            flex
+            snap-x
+            snap-mandatory
+            gap-4
+            overflow-x-auto
+            pb-3
+            [-ms-overflow-style:none]
+            [scrollbar-width:none]
+            [&::-webkit-scrollbar]:hidden
+            md:hidden
+          "
+          aria-label="How Sutra Works steps"
+        >
           {steps.map((step) => (
+            <article
+              key={step.number}
+              className="
+                w-[calc(100%-24px)]
+                min-w-[calc(100%-24px)]
+                shrink-0
+                snap-center
+                border
+                border-white/15
+                p-7
+              "
+            >
+              <div className="flex min-h-[270px] flex-col">
+                <span className="text-xs font-semibold tracking-[0.14em] text-[var(--sutra-sage)]">
+                  {step.number}
+                </span>
+
+                <div className="mt-auto">
+                  <div
+                    aria-hidden="true"
+                    className="mb-6 h-px w-10 bg-white/30"
+                  />
+
+                  <h3 className="font-[var(--font-dm-serif)] text-3xl leading-tight">
+                    {step.title}
+                  </h3>
+
+                  <p className="mt-4 text-sm leading-6 text-white/65 sm:text-base">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {/* Mobile swipe indicator */}
+        <div className="mt-3 flex items-center justify-between md:hidden">
+          <p className="text-[11px] text-white/50">
+            Swipe to explore
+          </p>
+
+          <span
+            aria-hidden="true"
+            className="text-sm text-white/50"
+          >
+            →
+          </span>
+        </div>
+
+        {/* Desktop: four steps */}
+        <ol className="mt-12 hidden overflow-hidden border border-white/15 md:grid md:grid-cols-2 lg:mt-14 lg:grid-cols-4">
+          {steps.map((step, index) => (
             <li
               key={step.number}
-              className="border-b border-white/15 p-6 last:border-b-0 md:nth-[odd]:border-r md:nth-[3]:border-b-0 md:nth-[4]:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0 lg:p-8"
+              className={`
+                p-7
+                lg:p-8
+                ${index < 3 ? "lg:border-r lg:border-white/15" : ""}
+                ${index < 2 ? "md:border-b md:border-white/15 lg:border-b-0" : ""}
+                ${index % 2 === 0 ? "md:border-r md:border-white/15 lg:border-r" : ""}
+              `}
             >
               <div className="flex min-h-[245px] flex-col">
                 <span className="text-xs font-semibold tracking-[0.14em] text-[var(--sutra-sage)]">
@@ -83,6 +159,7 @@ export default function HowItWorks() {
           ))}
         </ol>
 
+        {/* CTA */}
         <div className="mt-7">
           <Link
             href="/approach"
@@ -91,6 +168,7 @@ export default function HowItWorks() {
             <span className="border-b border-white pb-1">
               Explore our approach
             </span>
+
             <span
               aria-hidden="true"
               className="transition-transform duration-200 group-hover:translate-x-1"

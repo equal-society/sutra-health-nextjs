@@ -15,7 +15,7 @@ import BookingCTA from "@/components/hero/BookingCTA";
 const siteUrl = "https://lifequality.org.in";
 
 export const metadata: Metadata = {
-  title: "Sutra Health | Doctor-Led Integrative Healthcare",
+  title: "Doctor-Led Integrative Healthcare | Sutra Health",
   description:
     "Sutra Health provides doctor-led integrative healthcare through medical care, lifestyle medicine, nutrition, therapeutic Yoga and behaviour support.",
   alternates: {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Sutra Health | Doctor-Led Integrative Healthcare",
+    title: "Doctor-Led Integrative Healthcare | Sutra Health",
     description:
       "Doctor-led integrative healthcare through medical care, lifestyle medicine, nutrition, therapeutic Yoga and behaviour support.",
     url: siteUrl,
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sutra Health | Doctor-Led Integrative Healthcare",
+    title: "Doctor-Led Integrative Healthcare | Sutra Health",
     description:
       "Doctor-led integrative healthcare through medical care, lifestyle medicine, nutrition, therapeutic Yoga and behaviour support.",
     images: [`${siteUrl}/images/hero-desktop.webp`],

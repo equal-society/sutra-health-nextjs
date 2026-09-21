@@ -1,28 +1,48 @@
 import Link from "next/link";
 
+const trafficLightItems = [
+  {
+    label: "Green",
+    title: "Optimal",
+    description: "Areas that are going well.",
+    dot: "bg-[#557A5B]",
+  },
+  {
+    label: "Yellow",
+    title: "Adjust",
+    description: "Areas where adjustment may help.",
+    dot: "bg-[#B39A54]",
+  },
+  {
+    label: "Red",
+    title: "Attention",
+    description: "Areas that need attention.",
+    dot: "bg-[#A85B55]",
+  },
+];
+
 export default function Assessment() {
   return (
     <section
       id="assessment"
       aria-labelledby="assessment-heading"
-      className="bg-[var(--sutra-porcelain)] py-20 sm:py-24 lg:py-24"
+      className="bg-[var(--sutra-porcelain)] py-14 sm:py-20 lg:py-24"
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
-          {/* Intro */}
-          <div>
-            <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+      <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
+          <div className="max-w-[680px]">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
               21-Point Health Assessment
             </p>
 
             <h2
               id="assessment-heading"
-              className="max-w-xl font-[var(--font-dm-serif)] text-4xl leading-[1.05] tracking-[-0.025em] text-[var(--sutra-ink)] sm:text-5xl lg:text-6xl"
+              className="mt-4 max-w-xl font-[var(--font-dm-serif)] text-4xl leading-[1.06] tracking-[-0.025em] text-[var(--sutra-ink)] sm:text-5xl lg:text-6xl"
             >
               Understand where your health needs attention.
             </h2>
 
-            <p className="mt-6 max-w-xl text-base leading-7 text-[var(--sutra-muted)] sm:text-lg">
+            <p className="mt-5 max-w-xl text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
               The 21-Point Health Assessment helps you look at key areas of
               lifestyle and health behaviour. A simple Traffic Light System
               shows where things are going well and where changes may need
@@ -31,7 +51,7 @@ export default function Assessment() {
 
             <Link
               href="/assessment"
-              className="group mt-8 inline-flex items-center gap-3 text-sm font-semibold text-[var(--sutra-teal)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--sutra-teal)] focus-visible:ring-offset-4"
+              className="group mt-7 inline-flex min-h-11 items-center gap-3 text-sm font-semibold text-[var(--sutra-teal)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--sutra-teal)] focus-visible:ring-offset-4"
             >
               <span className="border-b border-[var(--sutra-teal)] pb-1">
                 Take the 21-Point Health Assessment
@@ -45,62 +65,45 @@ export default function Assessment() {
             </Link>
           </div>
 
-          {/* Traffic Light System */}
           <div
             className="border-y border-[var(--sutra-border-strong)]"
             aria-label="Traffic Light System for the health assessment"
           >
-            <div className="grid grid-cols-3">
-              <div className="border-r border-[var(--sutra-border)] px-4 py-8 sm:px-8 sm:py-10">
+            <div className="grid sm:grid-cols-3">
+              {trafficLightItems.map((item, index) => (
                 <div
-                  aria-hidden="true"
-                  className="mb-7 h-3 w-3 rounded-full bg-[#557A5B]"
-                />
-                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
-                  Green
-                </p>
-                <p className="mt-2 font-[var(--font-dm-serif)] text-2xl text-[var(--sutra-ink)] sm:text-3xl">
-                  Optimal
-                </p>
-                <p className="mt-3 text-sm leading-6 text-[var(--sutra-muted)]">
-                  Areas that are going well.
-                </p>
-              </div>
+                  key={item.label}
+                  className={`px-5 py-6 sm:px-6 sm:py-8 lg:px-8 ${
+                    index < trafficLightItems.length - 1
+                      ? "border-b border-[var(--sutra-border)] sm:border-b-0 sm:border-r"
+                      : ""
+                  }`}
+                >
+                  <div className="flex items-start gap-4 sm:block">
+                    <span
+                      aria-hidden="true"
+                      className={`mt-1.5 block h-2.5 w-2.5 shrink-0 rounded-full ${item.dot}`}
+                    />
 
-              <div className="border-r border-[var(--sutra-border)] px-4 py-8 sm:px-8 sm:py-10">
-                <div
-                  aria-hidden="true"
-                  className="mb-7 h-3 w-3 rounded-full bg-[#B39A54]"
-                />
-                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
-                  Yellow
-                </p>
-                <p className="mt-2 font-[var(--font-dm-serif)] text-2xl text-[var(--sutra-ink)] sm:text-3xl">
-                  Adjust
-                </p>
-                <p className="mt-3 text-sm leading-6 text-[var(--sutra-muted)]">
-                  Areas where adjustment may help.
-                </p>
-              </div>
+                    <div>
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)] sm:mt-5">
+                        {item.label}
+                      </p>
 
-              <div className="px-4 py-8 sm:px-8 sm:py-10">
-                <div
-                  aria-hidden="true"
-                  className="mb-7 h-3 w-3 rounded-full bg-[#A85B55]"
-                />
-                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
-                  Red
-                </p>
-                <p className="mt-2 font-[var(--font-dm-serif)] text-2xl text-[var(--sutra-ink)] sm:text-3xl">
-                  Attention
-                </p>
-                <p className="mt-3 text-sm leading-6 text-[var(--sutra-muted)]">
-                  Areas that need attention.
-                </p>
-              </div>
+                      <p className="mt-1.5 font-[var(--font-dm-serif)] text-2xl leading-tight text-[var(--sutra-ink)] sm:text-3xl">
+                        {item.title}
+                      </p>
+
+                      <p className="mt-2 text-sm leading-6 text-[var(--sutra-muted)]">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
 
-            <div className="border-t border-[var(--sutra-border-strong)] px-4 py-5 sm:px-8">
+            <div className="border-t border-[var(--sutra-border-strong)] px-5 py-4 sm:px-6 sm:py-5 lg:px-8">
               <p className="text-xs leading-5 text-[var(--sutra-muted)]">
                 The assessment uses a Traffic Light System for Health
                 Behaviour Change to help identify areas for attention.
