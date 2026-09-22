@@ -88,104 +88,67 @@ const focusAreas = [
 
 export default function DoctorsPage() {
   return (
-    <main className="bg-[#FAF8F1] text-[#173F35]">
+    <main className="bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">
       {/* =====================================================
-            HERO
-        ===================================================== */}
-<section className="relative isolate overflow-hidden border-b border-[#173F35]/10">
-  {/* Background */}
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 -z-20 bg-[linear-gradient(135deg,#FAF8F1_0%,#F4F2E8_42%,#E7EFE7_100%)]"
-  />
+          HERO
+      ===================================================== */}
+      <section className="border-b border-[var(--sutra-border)] bg-[var(--sutra-porcelain)]">
+        <Container>
+          <div className="max-w-5xl py-14 sm:py-18 lg:py-22 xl:py-24">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-xs">
+              Doctors & experts
+            </p>
 
-  {/* Organic gradient shapes */}
-  <div
-    aria-hidden="true"
-    className="absolute -right-32 -top-32 -z-10 h-[420px] w-[420px] rounded-full bg-[#A9C5AC]/35 blur-3xl sm:h-[520px] sm:w-[520px]"
-  />
+            <h1
+              className="
+                mt-5
+                max-w-[920px]
+                font-serif
+                text-[46px]
+                font-medium
+                leading-[0.98]
+                tracking-[-0.04em]
+                text-[var(--sutra-ink)]
+                sm:text-[58px]
+                md:text-[64px]
+                lg:text-[76px]
+                xl:text-[82px]
+              "
+            >
+              Care guided by
+              <br />
+              <span className="text-[var(--sutra-teal)]">
+                experience, evidence and understanding.
+              </span>
+            </h1>
 
-  <div
-    aria-hidden="true"
-    className="absolute -bottom-48 left-[38%] -z-10 h-[420px] w-[420px] rounded-full bg-[#D8C9A9]/25 blur-3xl"
-  />
+            <p className="mt-7 max-w-[680px] text-[17px] leading-8 text-[var(--sutra-muted)] sm:mt-8 sm:text-[18px] sm:leading-9">
+              Our team brings together medical knowledge, lifestyle medicine
+              and wellness-focused expertise to support a more connected
+              approach to health.
+            </p>
 
-  <div
-    aria-hidden="true"
-    className="absolute -left-32 top-[28%] -z-10 h-[260px] w-[260px] rounded-full bg-[#C6D9CA]/25 blur-3xl"
-  />
-
-  {/* Fine editorial grid */}
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 -z-10 opacity-[0.035]"
-    style={{
-      backgroundImage:
-        "linear-gradient(#173F35 1px, transparent 1px), linear-gradient(90deg, #173F35 1px, transparent 1px)",
-      backgroundSize: "56px 56px",
-    }}
-  />
-
-  {/* Decorative rings */}
-  <div
-    aria-hidden="true"
-    className="absolute right-[7%] top-[16%] -z-10 hidden h-44 w-44 rounded-full border border-[#173F35]/10 lg:block"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute right-[10%] top-[21%] -z-10 hidden h-28 w-28 rounded-full border border-[#65966F]/15 lg:block"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute bottom-[13%] left-[8%] -z-10 hidden h-20 w-20 rounded-full border border-[#173F35]/10 lg:block"
-  />
-          <Container>
-            <div className="py-14 sm:py-18 lg:py-20">
-              <div className="mx-auto max-w-[900px] text-center">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
-                  Doctors & experts
-                </p>
-
-                <h1 className="mt-4 font-serif text-[46px] leading-[0.98] tracking-[-0.045em] text-[#123F35] sm:text-[60px] lg:text-[70px]">
-                  Care guided by
-                  <br />
-                  experience,{" "}
-                  <span className="italic text-[#65966F]">
-                    evidence and understanding.
-                  </span>
-                </h1>
-
-                <p className="mx-auto mt-6 max-w-[650px] text-[14px] leading-7 text-[#687A73] sm:text-[16px] sm:leading-8">
-                  Our team brings together medical knowledge, lifestyle medicine
-                  and wellness-focused expertise to support a more connected
-                  approach to health.
-                </p>
-
-                <div className="mt-7 flex flex-wrap justify-center gap-2">
-                  {focusAreas.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border border-[#173F35]/10 bg-white/60 px-3.5 py-2 text-[10px] font-medium text-[#536A62]"
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </div>
+            <div className="mt-7 flex items-start gap-4">
+              <span
+                aria-hidden="true"
+                className="mt-2 h-10 w-px shrink-0 bg-[var(--sutra-sand)]"
+              />
+              <p className="max-w-[560px] text-[14px] leading-7 text-[var(--sutra-muted)] sm:text-[15px]">
+                Our work brings together different areas of expertise around
+                practical, whole-person support.
+              </p>
             </div>
-          </Container>
-        </section>
+          </div>
+        </Container>
+      </section>
 
       {/* =====================================================
           FEATURED DOCTOR
       ===================================================== */}
-      <section className="bg-[#F1F4ED] py-14 sm:py-18 lg:py-20">
+      <section className="border-b border-[var(--sutra-border)] bg-[var(--sutra-pale-sage)]">
         <Container>
-          <div className="grid items-center gap-10 lg:grid-cols-[360px_1fr] lg:gap-20">
-            {/* Image */}
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[18px] bg-[#E7EEE5]">
+          <div className="grid gap-10 py-14 sm:py-18 lg:grid-cols-[360px_1fr] lg:gap-20 lg:py-22">
+            <div className="relative aspect-[4/5] overflow-hidden border border-[var(--sutra-border-strong)] bg-[var(--sutra-white)]">
               <Image
                 src={experts[0].image}
                 alt={experts[0].name}
@@ -196,54 +159,54 @@ export default function DoctorsPage() {
               />
             </div>
 
-            {/* Content */}
-            <div className="max-w-[720px]">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
+            <div className="max-w-[720px] self-center">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                 Medical & research leadership
               </p>
 
-              <h2 className="mt-3 font-serif text-[38px] leading-[1.04] tracking-[-0.035em] text-[#123F35] sm:text-[50px]">
+              <h2 className="mt-4 font-serif text-[40px] font-medium leading-[1.02] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[52px]">
                 Dr. Rakesh Sarwal
               </h2>
 
-              <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#65966F]">
+              <p className="mt-3 max-w-[700px] text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--sutra-teal)]">
                 MBBS, MPH, DrPH (Johns Hopkins), Therapeutic Yoga Consultant
               </p>
 
-              <p className="mt-6 max-w-[650px] text-[14px] leading-7 text-[#687A73] sm:text-[15px] sm:leading-8">
+              <p className="mt-7 max-w-[650px] text-[15px] leading-8 text-[var(--sutra-muted)] sm:text-[16px]">
                 Public Health physician, Professor of Community Medicine and
                 Head of the Integrated Health Clinic at ESIC Medical College &
                 Hospital, Faridabad, India.
               </p>
 
-              <p className="mt-4 max-w-[650px] text-[14px] leading-7 text-[#687A73] sm:text-[15px] sm:leading-8">
+              <p className="mt-4 max-w-[650px] text-[15px] leading-8 text-[var(--sutra-muted)] sm:text-[16px]">
                 His academic expertise includes Lifestyle Medicine, Nutrition,
                 Yoga, Health Systems for Universal Health Coverage and Public
                 Health Policy. His research interests explore the effectiveness
                 of lifestyle therapies across chronic conditions.
               </p>
 
-              <div className="mt-7 border-t border-[#173F35]/10 pt-6">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#65966F]">
+              <div className="mt-8 border-t border-[var(--sutra-border-strong)] pt-6">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
                   Areas of expertise
                 </p>
 
-                <div className="mt-4 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+                <div className="mt-5 grid border-t border-[var(--sutra-border)] sm:grid-cols-2 sm:border-t-0">
                   {[
                     "Lifestyle Medicine",
                     "Nutrition",
                     "Yoga",
                     "Health Systems for UHC",
                     "Public Health Policy",
-                  ].map((item) => (
+                  ].map((item, index) => (
                     <div
                       key={item}
-                      className="flex items-center gap-3 text-[13px] text-[#50645C]"
+                      className={`border-b border-[var(--sutra-border)] py-3 text-[14px] text-[var(--sutra-ink)] ${
+                        index % 2 === 0 ? "sm:mr-6" : ""
+                      }`}
                     >
-                      <span
-                        aria-hidden="true"
-                        className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#65966F]"
-                      />
+                      <span className="mr-3 text-[10px] font-semibold tracking-[0.14em] text-[var(--sutra-sage)]">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
                       {item}
                     </div>
                   ))}
@@ -254,7 +217,7 @@ export default function DoctorsPage() {
                 href={experts[0].profileUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-7 inline-flex items-center gap-2 text-[13px] font-semibold text-[#173F35] transition-colors hover:text-[#65966F]"
+                className="mt-7 inline-flex items-center gap-3 border border-[var(--sutra-teal)] px-5 py-3 text-[13px] font-semibold text-[var(--sutra-teal)] transition-colors hover:bg-[var(--sutra-teal)] hover:text-white"
               >
                 View academic profile
                 <span aria-hidden="true">↗</span>
@@ -267,54 +230,58 @@ export default function DoctorsPage() {
       {/* =====================================================
           TEAM
       ===================================================== */}
-      <section className="bg-[#FAF8F1] py-14 sm:py-18 lg:py-20">
+      <section className="bg-[var(--sutra-porcelain)]">
         <Container>
-          <div className="mb-8 max-w-[680px] sm:mb-10">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
+          <div className="max-w-[720px] py-14 sm:py-18 lg:py-22">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
               Our team
             </p>
 
-            <h2 className="mt-3 font-serif text-[34px] leading-[1.05] tracking-[-0.035em] text-[#173F35] sm:text-[44px]">
-              Different expertise,
+            <h2 className="mt-4 font-serif text-[38px] font-medium leading-[1.03] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[50px]">
+              Different expertise.
               <br />
-              <span className="italic text-[#65966F]">
-                one connected approach.
+              <span className="text-[var(--sutra-teal)]">
+                One connected approach.
               </span>
             </h2>
 
-            <p className="mt-4 max-w-[620px] text-[13px] leading-6 text-[#71817A] sm:text-[14px] sm:leading-7">
+            <p className="mt-5 max-w-[620px] text-[15px] leading-8 text-[var(--sutra-muted)]">
               Medical and wellness perspectives can work together to help
               people understand their health and build practical habits for
               everyday life.
             </p>
           </div>
 
-          <div className="grid gap-5 sm:grid-cols-2">
-            {experts.slice(1).map((expert) => (
+          <div className="border-t border-[var(--sutra-border-strong)]">
+            {experts.slice(1).map((expert, index) => (
               <article
                 key={`${expert.name}-${expert.role}`}
-                className="grid overflow-hidden rounded-[18px] border border-[#173F35]/10 bg-white sm:grid-cols-[190px_1fr]"
+                className="grid gap-6 border-b border-[var(--sutra-border-strong)] py-8 sm:grid-cols-[190px_1fr] sm:gap-10 sm:py-10 lg:grid-cols-[220px_1fr]"
               >
-                <div className="relative aspect-[4/3] min-h-[190px] sm:aspect-auto">
+                <div className="relative aspect-[4/3] overflow-hidden border border-[var(--sutra-border)] bg-[var(--sutra-pale-sage)] sm:aspect-[4/3]">
                   <Image
                     src={expert.image}
                     alt={expert.name}
                     fill
-                    sizes="(max-width: 640px) 100vw, 190px"
+                    sizes="(max-width: 640px) 100vw, 220px"
                     className="object-cover object-center"
                   />
                 </div>
 
-                <div className="p-5 sm:p-6">
-                  <h3 className="font-serif text-[23px] leading-tight tracking-[-0.02em] text-[#173F35]">
+                <div className="max-w-[680px] self-center">
+                  <p className="text-[10px] font-semibold tracking-[0.16em] text-[var(--sutra-sage)]">
+                    {String(index + 1).padStart(2, "0")}
+                  </p>
+
+                  <h3 className="mt-2 font-serif text-[28px] font-medium leading-tight tracking-[-0.025em] text-[var(--sutra-ink)] sm:text-[34px]">
                     {expert.name}
                   </h3>
 
-                  <p className="mt-1.5 text-[10px] font-semibold uppercase tracking-[0.13em] text-[#65966F]">
+                  <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--sutra-teal)]">
                     {expert.role}
                   </p>
 
-                  <p className="mt-4 text-[12px] leading-5 text-[#71817A]">
+                  <p className="mt-4 max-w-[620px] text-[14px] leading-7 text-[var(--sutra-muted)] sm:text-[15px] sm:leading-8">
                     {expert.description}
                   </p>
                 </div>
@@ -327,32 +294,33 @@ export default function DoctorsPage() {
       {/* =====================================================
           RESEARCH & EXPERTISE
       ===================================================== */}
-      <section className="border-y border-[#173F35]/10 bg-[#F0F4ED]">
+      <section className="border-y border-[var(--sutra-border)] bg-[var(--sutra-pale-sage)]">
         <Container>
-          <div className="py-14 sm:py-18 lg:py-20">
-            <div className="grid gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:gap-20">
+          <div className="py-14 sm:py-18 lg:py-22">
+            <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                   Research & academic work
                 </p>
 
-                <h2 className="mt-3 font-serif text-[36px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[46px]">
-                  Research across{" "}
-                  <span className="italic text-[#65966F]">
+                <h2 className="mt-4 font-serif text-[38px] font-medium leading-[1.03] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[50px]">
+                  Research across
+                  <br />
+                  <span className="text-[var(--sutra-teal)]">
                     lifestyle, nutrition and public health.
                   </span>
                 </h2>
               </div>
 
               <div className="max-w-[720px]">
-                <p className="text-[14px] leading-7 text-[#687A73] sm:text-[15px] sm:leading-8">
+                <p className="text-[15px] leading-8 text-[var(--sutra-muted)] sm:text-[16px]">
                   Dr. Rakesh Sarwal&apos;s academic profile identifies Lifestyle
                   Medicine, Nutrition and Yoga as areas of expertise, alongside
                   Health Systems for Universal Health Coverage and Public Health
                   Policy.
                 </p>
 
-                <p className="mt-4 text-[14px] leading-7 text-[#687A73] sm:text-[15px] sm:leading-8">
+                <p className="mt-4 text-[15px] leading-8 text-[var(--sutra-muted)] sm:text-[16px]">
                   His stated research interests include exploring the
                   effectiveness of lifestyle therapies across a spectrum of
                   chronic conditions. The selected work below provides a direct
@@ -361,7 +329,7 @@ export default function DoctorsPage() {
               </div>
             </div>
 
-            <div className="mt-10 grid gap-px overflow-hidden rounded-[18px] border border-[#173F35]/10 bg-[#173F35]/10 sm:grid-cols-2">
+            <div className="mt-10 border-t border-[var(--sutra-border-strong)]">
               {[
                 {
                   number: "01",
@@ -402,25 +370,27 @@ export default function DoctorsPage() {
               ].map((item) => (
                 <article
                   key={item.number}
-                  className="bg-[#FAF8F1] p-6 sm:p-7"
+                  className="grid gap-4 border-b border-[var(--sutra-border-strong)] py-7 sm:grid-cols-[72px_1fr_auto] sm:items-start sm:gap-8 sm:py-8"
                 >
-                  <span className="text-[9px] font-semibold tracking-[0.16em] text-[#8A9992]">
+                  <span className="text-[11px] font-semibold tracking-[0.16em] text-[var(--sutra-sage)]">
                     {item.number}
                   </span>
 
-                  <h3 className="mt-3 font-serif text-[24px] leading-tight tracking-[-0.02em] text-[#173F35]">
-                    {item.title}
-                  </h3>
+                  <div className="max-w-[760px]">
+                    <h3 className="font-serif text-[25px] font-medium leading-tight tracking-[-0.02em] text-[var(--sutra-ink)] sm:text-[29px]">
+                      {item.title}
+                    </h3>
 
-                  <p className="mt-3 text-[12px] leading-5 text-[#71817A] sm:text-[13px] sm:leading-6">
-                    {item.description}
-                  </p>
+                    <p className="mt-3 text-[13px] leading-6 text-[var(--sutra-muted)] sm:text-[14px] sm:leading-7">
+                      {item.description}
+                    </p>
+                  </div>
 
                   <a
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center gap-2 text-[12px] font-semibold text-[#173F35] transition-colors hover:text-[#65966F]"
+                    className="inline-flex items-center gap-2 self-start text-[12px] font-semibold text-[var(--sutra-teal)] transition-colors hover:text-[var(--sutra-ink)] sm:mt-1"
                   >
                     {item.label}
                     <span aria-hidden="true">↗</span>
@@ -434,7 +404,7 @@ export default function DoctorsPage() {
                 href="https://academic.lifequality.org.in/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#173F35] transition-colors hover:text-[#65966F]"
+                className="inline-flex items-center gap-3 border border-[var(--sutra-teal)] px-5 py-3 text-[13px] font-semibold text-[var(--sutra-teal)] transition-colors hover:bg-[var(--sutra-teal)] hover:text-white"
               >
                 View academic profile & publications
                 <span aria-hidden="true">↗</span>
@@ -447,21 +417,21 @@ export default function DoctorsPage() {
       {/* =====================================================
           DOCTOR'S MESSAGE
       ===================================================== */}
-      <section className="bg-[#173F35]">
+      <section className="bg-[var(--sutra-teal)]">
         <Container>
-          <div className="py-14 sm:py-18 lg:py-20">
-            <div className="mx-auto max-w-[850px] text-center">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B7CCB8]">
+          <div className="py-14 sm:py-18 lg:py-22">
+            <div className="mx-auto max-w-[850px]">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-pale-sage)]">
                 Doctor&apos;s perspective
               </p>
 
-              <p className="mt-5 font-serif text-[28px] leading-[1.25] tracking-[-0.025em] text-[#FAF8F1] sm:text-[36px] lg:text-[42px]">
+              <p className="mt-6 font-serif text-[30px] font-medium leading-[1.2] tracking-[-0.025em] text-[var(--sutra-porcelain)] sm:text-[38px] lg:text-[46px]">
                 Dr. Sarwal&apos;s work is centred on prevention, healthy
                 lifestyles and helping people take greater responsibility for
                 their health.
               </p>
 
-              <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#B7CCB8]">
+              <p className="mt-6 text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-pale-sage)]">
                 Based on his academic profile
               </p>
 
@@ -469,7 +439,7 @@ export default function DoctorsPage() {
                 href="https://academic.lifequality.org.in/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-2.5 text-[12px] font-semibold text-white transition-colors hover:bg-white/10"
+                className="mt-7 inline-flex items-center gap-3 border border-white/30 px-5 py-3 text-[12px] font-semibold text-white transition-colors hover:bg-white hover:text-[var(--sutra-teal)]"
               >
                 Read academic profile
                 <span aria-hidden="true">↗</span>
@@ -482,44 +452,47 @@ export default function DoctorsPage() {
       {/* =====================================================
           CONNECTED APPROACH
       ===================================================== */}
-      <section className="bg-white py-14 sm:py-18 lg:py-20">
+      <section className="bg-[var(--sutra-white)]">
         <Container>
-          <div className="grid items-center gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+          <div className="grid gap-10 py-14 sm:py-18 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 lg:py-22">
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                 A connected team
               </p>
 
-              <h2 className="mt-3 font-serif text-[36px] leading-[1.05] tracking-[-0.035em] text-[#173F35] sm:text-[46px]">
+              <h2 className="mt-4 font-serif text-[38px] font-medium leading-[1.03] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[50px]">
                 Different expertise.
                 <br />
-                One whole-person approach.
+                <span className="text-[var(--sutra-teal)]">
+                  One whole-person approach.
+                </span>
               </h2>
             </div>
 
             <div className="max-w-[700px]">
-              <p className="text-[14px] leading-7 text-[#687A73] sm:text-[15px] sm:leading-8">
+              <p className="text-[15px] leading-8 text-[var(--sutra-muted)] sm:text-[16px]">
                 Health is influenced by many parts of everyday life. Our
                 approach brings together lifestyle, nutrition, movement,
                 breath and mind to create practical support around individual
                 needs.
               </p>
 
-              <div className="mt-6 flex flex-wrap gap-2">
-                {[
-                  "Lifestyle",
-                  "Nutrition",
-                  "Yogasana",
-                  "Breath",
-                  "Mind",
-                ].map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-[#173F35]/10 bg-[#FAF8F1] px-4 py-2 text-[11px] font-medium text-[#536A62]"
-                  >
-                    {item}
-                  </span>
-                ))}
+              <div className="mt-7 border-t border-[var(--sutra-border-strong)]">
+                {["Lifestyle", "Nutrition", "Yogasana", "Breath", "Mind"].map(
+                  (item, index) => (
+                    <div
+                      key={item}
+                      className="flex items-center gap-5 border-b border-[var(--sutra-border)] py-4"
+                    >
+                      <span className="w-8 text-[10px] font-semibold tracking-[0.14em] text-[var(--sutra-sage)]">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span className="text-[15px] font-medium text-[var(--sutra-ink)]">
+                        {item}
+                      </span>
+                    </div>
+                  ),
+                )}
               </div>
             </div>
           </div>
@@ -529,27 +502,27 @@ export default function DoctorsPage() {
       {/* =====================================================
           CTA
       ===================================================== */}
-      <section className="bg-[#173F35] py-14 sm:py-18 lg:py-20">
+      <section className="bg-[var(--sutra-teal)]">
         <Container>
-          <div className="mx-auto max-w-[760px] text-center">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B5CEB6] sm:text-[11px]">
+          <div className="mx-auto max-w-[760px] py-14 text-center sm:py-18 lg:py-22">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-pale-sage)]">
               Start a conversation
             </p>
 
-            <h2 className="mt-4 font-serif text-[38px] leading-[1.05] tracking-[-0.035em] text-[#FAF8F1] sm:text-[50px]">
+            <h2 className="mt-4 font-serif text-[40px] font-medium leading-[1.03] tracking-[-0.035em] text-[var(--sutra-porcelain)] sm:text-[52px]">
               Understand your health
               <br className="hidden sm:block" />
               with the right guidance.
             </h2>
 
-            <p className="mx-auto mt-5 max-w-xl text-[13px] leading-6 text-[#CBDAD1] sm:text-[14px] sm:leading-7">
+            <p className="mx-auto mt-5 max-w-xl text-[14px] leading-7 text-[var(--sutra-pale-sage)] sm:text-[15px] sm:leading-8">
               Start with a conversation about your health, lifestyle and goals
               and explore the next step that may be appropriate for you.
             </p>
 
             <Link
               href="/book-appointment"
-              className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#FAF8F1] px-7 py-3.5 text-[13px] font-semibold text-[#173F35] transition-colors hover:bg-white"
+              className="mt-8 inline-flex items-center gap-3 border border-[var(--sutra-porcelain)] bg-[var(--sutra-porcelain)] px-7 py-3.5 text-[13px] font-semibold text-[var(--sutra-teal)] transition-colors hover:bg-white"
             >
               Book an Appointment
               <span aria-hidden="true">→</span>

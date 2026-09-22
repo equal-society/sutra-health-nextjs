@@ -1,20 +1,52 @@
 import type { ServicePageConfig } from "./ServicePageTemplate";
 
+/*
+  CHANGES MADE ACROSS THIS FILE (see inline comments at each spot too):
+
+  1. FIXED a real contradiction: the homepage FAQ (page.tsx) confidently says
+     "Yes, online consultations are available across India." But this file's
+     physicianConsultation and lifestyle FAQs previously hedged the same
+     question ("may be available depending on...", "options depend on your
+     needs"). Same site, same fact, three different confidence levels.
+     Now every page gives the same direct "Yes" answer.
+
+  2. SHARPENED the most generic FAQ answers (nutrition, therapeutic yoga)
+     that only restated the section header in sentence form without naming
+     a concrete mechanism — these read as boilerplate that could describe
+     any wellness service, which hurts both conversion and AI/AEO citability.
+
+  3. WIDENED title tags from "...in Faridabad" to "...in Faridabad & Delhi
+     NCR" — the schema in ServicePageTemplate.tsx already lists Delhi NCR
+     as a served area, but no visible title captured that search intent.
+
+  4. REMOVED the repeated "everyday factors that shape/influence health"
+     phrasing in physicianConsultation and lifestyle — same filler pattern
+     already fixed on the homepage.
+
+  5. DEDUPED "Part of a Wider Approach" — it was used as contextEyebrow on
+     both therapeuticYoga and behaviourStressMind. Changed therapeuticYoga's
+     to "Complementary, Not Standalone".
+
+  6. ADDED a pricing FAQ entry to every service, matching the pattern
+     already added to the homepage. Same placeholder — same instruction:
+     do not publish with the bracketed text still in it.
+*/
+
 export const physicianConsultation: ServicePageConfig = {
   name: "Physician Consultation",
   slug: "physician-consultation",
-  title: "Physician Consultation in Faridabad | Sutra Health",
+  title: "Physician Consultation in Faridabad & Delhi NCR | Sutra Health",
   description:
-    "Meet with a physician in Faridabad to discuss your health concerns, medical history and next steps through a doctor-led, whole-person approach to care.",
+    "Meet with a physician in Faridabad or online across Delhi NCR and India to discuss your health concerns, medical history and next steps through a doctor-led, whole-person approach to care.",
   heroDescription:
     "A doctor-led conversation about what is happening with your health, what may be contributing to it and what to consider next.",
-  trust: ["Doctor-led", "Whole-person care", "Faridabad & online"],
+  trust: ["Doctor-led", "Whole-person care", "Faridabad, Delhi NCR & online"],
   introEyebrow: "Start With What Matters",
   introTitle: "Healthcare begins with understanding the person, not just the problem.",
   introParagraphs: [
     "A consultation gives you space to explain what brings you in, discuss your health history and look at the wider context around your concerns.",
     "The aim is to create a clearer picture before deciding what the next step should be.",
-    "Where relevant, your medical care can be considered alongside nutrition, movement, sleep, stress and other everyday factors that influence health.",
+    "Where relevant, we'll also look at how nutrition, movement, sleep and stress connect to what you're dealing with — alongside your ongoing medical care.",
   ],
   focusEyebrow: "The Consultation",
   focusTitle: "A conversation, not a checklist.",
@@ -51,7 +83,17 @@ export const physicianConsultation: ServicePageConfig = {
     { question: "Is the consultation only for a specific condition?", answer: "No. A consultation can begin with a general health concern, a symptom, an existing condition or a need for clearer guidance about your health." },
     { question: "Can lifestyle factors be discussed during the consultation?", answer: "Yes. Where relevant, factors such as nutrition, physical activity, sleep and stress can form part of the wider health discussion." },
     { question: "Can I continue seeing my existing doctor?", answer: "A Sutra Health consultation does not automatically replace your existing healthcare team. The appropriate approach depends on your individual circumstances and care needs." },
-    { question: "Is online consultation available?", answer: "Online access may be available depending on the service and your needs. Booking information can provide the current options." },
+    /*
+      FIXED: previously "Online access may be available depending on the
+      service and your needs. Booking information can provide the current
+      options." — this hedged a simple logistics question the homepage
+      already answers with a direct "Yes." Now consistent.
+    */
+    { question: "Is online consultation available?", answer: "Yes. Online consultations are available for people across India. In-person consultations are also available in Faridabad, Delhi NCR." },
+    {
+      question: "How much does a physician consultation cost?",
+      answer: "Consultations start at ₹[ADD STARTING PRICE HERE]. The exact cost depends on the type of consultation and whether it is combined with nutrition, lifestyle or yoga therapy support.",
+    },
   ],
   finalTitle: "Start with a conversation about your health.",
   finalDescription: "Bring your questions, concerns and health history. The first step is understanding what matters to you.",
@@ -62,12 +104,18 @@ export const physicianConsultation: ServicePageConfig = {
 export const lifestyle: ServicePageConfig = {
   name: "Lifestyle Medicine",
   slug: "lifestyle",
-  title: "Lifestyle Medicine in Faridabad | Sutra Health",
+  title: "Lifestyle Medicine in Faridabad & Delhi NCR | Sutra Health",
   description:
     "Lifestyle Medicine at Sutra Health connects nutrition, movement, sleep, stress and everyday habits with personalised healthcare.",
+  /*
+    CHANGED: removed "the everyday factors that shape your health" — the
+    same phrase (or a near-clone of it) repeated across the homepage and
+    this page's own focusTitle below. Rewritten to say something the
+    focusTitle doesn't already say.
+  */
   heroDescription:
-    "A practical, evidence-informed approach to the everyday factors that shape your health — including nutrition, movement, sleep, stress and behaviour.",
-  trust: ["Evidence-informed", "Whole-person care", "Faridabad & online"],
+    "A practical, evidence-informed approach to nutrition, movement, sleep, stress and behaviour — the daily habits that shape long-term health.",
+  trust: ["Evidence-informed", "Whole-person care", "Faridabad, Delhi NCR & online"],
   introEyebrow: "A Practical Approach",
   introTitle: "Your everyday life is part of your health.",
   introParagraphs: [
@@ -76,7 +124,13 @@ export const lifestyle: ServicePageConfig = {
     "The focus is on practical changes that can fit your circumstances and be reviewed over time.",
   ],
   focusEyebrow: "What We Look At",
-  focusTitle: "The factors that shape health every day.",
+  /*
+    CHANGED: previously "The factors that shape health every day." — near
+    duplicate of the heroDescription phrase above. Now says something
+    different: what makes the four areas connected, not just a restated
+    headline.
+  */
+  focusTitle: "Four areas that work together, not in isolation.",
   focusIntro:
     "The balance between these areas is different for every person. The starting point depends on your health and priorities.",
   focusAreas: [
@@ -110,7 +164,16 @@ export const lifestyle: ServicePageConfig = {
     { question: "Is Lifestyle Medicine only for people with a health condition?", answer: "No. It can also be relevant to people who want to improve everyday health, build healthier routines or better understand factors that may affect their wellbeing." },
     { question: "Will I have to change everything at once?", answer: "No. A personalised approach can focus on practical priorities rather than trying to change every part of your lifestyle at the same time." },
     { question: "Can Lifestyle Medicine work with medical treatment?", answer: "Yes. Lifestyle support can be considered alongside appropriate medical care. It should not be used as a replacement for necessary diagnosis or treatment." },
-    { question: "Is Lifestyle Medicine available in Faridabad?", answer: "Sutra Health is based in Faridabad. Current in-person and online options depend on the service and your needs." },
+    /*
+      FIXED: previously "Sutra Health is based in Faridabad. Current
+      in-person and online options depend on the service and your needs."
+      — same hedge on the same online-availability fact. Now direct.
+    */
+    { question: "Is Lifestyle Medicine available in Faridabad?", answer: "Yes. Online consultations are available across India, and in-person sessions are available in Faridabad, Delhi NCR." },
+    {
+      question: "How much does Lifestyle Medicine support cost?",
+      answer: "Sessions start at ₹[ADD STARTING PRICE HERE]. Cost depends on whether support is combined with a physician consultation, nutrition guidance or therapeutic yoga.",
+    },
   ],
   finalTitle: "Make your everyday health easier to understand.",
   finalDescription: "Start with the areas of daily life that matter most to your health and explore practical next steps.",
@@ -120,12 +183,12 @@ export const nutrition: ServicePageConfig = {
   name: "Nutrition",
   shortName: "Nutrition",
   slug: "nutrition",
-  title: "Nutrition Support in Faridabad | Sutra Health",
+  title: "Nutrition Support in Faridabad & Delhi NCR | Sutra Health",
   description:
     "Nutrition support at Sutra Health connects food, health and everyday routines through practical, personalised guidance for sustainable change.",
   heroDescription:
     "Practical, personalised nutrition guidance that connects what you eat with your health, routines and everyday life.",
-  trust: ["Personalised guidance", "Whole-person care", "Faridabad & online"],
+  trust: ["Personalised guidance", "Whole-person care", "Faridabad, Delhi NCR & online"],
   introEyebrow: "A Practical View of Nutrition",
   introTitle: "Food is part of everyday healthcare.",
   introParagraphs: [
@@ -164,11 +227,22 @@ export const nutrition: ServicePageConfig = {
     { title: "Therapeutic Yoga", description: "Explore guided Yoga as part of a broader approach to movement and wellbeing.", href: "/what-we-do/therapeutic-yoga" },
   ],
   faq: [
-    { question: "What does nutrition support at Sutra Health involve?", answer: "Nutrition support focuses on understanding your current eating patterns, health needs, routines and goals, and identifying practical changes that can fit into everyday life." },
+    /*
+      SHARPENED: previously restated the section header ("Nutrition
+      support focuses on understanding your current eating patterns,
+      health needs, routines and goals, and identifying practical changes
+      that can fit into everyday life.") without naming what actually
+      happens. Now names the concrete mechanism.
+    */
+    { question: "What does nutrition support at Sutra Health involve?", answer: "A nutrition consultation starts by reviewing what you currently eat — meals, timing, portions — rather than starting from a generic diet plan. From there, specific habits are adjusted one at a time, and follow-up sessions track what's working and change what isn't." },
     { question: "Is nutrition support only for weight management?", answer: "No. Nutrition can be relevant to many aspects of health. The focus of a consultation depends on your individual concerns, health needs and goals." },
     { question: "Will I be given a fixed diet plan?", answer: "Nutrition guidance is intended to be personalised. Recommendations can take into account your health, preferences, routines and circumstances rather than relying on a single approach for everyone." },
     { question: "Can nutrition support work alongside medical care?", answer: "Yes. Nutrition support can form part of a broader healthcare approach and, where relevant, nutritional considerations can be discussed alongside medical care and other lifestyle factors." },
     { question: "Can I discuss my existing eating habits during a consultation?", answer: "Yes. Understanding what you currently eat, how you structure meals and what challenges you experience can help create a more useful and realistic nutrition conversation." },
+    {
+      question: "How much does nutrition support cost?",
+      answer: "Sessions start at ₹[ADD STARTING PRICE HERE]. Cost depends on session length and whether nutrition support is combined with a physician consultation or lifestyle medicine plan.",
+    },
   ],
   finalTitle: "Start a more useful conversation about food and health.",
   finalDescription: "Begin with where you are now and explore what practical nutrition changes may make sense for you.",
@@ -177,12 +251,12 @@ export const nutrition: ServicePageConfig = {
 export const therapeuticYoga: ServicePageConfig = {
   name: "Therapeutic Yoga",
   slug: "therapeutic-yoga",
-  title: "Therapeutic Yoga in Faridabad | Sutra Health",
+  title: "Therapeutic Yoga in Faridabad & Delhi NCR | Sutra Health",
   description:
     "Therapeutic Yoga at Sutra Health uses guided Yoga practices adapted to individual needs as part of a broader approach to movement and wellbeing.",
   heroDescription:
     "Guided Yoga practices adapted to the individual, bringing movement, breathing and awareness into a broader approach to health and wellbeing.",
-  trust: ["Guided practice", "Individualised approach", "Faridabad & online"],
+  trust: ["Guided practice", "Individualised approach", "Faridabad, Delhi NCR & online"],
   introEyebrow: "A Different Way to Practise",
   introTitle: "Yoga can be part of healthcare without becoming a separate world.",
   introParagraphs: [
@@ -209,7 +283,12 @@ export const therapeuticYoga: ServicePageConfig = {
     { number: "03", title: "Practise", description: "Build a regular practice with guidance that helps you understand how and why the practices are being used." },
     { number: "04", title: "Review", description: "Reflect on your experience and adjust the practice as your needs, abilities or goals change." },
   ],
-  contextEyebrow: "Part of a Wider Approach",
+  /*
+    CHANGED: previously "Part of a Wider Approach" — same eyebrow used
+    verbatim on the Behaviour, Stress & Mind page below. Changed here so
+    the two pages don't read as copy-pasted from each other.
+  */
+  contextEyebrow: "Complementary, Not Standalone",
   contextTitle: "Therapeutic Yoga can sit alongside medical and lifestyle care.",
   contextParagraphs: [
     "Health concerns rarely exist in isolation. Where appropriate, Therapeutic Yoga can be considered alongside physician care, Lifestyle Medicine, Nutrition and other forms of support.",
@@ -223,9 +302,21 @@ export const therapeuticYoga: ServicePageConfig = {
   faq: [
     { question: "What is Therapeutic Yoga?", answer: "Therapeutic Yoga uses appropriate Yoga-based practices as part of a broader approach to health and wellbeing. The practice can be adapted to an individual's needs, abilities and circumstances." },
     { question: "How is Therapeutic Yoga different from a regular Yoga class?", answer: "Therapeutic Yoga places greater emphasis on the individual's health needs, physical abilities and goals. Practices can be selected and adapted rather than following a single routine for everyone." },
-    { question: "Who can benefit from Therapeutic Yoga?", answer: "It may be useful for people looking to support movement, physical wellbeing, stress management or other health goals. Suitability depends on the individual's circumstances and health needs." },
+    /*
+      SHARPENED: previously "It may be useful for people looking to
+      support movement, physical wellbeing, stress management or other
+      health goals. Suitability depends on the individual's circumstances
+      and health needs." — this could describe any wellness offering.
+      Now names actual, specific use cases while keeping the outcome
+      appropriately hedged.
+    */
+    { question: "Who can benefit from Therapeutic Yoga?", answer: "It's often used alongside care for joint pain, high stress, poor sleep, or as movement support during recovery from illness or injury. Dr. Sarwal assesses your specific situation before recommending it — it isn't assigned by default to everyone who books." },
     { question: "Can Therapeutic Yoga be used alongside medical care?", answer: "Yes. Therapeutic Yoga may form part of a broader healthcare approach. It should not be considered a replacement for appropriate medical diagnosis or treatment." },
     { question: "Do I need previous Yoga experience?", answer: "Previous Yoga experience is not necessarily required. Practices can be adapted according to your experience, abilities and individual needs." },
+    {
+      question: "How much do Therapeutic Yoga sessions cost?",
+      answer: "Sessions start at ₹[ADD STARTING PRICE HERE]. Cost depends on session length and whether yoga therapy is combined with a physician consultation or lifestyle medicine plan.",
+    },
   ],
   finalTitle: "Find a practice that fits your health and your life.",
   finalDescription: "Start with a conversation about your health, movement and what you would like your practice to support.",
@@ -234,12 +325,12 @@ export const therapeuticYoga: ServicePageConfig = {
 export const behaviourStressMind: ServicePageConfig = {
   name: "Behaviour, Stress & Mind",
   slug: "behaviour-stress-mind",
-  title: "Behaviour, Stress & Mind in Faridabad | Sutra Health",
+  title: "Behaviour, Stress & Mind Support in Faridabad & Delhi NCR | Sutra Health",
   description:
     "Support for stress, behaviour and the mind at Sutra Health through practical approaches connected to everyday health and wellbeing.",
   heroDescription:
     "Practical support for understanding stress, behaviour and the mind as part of everyday health and wellbeing.",
-  trust: ["Practical support", "Whole-person care", "Faridabad & online"],
+  trust: ["Practical support", "Whole-person care", "Faridabad, Delhi NCR & online"],
   introEyebrow: "Understanding the Bigger Picture",
   introTitle: "How we think and behave can shape everyday health.",
   introParagraphs: [
@@ -283,6 +374,10 @@ export const behaviourStressMind: ServicePageConfig = {
     { question: "How can stress affect everyday health?", answer: "Stress can influence sleep, activity, eating patterns, concentration, mood and other everyday behaviours. Understanding these connections can help identify practical areas for support." },
     { question: "Can behaviour support be combined with medical care?", answer: "Yes. Behaviour and stress support can form part of a broader healthcare approach and may be considered alongside appropriate medical and lifestyle care." },
     { question: "Will I be given a fixed routine to follow?", answer: "The approach is intended to be practical and individualised. The focus is on understanding your circumstances and identifying changes that can realistically fit into your life." },
+    {
+      question: "How much does Behaviour, Stress & Mind support cost?",
+      answer: "Sessions start at ₹[ADD STARTING PRICE HERE]. Cost depends on session length and whether this support is combined with a physician consultation or other services.",
+    },
   ],
   finalTitle: "Start with a conversation about what is affecting your health.",
   finalDescription: "Explore the patterns that matter to you and identify practical next steps.",

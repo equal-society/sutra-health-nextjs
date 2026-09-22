@@ -14,11 +14,11 @@ export default function BookingCTA() {
           {/* Subtle editorial accent */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-20 -top-28 hidden h-72 w-72 border border-white/10 lg:block"
+            className="pointer-events-none absolute -right-20 -top-28 hidden h-72 w-72 rounded-full border border-white/10 lg:block"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-8 -top-16 hidden h-48 w-48 border border-white/10 lg:block"
+            className="pointer-events-none absolute -right-8 -top-16 hidden h-48 w-48 rounded-full border border-white/10 lg:block"
           />
 
           <div className="relative grid gap-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-20">
@@ -29,7 +29,7 @@ export default function BookingCTA() {
 
               <h2
                 id="booking-cta-heading"
-                className="mt-5 max-w-3xl font-serif text-4xl leading-[1.04] tracking-[-0.025em] sm:text-5xl lg:text-6xl"
+                className="mt-5 max-w-3xl font-[var(--font-dm-serif)] text-4xl leading-[1.04] tracking-[-0.025em] sm:text-5xl lg:text-6xl"
               >
                 Start with a conversation about your health.
               </h2>
@@ -70,14 +70,28 @@ export default function BookingCTA() {
                 </span>
               </Link> */}
 
-          
+              {/*
+                ADDED: some visitors — especially older patients or anyone
+                unsure about booking online — will want to just call
+                instead of filling a form. This gives them that option
+                right at the final CTA, instead of making them go find
+                the number in the footer.
+              */}
+              {/* <a
+                href="tel:+919013103676"
+                className="group inline-flex min-h-11 items-center gap-3 text-sm font-semibold text-white/85 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--sutra-teal)]"
+              >
+                <span className="border-b border-white/50 pb-1">
+                  Or call +91 90131 03676
+                </span>
+              </a> */}
             </div>
           </div>
 
           <div className="relative mt-12 border-t border-white/15 pt-5 sm:mt-16">
             <p className="max-w-2xl text-xs leading-5 text-white/55">
               Online consultations are available for people across India.
-              In-person sessions are available in Faridabad.
+              In-person sessions are available in Faridabad, Delhi NCR.
             </p>
           </div>
         </div>

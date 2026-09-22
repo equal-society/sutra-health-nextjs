@@ -131,9 +131,13 @@ export default function ServicePageTemplate({ config }: { config: ServicePageCon
       />
 
       {/* HERO */}
+      
       <section className="border-b border-[var(--sutra-border)]">
+        
         <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-18 lg:px-12 lg:py-20">
+          
           <div className="max-w-4xl">
+            
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
               {config.eyebrow || "What We Do"}
             </p>

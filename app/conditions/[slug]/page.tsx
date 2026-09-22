@@ -193,7 +193,6 @@ export default async function ConditionPage({
       {/* =====================================================
           STRUCTURED DATA
       ===================================================== */}
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -201,247 +200,206 @@ export default async function ConditionPage({
         }}
       />
 
-      <main className="bg-[#FAF8F1]">
-
-    {/* HERO */}
-<section className="relative isolate overflow-hidden border-b border-[#173F35]/10">
-  {/* Background */}
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 -z-20 bg-[linear-gradient(135deg,#FAF8F1_0%,#F4F2E8_42%,#E7EFE7_100%)]"
-  />
-
-  {/* Organic gradient shapes */}
-  <div
-    aria-hidden="true"
-    className="absolute -right-32 -top-32 -z-10 h-[420px] w-[420px] rounded-full bg-[#A9C5AC]/35 blur-3xl sm:h-[520px] sm:w-[520px]"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute -bottom-48 left-[38%] -z-10 h-[420px] w-[420px] rounded-full bg-[#D8C9A9]/25 blur-3xl"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute -left-32 top-[28%] -z-10 h-[260px] w-[260px] rounded-full bg-[#C6D9CA]/25 blur-3xl"
-  />
-
-  {/* Fine editorial grid */}
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 -z-10 opacity-[0.035]"
-    style={{
-      backgroundImage:
-        "linear-gradient(#173F35 1px, transparent 1px), linear-gradient(90deg, #173F35 1px, transparent 1px)",
-      backgroundSize: "56px 56px",
-    }}
-  />
-
-  {/* Decorative rings */}
-  <div
-    aria-hidden="true"
-    className="absolute right-[7%] top-[16%] -z-10 hidden h-44 w-44 rounded-full border border-[#173F35]/10 lg:block"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute right-[10%] top-[21%] -z-10 hidden h-28 w-28 rounded-full border border-[#65966F]/15 lg:block"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute bottom-[13%] left-[8%] -z-10 hidden h-20 w-20 rounded-full border border-[#173F35]/10 lg:block"
-  />
+      <main className="bg-white text-[#202522]">
+        {/* ===================================================
+            EDITORIAL CONDITION HEADER
+            Text is dominant; image is secondary.
+        ================================================== */}
+        <section className="border-b border-[#202522]/10 bg-[#F7F5EF]">
+        
           <Container>
-            <div className="grid items-center gap-10 py-12 sm:py-16 lg:grid-cols-2 lg:gap-16 lg:py-20">
-              <div className="max-w-xl">
-                <Link
-                  href="/conditions"
-                  className="text-[12px] font-medium text-[#65966F] hover:text-[#173F35]"
-                >
-                  ← Health conditions
-                </Link>
+            <div className="mx-auto max-w-[1180px]">
 
-                <p className="mt-10 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                  Sutra Health
-                </p>
 
-                <h1 className="mt-3 font-serif text-5xl leading-[1] tracking-[-0.05em] text-[#123F35] sm:text-6xl lg:text-[68px]">
+              {/* Dominant text */}
+              <div className="mx-auto max-w-[980px] px-2 py-14 text-center sm:px-6 sm:py-20 lg:px-10 lg:py-24">
+                <div className="flex items-center justify-center gap-3">
+                  <span aria-hidden="true" className="h-px w-8 bg-[#91A298]" />
+                  <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#65736D] sm:text-[11px]">
+                    Health condition
+                  </p>
+                  <span aria-hidden="true" className="h-px w-8 bg-[#91A298]" />
+                </div>
+
+                <h1 className="mx-auto mt-5 max-w-[920px] font-serif text-[48px] font-medium leading-[1.01] tracking-[-0.045em] text-[#202522] sm:text-[60px] md:text-[68px] lg:text-[78px] xl:text-[84px]">
                   {condition.title}
                 </h1>
 
-                <p className="mt-6 max-w-lg text-[16px] leading-8 text-[#60736B] sm:text-[18px]">
+                <p className="mx-auto mt-7 max-w-[760px] font-sans text-[18px] leading-[1.85] text-[#65736D] sm:text-[19px] sm:leading-[1.9] lg:text-[20px]">
                   {condition.shortDescription}
                 </p>
-
-                <Link
-                  href="/book-appointment"
-                  className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#173F35] px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#0D332C]"
-                >
-                  Book an Appointment →
-                </Link>
               </div>
 
-              <div className="relative overflow-hidden rounded-[24px]">
-                <div className="relative aspect-[4/3] bg-[#EAF0E7]">
+              {/* Smaller horizontal image */}
+              <figure className="mx-auto w-full max-w-[860px] min-w-0 overflow-hidden pb-11 sm:pb-13 lg:pb-16">
+                <div className="relative isolate block w-full max-w-full min-w-0 overflow-hidden border border-[#202522]/10 bg-[#E7EDE8] aspect-[16/8] sm:aspect-[16/7] sm:min-h-[210px] lg:min-h-[270px]">
                   <Image
                     src={`/images/conditions/${condition.slug}.webp`}
                     alt={`${condition.title} - Sutra Health`}
                     fill
                     priority
-                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    sizes="(max-width: 1024px) 100vw, 860px"
                     className="object-cover"
                   />
                 </div>
-              </div>
+
+                <figcaption className="mt-3 flex w-full min-w-0 items-center justify-between gap-4 overflow-hidden px-1 font-sans text-[10px] font-medium uppercase tracking-[0.14em] text-[#91A298]">
+                  <span>Sutra Health</span>
+                  <span>Condition guide</span>
+                </figcaption>
+              </figure>
             </div>
           </Container>
         </section>
 
         {/* ===================================================
-            ARTICLE + TABLE OF CONTENTS
+            PREMIUM EDITORIAL ARTICLE
+            Contents rail + magazine-style reading experience.
         ================================================== */}
         <section className="bg-white">
           <Container>
-            <div className="grid gap-10 lg:grid-cols-[210px_minmax(0,1fr)] lg:gap-16 xl:grid-cols-[230px_minmax(0,1fr)] xl:gap-20">
-
-              {/* =================================================
-                  DESKTOP CONTENTS
-              ================================================== */}
+            <div className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[205px_minmax(0,780px)] lg:gap-14 xl:grid-cols-[220px_minmax(0,800px)] xl:gap-16">
+              {/* CONTENTS */}
               <aside className="hidden lg:block">
-                <div className="sticky top-24 py-10 lg:py-12">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#65966F]">
-                    Contents
-                  </p>
-
-                  <nav aria-label="Condition page sections" className="mt-4">
-                    <a
-                      href="#understanding"
-                      className="group block border-b border-[#173F35]/10 py-3 transition-colors hover:border-[#65966F]/40"
-                    >
-                      <span className="block text-[12px]  leading-5 text-[#173F35]">
-                        Understanding
-                      </span>
-                   
-                    </a>
-
-                    <a
-                      href="#concerns"
-                      className="group block border-b border-[#173F35]/10 py-3 transition-colors hover:border-[#65966F]/40"
-                    >
-                      <span className="block text-[12px] leading-5 text-[#173F35]">
-                        Common concerns
-                      </span>
-                     
-                    </a>
-
-                    {condition.lifestyleFactors.length > 0 && (
-                      <a
-                        href="#lifestyle-factors"
-                        className="group block border-b border-[#173F35]/10 py-3 transition-colors hover:border-[#65966F]/40"
-                      >
-                        <span className="block text-[12px] leading-5 text-[#173F35]">
-                          Lifestyle factors
-                        </span>
-                       
-                      </a>
-                    )}
-
-                    {condition.sections.map((section, index) => (
-                      <a
-                        key={section.title}
-                        href={`#section-${index}-${slugify(section.title)}`}
-                        className="group block border-b border-[#173F35]/10 py-3 transition-colors hover:border-[#65966F]/40"
-                      >
-                        <span className="block text-[12px] leading-5 text-[#173F35]">
-                          {section.title}
-                        </span>
-                      
-                      </a>
-                    ))}
-
-                    <a
-                      href="#approach"
-                      className="group block border-b border-[#173F35]/10 py-3 transition-colors hover:border-[#65966F]/40"
-                    >
-                      <span className="block text-[12px] leading-5 text-[#173F35]">
-                        Our approach
-                      </span>
-                      
-                    </a>
-
-                    {condition.support?.length > 0 && (
-                      <a
-                        href="#support"
-                        className="group block border-b border-[#173F35]/10 py-3 transition-colors hover:border-[#65966F]/40"
-                      >
-                        <span className="block text-[12px] leading-5 text-[#173F35]">
-                          How Sutra can help
-                        </span>
-                       
-                      </a>
-                    )}
-
-                    {condition.faqs?.length > 0 && (
-                      <a
-                        href="#faq"
-                        className="group block border-b border-[#173F35]/10 py-3 transition-colors hover:border-[#65966F]/40"
-                      >
-                        <span className="block text-[12px] leading-5 text-[#173F35]">
-                          FAQs
-                        </span>
-                       
-                      </a>
-                    )}
-                  </nav>
-                </div>
-              </aside>
-
-              {/* =================================================
-                  ARTICLE CONTENT
-              ================================================== */}
-              <article className="min-w-0">
-
-                {/* Mobile contents */}
-                <div className="border-b border-[#173F35]/10 py-4 lg:hidden">
-                  <details>
-                    <summary className="flex cursor-pointer list-none items-center justify-between text-[11px] font-semibold uppercase tracking-[0.18em] text-[#173F35] [&::-webkit-details-marker]:hidden">
+                <div className="sticky top-24 py-16">
+                  <div className="border-l-2 border-[#E7EDE8] pl-5">
+                    <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#91A298]">
                       Contents
-                      <span className="text-lg font-normal">+</span>
-                    </summary>
+                    </p>
 
-                    <nav className="mt-3 grid gap-0.5 border-l border-[#173F35]/10 pl-4">
-                      <a href="#understanding" className="py-1 text-[13px] text-[#71817A]">
+                    <nav
+                      aria-label="Condition page sections"
+                      className="mt-5"
+                    >
+                      <a
+                        href="#understanding"
+                        className="block border-b border-[#202522]/10 py-3 font-sans text-[13px] leading-5 text-[#65736D] transition-colors hover:text-[#17413D]"
+                      >
                         Understanding
                       </a>
-                      <a href="#concerns" className="py-1 text-[13px] text-[#71817A]">
+
+                      <a
+                        href="#concerns"
+                        className="block border-b border-[#202522]/10 py-3 font-sans text-[13px] leading-5 text-[#65736D] transition-colors hover:text-[#17413D]"
+                      >
                         Common concerns
                       </a>
+
                       {condition.lifestyleFactors.length > 0 && (
-                        <a href="#lifestyle-factors" className="py-1 text-[13px] text-[#71817A]">
+                        <a
+                          href="#lifestyle-factors"
+                          className="block border-b border-[#202522]/10 py-3 font-sans text-[13px] leading-5 text-[#65736D] transition-colors hover:text-[#17413D]"
+                        >
                           Lifestyle factors
                         </a>
                       )}
+
                       {condition.sections.map((section, index) => (
                         <a
                           key={section.title}
                           href={`#section-${index}-${slugify(section.title)}`}
-                          className="py-1 text-[13px] text-[#71817A]"
+                          className="block border-b border-[#202522]/10 py-3 font-sans text-[13px] leading-5 text-[#65736D] transition-colors hover:text-[#17413D]"
                         >
                           {section.title}
                         </a>
                       ))}
-                      <a href="#approach" className="py-1 text-[13px] text-[#71817A]">
+
+                      <a
+                        href="#approach"
+                        className="block border-b border-[#202522]/10 py-3 font-sans text-[13px] leading-5 text-[#65736D] transition-colors hover:text-[#17413D]"
+                      >
                         Our approach
                       </a>
+
                       {condition.support?.length > 0 && (
-                        <a href="#support" className="py-1 text-[13px] text-[#71817A]">
+                        <a
+                          href="#support"
+                          className="block border-b border-[#202522]/10 py-3 font-sans text-[13px] leading-5 text-[#65736D] transition-colors hover:text-[#17413D]"
+                        >
                           How Sutra can help
                         </a>
                       )}
+
                       {condition.faqs?.length > 0 && (
-                        <a href="#faq" className="py-1 text-[13px] text-[#71817A]">
+                        <a
+                          href="#faq"
+                          className="block border-b border-[#202522]/10 py-3 font-sans text-[13px] leading-5 text-[#65736D] transition-colors hover:text-[#17413D]"
+                        >
+                          FAQs
+                        </a>
+                      )}
+                    </nav>
+                  </div>
+                </div>
+              </aside>
+
+              {/* ARTICLE */}
+              <article className="min-w-0 max-w-[800px]">
+                {/* Mobile contents */}
+                <div className="border-b border-[#202522]/10 py-5 lg:hidden">
+                  <details>
+                    <summary className="flex cursor-pointer list-none items-center justify-between font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-[#17413D] [&::-webkit-details-marker]:hidden">
+                      <span>Contents</span>
+                      <span className="flex h-8 w-8 items-center justify-center border border-[#202522]/10 text-[18px] font-normal">
+                        +
+                      </span>
+                    </summary>
+
+                    <nav className="mt-4 border-l border-[#202522]/10 pl-4">
+                      <a
+                        href="#understanding"
+                        className="block py-1.5 font-sans text-[13px] text-[#65736D]"
+                      >
+                        Understanding
+                      </a>
+
+                      <a
+                        href="#concerns"
+                        className="block py-1.5 font-sans text-[13px] text-[#65736D]"
+                      >
+                        Common concerns
+                      </a>
+
+                      {condition.lifestyleFactors.length > 0 && (
+                        <a
+                          href="#lifestyle-factors"
+                          className="block py-1.5 font-sans text-[13px] text-[#65736D]"
+                        >
+                          Lifestyle factors
+                        </a>
+                      )}
+
+                      {condition.sections.map((section, index) => (
+                        <a
+                          key={section.title}
+                          href={`#section-${index}-${slugify(section.title)}`}
+                          className="block py-1.5 font-sans text-[13px] text-[#65736D]"
+                        >
+                          {section.title}
+                        </a>
+                      ))}
+
+                      <a
+                        href="#approach"
+                        className="block py-1.5 font-sans text-[13px] text-[#65736D]"
+                      >
+                        Our approach
+                      </a>
+
+                      {condition.support?.length > 0 && (
+                        <a
+                          href="#support"
+                          className="block py-1.5 font-sans text-[13px] text-[#65736D]"
+                        >
+                          How Sutra can help
+                        </a>
+                      )}
+
+                      {condition.faqs?.length > 0 && (
+                        <a
+                          href="#faq"
+                          className="block py-1.5 font-sans text-[13px] text-[#65736D]"
+                        >
                           FAQs
                         </a>
                       )}
@@ -449,197 +407,287 @@ export default async function ConditionPage({
                   </details>
                 </div>
 
-                {/* Introduction */}
-                <section id="understanding" className="scroll-mt-28 border-t border-[#173F35]/10 py-7 sm:py-8 lg:py-9">
-                  <div className="max-w-4xl">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
+                {/* =================================================
+                    UNDERSTANDING — spacious editorial opening
+                ================================================== */}
+                <section
+                  id="understanding"
+                  className="scroll-mt-28 border-b border-[#202522]/10 py-14 sm:py-16 lg:py-20"
+                >
+                  <div className="max-w-[760px]">
+                    <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#91A298] sm:text-[11px]">
                       Understanding
                     </p>
-                    <h2 className="mt-1.5 max-w-3xl font-serif text-3xl leading-[1.05] tracking-[-0.03em] text-[#173F35] sm:text-4xl">
+
+                    <h2 className="mt-4 max-w-[720px] font-serif text-[38px] leading-[1.06] tracking-[-0.035em] text-[#17413D] sm:text-[48px] lg:text-[54px]">
                       A whole-person perspective
                     </h2>
-                    <div className="mt-4 max-w-3xl">
-                      <p className="text-[17px] leading-8 text-[#536A62] sm:text-[18px] sm:leading-8">
-                        {condition.introduction}
-                      </p>
-                    </div>
-                  </div>
-                </section>
 
-                {/* Common concerns */}
-                <section id="concerns" className="scroll-mt-28 border-t border-[#173F35]/10 py-7 sm:py-8 lg:py-9">
-                  <div className="max-w-4xl">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
-                      Common concerns
+                    <p className="mt-7 max-w-[720px] font-sans text-[18px] leading-[1.9] text-[#65736D] sm:text-[19px]">
+                      {condition.introduction}
                     </p>
-                    <h2 className="mt-1.5 max-w-3xl font-serif text-3xl leading-[1.05] tracking-[-0.03em] text-[#173F35] sm:text-4xl">
-                      What brings people to us
-                    </h2>
-                    <div className="mt-4 border-y border-[#173F35]/10">
-                      {condition.concerns.map((concern) => (
-                        <div key={concern} className="border-b border-[#173F35]/10 py-3 last:border-b-0">
-                          <p className="text-[16px] leading-7 text-[#536A62] sm:text-[17px]">
-                            {concern}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
                   </div>
                 </section>
 
-                {/* Lifestyle factors */}
+                {/* =================================================
+                    COMMON CONCERNS — editorial numbered list
+                ================================================== */}
+                <section
+                  id="concerns"
+                  className="scroll-mt-28 border-b border-[#202522]/10 py-14 sm:py-16 lg:py-20"
+                >
+                  <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#91A298] sm:text-[11px]">
+                    Common concerns
+                  </p>
+
+                  <h2 className="mt-4 max-w-[720px] font-serif text-[36px] leading-[1.06] tracking-[-0.035em] text-[#17413D] sm:text-[46px] lg:text-[52px]">
+                    What brings people to us
+                  </h2>
+
+                  <div className="mt-8 border-t border-[#202522]/10">
+                    {condition.concerns.map((concern, index) => (
+                      <div
+                        key={concern}
+                        className="grid gap-4 border-b border-[#202522]/10 py-6 sm:grid-cols-[48px_1fr] sm:gap-6 sm:py-7"
+                      >
+                        <span className="font-sans text-[10px] font-semibold tracking-[0.12em] text-[#91A298]">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+
+                        <p className="font-sans text-[17px] leading-[1.85] text-[#65736D] sm:text-[18px] sm:leading-[1.9]">
+                          {concern}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+
+                {/* =================================================
+                    LIFESTYLE FACTORS — editorial numbered list
+                ================================================== */}
                 {condition.lifestyleFactors.length > 0 && (
-                  <section id="lifestyle-factors" className="scroll-mt-28 border-t border-[#173F35]/10 py-7 sm:py-8 lg:py-9">
-                    <div className="max-w-4xl">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
-                        Lifestyle factors
-                      </p>
-                      <h2 className="mt-1.5 max-w-3xl font-serif text-3xl leading-[1.05] tracking-[-0.03em] text-[#173F35] sm:text-4xl">
-                        Everyday factors can matter
-                      </h2>
-                      <div className="mt-4 border-y border-[#173F35]/10">
-                        {condition.lifestyleFactors.map((factor) => (
-                          <div key={factor.title} className="border-b border-[#173F35]/10 py-4 last:border-b-0">
-                            <h3 className="font-serif text-[21px] leading-tight text-[#173F35] sm:text-[23px]">
+                  <section
+                    id="lifestyle-factors"
+                    className="scroll-mt-28 border-b border-[#202522]/10 py-14 sm:py-16 lg:py-20"
+                  >
+                    <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#91A298] sm:text-[11px]">
+                      Lifestyle factors
+                    </p>
+
+                    <h2 className="mt-4 max-w-[720px] font-serif text-[36px] leading-[1.06] tracking-[-0.035em] text-[#17413D] sm:text-[46px] lg:text-[52px]">
+                      Everyday factors can matter
+                    </h2>
+
+                    <div className="mt-8 border-t border-[#202522]/10">
+                      {condition.lifestyleFactors.map((factor, index) => (
+                        <div
+                          key={factor.title}
+                          className="grid gap-4 border-b border-[#202522]/10 py-7 sm:grid-cols-[48px_1fr] sm:gap-6 sm:py-8"
+                        >
+                          <span className="font-sans text-[10px] font-semibold tracking-[0.12em] text-[#91A298]">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+
+                          <div>
+                            <h3 className="font-serif text-[25px] leading-[1.1] tracking-[-0.025em] text-[#202522] sm:text-[28px]">
                               {factor.title}
                             </h3>
-                            <p className="mt-2 max-w-3xl text-[16px] leading-7 text-[#687A73] sm:text-[17px] sm:leading-8">
+
+                            <p className="mt-3 font-sans text-[17px] leading-[1.85] text-[#65736D] sm:text-[18px] sm:leading-[1.9]">
                               {factor.description}
                             </p>
                           </div>
-                        ))}
-                      </div>
+                        </div>
+                      ))}
                     </div>
                   </section>
                 )}
 
-                {/* Main article sections */}
+                {/* =================================================
+                    CONDITION-SPECIFIC SECTIONS — magazine rhythm
+                ================================================== */}
                 <div>
                   {condition.sections.map((section, index) => (
                     <section
                       key={section.title}
                       id={`section-${index}-${slugify(section.title)}`}
-                      className="scroll-mt-28 border-t border-[#173F35]/10 py-7 sm:py-8 lg:py-9"
+                      className="scroll-mt-28 border-b border-[#202522]/10 py-14 sm:py-16 lg:py-20"
                     >
-                      <div className="max-w-4xl">
-                        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9AAA9F]">
-                          {String(index + 1).padStart(2, "0")}
-                        </p>
-                        <h2 className="mt-1.5 max-w-3xl font-serif text-2xl leading-[1.08] tracking-[-0.025em] text-[#173F35] sm:text-3xl">
-                          {section.title}
-                        </h2>
-                        <div className="mt-4 max-w-3xl space-y-3">
-                          {section.content.map((paragraph) => (
-                            <p
-                              key={paragraph}
-                              className="text-[17px] leading-8 text-[#536A62] sm:text-[18px] sm:leading-8"
-                            >
-                              {paragraph}
+                      <div className="max-w-[760px]">
+                        <div className="flex items-start gap-5">
+                          <span className="pt-1 font-sans text-[10px] font-semibold tracking-[0.12em] text-[#91A298]">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+
+                          <div className="min-w-0 flex-1">
+                            <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.16em] text-[#91A298]">
+                              Condition guide
                             </p>
-                          ))}
+
+                            <h2 className="mt-3 font-serif text-[34px] leading-[1.08] tracking-[-0.035em] text-[#17413D] sm:text-[44px] lg:text-[50px]">
+                              {section.title}
+                            </h2>
+
+                            <div className="mt-7 space-y-5">
+                              {section.content.map((paragraph) => (
+                                <p
+                                  key={paragraph}
+                                  className="font-sans text-[17px] leading-[1.85] text-[#65736D] sm:text-[18px] sm:leading-[1.9]"
+                                >
+                                  {paragraph}
+                                </p>
+                              ))}
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </section>
                   ))}
                 </div>
 
-                {/* Contextual internal links */}
+                {/* =================================================
+                    INTERNAL LINKS
+                ================================================== */}
                 {internalLinks.length > 0 && (
-                  <section className="border-t border-[#173F35]/10 py-7 sm:py-8">
-                    <div className="max-w-4xl">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                        Explore further
-                      </p>
-                      <div className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
-                        {internalLinks.map((link) => (
-                          <Link
-                            key={`${link.href}-${link.label}`}
-                            href={link.href}
-                            className="group inline-flex items-center gap-2 border-b border-[#65966F]/40 pb-1 text-[14px] font-semibold text-[#173F35] transition-colors hover:border-[#173F35] hover:text-[#65966F]"
+                  <section className="border-b border-[#202522]/10 py-12 sm:py-14">
+                    <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#91A298]">
+                      Explore further
+                    </p>
+
+                    <div className="mt-5 border-t border-[#202522]/10">
+                      {internalLinks.map((link) => (
+                        <Link
+                          key={`${link.href}-${link.label}`}
+                          href={link.href}
+                          className="group flex items-center justify-between gap-6 border-b border-[#202522]/10 py-5 font-sans text-[15px] font-medium text-[#17413D] transition-colors hover:text-[#91A298]"
+                        >
+                          <span>{link.label}</span>
+                          <span
+                            aria-hidden="true"
+                            className="transition-transform duration-200 group-hover:translate-x-1"
                           >
-                            {link.label}
-                            <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
-                              →
-                            </span>
-                          </Link>
-                        ))}
-                      </div>
+                            →
+                          </span>
+                        </Link>
+                      ))}
                     </div>
                   </section>
                 )}
 
-                {/* Approach */}
-                <section id="approach" className="scroll-mt-28 border-t border-[#173F35]/10 py-7 sm:py-8 lg:py-9">
-                  <div className="max-w-4xl">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
-                      Our approach
-                    </p>
-                    <h2 className="mt-1.5 max-w-3xl font-serif text-3xl leading-[1.05] tracking-[-0.03em] text-[#173F35] sm:text-4xl">
-                      Building healthier everyday habits
-                    </h2>
-                    <div className="mt-4 border-y border-[#173F35]/10">
-                      {condition.approach.map((item) => (
-                        <div key={item} className="border-b border-[#173F35]/10 py-3 last:border-b-0 text-[17px] leading-8 text-[#536A62] sm:text-[18px] sm:leading-8">
+                {/* =================================================
+                    APPROACH
+                ================================================== */}
+                <section
+                  id="approach"
+                  className="scroll-mt-28 border-b border-[#202522]/10 py-14 sm:py-16 lg:py-20"
+                >
+                  <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#91A298] sm:text-[11px]">
+                    Our approach
+                  </p>
+
+                  <h2 className="mt-4 max-w-[720px] font-serif text-[36px] leading-[1.06] tracking-[-0.035em] text-[#17413D] sm:text-[46px] lg:text-[52px]">
+                    Building healthier everyday habits
+                  </h2>
+
+                  <div className="mt-8 border-t border-[#202522]/10">
+                    {condition.approach.map((item, index) => (
+                      <div
+                        key={item}
+                        className="grid gap-4 border-b border-[#202522]/10 py-6 sm:grid-cols-[48px_1fr] sm:gap-6 sm:py-7"
+                      >
+                        <span className="font-sans text-[10px] font-semibold tracking-[0.12em] text-[#91A298]">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+
+                        <p className="font-sans text-[17px] leading-[1.85] text-[#65736D] sm:text-[18px] sm:leading-[1.9]">
                           {item}
-                        </div>
-                      ))}
-                    </div>
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </section>
 
-                {/* Support */}
+                {/* =================================================
+                    SUPPORT
+                ================================================== */}
                 {condition.support?.length > 0 && (
-                  <section id="support" className="scroll-mt-28 border-t border-[#173F35]/10 py-7 sm:py-8 lg:py-9">
-                    <div className="max-w-4xl">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
-                        How Sutra Health can help
-                      </p>
-                      <h2 className="mt-1.5 max-w-3xl font-serif text-3xl leading-[1.05] tracking-[-0.03em] text-[#173F35] sm:text-4xl">
-                        Support shaped around you
-                      </h2>
-                      <div className="mt-4 border-y border-[#173F35]/10">
-                        {condition.support.map((item) => (
-                          <div key={item} className="border-b border-[#173F35]/10 py-3 last:border-b-0 text-[17px] leading-8 text-[#536A62] sm:text-[18px] sm:leading-8">
+                  <section
+                    id="support"
+                    className="scroll-mt-28 border-b border-[#202522]/10 py-14 sm:py-16 lg:py-20"
+                  >
+                    <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#91A298] sm:text-[11px]">
+                      How Sutra Health can help
+                    </p>
+
+                    <h2 className="mt-4 max-w-[720px] font-serif text-[36px] leading-[1.06] tracking-[-0.035em] text-[#17413D] sm:text-[46px] lg:text-[52px]">
+                      Support shaped around you
+                    </h2>
+
+                    <div className="mt-8 border-t border-[#202522]/10">
+                      {condition.support.map((item, index) => (
+                        <div
+                          key={item}
+                          className="grid gap-4 border-b border-[#202522]/10 py-6 sm:grid-cols-[48px_1fr] sm:gap-6 sm:py-7"
+                        >
+                          <span className="font-sans text-[10px] font-semibold tracking-[0.12em] text-[#91A298]">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+
+                          <p className="font-sans text-[17px] leading-[1.85] text-[#65736D] sm:text-[18px] sm:leading-[1.9]">
                             {item}
-                          </div>
-                        ))}
-                      </div>
+                          </p>
+                        </div>
+                      ))}
                     </div>
                   </section>
                 )}
 
-                {/* FAQ */}
+                {/* =================================================
+                    FAQ — clean accordion
+                ================================================== */}
                 {condition.faqs?.length > 0 && (
-                  <section id="faq" className="scroll-mt-28 border-t border-[#173F35]/10 py-7 sm:py-8 lg:py-9">
-                    <div className="max-w-4xl">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
-                        Frequently asked questions
-                      </p>
-                      <h2 className="mt-1.5 max-w-3xl font-serif text-3xl leading-[1.05] tracking-[-0.03em] text-[#173F35] sm:text-4xl">
-                        Questions about {condition.title.toLowerCase()}?
-                      </h2>
-                      <div className="mt-4 border-t border-[#173F35]/15">
-                        {condition.faqs.map((faq, index) => (
-                          <details key={faq.question} className="group border-b border-[#173F35]/15">
-                            <summary className="flex cursor-pointer list-none items-center gap-4 py-4 sm:py-5 [&::-webkit-details-marker]:hidden">
-                              <span className="w-7 shrink-0 text-[10px] font-semibold tracking-[0.12em] text-[#A2ADA7]">
-                                {String(index + 1).padStart(2, "0")}
-                              </span>
-                              <span className="flex-1 text-[15px] font-medium leading-6 text-[#173F35] sm:text-[16px]">
-                                {faq.question}
-                              </span>
-                              <span aria-hidden="true" className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#173F35]/10 text-[#65966F] transition-transform duration-300 group-open:rotate-45">
-                                +
-                              </span>
-                            </summary>
-                            <div className="pb-5 pl-11 pr-8">
-                              <p className="max-w-3xl text-[16px] leading-7 text-[#687A73] sm:text-[17px] sm:leading-8">
-                                {faq.answer}
-                              </p>
-                            </div>
-                          </details>
-                        ))}
-                      </div>
+                  <section
+                    id="faq"
+                    className="scroll-mt-28 py-14 sm:py-16 lg:py-20"
+                  >
+                    <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#91A298] sm:text-[11px]">
+                      Frequently asked questions
+                    </p>
+
+                    <h2 className="mt-4 max-w-[720px] font-serif text-[36px] leading-[1.06] tracking-[-0.035em] text-[#17413D] sm:text-[46px] lg:text-[52px]">
+                      Questions about {condition.title.toLowerCase()}?
+                    </h2>
+
+                    <div className="mt-8 border-t border-[#202522]/10">
+                      {condition.faqs.map((faq, index) => (
+                        <details
+                          key={faq.question}
+                          className="group border-b border-[#202522]/10"
+                        >
+                          <summary className="flex cursor-pointer list-none items-start gap-4 py-6 [&::-webkit-details-marker]:hidden sm:py-7">
+                            <span className="pt-1 font-sans text-[10px] font-semibold tracking-[0.12em] text-[#91A298]">
+                              {String(index + 1).padStart(2, "0")}
+                            </span>
+
+                            <span className="flex-1 font-sans text-[16px] font-medium leading-7 text-[#202522] sm:text-[17px]">
+                              {faq.question}
+                            </span>
+
+                            <span
+                              aria-hidden="true"
+                              className="flex h-8 w-8 shrink-0 items-center justify-center border border-[#202522]/10 font-sans text-[18px] font-normal text-[#17413D] transition-transform duration-200 group-open:rotate-45"
+                            >
+                              +
+                            </span>
+                          </summary>
+
+                          <div className="pb-7 pl-9 sm:pl-10 sm:pr-10">
+                            <p className="font-sans text-[17px] leading-[1.85] text-[#65736D] sm:text-[18px] sm:leading-[1.9]">
+                              {faq.answer}
+                            </p>
+                          </div>
+                        </details>
+                      ))}
                     </div>
                   </section>
                 )}
@@ -652,36 +700,42 @@ export default async function ConditionPage({
             RELATED QUESTIONS
         ================================================== */}
         {questionPages.length > 0 && (
-          <section className="bg-white py-10 sm:py-12 lg:py-14">
+          <section className="border-t border-[#202522]/10 bg-[#F7F5EF]">
             <Container>
-              <div className="max-w-4xl">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
-                  Common questions
-                </p>
+              <div className="mx-auto max-w-[1180px] py-14 sm:py-16 lg:py-20">
+                <div className="max-w-[780px]">
+                  <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#91A298] sm:text-[11px]">
+                    Common questions
+                  </p>
 
-                <h2 className="mt-3 font-serif text-3xl tracking-[-0.03em] text-[#173F35] sm:text-4xl">
-                  Questions about {condition.title.toLowerCase()}
-                </h2>
+                  <h2 className="mt-3 font-serif text-[36px] leading-[1.05] tracking-[-0.03em] text-[#17413D] sm:text-[46px]">
+                    Questions about {condition.title.toLowerCase()}
+                  </h2>
 
-                <div className="mt-6 border-t border-[#173F35]/10">
-                  {questionPages.map((subpage) => (
-                    <Link
-                      key={subpage.slug}
-                      href={`/conditions/${condition.slug}/${subpage.slug}`}
-                      className="group flex items-center justify-between gap-6 border-b border-[#173F35]/10 py-5"
-                    >
-                      <span className="text-[16px] leading-7 text-[#173F35] sm:text-[17px]">
-                        {subpage.question}
-                      </span>
-
-                      <span
-                        aria-hidden="true"
-                        className="shrink-0 text-[#65966F] transition-transform duration-300 group-hover:translate-x-1"
+                  <div className="mt-8 border-t border-[#202522]/10">
+                    {questionPages.map((subpage, index) => (
+                      <Link
+                        key={subpage.slug}
+                        href={`/conditions/${condition.slug}/${subpage.slug}`}
+                        className="group flex items-center gap-5 border-b border-[#202522]/10 py-5 transition-colors hover:border-[#17413D]/25 sm:py-6"
                       >
-                        →
-                      </span>
-                    </Link>
-                  ))}
+                        <span className="font-sans text-[10px] font-semibold tracking-[0.12em] text-[#91A298]">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+
+                        <span className="flex-1 font-sans text-[16px] leading-7 text-[#202522] sm:text-[17px]">
+                          {subpage.question}
+                        </span>
+
+                        <span
+                          aria-hidden="true"
+                          className="shrink-0 text-[#17413D] transition-transform duration-200 group-hover:translate-x-1"
+                        >
+                          →
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
             </Container>
@@ -690,131 +744,121 @@ export default async function ConditionPage({
 
         {/* ===================================================
             RELATED CONDITIONS
+            Text-led cards: small image, strong title.
         ================================================== */}
         {relatedConditions.length > 0 && (
-          <section className="bg-[#FAF8F1] py-10 sm:py-12 lg:py-14">
+          <section className="border-t border-[#202522]/10 bg-white">
             <Container>
-              <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-                <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
-                    Explore more
-                  </p>
-                  <h2 className="mt-3 font-serif text-3xl tracking-[-0.03em] text-[#173F35] sm:text-4xl">
-                    Related health conditions
-                  </h2>
-                </div>
-                <Link href="/conditions" className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#173F35] transition-colors hover:text-[#65966F]">
-                  View all conditions
-                  <span aria-hidden="true">→</span>
-                </Link>
-              </div>
+              <div className="mx-auto max-w-[1180px] py-14 sm:py-16 lg:py-20">
+                <div className="flex flex-col gap-6 border-b border-[#202522]/10 pb-8 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#91A298] sm:text-[11px]">
+                      Explore more
+                    </p>
 
-              <div
-                className="
-                  mt-8 flex gap-4 overflow-x-auto pb-3
-                  snap-x snap-mandatory
-                  [-ms-overflow-style:none] [scrollbar-width:none]
-                  [&::-webkit-scrollbar]:hidden
-                  md:grid md:grid-cols-2 lg:grid-cols-3
-                  md:overflow-visible md:pb-0
-                "
-              >
-                {relatedConditions.map((related) => {
-                  if (!related) return null;
+                    <h2 className="mt-3 max-w-[700px] font-serif text-[38px] leading-[1.04] tracking-[-0.035em] text-[#17413D] sm:text-[48px] lg:text-[52px]">
+                      Related health conditions
+                    </h2>
+                  </div>
 
-                  return (
-                    <Link
-                      key={related.slug}
-                      href={`/conditions/${related.slug}`}
-                      className="
-                        group min-w-[82%] snap-start
-                        overflow-hidden rounded-[20px]
-                        border border-[#173F35]/10 bg-white
-                        transition-all duration-300
-                        hover:-translate-y-1
-                        hover:shadow-[0_18px_40px_rgba(23,63,53,0.09)]
-                        sm:min-w-[68%] md:min-w-0
-                      "
+                  <Link
+                    href="/conditions"
+                    className="group inline-flex shrink-0 items-center gap-2 border-b border-[#17413D]/30 pb-1 font-sans text-[13px] font-semibold text-[#17413D] transition-colors hover:border-[#17413D] hover:text-[#91A298]"
+                  >
+                    View all conditions
+                    <span
+                      aria-hidden="true"
+                      className="transition-transform duration-200 group-hover:translate-x-1"
                     >
-                      <div className="relative aspect-[16/10] overflow-hidden">
-                        <Image
-                          src={`/images/conditions/${related.slug}.webp`}
-                          alt={`${related.title} - Sutra Health`}
-                          fill
-                          sizes="(max-width: 767px) 82vw, (max-width: 1024px) 50vw, 33vw"
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#173F35]/25 via-transparent to-transparent" />
-                      </div>
+                      →
+                    </span>
+                  </Link>
+                </div>
 
-                      <div className="relative p-5 sm:p-6">
-                        <h3 className="pr-8 font-serif text-[22px] leading-tight tracking-[-0.02em] text-[#173F35]">
-                          {related.title}
-                        </h3>
+                <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                  {relatedConditions.map((related) => {
+                    if (!related) return null;
 
-                        <p className="mt-2 pr-6 text-[12px] leading-5 text-[#71817A]">
-                          {related.shortDescription}
-                        </p>
+                    return (
+                      <Link
+                        key={related.slug}
+                        href={`/conditions/${related.slug}`}
+                        className="group border border-[#202522]/10 bg-white transition-colors duration-300 hover:border-[#17413D]/30"
+                      >
+                        <div className="relative aspect-[16/8] w-full max-w-full min-w-0 overflow-hidden bg-[#E7EDE8]">
+                          <Image
+                            src={`/images/conditions/${related.slug}.webp`}
+                            alt={`${related.title} - Sutra Health`}
+                            fill
+                            sizes="(max-width: 767px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                          />
+                        </div>
 
-                        <span
-                          aria-hidden="true"
-                          className="
-                            absolute bottom-5 right-5 flex h-8 w-8
-                            items-center justify-center rounded-full
-                            border border-[#173F35]/10 text-[#65966F]
-                            transition-all duration-300
-                            group-hover:translate-x-1
-                            group-hover:bg-[#173F35]
-                            group-hover:text-white
-                          "
-                        >
-                          →
-                        </span>
-                      </div>
-                    </Link>
-                  );
-                })}
+                        <div className="flex min-h-[175px] flex-col p-5 sm:p-6">
+                          <h3 className="max-w-[90%] font-serif text-[25px] leading-[1.08] tracking-[-0.025em] text-[#202522] sm:text-[27px]">
+                            {related.title}
+                          </h3>
+
+                          <p className="mt-3 max-w-[34rem] font-sans text-[14px] leading-6 text-[#65736D] sm:text-[15px] sm:leading-6">
+                            {related.shortDescription}
+                          </p>
+
+                          <div className="mt-auto pt-5">
+                            <span className="inline-flex items-center gap-2 font-sans text-[12px] font-semibold uppercase tracking-[0.12em] text-[#17413D]">
+                              Explore
+                              <span
+                                aria-hidden="true"
+                                className="transition-transform duration-200 group-hover:translate-x-1"
+                              >
+                                →
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
             </Container>
           </section>
         )}
 
-
         {/* ===================================================
-            CTA
-        =================================================== */}
-
-        <section className="bg-[#173F35] py-10 sm:py-12 lg:py-14">
+            FINAL CTA
+            Kept calm and editorial, not homepage-like.
+        ================================================== */}
+        <section className="border-t border-[#202522]/10 bg-[#17413D]">
           <Container>
+            <div className="mx-auto max-w-[1180px] px-2 py-14 sm:px-6 sm:py-16 lg:px-10 lg:py-20">
+              <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-16">
+                <div className="max-w-[720px]">
+                  <p className="font-sans text-[10px] font-semibold uppercase tracking-[0.18em] text-[#C8BDA7] sm:text-[11px]">
+                    Take the next step
+                  </p>
 
-            <div className="mx-auto max-w-3xl text-center">
+                  <h2 className="mt-4 font-serif text-[38px] leading-[1.05] tracking-[-0.03em] text-[#F7F5EF] sm:text-[48px] lg:text-[56px]">
+                    Let's talk about your health.
+                  </h2>
 
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B5CEB6] sm:text-[11px]">
-                Take the next step
-              </p>
+                  <p className="mt-5 max-w-[620px] font-sans text-[16px] leading-8 text-[#E7EDE8] sm:text-[17px]">
+                    Book a consultation to discuss your health goals and explore
+                    an approach that fits your needs and everyday life.
+                  </p>
+                </div>
 
-              <h2 className="mt-4 font-serif text-4xl leading-[1.05] tracking-[-0.03em] text-[#FAF8F1] sm:text-5xl">
-                Let's talk about your health.
-              </h2>
-
-              <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[#CBDAD1]">
-                Book a consultation to discuss your health goals and explore
-                an approach that fits your needs and everyday life.
-              </p>
-
-              <Link
-                href="/book-appointment"
-                className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#FAF8F1] px-7 py-3.5 text-sm font-semibold text-[#173F35] transition hover:bg-white"
-              >
-                Book an Appointment
-                <span aria-hidden="true">→</span>
-              </Link>
-
+                <Link
+                  href="/book-appointment"
+                  className="inline-flex h-[52px] w-fit items-center gap-3 bg-[#F7F5EF] px-6 font-sans text-[14px] font-semibold text-[#17413D] transition-colors duration-200 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#F7F5EF]"
+                >
+                  Book an Appointment
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </div>
             </div>
-
           </Container>
         </section>
-
       </main>
     </>
   );

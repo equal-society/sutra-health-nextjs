@@ -66,7 +66,7 @@ const homepageFaqs = [
   {
     question: "Do you offer online consultations?",
     answer:
-      "Yes. Sutra Health works with people across India. Online consultations are available for lifestyle medicine, nutrition counselling and yoga therapy. In-person sessions are also available in Faridabad.",
+      "Yes. Sutra Health works with people across India. Online consultations are available for lifestyle medicine, nutrition counselling and yoga therapy. In-person sessions are also available in Faridabad, Delhi NCR.",
   },
   {
     question: "How long before I see results?",
@@ -146,6 +146,18 @@ const structuredData = {
         addressCountry: "IN",
       },
       telephone: "+91-9013103676",
+      /*
+        ADDED: the Service schema on every /what-we-do/[slug] page already
+        declares areaServed as Faridabad (City) + Delhi NCR
+        (AdministrativeArea). The main Organization node here had no
+        areaServed at all — adding it so the homepage's structured data
+        matches what the service pages already tell Google.
+      */
+      areaServed: [
+        { "@type": "City", name: "Faridabad" },
+        { "@type": "AdministrativeArea", name: "Delhi NCR" },
+        { "@type": "Country", name: "India" },
+      ],
       sameAs: [
         "https://academic.lifequality.org.in/",
         "https://pmc.ncbi.nlm.nih.gov/articles/PMC12975079/",

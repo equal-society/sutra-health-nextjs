@@ -32,11 +32,13 @@ export async function generateMetadata({
     return {};
   }
 
+  const canonicalUrl = `https://lifequality.org.in/conditions/${slug}/${subslug}`;
+
   return {
     title: subpage.question,
     description: subpage.shortAnswer.slice(0, 155),
     alternates: {
-      canonical: `/conditions/${slug}/${subslug}`,
+      canonical: canonicalUrl,
     },
     robots: {
       index: true,
@@ -46,14 +48,12 @@ export async function generateMetadata({
       title: subpage.question,
       description: subpage.shortAnswer.slice(0, 155),
       type: "article",
-      url: `/conditions/${slug}/${subslug}`,
+      url: canonicalUrl,
     },
   };
 }
 
-export default async function ConditionSubpage({
-  params,
-}: PageProps) {
+export default async function ConditionSubpage({ params }: PageProps) {
   const { slug, subslug } = await params;
 
   const condition = getCondition(slug);
@@ -137,14 +137,12 @@ export default async function ConditionSubpage({
           __html: JSON.stringify(breadcrumbSchema),
         }}
       />
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(articleSchema),
         }}
       />
-
       {faqSchema && (
         <script
           type="application/ld+json"
@@ -154,161 +152,211 @@ export default async function ConditionSubpage({
         />
       )}
 
-      <main>
+      <main className="bg-[#F7F5EF] text-[#202522]">
         {/* Breadcrumb */}
-        <section className="border-b border-black/10 bg-[#f7f5f1]">
+        <section className="border-b border-[#202522]/10 bg-[#F7F5EF]">
           <Container>
-            <div className="py-5 text-sm text-black/60">
+            <nav
+              aria-label="Breadcrumb"
+              className="overflow-x-auto whitespace-nowrap py-4 font-sans text-[12px] leading-5 text-[#65736D] sm:py-5 sm:text-[13px]"
+            >
               <Link
                 href="/conditions"
-                className="transition hover:text-black"
+                className="transition-colors hover:text-[#17413D]"
               >
                 Conditions
               </Link>
-
-              <span className="mx-2">/</span>
-
+              <span className="mx-2 text-[#C8BDA7]">/</span>
               <Link
                 href={`/conditions/${condition.slug}`}
-                className="transition hover:text-black"
+                className="transition-colors hover:text-[#17413D]"
               >
                 {condition.title}
               </Link>
-
-              <span className="mx-2">/</span>
-
-              <span className="text-black/80">
-                {subpage.question}
-              </span>
-            </div>
+              <span className="mx-2 text-[#C8BDA7]">/</span>
+              <span className="text-[#202522]">{subpage.question}</span>
+            </nav>
           </Container>
         </section>
 
-        {/* Hero / Direct Answer */}
-        <section className="relative isolate overflow-hidden ">
-  {/* Background */}
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 -z-20 bg-[linear-gradient(135deg,#FAF8F1_0%,#F4F2E8_42%,#E7EFE7_100%)]"
-  />
-
-  {/* Organic gradient shapes */}
-  <div
-    aria-hidden="true"
-    className="absolute -right-32 -top-32 -z-10 h-[420px] w-[420px] rounded-full bg-[#A9C5AC]/35 blur-3xl sm:h-[520px] sm:w-[520px]"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute -bottom-48 left-[38%] -z-10 h-[420px] w-[420px] rounded-full bg-[#D8C9A9]/25 blur-3xl"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute -left-32 top-[28%] -z-10 h-[260px] w-[260px] rounded-full bg-[#C6D9CA]/25 blur-3xl"
-  />
-
-  {/* Fine editorial grid */}
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 -z-10 opacity-[0.035]"
-    style={{
-      backgroundImage:
-        "linear-gradient(#173F35 1px, transparent 1px), linear-gradient(90deg, #173F35 1px, transparent 1px)",
-      backgroundSize: "56px 56px",
-    }}
-  />
-
-  {/* Decorative rings */}
-  <div
-    aria-hidden="true"
-    className="absolute right-[7%] top-[16%] -z-10 hidden h-44 w-44 rounded-full border border-[#173F35]/10 lg:block"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute right-[10%] top-[21%] -z-10 hidden h-28 w-28 rounded-full border border-[#65966F]/15 lg:block"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute bottom-[13%] left-[8%] -z-10 hidden h-20 w-20 rounded-full border border-[#173F35]/10 lg:block"
-  />
-
-        <section className=" py-16 md:py-24">
+        {/* Direct-answer header */}
+        <section className="border-b border-[#202522]/10 bg-[#F7F5EF]">
           <Container>
-            <div className="mx-auto max-w-4xl">
-              <p className="mb-5 text-sm font-medium uppercase tracking-[0.16em] text-[#55705b]">
-                {condition.title}
-              </p>
+            <div className="mx-auto max-w-[980px] px-0 py-14 sm:py-16 md:py-20 lg:py-24">
+              <div className="flex items-center gap-3">
+                <span
+                  aria-hidden="true"
+                  className="h-px w-8 bg-[#91A298] sm:w-10"
+                />
+                <p className="font-sans text-[11px] font-medium uppercase tracking-[0.15em] text-[#65736D] sm:text-[12px]">
+                  {condition.title}
+                </p>
+              </div>
 
-              <h1 className="max-w-4xl font-serif text-4xl leading-tight text-[#1E2A1C] md:text-6xl">
+              <h1 className="mt-5 max-w-[900px] font-serif text-[40px] font-medium leading-[1.07] tracking-[-0.03em] text-[#202522] sm:mt-6 sm:text-[48px] md:text-[58px] lg:text-[68px] xl:text-[76px]">
                 {subpage.question}
               </h1>
 
-              <div className="mt-8 max-w-3xl border-l-2 border-[#55705b] pl-5">
-                <p className="text-lg leading-8 text-[#1E2A1C]/80 md:text-xl">
+              <div className="mt-7 max-w-[780px] border-l border-[#17413D] pl-5 sm:mt-8 sm:pl-7">
+                <p className="font-sans text-[17px] leading-[1.75] text-[#65736D] sm:text-[18px] md:text-[20px] md:leading-[1.7]">
                   {subpage.shortAnswer}
                 </p>
               </div>
             </div>
           </Container>
         </section>
-        </section>
 
-        {/* Main Content */}
-        <section className="bg-white py-14 md:py-20">
+        {/* Article */}
+        <section className="bg-white">
           <Container>
-            <article className="mx-auto max-w-3xl">
-              {subpage.detail?.map((section) => (
-                <section
-                  key={section.title}
-                  className="mb-12"
-                >
-                  <h2 className="font-serif text-3xl leading-tight text-[#1E2A1C] md:text-4xl">
-                    {section.title}
-                  </h2>
-
-                  <div className="mt-5 space-y-4">
-                    {section.content.map((paragraph, index) => (
-                      <p
-                        key={`${section.title}-${index}`}
-                        className="text-base leading-8 text-[#1E2A1C]/75 md:text-lg"
-                      >
-                        {paragraph}
-                      </p>
+            <div className="grid grid-cols-1 gap-12 py-14 sm:py-16 md:py-20 lg:grid-cols-[190px_minmax(0,720px)] lg:gap-16 lg:py-24">
+              {/* Contents rail */}
+              <aside className="hidden lg:block">
+                <div className="sticky top-28">
+                  <p className="font-sans text-[11px] font-medium uppercase tracking-[0.14em] text-[#65736D]">
+                    Contents
+                  </p>
+                  <div className="mt-4 h-px w-8 bg-[#C8BDA7]" />
+                  <ol className="mt-5 space-y-3">
+                    {subpage.detail?.map((section, index) => (
+                      <li key={section.title}>
+                        <a
+                          href={`#section-${index + 1}`}
+                          className="group flex gap-2 font-sans text-[13px] leading-5 text-[#65736D] transition-colors hover:text-[#17413D]"
+                        >
+                          <span className="shrink-0 text-[#91A298]">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                          <span>{section.title}</span>
+                        </a>
+                      </li>
                     ))}
-                  </div>
-                </section>
-              ))}
+                    {subpage.evidence && subpage.evidence.length > 0 && (
+                      <li>
+                        <a
+                          href="#evidence"
+                          className="group flex gap-2 font-sans text-[13px] leading-5 text-[#65736D] transition-colors hover:text-[#17413D]"
+                        >
+                          <span className="shrink-0 text-[#91A298]">—</span>
+                          <span>Evidence & reading</span>
+                        </a>
+                      </li>
+                    )}
+                    {subpage.faqs && subpage.faqs.length > 0 && (
+                      <li>
+                        <a
+                          href="#faqs"
+                          className="group flex gap-2 font-sans text-[13px] leading-5 text-[#65736D] transition-colors hover:text-[#17413D]"
+                        >
+                          <span className="shrink-0 text-[#91A298]">—</span>
+                          <span>FAQs</span>
+                        </a>
+                      </li>
+                    )}
+                  </ol>
+                </div>
+              </aside>
 
-              {/* Evidence */}
-              {subpage.evidence &&
-                subpage.evidence.length > 0 && (
-                  <section className="mb-14 border-t border-black/10 pt-10">
-                    <h2 className="font-serif text-3xl text-[#1E2A1C]">
+              <article className="min-w-0 max-w-[720px]">
+                {/* Mobile contents */}
+                <details className="mb-12 border-y border-[#202522]/10 lg:hidden">
+                  <summary className="cursor-pointer list-none py-4 font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[#65736D]">
+                    <span className="flex items-center justify-between">
+                      <span>Contents</span>
+                      <span aria-hidden="true" className="text-[#17413D]">
+                        +
+                      </span>
+                    </span>
+                  </summary>
+                  <ol className="space-y-3 pb-5 pt-1">
+                    {subpage.detail?.map((section, index) => (
+                      <li key={section.title}>
+                        <a
+                          href={`#section-${index + 1}`}
+                          className="flex gap-3 py-1 font-sans text-[14px] leading-5 text-[#65736D]"
+                        >
+                          <span className="text-[#91A298]">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                          <span>{section.title}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ol>
+                </details>
+
+                {/* Opening marker */}
+                <div className="mb-10 flex items-center gap-4">
+                  <span className="h-px w-10 bg-[#C8BDA7]" />
+                  <span className="font-sans text-[11px] font-medium uppercase tracking-[0.15em] text-[#65736D]">
+                    Health guide
+                  </span>
+                </div>
+
+                {subpage.detail?.map((section, index) => (
+                  <section
+                    id={`section-${index + 1}`}
+                    key={section.title}
+                    className="scroll-mt-28 border-b border-[#202522]/10 pb-12 pt-12 first:pt-0 sm:pb-14 sm:pt-14"
+                  >
+                    <div className="grid gap-5 md:grid-cols-[58px_minmax(0,1fr)] md:gap-7">
+                      <div className="font-serif text-[22px] leading-none text-[#91A298] md:pt-2">
+                        {String(index + 1).padStart(2, "0")}
+                      </div>
+
+                      <div>
+                        <h2 className="max-w-[650px] font-serif text-[30px] font-medium leading-[1.12] tracking-[-0.02em] text-[#202522] sm:text-[34px] md:text-[38px]">
+                          {section.title}
+                        </h2>
+
+                        <div className="mt-6 space-y-5">
+                          {section.content.map((paragraph, paragraphIndex) => (
+                            <p
+                              key={`${section.title}-${paragraphIndex}`}
+                              className="font-sans text-[16px] leading-[1.85] text-[#65736D] sm:text-[17px] md:text-[18px]"
+                            >
+                              {paragraph}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                ))}
+
+                {/* Evidence */}
+                {subpage.evidence && subpage.evidence.length > 0 && (
+                  <section
+                    id="evidence"
+                    className="scroll-mt-28 border-b border-[#202522]/10 py-12 sm:py-14"
+                  >
+                    <p className="font-sans text-[11px] font-medium uppercase tracking-[0.14em] text-[#65736D]">
+                      Evidence
+                    </p>
+                    <h2 className="mt-4 font-serif text-[30px] font-medium leading-[1.15] tracking-[-0.02em] text-[#202522] sm:text-[36px]">
                       Evidence and Further Reading
                     </h2>
 
-                    <div className="mt-6 space-y-6">
+                    <div className="mt-7 space-y-7">
                       {subpage.evidence.map((item) => (
-                        <div key={`${item.source}-${item.claim}`}>
-                          <p className="leading-7 text-[#1E2A1C]/80">
+                        <div
+                          key={`${item.source}-${item.claim}`}
+                          className="border-l border-[#C8BDA7] pl-5"
+                        >
+                          <p className="font-sans text-[16px] leading-[1.8] text-[#65736D]">
                             {item.claim}
                           </p>
-
-                          <p className="mt-2 text-sm text-black/60">
+                          <p className="mt-2 font-sans text-[13px] leading-6 text-[#65736D]">
                             {item.source}
-
                             {item.url && (
                               <>
                                 {" "}
-                                —{" "}
+                                <span aria-hidden="true">—</span>{" "}
                                 <a
                                   href={item.url}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="underline underline-offset-4"
+                                  className="text-[#17413D] underline decoration-[#91A298] underline-offset-4 transition-colors hover:text-[#12332F]"
                                 >
                                   Read source
                                 </a>
@@ -321,72 +369,85 @@ export default async function ConditionSubpage({
                   </section>
                 )}
 
-              {/* FAQs */}
-              {subpage.faqs &&
-                subpage.faqs.length > 0 && (
-                  <section className="border-t border-black/10 pt-12">
-                    <h2 className="font-serif text-3xl text-[#1E2A1C] md:text-4xl">
+                {/* FAQs */}
+                {subpage.faqs && subpage.faqs.length > 0 && (
+                  <section
+                    id="faqs"
+                    className="scroll-mt-28 border-b border-[#202522]/10 py-12 sm:py-14"
+                  >
+                    <p className="font-sans text-[11px] font-medium uppercase tracking-[0.14em] text-[#65736D]">
+                      Common questions
+                    </p>
+                    <h2 className="mt-4 font-serif text-[30px] font-medium leading-[1.15] tracking-[-0.02em] text-[#202522] sm:text-[36px]">
                       Frequently Asked Questions
                     </h2>
 
-                    <div className="mt-8 space-y-8">
+                    <div className="mt-7 divide-y divide-[#202522]/10">
                       {subpage.faqs.map((faq) => (
-                        <div key={faq.question}>
-                          <h3 className="text-lg font-medium text-[#1E2A1C]">
-                            {faq.question}
-                          </h3>
-
-                          <p className="mt-3 leading-7 text-[#1E2A1C]/70">
+                        <details key={faq.question} className="group py-5">
+                          <summary className="cursor-pointer list-none pr-8 font-sans text-[16px] font-medium leading-7 text-[#202522] marker:hidden">
+                            <span className="flex items-start justify-between gap-6">
+                              <span>{faq.question}</span>
+                              <span
+                                aria-hidden="true"
+                                className="shrink-0 font-serif text-xl font-normal text-[#17413D] transition-transform group-open:rotate-45"
+                              >
+                                +
+                              </span>
+                            </span>
+                          </summary>
+                          <p className="mt-4 max-w-[650px] font-sans text-[16px] leading-[1.8] text-[#65736D]">
                             {faq.answer}
                           </p>
-                        </div>
+                        </details>
                       ))}
                     </div>
                   </section>
                 )}
-            </article>
-          </Container>
-        </section>
 
-        {/* Parent Condition */}
-        <section className="bg-[#f7f5f1] py-14">
-          <Container>
-            <div className="mx-auto max-w-3xl">
-              <Link
-                href={`/conditions/${condition.slug}`}
-                className="inline-flex items-center text-sm font-medium text-[#1E2A1C] underline underline-offset-4"
-              >
-                ← Back to {condition.title}
-              </Link>
+                {/* Parent navigation */}
+                <div className="pt-10 sm:pt-12">
+                  <Link
+                    href={`/conditions/${condition.slug}`}
+                    className="inline-flex items-center border-b border-[#17413D]/40 pb-1 font-sans text-[13px] font-medium text-[#17413D] transition-colors hover:border-[#17413D] hover:text-[#12332F]"
+                  >
+                    ← Back to {condition.title}
+                  </Link>
+                </div>
+              </article>
             </div>
           </Container>
         </section>
 
-        {/* CTA */}
-        <section className=" bg-[#173F35] py-16 text-white md:py-20">
+        {/* Final CTA */}
+        <section className="bg-[#17413D] text-white">
           <Container>
-            <div className="mx-auto max-w-3xl text-center">
-              <h2 className="font-serif text-3xl md:text-4xl">
-                Explore a personalised approach to healthier habits
-              </h2>
+            <div className="flex flex-col gap-8 py-14 sm:py-16 md:flex-row md:items-center md:justify-between md:gap-12 md:py-20">
+              <div className="max-w-[700px]">
+                <p className="font-sans text-[11px] font-medium uppercase tracking-[0.15em] text-[#C8BDA7]">
+                  Sutra Health
+                </p>
+                <h2 className="mt-4 font-serif text-[32px] font-medium leading-[1.12] tracking-[-0.02em] sm:text-[38px] md:text-[44px]">
+                  Explore a personalised approach to healthier habits
+                </h2>
+                <p className="mt-5 max-w-[650px] font-sans text-[15px] leading-7 text-white/70 sm:text-[16px]">
+                  Learn how Sutra Health combines lifestyle-focused guidance,
+                  nutrition counselling, yoga therapy and related practices
+                  within a whole-person approach.
+                </p>
+              </div>
 
-              <p className="mx-auto mt-5 max-w-2xl leading-7 text-white/70">
-                Learn how Sutra Health combines lifestyle-focused guidance,
-                nutrition counselling, yoga therapy and related practices
-                within a whole-person approach.
-              </p>
-
-              <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+              <div className="flex shrink-0 flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
                 <Link
                   href="/book-appointment"
-                  className="rounded-full bg-white px-7 py-3 text-sm font-medium text-[#1E2A1C] transition hover:bg-white/90"
+                  className="inline-flex min-h-12 items-center justify-center border border-white bg-white px-6 py-3 font-sans text-[13px] font-medium text-[#17413D] transition-colors hover:bg-[#F7F5EF]"
                 >
                   Book an Appointment
                 </Link>
 
                 <Link
                   href={`/conditions/${condition.slug}`}
-                  className="rounded-full border border-white/30 px-7 py-3 text-sm font-medium text-white transition hover:bg-white/10"
+                  className="inline-flex min-h-12 items-center justify-center border border-white/30 px-6 py-3 font-sans text-[13px] font-medium text-white transition-colors hover:border-white hover:bg-white/10"
                 >
                   Explore {condition.title}
                 </Link>

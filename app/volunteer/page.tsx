@@ -89,73 +89,40 @@ export default function VolunteerPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
 
-      <main className="bg-[#FAF8F1] text-[#173F35]">
-        {/* HERO */}
-<section className="relative isolate overflow-hidden border-b border-[#173F35]/10">
-  {/* Background */}
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 -z-20 bg-[linear-gradient(135deg,#FAF8F1_0%,#F4F2E8_42%,#E7EFE7_100%)]"
-  />
-
-  {/* Organic gradient shapes */}
-  <div
-    aria-hidden="true"
-    className="absolute -right-32 -top-32 -z-10 h-[420px] w-[420px] rounded-full bg-[#A9C5AC]/35 blur-3xl sm:h-[520px] sm:w-[520px]"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute -bottom-48 left-[38%] -z-10 h-[420px] w-[420px] rounded-full bg-[#D8C9A9]/25 blur-3xl"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute -left-32 top-[28%] -z-10 h-[260px] w-[260px] rounded-full bg-[#C6D9CA]/25 blur-3xl"
-  />
-
-  {/* Fine editorial grid */}
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 -z-10 opacity-[0.035]"
-    style={{
-      backgroundImage:
-        "linear-gradient(#173F35 1px, transparent 1px), linear-gradient(90deg, #173F35 1px, transparent 1px)",
-      backgroundSize: "56px 56px",
-    }}
-  />
-
-  {/* Decorative rings */}
-  <div
-    aria-hidden="true"
-    className="absolute right-[7%] top-[16%] -z-10 hidden h-44 w-44 rounded-full border border-[#173F35]/10 lg:block"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute right-[10%] top-[21%] -z-10 hidden h-28 w-28 rounded-full border border-[#65966F]/15 lg:block"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute bottom-[13%] left-[8%] -z-10 hidden h-20 w-20 rounded-full border border-[#173F35]/10 lg:block"
-  />
+      <main className="bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">
+        {/* =====================================================
+            HERO
+        ===================================================== */}
+        <section className="border-b border-[var(--sutra-border)] bg-[var(--sutra-porcelain)]">
           <Container>
-            <div className="grid gap-12 py-16 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20 lg:py-24">
+            <div className="grid gap-10 py-14 sm:py-18 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20 lg:py-22 xl:py-24">
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#65966F] sm:text-[11px]">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-xs">
                   Join our movement
                 </p>
 
-                <h1 className="mt-5 max-w-[780px] font-serif text-[50px] leading-[0.96] tracking-[-0.05em] sm:text-[66px] lg:text-[82px]">
+                <h1
+                  className="
+                    mt-5
+                    max-w-[820px]
+                    font-serif
+                    text-[48px]
+                    font-medium
+                    leading-[0.96]
+                    tracking-[-0.045em]
+                    text-[var(--sutra-ink)]
+                    sm:text-[62px]
+                    lg:text-[78px]
+                    xl:text-[84px]
+                  "
+                >
                   Heal
-                  <br />
-                  <span className="italic text-[#65966F]">together.</span>
+                  <span className="text-[var(--sutra-teal)]"> together.</span>
                   <br />
                   Grow together.
                 </h1>
 
-                <p className="mt-7 max-w-[650px] text-[15px] leading-7 text-[#687A73] sm:text-[17px] sm:leading-8">
+                <p className="mt-7 max-w-[650px] text-[17px] leading-8 text-[var(--sutra-muted)] sm:text-[18px] sm:leading-9">
                   Sutra Health is more than a clinic — it is a living movement.
                   Join our Faridabad-based volunteer community supporting yoga,
                   wellness and community health activities.
@@ -166,27 +133,31 @@ export default function VolunteerPage() {
                     href={volunteerForm}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full bg-[#173F35] px-6 py-3.5 text-[13px] font-semibold text-white transition hover:bg-[#12352D]"
+                    className="inline-flex items-center gap-3 border border-[var(--sutra-teal)] bg-[var(--sutra-teal)] px-6 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-[var(--sutra-teal-hover)]"
                   >
-                    Volunteer with us <span aria-hidden>↗</span>
+                    Volunteer with us
+                    <span aria-hidden="true">↗</span>
                   </a>
+
                   <a
                     href="https://wa.me/919013103676"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-[#173F35]/15 px-6 py-3.5 text-[13px] font-semibold text-[#173F35] transition hover:bg-[#F0F4ED]"
+                    className="inline-flex items-center gap-3 border border-[var(--sutra-border-strong)] px-6 py-3.5 text-[13px] font-semibold text-[var(--sutra-teal)] transition-colors hover:bg-[var(--sutra-pale-sage)]"
                   >
-                    Ask on WhatsApp <span aria-hidden>↗</span>
+                    Ask on WhatsApp
+                    <span aria-hidden="true">↗</span>
                   </a>
                 </div>
               </div>
 
               <div className="flex items-end">
-                <div className="w-full border-t border-[#173F35]/15 pt-7">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#65966F]">
+                <div className="w-full border-t border-[var(--sutra-border-strong)] pt-7">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                     Community work
                   </p>
-                  <p className="mt-4 font-serif text-[29px] leading-tight tracking-[-0.025em] sm:text-[36px]">
+
+                  <p className="mt-4 max-w-[430px] font-serif text-[30px] font-medium leading-[1.12] tracking-[-0.025em] text-[var(--sutra-ink)] sm:text-[38px]">
                     Small contributions can help make healthier living more
                     accessible.
                   </p>
@@ -196,20 +167,25 @@ export default function VolunteerPage() {
           </Container>
         </section>
 
-        {/* IMPACT */}
-        <section className="border-b border-[#173F35]/10">
+        {/* =====================================================
+            IMPACT
+        ===================================================== */}
+        <section className="border-b border-[var(--sutra-border)] bg-[var(--sutra-white)]">
           <Container>
-            <div className="grid sm:grid-cols-3 sm:divide-x sm:divide-[#173F35]/10">
+            <div className="grid sm:grid-cols-3 sm:divide-x sm:divide-[var(--sutra-border-strong)]">
               {[
                 ["12+", "Volunteers"],
                 ["3", "Cities reached"],
                 ["Weekly", "Free rooftop yoga — Sundays"],
               ].map(([number, label]) => (
-                <div key={label} className="border-b border-[#173F35]/10 py-8 last:border-0 sm:border-b-0 sm:px-8 sm:first:pl-0 sm:last:pr-0">
-                  <p className="font-serif text-[30px] tracking-[-0.03em] sm:text-[36px]">
+                <div
+                  key={label}
+                  className="border-b border-[var(--sutra-border)] py-8 last:border-0 sm:border-b-0 sm:px-8 sm:py-10 sm:first:pl-0 sm:last:pr-0"
+                >
+                  <p className="font-serif text-[32px] font-medium tracking-[-0.03em] text-[var(--sutra-ink)] sm:text-[38px]">
                     {number}
                   </p>
-                  <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#7A8982]">
+                  <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
                     {label}
                   </p>
                 </div>
@@ -218,30 +194,60 @@ export default function VolunteerPage() {
           </Container>
         </section>
 
-        {/* WAYS TO CONTRIBUTE */}
-        <section>
+        {/* =====================================================
+            WAYS TO CONTRIBUTE
+        ===================================================== */}
+        <section className="bg-[var(--sutra-porcelain)]">
           <Container>
-            <div className="grid gap-10 py-16 sm:py-20 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20 lg:py-24">
+            <div className="grid gap-10 py-14 sm:py-18 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20 lg:py-22">
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                   Ways to contribute
                 </p>
-                <h2 className="mt-4 font-serif text-[38px] leading-[1.02] tracking-[-0.035em] sm:text-[50px]">
+
+                <h2 className="mt-4 max-w-[560px] font-serif text-[40px] font-medium leading-[1.02] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[52px]">
                   Bring your time, skills or energy.
                 </h2>
               </div>
 
-              <div className="divide-y divide-[#173F35]/10 border-y border-[#173F35]/10">
+              <div className="divide-y divide-[var(--sutra-border)] border-y border-[var(--sutra-border-strong)]">
                 {[
-                  ["01", "Community health activities", "Support awareness-led activities and help create welcoming spaces for healthier living."],
-                  ["02", "Yoga & wellbeing", "Help with community yoga and wellbeing activities when opportunities are available."],
-                  ["03", "Health awareness", "Help share useful health-awareness messages and support community participation."],
-                  ["04", "Behind the scenes", "Contribute practical skills, coordination and other useful support that helps activities run smoothly."],
+                  [
+                    "01",
+                    "Community health activities",
+                    "Support awareness-led activities and help create welcoming spaces for healthier living.",
+                  ],
+                  [
+                    "02",
+                    "Yoga & wellbeing",
+                    "Help with community yoga and wellbeing activities when opportunities are available.",
+                  ],
+                  [
+                    "03",
+                    "Health awareness",
+                    "Help share useful health-awareness messages and support community participation.",
+                  ],
+                  [
+                    "04",
+                    "Behind the scenes",
+                    "Contribute practical skills, coordination and other useful support that helps activities run smoothly.",
+                  ],
                 ].map(([number, title, description]) => (
-                  <div key={number} className="grid gap-4 py-6 sm:grid-cols-[56px_0.8fr_1.2fr] sm:items-start sm:gap-6">
-                    <span className="text-[11px] font-semibold tracking-[0.15em] text-[#65966F]">{number}</span>
-                    <h3 className="font-serif text-[23px] leading-tight">{title}</h3>
-                    <p className="text-[13px] leading-6 text-[#687A73]">{description}</p>
+                  <div
+                    key={number}
+                    className="grid gap-4 py-7 sm:grid-cols-[56px_0.8fr_1.2fr] sm:items-start sm:gap-6"
+                  >
+                    <span className="text-[11px] font-semibold tracking-[0.15em] text-[var(--sutra-sage)]">
+                      {number}
+                    </span>
+
+                    <h3 className="font-serif text-[24px] font-medium leading-tight tracking-[-0.02em] text-[var(--sutra-ink)]">
+                      {title}
+                    </h3>
+
+                    <p className="text-[14px] leading-7 text-[var(--sutra-muted)]">
+                      {description}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -249,31 +255,41 @@ export default function VolunteerPage() {
           </Container>
         </section>
 
-        {/* AWARENESS CALENDAR */}
-        <section className="border-y border-[#173F35]/10 bg-[#F0F4ED]">
+        {/* =====================================================
+            AWARENESS CALENDAR
+        ===================================================== */}
+        <section className="border-y border-[var(--sutra-border)] bg-[var(--sutra-pale-sage)]">
           <Container>
-            <div className="grid gap-10 py-16 sm:py-20 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20 lg:py-24">
+            <div className="grid gap-10 py-14 sm:py-18 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20 lg:py-22">
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                   Health awareness calendar
                 </p>
-                <h2 className="mt-4 font-serif text-[38px] leading-[1.02] tracking-[-0.035em] sm:text-[48px]">
+
+                <h2 className="mt-4 max-w-[600px] font-serif text-[40px] font-medium leading-[1.02] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[50px]">
                   Health conversations, throughout the year.
                 </h2>
-                <p className="mt-5 max-w-[470px] text-[14px] leading-7 text-[#687A73]">
+
+                <p className="mt-5 max-w-[470px] text-[14px] leading-7 text-[var(--sutra-muted)]">
                   The previous Sutra Health site highlighted these annual health
                   awareness days as opportunities for community education and
                   participation.
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 border-l border-t border-[#173F35]/10 sm:grid-cols-3">
+              <div className="grid grid-cols-2 border-l border-t border-[var(--sutra-border-strong)] sm:grid-cols-3">
                 {awarenessCalendar.map(([date, title]) => (
-                  <div key={title} className="border-b border-r border-[#173F35]/10 bg-[#FAF8F1] p-5 sm:p-6">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#65966F]">
+                  <div
+                    key={title}
+                    className="border-b border-r border-[var(--sutra-border-strong)] bg-[var(--sutra-porcelain)] p-5 sm:p-6"
+                  >
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--sutra-muted)]">
                       {date}
                     </p>
-                    <p className="mt-3 font-serif text-[17px] leading-tight">{title}</p>
+
+                    <p className="mt-3 font-serif text-[17px] leading-tight tracking-[-0.01em] text-[var(--sutra-ink)]">
+                      {title}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -281,18 +297,22 @@ export default function VolunteerPage() {
           </Container>
         </section>
 
-        {/* JOIN */}
-        <section>
+        {/* =====================================================
+            JOIN
+        ===================================================== */}
+        <section className="bg-[var(--sutra-white)]">
           <Container>
-            <div className="grid gap-8 py-16 sm:py-20 lg:grid-cols-[1fr_auto] lg:items-end lg:py-24">
+            <div className="grid gap-8 py-14 sm:py-18 lg:grid-cols-[1fr_auto] lg:items-end lg:py-22">
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                   Take the first step
                 </p>
-                <h2 className="mt-4 max-w-[720px] font-serif text-[40px] leading-[1.02] tracking-[-0.04em] sm:text-[56px]">
+
+                <h2 className="mt-4 max-w-[720px] font-serif text-[42px] font-medium leading-[1.02] tracking-[-0.04em] text-[var(--sutra-ink)] sm:text-[56px]">
                   If you want to contribute, start with a conversation.
                 </h2>
-                <p className="mt-5 max-w-[600px] text-[14px] leading-7 text-[#687A73]">
+
+                <p className="mt-5 max-w-[600px] text-[14px] leading-7 text-[var(--sutra-muted)]">
                   Complete the volunteer form to share your interest, or contact
                   the team directly on WhatsApp.
                 </p>
@@ -303,13 +323,14 @@ export default function VolunteerPage() {
                   href={volunteerForm}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-[#173F35] px-6 py-3.5 text-[13px] font-semibold text-white"
+                  className="border border-[var(--sutra-teal)] bg-[var(--sutra-teal)] px-6 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-[var(--sutra-teal-hover)]"
                 >
                   Open volunteer form ↗
                 </a>
+
                 <Link
                   href="/contact"
-                  className="rounded-full border border-[#173F35]/15 px-6 py-3.5 text-[13px] font-semibold"
+                  className="border border-[var(--sutra-border-strong)] px-6 py-3.5 text-[13px] font-semibold text-[var(--sutra-teal)] transition-colors hover:bg-[var(--sutra-pale-sage)]"
                 >
                   Contact Sutra Health →
                 </Link>

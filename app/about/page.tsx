@@ -243,67 +243,61 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* HERO
-          Deliberately image-free: the page keeps the original editorial
-          feeling through typography, a quiet gradient and organic shapes. */}
-      <section className="relative isolate overflow-hidden border-b border-[#202522]/10 bg-[#F7F5EF]">
-        <div
-          aria-hidden="true"
-          className="absolute -right-[18%] -top-[18%] -z-10 h-[620px] w-[620px] rounded-[48%_52%_58%_42%/42%_46%_54%_58%] bg-[#E7EDE8] sm:h-[760px] sm:w-[760px]"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute -bottom-32 left-[10%] -z-10 h-[260px] w-[260px] rounded-full bg-[#C8BDA7]/10 blur-3xl"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute right-[18%] top-[38%] -z-10 h-[170px] w-[170px] rounded-full bg-[#91A298]/10 blur-3xl"
-        />
-
+    {/* HERO */}
+      <section className="border-b border-[#202522]/10 bg-[#F7F5EF]">
         <Container>
-          <div className="flex min-h-[650px] items-center justify-center py-24 sm:min-h-[700px] sm:py-28 lg:min-h-[720px]">
-            <div className="mx-auto max-w-4xl text-center">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#17413D]">
-                About Sutra Health
+          <div className="max-w-5xl py-14 sm:py-18 lg:py-22 xl:py-24">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#65736D] sm:text-xs">
+              About Sutra Health
+            </p>
+
+            <h1
+              className="
+                mt-5
+                max-w-[900px]
+                font-serif
+                text-[46px]
+                font-medium
+                leading-[0.98]
+                tracking-[-0.04em]
+                text-[#202522]
+                sm:text-[58px]
+                md:text-[64px]
+                lg:text-[76px]
+                xl:text-[82px]
+              "
+            >
+              A commitment to
+              <br />
+              <span className="text-[#17413D]">better quality of life.</span>
+            </h1>
+
+            <p
+              className="
+                mt-7
+                max-w-[680px]
+                text-[17px]
+                leading-8
+                text-[#65736D]
+                sm:mt-8
+                sm:text-[18px]
+                sm:leading-9
+              "
+            >
+              Sutra Health is rooted in EQUAL Society, registered in 1997 —
+              nearly three decades working in health, wellbeing, education
+              and community.
+            </p>
+
+            <div className="mt-7 flex items-start gap-4">
+              <span
+                aria-hidden="true"
+                className="mt-2 h-10 w-px shrink-0 bg-[#C8BDA7]"
+              />
+              <p className="max-w-[560px] text-[14px] leading-7 text-[#65736D] sm:text-[15px]">
+                Explore our story, the people behind Sutra Health and the
+                thinking that shapes how we approach care.
               </p>
-
-              <h1 className="mx-auto mt-6 max-w-4xl font-serif text-[46px] leading-[1.02] tracking-[-0.045em] text-[#202522] sm:text-[60px] lg:text-[78px]">
-                A commitment to
-                <br />
-                <span className="text-[#17413D]">better quality of life.</span>
-              </h1>
-
-              <p className="mx-auto mt-7 max-w-2xl text-[17px] leading-[1.75] text-[#65736D] sm:text-[18px]">
-                Sutra Health is rooted in EQUAL Society, registered in 1997 —
-                nearly three decades working in health, wellbeing, education
-                and community.
-              </p>
-
-              <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-                <Link
-                  href="/book-appointment"
-                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#17413D] px-7 text-[14px] font-semibold text-white transition-colors hover:bg-[#12332F]"
-                >
-                  Book a Consultation
-                  <span aria-hidden="true">→</span>
-                </Link>
-
-                <Link
-                  href="/doctors"
-                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#202522]/15 bg-white/70 px-7 text-[14px] font-semibold text-[#17413D] transition-colors hover:bg-white"
-                >
-                  Meet our team
-                  <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-
-              <div className="mx-auto mt-16 flex max-w-xl items-center justify-center gap-5">
-                <span className="h-px w-14 bg-[#91A298]/60" />
-                <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#65736D]">
-                  Since 1997
-                </span>
-                <span className="h-px w-14 bg-[#91A298]/60" />
-              </div>
             </div>
           </div>
         </Container>
@@ -665,7 +659,7 @@ export default function AboutPage() {
 
             <Link
               href="/volunteer"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#17413D] px-7 text-[14px] font-semibold text-white transition-colors hover:bg-[#12332F]"
+              className="inline-flex min-h-12 items-center justify-center gap-2  bg-[#17413D] px-7 text-[14px] font-semibold text-white transition-colors hover:bg-[#12332F]"
             >
               Community &amp; Volunteer
               <span aria-hidden="true">→</span>
@@ -696,7 +690,7 @@ export default function AboutPage() {
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link
                 href="/book-appointment"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-7 text-[14px] font-semibold text-[#17413D] transition-colors hover:bg-[#F7F5EF]"
+                className="inline-flex min-h-12 items-center justify-center gap-2 bg-white px-7 text-[14px] font-semibold text-[#17413D] transition-colors hover:bg-[#F7F5EF]"
               >
                 Book a Consultation
                 <span aria-hidden="true">→</span>
@@ -704,7 +698,7 @@ export default function AboutPage() {
 
               <Link
                 href="/approach"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/30 px-7 text-[14px] font-semibold text-white transition-colors hover:bg-white/10"
+                className="inline-flex min-h-12 items-center justify-center gap-2 border border-white/30 px-7 text-[14px] font-semibold text-white transition-colors hover:bg-white/10"
               >
                 Explore our approach
                 <span aria-hidden="true">→</span>

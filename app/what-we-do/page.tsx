@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Check } from "lucide-react";
 
@@ -6,8 +7,9 @@ const practices = [
     number: "01",
     title: "Physician Consultation",
     description:
-      "Doctor-led consultation to understand your health concerns, medical history, lifestyle and next steps.",
-    href: "/what-we-do/physician-consultation",
+     "Doctor-led consultation to understand your health concerns, medical history, lifestyle and next steps.",
+      image: "/images/retreat/doctor.webp",
+      href: "/what-we-do/physician-consultation",
   },
   {
     number: "02",
@@ -101,57 +103,160 @@ const healthAreas = [
   },
 ];
 
+const siteUrl = "https://lifequality.org.in";
+
+/*
+  CHANGED: this page previously had no `robots`, no Twitter card, and no
+  OG image — every other page on the site has all three. Added for
+  consistency and to match what search engines and social previews
+  expect from every other page.
+*/
 export const metadata = {
-  title: "What We Do",
+  title: "What We Do | Sutra Health",
   description:
-    "Explore Sutra Health's physician consultation, lifestyle medicine, nutrition, therapeutic yoga, and behaviour, stress and mind practices.",
+    "Explore Sutra Health's physician consultation, lifestyle medicine, nutrition, therapeutic yoga, and behaviour, stress and mind practices — in Faridabad, Delhi NCR and online across India.",
   alternates: {
-    canonical: "https://lifequality.org.in/what-we-do",
+    canonical: `${siteUrl}/what-we-do`,
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
   openGraph: {
-    title: "What We Do",
+    title: "What We Do | Sutra Health",
     description:
       "Doctor-led integrative healthcare combining medical care with lifestyle, nutrition, therapeutic yoga and behaviour support.",
-    url: "https://lifequality.org.in/what-we-do",
+    url: `${siteUrl}/what-we-do`,
     siteName: "Sutra Health",
     type: "website",
+    images: [
+      {
+        url: `${siteUrl}/images/hero-desktop.webp`,
+        width: 1200,
+        height: 630,
+        alt: "Sutra Health — What We Do",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "What We Do | Sutra Health",
+    description:
+      "Doctor-led integrative healthcare combining medical care with lifestyle, nutrition, therapeutic yoga and behaviour support.",
+    images: [`${siteUrl}/images/hero-desktop.webp`],
+  },
+};
+
+/*
+  ADDED: this hub page had zero structured data, despite fanning out to
+  all 5 service pages — every one of which has its own schema. A
+  BreadcrumbList plus an ItemList of the services it links to gives
+  Google (and AI answer tools) a clear map of the page's role and content,
+  matching what every other page on the site already provides.
+*/
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "What We Do",
+          item: `${siteUrl}/what-we-do`,
+        },
+      ],
+    },
+    {
+      "@type": "ItemList",
+      itemListElement: practices.map((practice, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: practice.title,
+        url: `${siteUrl}${practice.href}`,
+      })),
+    },
+  ],
 };
 
 export default function WhatWeDoPage() {
   return (
     <main className="bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">
-      {/* =========================================================
-          HERO
-      ========================================================= */}
-      <section className="border-b border-[var(--sutra-border)]">
-        <div className="mx-auto max-w-7xl px-6 pb-16 pt-14 sm:px-8 sm:pb-20 sm:pt-20 lg:px-10 lg:pb-24 lg:pt-24">
-          <div className="max-w-4xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
-              What we do
-            </p>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
 
-            <h1 className="mt-5 max-w-4xl font-[var(--font-serif)] text-4xl font-medium leading-[1.06] tracking-[-0.025em] sm:text-5xl lg:text-7xl">
-              Care built around
-              <br className="hidden sm:block" />
-              the whole you.
-            </h1>
+    {/* =========================================================
+    HERO
+========================================================= */}
+<section className="border-b border-[var(--sutra-border)] bg-[var(--sutra-porcelain)]">
+  <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+    <div className="max-w-5xl py-14 sm:py-18 lg:py-22 xl:py-24">
+      {/* Eyebrow */}
+      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-xs">
+        What We Do
+      </p>
 
-            <p className="mt-6 max-w-2xl text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
-              Sutra Health brings together physician consultation, lifestyle
-              medicine, nutrition, therapeutic yoga and behaviour support to
-              help you understand your health and build practical habits around
-              everyday life.
-            </p>
+      {/* Heading */}
+      <h1
+        className="
+          mt-5
+          max-w-[900px]
+          font-[var(--font-serif)]
+          text-[46px]
+          font-medium
+          leading-[0.98]
+          tracking-[-0.04em]
+          text-[var(--sutra-ink)]
+          sm:text-[58px]
+          md:text-[64px]
+          lg:text-[76px]
+          xl:text-[82px]
+        "
+      >
+        Care that connects
+        <br />
+        <span className="text-[var(--sutra-teal)]">
+          the whole picture.
+        </span>
+      </h1>
 
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-[var(--sutra-muted)]">
-              <span>Doctor-led</span>
-              <span>Evidence-informed</span>
-              <span>Whole-person care</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Main description */}
+      <p
+        className="
+          mt-7
+          max-w-[680px]
+          text-[17px]
+          leading-8
+          text-[var(--sutra-muted)]
+          sm:mt-8
+          sm:text-[18px]
+          sm:leading-9
+        "
+      >
+        Explore Sutra Health's services across physician care, lifestyle,
+        nutrition, movement and behaviour to find support that fits your
+        health needs and everyday life.
+      </p>
+
+      {/* Supporting direction */}
+      <div className="mt-7 flex items-start gap-4">
+        <span
+          aria-hidden="true"
+          className="mt-2 h-10 w-px shrink-0 bg-[var(--sutra-sand)]"
+        />
+
+        <p className="max-w-[560px] text-[14px] leading-7 text-[var(--sutra-muted)] sm:text-[15px]">
+          Start with the service that matches what you need now, or begin
+          with a physician consultation to understand the right next step.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* =========================================================
           SERVICES
@@ -188,17 +293,33 @@ export default function WhatWeDoPage() {
               >
                 <div className="flex gap-5 p-5 sm:gap-6 sm:p-6">
                   {practice.image ? (
-                    <div className="h-[116px] w-[116px] shrink-0 overflow-hidden sm:h-[128px] sm:w-[128px]">
-                      <img
+                    /*
+                      CHANGED: swapped raw <img> for next/image (matches
+                      every other image on the site — automatic
+                      optimization, responsive sizes, lazy loading), and
+                      gave it real, descriptive alt text instead of "".
+                      Empty alt text on a meaningful image throws away both
+                      an accessibility signal and an SEO opportunity.
+                    */
+                    <div className="relative h-[116px] w-[116px] shrink-0 overflow-hidden sm:h-[128px] sm:w-[128px]">
+                      <Image
                         src={practice.image}
-                        alt=""
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                        alt={`${practice.title} at Sutra Health`}
+                        fill
+                        sizes="128px"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                       />
                     </div>
                   ) : (
                     <div className="flex h-[116px] w-[116px] shrink-0 items-start justify-center border border-[var(--sutra-border)] bg-[var(--sutra-pale-sage)] pt-5 sm:h-[128px] sm:w-[128px]">
+                      {/*
+                        FIXED: this used to hardcode "01" regardless of
+                        which service was missing an image. Now uses
+                        practice.number so it shows the correct number if
+                        this fallback ever actually renders.
+                      */}
                       <span className="font-[var(--font-serif)] text-4xl text-[var(--sutra-teal)]">
-                        01
+                        {practice.number}
                       </span>
                     </div>
                   )}
@@ -449,8 +570,16 @@ export default function WhatWeDoPage() {
                 habits that fit your life.
               </p>
 
+              {/*
+                CHANGED: was "Doctor-led · Evidence-informed · Whole-person
+                care" — the exact same three words already used in this
+                page's own Hero section above. Repeating the identical
+                badge twice on one page adds nothing a second time. Swapped
+                for the real numbers already used on the homepage Hero,
+                which are specific and haven't appeared on this page yet.
+              */}
               <p className="mt-5 text-xs text-white/55 sm:text-sm">
-                Doctor-led · Evidence-informed · Whole-person care
+                1,200+ people supported · 15 years of experience
               </p>
             </div>
 
