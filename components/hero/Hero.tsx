@@ -15,45 +15,46 @@ export default function Hero() {
             grid
             items-center
             gap-10
-            py-12
-            sm:py-14
+            py-10
+            sm:py-12
             lg:grid-cols-[1.08fr_0.92fr]
             lg:gap-12
             lg:px-10
-            lg:py-16
+            lg:py-14
             xl:gap-16
           "
         >
           {/* Content */}
           <div className="max-w-[650px]">
+            {/* Eyebrow */}
             <div className="flex items-center gap-3">
               <span
                 aria-hidden="true"
                 className="h-px w-9 bg-[#91A298]"
               />
 
-              <p className="font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[#65736D]">
+              <p className="font-sans text-[11px] font-medium uppercase tracking-[0.14em] text-[#65736D] sm:text-[12px]">
                 Doctor-guided yoga therapy & lifestyle medicine
               </p>
             </div>
 
-          
+            {/* Heading */}
             <h1
               id="hero-title"
               className="
                 mt-6
-                max-w-[650px]
+                max-w-[620px]
                 font-serif
-                text-[42px]
+                text-[38px]
                 font-medium
-                leading-[1.06]
+                leading-[1.08]
                 tracking-[-0.025em]
                 text-[#202522]
                 sm:mt-7
-                sm:text-[50px]
-                md:text-[56px]
-                lg:text-[58px]
-                xl:text-[62px]
+                sm:text-[44px]
+                md:text-[50px]
+                lg:text-[54px]
+                xl:text-[58px]
               "
             >
               A doctor-guided approach to{" "}
@@ -62,16 +63,17 @@ export default function Hero() {
               </em>
             </h1>
 
+            {/* Description */}
             <p
               className="
-                mt-7
-                max-w-[570px]
+                mt-6
+                max-w-[550px]
                 font-sans
-                text-[17px]
+                text-[16px]
                 leading-[1.7]
                 text-[#65736D]
-                sm:mt-8
-                sm:text-[18px]
+                sm:mt-7
+                sm:text-[17px]
               "
             >
               Sutra Health combines therapeutic yoga, nutrition counselling
@@ -80,19 +82,21 @@ export default function Hero() {
               of it.
             </p>
 
+            {/* CTAs */}
             <div
               className="
-                mt-8
+                mt-7
                 flex
                 flex-col
                 items-start
                 gap-5
-                sm:mt-9
+                sm:mt-8
                 sm:flex-row
                 sm:items-center
                 sm:gap-6
               "
             >
+              {/* Primary CTA */}
               <Link
                 href="/book-appointment"
                 className="
@@ -132,6 +136,7 @@ export default function Hero() {
                 />
               </Link>
 
+              {/* Secondary CTA */}
               <Link
                 href="/assessment"
                 className="
@@ -151,8 +156,6 @@ export default function Hero() {
                   focus-visible:outline-[#17413D]
                 "
               >
-                {/* "Free" added — the old site calls this assessment free,
-                    and naming it lowers the barrier to click. */}
                 Take the Free 21-Point Assessment
 
                 <ArrowUpRight
@@ -170,13 +173,7 @@ export default function Hero() {
               </Link>
             </div>
 
-            {/*
-              CHANGED: replaced the vague "Doctor-led · Evidence-informed ·
-              Whole-person care" badges with the real, specific numbers
-              already published on lifequality.org.in. Concrete, checkable
-              facts build more trust than adjectives, and they're exactly
-              the kind of content AI answer tools and Google favor citing.
-            */}
+            {/* Trust / Stats */}
             <div
               className="
                 mt-8
@@ -197,6 +194,7 @@ export default function Hero() {
                   font-sans
                   text-[12px]
                   font-medium
+                  leading-[1.5]
                   text-[#65736D]
                 "
               >
@@ -204,22 +202,24 @@ export default function Hero() {
 
                 <span
                   aria-hidden="true"
-                  className="h-1 w-1 rounded-full bg-[#91A298]"
+                  className="h-1 w-1 shrink-0 rounded-full bg-[#91A298]"
                 />
 
                 <span>15 years of experience</span>
 
                 <span
                   aria-hidden="true"
-                  className="h-1 w-1 rounded-full bg-[#91A298]"
+                  className="h-1 w-1 shrink-0 rounded-full bg-[#91A298]"
                 />
 
-                <span>Serving Delhi NCR & online across India</span>
+                <span>
+                  Serving Delhi NCR & online across India
+                </span>
               </div>
             </div>
           </div>
 
-          {/* Hero image */}
+          {/* Hero Image */}
           <div className="relative lg:ml-auto lg:w-full">
             <div
               className="
@@ -227,7 +227,8 @@ export default function Hero() {
                 aspect-[4/3.7]
                 w-full
                 overflow-hidden
-                border border-[#202522]/10
+                border
+                border-[#202522]/10
                 sm:aspect-[4/3.6]
                 lg:aspect-[4/4.35]
               "
@@ -248,6 +249,7 @@ export default function Hero() {
               />
             </div>
 
+            {/* Image Label */}
             <div
               className="
                 absolute
