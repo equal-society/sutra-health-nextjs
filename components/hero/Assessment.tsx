@@ -32,28 +32,27 @@ export default function Assessment() {
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
           <div className="max-w-[680px]">
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
-              21-Point Health Assessment
+              21-Point Health Assessment · Takes about 5 minutes
             </p>
 
             <h2
               id="assessment-heading"
-              className="mt-4 max-w-xl font-[var(--font-dm-serif)] text-4xl leading-[1.06] tracking-[-0.025em] text-[var(--sutra-ink)] sm:text-5xl lg:text-6xl"
+              className="mt-4 max-w-xl font-serif text-4xl leading-[1.06] tracking-[-0.025em] text-[var(--sutra-ink)] sm:text-5xl lg:text-6xl"
             >
               Understand where your health needs attention.
             </h2>
 
             <p className="mt-5 max-w-xl text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
-              The 21-Point Health Assessment helps you look at key areas of
-              lifestyle and health behaviour. A simple Traffic Light System
-              shows where things are going well and where changes may need
-              attention.
+              Answer a short set of questions about your daily habits. You get
+              an instant Traffic Light result showing what&apos;s going well
+              and what needs attention — no appointment required to see it.
             </p>
 
             <Link
               href="/assessment"
-              className="group mt-7 inline-flex min-h-11 items-center gap-3 text-sm font-semibold text-[var(--sutra-teal)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--sutra-teal)] focus-visible:ring-offset-4"
+              className="group mt-7 inline-flex min-h-12 items-center justify-center gap-3 rounded-none bg-[var(--sutra-teal)] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--sutra-teal-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--sutra-teal)] focus-visible:ring-offset-4"
             >
-              <span className="border-b border-[var(--sutra-teal)] pb-1">
+              <span className="">
                 Take the 21-Point Health Assessment
               </span>
               <span
@@ -90,7 +89,7 @@ export default function Assessment() {
                         {item.label}
                       </p>
 
-                      <p className="mt-1.5 font-[var(--font-dm-serif)] text-2xl leading-tight text-[var(--sutra-ink)] sm:text-3xl">
+                      <p className="mt-1.5 font-serif text-2xl leading-tight text-[var(--sutra-ink)] sm:text-3xl">
                         {item.title}
                       </p>
 

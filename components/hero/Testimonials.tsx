@@ -3,6 +3,22 @@
 import { useRef } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
+/*
+  CHANGED: Removed two testimonials that were single generic lines
+  ("Excellent experience." / "Mind blowing experience.") with no
+  specific detail — they read as filler next to the detailed ones
+  and drag down trust in the whole set.
+
+  STILL NEEDED (not done here, needs real data from you):
+  - Add a city to each name if you can verify it (e.g. "Rahul Sharma,
+    Faridabad") — do not guess or add a placeholder city, only add
+    what you can confirm is accurate.
+  - If any of these came from Google Business or another public
+    review platform, link out to that platform, or add a "Read more
+    reviews" link. Only add Review/AggregateRating schema once you
+    have a verifiable source — do not add that schema without one.
+*/
+
 const testimonials = [
   {
     quote:
@@ -38,14 +54,6 @@ const testimonials = [
     quote:
       "Very good service at Sutra Health, full care given to patients — bahut accha laga. Thank you Sutra Health!",
     name: "Sumit Kashyap",
-  },
-  {
-    quote: "Excellent experience.",
-    name: "Anil Passi",
-  },
-  {
-    quote: "Mind blowing experience.",
-    name: "Arpit Krishan",
   },
   {
     quote:
@@ -187,7 +195,7 @@ export default function Testimonials() {
                 aria-hidden="true"
                 className="font-[var(--font-serif)] text-4xl leading-none text-[var(--sutra-sage)]"
               >
-                “
+                "
               </div>
 
               <blockquote className="mt-3 flex flex-1 flex-col">

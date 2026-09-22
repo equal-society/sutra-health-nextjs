@@ -24,8 +24,14 @@ export default function Experts() {
           </div>
 
           <div className="max-w-[650px]">
+            {/*
+              CHANGED: was "Meet the Clinical Team" — this implied a multi-doctor
+              team when only one doctor is shown below. Updated to match reality.
+              If more clinicians join, this can go back to "Meet the Clinical Team"
+              with each person added to the section.
+            */}
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
-              Meet the Clinical Team
+              Meet Your Doctor
             </p>
 
             <h2
@@ -53,8 +59,10 @@ export default function Experts() {
               </p>
 
               <p>
-                Sutra Health brings these perspectives together to help people
-                make practical changes that can fit into everyday life.
+                He leads every consultation and plan personally — Sutra
+                Health is not a large clinic network, it&apos;s his direct
+                practice, brought together with nutrition and lifestyle
+                support.
               </p>
             </div>
 
@@ -64,7 +72,7 @@ export default function Experts() {
                 className="group inline-flex min-h-11 items-center gap-3 text-sm font-semibold text-[var(--sutra-teal)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--sutra-teal)] focus-visible:ring-offset-4"
               >
                 <span className="border-b border-[var(--sutra-teal)] pb-1">
-                  Meet our clinical team
+                  More about Dr. Sarwal
                 </span>
                 <span
                   aria-hidden="true"

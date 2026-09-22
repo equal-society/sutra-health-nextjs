@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 
 import Hero from "@/components/hero/Hero";
-import HealthBridge from "@/components/hero/HealthBridge";
 import Conditions from "@/components/hero/Conditions";
+import HealthBridge from "@/components/hero/HealthBridge";
 import WhatWeDo from "@/components/hero/WhatWeDo";
+import Experts from "@/components/hero/Experts";
 import Assessment from "@/components/hero/Assessment";
 import HowItWorks from "@/components/hero/HowItWorks";
-import Experts from "@/components/hero/Experts";
 import Testimonials from "@/components/hero/Testimonials";
 import Resources from "@/components/hero/Resources";
 import FAQ from "@/components/shared/FAQ";
@@ -77,6 +77,16 @@ const homepageFaqs = [
     question: "How do I get started with Sutra Health?",
     answer:
       "You can start by booking a consultation. We will discuss your health concerns, goals and current situation and help identify the most appropriate next step.",
+  },
+  {
+    /*
+      ADDED: this FAQ directly addresses the pricing-transparency gap
+      flagged in the audit. Replace the placeholder answer with real
+      figures before publishing — do not ship with the bracketed text.
+    */
+    question: "How much does a consultation cost?",
+    answer:
+      "Physician consultations start at ₹[ADD STARTING PRICE HERE]. The exact cost depends on the type of consultation and any additional support you choose, such as nutrition or yoga therapy sessions.",
   },
 ];
 
@@ -227,7 +237,7 @@ const structuredData = {
           position: 1,
           name: "Understand",
           text:
-            "Start with your health, your concerns and the everyday factors that may influence them.",
+            "Map what's actually happening — symptoms, daily routine, and any patterns a doctor should know about.",
         },
         {
           "@type": "HowToStep",
@@ -255,6 +265,25 @@ const structuredData = {
   ],
 };
 
+/*
+  REORDERED from the original.
+
+  Old order: Hero → HealthBridge → Conditions → WhatWeDo → Assessment →
+  HowItWorks → Experts → Testimonials → Resources → FAQ → BookingCTA
+
+  New order and why:
+  1. Hero          — state the problem + model, one primary CTA
+  2. Conditions    — let the visitor self-identify their problem immediately
+  3. HealthBridge  — explain the model now that they've matched their problem
+  4. WhatWeDo      — specific services, what's included
+  5. Experts       — build doctor credibility BEFORE asking for contact info
+  6. Assessment    — the lead-capture ask, now backed by trust
+  7. HowItWorks    — process reassurance right after the ask
+  8. Testimonials  — social proof reinforcing the decision
+  9. Resources     — soft option for people not ready to book or assess
+  10. FAQ          — objection handling right before the final CTA
+  11. BookingCTA   — strongest, most direct ask, last
+*/
 export default function Home() {
   return (
     <>
@@ -267,15 +296,23 @@ export default function Home() {
 
       <main className="sutraHomeEditorial">
         <Hero />
-        <HealthBridge />
         <Conditions />
+        <HealthBridge />
         <WhatWeDo />
+        <Experts />
         <Assessment />
         <HowItWorks />
-        <Experts />
         <Testimonials />
         <Resources />
-        <FAQ />
+        {/*
+          FIXED: previously rendered as <FAQ /> with no prop, which meant
+          it fell back to FAQ.tsx's own hardcoded defaultFaqs — a
+          different, partly contradictory list from homepageFaqs above
+          (which is what actually generates the FAQPage schema). Passing
+          homepageFaqs here means the visible FAQ and the schema Google
+          reads are now guaranteed to match.
+        */}
+        <FAQ faqs={homepageFaqs} />
         <BookingCTA />
       </main>
     </>

@@ -57,10 +57,10 @@ export default function HealthBridge() {
               </p>
 
               <p>
-                Rather than focusing only on a diagnosis, we look at the
-                everyday factors that influence health — how you eat, move,
-                sleep, manage stress and live — and help you work on them
-                alongside appropriate medical care.
+                Most healthcare stops at a diagnosis and a prescription. We go
+                further — looking at how you eat, sleep, move and manage
+                stress, and building a plan around those specifics, alongside
+                your doctor&apos;s care.
               </p>
             </div>
 

@@ -33,10 +33,11 @@ export default function Hero() {
               />
 
               <p className="font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[#65736D]">
-                Doctor-led integrative healthcare
+                Doctor-guided yoga therapy & lifestyle medicine
               </p>
             </div>
 
+          
             <h1
               id="hero-title"
               className="
@@ -51,15 +52,14 @@ export default function Hero() {
                 sm:mt-7
                 sm:text-[50px]
                 md:text-[56px]
-                lg:text-[62px]
-                xl:text-[66px]
+                lg:text-[58px]
+                xl:text-[62px]
               "
             >
-              Better health starts
-              <br className="hidden lg:block" />
-              <span className="lg:hidden"> </span>
-              with understanding{" "}
-              <em className="not-italic text-[#17413D]">you.</em>
+              A doctor-guided approach to{" "}
+              <em className="not-italic text-[#17413D]">
+                yoga therapy and lifestyle medicine.
+              </em>
             </h1>
 
             <p
@@ -74,9 +74,10 @@ export default function Hero() {
                 sm:text-[18px]
               "
             >
-              Sutra Health brings together medical care, lifestyle medicine,
-              nutrition, therapeutic Yoga and behaviour support to help you
-              work on the factors that shape your health.
+              Sutra Health combines therapeutic yoga, nutrition counselling
+              and lifestyle coaching to support healthier habits and
+              long-term wellbeing — alongside your medical care, not instead
+              of it.
             </p>
 
             <div
@@ -150,7 +151,9 @@ export default function Hero() {
                   focus-visible:outline-[#17413D]
                 "
               >
-                Take the 21-Point Health Assessment
+                {/* "Free" added — the old site calls this assessment free,
+                    and naming it lowers the barrier to click. */}
+                Take the Free 21-Point Assessment
 
                 <ArrowUpRight
                   size={16}
@@ -167,6 +170,13 @@ export default function Hero() {
               </Link>
             </div>
 
+            {/*
+              CHANGED: replaced the vague "Doctor-led · Evidence-informed ·
+              Whole-person care" badges with the real, specific numbers
+              already published on lifequality.org.in. Concrete, checkable
+              facts build more trust than adjectives, and they're exactly
+              the kind of content AI answer tools and Google favor citing.
+            */}
             <div
               className="
                 mt-8
@@ -190,21 +200,21 @@ export default function Hero() {
                   text-[#65736D]
                 "
               >
-                <span>Doctor-led</span>
+                <span>1,200+ people supported</span>
 
                 <span
                   aria-hidden="true"
                   className="h-1 w-1 rounded-full bg-[#91A298]"
                 />
 
-                <span>Evidence-informed</span>
+                <span>15 years of experience</span>
 
                 <span
                   aria-hidden="true"
                   className="h-1 w-1 rounded-full bg-[#91A298]"
                 />
 
-                <span>Whole-person care</span>
+                <span>Serving Delhi NCR & online across India</span>
               </div>
             </div>
           </div>
@@ -217,13 +227,14 @@ export default function Hero() {
                 aspect-[4/3.7]
                 w-full
                 overflow-hidden
+                border border-[#202522]/10
                 sm:aspect-[4/3.6]
                 lg:aspect-[4/4.35]
               "
             >
               <Image
                 src="/images/dr.png"
-                alt="Doctor-led consultation at Sutra Health"
+                alt="Doctor-guided yoga therapy consultation at Sutra Health"
                 fill
                 priority
                 sizes="(max-width: 1023px) 100vw, 44vw"

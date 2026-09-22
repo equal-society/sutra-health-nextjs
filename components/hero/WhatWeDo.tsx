@@ -71,8 +71,8 @@ export default function WhatWeDo() {
           </h2>
 
           <p className="mt-5 max-w-[650px] font-sans text-[16px] leading-[1.65] text-[#65736D] sm:text-[17px]">
-            Our care combines medical guidance with practical support for the
-            everyday factors that influence your health.
+            Each service below is delivered by a qualified professional and
+            reviewed by a doctor — not a standalone app feature you use alone.
           </p>
         </div>
 
@@ -156,6 +156,26 @@ export default function WhatWeDo() {
             </Link>
           ))}
         </div>
+
+        {/*
+          PRICING TRANSPARENCY LINE — required per audit.
+          Replace the placeholder below with your real starting price
+          before this goes live. Do not ship with the placeholder text.
+        */}
+        <p className="mt-6 font-sans text-[14px] leading-6 text-[#65736D]">
+          Physician consultations start at{" "}
+          <strong className="text-[#202522]">
+            ₹[ADD STARTING PRICE HERE]
+          </strong>
+          . See full{" "}
+          <Link
+            href="/pricing"
+            className="font-medium text-[#17413D] underline underline-offset-2"
+          >
+            pricing details
+          </Link>
+          .
+        </p>
 
         {/* All services */}
         <div className="mt-6">

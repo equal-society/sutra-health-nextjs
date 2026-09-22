@@ -1,4 +1,4 @@
- "use client";
+"use client";
 
 import { useId, useState } from "react";
 import Container from "@/components/shared/Container";
@@ -12,32 +12,58 @@ type FAQProps = {
   faqs?: FAQItem[];
 };
 
+/*
+  CHANGED — two real problems fixed here:
+
+  1. The old defaultFaqs said, for "Do you offer online consultations?":
+     "Please contact Sutra Health to confirm current consultation options..."
+     But page.tsx's homepageFaqs (used in the FAQPage schema) answers the
+     same question with a direct "Yes." This was a live contradiction
+     between what Google reads in your structured data and what a visitor
+     actually sees on the page — worse for trust and AEO than having no
+     schema at all. Fixed to match.
+
+  2. Removed "everyday factors that influence health" — the same phrase
+     repeated across Hero, HealthBridge, WhatWeDo and here.
+
+  IMPORTANT: this default list must stay word-for-word identical to
+  `homepageFaqs` in page.tsx, since that array is what generates the
+  FAQPage schema. The safest long-term fix is for page.tsx to always pass
+  its `homepageFaqs` array into this component as the `faqs` prop (see the
+  updated page.tsx), so there is only one source of truth. This default
+  is kept here only as a fallback if FAQ is ever rendered without a prop.
+*/
 const defaultFaqs: FAQItem[] = [
   {
     question: "What is lifestyle medicine?",
     answer:
-      "Lifestyle medicine focuses on everyday factors that influence health, including nutrition, physical activity, sleep, stress and other habits. At Sutra Health, these areas are considered together to build practical changes around your needs and circumstances.",
+      "Lifestyle medicine uses evidence-informed changes in areas such as food, physical activity, sleep and stress management alongside appropriate medical care.",
   },
   {
     question:
       "Can yoga therapy be part of managing conditions such as diabetes or high blood pressure?",
     answer:
-      "Therapeutic yoga can be used as part of a broader lifestyle approach for some health conditions. Practices are adapted to your health, current ability and goals, and may include yoga postures, breathing practices and relaxation.",
+      "It can be one part of your overall care alongside your doctor, but it is not a replacement for medical treatment. Medication changes should always be discussed with your physician.",
   },
   {
     question: "Do you offer online consultations?",
     answer:
-      "Please contact Sutra Health to confirm current consultation options and availability. The appropriate format depends on your needs and the type of support being considered.",
+      "Yes. Sutra Health works with people across India. Online consultations are available for lifestyle medicine, nutrition counselling and yoga therapy. In-person sessions are also available in Faridabad.",
   },
   {
     question: "How long before I see results?",
     answer:
-      "There is no single timeline. It depends on your health, goals, starting point and the changes you are able to maintain. The focus is on practical habits that can become part of everyday life over time.",
+      "There is no single timeline. Some people notice changes within weeks, while other improvements take longer. Results depend on the individual, the health concern and consistency with the plan.",
   },
   {
     question: "How do I get started with Sutra Health?",
     answer:
-      "You can begin by booking a consultation. The first conversation helps you discuss your health concerns, goals and everyday routine so that the next steps can be considered around your needs.",
+      "You can start by booking a consultation. We will discuss your health concerns, goals and current situation and help identify the most appropriate next step.",
+  },
+  {
+    question: "How much does a consultation cost?",
+    answer:
+      "Physician consultations start at ₹[ADD STARTING PRICE HERE]. The exact cost depends on the type of consultation and any additional support you choose, such as nutrition or yoga therapy sessions.",
   },
 ];
 

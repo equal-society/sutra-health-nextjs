@@ -5,7 +5,7 @@ const resources = [
     type: "Health Articles",
     title: "Practical ideas for everyday health",
     description:
-      "Accessible articles to help you understand health, lifestyle and the everyday factors that can influence wellbeing.",
+      "Straightforward articles written for people without a medical background — no jargon, just practical explanations.",
     href: "/resources/articles",
     label: "Read articles",
   },
@@ -32,7 +32,7 @@ export default function Resources() {
     <section
       id="health-resources"
       aria-labelledby="health-resources-heading"
-      className="bg-[var(--sutra-porcelain)] py-15 sm:py-15 lg:py-15"
+      className="bg-[var(--sutra-porcelain)] py-14 sm:py-16 lg:py-20"
     >
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end lg:gap-20">
@@ -43,15 +43,16 @@ export default function Resources() {
 
             <h2
               id="health-resources-heading"
-              className="mt-5 max-w-xl font-[var(--font-dm-serif)] text-4xl leading-[1.05] tracking-[-0.025em] text-[var(--sutra-ink)] sm:text-5xl lg:text-6xl"
+              className="mt-5 max-w-xl font-serif text-4xl leading-[1.05] tracking-[-0.025em] text-[var(--sutra-ink)] sm:text-5xl lg:text-6xl"
             >
               Information you can use.
             </h2>
           </div>
 
           <p className="max-w-xl text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
-            Clear health information, research and practical guidance to help
-            you understand your health and make informed choices.
+            Not ready to book yet? Start here — clear health information,
+            research and practical guidance to help you make an informed
+            choice.
           </p>
         </div>
 
@@ -68,7 +69,7 @@ export default function Resources() {
                 <div className="flex items-start justify-between gap-6">
                   <span
                     aria-hidden="true"
-                    className="font-[var(--font-dm-serif)] text-4xl leading-none text-[var(--sutra-sage)]"
+                    className="font-serif text-4xl leading-none text-[var(--sutra-sage)]"
                   >
                     {String(index + 1).padStart(2, "0")}
                   </span>
@@ -85,7 +86,7 @@ export default function Resources() {
                   {resource.type}
                 </p>
 
-                <h3 className="mt-4 max-w-sm font-[var(--font-dm-serif)] text-2xl leading-tight tracking-[-0.01em] text-[var(--sutra-ink)] sm:text-3xl">
+                <h3 className="mt-4 max-w-sm font-serif text-2xl leading-tight tracking-[-0.01em] text-[var(--sutra-ink)] sm:text-3xl">
                   {resource.title}
                 </h3>
 

@@ -14,11 +14,11 @@ export default function BookingCTA() {
           {/* Subtle editorial accent */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-20 -top-28 hidden h-72 w-72 rounded-full border border-white/10 lg:block"
+            className="pointer-events-none absolute -right-20 -top-28 hidden h-72 w-72 border border-white/10 lg:block"
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -right-8 -top-16 hidden h-48 w-48 rounded-full border border-white/10 lg:block"
+            className="pointer-events-none absolute -right-8 -top-16 hidden h-48 w-48 border border-white/10 lg:block"
           />
 
           <div className="relative grid gap-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-20">
@@ -29,7 +29,7 @@ export default function BookingCTA() {
 
               <h2
                 id="booking-cta-heading"
-                className="mt-5 max-w-3xl font-[var(--font-dm-serif)] text-4xl leading-[1.04] tracking-[-0.025em] sm:text-5xl lg:text-6xl"
+                className="mt-5 max-w-3xl font-serif text-4xl leading-[1.04] tracking-[-0.025em] sm:text-5xl lg:text-6xl"
               >
                 Start with a conversation about your health.
               </h2>
@@ -55,7 +55,7 @@ export default function BookingCTA() {
                 </span>
               </Link>
 
-              <Link
+              {/* <Link
                 href="/assessment"
                 className="group inline-flex min-h-11 items-center gap-3 text-sm font-semibold text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--sutra-teal)]"
               >
@@ -68,7 +68,9 @@ export default function BookingCTA() {
                 >
                   →
                 </span>
-              </Link>
+              </Link> */}
+
+          
             </div>
           </div>
 

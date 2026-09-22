@@ -43,7 +43,7 @@ export default function HowItWorks() {
 
           <h2
             id="how-it-works-heading"
-            className="max-w-2xl font-[var(--font-dm-serif)] text-4xl leading-[1.05] tracking-[-0.025em] sm:text-5xl lg:text-6xl"
+            className="max-w-2xl font-serif text-4xl leading-[1.05] tracking-[-0.025em] sm:text-5xl lg:text-6xl"
           >
             A practical approach to making health changes.
           </h2>
@@ -95,7 +95,7 @@ export default function HowItWorks() {
                     className="mb-6 h-px w-10 bg-white/30"
                   />
 
-                  <h3 className="font-[var(--font-dm-serif)] text-3xl leading-tight">
+                  <h3 className="font-serif text-3xl leading-tight">
                     {step.title}
                   </h3>
 
@@ -146,7 +146,7 @@ export default function HowItWorks() {
                     className="mb-6 h-px w-10 bg-white/30"
                   />
 
-                  <h3 className="font-[var(--font-dm-serif)] text-3xl leading-tight">
+                  <h3 className="font-serif text-3xl leading-tight">
                     {step.title}
                   </h3>
 

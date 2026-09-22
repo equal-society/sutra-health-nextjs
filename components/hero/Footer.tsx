@@ -85,7 +85,7 @@ export default function Footer() {
                         ? "Email Sutra Health"
                         : `Sutra Health on ${social.name}`
                     }
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-[13px] text-white/65 transition-colors duration-200 hover:border-white/30 hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--sutra-teal)]"
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-none border border-white/15 text-[13px] text-white/65 transition-colors duration-200 hover:border-white/30 hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--sutra-teal)]"
                   >
                     <i className={social.icon} aria-hidden="true" />
                   </a>
@@ -138,6 +138,15 @@ export default function Footer() {
               </p>
 
               <div className="mt-5 flex flex-col gap-3 text-sm leading-6 text-white/70">
+                {/* ADDED: click-to-call link. Number matches the one already
+                    declared in the Organization schema in page.tsx. */}
+                <a
+                  href="tel:+919013103676"
+                  className="w-fit transition-colors duration-200 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--sutra-teal)]"
+                >
+                  +91 90131 03676
+                </a>
+
                 <a
                   href="mailto:equal.society@gmail.com"
                   className="w-fit break-words transition-colors duration-200 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--sutra-teal)]"
