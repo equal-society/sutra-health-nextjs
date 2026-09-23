@@ -133,11 +133,17 @@ export const digestiveGutHealth: Condition = {
     },
   ],
 
-  relatedConditions: ["weight-management", "metabolic-health", "womens-health"],
+  relatedConditions: ["weight-management", "diabetes-blood-sugar", "womens-health"],
 
+  // JUDGMENT CALL — flag for client review: this link previously pointed to
+  // "/approach/breath-mindfulness", which doesn't correspond to any of the 5
+  // established service pages. Retargeted to Behaviour, Stress & Mind as the
+  // closest existing match (mindfulness/stress fits there; breath practices
+  // are also covered under Therapeutic Yoga's focus areas). Confirm this is
+  // the right destination, or build a dedicated page if one is planned.
   internalLinks: [
-    { label: "Nutrition", href: "/approach/nutrition" },
-    { label: "Breath & Mindfulness", href: "/approach/breath-mindfulness" },
-    { label: "Therapeutic Yoga & Movement", href: "/approach/therapeutic-yoga" },
+    { label: "Nutrition", href: "/what-we-do/nutrition" },
+    { label: "Breath & Mindfulness", href: "/what-we-do/behaviour-stress-mind" },
+    { label: "Therapeutic Yoga & Movement", href: "/what-we-do/therapeutic-yoga" },
   ],
 };

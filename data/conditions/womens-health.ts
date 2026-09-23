@@ -54,7 +54,7 @@ export const womensHealth: Condition = {
     {
       title: "Why insulin resistance matters so much in PCOS specifically",
       content: [
-        "Insulin resistance is considered a hallmark driver of PCOS, independent of body weight, and is linked to the hormonal, reproductive, and metabolic features of the condition. This is exactly why the yoga research here connects directly to our Metabolic Health approach — PCOS and metabolic health share real physiological overlap, not just a coincidental lifestyle connection.",
+        "Insulin resistance is considered a hallmark driver of PCOS, independent of body weight, and is linked to the hormonal, reproductive, and metabolic features of the condition. This is exactly why the yoga research here connects directly to our Diabetes & Blood Sugar approach — PCOS and metabolic health share real physiological overlap, not just a coincidental lifestyle connection.",
       ],
     },
     {
@@ -126,12 +126,18 @@ export const womensHealth: Condition = {
     },
   ],
 
-  relatedConditions: ["metabolic-health", "weight-management","high-blood-pressure"],
+  relatedConditions: ["diabetes-blood-sugar", "weight-management","high-blood-pressure"],
 
+  // JUDGMENT CALL — flag for client review: this link previously pointed to
+  // "/approach/breath-mindfulness", which doesn't correspond to any of the 5
+  // established service pages. Retargeted to Behaviour, Stress & Mind as the
+  // closest existing match (mindfulness/stress fits there; breath practices
+  // are also covered under Therapeutic Yoga's focus areas). Confirm this is
+  // the right destination, or build a dedicated page if one is planned.
   internalLinks: [
-    { label: "Metabolic Health", href: "/conditions/metabolic-health" },
-    { label: "Breath & Mindfulness", href: "/approach/breath-mindfulness" },
-    { label: "Therapeutic Yoga & Movement", href: "/approach/therapeutic-yoga" },
-    { label: "Nutrition", href: "/approach/nutrition" },
+    { label: "Diabetes & Blood Sugar", href: "/conditions/diabetes-blood-sugar" },
+    { label: "Breath & Mindfulness", href: "/what-we-do/behaviour-stress-mind" },
+    { label: "Therapeutic Yoga & Movement", href: "/what-we-do/therapeutic-yoga" },
+    { label: "Nutrition", href: "/what-we-do/nutrition" },
   ],
 };

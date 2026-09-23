@@ -127,12 +127,18 @@ export const weightManagement: Condition = {
     },
   ],
 
-  relatedConditions: ["metabolic-health", "high-blood-pressure", "digestive-gut-health"],
+  relatedConditions: ["diabetes-blood-sugar", "high-blood-pressure", "digestive-gut-health"],
 
+  // JUDGMENT CALL — flag for client review: this link previously pointed to
+  // "/approach/breath-mindfulness", which doesn't correspond to any of the 5
+  // established service pages. Retargeted to Behaviour, Stress & Mind as the
+  // closest existing match (mindfulness/stress fits there; breath practices
+  // are also covered under Therapeutic Yoga's focus areas). Confirm this is
+  // the right destination, or build a dedicated page if one is planned.
   internalLinks: [
-    { label: "Nutrition", href: "/approach/nutrition" },
-    { label: "Lifestyle Medicine", href: "/approach/lifestyle" },
-    { label: "Breath & Mindfulness", href: "/approach/breath-mindfulness" },
-    { label: "Metabolic Health", href: "/conditions/metabolic-health" },
+    { label: "Nutrition", href: "/what-we-do/nutrition" },
+    { label: "Lifestyle Medicine", href: "/what-we-do/lifestyle" },
+    { label: "Breath & Mindfulness", href: "/what-we-do/behaviour-stress-mind" },
+    { label: "Diabetes & Blood Sugar", href: "/conditions/diabetes-blood-sugar" },
   ],
 };

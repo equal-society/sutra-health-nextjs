@@ -1,9 +1,9 @@
-// data/conditions/metabolic-health.ts
+// data/conditions/diabetes-blood-sugar.ts
 import type { Condition } from "./types";
 
-export const metabolicHealth: Condition = {
-  slug: "metabolic-health",
-  title: "Metabolic Health",
+export const diabetesBloodSugar: Condition = {
+  slug: "diabetes-blood-sugar",
+  title: "Diabetes & Blood Sugar",
 
   shortDescription:
     "Lifestyle and yoga-based support for blood sugar and metabolic wellbeing, grounded in clinical research — including a large India-specific prevention trial — alongside your doctor's care.",
@@ -143,8 +143,8 @@ export const metabolicHealth: Condition = {
   relatedConditions: ["weight-management", "high-blood-pressure", "digestive-gut-health"],
 
   internalLinks: [
-    { label: "Nutrition", href: "/approach/nutrition" },
-    { label: "Therapeutic Yoga & Movement", href: "/approach/therapeutic-yoga" },
+    { label: "Nutrition", href: "/what-we-do/nutrition" },
+    { label: "Therapeutic Yoga & Movement", href: "/what-we-do/therapeutic-yoga" },
     { label: "Weight Management", href: "/conditions/weight-management" },
     { label: "High Blood Pressure", href: "/conditions/high-blood-pressure" },
   ],

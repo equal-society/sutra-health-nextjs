@@ -55,114 +55,61 @@ export default function ScoreQuestionnaire() {
   }
 
   return (
-    <main className=" text-[#173F35]">
-  
-<section className="relative isolate overflow-hidden ">
-  {/* Background */}
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 -z-20 bg-[linear-gradient(135deg,#FAF8F1_0%,#F4F2E8_42%,#E7EFE7_100%)]"
-  />
-
-  {/* Organic gradient shapes */}
-  <div
-    aria-hidden="true"
-    className="absolute -right-32 -top-32 -z-10 h-[420px] w-[420px] rounded-full bg-[#A9C5AC]/35 blur-3xl sm:h-[520px] sm:w-[520px]"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute -bottom-48 left-[38%] -z-10 h-[420px] w-[420px] rounded-full bg-[#D8C9A9]/25 blur-3xl"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute -left-32 top-[28%] -z-10 h-[260px] w-[260px] rounded-full bg-[#C6D9CA]/25 blur-3xl"
-  />
-
-  {/* Fine editorial grid */}
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 -z-10 opacity-[0.035]"
-    style={{
-      backgroundImage:
-        "linear-gradient(#173F35 1px, transparent 1px), linear-gradient(90deg, #173F35 1px, transparent 1px)",
-      backgroundSize: "56px 56px",
-    }}
-  />
-
-  {/* Decorative rings */}
-  <div
-    aria-hidden="true"
-    className="absolute right-[7%] top-[16%] -z-10 hidden h-44 w-44 rounded-full border border-[#173F35]/10 lg:block"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute right-[10%] top-[21%] -z-10 hidden h-28 w-28 rounded-full border border-[#65966F]/15 lg:block"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute bottom-[13%] left-[8%] -z-10 hidden h-20 w-20 rounded-full border border-[#173F35]/10 lg:block"
-  />
+    <main className="bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">
+      <section className="border-b border-[var(--sutra-border)] bg-[var(--sutra-porcelain)]">
         <Container>
-          <div className="py-14 sm:py-18 lg:py-20">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
-              Self-assessment → Lifestyle
+          <div className="max-w-5xl py-14 sm:py-18 lg:py-22 xl:py-24">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-xs">
+              21-Point Health Assessment
             </p>
-
-            <h1 className="mt-4 max-w-[820px] font-serif text-[42px] leading-[1.02] tracking-[-0.04em] text-[#123F35] sm:text-[56px] lg:text-[68px]">
-              How do your everyday habits{" "}
-              <span className="italic text-[#65966F]">measure up?</span>
+            <h1 className="mt-5 max-w-[920px] font-[var(--font-serif)] text-[46px] font-medium leading-[0.98] tracking-[-0.04em] text-[var(--sutra-ink)] sm:text-[58px] md:text-[64px] lg:text-[76px] xl:text-[82px]">
+              How do your everyday habits
+              <br />
+              <span className="text-[var(--sutra-teal)]">measure up?</span>
             </h1>
-
-            <p className="mt-6 max-w-[680px] text-[14px] leading-7 text-[#687A73] sm:text-[16px] sm:leading-8">
-              Review 21 everyday food, movement, sleep and lifestyle habits.
-              Answer each question and calculate your lifestyle score.
-            </p>
-          </div>
-        </Container>
-      </section>
-
-      {/* INTRO */}
-      <section className="bg-[#F0F4ED]">
-        <Container>
-          <div className="py-12 sm:py-14 lg:py-16">
-            <div className="grid gap-7 lg:grid-cols-[1fr_auto] lg:items-end">
-              <div className="max-w-[720px]">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                  21-point assessment
-                </p>
-                <h2 className="mt-3 font-serif text-[32px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[40px]">
-                  Start with an honest look at your routine.
-                </h2>
-                <p className="mt-5 text-[14px] leading-7 text-[#687A73] sm:text-[15px] sm:leading-8">
-                  Select Yes or No for every statement. The first seven
-                  questions use reverse scoring, following the original
-                  questionnaire.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-[#173F35]/10 bg-white px-5 py-4 lg:min-w-[150px]">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#65966F]">
-                  Questions
-                </p>
-                <p className="mt-1 font-serif text-[32px] leading-none tracking-[-0.03em] text-[#173F35]">
-                  21
-                </p>
-              </div>
+            <div className="mt-7 flex items-start gap-4 sm:mt-8">
+              <span aria-hidden="true" className="mt-2 h-10 w-px shrink-0 bg-[var(--sutra-sand)]" />
+              <p className="max-w-[680px] text-[16px] leading-8 text-[var(--sutra-muted)] sm:text-[17px] sm:leading-9">
+                Review 21 everyday food, movement, sleep and lifestyle habits.
+                Answer each statement and calculate your lifestyle score.
+              </p>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* QUESTIONNAIRE */}
-      <section>
+      <section className="border-b border-[var(--sutra-border)] bg-[var(--sutra-white)]">
+        <Container>
+          <div className="grid gap-8 py-10 sm:py-12 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-end lg:gap-16 lg:py-14">
+            <div className="max-w-[760px]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-[11px]">
+                Before you begin
+              </p>
+              <h2 className="mt-3 font-[var(--font-serif)] text-[32px] font-medium leading-[1.05] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[40px]">
+                Start with an honest look at your routine.
+              </h2>
+              <p className="mt-5 max-w-[680px] text-[14px] leading-7 text-[var(--sutra-muted)] sm:text-[15px] sm:leading-8">
+                Select Yes or No for every statement. The first seven questions
+                use reverse scoring, following the original questionnaire.
+              </p>
+            </div>
+            <div className="border-t border-[var(--sutra-border-strong)] pt-4 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
+                Questions
+              </p>
+              <p className="mt-1 font-[var(--font-serif)] text-[44px] font-medium leading-none tracking-[-0.04em] text-[var(--sutra-teal)]">
+                21
+              </p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section aria-label="21-point lifestyle questionnaire">
         <Container>
           <div className="py-12 sm:py-16 lg:py-20">
-            <div className="mx-auto max-w-[900px]">
-              <div className="divide-y divide-[#173F35]/10 border-y border-[#173F35]/10">
+            <div className="mx-auto max-w-[920px]">
+              <div className="border-y border-[var(--sutra-border)]">
                 {questions.map((question, index) => {
                   const yesValue = index < 7 ? 0 : 1;
                   const noValue = index < 7 ? 1 : 0;
@@ -170,54 +117,54 @@ export default function ScoreQuestionnaire() {
                   return (
                     <fieldset
                       key={question}
-                      className="m-0 min-w-0 border-0 px-0 py-6 sm:py-7"
+                      className="m-0 min-w-0 border-0 border-b border-[var(--sutra-border)] px-0 py-7 last:border-b-0 sm:py-8"
                     >
                       <legend className="w-full p-0">
-                        <div className="flex items-start gap-4">
-                          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#F0F4ED] text-[10px] font-bold tracking-[0.04em] text-[#173F35]">
+                        <div className="grid grid-cols-[36px_minmax(0,1fr)] gap-4 sm:grid-cols-[44px_minmax(0,1fr)] sm:gap-5">
+                          <span className="pt-0.5 font-[var(--font-serif)] text-[16px] font-medium leading-none text-[var(--sutra-sand)] sm:text-[18px]">
                             {String(index + 1).padStart(2, "0")}
                           </span>
-                          <span className="pt-0.5 text-[13px] font-semibold leading-6 text-[#1E2A1C] sm:text-[14px] sm:leading-7">
+                          <span className="max-w-[760px] text-[14px] font-medium leading-7 text-[var(--sutra-ink)] sm:text-[15px] sm:leading-8">
                             {question}
                           </span>
                         </div>
                       </legend>
 
-                      <div className="ml-12 mt-4 flex gap-2">
-                        <label
-                          className={`cursor-pointer rounded-full border px-5 py-2.5 text-[12px] font-semibold transition-colors ${
-                            answers[index] === yesValue
-                              ? "border-[#65966F] bg-[#F0F4ED] text-[#173F35]"
-                              : "border-[#173F35]/15 bg-white text-[#687A73] hover:border-[#65966F]/60 hover:text-[#173F35]"
-                          }`}
-                        >
+                      <div className="ml-[52px] mt-5 flex gap-5 sm:ml-[64px] sm:gap-7">
+                        <label className="group inline-flex cursor-pointer items-center gap-2 text-[12px] font-semibold text-[var(--sutra-muted)]">
                           <input
                             type="radio"
                             name={`question-${index}`}
                             value={yesValue}
                             checked={answers[index] === yesValue}
                             onChange={() => choose(index, yesValue)}
-                            className="sr-only"
+                            className="peer sr-only"
                           />
-                          Yes
+                          <span
+                            className="flex h-5 w-5 items-center justify-center border border-[var(--sutra-border-strong)] transition-colors peer-checked:border-[var(--sutra-teal)] peer-checked:bg-[var(--sutra-teal)]"
+                            aria-hidden="true"
+                          >
+                            <span className="h-1.5 w-1.5 bg-white opacity-0 transition-opacity peer-checked:opacity-100" />
+                          </span>
+                          <span className="transition-colors group-hover:text-[var(--sutra-ink)]">Yes</span>
                         </label>
 
-                        <label
-                          className={`cursor-pointer rounded-full border px-5 py-2.5 text-[12px] font-semibold transition-colors ${
-                            answers[index] === noValue
-                              ? "border-[#65966F] bg-[#F0F4ED] text-[#173F35]"
-                              : "border-[#173F35]/15 bg-white text-[#687A73] hover:border-[#65966F]/60 hover:text-[#173F35]"
-                          }`}
-                        >
+                        <label className="group inline-flex cursor-pointer items-center gap-2 text-[12px] font-semibold text-[var(--sutra-muted)]">
                           <input
                             type="radio"
                             name={`question-${index}`}
                             value={noValue}
                             checked={answers[index] === noValue}
                             onChange={() => choose(index, noValue)}
-                            className="sr-only"
+                            className="peer sr-only"
                           />
-                          No
+                          <span
+                            className="flex h-5 w-5 items-center justify-center border border-[var(--sutra-border-strong)] transition-colors peer-checked:border-[var(--sutra-teal)] peer-checked:bg-[var(--sutra-teal)]"
+                            aria-hidden="true"
+                          >
+                            <span className="h-1.5 w-1.5 bg-white opacity-0 transition-opacity peer-checked:opacity-100" />
+                          </span>
+                          <span className="transition-colors group-hover:text-[var(--sutra-ink)]">No</span>
                         </label>
                       </div>
                     </fieldset>
@@ -225,14 +172,16 @@ export default function ScoreQuestionnaire() {
                 })}
               </div>
 
-              <div className="mt-8">
+              <div className="mt-10">
                 <button
                   type="button"
                   onClick={calculateScore}
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#173F35] px-6 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-[#12352D] focus:outline-none focus:ring-2 focus:ring-[#65966F] focus:ring-offset-2 focus:ring-offset-[#FAF8F1]"
+                  className="group inline-flex w-full items-center justify-center gap-3 border border-[var(--sutra-teal)] bg-[var(--sutra-teal)] px-6 py-4 text-[12px] font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[var(--sutra-teal-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--sutra-sage)] focus:ring-offset-2 focus:ring-offset-[var(--sutra-porcelain)] sm:w-auto sm:min-w-[260px]"
                 >
                   Calculate My Score
-                  <span aria-hidden="true">→</span>
+                  <span aria-hidden="true" className="text-base leading-none transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
                 </button>
 
                 {score !== null && (
@@ -240,25 +189,30 @@ export default function ScoreQuestionnaire() {
                     id="score-result"
                     role="status"
                     aria-live="polite"
-                    className="mt-4 flex flex-col gap-4 rounded-2xl border border-[#65966F]/25 bg-[#F0F4ED] p-6 sm:flex-row sm:items-center sm:justify-between"
+                    className="mt-8 border-y border-[var(--sutra-border-strong)] bg-[var(--sutra-pale-sage)] px-5 py-6 sm:px-7 sm:py-7"
                   >
-                    <div>
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#65966F]">
-                        Your lifestyle score
-                      </p>
-                      <p className="mt-2 text-[13px] leading-6 text-[#687A73]">
-                        Your result is based on the 21-point questionnaire.
-                      </p>
+                    <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+                      <div className="max-w-[560px]">
+                        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+                          Your lifestyle score
+                        </p>
+                        <p className="mt-3 font-[var(--font-serif)] text-[28px] font-medium leading-tight tracking-[-0.03em] text-[var(--sutra-ink)]">
+                          A snapshot of the habits you reviewed today.
+                        </p>
+                        <p className="mt-3 text-[13px] leading-6 text-[var(--sutra-muted)]">
+                          Your result is based on the 21-point questionnaire.
+                        </p>
+                      </div>
+                      <strong className="shrink-0 font-[var(--font-serif)] text-[52px] font-medium leading-none tracking-[-0.05em] text-[var(--sutra-teal)]">
+                        {score} / 21
+                      </strong>
                     </div>
-                    <strong className="font-serif text-[38px] leading-none tracking-[-0.04em] text-[#173F35]">
-                      {score} / 21
-                    </strong>
                   </div>
                 )}
               </div>
 
-              <p className="mt-7 border-l-2 border-[#65966F] pl-4 text-[12px] leading-6 text-[#687A73]">
-                <span className="font-semibold text-[#173F35]">Please note:</span>{" "}
+              <p className="mt-8 max-w-[760px] border-l border-[var(--sutra-sand)] pl-4 text-[12px] leading-6 text-[var(--sutra-muted)]">
+                <span className="font-semibold text-[var(--sutra-ink)]">Please note:</span>{" "}
                 This is a lifestyle self-assessment, not a medical diagnosis
                 or a substitute for professional medical advice.
               </p>

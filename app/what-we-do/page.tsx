@@ -75,7 +75,7 @@ const waysOfWorking = [
 const healthAreas = [
   {
     title: "Diabetes & Blood Sugar",
-    href: "/conditions/diabetes",
+    href: "/conditions/diabetes-blood-sugar",
   },
   {
     title: "High Blood Pressure",
@@ -189,74 +189,42 @@ export default function WhatWeDoPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-    {/* =========================================================
-    HERO
-========================================================= */}
-<section className="border-b border-[var(--sutra-border)] bg-[var(--sutra-porcelain)]">
-  <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-    <div className="max-w-5xl py-14 sm:py-18 lg:py-22 xl:py-24">
-      {/* Eyebrow */}
-      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-xs">
-        What We Do
-      </p>
+      {/* =========================================================
+          HERO
+      ========================================================= */}
+      <section className="border-b border-[var(--sutra-border)]">
+        <div className="mx-auto max-w-7xl px-6 pb-16 pt-14 sm:px-8 sm:pb-20 sm:pt-20 lg:px-10 lg:pb-24 lg:pt-24">
+          <div className="max-w-4xl">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+              What we do
+            </p>
 
-      {/* Heading */}
-      <h1
-        className="
-          mt-5
-          max-w-[900px]
-          font-[var(--font-serif)]
-          text-[46px]
-          font-medium
-          leading-[0.98]
-          tracking-[-0.04em]
-          text-[var(--sutra-ink)]
-          sm:text-[58px]
-          md:text-[64px]
-          lg:text-[76px]
-          xl:text-[82px]
-        "
-      >
-        Care that connects
-        <br />
-        <span className="text-[var(--sutra-teal)]">
-          the whole picture.
-        </span>
-      </h1>
+            <h1 className="mt-5 max-w-4xl font-[var(--font-serif)] text-4xl font-medium leading-[1.06] tracking-[-0.025em] sm:text-5xl lg:text-7xl">
+              Care built around
+              <br className="hidden sm:block" />
+              the whole you.
+            </h1>
 
-      {/* Main description */}
-      <p
-        className="
-          mt-7
-          max-w-[680px]
-          text-[17px]
-          leading-8
-          text-[var(--sutra-muted)]
-          sm:mt-8
-          sm:text-[18px]
-          sm:leading-9
-        "
-      >
-        Explore Sutra Health's services across physician care, lifestyle,
-        nutrition, movement and behaviour to find support that fits your
-        health needs and everyday life.
-      </p>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
+              Sutra Health brings together physician consultation, lifestyle
+              medicine, nutrition, therapeutic yoga and behaviour support to
+              help you understand your health and build practical habits around
+              everyday life.
+            </p>
 
-      {/* Supporting direction */}
-      <div className="mt-7 flex items-start gap-4">
-        <span
-          aria-hidden="true"
-          className="mt-2 h-10 w-px shrink-0 bg-[var(--sutra-sand)]"
-        />
-
-        <p className="max-w-[560px] text-[14px] leading-7 text-[var(--sutra-muted)] sm:text-[15px]">
-          Start with the service that matches what you need now, or begin
-          with a physician consultation to understand the right next step.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+            {/*
+              CHANGED: added the location line already used on the Hero and
+              service pages elsewhere on the site, so this page carries the
+              same "where do you serve" signal instead of leaving it out.
+            */}
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-[var(--sutra-muted)]">
+              <span>Doctor-led</span>
+              <span>Evidence-informed</span>
+              <span>Faridabad, Delhi NCR & online across India</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* =========================================================
           SERVICES

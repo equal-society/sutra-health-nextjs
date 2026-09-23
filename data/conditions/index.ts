@@ -7,7 +7,7 @@
 import type { Condition, ConditionSubpage } from "./types";
 
 import { weightManagement } from "./weight-management";
-import { metabolicHealth } from "./metabolic-health";
+import { diabetesBloodSugar } from "./diabetes-blood-sugar";
 import { highBloodPressure } from "./high-blood-pressure";
 import { arthritisJointPain } from "./arthritis-joint-pain";
 import { migraineHeadache } from "./migraine-headache";
@@ -16,6 +16,16 @@ import { womensHealth } from "./womens-health";
 
 import { highBloodPressureSubpages } from "./subpages/high-blood-pressure";
 import { arthritisJointPainSubpages } from "./subpages/arthritis-joint-pain";
+/*
+  NOT YET RENAMED: this still imports from "./subpages/metabolic-health"
+  because that file hasn't been provided. That file's contents almost
+  certainly still reference the OLD slug "metabolic-health" internally
+  (breadcrumbs, canonical URLs, parentSlug fields) — those question pages
+  will be broken now that the parent slug here is "diabetes-blood-sugar".
+  Rename this import (and the file itself, and everything inside it,
+  replacing "metabolic-health" with "diabetes-blood-sugar") once that
+  file is available.
+*/
 import { metabolicHealthSubpages } from "./subpages/metabolic-health";
 import { migraineHeadacheSubpages } from "./subpages/migraine-headache";
 import { digestiveGutHealthSubpages } from "./subpages/digestive-gut-health";
@@ -25,7 +35,7 @@ import { digestiveGutHealthSubpages } from "./subpages/digestive-gut-health";
 
 export const conditions: Condition[] = [
   weightManagement,
-  metabolicHealth,
+  diabetesBloodSugar,
   highBloodPressure,
   arthritisJointPain,
   migraineHeadache,
@@ -41,7 +51,7 @@ export const conditions: Condition[] = [
 const subpagesByCondition: Record<string, ConditionSubpage[]> = {
  "high-blood-pressure": highBloodPressureSubpages,
   "arthritis-joint-pain": arthritisJointPainSubpages,
-  "metabolic-health": metabolicHealthSubpages,
+  "diabetes-blood-sugar": metabolicHealthSubpages,
   "migraine-headache": migraineHeadacheSubpages,
   "digestive-gut-health": digestiveGutHealthSubpages,
   // Not yet researched — intentionally empty, not placeholder content.

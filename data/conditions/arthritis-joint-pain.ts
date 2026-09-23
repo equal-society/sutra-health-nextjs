@@ -139,11 +139,11 @@ export const arthritisJointPain: Condition = {
     },
   ],
 
-  relatedConditions: ["weight-management", "metabolic-health", "migraine-headache"],
+  relatedConditions: ["weight-management", "diabetes-blood-sugar", "migraine-headache"],
 
   internalLinks: [
-    { label: "Therapeutic Yoga & Movement", href: "/approach/therapeutic-yoga" },
-    { label: "Lifestyle Medicine", href: "/approach/lifestyle" },
+    { label: "Therapeutic Yoga & Movement", href: "/what-we-do/therapeutic-yoga" },
+    { label: "Lifestyle Medicine", href: "/what-we-do/lifestyle" },
     { label: "Weight Management", href: "/conditions/weight-management" },
   ],
 };

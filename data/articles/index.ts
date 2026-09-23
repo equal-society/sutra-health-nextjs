@@ -2,6 +2,13 @@ import type { Article } from "./types";
 
 import { howToManageStress } from "./how-to-manage-stress";
 import { yogaForStressRelief } from "./yoga-for-stress-relief";
+import { whatIsPrediabetesAndCanItBeReversed } from "./what-is-prediabetes-and-can-it-be-reversed";
+import { howToLowerBloodPressureNaturally } from "./how-to-lower-blood-pressure-naturally";
+import { whatIsAHealthyBalancedDiet } from "./what-is-a-healthy-balanced-diet";
+import { howToImproveGutHealthNaturally } from "./how-to-improve-gut-health-naturally";
+import { howDoesSleepAffectWeightLoss } from "./how-does-sleep-affect-weight-loss";
+import { canWalkingHelpLowerBloodPressure } from "./can-walking-help-lower-blood-pressure";
+
 
 
 /* =========================================================
@@ -11,6 +18,12 @@ import { yogaForStressRelief } from "./yoga-for-stress-relief";
 export const articles: Article[] = [
   howToManageStress,
   yogaForStressRelief,
+  whatIsPrediabetesAndCanItBeReversed,
+  howToLowerBloodPressureNaturally,
+  whatIsAHealthyBalancedDiet,
+  howToImproveGutHealthNaturally,
+  howDoesSleepAffectWeightLoss,
+  canWalkingHelpLowerBloodPressure,
 ];
 
 

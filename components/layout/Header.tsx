@@ -15,6 +15,7 @@ import {
   Sparkles,
   UserRound,
   UsersRound,
+  PhoneCall,
 } from "lucide-react";
 
 /* =========================================================
@@ -82,7 +83,7 @@ const whatWeDo: NavItem[] = [
 const conditions: NavItem[] = [
   {
     label: "Diabetes & Blood Sugar",
-    href: "/conditions/diabetes",
+    href: "/conditions/diabetes-blood-sugar",
     icon: Activity,
   },
   {
@@ -132,6 +133,11 @@ const about: NavItem[] = [
     label: "Community & Volunteer",
     href: "/volunteer",
     icon: UsersRound,
+  },
+  {
+    label: "Contact",
+    href: "/contact",
+    icon: PhoneCall,
   },
 ];
 
@@ -493,6 +499,16 @@ export default function Header() {
             closeNavigation={closeNavigation}
             pathname={pathname}
           />
+
+           <Link
+            href="/retreat-programs"
+            className={`navLink ${
+              approachActive ? "navLinkActive" : ""
+            }`}
+            onClick={closeNavigation}
+          >
+            Retreats
+          </Link>
 
           <DesktopDropdown
             name="resources"

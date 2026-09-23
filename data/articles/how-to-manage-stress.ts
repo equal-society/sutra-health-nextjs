@@ -206,5 +206,9 @@ export const howToManageStress: Article = {
      Add verified sources before publishing.
   ========================================================= */
 
-  sources: [],
+  sources: [
+    "NCCIH — Stress|https://www.nccih.nih.gov/health/stress",
+    "American Heart Association — Managing Stress to Control High Blood Pressure|https://www.heart.org/en/health-topics/high-blood-pressure/changes-you-can-make-to-manage-high-blood-pressure/managing-stress-to-control-high-blood-pressure",
+    "NIH — Lingering feelings over daily stresses may impact long-term health|https://www.nih.gov/news-events/nih-research-matters/lingering-feelings-over-daily-stresses-may-impact-long-term-health",
+  ],
 };

@@ -11,25 +11,16 @@ import {
 } from "@/data/articles";
 
 export default function ArticlesPage() {
-  /* =========================================================
-     STATE
-  ========================================================= */
-
   const [search, setSearch] = useState("");
+  const [submittedSearch, setSubmittedSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
   const [activeType, setActiveType] = useState<
     "All" | (typeof articleTypes)[number]
   >("All");
-
-  const [visibleCount, setVisibleCount] = useState(6);
-
-
-  /* =========================================================
-     FILTER ARTICLES
-  ========================================================= */
+  const [visibleCount, setVisibleCount] = useState(9);
 
   const filteredArticles = useMemo(() => {
-    const query = search.trim().toLowerCase();
+    const query = submittedSearch.trim().toLowerCase();
 
     return [...articles]
       .filter((article) => {
@@ -40,10 +31,7 @@ export default function ArticlesPage() {
           return false;
         }
 
-        if (
-          activeType !== "All" &&
-          article.type !== activeType
-        ) {
+        if (activeType !== "All" && article.type !== activeType) {
           return false;
         }
 
@@ -61,44 +49,41 @@ export default function ArticlesPage() {
       })
       .sort(
         (a, b) =>
-          new Date(b.date).getTime() -
-          new Date(a.date).getTime()
+          new Date(b.date).getTime() - new Date(a.date).getTime(),
       );
-  }, [search, activeCategory, activeType]);
+  }, [submittedSearch, activeCategory, activeType]);
 
+  const featuredArticles = filteredArticles.slice(0, 3);
+  const latestArticles = filteredArticles.slice(3, visibleCount + 3);
+  const hasResults = filteredArticles.length > 0;
 
-  /* =========================================================
-     FEATURED + LATEST
-  ========================================================= */
+  const runSearch = () => {
+    setSubmittedSearch(search.trim());
+    setVisibleCount(9);
 
-  const featured = filteredArticles[0];
+    window.setTimeout(() => {
+      document
+        .getElementById("article-results")
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+  };
 
-  const latest = filteredArticles.slice(
-    1,
-    visibleCount
-  );
+  const clearSearch = () => {
+    setSearch("");
+    setSubmittedSearch("");
+    setVisibleCount(9);
+  };
 
-
-  /* =========================================================
-     RESET LOAD MORE WHEN FILTER CHANGES
-  ========================================================= */
+  const resetFilters = () => {
+    clearSearch();
+    setActiveCategory("All");
+    setActiveType("All");
+  };
 
   const handleCategoryChange = (category: string) => {
     setActiveCategory(category);
-    setVisibleCount(6);
+    setVisibleCount(9);
   };
-
-  const handleTypeChange = (
-    type: "All" | (typeof articleTypes)[number]
-  ) => {
-    setActiveType(type);
-    setVisibleCount(6);
-  };
-
-
-  /* =========================================================
-     QUESTIONS
-  ========================================================= */
 
   const questions = [
     "How can I manage stress?",
@@ -107,122 +92,42 @@ export default function ArticlesPage() {
     "How can I build healthier habits?",
   ];
 
-
-  /* =========================================================
-     NO RESULTS
-  ========================================================= */
-
-  const hasResults = filteredArticles.length > 0;
-
-
   return (
-    <main className="bg-[#FAF8F1] text-[#173F35]">
-
+    <main className="bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">
       {/* =====================================================
           HERO
+          Clayo-inspired centered publication introduction,
+          adapted to Sutra Health.
       ===================================================== */}
+      <section className="border-b border-[var(--sutra-border)] bg-[var(--sutra-porcelain)]">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+          <div className="mx-auto max-w-[820px] py-16 text-center sm:py-20 lg:py-24 xl:py-28">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--sutra-muted)] sm:text-[11px]">
+              Sutra Health Journal
+            </p>
 
-      <section className="relative isolate overflow-hidden border-b border-[#173F35]/10">
+            <h1 className="mt-5 font-[var(--font-serif)] text-[48px] font-medium leading-[0.98] tracking-[-0.045em] text-[var(--sutra-ink)] sm:text-[62px] md:text-[72px] lg:text-[82px]">
+              Health knowledge
+              <br />
+              <span className="text-[var(--sutra-teal)]">
+                for everyday life.
+              </span>
+            </h1>
 
-        {/* Background */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-20 bg-[linear-gradient(135deg,#FAF8F1_0%,#F4F2E8_42%,#E7EFE7_100%)]"
-        />
+            <p className="mx-auto mt-7 max-w-[650px] text-[16px] leading-8 text-[var(--sutra-muted)] sm:text-[17px] sm:leading-9">
+              Practical health information on lifestyle, nutrition, movement,
+              mindfulness, sleep and everyday wellbeing — created to help you
+              understand health and make informed next steps.
+            </p>
 
-        {/* Organic shapes */}
-        <div
-          aria-hidden="true"
-          className="absolute -right-32 -top-32 -z-10 h-[420px] w-[420px] rounded-full bg-[#A9C5AC]/35 blur-3xl sm:h-[520px] sm:w-[520px]"
-        />
-
-        <div
-          aria-hidden="true"
-          className="absolute -bottom-48 left-[38%] -z-10 h-[420px] w-[420px] rounded-full bg-[#D8C9A9]/25 blur-3xl"
-        />
-
-        <div
-          aria-hidden="true"
-          className="absolute -left-32 top-[28%] -z-10 h-[260px] w-[260px] rounded-full bg-[#C6D9CA]/25 blur-3xl"
-        />
-
-        {/* Fine grid */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-10 opacity-[0.035]"
-          style={{
-            backgroundImage:
-              "linear-gradient(#173F35 1px, transparent 1px), linear-gradient(90deg, #173F35 1px, transparent 1px)",
-            backgroundSize: "56px 56px",
-          }}
-        />
-
-        {/* Decorative ring */}
-        <div
-          aria-hidden="true"
-          className="absolute right-[7%] top-[18%] -z-10 hidden h-44 w-44 rounded-full border border-[#173F35]/10 lg:block"
-        />
-
-        <div
-          aria-hidden="true"
-          className="absolute right-[10%] top-[23%] -z-10 hidden h-28 w-28 rounded-full border border-[#65966F]/15 lg:block"
-        />
-
-
-        <div className="mx-auto max-w-[1200px] px-5 sm:px-8 lg:px-10">
-
-          <div className="py-10 sm:py-14 lg:py-16">
-
-            {/* Breadcrumb */}
-
-            <a
-              href="/"
-              className="inline-flex items-center gap-2 text-[11px] font-medium text-[#65966F] transition-colors hover:text-[#173F35]"
+            {/* Search — retained as a useful function, visually quieter */}
+            <form
+              className="mx-auto mt-9 max-w-[650px] text-left"
+              onSubmit={(event) => {
+                event.preventDefault();
+                runSearch();
+              }}
             >
-              <span aria-hidden="true">←</span>
-              Sutra Health
-            </a>
-
-
-            {/* Hero content */}
-
-            <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_360px] lg:items-end lg:gap-20">
-
-              <div>
-
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#65966F]">
-                  Resources
-                </p>
-
-                <h1 className="mt-4 max-w-[760px] font-serif text-[44px] leading-[0.98] tracking-[-0.045em] text-[#123F35] sm:text-[56px] lg:text-[68px]">
-                  Health knowledge
-                  <br />
-                  <span className="italic text-[#65966F]">
-                    for everyday life.
-                  </span>
-                </h1>
-
-              </div>
-
-
-              <div className="lg:pb-1">
-
-                <p className="text-[14px] leading-7 text-[#687A73] sm:text-[15px] sm:leading-7">
-                  Practical articles on lifestyle, nutrition,
-                  movement, mindfulness, sleep and everyday
-                  wellbeing — created to help you understand
-                  health and make informed next steps.
-                </p>
-
-              </div>
-
-            </div>
-
-
-            {/* Search */}
-
-            <div className="mt-9 max-w-[680px]">
-
               <label
                 htmlFor="article-search"
                 className="sr-only"
@@ -230,557 +135,402 @@ export default function ArticlesPage() {
                 Search health articles
               </label>
 
-              <div className="flex h-12 items-center rounded-full border border-[#173F35]/15 bg-white/80 px-5 shadow-[0_8px_30px_rgba(23,63,53,0.04)]">
-
-                <span
-                  aria-hidden="true"
-                  className="mr-3 text-[18px] text-[#71817A]"
-                >
-                  ⌕
-                </span>
-
-                <input
-                  id="article-search"
-                  type="search"
-                  value={search}
-                  onChange={(event) => {
-                    setSearch(event.target.value);
-                    setVisibleCount(6);
-                  }}
-                  placeholder="Search health articles..."
-                  className="w-full bg-transparent text-[13px] text-[#173F35] outline-none placeholder:text-[#8A9690]"
-                />
-
-                {search && (
-                  <button
-                    type="button"
-                    onClick={() => setSearch("")}
-                    className="ml-3 shrink-0 text-[12px] text-[#71817A] hover:text-[#173F35]"
-                    aria-label="Clear search"
+              <div className="flex min-h-14 flex-col border border-[var(--sutra-border-strong)] bg-[var(--sutra-white)] sm:flex-row">
+                <div className="flex min-w-0 flex-1 items-center px-4">
+                  <span
+                    aria-hidden="true"
+                    className="mr-3 text-[18px] text-[var(--sutra-muted)]"
                   >
-                    ×
-                  </button>
-                )}
+                    ⌕
+                  </span>
 
+                  <input
+                    id="article-search"
+                    type="search"
+                    value={search}
+                    onChange={(event) => setSearch(event.target.value)}
+                    onKeyDown={(event) => {
+                      if (event.key === "Escape") clearSearch();
+                    }}
+                    placeholder="Search a health question or topic..."
+                    className="w-full bg-transparent py-4 text-[14px] text-[var(--sutra-ink)] outline-none placeholder:text-[var(--sutra-muted)]"
+                    autoComplete="off"
+                  />
+
+                  {search && (
+                    <button
+                      type="button"
+                      onClick={clearSearch}
+                      aria-label="Clear search"
+                      className="ml-2 flex h-8 w-8 shrink-0 items-center justify-center border border-[var(--sutra-border)] text-[15px] text-[var(--sutra-muted)] hover:border-[var(--sutra-teal)] hover:text-[var(--sutra-teal)]"
+                    >
+                      ×
+                    </button>
+                  )}
+                </div>
+
+                <button
+                  type="submit"
+                  className="min-h-12 border-t border-[var(--sutra-border-strong)] bg-[var(--sutra-teal)] px-7 text-[10px] font-semibold uppercase tracking-[0.14em] text-white transition-colors hover:bg-[var(--sutra-teal-hover)] sm:border-l sm:border-t-0"
+                >
+                  Search
+                </button>
               </div>
 
-            </div>
-
+              {submittedSearch && (
+                <p
+                  className="mt-3 text-center text-[11px] font-semibold text-[var(--sutra-teal)]"
+                  role="status"
+                  aria-live="polite"
+                >
+                  {filteredArticles.length}{" "}
+                  {filteredArticles.length === 1 ? "article" : "articles"}{" "}
+                  for “{submittedSearch}”
+                </p>
+              )}
+            </form>
           </div>
-
         </div>
-
       </section>
 
-
       {/* =====================================================
-          CATEGORY FILTER
+          TOPIC NAVIGATION
       ===================================================== */}
-
-      <section className="border-b border-[#173F35]/10 bg-[#FAF8F1]">
-
-        <div className="mx-auto max-w-[1200px] px-5 sm:px-8 lg:px-10">
-
-          <div className="flex items-center gap-3 overflow-x-auto py-4 scrollbar-hide">
-
-            <span className="mr-1 shrink-0 text-[10px] font-semibold uppercase tracking-[0.18em] text-[#71817A]">
-              Browse
+      <section className="border-b border-[var(--sutra-border)] bg-[var(--sutra-white)]">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+          <div className="flex items-center justify-center gap-7 overflow-x-auto py-5 scrollbar-hide">
+            <span className="shrink-0 text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
+              Topics
             </span>
 
             {articleCategories.map((category) => {
-
-              const active =
-                activeCategory === category;
+              const active = activeCategory === category;
 
               return (
                 <button
                   key={category}
                   type="button"
-                  onClick={() =>
-                    handleCategoryChange(category)
-                  }
+                  onClick={() => handleCategoryChange(category)}
+                  aria-pressed={active}
                   className={[
-                    "shrink-0 rounded-full px-4 py-2 text-[11px] transition-all",
+                    "relative shrink-0 pb-1 text-[12px] font-medium transition-colors",
+                    "after:absolute after:bottom-0 after:left-0 after:h-px",
+                    "after:bg-[var(--sutra-teal)] after:transition-all",
                     active
-                      ? "bg-[#173F35] text-white shadow-sm"
-                      : "border border-[#173F35]/12 bg-white/50 text-[#536860] hover:bg-white",
+                      ? "text-[var(--sutra-teal)] after:w-full"
+                      : "text-[var(--sutra-muted)] after:w-0 hover:text-[var(--sutra-ink)] hover:after:w-full",
                   ].join(" ")}
                 >
                   {category}
                 </button>
               );
             })}
-
           </div>
-
         </div>
-
       </section>
 
-
-     
-
       {/* =====================================================
-          FEATURED ARTICLE
+          FEATURED / LATEST THREE
+          This follows the visual rhythm of the supplied Clayo
+          Blogs screenshot: three equal editorial cards.
       ===================================================== */}
+      {hasResults && (
+        <section className="border-b border-[var(--sutra-border)]">
+          <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-18 lg:px-12 lg:py-22">
+            <div className="mb-8 flex items-end justify-between">
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+                  {submittedSearch ? "Search results" : "Latest from Sutra Health"}
+                </p>
 
-      {featured && (
-
-        <section>
-
-          <div className="mx-auto max-w-[1200px] px-5 py-9 sm:px-8 sm:py-11 lg:px-10 lg:py-13">
-
-            <div className="mb-5 flex items-center justify-between">
-
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                Featured
-              </p>
-
-              <span className="text-[10px] uppercase tracking-[0.15em] text-[#8A9690]">
-                Latest from Sutra Health
-              </span>
-
-            </div>
-
-
-            <article className="group overflow-hidden rounded-[22px] border border-[#173F35]/10 bg-white shadow-[0_10px_40px_rgba(23,63,53,0.04)]">
-
-              <div className="grid md:grid-cols-[0.92fr_1.08fr]">
-
-                {/* Image */}
-
-                <Link
-                  href={`/resources/articles/${featured.slug}`}
-                  className="relative block aspect-[16/10] overflow-hidden bg-[#E6EEE6] md:aspect-auto md:min-h-[330px]"
-                >
-
-                  <Image
-                    src={featured.image}
-                    alt={featured.title}
-                    fill
-                    priority
-                    sizes="(max-width: 768px) 100vw, 46vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.025]"
-                  />
-
-                </Link>
-
-
-                {/* Content */}
-
-                <div className="flex flex-col justify-center p-7 sm:p-9 lg:p-12">
-
-                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[9px] font-semibold uppercase tracking-[0.13em] text-[#65966F]">
-
-                    <span>{featured.category}</span>
-
-                    <span className="text-[#B0BBB5]">
-                      ·
-                    </span>
-
-                    <span>{featured.type}</span>
-
-                    <span className="text-[#B0BBB5]">
-                      ·
-                    </span>
-
-                    <span>{featured.readTime}</span>
-
-                  </div>
-
-
-                  <h2 className="mt-4 max-w-[620px] font-serif text-[32px] leading-[1.04] tracking-[-0.035em] text-[#123F35] sm:text-[40px]">
-
-                    <Link
-                      href={`/resources/articles/${featured.slug}`}
-                      className="transition-colors hover:text-[#65966F]"
-                    >
-                      {featured.title}
-                    </Link>
-
-                  </h2>
-
-
-                  <p className="mt-4 max-w-[560px] text-[13px] leading-6 text-[#71817A]">
-                    {featured.excerpt}
-                  </p>
-
-
-                  <div className="mt-6">
-
-                    <Link
-                      href={`/resources/articles/${featured.slug}`}
-                      className="inline-flex items-center gap-2 text-[11px] font-semibold text-[#173F35]"
-                    >
-                      Read the article
-                      <span
-                        aria-hidden="true"
-                        className="transition-transform group-hover:translate-x-1"
-                      >
-                        →
-                      </span>
-                    </Link>
-
-                  </div>
-
-                </div>
-
+                <h2 className="mt-3 font-[var(--font-serif)] text-[34px] font-medium leading-[1.05] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[42px]">
+                  {submittedSearch
+                    ? `Articles matching “${submittedSearch}”`
+                    : "Ideas for better everyday health."}
+                </h2>
               </div>
 
-            </article>
-
-          </div>
-
-        </section>
-
-      )}
-
-
-      {/* =====================================================
-          ARTICLE COLLECTION
-      ===================================================== */}
-
-      <section className="border-t border-[#173F35]/10">
-
-        <div className="mx-auto max-w-[1200px] px-5 py-9 sm:px-8 sm:py-11 lg:px-10 lg:py-13">
-
-          <div className="flex flex-col gap-4 border-b border-[#173F35]/10 pb-4 sm:flex-row sm:items-end sm:justify-between">
-
-            <div>
-
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                The Collection
-              </p>
-
-              <h2 className="mt-1 font-serif text-[32px] tracking-[-0.035em] text-[#123F35] sm:text-[38px]">
-                Latest articles
-              </h2>
-
+              <span className="hidden text-[10px] uppercase tracking-[0.16em] text-[var(--sutra-muted)] sm:block">
+                {filteredArticles.length} articles
+              </span>
             </div>
 
+            <div className="grid gap-7 md:grid-cols-3">
+  {featuredArticles.map((article) => (
+    <article key={article.slug} className="group flex min-w-0 flex-col">
+      <Link
+        href={`/resources/articles/${article.slug}`}
+        className="flex h-full flex-col"
+      >
+        {/* Same image size for every card */}
+        <div className="relative aspect-[4/3] w-full overflow-hidden border border-[var(--sutra-border)] bg-[var(--sutra-pale-sage)]">
+          <Image
+            src={article.image}
+            alt={article.title}
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className="object-cover transition-transform duration-700 group-hover:scale-[1.025]"
+          />
+        </div>
 
-            <div className="flex items-center gap-3">
+        <div className="flex flex-1 flex-col">
+          <div className="mt-5 flex min-h-[18px] flex-wrap items-center gap-x-2 gap-y-1 text-[9px] font-semibold uppercase tracking-[0.14em] text-[var(--sutra-muted)]">
+            <span>{article.category}</span>
+            <span aria-hidden="true">·</span>
+            <span>{article.type}</span>
+          </div>
 
-              <span className="text-[11px] text-[#71817A]">
+          {/* Same title area height */}
+          <h3 className="mt-3 min-h-[60px] font-[var(--font-serif)] text-[24px] font-medium leading-[1.1] tracking-[-0.025em] text-[var(--sutra-ink)] transition-colors group-hover:text-[var(--sutra-teal)] sm:text-[26px]">
+            {article.title}
+          </h3>
+
+          {/* Same excerpt area height */}
+          <p className="mt-3 min-h-[72px] line-clamp-3 text-[13px] leading-6 text-[var(--sutra-muted)]">
+            {article.excerpt}
+          </p>
+
+          {/* Always aligned at bottom */}
+          <div className="mt-auto flex items-center justify-between border-t border-[var(--sutra-border)] pt-4">
+            <span className="text-[10px] text-[var(--sutra-muted)]">
+              {article.readTime}
+            </span>
+
+            <span className="text-[12px] font-medium text-[var(--sutra-teal)] transition-transform group-hover:translate-x-1">
+              Read article →
+            </span>
+          </div>
+        </div>
+      </Link>
+    </article>
+  ))}
+</div>
+          </div>
+        </section>
+      )}
+
+      {/* =====================================================
+          ALL ARTICLES
+      ===================================================== */}
+      <section id="article-results">
+        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-18 lg:px-12 lg:py-22">
+          <div className="flex flex-col gap-4 border-b border-[var(--sutra-border-strong)] pb-5 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+                The Journal
+              </p>
+
+              <h2 className="mt-2 font-[var(--font-serif)] text-[34px] font-medium leading-tight tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[42px]">
+                {submittedSearch ? "More search results" : "Explore all articles"}
+              </h2>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <span className="text-[11px] text-[var(--sutra-muted)]">
                 {filteredArticles.length}{" "}
-                {filteredArticles.length === 1
-                  ? "article"
-                  : "articles"}
+                {filteredArticles.length === 1 ? "article" : "articles"}
               </span>
 
               {(activeCategory !== "All" ||
                 activeType !== "All" ||
-                search) && (
+                search ||
+                submittedSearch) && (
                 <button
                   type="button"
-                  onClick={() => {
-                    setSearch("");
-                    setActiveCategory("All");
-                    setActiveType("All");
-                    setVisibleCount(6);
-                  }}
-                  className="text-[10px] font-semibold text-[#65966F] hover:text-[#173F35]"
+                  onClick={resetFilters}
+                  className="border-b border-[var(--sutra-teal)] pb-0.5 text-[10px] font-semibold text-[var(--sutra-teal)]"
                 >
                   Clear filters
                 </button>
               )}
-
             </div>
-
           </div>
 
-
-          {/* No results */}
-
           {!hasResults && (
-
-            <div className="border-b border-[#173F35]/10 py-16 text-center">
-
-              <p className="font-serif text-[28px] text-[#173F35]">
+            <div className="border-b border-[var(--sutra-border-strong)] py-20 text-center">
+              <p className="font-[var(--font-serif)] text-[30px] text-[var(--sutra-ink)]">
                 No articles found.
               </p>
 
-              <p className="mt-2 text-[13px] text-[#71817A]">
-                Try another search or browse a different category.
+              <p className="mt-2 text-[13px] text-[var(--sutra-muted)]">
+                Try another health question or browse a different topic.
               </p>
 
               <button
                 type="button"
-                onClick={() => {
-                  setSearch("");
-                  setActiveCategory("All");
-                  setActiveType("All");
-                }}
-                className="mt-5 rounded-full bg-[#173F35] px-5 py-3 text-[11px] font-semibold text-white"
+                onClick={resetFilters}
+                className="mt-6 border border-[var(--sutra-teal)] bg-[var(--sutra-teal)] px-5 py-3 text-[11px] font-semibold text-white hover:bg-[var(--sutra-teal-hover)]"
               >
                 View all articles
               </button>
-
             </div>
-
           )}
 
-
-          {/* Article rows */}
-
           {hasResults && (
-
             <div>
-
-              {latest.map((article) => (
-
+              {latestArticles.map((article) => (
                 <article
                   key={article.slug}
-                  className="group border-b border-[#173F35]/10 py-5 sm:py-6"
+                  className="group border-b border-[var(--sutra-border)] py-7 sm:py-8"
                 >
-
-                  <div className="grid gap-5 sm:grid-cols-[190px_1fr] sm:items-center lg:grid-cols-[220px_1fr_auto] lg:gap-8">
-
-                    {/* Image */}
-
-                    <Link
-                      href={`/resources/articles/${article.slug}`}
-                      className="relative block aspect-[16/10] overflow-hidden rounded-[14px] bg-[#E7EEE7]"
-                    >
-
+                  <Link
+                    href={`/resources/articles/${article.slug}`}
+                    className="grid gap-6 sm:grid-cols-[190px_1fr] sm:items-center lg:grid-cols-[230px_1fr_auto] lg:gap-9"
+                  >
+                    <div className="relative aspect-[16/10] min-w-0 overflow-hidden border border-[var(--sutra-border)] bg-[var(--sutra-pale-sage)]">
                       <Image
                         src={article.image}
                         alt={article.title}
                         fill
-                        sizes="(max-width: 640px) 100vw, 220px"
-                        className="object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+                        sizes="(max-width: 640px) 100vw, 230px"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                       />
-
-                    </Link>
-
-
-                    {/* Content */}
-
-                    <div>
-
-                      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[9px] font-semibold uppercase tracking-[0.12em] text-[#65966F]">
-
-                        <span>
-                          {article.category}
-                        </span>
-
-                        <span className="text-[#B0BBB5]">
-                          ·
-                        </span>
-
-                        <span>
-                          {article.type}
-                        </span>
-
-                        <span className="text-[#B0BBB5]">
-                          ·
-                        </span>
-
-                        <span>
-                          {article.readTime}
-                        </span>
-
-                      </div>
-
-
-                      <h3 className="mt-2 font-serif text-[25px] leading-[1.08] tracking-[-0.025em] text-[#173F35] sm:text-[29px]">
-
-                        <Link
-                          href={`/resources/articles/${article.slug}`}
-                          className="transition-colors hover:text-[#65966F]"
-                        >
-                          {article.title}
-                        </Link>
-
-                      </h3>
-
-
-                      <p className="mt-2 max-w-[650px] text-[12px] leading-5.5 text-[#71817A] sm:text-[13px]">
-                        {article.excerpt}
-                      </p>
-
                     </div>
 
+                    <div>
+                      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[9px] font-semibold uppercase tracking-[0.13em] text-[var(--sutra-muted)]">
+                        <span>{article.category}</span>
+                        <span aria-hidden="true">·</span>
+                        <span>{article.type}</span>
+                        <span aria-hidden="true">·</span>
+                        <span>{article.readTime}</span>
+                      </div>
 
-                    {/* Date */}
+                      <h3 className="mt-3 font-[var(--font-serif)] text-[25px] font-medium leading-[1.08] tracking-[-0.025em] text-[var(--sutra-ink)] transition-colors group-hover:text-[var(--sutra-teal)] sm:text-[29px]">
+                        {article.title}
+                      </h3>
 
-                    <div className="flex items-center justify-between lg:block lg:text-right">
+                      <p className="mt-3 max-w-[680px] text-[13px] leading-6 text-[var(--sutra-muted)] sm:text-[14px] sm:leading-7">
+                        {article.excerpt}
+                      </p>
+                    </div>
 
-                      <p className="text-[10px] text-[#8A9690]">
+                    <div className="flex items-center justify-between gap-5 lg:block lg:text-right">
+                      <p className="text-[10px] text-[var(--sutra-muted)]">
                         {article.date}
                       </p>
 
-                      <Link
-                        href={`/resources/articles/${article.slug}`}
-                        className="text-[12px] font-semibold text-[#173F35]"
-                        aria-label={`Read ${article.title}`}
-                      >
+                      <span className="mt-3 inline-flex h-9 w-9 items-center justify-center border border-[var(--sutra-border-strong)] text-[13px] text-[var(--sutra-teal)] transition-colors group-hover:border-[var(--sutra-teal)]">
                         →
-                      </Link>
-
+                      </span>
                     </div>
-
-                  </div>
-
+                  </Link>
                 </article>
-
               ))}
-
             </div>
-
           )}
 
-
-          {/* Load more */}
-
-          {visibleCount < filteredArticles.length && (
-
-            <div className="mt-8 flex justify-center">
-
+          {visibleCount < filteredArticles.length - 3 && (
+            <div className="mt-10 flex justify-center">
               <button
                 type="button"
-                onClick={() =>
-                  setVisibleCount(
-                    (current) => current + 6
-                  )
-                }
-                className="rounded-full border border-[#173F35]/15 bg-white px-6 py-3 text-[11px] font-semibold text-[#173F35] transition-colors hover:bg-[#F0F3ED]"
+                onClick={() => setVisibleCount((current) => current + 9)}
+                className="border border-[var(--sutra-border-strong)] bg-[var(--sutra-white)] px-7 py-3 text-[11px] font-semibold text-[var(--sutra-ink)] transition-colors hover:border-[var(--sutra-teal)] hover:text-[var(--sutra-teal)]"
               >
                 Load more articles
               </button>
-
             </div>
-
           )}
-
         </div>
-
       </section>
-
 
       {/* =====================================================
           EXPLORE BY QUESTION
       ===================================================== */}
-
-      <section className="border-y border-[#173F35]/10 bg-[#EFF3ED]">
-
-        <div className="mx-auto max-w-[1200px] px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
-
-          <div className="grid gap-7 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
-
+      <section className="border-y border-[var(--sutra-border)] bg-[var(--sutra-pale-sage)]">
+        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-18 lg:px-12 lg:py-22">
+          <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
             <div>
-
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
-                Explore by Question
+              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+                Explore by question
               </p>
 
-              <h2 className="mt-3 max-w-[400px] font-serif text-[31px] leading-[1.05] tracking-[-0.035em] text-[#123F35] sm:text-[38px]">
+              <h2 className="mt-4 max-w-[430px] font-[var(--font-serif)] text-[34px] font-medium leading-[1.04] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[42px]">
                 Start with what you're asking.
               </h2>
 
-              <p className="mt-4 max-w-[380px] text-[13px] leading-6 text-[#71817A]">
-                Find practical health information by starting
-                with the question you already have.
+              <p className="mt-5 max-w-[390px] text-[14px] leading-7 text-[var(--sutra-muted)]">
+                Find practical health information by starting with the question
+                you already have.
               </p>
-
             </div>
 
-
-            <div className="border-t border-[#173F35]/10">
-
+            <div className="border-t border-[var(--sutra-border-strong)]">
               {questions.map((question) => (
-
                 <button
                   key={question}
                   type="button"
                   onClick={() => {
-                    setSearch(question.replace(
-                      "How can I ",
-                      ""
-                    ));
+                    const questionQuery = question.replace("How can I ", "");
+                    setSearch(questionQuery);
+                    setSubmittedSearch(questionQuery);
                     setActiveCategory("All");
                     setActiveType("All");
-                    setVisibleCount(6);
+                    setVisibleCount(9);
 
-                    window.scrollTo({
-                      top: 0,
-                      behavior: "smooth",
-                    });
+                    window.setTimeout(() => {
+                      document
+                        .getElementById("article-results")
+                        ?.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        });
+                    }, 50);
                   }}
-                  className="group flex w-full items-center justify-between border-b border-[#173F35]/10 py-4 text-left"
+                  className="group flex w-full items-center justify-between border-b border-[var(--sutra-border-strong)] py-5 text-left"
                 >
-
-                  <span className="font-serif text-[19px] tracking-[-0.02em] text-[#173F35] sm:text-[21px]">
+                  <span className="font-[var(--font-serif)] text-[20px] leading-tight tracking-[-0.02em] text-[var(--sutra-ink)] sm:text-[23px]">
                     {question}
                   </span>
 
                   <span
                     aria-hidden="true"
-                    className="ml-5 text-[#65966F] transition-transform group-hover:translate-x-1"
+                    className="ml-6 text-[var(--sutra-teal)] transition-transform group-hover:translate-x-1"
                   >
                     →
                   </span>
-
                 </button>
-
               ))}
-
             </div>
-
           </div>
-
         </div>
-
       </section>
 
-
       {/* =====================================================
-          SUTRA HEALTH LINKS
+          SUTRA CROSS-LINKS
       ===================================================== */}
-
       <section>
-
-        <div className="mx-auto max-w-[1200px] px-5 sm:px-8 lg:px-10">
-
-          <div className="flex flex-col gap-5 py-10 sm:flex-row sm:items-center sm:justify-between sm:py-12">
-
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+          <div className="flex flex-col gap-6 py-12 sm:flex-row sm:items-center sm:justify-between sm:py-16">
             <div>
-
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                 Sutra Health
               </p>
 
-              <p className="mt-2 font-serif text-[25px] tracking-[-0.025em] text-[#173F35]">
+              <p className="mt-2 font-[var(--font-serif)] text-[27px] tracking-[-0.025em] text-[var(--sutra-ink)]">
                 Explore how we approach health.
               </p>
-
             </div>
 
-
-            <div className="flex flex-wrap gap-2">
-
+            <div className="flex flex-wrap gap-3">
               <Link
                 href="/what-we-do"
-                className="rounded-full bg-[#173F35] px-5 py-3 text-[11px] font-semibold text-white transition-colors hover:bg-[#12352D]"
+                className="border border-[var(--sutra-teal)] bg-[var(--sutra-teal)] px-5 py-3 text-[11px] font-semibold text-white transition-colors hover:bg-[var(--sutra-teal-hover)]"
               >
                 What We Do →
               </Link>
 
               <Link
                 href="/approach"
-                className="rounded-full border border-[#173F35]/15 bg-white px-5 py-3 text-[11px] font-semibold text-[#173F35] transition-colors hover:bg-[#F0F3ED]"
+                className="border border-[var(--sutra-border-strong)] bg-[var(--sutra-white)] px-5 py-3 text-[11px] font-semibold text-[var(--sutra-ink)] transition-colors hover:border-[var(--sutra-teal)] hover:text-[var(--sutra-teal)]"
               >
                 Our Approach →
               </Link>
-
             </div>
-
           </div>
-
         </div>
-
       </section>
-
     </main>
   );
-}   
+}
