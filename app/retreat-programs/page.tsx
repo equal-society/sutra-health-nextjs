@@ -269,10 +269,10 @@ export default function RetreatProgramsPage() {
 
   <section className="border-b border-[var(--sutra-border)] bg-[var(--sutra-porcelain)]">
   <Container>
-    <div className="py-10 sm:py-14 lg:py-18 xl:py-20">
+    <div className="py-12 sm:py-16 lg:py-22 xl:py-24">
       
 
-      <div className="mt-10 grid items-center gap-10 lg:mt-14 lg:grid-cols-[0.86fr_1.14fr] lg:gap-14 xl:gap-18">
+      <div className="mt-10 grid items-center gap-12 lg:mt-14 lg:grid-cols-[0.86fr_1.14fr] lg:gap-16 xl:gap-20">
         <div className="min-w-0">
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
             Sutra Health Retreat
@@ -284,7 +284,7 @@ export default function RetreatProgramsPage() {
             <span className="text-[var(--sutra-teal)]">near Delhi.</span>
           </h1>
 
-          <p className="mt-7 max-w-[570px] text-[16px] leading-8 text-[var(--sutra-muted)] sm:text-[18px] sm:leading-9">
+          <p className="mt-8 max-w-[600px] text-[17px] leading-8 text-[var(--sutra-muted)] sm:text-[19px] sm:leading-9">
             Step away from your usual routine and make space for rest,
             movement, nourishment and mindful living. Experience yoga,
             breathing, meditation and practical lifestyle guidance in a
@@ -300,7 +300,7 @@ export default function RetreatProgramsPage() {
             </p>
           </div> */}
 
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-9 flex flex-wrap gap-3.5">
             <a
               href={bookingUrl}
               target="_blank"
@@ -340,15 +340,15 @@ export default function RetreatProgramsPage() {
         <div className="grid gap-5 sm:grid-cols-3 sm:gap-8">
           <div>
             <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">Slow down</p>
-            <p className="mt-1.5 text-[12px] leading-5 text-[var(--sutra-muted)]">Create space away from everyday routines.</p>
+            <p className="mt-1.5 text-[13px] leading-6 text-[var(--sutra-muted)]">Create space away from everyday routines.</p>
           </div>
           <div>
             <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">Practice wellbeing</p>
-            <p className="mt-1.5 text-[12px] leading-5 text-[var(--sutra-muted)]">Explore movement, food, breath and mindful living.</p>
+            <p className="mt-1.5 text-[13px] leading-6 text-[var(--sutra-muted)]">Explore movement, food, breath and mindful living.</p>
           </div>
           <div>
             <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">Near Delhi</p>
-            <p className="mt-1.5 text-[12px] leading-5 text-[var(--sutra-muted)]">A peaceful retreat setting in Faridabad, Haryana.</p>
+            <p className="mt-1.5 text-[13px] leading-6 text-[var(--sutra-muted)]">A peaceful retreat setting in Faridabad, Haryana.</p>
           </div>
         </div>
       </div>
@@ -368,19 +368,19 @@ export default function RetreatProgramsPage() {
                 In brief
               </p>
 
-              <h2 className="mt-3 max-w-[430px] font-serif text-[36px] leading-[1.04] tracking-[-0.035em] sm:text-[46px]">
+              <h2 className="mt-3 max-w-[430px] font-serif text-[38px] leading-[1.06] tracking-[-0.035em] sm:text-[46px]">
                 What is the retreat experience?
               </h2>
             </div>
 
             <div className="max-w-[720px]">
-              <p className="text-[15px] leading-8 text-[var(--sutra-muted)] sm:text-[16px]">
+              <p className="text-[16px] leading-8 text-[var(--sutra-muted)] sm:text-[17px]">
                 Sutra Health Retreat is a wellness-focused stay in Faridabad,
                 near Delhi, where you can step away from everyday routines and
                 spend time with practices that support healthier living.
               </p>
 
-              <p className="mt-5 text-[15px] leading-8 text-[var(--sutra-muted)] sm:text-[16px]">
+              <p className="mt-5 text-[16px] leading-8 text-[var(--sutra-muted)] sm:text-[17px]">
                 The retreat brings together yoga, Pranayama, meditation,
                 nutrition guidance, physician consultation and traditional
                 wellness practices. The experience can be approached according
@@ -399,7 +399,7 @@ export default function RetreatProgramsPage() {
                   ].map((item) => (
                     <li
                       key={item}
-                      className="flex items-start gap-3 text-[13px] leading-6 text-[var(--sutra-muted)]"
+                      className="flex items-start gap-3 text-[14px] leading-7 text-[var(--sutra-muted)]"
                     >
                       <span aria-hidden="true" className="mt-[10px] h-px w-5 shrink-0 bg-[var(--sutra-sage)]" />
                       {item}
@@ -425,7 +425,7 @@ export default function RetreatProgramsPage() {
                   Why a retreat
                 </p>
 
-                <h2 className="mt-3 max-w-[650px] font-serif text-[40px] leading-[1.04] tracking-[-0.035em] sm:text-[50px]">
+                <h2 className="mt-3 max-w-[650px] font-serif text-[42px] leading-[1.06] tracking-[-0.035em] sm:text-[50px]">
                   A little distance from routine can create space for attention.
                 </h2>
               </div>
@@ -494,11 +494,11 @@ export default function RetreatProgramsPage() {
               What you can experience
             </p>
 
-            <h2 className="mt-3 max-w-[760px] font-serif text-[40px] leading-[1.04] tracking-[-0.035em] sm:text-[52px]">
+            <h2 className="mt-3 max-w-[760px] font-serif text-[42px] leading-[1.06] tracking-[-0.035em] sm:text-[52px]">
               Wellness practices that work together as a retreat experience.
             </h2>
 
-            <p className="mt-5 max-w-[700px] text-[14px] leading-7 text-[var(--sutra-muted)] sm:text-[15px] sm:leading-8">
+            <p className="mt-5 max-w-[700px] text-[15px] leading-7 text-[var(--sutra-muted)] sm:text-[16px] sm:leading-8">
               The retreat includes a range of practices and experiences.
               Explore each one below and contact the team if you would like to
               understand what may be appropriate for your stay.
@@ -548,7 +548,7 @@ export default function RetreatProgramsPage() {
                 </div>
 
                 <div className="max-w-[620px] lg:pt-7">
-                  <p className="text-[14px] leading-7 text-[var(--sutra-muted)] sm:text-[15px] sm:leading-8">
+                  <p className="text-[15px] leading-7 text-[var(--sutra-muted)] sm:text-[16px] sm:leading-8">
                     {practice.description}
                   </p>
 
@@ -557,7 +557,7 @@ export default function RetreatProgramsPage() {
                       {practice.points.map((point) => (
                         <li
                           key={point}
-                          className="flex items-start gap-3 text-[13px] leading-6 text-[var(--sutra-muted)]"
+                          className="flex items-start gap-3 text-[14px] leading-7 text-[var(--sutra-muted)]"
                         >
                           <span aria-hidden="true" className="mt-[10px] h-px w-5 shrink-0 bg-[var(--sutra-sage)]" />
                           <span>{point}</span>
@@ -591,13 +591,13 @@ export default function RetreatProgramsPage() {
                 Coming alone?
               </p>
 
-              <h2 className="mt-3 max-w-[500px] font-serif text-[40px] leading-[1.04] tracking-[-0.035em] sm:text-[50px]">
+              <h2 className="mt-3 max-w-[500px] font-serif text-[42px] leading-[1.06] tracking-[-0.035em] sm:text-[50px]">
                 You don't have to bring someone with you.
               </h2>
             </div>
 
             <div className="max-w-[700px]">
-              <p className="text-[15px] leading-8 text-[var(--sutra-muted)]">
+              <p className="text-[16px] leading-8 text-[var(--sutra-muted)]">
                 A retreat can be a personal experience. If you are considering
                 coming on your own, you can speak with the Sutra Health team
                 before booking to understand the stay, accommodation,
@@ -627,7 +627,7 @@ export default function RetreatProgramsPage() {
                       {item.title}
                     </h3>
 
-                    <p className="text-[13px] leading-6 text-[var(--sutra-muted)]">
+                    <p className="text-[14px] leading-7 text-[var(--sutra-muted)]">
                       {item.text}
                     </p>
                   </div>
@@ -661,12 +661,12 @@ export default function RetreatProgramsPage() {
                   Your stay
                 </p>
 
-                <h2 className="mt-3 max-w-[650px] font-serif text-[40px] leading-[1.04] tracking-[-0.035em] sm:text-[50px]">
+                <h2 className="mt-3 max-w-[650px] font-serif text-[42px] leading-[1.06] tracking-[-0.035em] sm:text-[50px]">
                   A simple space to stay, rest and recharge.
                 </h2>
               </div>
 
-              <p className="max-w-[330px] text-[12px] leading-6 text-[var(--sutra-muted)]">
+              <p className="max-w-[330px] text-[13px] leading-7 text-[var(--sutra-muted)]">
                 The retreat offers a three-bedroom rooftop stay in Sector 46,
                 Faridabad.
               </p>
@@ -728,20 +728,20 @@ export default function RetreatProgramsPage() {
                   The setting
                 </p>
 
-                <h2 className="mt-3 max-w-[500px] font-serif text-[40px] leading-[1.04] tracking-[-0.035em] sm:text-[50px]">
+                <h2 className="mt-3 max-w-[500px] font-serif text-[42px] leading-[1.06] tracking-[-0.035em] sm:text-[50px]">
                   Near Delhi, with space to slow down.
                 </h2>
               </div>
 
               <div className="max-w-[700px]">
-                <p className="text-[15px] leading-8 text-[var(--sutra-muted)]">
+                <p className="text-[16px] leading-8 text-[var(--sutra-muted)]">
                   Sutra Health Retreat is located in Sector 46, Faridabad,
                   Haryana, near the Aravallis. The retreat setting includes a
                   rooftop space for selected activities and opportunities to
                   spend time outdoors.
                 </p>
 
-                <p className="mt-5 text-[15px] leading-8 text-[var(--sutra-muted)]">
+                <p className="mt-5 text-[16px] leading-8 text-[var(--sutra-muted)]">
                   The surrounding area also offers opportunities for walks,
                   cycling, temples and parks, giving you options beyond the
                   retreat itself.
@@ -797,7 +797,7 @@ export default function RetreatProgramsPage() {
                   Retreat FAQ
                 </p>
 
-                <h2 className="mt-3 font-serif text-[40px] leading-[1.04] tracking-[-0.035em] sm:text-[48px]">
+                <h2 className="mt-3 font-serif text-[42px] leading-[1.06] tracking-[-0.035em] sm:text-[48px]">
                   Questions before you come.
                 </h2>
               </div>
@@ -808,7 +808,7 @@ export default function RetreatProgramsPage() {
                     key={faq.question}
                     className="group py-5"
                   >
-                    <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-5 text-[14px] font-medium text-[var(--sutra-teal)]">
+                    <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-5 text-[15px] font-medium text-[var(--sutra-teal)]">
                       <span>{faq.question}</span>
 
                       <span

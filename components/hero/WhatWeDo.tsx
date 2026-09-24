@@ -7,7 +7,7 @@ const services = [
     title: "Physician Consultation",
     description:
       "Doctor-led consultation to understand your health and discuss appropriate next steps.",
-    href: "/book-appointment",
+    href: "/what-we-do/physician-consultation",
   },
   {
     number: "02",
