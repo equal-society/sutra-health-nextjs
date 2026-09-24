@@ -9,7 +9,7 @@ const conditions = [
     title: "Diabetes & Blood Sugar",
     description:
       "Support for blood sugar and healthier everyday habits alongside medical care.",
-    href: "/conditions/metabolic-health",
+    href: "/conditions/diabetes-blood-sugar",
   },
   {
     number: "02",
