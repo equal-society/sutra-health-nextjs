@@ -73,6 +73,12 @@ const CATEGORIES: ArchiveCategory[] = [
     id: "sutra_health_lifestyle_food",
     url: "https://archive.org/details/sutra_health_lifestyle_food",
   },
+  {
+    title: "Surya Yoga Sequence",
+    subtitle: "Yoga Asana Content",
+    id: "surya-yoga-sequence",
+    url: "  https://archive.org/details/surya-yoga-sequence",
+  },
 ];
 
 function archiveThumbUrl(identifier: string) {
@@ -81,99 +87,104 @@ function archiveThumbUrl(identifier: string) {
 
 export default function ArchivePage() {
   return (
-    <main className={styles.gallery}>
-      
+    <main className={styles.page}>
       <section className={styles.hero} aria-labelledby="archive-title">
-        <div className={styles.heroInner}>
-          
-          <span className={styles.eyebrow}>Sutra Health</span>
-          <h1 id="archive-title">Sutra Health Archive</h1>
-          <p>
-            Explore our wellness, lifestyle, clinic and publication resources
-            in one place.
-          </p>
-          <a
-            className={styles.archiveLink}
-            href="https://archive.org/details/@sutra_health"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Visit Our Archive <span aria-hidden="true">↗</span>
-          </a>
+        <div className={styles.container}>
+          <div className={styles.heroGrid}>
+            <div className={styles.heroCopy}>
+              <p className={styles.eyebrow}>Sutra Health · Archive</p>
+              <h1 id="archive-title">
+                A collection of our
+                <span> health and wellbeing resources.</span>
+              </h1>
+              <p className={styles.heroText}>
+                Explore wellness, lifestyle, clinic and publication resources
+                collected by Sutra Health.
+              </p>
+              <a
+                className={styles.primaryLink}
+                href="https://archive.org/details/@sutra_health"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit the complete archive <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+           
+          </div>
         </div>
       </section>
 
-      <section className={styles.content} aria-labelledby="resources-title">
-        <div className={styles.statusBar}>
-          <span className={styles.statusDot} aria-hidden="true" />
-          <span>Archive resources</span>
-        </div>
-
-        <div className={styles.sectionHeader}>
-          <div>
-            <p className={styles.sectionEyebrow}>Explore</p>
-            <h2 id="resources-title">Sutra Health Archive</h2>
+      <section className={styles.collection} aria-labelledby="resources-title">
+        <div className={styles.container}>
+          <div className={styles.sectionIntro}>
+            <div>
+              <p className={styles.eyebrow}>Explore</p>
+              <h2 id="resources-title">Browse the collection</h2>
+            </div>
             <p>
-              Explore our folders, publications, videos and wellness
-              resources.
+              Eight collections covering lifestyle guidance, clinic material,
+              publications, food, nature and practitioner experiences.
             </p>
           </div>
-          <a
-            className={styles.textLink}
-            href="https://archive.org/details/@sutra_health"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Open Internet Archive ↗
-          </a>
-        </div>
 
-        <div className={styles.grid}>
-          {CATEGORIES.map((category) => (
-            <article className={styles.card} key={category.id}>
-              <a
-                className={styles.cardLink}
-                href={category.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Open ${category.title} on Internet Archive`}
-              >
-                <div className={styles.thumbnail}>
-                  <img
-                    src={archiveThumbUrl(category.id)}
-                    alt=""
-                    loading="lazy"
-                  />
-                  <div className={styles.fallback} aria-hidden="true">
-                    Sutra Health
+          <div className={styles.grid}>
+            {CATEGORIES.map((category, index) => (
+              <article className={styles.card} key={category.id}>
+                <a
+                  className={styles.cardLink}
+                  href={category.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open ${category.title} on Internet Archive`}
+                >
+                  <div className={styles.thumbnail}>
+                    <img
+                      src={archiveThumbUrl(category.id)}
+                      alt=""
+                      loading="lazy"
+                    />
+                    <div className={styles.fallback} aria-hidden="true">
+                      Sutra Health
+                    </div>
+                    <span className={styles.index}>
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
                   </div>
-                  <span className={styles.openBadge}>Open Archive ↗</span>
-                </div>
 
-                <div className={styles.cardBody}>
-                  <h3>{category.title}</h3>
-                  <p>{category.subtitle}</p>
-                </div>
-              </a>
-            </article>
-          ))}
-        </div>
-
-        <div className={styles.bottomCta}>
-          <div>
-            <strong>Looking for the complete collection?</strong>
-            <span>
-              Visit Sutra Health&apos;s Internet Archive profile for all
-              available resources.
-            </span>
+                  <div className={styles.cardBody}>
+                    <div className={styles.cardMeta}>
+                      <span>Collection</span>
+                      <span aria-hidden="true">↗</span>
+                    </div>
+                    <h3>{category.title}</h3>
+                    <p>{category.subtitle}</p>
+                  </div>
+                </a>
+              </article>
+            ))}
           </div>
-          <a
-            href="https://archive.org/details/@sutra_health"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View complete archive ↗
-          </a>
+
+          <div className={styles.bottomCta}>
+            <div>
+              <p className={styles.eyebrow}>Internet Archive</p>
+              <h2>See the complete collection.</h2>
+              <p>
+                Open the Sutra Health archive to browse everything currently
+                available.
+              </p>
+            </div>
+
+            <a
+              className={styles.secondaryLink}
+              href="https://archive.org/details/@sutra_health"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open archive <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </div>
       </section>
     </main>

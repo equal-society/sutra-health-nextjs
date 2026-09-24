@@ -153,15 +153,16 @@ const resources: NavItem[] = [
     icon: Scale,
   },
   {
-    label: "Research & Evidence",
+    label: "Academic & Research",
     href: "/resources/research",
-    icon: Sparkles,
-  },
-  {
-    label: "Practice Knowledge System",
-    href: "/resources/knowledge-system",
     icon: Brain,
   },
+    {
+    label: "Archive",
+    href: "/archive",
+    icon: Sparkles,
+  },
+
 ];
 
 function isActivePath(pathname: string, href: string) {
@@ -514,10 +515,6 @@ export default function Header() {
             name="resources"
             label="Resources"
             items={resources}
-            viewAll={{
-              label: "Explore Resources",
-              href: "/resources",
-            }}
             openDropdown={openDropdown}
             setOpenDropdown={setOpenDropdown}
             closeNavigation={closeNavigation}
@@ -617,10 +614,6 @@ export default function Header() {
             name="resources"
             label="Resources"
             items={resources}
-            viewAll={{
-              label: "Explore Resources",
-              href: "/resources",
-            }}
             openDropdown={openDropdown}
             toggleDropdown={toggleDropdown}
             closeNavigation={closeNavigation}
