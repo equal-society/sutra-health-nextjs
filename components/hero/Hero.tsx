@@ -5,266 +5,82 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section
-      aria-labelledby="hero-title"
-      className="bg-[#F7F5EF]"
-    >
+    <section aria-labelledby="hero-title" className="bg-[#F7F5EF]">
       <Container>
-        <div
-          className="
-            grid
-            items-center
-            gap-10
-            py-10
-            sm:py-12
-            lg:grid-cols-[1.08fr_0.92fr]
-            lg:gap-12
-            lg:px-10
-            lg:py-14
-            xl:gap-16
-          "
-        >
-          {/* Content */}
+        <div className="grid items-center gap-10 py-10 sm:py-12 lg:grid-cols-[1.08fr_0.92fr] lg:gap-12 lg:px-10 lg:py-14 xl:gap-16">
           <div className="max-w-[650px]">
-            {/* Eyebrow */}
             <div className="flex items-center gap-3">
-              <span
-                aria-hidden="true"
-                className="h-px w-9 bg-[#91A298]"
-              />
-
+              <span aria-hidden="true" className="h-px w-9 bg-[#91A298]" />
               <p className="font-sans text-[11px] font-medium uppercase tracking-[0.14em] text-[#65736D] sm:text-[12px]">
-                Doctor-guided yoga therapy & lifestyle medicine
+                Sutra Health
               </p>
             </div>
 
-            {/* Heading */}
             <h1
               id="hero-title"
-              className="
-                mt-6
-                max-w-[620px]
-                font-serif
-                text-[38px]
-                font-medium
-                leading-[1.08]
-                tracking-[-0.025em]
-                text-[#202522]
-                sm:mt-7
-                sm:text-[44px]
-                md:text-[50px]
-                lg:text-[54px]
-                xl:text-[58px]
-              "
+              className="mt-6 max-w-[620px] font-serif text-[38px] font-medium leading-[1.08] tracking-[-0.025em] text-[#202522] sm:mt-7 sm:text-[44px] md:text-[50px] lg:text-[54px] xl:text-[58px]"
             >
-              A doctor-guided approach to{" "}
+              Integrative healthcare,{" "}
               <em className="not-italic text-[#17413D]">
-                yoga therapy and lifestyle medicine.
+                built around your life.
               </em>
             </h1>
 
-            {/* Description */}
-            <p
-              className="
-                mt-6
-                max-w-[550px]
-                font-sans
-                text-[16px]
-                leading-[1.7]
-                text-[#65736D]
-                sm:mt-7
-                sm:text-[17px]
-              "
-            >
-              Sutra Health combines therapeutic yoga, nutrition counselling
-              and lifestyle coaching to support healthier habits and
-              long-term wellbeing — alongside your medical care, not instead
-              of it.
+            <p className="mt-6 max-w-[550px] font-sans text-[16px] leading-[1.7] text-[#65736D] sm:mt-7 sm:text-[17px]">
+              Sutra Health brings medical care and everyday health practices
+              together to help you make realistic changes that support your
+              health over time.
             </p>
 
-            {/* CTAs */}
-            <div
-              className="
-                mt-7
-                flex
-                flex-col
-                items-start
-                gap-5
-                sm:mt-8
-                sm:flex-row
-                sm:items-center
-                sm:gap-6
-              "
-            >
-              {/* Primary CTA */}
+            <div className="mt-7 flex flex-col items-start gap-5 sm:mt-8 sm:flex-row sm:items-center sm:gap-6">
               <Link
                 href="/book-appointment"
-                className="
-                  group
-                  inline-flex
-                  h-[52px]
-                  items-center
-                  justify-center
-                  bg-[#17413D]
-                  px-6
-                  font-sans
-                  text-[14px]
-                  font-medium
-                  text-white
-                  transition-colors
-                  duration-300
-                  hover:bg-[#12332F]
-                  focus-visible:outline
-                  focus-visible:outline-2
-                  focus-visible:outline-offset-3
-                  focus-visible:outline-[#17413D]
-                "
+                className="group inline-flex h-[52px] items-center justify-center bg-[#17413D] px-6 font-sans text-[14px] font-medium text-white transition-colors duration-300 hover:bg-[#12332F] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#17413D]"
               >
                 Book a Consultation
-
                 <ArrowUpRight
                   size={17}
                   strokeWidth={1.5}
                   aria-hidden="true"
-                  className="
-                    ml-3
-                    transition-transform
-                    duration-300
-                    group-hover:translate-x-0.5
-                    group-hover:-translate-y-0.5
-                  "
+                  className="ml-3 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                 />
               </Link>
 
-              {/* Secondary CTA */}
               <Link
                 href="/assessment"
-                className="
-                  group
-                  inline-flex
-                  items-center
-                  font-sans
-                  text-[14px]
-                  font-medium
-                  text-[#202522]
-                  transition-colors
-                  duration-300
-                  hover:text-[#17413D]
-                  focus-visible:outline
-                  focus-visible:outline-2
-                  focus-visible:outline-offset-4
-                  focus-visible:outline-[#17413D]
-                "
+                className="group inline-flex items-center font-sans text-[14px] font-medium text-[#202522] transition-colors duration-300 hover:text-[#17413D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#17413D]"
               >
                 Take the Free 21-Point Assessment
-
                 <ArrowUpRight
                   size={16}
                   strokeWidth={1.5}
                   aria-hidden="true"
-                  className="
-                    ml-2
-                    transition-transform
-                    duration-300
-                    group-hover:translate-x-1
-                    group-hover:-translate-y-1
-                  "
+                  className="ml-2 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
                 />
               </Link>
             </div>
 
-            {/* Trust / Stats */}
-            <div
-              className="
-                mt-8
-                border-t
-                border-[#202522]/10
-                pt-5
-                sm:mt-9
-                sm:pt-6
-              "
-            >
-              <div
-                className="
-                  flex
-                  flex-wrap
-                  items-center
-                  gap-x-4
-                  gap-y-2
-                  font-sans
-                  text-[12px]
-                  font-medium
-                  leading-[1.5]
-                  text-[#65736D]
-                "
-              >
+            <div className="mt-8 border-t border-[#202522]/10 pt-5 sm:mt-9 sm:pt-6">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-sans text-[12px] font-medium leading-[1.5] text-[#65736D]">
                 <span>1,200+ people supported</span>
-
-                <span
-                  aria-hidden="true"
-                  className="h-1 w-1 shrink-0 rounded-full bg-[#91A298]"
-                />
-
+                <span aria-hidden="true" className="h-1 w-1 shrink-0 rounded-full bg-[#91A298]" />
                 <span>15 years of experience</span>
-
-                <span
-                  aria-hidden="true"
-                  className="h-1 w-1 shrink-0 rounded-full bg-[#91A298]"
-                />
-
-                <span>
-                  Serving Delhi NCR & online across India
-                </span>
+                <span aria-hidden="true" className="h-1 w-1 shrink-0 rounded-full bg-[#91A298]" />
+                <span>Serving Delhi NCR &amp; online across India</span>
               </div>
             </div>
           </div>
 
-          {/* Hero Image */}
           <div className="relative lg:ml-auto lg:w-full">
-            <div
-              className="
-                relative
-                aspect-[4/3.7]
-                w-full
-                overflow-hidden
-                border
-                border-[#202522]/10
-                sm:aspect-[4/3.6]
-                lg:aspect-[4/4.35]
-              "
-            >
+            <div className="relative aspect-[4/3.7] w-full overflow-hidden border border-[#202522]/10 sm:aspect-[4/3.6] lg:aspect-[4/4.35]">
               <Image
-                src="/images/dr.png"
+                src="/images/yoga-hero.jpg"
                 alt="Doctor-guided yoga therapy consultation at Sutra Health"
                 fill
                 priority
                 sizes="(max-width: 1023px) 100vw, 44vw"
-                className="
-                  object-cover
-                  object-center
-                  transition-transform
-                  duration-700
-                  hover:scale-[1.015]
-                "
+                className="object-cover object-center transition-transform duration-700 hover:scale-[1.015]"
               />
-            </div>
-
-            {/* Image Label */}
-            <div
-              className="
-                absolute
-                bottom-4
-                left-4
-                bg-[#F7F5EF]/95
-                px-4
-                py-3
-                sm:bottom-5
-                sm:left-5
-              "
-            >
-              <p className="font-sans text-[11px] font-medium uppercase tracking-[0.12em] text-[#65736D]">
-                Care designed around you
-              </p>
             </div>
           </div>
         </div>
