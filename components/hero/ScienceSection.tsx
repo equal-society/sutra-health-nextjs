@@ -51,7 +51,7 @@ export default function ScienceSection() {
             <div className="relative overflow-hidden bg-[#E7EDE8]">
               <div className="relative aspect-[5/4] sm:aspect-[4/3]">
                 <Image
-                  src="/images/lifestyle-home.png"
+                  src="/images/lifestyle-home.webp"
                   alt="Lifestyle medicine in everyday life"
                   fill
                   sizes="(max-width: 1023px) 100vw, 52vw"
