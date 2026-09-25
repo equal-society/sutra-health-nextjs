@@ -1,76 +1,117 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
-const model = [
-  [
-    "01",
-    "Integration",
-    "Your health rarely fits into one category. We bring relevant forms of support together rather than treating each area in isolation.",
-  ],
-  [
-    "02",
-    "Motivation",
-    "We help you understand why a change matters and find realistic ways to make it part of everyday life.",
-  ],
-  [
-    "03",
-    "Personalisation",
-    "Support is shaped around each person's health, circumstances, preferences and goals rather than following a one-size-fits-all plan.",
-  ],
-] as const;
+function Eyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#17413D] sm:text-[11px]">
+      {children}
+    </p>
+  );
+}
+
+const principles = [
+  {
+    number: "01",
+    title: "Integration",
+    text: "Relevant clinical, lifestyle, nutrition, Yoga and behaviour support can be brought together around the person's needs.",
+  },
+  {
+    number: "02",
+    title: "Motivation",
+    text: "Understanding why a change matters can make it easier to turn information into action.",
+  },
+  {
+    number: "03",
+    title: "Personalisation",
+    text: "Support is shaped around health, circumstances, preferences and goals rather than a fixed formula.",
+  },
+];
 
 export default function SutraHealthModelSection() {
   return (
-    <section className="border-b border-[#202522]/10 bg-white" aria-labelledby="model-heading">
-      <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-16 lg:px-12 lg:py-20">
-        <div className="border-b border-[#202522]/10 pb-8 sm:pb-10 lg:pb-11">
-          <p className="font-sans text-[11px] font-medium uppercase tracking-[0.14em] text-[#65736D] sm:text-[12px]">
-            05 · The Sutra Health approach
-          </p>
-          <h2
-            id="model-heading"
-            className="mt-5 max-w-[1100px] font-serif text-[38px] font-medium leading-[1.08] tracking-[-0.025em] text-[#202522] sm:text-[44px] md:text-[50px] lg:text-[54px] xl:text-[58px]"
-          >
-            How the Sutra Health approach works
-          </h2>
-        </div>
+    <section
+      className="overflow-hidden bg-[#F7F5EF]"
+      aria-labelledby="model-heading"
+    >
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-15 lg:px-12 lg:py-15">
 
-        <div className="grid lg:grid-cols-[0.92fr_1.08fr] lg:max-w-[1180px]">
-          <div className="border-b border-[#202522]/10 py-9 lg:border-b-0 lg:border-r lg:py-12 lg:pr-12 xl:pr-16">
-            <p className="max-w-[650px] font-sans text-[16px] leading-[1.7] text-[#65736D] sm:text-[17px]">
-              Our approach is built around three principles: bringing relevant
-              support together, helping people make changes they can sustain,
-              and adapting care to the person.
-            </p>
+        {/* Heading */}
+        <div className="flex flex-col gap-5 border-b border-[#202522]/10 pb-8 sm:pb-10 lg:flex-row lg:items-end lg:justify-between">
+          <div className="max-w-[780px]">
+            <div className="flex items-center gap-3">
+              <Eyebrow>05 · The Sutra Health model</Eyebrow>
+              <span
+                className="h-px w-8 bg-[#C8BDA7] sm:w-10"
+                aria-hidden="true"
+              />
+            </div>
 
-            <Link
-              href="/approach"
-              className="mt-7 inline-block font-sans text-[13px] font-semibold text-[#17413D] underline decoration-[#C8BDA7] underline-offset-4 transition-colors hover:text-[#12332F]"
+            <h2
+              id="model-heading"
+              className="mt-4 font-serif text-[38px] leading-[1.03] tracking-[-0.035em] text-[#202522] sm:mt-5 sm:text-[52px] lg:text-[62px]"
             >
-              Explore the Sutra Health approach →
-            </Link>
+              What makes the Sutra Health model different?
+            </h2>
           </div>
 
-          <div className="lg:pl-12 xl:pl-16">
-            {model.map(([number, title, description]) => (
-              <div key={number} className="border-b border-[#202522]/10 py-6">
-                <div className="flex items-start gap-5">
-                  <span className="pt-1 font-sans text-[9px] font-semibold tracking-[0.15em] text-[#91A298]">
-                    {number}
-                  </span>
-
-                  <div>
-                    <h3 className="font-serif text-[22px] font-medium leading-[1.08] tracking-[-0.02em] text-[#202522] sm:text-[24px]">
-                      {title}
-                    </h3>
-                    <p className="mt-2 max-w-[650px] font-sans text-[13px] leading-6 text-[#65736D] sm:text-[14px] sm:leading-7">
-                      {description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <Link
+            href="/approach"
+            className="group inline-flex min-h-11 w-fit items-center border border-[#17413D]/20 px-5 py-2.5 text-[13px] font-semibold text-[#17413D] transition-colors hover:border-[#17413D] hover:bg-[#17413D] hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-[#17413D] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F7F5EF]"
+          >
+            Explore the full approach
+            <ArrowUpRight
+              size={15}
+              className="ml-2 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+              aria-hidden="true"
+            />
+          </Link>
         </div>
+
+        <p className="mt-6 max-w-[760px] text-[15px] leading-7 text-[#65736D] sm:mt-7 sm:text-[17px] sm:leading-8">
+          Sutra Health brings relevant support together, helps people find
+          motivation for change and adapts the work to the person rather than
+          relying on a one-size-fits-all plan.
+        </p>
+
+        {/* Three horizontal cards */}
+        <div className="mt-8 grid gap-3 sm:mt-10 md:grid-cols-3 md:gap-4">
+          {principles.map((item) => (
+            <article
+              key={item.number}
+              className="group relative overflow-hidden rounded-[1.5rem] border border-[#202522]/10 bg-white p-6 transition-transform duration-300 hover:-translate-y-1 sm:p-7 lg:p-8"
+            >
+              {/* Top line */}
+              <div className="flex items-start justify-between">
+                <span className="font-serif text-[30px] leading-none text-[#17413D] sm:text-[36px]">
+                  {item.number}
+                </span>
+
+                <span
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-[#17413D]/15 text-[#17413D] transition-all duration-300 group-hover:bg-[#17413D] group-hover:text-white"
+                  aria-hidden="true"
+                >
+                  <ArrowUpRight size={15} />
+                </span>
+              </div>
+
+              <div className="mt-12">
+                <h3 className="font-serif text-[29px] leading-none tracking-[-0.025em] text-[#202522] sm:text-[34px]">
+                  {item.title}
+                </h3>
+
+                <span
+                  className="mt-5 block h-px w-10 bg-[#C8BDA7] transition-all duration-300 group-hover:w-16"
+                  aria-hidden="true"
+                />
+
+                <p className="mt-5 text-[13px] leading-6 text-[#65736D] sm:text-[14px] sm:leading-7">
+                  {item.text}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+
       </div>
     </section>
   );

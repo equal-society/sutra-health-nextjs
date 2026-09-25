@@ -7,7 +7,7 @@ export default function BookingCTA() {
     <section
       id="book-consultation"
       aria-labelledby="booking-cta-heading"
-      className="bg-[var(--sutra-teal)] text-[var(--sutra-white)]"
+      className="bg-[#17413D] text-white"
     >
       <div className="mx-auto max-w-7xl px-6 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
         <div className="relative overflow-hidden">
@@ -22,7 +22,7 @@ export default function BookingCTA() {
 
           <div className="relative grid gap-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-20">
             <div className="max-w-3xl">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-sage)]">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#C8BDA7]">
                 Ready to get started?
               </p>
 
@@ -43,7 +43,7 @@ export default function BookingCTA() {
             <div className="flex flex-col items-start gap-5 lg:min-w-[280px] lg:items-start">
               <Link
                 href="/book-appointment"
-                className="group inline-flex min-h-12 w-full items-center justify-center gap-3 bg-[var(--sutra-white)] px-7 text-sm font-semibold text-[var(--sutra-teal)] transition-colors duration-200 hover:bg-[var(--sutra-pale-sage)] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--sutra-teal)] sm:w-auto"
+                className="group inline-flex min-h-12 w-full items-center justify-center gap-3 bg-white px-7 text-sm font-semibold text-[#17413D] transition-colors duration-200 hover:bg-[#E7EDE8] focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-[#17413D] sm:w-auto"
               >
                 Book a Consultation
                 <span

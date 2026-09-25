@@ -81,7 +81,7 @@ export default function FAQ({ faqs = defaultFaqs }: FAQProps) {
       className="bg-white"
     >
       <Container>
-        <div className="py-14 sm:py-16 lg:py-20">
+        <div className="py-12 sm:py-15 lg:py-15">
           <div className="grid gap-6 lg:grid-cols-[0.55fr_1.45fr] lg:gap-16">
             <div>
               <div className="flex items-center gap-3">
