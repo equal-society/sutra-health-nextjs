@@ -632,18 +632,7 @@ export default function Header() {
             <span aria-hidden="true">→</span>
           </Link>
 
-          <Link
-            href="/contact"
-            className={`mobileNavLink ${
-              pathname.startsWith("/contact")
-                ? "mobileNavLinkActive"
-                : ""
-            }`}
-            onClick={closeNavigation}
-          >
-            <span>Contact</span>
-            <span aria-hidden="true">→</span>
-          </Link>
+  
 
           <Link
             href="/book-appointment"
