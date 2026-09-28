@@ -1,5 +1,5 @@
-import ServicePageTemplate, { createServiceMetadata } from "@/components/what-we-do/ServicePageTemplate";
-import { behaviourStressMind } from "@/components/what-we-do/service-pages";
+import ServicePageTemplate, { createServiceMetadata } from "@/components/services/ServicePageTemplate";
+import { behaviourStressMind } from "@/components/services/service-pages";
 
 export const metadata = createServiceMetadata(behaviourStressMind);
 

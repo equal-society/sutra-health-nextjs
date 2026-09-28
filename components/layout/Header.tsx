@@ -46,36 +46,36 @@ type NavItem = {
 };
 
 type DropdownName =
-  | "whatWeDo"
+  | "services"
   | "conditions"
   | "about"
   | "resources"
   | null;
 
-const whatWeDo: NavItem[] = [
+const services: NavItem[] = [
   {
     label: "Physician Consultation",
-    href: "/what-we-do/physician-consultation",
+    href: "/services/physician-consultation",
     icon: HeartPulse,
   },
   {
     label: "Lifestyle Medicine",
-    href: "/what-we-do/lifestyle",
+    href: "/services/lifestyle",
     icon: Activity,
   },
   {
     label: "Nutrition",
-    href: "/what-we-do/nutrition",
+    href: "/services/nutrition",
     icon: Apple,
   },
   {
     label: "Therapeutic Yoga",
-    href: "/what-we-do/therapeutic-yoga",
+    href: "/services/therapeutic-yoga",
     icon: PersonStanding,
   },
   {
     label: "Behaviour, Stress & Mind",
-    href: "/what-we-do/behaviour-stress-mind",
+    href: "/services/behaviour-stress-mind",
     icon: Brain,
   },
 ];
@@ -146,6 +146,11 @@ const resources: NavItem[] = [
     label: "Health Articles",
     href: "/resources/articles",
     icon: Activity,
+  },
+  {
+    label: "Health Guides",
+    href: "/resources/health-guides",
+    icon: HeartPulse,
   },
   {
     label: "21-Point Health Assessment",
@@ -454,12 +459,12 @@ export default function Header() {
         {/* DESKTOP NAV */}
         <nav className="desktopNav" aria-label="Primary navigation">
           <DesktopDropdown
-            name="whatWeDo"
-            label="What We Do"
-            items={whatWeDo}
+            name="services"
+            label="Services"
+            items={services}
             viewAll={{
-              label: "Explore What We Do",
-              href: "/what-we-do",
+              label: "Explore A Services",
+              href: "/services",
             }}
             openDropdown={openDropdown}
             setOpenDropdown={setOpenDropdown}
@@ -565,12 +570,12 @@ export default function Header() {
       >
         <nav className="mobileNavInner" aria-label="Mobile navigation">
           <MobileDropdown
-            name="whatWeDo"
-            label="What We Do"
-            items={whatWeDo}
+            name="services"
+            label="Services"
+            items={services}
             viewAll={{
-              label: "Explore What We Do",
-              href: "/what-we-do",
+              label: "Explore All Services",
+              href: "/services",
             }}
             openDropdown={openDropdown}
             toggleDropdown={toggleDropdown}

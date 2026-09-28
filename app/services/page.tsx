@@ -2,14 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Check } from "lucide-react";
 
-const practices = [
+const services = [
   {
     number: "01",
     title: "Physician Consultation",
     description:
-     "Doctor-led consultation to understand your health concerns, medical history, lifestyle and next steps.",
-      image: "/images/retreat/doctor.webp",
-      href: "/what-we-do/physician-consultation",
+      "Doctor-led consultation to understand your health concerns, medical history, lifestyle and next steps.",
+    image: "/images/retreat/doctor.webp",
+    href: "/services/physician-consultation",
   },
   {
     number: "02",
@@ -17,7 +17,7 @@ const practices = [
     description:
       "Practical support around nutrition, sleep, stress and everyday habits.",
     image: "/images/what-we-do/lifestyle-medicine.webp",
-    href: "/what-we-do/lifestyle",
+    href: "/services/lifestyle",
   },
   {
     number: "03",
@@ -25,7 +25,7 @@ const practices = [
     description:
       "Personalised guidance around food and eating habits that fits your daily life.",
     image: "/images/what-we-do/nutrition-counselling.webp",
-    href: "/what-we-do/nutrition",
+    href: "/services/nutrition",
   },
   {
     number: "04",
@@ -33,7 +33,7 @@ const practices = [
     description:
       "Adapted yoga practices shaped around your health, ability and comfort.",
     image: "/images/what-we-do/therapeutic-yoga.webp",
-    href: "/what-we-do/therapeutic-yoga",
+    href: "/services/therapeutic-yoga",
   },
   {
     number: "05",
@@ -41,7 +41,15 @@ const practices = [
     description:
       "Practical support for habits, stress and changes you can sustain in everyday life.",
     image: "/images/what-we-do/behaviour-mind.webp",
-    href: "/what-we-do/behaviour-stress-mind",
+    href: "/services/behaviour-stress-mind",
+  },
+  {
+    number: "06",
+    title: "Traditional Therapies",
+    description:
+      "Traditional wellness practices including Shirodhara and Abhyanga, offered with attention to individual suitability.",
+    image: "/images/what-we-do/traditional-therapies.webp",
+    href: "/services/traditional-therapies",
   },
 ];
 
@@ -49,84 +57,48 @@ const waysOfWorking = [
   {
     number: "01",
     title: "Understand",
-    description:
-      "Start with your health, concerns, goals and everyday routine.",
+    description: "Start with your health, concerns, goals and everyday routine.",
   },
   {
     number: "02",
     title: "Personalise",
-    description:
-      "Build practical recommendations around your needs and ability.",
+    description: "Build practical recommendations around your needs and ability.",
   },
   {
     number: "03",
     title: "Practise",
-    description:
-      "Introduce changes through nutrition, yoga and lifestyle practices.",
+    description: "Introduce changes through nutrition, yoga and lifestyle practices.",
   },
   {
     number: "04",
     title: "Review",
-    description:
-      "Review what is working and adapt the approach as your needs change.",
+    description: "Review what is working and adapt the approach as your needs change.",
   },
 ];
 
 const healthAreas = [
-  {
-    title: "Diabetes & Blood Sugar",
-    href: "/conditions/diabetes-blood-sugar",
-  },
-  {
-    title: "High Blood Pressure",
-    href: "/conditions/high-blood-pressure",
-  },
-  {
-    title: "Weight Management",
-    href: "/conditions/weight-management",
-  },
-  {
-    title: "Digestive & Gut Health",
-    href: "/conditions/digestive-gut-health",
-  },
-  {
-    title: "Arthritis & Joint Pain",
-    href: "/conditions/arthritis-joint-pain",
-  },
-  {
-    title: "Migraine & Headache",
-    href: "/conditions/migraine-headache",
-  },
-  {
-    title: "Women's Health",
-    href: "/conditions/womens-health",
-  },
+  ["Diabetes & Blood Sugar", "/conditions/diabetes-blood-sugar"],
+  ["High Blood Pressure", "/conditions/high-blood-pressure"],
+  ["Weight Management", "/conditions/weight-management"],
+  ["Digestive & Gut Health", "/conditions/digestive-gut-health"],
+  ["Arthritis & Joint Pain", "/conditions/arthritis-joint-pain"],
+  ["Migraine & Headache", "/conditions/migraine-headache"],
+  ["Women's Health", "/conditions/womens-health"],
 ];
 
 const siteUrl = "https://lifequality.org.in";
 
-/*
-  CHANGED: this page previously had no `robots`, no Twitter card, and no
-  OG image — every other page on the site has all three. Added for
-  consistency and to match what search engines and social previews
-  expect from every other page.
-*/
 export const metadata = {
-  title: "What We Do | Sutra Health",
+  title: "Services | Sutra Health",
   description:
-    "Explore Sutra Health's physician consultation, lifestyle medicine, nutrition, therapeutic yoga, and behaviour, stress and mind practices — in Faridabad, Delhi NCR and online across India.",
-  alternates: {
-    canonical: `${siteUrl}/what-we-do`,
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
+    "Explore Sutra Health services including physician consultation, lifestyle medicine, nutrition, therapeutic yoga, behaviour and stress support, and traditional therapies in Faridabad.",
+  alternates: { canonical: `${siteUrl}/services` },
+  robots: { index: true, follow: true },
   openGraph: {
-    title: "What We Do | Sutra Health",
+    title: "Services | Sutra Health",
     description:
-      "Doctor-led integrative healthcare combining medical care with lifestyle, nutrition, therapeutic yoga and behaviour support.",
-    url: `${siteUrl}/what-we-do`,
+      "Explore personalised health and wellbeing services at Sutra Health.",
+    url: `${siteUrl}/services`,
     siteName: "Sutra Health",
     type: "website",
     images: [
@@ -134,26 +106,19 @@ export const metadata = {
         url: `${siteUrl}/images/hero-desktop.webp`,
         width: 1200,
         height: 630,
-        alt: "Sutra Health — What We Do",
+        alt: "Sutra Health services",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "What We Do | Sutra Health",
+    title: "Services | Sutra Health",
     description:
-      "Doctor-led integrative healthcare combining medical care with lifestyle, nutrition, therapeutic yoga and behaviour support.",
+      "Explore personalised health and wellbeing services at Sutra Health.",
     images: [`${siteUrl}/images/hero-desktop.webp`],
   },
 };
 
-/*
-  ADDED: this hub page had zero structured data, despite fanning out to
-  all 5 service pages — every one of which has its own schema. A
-  BreadcrumbList plus an ItemList of the services it links to gives
-  Google (and AI answer tools) a clear map of the page's role and content,
-  matching what every other page on the site already provides.
-*/
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
@@ -164,24 +129,25 @@ const structuredData = {
         {
           "@type": "ListItem",
           position: 2,
-          name: "What We Do",
-          item: `${siteUrl}/what-we-do`,
+          name: "Services",
+          item: `${siteUrl}/services`,
         },
       ],
     },
     {
       "@type": "ItemList",
-      itemListElement: practices.map((practice, index) => ({
+      name: "Sutra Health Services",
+      itemListElement: services.map((service, index) => ({
         "@type": "ListItem",
         position: index + 1,
-        name: practice.title,
-        url: `${siteUrl}${practice.href}`,
+        name: service.title,
+        url: `${siteUrl}${service.href}`,
       })),
     },
   ],
 };
 
-export default function WhatWeDoPage() {
+export default function ServicesPage() {
   return (
     <main className="bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">
       <script
@@ -189,34 +155,23 @@ export default function WhatWeDoPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      {/* =========================================================
-          HERO
-      ========================================================= */}
       <section className="border-b border-[var(--sutra-border)]">
         <div className="mx-auto max-w-7xl px-6 pb-16 pt-14 sm:px-8 sm:pb-20 sm:pt-20 lg:px-10 lg:pb-24 lg:pt-24">
           <div className="max-w-4xl">
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
-              What we do
+              Services
             </p>
-
             <h1 className="mt-5 max-w-4xl font-[var(--font-serif)] text-4xl font-medium leading-[1.06] tracking-[-0.025em] sm:text-5xl lg:text-7xl">
               Care built around
               <br className="hidden sm:block" />
               the whole you.
             </h1>
-
             <p className="mt-6 max-w-2xl text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
               Sutra Health brings together physician consultation, lifestyle
-              medicine, nutrition, therapeutic yoga and behaviour support to
-              help you understand your health and build practical habits around
-              everyday life.
+              medicine, nutrition, therapeutic yoga, behaviour support and
+              traditional therapies to help you understand your health and
+              build practical habits around everyday life.
             </p>
-
-            {/*
-              CHANGED: added the location line already used on the Hero and
-              service pages elsewhere on the site, so this page carries the
-              same "where do you serve" signal instead of leaving it out.
-            */}
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-[var(--sutra-muted)]">
               <span>Doctor-led</span>
               <span>Evidence-informed</span>
@@ -226,26 +181,18 @@ export default function WhatWeDoPage() {
         </div>
       </section>
 
-      {/* =========================================================
-          SERVICES
-      ========================================================= */}
-      <section
-        aria-labelledby="services-title"
-        className="bg-[var(--sutra-white)]"
-      >
+      <section aria-labelledby="services-title" className="bg-[var(--sutra-white)]">
         <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
           <div className="max-w-2xl">
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
               Our services
             </p>
-
             <h2
               id="services-title"
               className="mt-4 font-[var(--font-serif)] text-3xl font-medium leading-[1.12] tracking-[-0.02em] sm:text-4xl"
             >
               Ways we can support you.
             </h2>
-
             <p className="mt-5 max-w-xl text-base leading-7 text-[var(--sutra-muted)]">
               Start with the support that is relevant to where you are now.
               Your care can bring together more than one of these practices.
@@ -253,61 +200,34 @@ export default function WhatWeDoPage() {
           </div>
 
           <div className="mt-10 grid gap-4 sm:mt-12 lg:grid-cols-2 lg:gap-5">
-            {practices.map((practice) => (
+            {services.map((service) => (
               <Link
-                key={practice.number}
-                href={practice.href}
+                key={service.number}
+                href={service.href}
                 className="group border border-[var(--sutra-border-strong)] bg-[var(--sutra-porcelain)] transition-colors duration-300 hover:border-[var(--sutra-teal)]/30"
               >
                 <div className="flex gap-5 p-5 sm:gap-6 sm:p-6">
-                  {practice.image ? (
-                    /*
-                      CHANGED: swapped raw <img> for next/image (matches
-                      every other image on the site — automatic
-                      optimization, responsive sizes, lazy loading), and
-                      gave it real, descriptive alt text instead of "".
-                      Empty alt text on a meaningful image throws away both
-                      an accessibility signal and an SEO opportunity.
-                    */
-                    <div className="relative h-[116px] w-[116px] shrink-0 overflow-hidden sm:h-[128px] sm:w-[128px]">
-                      <Image
-                        src={practice.image}
-                        alt={`${practice.title} at Sutra Health`}
-                        fill
-                        sizes="128px"
-                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                      />
-                    </div>
-                  ) : (
-                    <div className="flex h-[116px] w-[116px] shrink-0 items-start justify-center border border-[var(--sutra-border)] bg-[var(--sutra-pale-sage)] pt-5 sm:h-[128px] sm:w-[128px]">
-                      {/*
-                        FIXED: this used to hardcode "01" regardless of
-                        which service was missing an image. Now uses
-                        practice.number so it shows the correct number if
-                        this fallback ever actually renders.
-                      */}
-                      <span className="font-[var(--font-serif)] text-4xl text-[var(--sutra-teal)]">
-                        {practice.number}
-                      </span>
-                    </div>
-                  )}
-
+                  <div className="relative h-[116px] w-[116px] shrink-0 overflow-hidden sm:h-[128px] sm:w-[128px]">
+                    <Image
+                      src={service.image}
+                      alt={`${service.title} at Sutra Health`}
+                      fill
+                      sizes="128px"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
+                  </div>
                   <div className="flex min-w-0 flex-1 flex-col">
                     <span className="text-[11px] font-medium tracking-[0.12em] text-[var(--sutra-muted)]">
-                      {practice.number}
+                      {service.number}
                     </span>
-
                     <h3 className="mt-2 font-[var(--font-serif)] text-xl font-medium leading-[1.2] tracking-[-0.015em] sm:text-2xl">
-                      {practice.title}
+                      {service.title}
                     </h3>
-
                     <p className="mt-3 text-sm leading-6 text-[var(--sutra-muted)] sm:text-base sm:leading-7">
-                      {practice.description}
+                      {service.description}
                     </p>
-
                     <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-[var(--sutra-teal)]">
                       <span>Explore</span>
-
                       <ArrowUpRight
                         size={15}
                         strokeWidth={1.7}
@@ -323,33 +243,24 @@ export default function WhatWeDoPage() {
         </div>
       </section>
 
-      {/* =========================================================
-          HOW WE WORK
-      ========================================================= */}
-      <section
-        aria-labelledby="how-we-work-title"
-        className="bg-[var(--sutra-porcelain)]"
-      >
+      <section aria-labelledby="how-we-work-title" className="bg-[var(--sutra-porcelain)]">
         <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                 How we work
               </p>
-
               <h2
                 id="how-we-work-title"
                 className="mt-4 max-w-md font-[var(--font-serif)] text-3xl font-medium leading-[1.12] tracking-[-0.02em] sm:text-4xl"
               >
                 Start where you are.
               </h2>
-
               <p className="mt-5 max-w-md text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
                 Your care begins with understanding your health, your routine
                 and what matters to you. From there, we build practical steps
                 that can fit into everyday life.
               </p>
-
               <Link
                 href="/approach"
                 className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[var(--sutra-teal)]"
@@ -368,12 +279,10 @@ export default function WhatWeDoPage() {
                   <span className="pt-1 text-[11px] font-medium tracking-[0.1em] text-[var(--sutra-muted)]">
                     {step.number}
                   </span>
-
                   <div>
                     <h3 className="font-[var(--font-serif)] text-xl font-medium leading-[1.25] sm:text-2xl">
                       {step.title}
                     </h3>
-
                     <p className="mt-2 text-sm leading-6 text-[var(--sutra-muted)] sm:text-base sm:leading-7">
                       {step.description}
                     </p>
@@ -385,20 +294,13 @@ export default function WhatWeDoPage() {
         </div>
       </section>
 
-      {/* =========================================================
-          HEALTH AREAS
-      ========================================================= */}
-      <section
-        aria-labelledby="health-areas-title"
-        className="bg-[var(--sutra-white)]"
-      >
+      <section aria-labelledby="health-areas-title" className="bg-[var(--sutra-white)]">
         <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
           <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                 Health areas
               </p>
-
               <h2
                 id="health-areas-title"
                 className="mt-4 font-[var(--font-serif)] text-3xl font-medium leading-[1.12] tracking-[-0.02em] sm:text-4xl"
@@ -406,7 +308,6 @@ export default function WhatWeDoPage() {
                 Explore the areas we support.
               </h2>
             </div>
-
             <Link
               href="/conditions"
               className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-[var(--sutra-teal)]"
@@ -417,10 +318,10 @@ export default function WhatWeDoPage() {
           </div>
 
           <div className="mt-10 grid border-t border-[var(--sutra-border)] sm:grid-cols-2">
-            {healthAreas.map((area, index) => (
+            {healthAreas.map(([title, href], index) => (
               <Link
-                key={area.title}
-                href={area.href}
+                key={title}
+                href={href}
                 className={`group flex items-center justify-between gap-5 border-b border-[var(--sutra-border)] py-5 sm:py-6 ${
                   index % 2 === 0
                     ? "sm:border-r sm:pr-7 lg:pr-10"
@@ -428,9 +329,8 @@ export default function WhatWeDoPage() {
                 }`}
               >
                 <span className="font-[var(--font-serif)] text-xl font-medium leading-[1.3] transition-colors duration-300 group-hover:text-[var(--sutra-teal)] sm:text-2xl">
-                  {area.title}
+                  {title}
                 </span>
-
                 <ArrowUpRight
                   size={17}
                   strokeWidth={1.5}
@@ -443,9 +343,6 @@ export default function WhatWeDoPage() {
         </div>
       </section>
 
-      {/* =========================================================
-          21-POINT ASSESSMENT
-      ========================================================= */}
       <section className="bg-[var(--sutra-pale-sage)]">
         <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
           <div className="grid gap-10 lg:grid-cols-[1fr_0.75fr] lg:items-center lg:gap-20">
@@ -453,16 +350,13 @@ export default function WhatWeDoPage() {
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                 A simple place to start
               </p>
-
               <h2 className="mt-4 max-w-2xl font-[var(--font-serif)] text-3xl font-medium leading-[1.1] tracking-[-0.02em] sm:text-4xl lg:text-5xl">
                 Understand your health before changing it.
               </h2>
-
               <p className="mt-5 max-w-xl text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
                 The Sutra 21-Point Health Assessment provides a structured way
                 to reflect on important aspects of your health and lifestyle.
               </p>
-
               <Link
                 href="/assessment"
                 className="mt-7 inline-flex min-h-12 items-center gap-2 bg-[var(--sutra-teal)] px-6 py-3 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[var(--sutra-teal-hover)]"
@@ -470,7 +364,6 @@ export default function WhatWeDoPage() {
                 Take the assessment
                 <ArrowUpRight size={15} strokeWidth={1.7} />
               </Link>
-
               <p className="mt-4 text-xs leading-5 text-[var(--sutra-muted)]">
                 The assessment is for health and lifestyle awareness and is not
                 a medical diagnosis.
@@ -482,34 +375,20 @@ export default function WhatWeDoPage() {
                 <span className="font-[var(--font-serif)] text-6xl font-medium leading-none text-[var(--sutra-teal)] sm:text-7xl">
                   21
                 </span>
-
                 <span className="pb-1 text-xs uppercase tracking-[0.12em] text-[var(--sutra-muted)]">
                   points
                 </span>
               </div>
-
               <div className="divide-y divide-[var(--sutra-border)]">
-                {[
-                  "Nutrition",
-                  "Sleep",
-                  "Digestion",
-                  "Physical activity",
-                  "Mental wellbeing",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-center gap-3 py-4"
-                  >
+                {["Nutrition", "Sleep", "Digestion", "Physical activity", "Mental wellbeing"].map((item) => (
+                  <div key={item} className="flex items-center gap-3 py-4">
                     <Check
                       size={15}
                       strokeWidth={1.7}
                       aria-hidden="true"
                       className="shrink-0 text-[var(--sutra-teal)]"
                     />
-
-                    <span className="text-sm leading-6 text-[var(--sutra-muted)]">
-                      {item}
-                    </span>
+                    <span className="text-sm leading-6 text-[var(--sutra-muted)]">{item}</span>
                   </div>
                 ))}
               </div>
@@ -518,9 +397,6 @@ export default function WhatWeDoPage() {
         </div>
       </section>
 
-      {/* =========================================================
-          FINAL CTA
-      ========================================================= */}
       <section className="bg-[var(--sutra-teal)] text-white">
         <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
@@ -528,29 +404,14 @@ export default function WhatWeDoPage() {
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/60">
                 Your next step
               </p>
-
               <h2 className="mt-4 font-[var(--font-serif)] text-3xl font-medium leading-[1.1] tracking-[-0.02em] sm:text-4xl lg:text-5xl">
                 Start with a conversation.
               </h2>
-
               <p className="mt-5 max-w-xl text-base leading-7 text-white/75 sm:text-lg sm:leading-8">
                 Get practical, evidence-informed support to build healthier
                 habits that fit your life.
               </p>
-
-              {/*
-                CHANGED: was "Doctor-led · Evidence-informed · Whole-person
-                care" — the exact same three words already used in this
-                page's own Hero section above. Repeating the identical
-                badge twice on one page adds nothing a second time. Swapped
-                for the real numbers already used on the homepage Hero,
-                which are specific and haven't appeared on this page yet.
-              */}
-              <p className="mt-5 text-xs text-white/55 sm:text-sm">
-                1,200+ people supported · 15 years of experience
-              </p>
             </div>
-
             <Link
               href="/book-appointment"
               className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 bg-white px-7 py-3 text-sm font-semibold text-[var(--sutra-teal)] transition-colors duration-300 hover:bg-[var(--sutra-porcelain)]"
@@ -562,9 +423,6 @@ export default function WhatWeDoPage() {
         </div>
       </section>
 
-      {/* =========================================================
-          DISCLAIMER
-      ========================================================= */}
       <div className="bg-[var(--sutra-porcelain)]">
         <div className="mx-auto max-w-7xl px-6 py-5 sm:px-8 lg:px-10">
           <p className="text-xs leading-5 text-[var(--sutra-muted)]">

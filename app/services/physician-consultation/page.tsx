@@ -1,5 +1,7 @@
-import ServicePageTemplate, { createServiceMetadata } from "@/components/what-we-do/ServicePageTemplate";
-import { physicianConsultation } from "@/components/what-we-do/service-pages";
+import ServicePageTemplate, {
+  createServiceMetadata,
+} from "@/components/services/ServicePageTemplate";
+import { physicianConsultation } from "@/components/services/service-pages";
 
 export const metadata = createServiceMetadata(physicianConsultation);
 

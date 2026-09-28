@@ -74,9 +74,9 @@ export const physicianConsultation: ServicePageConfig = {
     "The consultation can also connect with Sutra Health's wider services where appropriate, including Lifestyle Medicine, Nutrition and Therapeutic Yoga.",
   ],
   related: [
-    { title: "Lifestyle Medicine", description: "Explore nutrition, movement, sleep, stress and everyday health behaviours.", href: "/what-we-do/lifestyle" },
-    { title: "Nutrition", description: "Discuss food and eating patterns in the context of your health and daily life.", href: "/what-we-do/nutrition" },
-    { title: "Therapeutic Yoga", description: "Explore guided Yoga practices connected to movement and wellbeing.", href: "/what-we-do/therapeutic-yoga" },
+    { title: "Lifestyle Medicine", description: "Explore nutrition, movement, sleep, stress and everyday health behaviours.", href: "/services/lifestyle" },
+    { title: "Nutrition", description: "Discuss food and eating patterns in the context of your health and daily life.", href: "/services/nutrition" },
+    { title: "Therapeutic Yoga", description: "Explore guided Yoga practices connected to movement and wellbeing.", href: "/services/therapeutic-yoga" },
   ],
   faq: [
     { question: "What happens during a physician consultation?", answer: "You can discuss what brings you to the consultation, your relevant medical history and the questions or concerns you want to address. The conversation can then move towards appropriate next steps." },
@@ -155,9 +155,9 @@ export const lifestyle: ServicePageConfig = {
     "At Sutra Health, Lifestyle Medicine can connect with physician care, Nutrition, Therapeutic Yoga and Behaviour, Stress & Mind support where appropriate.",
   ],
   related: [
-    { title: "Physician Consultation", description: "Begin with a doctor-led conversation about your health and medical history.", href: "/what-we-do/physician-consultation" },
-    { title: "Nutrition", description: "Explore food and eating patterns as part of your wider health approach.", href: "/what-we-do/nutrition" },
-    { title: "Behaviour, Stress & Mind", description: "Understand habits, stress and behavioural patterns that influence everyday health.", href: "/what-we-do/behaviour-stress-mind" },
+    { title: "Physician Consultation", description: "Begin with a doctor-led conversation about your health and medical history.", href: "/services/physician-consultation" },
+    { title: "Nutrition", description: "Explore food and eating patterns as part of your wider health approach.", href: "/services/nutrition" },
+    { title: "Behaviour, Stress & Mind", description: "Understand habits, stress and behavioural patterns that influence everyday health.", href: "/services/behaviour-stress-mind" },
   ],
   faq: [
     { question: "What is Lifestyle Medicine?", answer: "Lifestyle Medicine is an approach that considers everyday factors such as nutrition, physical activity, sleep, stress and behaviour alongside appropriate medical care." },
@@ -222,9 +222,9 @@ export const nutrition: ServicePageConfig = {
     "That is why nutrition support at Sutra Health considers the wider context rather than treating food choices in isolation.",
   ],
   related: [
-    { title: "Physician Consultation", description: "Begin with a doctor-led conversation about your health concerns and medical history.", href: "/what-we-do/physician-consultation" },
-    { title: "Lifestyle Medicine", description: "Explore nutrition alongside movement, sleep, stress and other lifestyle factors.", href: "/what-we-do/lifestyle" },
-    { title: "Therapeutic Yoga", description: "Explore guided Yoga as part of a broader approach to movement and wellbeing.", href: "/what-we-do/therapeutic-yoga" },
+    { title: "Physician Consultation", description: "Begin with a doctor-led conversation about your health concerns and medical history.", href: "/services/physician-consultation" },
+    { title: "Lifestyle Medicine", description: "Explore nutrition alongside movement, sleep, stress and other lifestyle factors.", href: "/services/lifestyle" },
+    { title: "Therapeutic Yoga", description: "Explore guided Yoga as part of a broader approach to movement and wellbeing.", href: "/services/therapeutic-yoga" },
   ],
   faq: [
     /*
@@ -295,9 +295,9 @@ export const therapeuticYoga: ServicePageConfig = {
     "The purpose is to create a more connected approach to health rather than treating each part separately.",
   ],
   related: [
-    { title: "Physician Consultation", description: "Begin with a doctor-led conversation about your health concerns and medical history.", href: "/what-we-do/physician-consultation" },
-    { title: "Lifestyle Medicine", description: "Explore movement alongside nutrition, sleep, stress and other lifestyle factors.", href: "/what-we-do/lifestyle" },
-    { title: "Behaviour, Stress & Mind", description: "Explore practical support for stress, behaviour and the mind.", href: "/what-we-do/behaviour-stress-mind" },
+    { title: "Physician Consultation", description: "Begin with a doctor-led conversation about your health concerns and medical history.", href: "/services/physician-consultation" },
+    { title: "Lifestyle Medicine", description: "Explore movement alongside nutrition, sleep, stress and other lifestyle factors.", href: "/services/lifestyle" },
+    { title: "Behaviour, Stress & Mind", description: "Explore practical support for stress, behaviour and the mind.", href: "/services/behaviour-stress-mind" },
   ],
   faq: [
     { question: "What is Therapeutic Yoga?", answer: "Therapeutic Yoga uses appropriate Yoga-based practices as part of a broader approach to health and wellbeing. The practice can be adapted to an individual's needs, abilities and circumstances." },
@@ -364,9 +364,9 @@ export const behaviourStressMind: ServicePageConfig = {
     "This wider perspective helps keep the focus on the person rather than treating one part of their health in isolation.",
   ],
   related: [
-    { title: "Physician Consultation", description: "Begin with a doctor-led conversation about your health concerns and medical history.", href: "/what-we-do/physician-consultation" },
-    { title: "Lifestyle Medicine", description: "Explore stress and behaviour alongside nutrition, movement, sleep and other lifestyle factors.", href: "/what-we-do/lifestyle" },
-    { title: "Therapeutic Yoga", description: "Explore guided Yoga practices connected to movement, awareness and wellbeing.", href: "/what-we-do/therapeutic-yoga" },
+    { title: "Physician Consultation", description: "Begin with a doctor-led conversation about your health concerns and medical history.", href: "/services/physician-consultation" },
+    { title: "Lifestyle Medicine", description: "Explore stress and behaviour alongside nutrition, movement, sleep and other lifestyle factors.", href: "/services/lifestyle" },
+    { title: "Therapeutic Yoga", description: "Explore guided Yoga practices connected to movement, awareness and wellbeing.", href: "/services/therapeutic-yoga" },
   ],
   faq: [
     { question: "What does Behaviour, Stress & Mind support involve?", answer: "It focuses on understanding stress, habits, behaviour and mental wellbeing in the context of everyday life, with practical approaches that can support healthier routines." },
@@ -381,4 +381,158 @@ export const behaviourStressMind: ServicePageConfig = {
   ],
   finalTitle: "Start with a conversation about what is affecting your health.",
   finalDescription: "Explore the patterns that matter to you and identify practical next steps.",
+};
+
+export const traditionalTherapies: ServicePageConfig = {
+  name: "Traditional Therapies",
+  shortName: "Traditional Therapies",
+  slug: "traditional-therapies",
+  title: "Traditional Therapies in Faridabad & Delhi NCR | Sutra Health",
+  description:
+    "Traditional wellness practices at Sutra Health, including Shirodhara and Abhyanga, offered as part of a broader approach to relaxation, wellbeing and personalised care.",
+  heroDescription:
+    "Traditional practices including Shirodhara and Abhyanga, offered as part of a considered approach to rest, relaxation and wellbeing.",
+  eyebrow: "Traditional Therapies",
+  trust: [
+    "Traditional practices",
+    "Individualised approach",
+    "Faridabad, Delhi NCR & online",
+  ],
+
+  introEyebrow: "A Traditional Practice",
+  introTitle: "Traditional therapies, approached with care and context.",
+  introParagraphs: [
+    "Traditional therapies can be part of a wider wellbeing approach when they are appropriate for the individual and their circumstances.",
+    "At Sutra Health, the focus is on understanding what you are looking for, explaining what a session involves and considering the practice alongside your broader health needs.",
+    "Our Traditional Therapies offering includes Shirodhara and Abhyanga. These practices are presented for relaxation and wellbeing and are not a substitute for appropriate medical diagnosis or treatment.",
+  ],
+
+  focusEyebrow: "What We Offer",
+  focusTitle: "Two traditional practices, one considered approach.",
+  focusIntro:
+    "The experience depends on the practice selected, your needs and the way the session is planned.",
+
+  focusAreas: [
+    {
+      number: "01",
+      title: "Shirodhara",
+      description:
+        "A traditional practice in which a steady stream of liquid is gently directed over the forehead while you remain comfortably positioned. The session is approached as a calming and restorative experience.",
+    },
+    {
+      number: "02",
+      title: "Abhyanga",
+      description:
+        "A traditional oil-based body massage practice. The session can provide time for relaxation and body awareness within a calm, guided setting.",
+    },
+    {
+      number: "03",
+      title: "A considered session",
+      description:
+        "Before a session, the relevant practice, your expectations and any circumstances that may affect suitability can be discussed.",
+    },
+    {
+      number: "04",
+      title: "Part of wider care",
+      description:
+        "Traditional therapies can sit alongside appropriate medical, lifestyle, nutrition or movement support rather than replacing necessary healthcare.",
+    },
+  ],
+
+  processTitle: "Understand → Prepare → Practise → Review",
+  processIntro:
+    "The session begins with understanding what you are looking for and making sure the selected practice is appropriate for you.",
+
+  process: [
+    {
+      number: "01",
+      title: "Understand",
+      description:
+        "Discuss your needs, expectations and relevant health information before choosing a practice.",
+    },
+    {
+      number: "02",
+      title: "Prepare",
+      description:
+        "Understand what the session involves and prepare for the selected traditional practice.",
+    },
+    {
+      number: "03",
+      title: "Practise",
+      description:
+        "Experience the session in a calm, guided setting with attention to comfort throughout.",
+    },
+    {
+      number: "04",
+      title: "Review",
+      description:
+        "Discuss how you experienced the session and whether any further support or follow-up is appropriate.",
+    },
+  ],
+
+  contextEyebrow: "Complementary, Not Standalone",
+  contextTitle:
+    "Traditional therapies can be part of a wider approach to wellbeing.",
+  contextParagraphs: [
+    "Shirodhara and Abhyanga are traditional practices rather than replacements for medical diagnosis or treatment.",
+    "Where appropriate, Traditional Therapies can connect with physician consultation, Lifestyle Medicine, Nutrition and Therapeutic Yoga as part of a broader approach to care.",
+  ],
+
+  related: [
+    {
+      title: "Physician Consultation",
+      description:
+        "Begin with a doctor-led conversation about your health concerns and medical history.",
+      href: "/services/physician-consultation",
+    },
+    {
+      title: "Lifestyle Medicine",
+      description:
+        "Explore nutrition, movement, sleep, stress and everyday health behaviours.",
+      href: "/services/lifestyle",
+    },
+    {
+      title: "Therapeutic Yoga",
+      description:
+        "Explore guided Yoga practices connected to movement and wellbeing.",
+      href: "/services/therapeutic-yoga",
+    },
+  ],
+
+  faq: [
+    {
+      question: "What are Traditional Therapies at Sutra Health?",
+      answer:
+        "Traditional Therapies at Sutra Health include practices such as Shirodhara and Abhyanga, offered as part of a broader approach to relaxation and wellbeing.",
+    },
+    {
+      question: "What is Shirodhara?",
+      answer:
+        "Shirodhara is a traditional practice in which a steady stream of liquid is gently directed over the forehead while the person remains comfortably positioned.",
+    },
+    {
+      question: "What is Abhyanga?",
+      answer:
+        "Abhyanga is a traditional oil-based body massage practice that can be experienced as a relaxing and restorative session.",
+    },
+    {
+      question: "Are Traditional Therapies a replacement for medical treatment?",
+      answer:
+        "No. Traditional Therapies should not replace appropriate medical diagnosis or treatment. They may be considered as complementary support where appropriate.",
+    },
+    {
+      question: "Can I discuss my health before booking a session?",
+      answer:
+        "Yes. A consultation can help clarify what you are looking for and whether the selected practice is appropriate for your circumstances.",
+    },
+    {
+      question: "How much do Traditional Therapy sessions cost?",
+      answer:
+        "Sessions start at ₹[ADD STARTING PRICE HERE]. The exact cost depends on the practice and session details.",
+    },
+  ],
+
+  finalTitle: "Explore a traditional practice with the wider picture in view.",
+  finalDescription:
+    "Start with a conversation about what you are looking for and whether Traditional Therapies are appropriate for you.",
 };

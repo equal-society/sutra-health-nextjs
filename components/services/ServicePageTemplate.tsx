@@ -33,7 +33,7 @@ export type ServicePageConfig = {
 };
 
 export function createServiceMetadata(config: ServicePageConfig): Metadata {
-  const canonical = `https://lifequality.org.in/what-we-do/${config.slug}`;
+  const canonical = `https://lifequality.org.in/services/${config.slug}`;
 
   return {
     title: config.title,
@@ -57,7 +57,7 @@ export function createServiceMetadata(config: ServicePageConfig): Metadata {
 
 function getSchema(config: ServicePageConfig) {
   const baseUrl = "https://lifequality.org.in";
-  const url = `${baseUrl}/what-we-do/${config.slug}`;
+  const url = `${baseUrl}/services/${config.slug}`;
 
   return {
     "@context": "https://schema.org",
@@ -85,7 +85,7 @@ function getSchema(config: ServicePageConfig) {
             "@type": "ListItem",
             position: 2,
             name: "What We Do",
-            item: `${baseUrl}/what-we-do`,
+            item: `${baseUrl}/services`,
           },
           { "@type": "ListItem", position: 3, name: config.name, item: url },
         ],
@@ -159,7 +159,7 @@ export default function ServicePageTemplate({ config }: { config: ServicePageCon
               </Link>
 
               <Link
-                href="/what-we-do"
+                href="/services"
                 className="inline-flex items-center justify-center rounded-none border border-[var(--sutra-border-strong)] px-6 py-3 text-sm font-semibold text-[var(--sutra-ink)] transition-colors hover:border-[var(--sutra-teal)] hover:text-[var(--sutra-teal)]"
               >
                 Explore What We Do
