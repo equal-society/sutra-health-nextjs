@@ -668,45 +668,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* FINAL CTA */}
-      <section className="bg-[#17413D] py-20 sm:py-24 lg:py-28">
-        <Container>
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.17em] text-[#91A298]">
-              Start your journey
-            </p>
-
-            <h2 className="mt-4 font-serif text-[40px] leading-[1.06] tracking-[-0.035em] text-white sm:text-[54px]">
-              Better health starts
-              <br className="hidden sm:block" />
-              with understanding.
-            </h2>
-
-            <p className="mx-auto mt-6 max-w-xl text-[16px] leading-[1.75] text-white/75 sm:text-[17px]">
-              Explore our approach or start a conversation about your health
-              goals.
-            </p>
-
-            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Link
-                href="/book-appointment"
-                className="inline-flex min-h-12 items-center justify-center gap-2 bg-white px-7 text-[14px] font-semibold text-[#17413D] transition-colors hover:bg-[#F7F5EF]"
-              >
-                Book a Consultation
-                <span aria-hidden="true">→</span>
-              </Link>
-
-              <Link
-                href="/approach"
-                className="inline-flex min-h-12 items-center justify-center gap-2 border border-white/30 px-7 text-[14px] font-semibold text-white transition-colors hover:bg-white/10"
-              >
-                Explore our approach
-                <span aria-hidden="true">→</span>
-              </Link>
-            </div>
-          </div>
-        </Container>
-      </section>
+    
     </main>
   );
 }

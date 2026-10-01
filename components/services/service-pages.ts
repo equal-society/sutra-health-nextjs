@@ -147,41 +147,42 @@ export const nutrition: ServicePageConfig = {
   slug: "nutrition",
   title: "Nutrition Support in Faridabad & Delhi NCR | Sutra Health",
   description:
-    "Nutrition support at Sutra Health connects food, health and everyday routines through practical, personalised guidance for sustainable change.",
+    "Personalised nutrition support connecting balanced eating, food choices, hydration and daily routines with your health needs and lifestyle.",
   heroDescription:
-    "Practical, personalised nutrition guidance that connects what you eat with your health, routines and everyday life.",
+    "Practical nutrition guidance for balanced meals, everyday food choices and routines that fit your health needs and real life.",
   trust: ["Personalised guidance", "Whole-person care", "Faridabad, Delhi NCR & online"],
   introEyebrow: "A Practical View of Nutrition",
   introTitle: "Food is part of everyday healthcare.",
   introParagraphs: [
-    "Nutrition is not only about individual foods. How we eat is shaped by routines, preferences, culture, work, family life and many other parts of everyday living.",
-    "A useful nutrition conversation starts by understanding that context. From there, the focus can move towards practical changes that are appropriate for your health and realistic for your life.",
-    "At Sutra Health, nutrition is considered as part of a broader approach to whole-person healthcare.",
+    "Nutrition is shaped by more than individual foods. Meal timing, family and work routines, culture, preferences, activity and health needs all influence how people eat.",
+    "A useful nutrition conversation starts with your current pattern, then explores realistic ways to build variety, balance and consistency without relying on a one-size-fits-all diet.",
+    "At Sutra Health, nutrition guidance can consider familiar foods and eating patterns alongside appropriate medical care. Advice is adapted to individual needs rather than treating general food suggestions as rules for everyone.",
   ],
   focusEyebrow: "What We Focus On",
-  focusTitle: "Nutrition that fits the bigger picture.",
+  focusTitle: "Balanced choices that fit your life.",
   focusIntro:
-    "The focus depends on your individual needs. There is no single nutrition plan that works for everyone.",
+    "Nutrition needs differ. Guidance can be shaped around your health, food preferences, routine, access to food and advice from your healthcare professional.",
   focusAreas: [
-    { number: "01", title: "Everyday eating", description: "Understand your existing food patterns and identify changes that feel practical rather than restrictive." },
-    { number: "02", title: "Health & nutrition", description: "Consider nutrition in the context of your broader health concerns and individual needs." },
-    { number: "03", title: "Food choices", description: "Build a clearer understanding of food choices, portions, meals and routines that work for your circumstances." },
-    { number: "04", title: "Sustainable habits", description: "Focus on changes that can become part of everyday life rather than short-term dietary rules." },
+    { number: "01", title: "Balanced everyday meals", description: "Explore a varied pattern that can include vegetables, fruits, pulses, grains and suitable protein sources according to your needs and preferences." },
+    { number: "02", title: "Food choices", description: "Understand portions and how to make room for more minimally processed foods while considering highly processed snacks, excess salt and added sugars in context." },
+    { number: "03", title: "Meal timing & routine", description: "Review meal frequency and timing in relation to your schedule, appetite, nutritional needs and any relevant medical advice." },
+    { number: "04", title: "Hydration & sustainable habits", description: "Consider suitable fluids and practical habits that can be maintained across work, home and daily activities." },
   ],
   processTitle: "What nutrition support can involve",
   processIntro:
     "The discussion is based on your current eating patterns, health needs and the practical realities of your daily life.",
   process: [
-    { number: "01", title: "Understand your eating pattern", description: "Review meals, timing, portions, preferences and the challenges that affect how you eat." },
-    { number: "02", title: "Connect food with your needs", description: "Consider nutrition in the context of your health concerns, routines and goals." },
-    { number: "03", title: "Make practical changes", description: "Turn recommendations into realistic food choices and habits that can work in everyday life." },
-    { number: "04", title: "Review and adjust", description: "Discuss what is working and refine the approach rather than relying on a fixed plan." },
+    { number: "01", title: "Understand your eating pattern", description: "Review meals, timing, portions, food preferences, fluids and the challenges that affect how you eat." },
+    { number: "02", title: "Connect food with your needs", description: "Consider nutrition alongside your health concerns, routine, activity and goals, including any dietary guidance already provided by your clinician." },
+    { number: "03", title: "Identify practical adjustments", description: "Explore realistic meal and food choices, such as adding variety or planning suitable options around your day." },
+    { number: "04", title: "Review and adapt", description: "Discuss what is manageable and refine the approach as your needs, routine or circumstances change." },
   ],
   contextEyebrow: "Beyond the Diet",
-  contextTitle: "The best nutrition advice has to work in real life.",
+  contextTitle: "Nutrition advice should work in real life.",
   contextParagraphs: [
-    "Eating patterns do not exist separately from the rest of life. Sleep, activity, stress, work schedules, family routines and personal preferences can all influence how people eat.",
-    "That is why nutrition support at Sutra Health considers the wider context rather than treating food choices in isolation.",
+    "Everyday eating is influenced by sleep, activity, stress, work schedules, family routines, food culture, budget and personal preferences. Hydration needs can also vary with activity, climate and health circumstances.",
+    "A varied eating pattern may include seasonal vegetables and fruits, dals and other pulses, grains such as millets, and protein sources suited to individual preferences. No single food, beverage or meal schedule is required for everyone.",
+    "General guidance is not a substitute for individual clinical advice. If you have a medical condition, specific dietary restrictions or prescribed nutrition needs, recommendations should be coordinated with a qualified healthcare professional.",
   ],
   related: [
     { title: "Physician Consultation", description: "Begin with a doctor-led conversation about your health concerns and medical history.", href: "/services/physician-consultation" },
@@ -189,21 +190,15 @@ export const nutrition: ServicePageConfig = {
     { title: "Therapeutic Yoga", description: "Explore guided Yoga as part of a broader approach to movement and wellbeing.", href: "/services/therapeutic-yoga" },
   ],
   faq: [
-    /*
-      SHARPENED: previously restated the section header ("Nutrition
-      support focuses on understanding your current eating patterns,
-      health needs, routines and goals, and identifying practical changes
-      that can fit into everyday life.") without naming what actually
-      happens. Now names the concrete mechanism.
-    */
-    { question: "What does nutrition support at Sutra Health involve?", answer: "A nutrition consultation starts by reviewing what you currently eat — meals, timing, portions — rather than starting from a generic diet plan. From there, specific habits are adjusted one at a time, and follow-up sessions track what's working and change what isn't." },
-    { question: "Is nutrition support only for weight management?", answer: "No. Nutrition can be relevant to many aspects of health. The focus of a consultation depends on your individual concerns, health needs and goals." },
-    { question: "Will I be given a fixed diet plan?", answer: "Nutrition guidance is intended to be personalised. Recommendations can take into account your health, preferences, routines and circumstances rather than relying on a single approach for everyone." },
-    { question: "Can nutrition support work alongside medical care?", answer: "Yes. Nutrition support can form part of a broader healthcare approach and, where relevant, nutritional considerations can be discussed alongside medical care and other lifestyle factors." },
-    { question: "Can I discuss my existing eating habits during a consultation?", answer: "Yes. Understanding what you currently eat, how you structure meals and what challenges you experience can help create a more useful and realistic nutrition conversation." }
+    { question: "What does nutrition support at Sutra Health involve?", answer: "It begins with your current meals, timing, portions, preferences and routine. Together, practical changes can be identified and reviewed rather than starting with a generic diet plan." },
+    { question: "Is nutrition support only for weight management?", answer: "No. Nutrition can be relevant to many aspects of health. The focus depends on your individual concerns, health needs and goals." },
+    { question: "Will I be given a fixed diet plan?", answer: "Guidance is intended to be personalised and may account for your health, preferences, food culture, schedule and circumstances. A fixed plan is not suitable for everyone." },
+    { question: "Which foods should I include?", answer: "A varied pattern may include vegetables, fruits, pulses, grains and suitable protein sources. The mix and portions depend on your needs, preferences and any medical advice." },
+    { question: "How often should I eat, and how much water should I drink?", answer: "Meal frequency and fluid needs vary with individual routine, activity, climate and health circumstances. Discuss specific requirements with a qualified healthcare professional when needed." },
+    { question: "Can nutrition support work alongside medical care?", answer: "Yes. Nutrition guidance can complement appropriate medical care. If you have a diagnosed condition or prescribed diet, recommendations should be coordinated with your treating clinician." },
   ],
-  finalTitle: "Start a more useful conversation about food and health.",
-  finalDescription: "Begin with where you are now and explore what practical nutrition changes may make sense for you.",
+  finalTitle: "Start with your everyday food and health.",
+  finalDescription: "Discuss your current eating pattern and explore practical nutrition steps that may fit your needs and daily life.",
 };
 
 export const therapeuticYoga: ServicePageConfig = {
