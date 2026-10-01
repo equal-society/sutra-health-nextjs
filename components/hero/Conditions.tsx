@@ -14,140 +14,67 @@ export default function Conditions() {
       className="bg-[var(--sutra-white)]"
     >
       <Container>
-        <div className="py-16 sm:py-20 lg:py-24">
-          {/* SECTION INTRO */}
-          <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
-            <div>
-              <p className="font-sans text-[11px] font-medium uppercase tracking-[0.15em] text-[var(--sutra-muted)] sm:text-[12px]">
-                Health concerns
+        <div className="py-14 sm:py-16 lg:py-20">
+          {/* Section Intro */}
+          <div className="max-w-[1000px]">
+            <div className="flex items-center gap-3">
+              <span
+                aria-hidden="true"
+                className="h-px w-9 bg-[var(--sutra-sage)]"
+              />
+
+              <p className="font-sans text-[10px] font-medium uppercase tracking-[0.15em] text-[var(--sutra-muted)] sm:text-[11px]">
+                Health Conditions
               </p>
             </div>
 
-            <div className="max-w-[760px]">
-              <h2
-                id="conditions-title"
-                className="
-                  font-serif
-                  text-[34px]
-                  font-medium
-                  leading-[1.08]
-                  tracking-[-0.03em]
-                  text-[var(--sutra-ink)]
-                  sm:text-[42px]
-                  lg:text-[50px]
-                "
+            <h2
+              id="conditions-title"
+              className="mt-4 max-w-[850px] font-serif text-[34px] font-medium leading-[1.08] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[42px] lg:text-[54px]"
+            >
+              Care that considers your whole health.
+            </h2>
+
+            <p className="mt-4 max-w-[750px] font-sans text-[15px] leading-7 text-[var(--sutra-muted)] sm:text-[16px]">
+              Explore the health conditions we support through personalised,
+              evidence-informed care.
+            </p>
+          </div>
+
+          {/* Compact Condition Links */}
+          <div className="mt-8 grid border-t border-[var(--sutra-border)] sm:grid-cols-4 sm:gap-x-1">
+            {conditions.map((condition) => (
+              <Link
+                key={condition.slug}
+                href={`/conditions/${condition.slug}`}
+                className="group flex items-center gap-4 border-b border-[var(--sutra-border)] py-4 transition-colors hover:text-[var(--sutra-teal)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--sutra-teal)]"
               >
-                Could Sutra Health help with what you&apos;re experiencing?
-              </h2>
+                <span className="font-sans text-[15px] font-medium text-[var(--sutra-ink)] transition-colors group-hover:text-[var(--sutra-teal)] sm:text-[16px]">
+                  {condition.title}
+                </span>
 
-              <p className="mt-5 max-w-[680px] font-sans text-[15px] leading-7 text-[var(--sutra-muted)] sm:text-[17px] sm:leading-8">
-                Explore the health concerns we cover and see how lifestyle,
-                nutrition, movement and other supportive practices may fit
-                alongside appropriate medical care.
-              </p>
-            </div>
+                <ArrowUpRight
+                  size={16}
+                  strokeWidth={1.5}
+                  aria-hidden="true"
+                  className="shrink-0 text-[var(--sutra-teal)] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </Link>
+            ))}
           </div>
 
-          {/* CONDITION LIST */}
-          <div className="mt-10 border-t border-[var(--sutra-border)] sm:mt-12">
-            <div className="grid sm:grid-cols-2 sm:gap-x-10 lg:grid-cols-2">
-              {conditions.map((condition, index) => (
-                <Link
-                  key={condition.slug}
-                  href={`/conditions/${condition.slug}`}
-                  className="
-                    group
-                    flex
-                    min-h-[116px]
-                    items-start
-                    justify-between
-                    gap-6
-                    border-b
-                    border-[var(--sutra-border)]
-                    py-6
-                    transition-colors
-                    duration-300
-                    hover:text-[var(--sutra-teal)]
-                    focus-visible:outline-none
-                    focus-visible:ring-2
-                    focus-visible:ring-[var(--sutra-teal)]
-                    focus-visible:ring-offset-4
-                  "
-                >
-                  <div className="min-w-0">
-                    <div className="flex items-baseline gap-3">
-                      <span className="font-sans text-[10px] font-medium tracking-[0.12em] text-[var(--sutra-sage)]">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-
-                      <h3 className="font-sans text-[18px] font-medium leading-[1.3] tracking-[-0.015em] text-[var(--sutra-ink)] transition-colors duration-300 group-hover:text-[var(--sutra-teal)] sm:text-[19px]">
-                        {condition.title}
-                      </h3>
-                    </div>
-
-                    <p className="mt-2 max-w-[500px] pl-[30px] font-sans text-[13px] leading-6 text-[var(--sutra-muted)] sm:text-[14px]">
-                      {condition.shortDescription}
-                    </p>
-                  </div>
-
-                  <span
-                    aria-hidden="true"
-                    className="
-                      mt-0.5
-                      flex
-                      h-8
-                      w-8
-                      shrink-0
-                      items-center
-                      justify-center
-                      text-[var(--sutra-teal)]
-                      transition-transform
-                      duration-300
-                      group-hover:translate-x-1
-                      group-hover:-translate-y-0.5
-                    "
-                  >
-                    <ArrowUpRight size={17} strokeWidth={1.5} />
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          {/* HUB LINK */}
-          <div className="mt-7">
+          {/* All Conditions */}
+          <div className="mt-5">
             <Link
               href="/conditions"
-              className="
-                group
-                inline-flex
-                items-center
-                gap-2
-                font-sans
-                text-[14px]
-                font-medium
-                text-[var(--sutra-teal)]
-                transition-colors
-                duration-300
-                hover:text-[var(--sutra-teal-hover)]
-                focus-visible:outline-none
-                focus-visible:ring-2
-                focus-visible:ring-[var(--sutra-teal)]
-                focus-visible:ring-offset-4
-              "
+              className="group inline-flex items-center gap-2 font-sans text-[13px] font-semibold text-[var(--sutra-teal)] hover:text-[var(--sutra-teal-hover)]"
             >
-              Explore all health conditions
-
+              View all conditions
               <ArrowUpRight
-                size={16}
+                size={15}
                 strokeWidth={1.5}
                 aria-hidden="true"
-                className="
-                  transition-transform
-                  duration-300
-                  group-hover:translate-x-1
-                  group-hover:-translate-y-1
-                "
+                className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </Link>
           </div>
@@ -156,3 +83,4 @@ export default function Conditions() {
     </section>
   );
 }
+

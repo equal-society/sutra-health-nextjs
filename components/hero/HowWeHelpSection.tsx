@@ -8,7 +8,7 @@ const services = [
     number: "01",
     title: "Lifestyle Medicine",
     description:
-      "Practical support around everyday habits, health and lifestyle alongside appropriate medical care.",
+      "Practical lifestyle changes supported by appropriate medical care.",
     href: "/services/lifestyle",
     image: "/images/program-lifestyle.webp",
   },
@@ -16,25 +16,25 @@ const services = [
     number: "02",
     title: "Nutrition Counselling",
     description:
-      "Personalised guidance around food and healthier eating habits shaped around your health and daily life.",
+      "Personalised food and nutrition guidance for everyday health.",
     href: "/services/nutrition",
-    image: "/images/what-we-do/nutrition-counselling.webp",
+    image: "/images/retreat/diet.webp",
   },
   {
     number: "03",
     title: "Therapeutic Yoga",
     description:
-      "Yoga practices adapted around your health, needs and ability.",
+      "Adapted Yoga practices to support your health and wellbeing.",
     href: "/services/therapeutic-yoga",
-    image: "/images/what-we-do/therapeutic-yoga.webp",
+    image: "/images/what-we-do/yoga.png",
   },
   {
     number: "04",
     title: "Behaviour, Stress & Mind",
     description:
-      "Support for stress, habits and sustainable behaviour change.",
+      "Support for managing stress and building healthier habits.",
     href: "/services/behaviour-stress-mind",
-    image: "/images/what-we-do/behaviour-mind.webp",
+    image: "/images/what-we-do/mind.png",
   },
 ];
 
@@ -45,8 +45,7 @@ export default function HowWeHelpSection() {
       className="bg-[var(--sutra-white)]"
     >
       <Container>
-        <div className="grid gap-14 py-20 sm:py-24 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24 lg:py-32">
-
+        <div className="grid gap-10 py-16 sm:py-20 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20 lg:py-24">
           {/* Introduction */}
           <div className="lg:sticky lg:top-24 lg:self-start">
             <div className="flex items-center gap-3">
@@ -56,28 +55,27 @@ export default function HowWeHelpSection() {
               />
 
               <p className="font-sans text-[10px] font-medium uppercase tracking-[0.16em] text-[var(--sutra-muted)] sm:text-[11px]">
-                How We Help
+                Our Services
               </p>
             </div>
 
             <h2
               id="help-heading"
-              className="mt-5 max-w-[560px] font-serif text-[40px] font-medium leading-[1.04] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[50px] lg:text-[58px]"
+              className="mt-5 max-w-[600px] font-serif text-[38px] font-medium leading-[1.06] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[48px] lg:text-[58px]"
             >
               Care shaped around what you need.
             </h2>
 
-            <p className="mt-6 max-w-[500px] font-sans text-[15px] leading-7 text-[var(--sutra-muted)] sm:text-[17px] sm:leading-8">
-              We bring together different areas of care and support according
-              to your health, goals and circumstances.
+            <p className="mt-5 max-w-[500px] font-sans text-[15px] leading-7 text-[var(--sutra-muted)] sm:text-[16px] sm:leading-8">
+              Explore the services that bring medical care and lifestyle
+              support together.
             </p>
 
             <Link
               href="/services"
-              className="group mt-8 inline-flex items-center border-b border-[var(--sutra-ink)] pb-2 font-sans text-[13px] font-medium text-[var(--sutra-ink)] transition-colors hover:border-[var(--sutra-sage)] hover:text-[var(--sutra-sage)] sm:text-[14px]"
+              className="group mt-6 inline-flex items-center border-b border-[var(--sutra-ink)] pb-2 font-sans text-[13px] font-medium text-[var(--sutra-ink)] transition-colors hover:border-[var(--sutra-sage)] hover:text-[var(--sutra-sage)] sm:text-[14px]"
             >
-              Explore our services
-
+              View all services
               <ArrowUpRight
                 size={16}
                 strokeWidth={1.5}
@@ -93,46 +91,40 @@ export default function HowWeHelpSection() {
               <Link
                 key={service.number}
                 href={service.href}
-                className="group grid gap-5 border-b border-[var(--sutra-border)] py-6 sm:grid-cols-[38px_110px_1fr_auto] sm:items-center sm:gap-6 sm:py-7"
+                className="group grid grid-cols-[76px_1fr_auto] items-center gap-4 border-b border-[var(--sutra-border)] py-4 sm:grid-cols-[90px_1fr_auto] sm:gap-5 sm:py-5"
               >
-                {/* Number */}
-                <span className="font-sans text-[10px] font-medium tracking-[0.12em] text-[var(--sutra-sage)]">
-                  {service.number}
-                </span>
-
                 {/* Image */}
-                <div className="relative aspect-[4/3] w-[110px] overflow-hidden bg-[var(--sutra-soft-beige)]">
+                <div className="relative aspect-[4/3] w-[76px] overflow-hidden bg-[var(--sutra-soft-beige)] sm:w-[90px]">
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
-                    sizes="110px"
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    sizes="(max-width: 640px) 76px, 90px"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
 
                 {/* Content */}
-                <div>
-                  <h3 className="font-serif text-[23px] leading-tight tracking-[-0.02em] text-[var(--sutra-ink)] transition-colors  sm:text-[29px]">
+                <div className="min-w-0">
+                  <h3 className="font-serif text-[19px] leading-tight tracking-[-0.02em] text-[var(--sutra-ink)] transition-colors group-hover:text-[var(--sutra-teal)] sm:text-[24px]">
                     {service.title}
                   </h3>
 
-                  <p className="mt-2 max-w-[520px] font-sans text-[13px] leading-6 text-[var(--sutra-muted)] sm:text-[14px]">
+                  <p className="mt-1.5 max-w-[480px] font-sans text-[12px] leading-5 text-[var(--sutra-muted)] sm:text-[14px] sm:leading-6">
                     {service.description}
                   </p>
                 </div>
 
                 {/* Arrow */}
-                <span
+                <ArrowUpRight
+                  size={17}
+                  strokeWidth={1.5}
                   aria-hidden="true"
-                  className="hidden h-9 w-9 shrink-0 items-center justify-center border border-[var(--sutra-border)] text-[var(--sutra-ink)] transition-colors duration-300 group-hover:border-[var(--sutra-sage)] group-hover:bg-[var(--sutra-teal)] group-hover:text-white sm:flex"
-                >
-                  <ArrowUpRight size={16} strokeWidth={1.5} />
-                </span>
+                  className="shrink-0 text-[var(--sutra-teal)] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
               </Link>
             ))}
           </div>
-
         </div>
       </Container>
     </section>

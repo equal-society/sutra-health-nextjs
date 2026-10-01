@@ -1,13 +1,5 @@
+import Link from "next/link";
 import Container from "@/components/shared/Container";
-
-const lifestyleFactors = [
-  "Diet & Nutrition",
-  "Movement & Exercise",
-  "Sleep & Recovery",
-  "Stress & Emotional Wellbeing",
-  "Social Connection",
-  "Addiction-Free Living",
-];
 
 export default function LifestyleHealthSection() {
   return (
@@ -16,10 +8,9 @@ export default function LifestyleHealthSection() {
       className="bg-[var(--sutra-white)]"
     >
       <Container>
-        <div className="grid gap-14 py-20 sm:py-24 lg:grid-cols-[0.95fr_1.05fr] lg:items-start lg:gap-24 lg:py-32">
-
+        <div className="py-20 sm:py-24 lg:py-32">
           {/* Intro */}
-          <div className="lg:sticky lg:top-24">
+          <div className="max-w-[1100px]">
             <div className="flex items-center gap-3">
               <span
                 aria-hidden="true"
@@ -33,40 +24,39 @@ export default function LifestyleHealthSection() {
 
             <h2
               id="lifestyle-health-title"
-              className="mt-5 max-w-[620px] font-serif text-[38px] font-medium leading-[1.06] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[46px] lg:text-[56px]"
+              className="mt-5 max-w-[1000px] font-serif text-[38px] font-medium leading-[1.06] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[48px] lg:text-[64px]"
             >
               Your everyday life is part of your health.
             </h2>
 
-          </div>
+            <div className="mt-7 max-w-[950px] space-y-5 font-sans text-[16px] leading-8 text-[var(--sutra-muted)] sm:text-[18px] sm:leading-9">
+              <p>
+                Health is shaped by more than medical treatment alone. The way
+                you eat, move, sleep, manage stress and connect with others can
+                influence your wellbeing over time.
+              </p>
 
-          {/* Lifestyle factors */}
-          <div className="border-t border-[var(--sutra-border)]">
-            {lifestyleFactors.map((factor, index) => (
-              <div
-                key={factor}
-                className="group flex items-center justify-between border-b border-[var(--sutra-border)] py-6 sm:py-7"
+              <p>
+                At Sutra Health, we look at these everyday factors alongside
+                appropriate medical care. Our approach focuses on understanding
+                your health as a whole and helping you make practical,
+                sustainable changes that fit your life.
+              </p>
+            </div>
+
+            <Link
+              href="/services/lifestyle"
+              className="group mt-7 inline-flex items-center gap-2 font-sans text-sm font-semibold text-[var(--sutra-teal)] transition-colors hover:text-[var(--sutra-teal-hover)]"
+            >
+              Explore Lifestyle Medicine
+              <span
+                aria-hidden="true"
+                className="transition-transform duration-200 group-hover:translate-x-1"
               >
-                <div className="flex items-center gap-5">
-                  <span className="font-sans text-[10px] font-medium tracking-[0.12em] text-[var(--sutra-sage)]">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-
-                  <h3 className="font-serif text-[23px] leading-tight tracking-[-0.02em] text-[var(--sutra-ink)] sm:text-[28px]">
-                    {factor}
-                  </h3>
-                </div>
-
-                <span
-                  aria-hidden="true"
-                  className="ml-6 shrink-0 text-[20px] text-[var(--sutra-sage)] transition-transform duration-300 group-hover:translate-x-1"
-                >
-                  ↗
-                </span>
-              </div>
-            ))}
+                →
+              </span>
+            </Link>
           </div>
-
         </div>
       </Container>
     </section>

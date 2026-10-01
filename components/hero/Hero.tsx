@@ -60,7 +60,7 @@ export default function Hero() {
                 href="/assessment"
                 className="group inline-flex h-11 items-center justify-center border border-[var(--sutra-border-strong)] px-5 font-sans text-[13px] font-medium text-[var(--sutra-ink)] transition-colors duration-300 hover:border-[var(--sutra-sage)] hover:text-[var(--sutra-teal)] sm:h-12 sm:px-5 sm:text-[14px]"
               >
-                Take the 21-Point Assessment
+                Take the 21-Question Assessment
 
                 <ArrowUpRight
                   size={15}

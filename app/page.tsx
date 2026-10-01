@@ -7,8 +7,8 @@ import HowWeHelpSection from "@/components/hero/HowWeHelpSection";
 import SutraHealthModelSection from "@/components/hero/SutraHealthModelSection";
 import Testimonials from "@/components/hero/Testimonials";
 import FAQ from "@/components/shared/FAQ";
-import ScienceSection from "@/components/hero/ScienceSection";
-import Assessment from "@/components/hero/Assessment";
+import Conditions from "@/components/hero/Conditions";
+
 
 const siteUrl = "https://lifequality.org.in";
 
@@ -17,17 +17,7 @@ const BYLINE =
 
 export const metadata: Metadata = {
   title: "Doctor-Led Integrative Healthcare | Sutra Health",
-  /*
-    NOTE on the byline instruction: the full byline is NOT appended here.
-    A ~13-word tagline repeated in every page's <title> would make titles
-    longer and less unique across the site — the opposite of what we've
-    fixed everywhere else (Google typically shows ~60 characters, and
-    unique, page-specific titles rank better than a repeated slogan).
-    The byline is instead: (1) the sole Hero subheading, verbatim, and
-    (2) the Organization schema's `slogan` field below, which is the
-    correct semantic home for a site-wide tagline. Still needed: your
-    Header/Navbar component, to place it visually next to the logo.
-  */
+  
   description:
     "Sutra Health provides doctor-led integrative healthcare through medical care, lifestyle medicine, nutrition, therapeutic Yoga and behaviour support.",
   alternates: {
@@ -133,13 +123,7 @@ const structuredData = {
       "@id": `${siteUrl}/#organization`,
       name: "Sutra Health",
       url: siteUrl,
-      /*
-        ADDED: the byline as the Organization's `slogan` — schema.org's
-        correct, semantic field for a company tagline. This is the
-        site-wide, machine-readable home for it, separate from (and in
-        addition to) its visible placement in the Hero and, once the
-        Header component is available, next to the logo.
-      */
+   
       slogan: BYLINE,
       founder: {
         "@type": "Person",
@@ -293,7 +277,7 @@ export default function Home() {
       <main className="sutraHomeEditorial">
         <Hero />
         <LifestyleHealthSection />
-        <ScienceSection />
+        <Conditions />
         <AssessmentSection />
         <SutraHealthModelSection />
         <HowWeHelpSection />
