@@ -7,17 +7,17 @@ const principles = [
   {
     number: "01",
     title: "Integrated Care",
-    text: "Medical care, nutrition, Yoga and lifestyle guidance work together.",
+    text: "Your clinician can coordinate relevant inputs instead of treating each concern in isolation.",
   },
   {
     number: "02",
     title: "Sustainable Change",
-    text: "Build healthier habits through practical steps that fit your life.",
+    text: "Set manageable priorities, practise them over time and adjust when life changes.",
   },
   {
     number: "03",
     title: "Personalised Support",
-    text: "Care is shaped around your health, needs and personal goals.",
+    text: "Your health history, preferences, capacity and goals help shape the plan.",
   },
 ];
 
@@ -65,8 +65,8 @@ export default function SutraHealthModelSection() {
           </div>
 
           <p className="mt-5 max-w-[760px] text-[15px] leading-7 text-[#65736D] sm:text-[16px] sm:leading-8">
-            We bring medical care and lifestyle support together to help you
-            understand your health and make changes that work in everyday life.
+            The Sutra model connects assessment, clinical guidance and follow-up.
+            It helps make the next step clearer—and gives you a way to review progress.
           </p>
 
           {/* Principles */}

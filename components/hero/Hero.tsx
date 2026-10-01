@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/shared/Container";
 import { ArrowUpRight } from "lucide-react";
@@ -7,10 +6,10 @@ export default function Hero() {
   return (
     <section
       aria-labelledby="hero-title"
-      className="h-[calc(100svh-74px)] min-h-[620px] overflow-hidden bg-[var(--sutra-porcelain)] lg:h-[calc(100svh-75px)] lg:min-h-0"
+      className="min-h-[620px] overflow-hidden bg-[var(--sutra-porcelain)] lg:h-[calc(100svh-75px)] lg:min-h-[620px]"
     >
       <Container className="h-full">
-        <div className="grid h-full items-center gap-5 py-5 sm:gap-7 sm:py-7 lg:grid-cols-[1.02fr_0.98fr] lg:gap-10 lg:px-8 lg:py-8 xl:gap-14 xl:px-10">
+        <div className="grid min-h-full items-center gap-5 py-8 sm:gap-7 sm:py-10 lg:grid-cols-[1.02fr_0.98fr] lg:gap-10 lg:px-8 lg:py-8 xl:gap-14 xl:px-10">
 
           {/* Content */}
           <div className="min-w-0">
@@ -81,7 +80,8 @@ export default function Hero() {
               loop
               playsInline
               preload="metadata"
-              aria-label="Sutra Health"
+              aria-hidden="true"
+              poster="/images/hero-desktop.webp"
               className="absolute inset-0 h-full w-full object-cover object-center"
             >
               <source src="/videos/hero-video.mp4" type="video/mp4" />

@@ -31,16 +31,20 @@ export default function LifestyleHealthSection() {
 
             <div className="mt-7 max-w-[950px] space-y-5 font-sans text-[16px] leading-8 text-[var(--sutra-muted)] sm:text-[18px] sm:leading-9">
               <p>
-                Health is shaped by more than medical treatment alone. The way
-                you eat, move, sleep, manage stress and connect with others can
-                influence your wellbeing over time.
+                Daily patterns can affect energy, wellbeing and the way some long-term
+                health concerns are managed. They are worth discussing as part of a
+                broader view of your health.
               </p>
 
               <p>
-                At Sutra Health, we look at these everyday factors alongside
-                appropriate medical care. Our approach focuses on understanding
-                your health as a whole and helping you make practical,
-                sustainable changes that fit your life.
+                The aim is not to change everything at once. Small, realistic steps
+                can help you build a routine you can maintain, with clinical guidance
+                where it is needed.
+              </p>
+
+              <p>
+                We consider these everyday factors alongside appropriate medical care,
+                then help you identify practical changes that can fit your routine.
               </p>
             </div>
 

@@ -8,7 +8,7 @@ const services = [
     number: "01",
     title: "Lifestyle Medicine",
     description:
-      "Practical lifestyle changes supported by appropriate medical care.",
+      "Guidance to connect everyday health habits with your clinical care.",
     href: "/services/lifestyle",
     image: "/images/program-lifestyle.webp",
   },
@@ -16,7 +16,7 @@ const services = [
     number: "02",
     title: "Nutrition Counselling",
     description:
-      "Personalised food and nutrition guidance for everyday health.",
+      "Food choices and meal routines discussed around your needs and preferences.",
     href: "/services/nutrition",
     image: "/images/retreat/diet.webp",
   },
@@ -24,7 +24,7 @@ const services = [
     number: "03",
     title: "Therapeutic Yoga",
     description:
-      "Adapted Yoga practices to support your health and wellbeing.",
+      "Guided practices adapted to your mobility, comfort and health context.",
     href: "/services/therapeutic-yoga",
     image: "/images/what-we-do/yoga.png",
   },
@@ -32,7 +32,7 @@ const services = [
     number: "04",
     title: "Behaviour, Stress & Mind",
     description:
-      "Support for managing stress and building healthier habits.",
+      "Tools to work through barriers, stress and routines that are hard to sustain.",
     href: "/services/behaviour-stress-mind",
     image: "/images/what-we-do/mind.png",
   },
@@ -67,8 +67,8 @@ export default function HowWeHelpSection() {
             </h2>
 
             <p className="mt-5 max-w-[500px] font-sans text-[15px] leading-7 text-[var(--sutra-muted)] sm:text-[16px] sm:leading-8">
-              Explore the services that bring medical care and lifestyle
-              support together.
+              Choose from consultations and focused support in nutrition, Yoga
+              and behaviour change. Each service has its own role in your care plan.
             </p>
 
             <Link

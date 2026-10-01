@@ -33,10 +33,10 @@ export default function ScienceSection() {
             </h2>
 
             <p className="mt-7 max-w-[900px] font-sans text-[16px] leading-8 text-[var(--sutra-muted)] sm:text-[18px] sm:leading-9">
-              Lifestyle Medicine brings evidence-informed guidance on everyday
-              health behaviours into clinical care. By considering lifestyle
-              factors alongside medical needs, healthcare can take a more
-              complete and personalised approach to wellbeing.
+              Lifestyle Medicine uses evidence-informed practices across areas such
+              as nutrition, physical activity, restorative sleep and stress care.
+              These are considered with a person’s medical history and treatment
+              needs—not as a substitute for necessary medical care.
             </p>
           </div>
 

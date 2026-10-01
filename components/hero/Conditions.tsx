@@ -32,12 +32,12 @@ export default function Conditions() {
               id="conditions-title"
               className="mt-4 max-w-[850px] font-serif text-[34px] font-medium leading-[1.08] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[42px] lg:text-[54px]"
             >
-              Care that considers your whole health.
+              Explore the health concerns we support.
             </h2>
 
             <p className="mt-4 max-w-[750px] font-sans text-[15px] leading-7 text-[var(--sutra-muted)] sm:text-[16px]">
-              Explore the health conditions we support through personalised,
-              evidence-informed care.
+              Find condition-specific information and learn how care may be tailored
+              to your circumstances. Treatment decisions remain individual.
             </p>
           </div>
 

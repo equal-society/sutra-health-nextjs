@@ -33,8 +33,8 @@ export default function AssessmentSection() {
             </h2>
 
             <p className="mt-6 max-w-[540px] font-sans text-[15px] leading-7 text-[var(--sutra-muted)] sm:text-[17px] sm:leading-8">
-              Answer 21 simple questions about your everyday health habits and
-              see where you may want to focus your attention.
+              Answer 21 questions about everyday health habits and receive a simple
+              starting point for deciding what you may want to work on next.
             </p>
 
             <div className="mt-8">

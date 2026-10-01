@@ -4,6 +4,8 @@ import { useRef } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Container from "@/components/shared/Container";
 
+// Publish only testimonials that Sutra Health can verify, has permission to use,
+// and has reviewed for medical outcome claims and patient privacy.
 const testimonials = [
   {
     quote: "Amazing consultation experience. The doctors patiently listened to my concerns and provided practical Natural solutions.",
@@ -93,7 +95,7 @@ export default function Testimonials() {
                   <p className="font-serif text-[20px] leading-[1.4] tracking-[-0.015em] text-[var(--sutra-ink)] sm:text-[22px]">“{testimonial.quote}”</p>
                   <footer className="mt-8 border-t border-[var(--sutra-border)] pt-5">
                     <cite className="font-sans text-[13px] font-semibold not-italic text-[var(--sutra-ink)] sm:text-[14px]">{testimonial.name}</cite>
-                    <p className="mt-1 font-sans text-[10px] uppercase tracking-[0.12em] text-[var(--sutra-muted)]">Experience shared</p>
+                    <p className="mt-1 font-sans text-[10px] uppercase tracking-[0.12em] text-[var(--sutra-muted)]">Individual experience</p>
                   </footer>
                 </blockquote>
               </article>
@@ -110,7 +112,7 @@ export default function Testimonials() {
 
           <div className="mt-8 border-t border-[var(--sutra-border)] pt-5 sm:mt-10">
             <p className="max-w-[760px] font-sans text-[11px] leading-5 text-[var(--sutra-muted)] sm:text-[12px]">
-              Testimonials are individual experiences and may reflect individual circumstances. They are not a guarantee of health outcomes.
+              These are individual accounts, not typical or guaranteed results. Testimonials should not replace advice from a qualified healthcare professional.
             </p>
           </div>
         </div>
