@@ -419,42 +419,6 @@ export default async function ConditionSubpage({ params }: PageProps) {
           </Container>
         </section>
 
-        {/* Final CTA */}
-        <section className="bg-[#17413D] text-white">
-          <Container>
-            <div className="flex flex-col gap-8 py-14 sm:py-16 md:flex-row md:items-center md:justify-between md:gap-12 md:py-20">
-              <div className="max-w-[700px]">
-                <p className="font-sans text-[11px] font-medium uppercase tracking-[0.15em] text-[#C8BDA7]">
-                  Sutra Health
-                </p>
-                <h2 className="mt-4 font-serif text-[32px] font-medium leading-[1.12] tracking-[-0.02em] sm:text-[38px] md:text-[44px]">
-                  Explore a personalised approach to healthier habits
-                </h2>
-                <p className="mt-5 max-w-[650px] font-sans text-[15px] leading-7 text-white/70 sm:text-[16px]">
-                  Learn how Sutra Health combines lifestyle-focused guidance,
-                  nutrition counselling, yoga therapy and related practices
-                  within a whole-person approach.
-                </p>
-              </div>
-
-              <div className="flex shrink-0 flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
-                <Link
-                  href="/book-appointment"
-                  className="inline-flex min-h-12 items-center justify-center border border-white bg-white px-6 py-3 font-sans text-[13px] font-medium text-[#17413D] transition-colors hover:bg-[#F7F5EF]"
-                >
-                  Book an Appointment
-                </Link>
-
-                <Link
-                  href={`/conditions/${condition.slug}`}
-                  className="inline-flex min-h-12 items-center justify-center border border-white/30 px-6 py-3 font-sans text-[13px] font-medium text-white transition-colors hover:border-white hover:bg-white/10"
-                >
-                  Explore {condition.title}
-                </Link>
-              </div>
-            </div>
-          </Container>
-        </section>
       </main>
     </>
   );

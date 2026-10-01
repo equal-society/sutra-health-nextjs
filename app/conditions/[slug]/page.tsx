@@ -804,35 +804,7 @@ export default async function ConditionPage({
           </section>
         )}
 
-        {/* FINAL CTA */}
-        <section className="border-t border-[var(--sutra-border)] bg-[var(--sutra-teal)]">
-          <Container>
-            <div className="mx-auto max-w-7xl py-14 sm:py-18 lg:py-22">
-              <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-16">
-                <div className="max-w-[720px]">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-sand)] sm:text-[11px]">
-                    Take the next step
-                  </p>
-                  <h2 className="mt-4 font-[var(--font-serif)] text-[38px] font-medium leading-[1.04] tracking-[-0.03em] text-[var(--sutra-porcelain)] sm:text-[48px] lg:text-[56px]">
-                    Let&apos;s talk about your health.
-                  </h2>
-                  <p className="mt-5 max-w-[620px] text-[16px] leading-8 text-[var(--sutra-pale-sage)] sm:text-[17px]">
-                    Book a consultation to discuss your health goals and explore
-                    an approach that fits your needs and everyday life.
-                  </p>
-                </div>
-
-                <Link
-                  href="/book-appointment"
-                  className="inline-flex h-[52px] w-fit items-center gap-3 bg-[var(--sutra-porcelain)] px-6 text-[12px] font-semibold uppercase tracking-[0.1em] text-[var(--sutra-teal)] transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--sutra-porcelain)]"
-                >
-                  Book an Appointment
-                  <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-            </div>
-          </Container>
-        </section>
+     
       </main>
     </>
   );

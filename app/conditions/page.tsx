@@ -453,67 +453,7 @@ export default function ConditionsPage() {
           </Container>
         </section>
 
-        {/* =========================================================
-            CTA
-        ========================================================= */}
-        <section className="bg-[#17413D] py-14 sm:py-16 lg:py-20">
-          <Container>
-            <div className="mx-auto max-w-[760px] text-center">
-              <p className="font-sans text-[11px] font-medium uppercase tracking-[0.17em] text-[#C8BDA7]">
-                Take the next step
-              </p>
-
-              <h2
-                className="
-                  mt-4
-                  font-serif
-                  text-[36px]
-                  font-medium
-                  leading-[1.08]
-                  tracking-[-0.025em]
-                  text-[#FFFFFF]
-                  sm:text-[44px]
-                  lg:text-[48px]
-                "
-              >
-                Explore an approach that fits your health goals.
-              </h2>
-
-              <p className="mx-auto mt-5 max-w-[600px] font-sans text-[15px] leading-7 text-[#E7EDE8] sm:text-[16px]">
-                Book a consultation to discuss your health concerns and
-                explore an approach that fits your needs and everyday life.
-              </p>
-
-              <Link
-                href="/book-appointment"
-                className="
-                  mt-8
-                  inline-flex
-                  h-[52px]
-                  items-center
-                  justify-center
-                  gap-2
-                  bg-[#F7F5EF]
-                  px-7
-                  font-sans
-                  text-[14px]
-                  font-medium
-                  text-[#17413D]
-                  transition-colors
-                  duration-300
-                  hover:bg-[#FFFFFF]
-                  focus-visible:outline
-                  focus-visible:outline-2
-                  focus-visible:outline-offset-4
-                  focus-visible:outline-[#F7F5EF]
-                "
-              >
-                Book an Appointment
-                <span aria-hidden="true">→</span>
-              </Link>
-            </div>
-          </Container>
-        </section>
+      
       </main>
     </>
   );

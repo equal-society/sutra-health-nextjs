@@ -8,7 +8,6 @@ import HowWeHelpSection from "@/components/hero/HowWeHelpSection";
 import SutraHealthModelSection from "@/components/hero/SutraHealthModelSection";
 import Testimonials from "@/components/hero/Testimonials";
 import FAQ from "@/components/shared/FAQ";
-import BookingCTA from "@/components/hero/BookingCTA";
 
 const siteUrl = "https://lifequality.org.in";
 
@@ -71,29 +70,24 @@ const homepageFaqs = [
   },
   {
     question:
-      "Can yoga therapy be part of managing conditions such as diabetes or high blood pressure?",
+      "Can yoga therapy be part of managing a health condition?",
     answer:
-      "It can be one part of your overall care alongside your doctor, but it is not a replacement for medical treatment. Medication changes should always be discussed with your physician.",
+      "Therapeutic yoga can be part of a broader care plan for some people. Practices are adapted to individual health, ability and goals and should not replace appropriate medical treatment.",
   },
   {
     question: "Do you offer online consultations?",
     answer:
-      "Yes. Sutra Health works with people across India. Online consultations are available for lifestyle medicine, nutrition counselling and yoga therapy. In-person sessions are also available in Faridabad, Delhi NCR.",
+      "Yes. Sutra Health works with people across India. Online consultations are available for relevant services, subject to the current consultation format and availability.",
   },
   {
     question: "How long before I see results?",
     answer:
-      "There is no single timeline. Some people notice changes within weeks, while other improvements take longer. Results depend on the individual, the health concern and consistency with the plan.",
+      "There is no single timeline. Progress depends on the individual, health concern, starting point and changes that can be maintained over time.",
   },
   {
     question: "How do I get started with Sutra Health?",
     answer:
-      "You can start by booking a consultation. We will discuss your health concerns, goals and current situation and help identify the most appropriate next step.",
-  },
-  {
-    question: "How much does a consultation cost?",
-    answer:
-      "Physician consultations start at ₹[ADD STARTING PRICE HERE]. The exact cost depends on the type of consultation and any additional support you choose, such as nutrition or yoga therapy sessions.",
+      "You can begin by booking a consultation or taking the 21-Question Lifestyle Assessment as a starting point for reflecting on everyday health habits.",
   },
 ];
 
@@ -285,34 +279,6 @@ const structuredData = {
   ],
 };
 
-/*
-  REBUILT to the 6 requested heads (numbered 01–06 in each section's own
-  eyebrow), plus FAQ and a final booking CTA to close:
-
-  01. Hero + LifestyleHealthSection — lifestyle shapes health, longevity,
-      happiness; names the specific factors (diet, exercise, sleep,
-      stress, social connection, addiction-free living)
-  02. ScienceSection — why lifestyle medicine works, now backed by
-      concrete, sourced study citations rather than a second abstract
-      philosophy grid (see the comment inside ScienceSection.tsx for why
-      this changed)
-  03. AssessmentSection — the free 21-point self-assessment
-  04. HowWeHelpSection — how we help you develop healthier habits, shown
-      through the actual services
-  05. SutraHealthModelSection — what makes the model different
-      (Integration / Motivation / Personalisation)
-  06. Testimonials — success stories
-  07. FAQ — objection handling right before the final CTA
-  Final — BookingCTA, the strongest, most direct ask, last
-
-  Removed from this page: HealthBridge, Conditions, WhatWeDo (the original
-  grid version), Experts, Resources. None of the 6 requested heads call
-  for a standalone conditions grid, services grid, or doctor-bio section —
-  HowWeHelpSection now carries the services message on its own, and doctor
-  credibility is referenced within SutraHealthModelSection with a link to
-  /doctors. These files are not deleted, just no longer imported here, in
-  case they're still wanted elsewhere.
-*/
 export default function Home() {
   return (
     <>
@@ -332,7 +298,6 @@ export default function Home() {
         <SutraHealthModelSection />
         <Testimonials />
         <FAQ faqs={homepageFaqs} />
-        <BookingCTA />
       </main>
     </>
   );

@@ -6,7 +6,7 @@ const SITE_URL = "https://lifequality.org.in";
 export const metadata: Metadata = {
   title: "Our Approach",
   description:
-    "Understand how Sutra Health combines medical care, lifestyle medicine, nutrition, therapeutic yoga and behaviour support around the person.",
+    "Explore the six-stage Sutra Health Method: understand, identify, personalise, practise, sustain and adapt.",
   alternates: {
     canonical: `${SITE_URL}/approach`,
   },
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Our Approach | Sutra Health",
     description:
-      "A practical, personalised approach that brings relevant health support together around the person.",
+      "The six-stage Sutra Health Method explains how care priorities are explored, acted on, reviewed and adjusted.",
     url: `${SITE_URL}/approach`,
     siteName: "Sutra Health",
     type: "website",
@@ -30,37 +30,37 @@ const stages = [
     number: "01",
     title: "Understand",
     description:
-      "We start by understanding what is happening in your health, your current concerns, your routines and what you want to change.",
+      "We listen to your main concern, relevant health history and what you hope to address. This establishes the starting point for the conversation.",
   },
   {
     number: "02",
     title: "Identify",
     description:
-      "Together, we identify the health and lifestyle factors that may be relevant and decide where attention may be most useful.",
+      "We consider which issues, barriers and priorities need attention first, distinguishing immediate questions from areas that can be explored over time.",
   },
   {
     number: "03",
     title: "Personalise",
     description:
-      "Your support is shaped around your health, circumstances, preferences and goals rather than a one-size-fits-all plan.",
+      "The next steps are selected in light of the priorities identified, including what is appropriate, feasible and within the scope of the care being discussed.",
   },
   {
     number: "04",
     title: "Practise",
     description:
-      "We turn recommendations into practical steps that can fit into everyday life and be adjusted as you learn what works for you.",
+      "You begin with agreed actions. The emphasis is on knowing what to try, how to approach it and what to notice as you put it into practice.",
   },
   {
     number: "05",
     title: "Sustain",
     description:
-      "The focus is on building habits and routines that can be maintained over time, rather than relying on short-term changes.",
+      "As actions become familiar, attention shifts to consistency, obstacles and the conditions that help a routine continue beyond the initial effort.",
   },
   {
     number: "06",
     title: "Adapt",
     description:
-      "Health and circumstances change. Your approach can be reviewed and adapted as your needs, goals and experience change.",
+      "Review what has been useful, what has not been workable and whether priorities have changed. Adjust the next steps accordingly.",
   },
 ];
 
@@ -69,49 +69,49 @@ const principles = [
     number: "01",
     title: "Integration",
     description:
-      "Medical care and lifestyle support can work alongside one another when that is appropriate, helping us look at the wider picture of health.",
+      "Clinical decisions remain grounded in appropriate medical care. Lifestyle or complementary practices may be considered alongside it when suitable; they do not replace indicated treatment.",
   },
   {
     number: "02",
     title: "Motivation",
     description:
-      "Understanding why a change matters can make it easier to take practical steps and keep working towards them.",
+      "A person’s reasons for change, readiness and concerns are part of planning. The discussion should support informed participation rather than assume motivation is constant.",
   },
   {
     number: "03",
     title: "Personalisation",
     description:
-      "There is no single routine that works for everyone. Support should reflect the person's health, circumstances and goals.",
+      "The method is a guide for making decisions, not a fixed protocol. The sequence and pace can differ according to the person and the issue being addressed.",
   },
 ];
 
 const practices = [
-  ["01", "Nutrition", "Practical food and nutrition guidance shaped around health, preferences and everyday routines."],
-  ["02", "Movement", "Support for appropriate physical activity, mobility and movement as part of healthier living."],
-  ["03", "Sleep & stress", "Practical attention to sleep, stress and recovery as part of overall wellbeing."],
-  ["04", "Behaviour & mind", "Support for behaviour change, motivation and mental wellbeing where relevant to care."],
+  ["01", "Clinical context", "Relevant symptoms, history, existing care and clinical considerations inform what can appropriately be explored."],
+  ["02", "Priority setting", "The discussion identifies the issue to address first and separates immediate needs from longer-term goals."],
+  ["03", "Action planning", "Agreed actions are made specific enough to try, observe and discuss at review."],
+  ["04", "Review and adjustment", "Experience, progress and changing circumstances inform whether to continue, modify or reconsider the plan."],
 ];
 
 const faqs = [
   {
     question: "What does the Sutra Health approach mean?",
     answer:
-      "It means looking at health in context and bringing relevant forms of support together around the person. Depending on your needs, this may include medical care, lifestyle medicine, nutrition, therapeutic yoga and behaviour support.",
+      "The Sutra Health Method is a six-stage way of organising the work: understand the situation, identify priorities, personalise next steps, practise them, support continuity and adapt after review. The stages guide the process; they are not a promise of a particular outcome.",
   },
   {
     question: "Is Sutra Health a replacement for medical treatment?",
     answer:
-      "No. Lifestyle and complementary support should not automatically replace appropriate medical care. The right approach depends on the person's condition, circumstances and clinical needs.",
+      "No. The method is not a substitute for diagnosis, prescribed treatment or medical follow-up. Do not stop or change treatment without discussing it with the treating clinician.",
   },
   {
     question: "Is the approach the same for everyone?",
     answer:
-      "No. Support is personalised around health, circumstances, preferences and goals. Recommendations and priorities can also change as your needs change.",
+      "No. The six stages provide a shared structure, but the priorities, pace and actions depend on the situation. Some steps may need revisiting as new information becomes available.",
   },
   {
     question: "Can I start with one area of my lifestyle?",
     answer:
-      "Yes. The most useful starting point depends on your situation. A consultation or assessment can help identify where it may be practical to begin.",
+      "Yes. A consultation can help clarify the concern and decide what to address first. The 21-question lifestyle assessment is an optional reflection tool, not a diagnostic test.",
   },
 ];
 
@@ -203,15 +203,15 @@ export default function ApproachPage() {
                 id="approach-title"
                 className="mt-5 max-w-[1000px] font-serif text-[46px] font-medium leading-[0.98] tracking-[-0.04em] text-[#202522] sm:text-[58px] md:text-[66px] lg:text-[76px] xl:text-[82px]"
               >
-                Healthcare that looks at{" "}
-                <span className="text-[#17413D]">the whole picture.</span>
+                A six-stage method for{" "}
+                <span className="text-[#17413D]">turning health priorities into action.</span>
               </h1>
 
               <p className="mt-7 max-w-[700px] font-sans text-[17px] leading-8 text-[#65736D] sm:text-[18px] sm:leading-9">
-                Sutra Health brings relevant medical and lifestyle support
-                together around the person. The aim is not to give everyone
-                the same plan, but to understand what matters to you and build
-                practical next steps.
+                The Sutra Health Method describes how a health conversation
+                moves from understanding the situation to choosing priorities,
+                putting agreed actions into practice and reviewing what should
+                happen next.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-x-7 gap-y-3">
@@ -243,16 +243,16 @@ export default function ApproachPage() {
                 id="method-heading"
                 className="mt-5 max-w-[1050px] font-serif text-[38px] font-medium leading-[1.08] tracking-[-0.025em] sm:text-[44px] md:text-[50px] lg:text-[54px] xl:text-[58px]"
               >
-                From understanding your health to adapting what you practise.
+                Six stages. A clear sequence for making and revisiting decisions.
               </h2>
             </div>
 
             <div className="grid lg:grid-cols-[0.72fr_1.28fr]">
               <div className="border-b border-[#202522]/10 py-9 lg:border-b-0 lg:border-r lg:py-12 lg:pr-12 xl:pr-16">
                 <p className="max-w-[520px] font-sans text-[16px] leading-[1.75] text-[#65736D] sm:text-[17px]">
-                  Change is rarely a single decision. Our method creates a
-                  sequence that starts with understanding and continues through
-                  practical action, review and adaptation.
+                  The stages help organise the work without treating health
+                  change as a straight line. Review may lead back to an earlier
+                  question, a different priority or a revised action.
                 </p>
               </div>
 
@@ -291,7 +291,7 @@ export default function ApproachPage() {
                 id="principles-heading"
                 className="mt-5 font-serif text-[38px] font-medium leading-[1.08] tracking-[-0.025em] sm:text-[44px] md:text-[50px] lg:text-[54px]"
               >
-                What guides the way we work.
+                Principles for applying the method responsibly.
               </h2>
             </div>
 
@@ -328,11 +328,12 @@ export default function ApproachPage() {
                   id="practices-heading"
                   className="mt-5 max-w-[620px] font-serif text-[38px] font-medium leading-[1.08] tracking-[-0.025em] sm:text-[44px] md:text-[50px]"
                 >
-                  Practical support for everyday health.
+                  The work the method helps organise.
                 </h2>
                 <p className="mt-5 max-w-[560px] font-sans text-[16px] leading-7 text-[#65736D]">
-                  The areas below may be part of your support depending on your
-                  health, needs and goals.
+                  These are decision points within the process, rather than
+                  another list of services. They help clarify what is considered
+                  before and after an action is agreed.
                 </p>
               </div>
 
@@ -369,7 +370,7 @@ export default function ApproachPage() {
                 id="support-heading"
                 className="mt-5 max-w-[950px] font-serif text-[38px] font-medium leading-[1.08] tracking-[-0.025em] sm:text-[44px] md:text-[50px] lg:text-[54px]"
               >
-                Different forms of support can work together.
+                Where the method may connect with care and practice.
               </h2>
             </div>
 
@@ -410,7 +411,7 @@ export default function ApproachPage() {
               id="faq-heading"
               className="mt-5 font-serif text-[38px] font-medium leading-[1.08] tracking-[-0.025em] sm:text-[44px] md:text-[50px]"
             >
-              Understanding the approach.
+              Questions about the method.
             </h2>
 
             <div className="mt-8 border-t border-[#202522]/10">
@@ -431,43 +432,7 @@ export default function ApproachPage() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="bg-[#17413D] text-white" aria-labelledby="approach-cta-heading">
-          <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
-            <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
-              <div className="max-w-3xl">
-                <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-[#91A298]">
-                  Start where you are
-                </p>
-                <h2
-                  id="approach-cta-heading"
-                  className="mt-5 font-serif text-[38px] leading-[1.04] tracking-[-0.025em] sm:text-[48px] lg:text-[58px]"
-                >
-                  Let&apos;s understand what your health needs next.
-                </h2>
-                <p className="mt-5 max-w-2xl font-sans text-[16px] leading-7 text-white/70 sm:text-[17px]">
-                  Start with a consultation or explore the free 21-point
-                  assessment to identify where you may want to focus.
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-                <Link
-                  href="/book-appointment"
-                  className="inline-flex min-h-12 items-center justify-center bg-white px-7 font-sans text-[13px] font-semibold text-[#17413D] transition-colors hover:bg-[#E7EDE8]"
-                >
-                  Book a Consultation →
-                </Link>
-                <Link
-                  href="/assessment"
-                  className="inline-flex min-h-12 items-center justify-center border border-white/30 px-7 font-sans text-[13px] font-semibold text-white transition-colors hover:border-white"
-                >
-                  Take the Assessment →
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+       
       </main>
     </>
   );

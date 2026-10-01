@@ -1,36 +1,6 @@
 import type { ServicePageConfig } from "./ServicePageTemplate";
 
-/*
-  CHANGES MADE ACROSS THIS FILE (see inline comments at each spot too):
-
-  1. FIXED a real contradiction: the homepage FAQ (page.tsx) confidently says
-     "Yes, online consultations are available across India." But this file's
-     physicianConsultation and lifestyle FAQs previously hedged the same
-     question ("may be available depending on...", "options depend on your
-     needs"). Same site, same fact, three different confidence levels.
-     Now every page gives the same direct "Yes" answer.
-
-  2. SHARPENED the most generic FAQ answers (nutrition, therapeutic yoga)
-     that only restated the section header in sentence form without naming
-     a concrete mechanism — these read as boilerplate that could describe
-     any wellness service, which hurts both conversion and AI/AEO citability.
-
-  3. WIDENED title tags from "...in Faridabad" to "...in Faridabad & Delhi
-     NCR" — the schema in ServicePageTemplate.tsx already lists Delhi NCR
-     as a served area, but no visible title captured that search intent.
-
-  4. REMOVED the repeated "everyday factors that shape/influence health"
-     phrasing in physicianConsultation and lifestyle — same filler pattern
-     already fixed on the homepage.
-
-  5. DEDUPED "Part of a Wider Approach" — it was used as contextEyebrow on
-     both therapeuticYoga and behaviourStressMind. Changed therapeuticYoga's
-     to "Complementary, Not Standalone".
-
-  6. ADDED a pricing FAQ entry to every service, matching the pattern
-     already added to the homepage. Same placeholder — same instruction:
-     do not publish with the bracketed text still in it.
-*/
+/* Service content source: page-specific copy only. Shared layout lives in ServicePageTemplate.tsx. */
 
 export const physicianConsultation: ServicePageConfig = {
   name: "Physician Consultation",
@@ -53,19 +23,19 @@ export const physicianConsultation: ServicePageConfig = {
   focusIntro:
     "The discussion is guided by your concerns and the information needed to understand them properly.",
   focusAreas: [
-    { number: "01", title: "Tell us what brings you here", description: "Start with your symptoms, concerns, questions or changes in health that you want to understand." },
-    { number: "02", title: "Understand the bigger picture", description: "Consider your medical history and relevant lifestyle factors in the context of your current health." },
-    { number: "03", title: "Discuss what comes next", description: "Talk through appropriate next steps, which may include further evaluation, treatment or lifestyle support." },
-    { number: "04", title: "Review when needed", description: "Follow-up can help assess how things are progressing and whether the approach needs to change." },
+    { number: "01", title: "Your current concern", description: "Symptoms, questions, changes in health or an existing diagnosis you want to discuss." },
+    { number: "02", title: "Your health history", description: "Relevant medical history, treatment and other information that helps put the concern in context." },
+    { number: "03", title: "Relevant lifestyle factors", description: "Nutrition, movement, sleep or stress where these are relevant to the health concern." },
+    { number: "04", title: "Next-step options", description: "Possible evaluation, treatment, follow-up or connection with another Sutra Health service." },
   ],
-  processTitle: "Understand → Personalise → Practise → Review",
+  processTitle: "What a consultation can involve",
   processIntro:
-    "The consultation is the starting point for a more connected approach to care.",
+    "The conversation follows what brings you in and the information needed to understand your situation.",
   process: [
-    { number: "01", title: "Understand", description: "Clarify your concerns, history and current health picture." },
-    { number: "02", title: "Personalise", description: "Consider what is relevant to you rather than applying a generic plan." },
-    { number: "03", title: "Practise", description: "Put agreed recommendations or next steps into everyday life." },
-    { number: "04", title: "Review", description: "Return to the conversation when your health or needs require reassessment." },
+    { number: "01", title: "Share", description: "Explain what you want the consultation to clarify and what you would like help with." },
+    { number: "02", title: "Discuss", description: "Work through the relevant information, questions and health context with the physician." },
+    { number: "03", title: "Agree", description: "Identify appropriate next steps based on the discussion and your circumstances." },
+    { number: "04", title: "Follow up", description: "Review progress later when further discussion or reassessment is appropriate." },
   ],
   contextEyebrow: "Clinical Team",
   contextTitle: "Medical care with the wider picture in view.",
@@ -90,10 +60,6 @@ export const physicianConsultation: ServicePageConfig = {
       already answers with a direct "Yes." Now consistent.
     */
     { question: "Is online consultation available?", answer: "Yes. Online consultations are available for people across India. In-person consultations are also available in Faridabad, Delhi NCR." },
-    {
-      question: "How much does a physician consultation cost?",
-      answer: "Consultations start at ₹[ADD STARTING PRICE HERE]. The exact cost depends on the type of consultation and whether it is combined with nutrition, lifestyle or yoga therapy support.",
-    },
   ],
   finalTitle: "Start with a conversation about your health.",
   finalDescription: "Bring your questions, concerns and health history. The first step is understanding what matters to you.",
@@ -134,19 +100,19 @@ export const lifestyle: ServicePageConfig = {
   focusIntro:
     "The balance between these areas is different for every person. The starting point depends on your health and priorities.",
   focusAreas: [
-    { number: "01", title: "Nutrition", description: "Understand eating patterns and identify realistic changes that fit your health and routine." },
-    { number: "02", title: "Movement", description: "Consider physical activity and movement in a way that is appropriate for your abilities and circumstances." },
-    { number: "03", title: "Sleep & stress", description: "Explore everyday patterns that may be affecting recovery, energy, concentration and wellbeing." },
-    { number: "04", title: "Behaviour", description: "Understand habits and routines that influence how you care for yourself over time." },
+    { number: "01", title: "Nutrition", description: "Eating patterns, food choices and routines relevant to your health." },
+    { number: "02", title: "Movement", description: "Physical activity and movement considered alongside your abilities and circumstances." },
+    { number: "03", title: "Sleep & stress", description: "Recovery, rest and stress patterns that may be relevant to your health." },
+    { number: "04", title: "Behaviour", description: "Habits and routines that may make healthy changes easier or harder to sustain." },
   ],
-  processTitle: "Understand → Personalise → Practise → Review",
+  processTitle: "What Lifestyle Medicine support can involve",
   processIntro:
-    "The aim is to turn broad health advice into a practical approach that can work in real life.",
+    "The focus starts with the areas of everyday life that are most relevant to your health and circumstances.",
   process: [
-    { number: "01", title: "Understand", description: "Look at your health, routines, habits and the factors that may be relevant." },
-    { number: "02", title: "Personalise", description: "Prioritise changes according to your needs, preferences and circumstances." },
-    { number: "03", title: "Practise", description: "Introduce manageable changes and build them into everyday life." },
-    { number: "04", title: "Review", description: "See what is working and adapt the approach as your needs change." },
+    { number: "01", title: "Review your routine", description: "Look at nutrition, movement, sleep, stress and habits in the context of your everyday life." },
+    { number: "02", title: "Choose priorities", description: "Identify practical areas where a change may be useful and realistic for you." },
+    { number: "03", title: "Put changes into practice", description: "Build manageable habits into your routine rather than trying to change everything at once." },
+    { number: "04", title: "Review what is working", description: "Reflect on progress and adjust the plan as your health, routine or priorities change." },
   ],
   contextEyebrow: "Whole-Person Care",
   contextTitle: "Lifestyle is part of healthcare, not separate from it.",
@@ -169,11 +135,7 @@ export const lifestyle: ServicePageConfig = {
       in-person and online options depend on the service and your needs."
       — same hedge on the same online-availability fact. Now direct.
     */
-    { question: "Is Lifestyle Medicine available in Faridabad?", answer: "Yes. Online consultations are available across India, and in-person sessions are available in Faridabad, Delhi NCR." },
-    {
-      question: "How much does Lifestyle Medicine support cost?",
-      answer: "Sessions start at ₹[ADD STARTING PRICE HERE]. Cost depends on whether support is combined with a physician consultation, nutrition guidance or therapeutic yoga.",
-    },
+    { question: "Is Lifestyle Medicine available in Faridabad?", answer: "Yes. Online consultations are available across India, and in-person sessions are available in Faridabad, Delhi NCR." }
   ],
   finalTitle: "Make your everyday health easier to understand.",
   finalDescription: "Start with the areas of daily life that matter most to your health and explore practical next steps.",
@@ -206,14 +168,14 @@ export const nutrition: ServicePageConfig = {
     { number: "03", title: "Food choices", description: "Build a clearer understanding of food choices, portions, meals and routines that work for your circumstances." },
     { number: "04", title: "Sustainable habits", description: "Focus on changes that can become part of everyday life rather than short-term dietary rules." },
   ],
-  processTitle: "Understand → Personalise → Practise → Review",
+  processTitle: "What nutrition support can involve",
   processIntro:
-    "The aim is not to create another set of rules. It is to understand your needs and build an approach that can work in everyday life.",
+    "The discussion is based on your current eating patterns, health needs and the practical realities of your daily life.",
   process: [
-    { number: "01", title: "Understand", description: "Look at your current eating patterns, routines, preferences and health concerns." },
-    { number: "02", title: "Personalise", description: "Connect nutrition guidance with your individual health needs and circumstances." },
-    { number: "03", title: "Practise", description: "Turn recommendations into realistic food choices and habits." },
-    { number: "04", title: "Review", description: "Reflect on what is working and where your approach may need to change." },
+    { number: "01", title: "Understand your eating pattern", description: "Review meals, timing, portions, preferences and the challenges that affect how you eat." },
+    { number: "02", title: "Connect food with your needs", description: "Consider nutrition in the context of your health concerns, routines and goals." },
+    { number: "03", title: "Make practical changes", description: "Turn recommendations into realistic food choices and habits that can work in everyday life." },
+    { number: "04", title: "Review and adjust", description: "Discuss what is working and refine the approach rather than relying on a fixed plan." },
   ],
   contextEyebrow: "Beyond the Diet",
   contextTitle: "The best nutrition advice has to work in real life.",
@@ -238,11 +200,7 @@ export const nutrition: ServicePageConfig = {
     { question: "Is nutrition support only for weight management?", answer: "No. Nutrition can be relevant to many aspects of health. The focus of a consultation depends on your individual concerns, health needs and goals." },
     { question: "Will I be given a fixed diet plan?", answer: "Nutrition guidance is intended to be personalised. Recommendations can take into account your health, preferences, routines and circumstances rather than relying on a single approach for everyone." },
     { question: "Can nutrition support work alongside medical care?", answer: "Yes. Nutrition support can form part of a broader healthcare approach and, where relevant, nutritional considerations can be discussed alongside medical care and other lifestyle factors." },
-    { question: "Can I discuss my existing eating habits during a consultation?", answer: "Yes. Understanding what you currently eat, how you structure meals and what challenges you experience can help create a more useful and realistic nutrition conversation." },
-    {
-      question: "How much does nutrition support cost?",
-      answer: "Sessions start at ₹[ADD STARTING PRICE HERE]. Cost depends on session length and whether nutrition support is combined with a physician consultation or lifestyle medicine plan.",
-    },
+    { question: "Can I discuss my existing eating habits during a consultation?", answer: "Yes. Understanding what you currently eat, how you structure meals and what challenges you experience can help create a more useful and realistic nutrition conversation." }
   ],
   finalTitle: "Start a more useful conversation about food and health.",
   finalDescription: "Begin with where you are now and explore what practical nutrition changes may make sense for you.",
@@ -274,14 +232,14 @@ export const therapeuticYoga: ServicePageConfig = {
     { number: "03", title: "Awareness", description: "Develop greater awareness of movement, breathing and everyday patterns through guided practice." },
     { number: "04", title: "Wellbeing", description: "Connect regular practice with broader goals around health, stress management and everyday wellbeing." },
   ],
-  processTitle: "Understand → Adapt → Practise → Review",
+  processTitle: "What a Therapeutic Yoga session can involve",
   processIntro:
-    "The approach begins with the individual and builds towards a practice that can be understood, adapted and maintained.",
+    "Practices are selected and adapted according to your health, physical abilities, experience and goals.",
   process: [
-    { number: "01", title: "Understand", description: "Begin by understanding your health, movement experience, concerns and what you want from the practice." },
-    { number: "02", title: "Adapt", description: "Choose practices that are appropriate for your abilities, circumstances and individual needs." },
-    { number: "03", title: "Practise", description: "Build a regular practice with guidance that helps you understand how and why the practices are being used." },
-    { number: "04", title: "Review", description: "Reflect on your experience and adjust the practice as your needs, abilities or goals change." },
+    { number: "01", title: "Understand your needs", description: "Discuss your health, movement experience, concerns and what you want from the practice." },
+    { number: "02", title: "Select appropriate practices", description: "Choose Yoga-based movement, breathing or awareness practices that fit your circumstances." },
+    { number: "03", title: "Practise with guidance", description: "Learn and practise the selected movements or techniques in a guided setting." },
+    { number: "04", title: "Adapt your practice", description: "Review your experience and adjust the practice as your needs, abilities or goals change." },
   ],
   /*
     CHANGED: previously "Part of a Wider Approach" — same eyebrow used
@@ -312,11 +270,7 @@ export const therapeuticYoga: ServicePageConfig = {
     */
     { question: "Who can benefit from Therapeutic Yoga?", answer: "It's often used alongside care for joint pain, high stress, poor sleep, or as movement support during recovery from illness or injury. Dr. Sarwal assesses your specific situation before recommending it — it isn't assigned by default to everyone who books." },
     { question: "Can Therapeutic Yoga be used alongside medical care?", answer: "Yes. Therapeutic Yoga may form part of a broader healthcare approach. It should not be considered a replacement for appropriate medical diagnosis or treatment." },
-    { question: "Do I need previous Yoga experience?", answer: "Previous Yoga experience is not necessarily required. Practices can be adapted according to your experience, abilities and individual needs." },
-    {
-      question: "How much do Therapeutic Yoga sessions cost?",
-      answer: "Sessions start at ₹[ADD STARTING PRICE HERE]. Cost depends on session length and whether yoga therapy is combined with a physician consultation or lifestyle medicine plan.",
-    },
+    { question: "Do I need previous Yoga experience?", answer: "Previous Yoga experience is not necessarily required. Practices can be adapted according to your experience, abilities and individual needs." }
   ],
   finalTitle: "Find a practice that fits your health and your life.",
   finalDescription: "Start with a conversation about your health, movement and what you would like your practice to support.",
@@ -348,14 +302,14 @@ export const behaviourStressMind: ServicePageConfig = {
     { number: "03", title: "Mind", description: "Develop greater awareness of thoughts, emotions and responses that may influence everyday wellbeing." },
     { number: "04", title: "Daily life", description: "Turn understanding into practical changes that fit your routines, responsibilities and circumstances." },
   ],
-  processTitle: "Understand → Identify → Practise → Review",
+  processTitle: "What Behaviour, Stress & Mind support can involve",
   processIntro:
-    "Change becomes more useful when it begins with understanding rather than simply trying harder.",
+    "The focus depends on the patterns, stressors and everyday situations that are most relevant to you.",
   process: [
-    { number: "01", title: "Understand", description: "Start with what is happening in your life, your routines, your concerns and the patterns you want to understand." },
-    { number: "02", title: "Identify", description: "Explore the habits, stressors and behavioural patterns that may be relevant to your health and wellbeing." },
-    { number: "03", title: "Practise", description: "Work towards practical changes that can be introduced gradually and used in everyday situations." },
-    { number: "04", title: "Review", description: "Reflect on what is helping, what remains difficult and where your approach may need to adapt." },
+    { number: "01", title: "Understand what is happening", description: "Start with your routines, concerns, stressors and the situations you want to understand better." },
+    { number: "02", title: "Identify useful patterns", description: "Explore habits, responses and behavioural patterns that may be relevant to your everyday health." },
+    { number: "03", title: "Practise practical changes", description: "Work with manageable changes that can be used in real situations and routines." },
+    { number: "04", title: "Review the experience", description: "Reflect on what is helping and what may need to be adapted or supported further." },
   ],
   contextEyebrow: "Part of a Wider Approach",
   contextTitle: "Behaviour, stress and mind do not exist separately from physical health.",
@@ -373,11 +327,7 @@ export const behaviourStressMind: ServicePageConfig = {
     { question: "Is this service only for people experiencing high stress?", answer: "No. It may also be useful for people who want to understand their habits, improve everyday routines, develop healthier responses to stress or support their overall wellbeing." },
     { question: "How can stress affect everyday health?", answer: "Stress can influence sleep, activity, eating patterns, concentration, mood and other everyday behaviours. Understanding these connections can help identify practical areas for support." },
     { question: "Can behaviour support be combined with medical care?", answer: "Yes. Behaviour and stress support can form part of a broader healthcare approach and may be considered alongside appropriate medical and lifestyle care." },
-    { question: "Will I be given a fixed routine to follow?", answer: "The approach is intended to be practical and individualised. The focus is on understanding your circumstances and identifying changes that can realistically fit into your life." },
-    {
-      question: "How much does Behaviour, Stress & Mind support cost?",
-      answer: "Sessions start at ₹[ADD STARTING PRICE HERE]. Cost depends on session length and whether this support is combined with a physician consultation or other services.",
-    },
+    { question: "Will I be given a fixed routine to follow?", answer: "The approach is intended to be practical and individualised. The focus is on understanding your circumstances and identifying changes that can realistically fit into your life." }
   ],
   finalTitle: "Start with a conversation about what is affecting your health.",
   finalDescription: "Explore the patterns that matter to you and identify practical next steps.",
@@ -439,35 +389,14 @@ export const traditionalTherapies: ServicePageConfig = {
     },
   ],
 
-  processTitle: "Understand → Prepare → Practise → Review",
+  processTitle: "What a Traditional Therapy session can involve",
   processIntro:
-    "The session begins with understanding what you are looking for and making sure the selected practice is appropriate for you.",
-
+    "The session begins by discussing the selected practice, your expectations and any circumstances relevant to suitability.",
   process: [
-    {
-      number: "01",
-      title: "Understand",
-      description:
-        "Discuss your needs, expectations and relevant health information before choosing a practice.",
-    },
-    {
-      number: "02",
-      title: "Prepare",
-      description:
-        "Understand what the session involves and prepare for the selected traditional practice.",
-    },
-    {
-      number: "03",
-      title: "Practise",
-      description:
-        "Experience the session in a calm, guided setting with attention to comfort throughout.",
-    },
-    {
-      number: "04",
-      title: "Review",
-      description:
-        "Discuss how you experienced the session and whether any further support or follow-up is appropriate.",
-    },
+    { number: "01", title: "Discuss suitability", description: "Talk about what you are looking for and any relevant circumstances before selecting a practice." },
+    { number: "02", title: "Prepare for the session", description: "Understand what the selected traditional practice involves and how the session will be conducted." },
+    { number: "03", title: "Experience the practice", description: "Take part in the selected practice in a calm, guided setting with attention to comfort." },
+    { number: "04", title: "Review the experience", description: "Discuss how you experienced the session and whether any further support or follow-up is appropriate." },
   ],
 
   contextEyebrow: "Complementary, Not Standalone",
@@ -524,11 +453,6 @@ export const traditionalTherapies: ServicePageConfig = {
       question: "Can I discuss my health before booking a session?",
       answer:
         "Yes. A consultation can help clarify what you are looking for and whether the selected practice is appropriate for your circumstances.",
-    },
-    {
-      question: "How much do Traditional Therapy sessions cost?",
-      answer:
-        "Sessions start at ₹[ADD STARTING PRICE HERE]. The exact cost depends on the practice and session details.",
     },
   ],
 

@@ -53,28 +53,6 @@ const services = [
   },
 ];
 
-const waysOfWorking = [
-  {
-    number: "01",
-    title: "Understand",
-    description: "Start with your health, concerns, goals and everyday routine.",
-  },
-  {
-    number: "02",
-    title: "Personalise",
-    description: "Build practical recommendations around your needs and ability.",
-  },
-  {
-    number: "03",
-    title: "Practise",
-    description: "Introduce changes through nutrition, yoga and lifestyle practices.",
-  },
-  {
-    number: "04",
-    title: "Review",
-    description: "Review what is working and adapt the approach as your needs change.",
-  },
-];
 
 const healthAreas = [
   ["Diabetes & Blood Sugar", "/conditions/diabetes-blood-sugar"],
@@ -167,10 +145,9 @@ export default function ServicesPage() {
               the whole you.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
-              Sutra Health brings together physician consultation, lifestyle
-              medicine, nutrition, therapeutic yoga, behaviour support and
-              traditional therapies to help you understand your health and
-              build practical habits around everyday life.
+              Sutra Health offers doctor-led consultation, lifestyle and nutrition support,
+              Therapeutic Yoga, behaviour and stress support, and traditional
+              therapies. The right combination depends on your health, needs and goals.
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-[var(--sutra-muted)]">
               <span>Doctor-led</span>
@@ -191,11 +168,10 @@ export default function ServicesPage() {
               id="services-title"
               className="mt-4 font-[var(--font-serif)] text-3xl font-medium leading-[1.12] tracking-[-0.02em] sm:text-4xl"
             >
-              Ways we can support you.
+              Choose the support that fits your needs.
             </h2>
             <p className="mt-5 max-w-xl text-base leading-7 text-[var(--sutra-muted)]">
-              Start with the support that is relevant to where you are now.
-              Your care can bring together more than one of these practices.
+              Each service has a distinct role. Where appropriate, more than one service can be part of your wider care.
             </p>
           </div>
 
@@ -204,7 +180,7 @@ export default function ServicesPage() {
               <Link
                 key={service.number}
                 href={service.href}
-                className="group border border-[var(--sutra-border-strong)] bg-[var(--sutra-porcelain)] transition-colors duration-300 hover:border-[var(--sutra-teal)]/30"
+                className="group border border-[var(--sutra-border-strong)] bg-[var(--sutra-porcelain)] transition-colors duration-300 hover:border-[var(--sutra-sage)]/50"
               >
                 <div className="flex gap-5 p-5 sm:gap-6 sm:p-6">
                   <div className="relative h-[116px] w-[116px] shrink-0 overflow-hidden sm:h-[128px] sm:w-[128px]">
@@ -226,7 +202,7 @@ export default function ServicesPage() {
                     <p className="mt-3 text-sm leading-6 text-[var(--sutra-muted)] sm:text-base sm:leading-7">
                       {service.description}
                     </p>
-                    <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-[var(--sutra-teal)]">
+                    <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-[var(--sutra-sage)]">
                       <span>Explore</span>
                       <ArrowUpRight
                         size={15}
@@ -239,57 +215,6 @@ export default function ServicesPage() {
                 </div>
               </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section aria-labelledby="how-we-work-title" className="bg-[var(--sutra-porcelain)]">
-        <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
-          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
-                How we work
-              </p>
-              <h2
-                id="how-we-work-title"
-                className="mt-4 max-w-md font-[var(--font-serif)] text-3xl font-medium leading-[1.12] tracking-[-0.02em] sm:text-4xl"
-              >
-                Start where you are.
-              </h2>
-              <p className="mt-5 max-w-md text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
-                Your care begins with understanding your health, your routine
-                and what matters to you. From there, we build practical steps
-                that can fit into everyday life.
-              </p>
-              <Link
-                href="/approach"
-                className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[var(--sutra-teal)]"
-              >
-                Explore our approach
-                <ArrowUpRight size={15} strokeWidth={1.7} />
-              </Link>
-            </div>
-
-            <div className="border-t border-[var(--sutra-border)]">
-              {waysOfWorking.map((step) => (
-                <div
-                  key={step.number}
-                  className="grid grid-cols-[42px_1fr] gap-4 border-b border-[var(--sutra-border)] py-5 sm:grid-cols-[52px_1fr] sm:gap-5 sm:py-6"
-                >
-                  <span className="pt-1 text-[11px] font-medium tracking-[0.1em] text-[var(--sutra-muted)]">
-                    {step.number}
-                  </span>
-                  <div>
-                    <h3 className="font-[var(--font-serif)] text-xl font-medium leading-[1.25] sm:text-2xl">
-                      {step.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-[var(--sutra-muted)] sm:text-base sm:leading-7">
-                      {step.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -310,7 +235,7 @@ export default function ServicesPage() {
             </div>
             <Link
               href="/conditions"
-              className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-[var(--sutra-teal)]"
+              className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-[var(--sutra-sage)]"
             >
               <span>All health areas</span>
               <ArrowUpRight size={15} strokeWidth={1.7} />
@@ -328,14 +253,14 @@ export default function ServicesPage() {
                     : "sm:pl-7 lg:pl-10"
                 }`}
               >
-                <span className="font-[var(--font-serif)] text-xl font-medium leading-[1.3] transition-colors duration-300 group-hover:text-[var(--sutra-teal)] sm:text-2xl">
+                <span className="font-[var(--font-serif)] text-xl font-medium leading-[1.3] transition-colors duration-300 group-hover:text-[var(--sutra-sage)] sm:text-2xl">
                   {title}
                 </span>
                 <ArrowUpRight
                   size={17}
                   strokeWidth={1.5}
                   aria-hidden="true"
-                  className="shrink-0 text-[var(--sutra-muted)] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[var(--sutra-teal)]"
+                  className="shrink-0 text-[var(--sutra-muted)] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[var(--sutra-sage)]"
                 />
               </Link>
             ))}
@@ -359,7 +284,7 @@ export default function ServicesPage() {
               </p>
               <Link
                 href="/assessment"
-                className="mt-7 inline-flex min-h-12 items-center gap-2 bg-[var(--sutra-teal)] px-6 py-3 text-sm font-semibold text-white transition-colors duration-300 hover:bg-[var(--sutra-teal-hover)]"
+                className="mt-7 inline-flex min-h-12 items-center gap-2 bg-[var(--sutra-sage)] px-6 py-3 text-sm font-semibold text-[var(--sutra-white)] transition-colors duration-300 hover:opacity-90"
               >
                 Take the assessment
                 <ArrowUpRight size={15} strokeWidth={1.7} />
@@ -372,7 +297,7 @@ export default function ServicesPage() {
 
             <div className="border border-[var(--sutra-border-strong)] bg-[var(--sutra-white)] p-6 sm:p-8">
               <div className="flex items-end gap-3 border-b border-[var(--sutra-border)] pb-6">
-                <span className="font-[var(--font-serif)] text-6xl font-medium leading-none text-[var(--sutra-teal)] sm:text-7xl">
+                <span className="font-[var(--font-serif)] text-6xl font-medium leading-none text-[var(--sutra-sage)] sm:text-7xl">
                   21
                 </span>
                 <span className="pb-1 text-xs uppercase tracking-[0.12em] text-[var(--sutra-muted)]">
@@ -386,7 +311,7 @@ export default function ServicesPage() {
                       size={15}
                       strokeWidth={1.7}
                       aria-hidden="true"
-                      className="shrink-0 text-[var(--sutra-teal)]"
+                      className="shrink-0 text-[var(--sutra-sage)]"
                     />
                     <span className="text-sm leading-6 text-[var(--sutra-muted)]">{item}</span>
                   </div>
@@ -397,24 +322,24 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-[var(--sutra-teal)] text-white">
+      <section className="bg-[var(--sutra-sage)] text-[var(--sutra-white)]">
         <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
             <div className="max-w-2xl">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/60">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-white)]/60">
                 Your next step
               </p>
               <h2 className="mt-4 font-[var(--font-serif)] text-3xl font-medium leading-[1.1] tracking-[-0.02em] sm:text-4xl lg:text-5xl">
                 Start with a conversation.
               </h2>
-              <p className="mt-5 max-w-xl text-base leading-7 text-white/75 sm:text-lg sm:leading-8">
+              <p className="mt-5 max-w-xl text-base leading-7 text-[var(--sutra-white)]/75 sm:text-lg sm:leading-8">
                 Get practical, evidence-informed support to build healthier
                 habits that fit your life.
               </p>
             </div>
             <Link
               href="/book-appointment"
-              className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 bg-white px-7 py-3 text-sm font-semibold text-[var(--sutra-teal)] transition-colors duration-300 hover:bg-[var(--sutra-porcelain)]"
+              className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 bg-[var(--sutra-white)] px-7 py-3 text-sm font-semibold text-[var(--sutra-sage)] transition-colors duration-300 hover:bg-[var(--sutra-porcelain)]"
             >
               Book a Consultation
               <ArrowUpRight size={16} strokeWidth={1.7} />

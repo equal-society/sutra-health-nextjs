@@ -73,7 +73,7 @@ function getSchema(config: ServicePageConfig) {
           url: baseUrl,
         },
         about: {
-          "@type": config.serviceType || "MedicalTherapy",
+          "@type": "Thing",
           name: config.medicalAbout || config.name,
         },
       },
@@ -84,7 +84,7 @@ function getSchema(config: ServicePageConfig) {
           {
             "@type": "ListItem",
             position: 2,
-            name: "What We Do",
+            name: "Services",
             item: `${baseUrl}/services`,
           },
           { "@type": "ListItem", position: 3, name: config.name, item: url },
@@ -131,42 +131,42 @@ export default function ServicePageTemplate({ config }: { config: ServicePageCon
       />
 
       {/* HERO */}
-      
+
       <section className="border-b border-[var(--sutra-border)]">
-        
-        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-18 lg:px-12 lg:py-20">
-          
+
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28">
+
           <div className="max-w-4xl">
-            
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
-              {config.eyebrow || "What We Do"}
+
+            <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-teal)]">
+              {config.eyebrow || "Services"}
             </p>
 
-            <h1 className="mt-5 max-w-4xl font-[var(--font-serif)] text-5xl leading-[1.02] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
+            <h1 className="mt-5 max-w-4xl font-[var(--font-serif)] text-6xl leading-[1.02] tracking-[-0.035em] sm:text-7xl lg:text-[80px]">
               {config.name}
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--sutra-muted)] sm:text-xl sm:leading-9">
+            <p className="mt-6 max-w-3xl text-[19px] leading-8 text-[var(--sutra-ink)] sm:text-[20px] sm:leading-9">
               {config.heroDescription}
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/book-appointment"
-                className="inline-flex items-center justify-center rounded-none bg-[var(--sutra-teal)] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--sutra-teal-hover)]"
+                className="inline-flex items-center justify-center rounded-none bg-[var(--sutra-teal)] px-7 py-4 text-[15px] font-semibold text-[var(--sutra-white)] transition-colors hover:bg-[var(--sutra-teal-hover)]"
               >
                 {config.ctaLabel || "Book a Consultation"}
               </Link>
 
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center rounded-none border border-[var(--sutra-border-strong)] px-6 py-3 text-sm font-semibold text-[var(--sutra-ink)] transition-colors hover:border-[var(--sutra-teal)] hover:text-[var(--sutra-teal)]"
+                className="inline-flex items-center justify-center rounded-none border border-[var(--sutra-border-strong)] px-7 py-4 text-[15px] font-semibold text-[var(--sutra-ink)] transition-colors hover:border-[var(--sutra-teal)] hover:text-[var(--sutra-teal)]"
               >
-                Explore What We Do
+                Explore Services
               </Link>
             </div>
 
-            <div className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-sm text-[var(--sutra-muted)]">
+            <div className="mt-7 flex flex-wrap gap-x-6 gap-y-2 text-[15px] text-[var(--sutra-ink)]">
               {config.trust.map((item) => (
                 <span key={item}>{item}</span>
               ))}
@@ -176,23 +176,23 @@ export default function ServicePageTemplate({ config }: { config: ServicePageCon
       </section>
 
       {/* INTRO */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-18 lg:px-12 lg:py-20">
+      <section className="bg-[var(--sutra-white)]">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28">
           <div className="grid gap-9 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+              <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-teal)]">
                 {config.introEyebrow}
               </p>
-              <h2 className="mt-4 max-w-xl font-[var(--font-serif)] text-3xl leading-tight tracking-[-0.025em] sm:text-4xl">
+              <h2 className="mt-4 max-w-2xl font-[var(--font-serif)] text-4xl leading-[1.08] tracking-[-0.025em] sm:text-5xl">
                 {config.introTitle}
               </h2>
             </div>
 
-            <div className="max-w-2xl">
+            <div className="max-w-3xl">
               {config.introParagraphs.map((paragraph, index) => (
                 <p
                   key={index}
-                  className={index === 0 ? "text-lg leading-8 text-[var(--sutra-muted)]" : "mt-5 text-lg leading-8 text-[var(--sutra-muted)]"}
+                  className={index === 0 ? "text-lg leading-8 text-[var(--sutra-ink)]" : "mt-5 text-lg leading-8 text-[var(--sutra-ink)]"}
                 >
                   {paragraph}
                 </p>
@@ -204,15 +204,15 @@ export default function ServicePageTemplate({ config }: { config: ServicePageCon
 
       {/* FOCUS */}
       <section className="border-y border-[var(--sutra-border)] bg-[var(--sutra-porcelain)]">
-        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-18 lg:px-12 lg:py-20">
-          <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28">
+          <div className="max-w-3xl">
+            <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-teal)]">
               {config.focusEyebrow}
             </p>
-            <h2 className="mt-4 font-[var(--font-serif)] text-3xl leading-tight tracking-[-0.025em] sm:text-4xl">
+            <h2 className="mt-4 font-[var(--font-serif)] text-4xl leading-[1.08] tracking-[-0.025em] sm:text-5xl">
               {config.focusTitle}
             </h2>
-            <p className="mt-4 max-w-xl text-base leading-7 text-[var(--sutra-muted)]">
+            <p className="mt-4 max-w-2xl text-[18px] leading-8 text-[var(--sutra-ink)]">
               {config.focusIntro}
             </p>
           </div>
@@ -221,15 +221,15 @@ export default function ServicePageTemplate({ config }: { config: ServicePageCon
             {config.focusAreas.map((item) => (
               <div
                 key={item.number}
-                className="grid gap-4 border-b border-[var(--sutra-border-strong)] py-6 sm:grid-cols-[72px_0.8fr_1.2fr] sm:items-start sm:gap-8 sm:py-7"
+                className="grid gap-4 border-b border-[var(--sutra-border-strong)] py-8 sm:grid-cols-[72px_0.8fr_1.2fr] sm:items-start sm:gap-8 sm:py-8"
               >
-                <span className="text-sm font-semibold tracking-[0.12em] text-[var(--sutra-sage)]">
+                <span className="text-[14px] font-semibold tracking-[0.12em] text-[var(--sutra-sage)]">
                   {item.number}
                 </span>
-                <h3 className="font-[var(--font-serif)] text-2xl leading-tight tracking-[-0.02em]">
+                <h3 className="font-[var(--font-serif)] text-[27px] leading-tight tracking-[-0.02em]">
                   {item.title}
                 </h3>
-                <p className="max-w-xl text-base leading-7 text-[var(--sutra-muted)]">
+                <p className="max-w-2xl text-[18px] leading-8 text-[var(--sutra-ink)]">
                   {item.description}
                 </p>
               </div>
@@ -239,68 +239,60 @@ export default function ServicePageTemplate({ config }: { config: ServicePageCon
       </section>
 
       {/* PROCESS */}
-      <section className="bg-[var(--sutra-teal)] text-white">
-        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-18 lg:px-12 lg:py-20">
-          <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
+      <section className="bg-[var(--sutra-pale-sage)] text-[var(--sutra-ink)]">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28">
+          <div className="max-w-3xl">
+            <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-teal)]">
               How It Works
             </p>
-            <h2 className="mt-4 font-[var(--font-serif)] text-3xl leading-tight tracking-[-0.025em] sm:text-4xl">
+            <h2 className="mt-4 max-w-3xl font-[var(--font-serif)] text-4xl leading-[1.08] tracking-[-0.025em] sm:text-5xl">
               {config.processTitle}
             </h2>
-            <p className="mt-4 max-w-xl text-base leading-7 text-white/70 sm:text-lg sm:leading-8">
+            <p className="mt-4 max-w-2xl text-[18px] leading-8 text-[var(--sutra-ink)] sm:text-[19px] sm:leading-8">
               {config.processIntro}
             </p>
           </div>
 
-          <div className="mt-8 border-t border-white/20">
+          <div className="mt-8 border-t border-[var(--sutra-border-strong)]">
             {config.process.map((item) => (
               <div
                 key={item.number}
-                className="grid gap-4 border-b border-white/20 py-6 sm:grid-cols-[72px_0.8fr_1.2fr] sm:items-start sm:gap-8 sm:py-7"
+                className="grid gap-4 border-b border-[var(--sutra-border-strong)] py-8 sm:grid-cols-[72px_0.8fr_1.2fr] sm:items-start sm:gap-8 sm:py-8"
               >
-                <span className="text-sm font-semibold tracking-[0.12em] text-white/50">
+                <span className="text-[14px] font-semibold tracking-[0.12em] text-[var(--sutra-ink)]">
                   {item.number}
                 </span>
-                <h3 className="font-[var(--font-serif)] text-2xl leading-tight">
+                <h3 className="font-[var(--font-serif)] text-[27px] leading-tight tracking-[-0.02em]">
                   {item.title}
                 </h3>
-                <p className="max-w-xl text-base leading-7 text-white/70">
+                <p className="max-w-2xl text-[18px] leading-8 text-[var(--sutra-ink)]">
                   {item.description}
                 </p>
               </div>
             ))}
           </div>
 
-          <div className="mt-8">
-            <Link
-              href="/book-appointment"
-              className="inline-flex items-center justify-center rounded-none bg-white px-6 py-3 text-sm font-semibold text-[var(--sutra-teal)] transition-colors hover:bg-[var(--sutra-porcelain)]"
-            >
-              Start a Conversation
-            </Link>
-          </div>
         </div>
       </section>
 
       {/* CONTEXT */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-18 lg:px-12 lg:py-20">
+      <section className="bg-[var(--sutra-white)]">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28">
           <div className="grid gap-9 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+              <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-teal)]">
                 {config.contextEyebrow}
               </p>
-              <h2 className="mt-4 max-w-3xl font-[var(--font-serif)] text-4xl leading-[1.08] tracking-[-0.03em] sm:text-5xl">
+              <h2 className="mt-4 max-w-3xl font-[var(--font-serif)] text-5xl leading-[1.06] tracking-[-0.03em] sm:text-[56px]">
                 {config.contextTitle}
               </h2>
             </div>
 
-            <div className="max-w-2xl">
+            <div className="max-w-3xl">
               {config.contextParagraphs.map((paragraph, index) => (
                 <p
                   key={index}
-                  className={index === 0 ? "text-lg leading-8 text-[var(--sutra-muted)]" : "mt-5 text-lg leading-8 text-[var(--sutra-muted)]"}
+                  className={index === 0 ? "text-lg leading-8 text-[var(--sutra-ink)]" : "mt-5 text-lg leading-8 text-[var(--sutra-ink)]"}
                 >
                   {paragraph}
                 </p>
@@ -312,12 +304,12 @@ export default function ServicePageTemplate({ config }: { config: ServicePageCon
 
       {/* RELATED */}
       <section className="border-y border-[var(--sutra-border)] bg-[var(--sutra-porcelain)]">
-        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-18 lg:px-12 lg:py-20">
-          <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:px-12 lg:py-28">
+          <div className="max-w-3xl">
+            <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-teal)]">
               Continue Your Care
             </p>
-            <h2 className="mt-4 font-[var(--font-serif)] text-3xl leading-tight tracking-[-0.025em] sm:text-4xl">
+            <h2 className="mt-4 font-[var(--font-serif)] text-4xl leading-[1.08] tracking-[-0.025em] sm:text-5xl">
               Related services
             </h2>
           </div>
@@ -327,16 +319,16 @@ export default function ServicePageTemplate({ config }: { config: ServicePageCon
               <Link
                 key={service.href}
                 href={service.href}
-                className="group grid gap-3 border-b border-[var(--sutra-border-strong)] py-6 sm:grid-cols-[0.8fr_1.2fr_auto] sm:items-center sm:gap-8 sm:py-7"
+                className="group grid gap-3 border-b border-[var(--sutra-border-strong)] py-8 sm:grid-cols-[0.8fr_1.2fr_auto] sm:items-center sm:gap-8 sm:py-8"
               >
-                <h3 className="font-[var(--font-serif)] text-2xl leading-tight tracking-[-0.02em]">
+                <h3 className="font-[var(--font-serif)] text-[27px] leading-tight tracking-[-0.02em]">
                   {service.title}
                 </h3>
-                <p className="max-w-xl text-base leading-7 text-[var(--sutra-muted)]">
+                <p className="max-w-2xl text-[18px] leading-8 text-[var(--sutra-ink)]">
                   {service.description}
                 </p>
                 <span
-                  className="text-lg text-[var(--sutra-teal)] transition-transform group-hover:translate-x-1"
+                  className="text-lg text-[var(--sutra-sage)] transition-transform group-hover:translate-x-1"
                   aria-hidden="true"
                 >
                   →
@@ -351,10 +343,10 @@ export default function ServicePageTemplate({ config }: { config: ServicePageCon
       <section className="bg-[var(--sutra-porcelain)]">
         <div className="mx-auto max-w-4xl px-5 py-14 sm:px-8 sm:py-18 lg:py-20">
           <div className="text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+            <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-teal)]">
               Frequently Asked Questions
             </p>
-            <h2 className="mt-4 font-[var(--font-serif)] text-3xl leading-tight tracking-[-0.025em] sm:text-4xl">
+            <h2 className="mt-4 font-[var(--font-serif)] text-4xl leading-[1.08] tracking-[-0.025em] sm:text-5xl">
               About {config.shortName || config.name}
             </h2>
           </div>
@@ -365,17 +357,17 @@ export default function ServicePageTemplate({ config }: { config: ServicePageCon
                 key={item.question}
                 className="group border-b border-[var(--sutra-border-strong)]"
               >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-5 font-[var(--font-serif)] text-xl leading-tight marker:hidden">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-5 font-[var(--font-serif)] text-[20px] leading-7 marker:hidden [&::-webkit-details-marker]:hidden">
                   <span>{item.question}</span>
                   <span
-                    className="relative flex h-5 w-5 shrink-0 items-center justify-center text-[var(--sutra-teal)]"
+                    className="relative flex h-5 w-5 shrink-0 items-center justify-center text-[var(--sutra-sage)]"
                     aria-hidden="true"
                   >
                     <span className="absolute h-px w-4 bg-current" />
                     <span className="absolute h-4 w-px bg-current transition-transform duration-200 group-open:rotate-90" />
                   </span>
                 </summary>
-                <div className="max-w-3xl pb-5 pr-8 text-base leading-7 text-[var(--sutra-muted)]">
+                <div className="max-w-3xl pb-5 pr-8 text-[18px] leading-8 text-[var(--sutra-ink)]">
                   {item.answer}
                 </div>
               </details>
@@ -384,36 +376,11 @@ export default function ServicePageTemplate({ config }: { config: ServicePageCon
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-[var(--sutra-teal)] text-white">
-        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-18 lg:px-12 lg:py-20">
-          <div className="grid gap-7 lg:grid-cols-[1fr_auto] lg:items-end lg:gap-16">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">
-                Your Next Step
-              </p>
-              <h2 className="mt-4 max-w-3xl font-[var(--font-serif)] text-4xl leading-[1.08] tracking-[-0.03em] sm:text-5xl">
-                {config.finalTitle}
-              </h2>
-              <p className="mt-4 max-w-2xl text-base leading-7 text-white/75 sm:text-lg sm:leading-8">
-                {config.finalDescription}
-              </p>
-            </div>
-
-            <Link
-              href="/book-appointment"
-              className="inline-flex items-center justify-center rounded-none bg-white px-7 py-3 text-sm font-semibold text-[var(--sutra-teal)] transition-colors hover:bg-[var(--sutra-porcelain)]"
-            >
-              Book a Consultation
-            </Link>
-          </div>
-        </div>
-      </section>
-
+    
       {/* DISCLAIMER */}
       <section className="bg-[var(--sutra-porcelain)]">
         <div className="mx-auto max-w-7xl px-5 py-6 sm:px-8 lg:px-12">
-          <p className="max-w-5xl text-xs leading-6 text-[var(--sutra-muted)]">
+          <p className="max-w-5xl text-[14px] leading-6 text-[var(--sutra-muted)]">
             Medical information on this page is provided for general information
             and does not replace individual medical advice, diagnosis or
             treatment. Please consult an appropriately qualified healthcare
