@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 
 import Hero from "@/components/hero/Hero";
 import LifestyleHealthSection from "@/components/hero/LifestyleHealthSection";
-import ScienceSection from "@/components/hero/ScienceSection";
 import AssessmentSection from "@/components/hero/AssessmentSection";
 import HowWeHelpSection from "@/components/hero/HowWeHelpSection";
 import SutraHealthModelSection from "@/components/hero/SutraHealthModelSection";
 import Testimonials from "@/components/hero/Testimonials";
 import FAQ from "@/components/shared/FAQ";
+import ScienceSection from "@/components/hero/ScienceSection";
+import Assessment from "@/components/hero/Assessment";
 
 const siteUrl = "https://lifequality.org.in";
 
@@ -96,31 +97,31 @@ const services = [
     name: "Physician Consultation",
     description:
       "Doctor-led consultation to understand your health and discuss appropriate next steps.",
-    url: `${siteUrl}/what-we-do/physician-consultation`,
+    url: `${siteUrl}/services/physician-consultation`,
   },
   {
     name: "Lifestyle Medicine",
     description:
       "Practical support around nutrition, movement, sleep, stress and everyday habits alongside appropriate medical care.",
-    url: `${siteUrl}/what-we-do/lifestyle`,
+    url: `${siteUrl}/services/lifestyle`,
   },
   {
     name: "Nutrition",
     description:
       "Personalised guidance around food and healthier eating habits shaped around individual health needs and daily life.",
-    url: `${siteUrl}/what-we-do/nutrition`,
+    url: `${siteUrl}/services/nutrition`,
   },
   {
     name: "Therapeutic Yoga",
     description:
       "Adapted yoga practices shaped around your health, needs and ability.",
-    url: `${siteUrl}/what-we-do/therapeutic-yoga`,
+    url: `${siteUrl}/services/therapeutic-yoga`,
   },
   {
     name: "Behaviour, Stress & Mind",
     description:
       "Practical support for habits, stress and sustainable behaviour change.",
-    url: `${siteUrl}/what-we-do/behaviour-stress-mind`,
+    url: `${siteUrl}/services/behaviour-stress-mind`,
   },
 ];
 
@@ -294,8 +295,8 @@ export default function Home() {
         <LifestyleHealthSection />
         <ScienceSection />
         <AssessmentSection />
-        <HowWeHelpSection />
         <SutraHealthModelSection />
+        <HowWeHelpSection />
         <Testimonials />
         <FAQ faqs={homepageFaqs} />
       </main>

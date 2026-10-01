@@ -8,11 +8,10 @@ export default function AssessmentSection() {
     <section
       id="assessment"
       aria-labelledby="assessment-heading"
-      className="bg-[var(--sutra-white)]"
+      className="bg-[var(--sutra-porcelain)]"
     >
       <Container>
         <div className="grid items-center gap-12 py-20 sm:py-24 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:py-32">
-
           {/* Content */}
           <div className="max-w-[600px]">
             <div className="flex items-center gap-3">
@@ -28,7 +27,7 @@ export default function AssessmentSection() {
 
             <h2
               id="assessment-heading"
-              className="mt-5 font-serif text-[40px] font-medium leading-[1.04] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[50px] lg:text-[60px]"
+              className="mt-5 font-serif text-[38px] font-medium leading-[1.06] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[48px] lg:text-[58px]"
             >
               How healthy is your current lifestyle?
             </h2>
@@ -41,13 +40,12 @@ export default function AssessmentSection() {
             <div className="mt-8">
               <Link
                 href="/assessment"
-                className="group inline-flex min-h-12 w-full items-center justify-center bg-[var(--sutra-teal)] px-6 py-3.5 font-sans text-[13px] font-semibold text-white transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--sutra-sage)] focus-visible:ring-offset-2 sm:w-fit sm:px-7 sm:text-[14px]"
+                className="group inline-flex min-h-12 w-full items-center justify-center bg-[var(--sutra-teal)] px-6 py-3.5 font-sans text-[13px] font-semibold text-white transition-colors hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--sutra-sage)] focus-visible:ring-offset-2 sm:w-fit sm:px-7 sm:text-[14px]"
               >
                 Take the 21-Question Assessment
 
                 <ArrowUpRight
                   size={16}
-                  strokeWidth={1.5}
                   className="ml-2.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                   aria-hidden="true"
                 />
@@ -60,13 +58,13 @@ export default function AssessmentSection() {
             </p>
           </div>
 
-          {/* Traffic Light visual */}
+          {/* Existing Traffic Light visual */}
           <div className="relative">
-            <div className="overflow-hidden border border-[var(--sutra-border)] bg-[var(--sutra-porcelain)]">
+            <div className="overflow-hidden border border-[var(--sutra-border)] bg-white">
               <div className="relative aspect-[1.4/1]">
                 <Image
                   src="/images/traffic-light-system.webp"
-                  alt="Sutra Health 21-point Traffic Light lifestyle assessment"
+                  alt="Sutra Health 21-point Traffic Light System for lifestyle assessment"
                   fill
                   sizes="(max-width: 1023px) 100vw, 55vw"
                   className="object-cover"
@@ -74,7 +72,6 @@ export default function AssessmentSection() {
               </div>
             </div>
           </div>
-
         </div>
       </Container>
     </section>

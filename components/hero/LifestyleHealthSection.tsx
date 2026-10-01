@@ -38,12 +38,6 @@ export default function LifestyleHealthSection() {
               Your everyday life is part of your health.
             </h2>
 
-            <p className="mt-6 max-w-[560px] font-sans text-[15px] leading-7 text-[var(--sutra-muted)] sm:text-[17px] sm:leading-8">
-              What you eat, how you move, how you sleep, how you manage stress
-              and the environment around you can all influence your health over
-              time. Sutra Health looks at these everyday factors alongside
-              appropriate medical care.
-            </p>
           </div>
 
           {/* Lifestyle factors */}
