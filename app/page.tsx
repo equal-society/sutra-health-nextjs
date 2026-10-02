@@ -131,7 +131,7 @@ function LifestylePreview() {
             </div>
           </div>
           <Link href="/assessment" className="group relative block min-h-[250px] overflow-hidden bg-[#E8EEE7] sm:min-h-[320px]">
-            <Image src="/images/traffic-light-s.webp" alt="Green leaves in natural light" fill sizes="(max-width: 1023px) 100vw, 48vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
+            <Image src="/images/traffic-light-system.webp" alt="Green leaves in natural light" fill sizes="(max-width: 1023px) 100vw, 48vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
             <span className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-[#173D38]/90 px-5 py-4 text-sm font-medium text-white">
               Free 21-Point Health Assessment
               <ArrowUpRight size={17} aria-hidden="true" />
