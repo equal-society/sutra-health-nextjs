@@ -24,6 +24,18 @@
   --sutra-border-strong: rgba(32, 37, 34, 0.16);
   --sutra-teal-hover: #12332F;
   --sutra-shadow-soft: 0 10px 30px rgba(32, 37, 34, 0.07);
+
+  /* Homepage semantic aliases: keep components on the Sutra brand system. */
+  --color-text-primary: var(--sutra-ink);
+  --color-text-secondary: var(--sutra-muted);
+  --color-text-inverse: var(--sutra-white);
+  --color-text-link: var(--sutra-teal);
+  --color-surface-page: var(--sutra-porcelain);
+  --color-surface-raised: var(--sutra-white);
+  --color-surface-soft: var(--sutra-pale-sage);
+  --color-border-default: var(--sutra-border);
+  --color-border-strong: var(--sutra-border-strong);
+  --color-focus-ring: #17413D;
 }
 
 @theme inline {
@@ -39,6 +51,22 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 body {
