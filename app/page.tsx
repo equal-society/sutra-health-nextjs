@@ -35,11 +35,11 @@ export const metadata: Metadata = {
 };
 
 const services = [
-  { label: "Physician Consultation", href: "/services/physician-consultation", description: "Discuss your health concerns and medical history with a physician." },
-  { label: "Lifestyle Medicine", href: "/services/lifestyle", description: "Review daily habits that may affect your health and care plan." },
-  { label: "Nutrition Counselling", href: "/services/nutrition", description: "Get guidance on food choices suited to your needs and routine." },
-  { label: "Therapeutic Yoga", href: "/services/therapeutic-yoga", description: "Explore guided yoga practices as part of an appropriate care plan." },
-  { label: "Stress and Behaviour Support", href: "/services/behaviour-stress-mind", description: "Work on stress management and habits with guided support." },
+  { label: "Physician Consultation", href: "/services/physician-consultation" },
+  { label: "Lifestyle Medicine", href: "/services/lifestyle"},
+  { label: "Nutrition Counselling", href: "/services/nutrition"},
+  { label: "Therapeutic Yoga", href: "/services/therapeutic-yoga"},
+  { label: "Stress and Behaviour Support", href: "/services/behaviour-stress-mind"},
 ];
 
 function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
@@ -109,13 +109,13 @@ function Hero() {
               </Link>
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/20 pt-5 text-[13px] text-white/70">
+            {/* <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/20 pt-5 text-[13px] text-white/70">
               <span>1,200+ people supported</span>
               <span aria-hidden="true">·</span>
               <span>15 years of experience</span>
               <span aria-hidden="true">·</span>
               <span>Faridabad, Delhi NCR &amp; online</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </Container>
@@ -218,7 +218,6 @@ function ServicesPreview() {
                   {service.label}
                   <ArrowUpRight size={16} aria-hidden="true" className="shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </span>
-                <span className="max-w-[430px] text-sm leading-6 text-[#65736D]">{service.description}</span>
               </Link>
             ))}
           </div>
@@ -327,13 +326,7 @@ function AssessmentPreview() {
               routines and identify topics you may want to discuss with
               a health professional.
             </p>
-             <ul className="mt-5 flex gap-5 border p-0.5 justify-center text-[15px] leading-7 text-[#65736D]">
-              <li>Sleep</li>
-              <li>Digestion</li>
-              <li>Movement</li>
-              <li>Nutrition</li>
-              <li>Mental wellbeing</li>
-            </ul>
+           
           </div>
           <div>
             
@@ -341,7 +334,7 @@ function AssessmentPreview() {
               <Image
                 src="/images/traffic-light-system.webp"
                 alt="21-Point Health Assessment Traffic Light result"
-                width={500}
+                width={400}
                 height={300}
                 className="rounded-lg object-cover object-center"
               />

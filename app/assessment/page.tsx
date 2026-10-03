@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Take Sutra Health's 21 Point Lifestyle Questionnaire to review everyday food, movement, sleep, and lifestyle habits.",
   alternates: {
-    canonical: "https://lifequality.org.in/score",
+    canonical: "https://lifequality.org.in/assessment",
   },
 };
 
