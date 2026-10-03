@@ -501,7 +501,7 @@ export default function Home() {
         <AssessmentPreview />
         <PatientStories />
         <HomeFAQs />
-        <AppointmentCTA />
+        {/* <AppointmentCTA /> */}
       </main>
     </>
   );
