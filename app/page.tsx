@@ -75,7 +75,6 @@ function Hero() {
           loop
           playsInline
           preload="metadata"
-          poster="/images/desktop.webp"
           className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
         >
           <source src="/videos/hero-video.mp4" type="video/mp4" />
