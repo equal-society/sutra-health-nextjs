@@ -95,9 +95,7 @@ function Hero() {
             </h1>
 
             <p className="mt-5 max-w-[620px] text-base leading-7 text-white/85 sm:text-[18px] sm:leading-8">
-              Your health is shaped by more than a diagnosis. We discuss food,
-              movement, sleep, stress and other daily habits alongside
-              appropriate medical care.
+              An evidence-informed integrative approach combining medical guidance, nutrition counselling, Therapeutic Yoga, and practical lifestyle changes to support your wellbeing and long-term health.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
