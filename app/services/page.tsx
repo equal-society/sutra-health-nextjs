@@ -24,7 +24,7 @@ const services = [
     title: "Nutrition",
     description:
       "Personalised guidance around food and eating habits that fits your daily life.",
-    image: "/images/what-we-do/nutrition-counselling.webp",
+    image: "/images/what-we-do/diet.webp",
     href: "/services/nutrition",
   },
   {
@@ -32,7 +32,7 @@ const services = [
     title: "Therapeutic Yoga",
     description:
       "Adapted yoga practices shaped around your health, ability and comfort.",
-    image: "/images/what-we-do/therapeutic-yoga.webp",
+    image: "/images/what-we-do/yoga.png",
     href: "/services/therapeutic-yoga",
   },
   {
@@ -40,7 +40,7 @@ const services = [
     title: "Behaviour, Stress & Mind",
     description:
       "Practical support for habits, stress and changes you can sustain in everyday life.",
-    image: "/images/what-we-do/behaviour-mind.webp",
+    image: "/images/what-we-do/mind.png",
     href: "/services/behaviour-stress-mind",
   },
   {
@@ -48,7 +48,7 @@ const services = [
     title: "Traditional Therapies",
     description:
       "Traditional wellness practices including Shirodhara and Abhyanga, offered with attention to individual suitability.",
-    image: "/images/what-we-do/traditional-therapies.webp",
+    image: "/images/what-we-do/Shirodhara.webp",
     href: "/services/traditional-therapies",
   },
 ];
@@ -268,85 +268,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-[var(--sutra-pale-sage)]">
-        <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
-          <div className="grid gap-10 lg:grid-cols-[1fr_0.75fr] lg:items-center lg:gap-20">
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
-                A simple place to start
-              </p>
-              <h2 className="mt-4 max-w-2xl font-[var(--font-serif)] text-3xl font-medium leading-[1.1] tracking-[-0.02em] sm:text-4xl lg:text-5xl">
-                Understand your health before changing it.
-              </h2>
-              <p className="mt-5 max-w-xl text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
-                The Sutra 21-Point Health Assessment provides a structured way
-                to reflect on important aspects of your health and lifestyle.
-              </p>
-              <Link
-                href="/assessment"
-                className="mt-7 inline-flex min-h-12 items-center gap-2 bg-[var(--sutra-sage)] px-6 py-3 text-sm font-semibold text-[var(--sutra-white)] transition-colors duration-300 hover:opacity-90"
-              >
-                Take the assessment
-                <ArrowUpRight size={15} strokeWidth={1.7} />
-              </Link>
-              <p className="mt-4 text-xs leading-5 text-[var(--sutra-muted)]">
-                The assessment is for health and lifestyle awareness and is not
-                a medical diagnosis.
-              </p>
-            </div>
-
-            <div className="border border-[var(--sutra-border-strong)] bg-[var(--sutra-white)] p-6 sm:p-8">
-              <div className="flex items-end gap-3 border-b border-[var(--sutra-border)] pb-6">
-                <span className="font-[var(--font-serif)] text-6xl font-medium leading-none text-[var(--sutra-sage)] sm:text-7xl">
-                  21
-                </span>
-                <span className="pb-1 text-xs uppercase tracking-[0.12em] text-[var(--sutra-muted)]">
-                  points
-                </span>
-              </div>
-              <div className="divide-y divide-[var(--sutra-border)]">
-                {["Nutrition", "Sleep", "Digestion", "Physical activity", "Mental wellbeing"].map((item) => (
-                  <div key={item} className="flex items-center gap-3 py-4">
-                    <Check
-                      size={15}
-                      strokeWidth={1.7}
-                      aria-hidden="true"
-                      className="shrink-0 text-[var(--sutra-sage)]"
-                    />
-                    <span className="text-sm leading-6 text-[var(--sutra-muted)]">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[var(--sutra-sage)] text-[var(--sutra-white)]">
-        <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
-            <div className="max-w-2xl">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-white)]/60">
-                Your next step
-              </p>
-              <h2 className="mt-4 font-[var(--font-serif)] text-3xl font-medium leading-[1.1] tracking-[-0.02em] sm:text-4xl lg:text-5xl">
-                Start with a conversation.
-              </h2>
-              <p className="mt-5 max-w-xl text-base leading-7 text-[var(--sutra-white)]/75 sm:text-lg sm:leading-8">
-                Get practical, evidence-informed support to build healthier
-                habits that fit your life.
-              </p>
-            </div>
-            <Link
-              href="/book-appointment"
-              className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 bg-[var(--sutra-white)] px-7 py-3 text-sm font-semibold text-[var(--sutra-sage)] transition-colors duration-300 hover:bg-[var(--sutra-porcelain)]"
-            >
-              Book a Consultation
-              <ArrowUpRight size={16} strokeWidth={1.7} />
-            </Link>
-          </div>
-        </div>
-      </section>
+    
 
       <div className="bg-[var(--sutra-porcelain)]">
         <div className="mx-auto max-w-7xl px-6 py-5 sm:px-8 lg:px-10">
