@@ -480,7 +480,6 @@ const structuredData = {
       "@type": "Service",
       "@id": `${siteUrl}${service.href}#service`,
       name: service.label,
-      description: service.description,
       url: `${siteUrl}${service.href}`,
       provider: { "@id": `${siteUrl}/#organization` },
       areaServed: { "@type": "Country", name: "India" },
