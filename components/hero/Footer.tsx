@@ -9,6 +9,7 @@ const exploreLinks = [
 
 const connectLinks = [
   { label: "Book a Consultation", href: "/book-appointment" },
+  { label: "Meet Our Doctors", href: "/doctors" },
   { label: "Contact Us", href: "/contact" },
 ];
 

@@ -46,6 +46,48 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "monthly",
       priority: 0.8,
+    },   
+
+    {
+      url: `${baseUrl}/services/lifestyle`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+
+    {
+      url: `${baseUrl}/services/therapeutic-yoga`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+
+    {
+      url: `${baseUrl}/services/nutrition`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    
+    {
+      url: `${baseUrl}/services/behaviour-stress-mind`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+
+     {
+      url: `${baseUrl}/services/physician-consultation`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+
+     {
+      url: `${baseUrl}/services/traditional-therapies`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
 
     // ─────────────────────────────
@@ -53,34 +95,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // ─────────────────────────────
     {
       url: `${baseUrl}/approach`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-
-    {
-      url: `${baseUrl}/approach/lifestyle`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-
-    {
-      url: `${baseUrl}/approach/therapeutic-yoga`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-
-    {
-      url: `${baseUrl}/approach/nutrition`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    
-    {
-      url: `${baseUrl}/approach/breath-mindfulness`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.8,
@@ -103,22 +117,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
 
+     // ─────────────────────────────
+    // RESOURCES
+    // ─────────────────────────────
+
     {
-      url: `${baseUrl}/how-it-works`,
+      url: `${baseUrl}/resources/articles`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.6,
     },
 
-    {
-      url: `${baseUrl}/patient-stories`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-
-    {
-      url: `${baseUrl}/resources`,
+     {
+      url: `${baseUrl}/resources/research`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.6,
@@ -128,7 +139,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // TOOLS / ENGAGEMENT
     // ─────────────────────────────
     {
-      url: `${baseUrl}/score`,
+      url: `${baseUrl}/assessment`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.8,
