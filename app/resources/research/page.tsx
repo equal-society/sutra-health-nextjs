@@ -45,34 +45,8 @@ const academicItems: AcademicItem[] = [
     href: "https://academic.lifequality.org.in/posts/2026/05/restlessness-to-actively-calm",
     source: "Academic site",
   },
-  {
-    type: "Blog",
-    date: "24 Apr 2026",
-    title: "From Restlessness to Actively Calm",
-    description:
-      "A six-step practical pathway built around acceptance, gratitude, stillness, yoga, joy and right action.",
-    href: "https://academic.lifequality.org.in/posts/2026/04/restlessness-to-actively-calm",
-    source: "Academic site",
-  },
-  {
-    type: "Blog",
-    date: "19 Apr 2026",
-    title:
-      "Red, Yellow, Green: A Simple System Changing How We Fight Chronic Disease",
-    description:
-      "An explanation of the Traffic Light approach and its relevance to chronic disease driven by unhealthy behaviours.",
-    href: "https://academic.lifequality.org.in/blog/",
-    source: "Academic site",
-  },
-  {
-    type: "Blog",
-    date: "14 Feb 2026",
-    title: "Universal health coverage begins with prevention, not insurance",
-    description:
-      "A prevention-focused perspective on personal lifestyle and health systems, published in Policy Circle.",
-    href: "https://academic.lifequality.org.in/blog/",
-    source: "Policy Circle / Academic site",
-  },
+  
+
   {
     type: "Teaching",
     date: "2026",
@@ -101,15 +75,7 @@ const academicItems: AcademicItem[] = [
     href: "https://academic.lifequality.org.in/teaching/2026-Yoga",
     source: "Academic site",
   },
-  {
-    type: "Teaching",
-    date: "2026",
-    title: "Integrated Health Clinic at ESIC, Faridabad",
-    description:
-      "A presentation for faculty and MD students describing the experience of starting and managing an Integrated Health Clinic for chronic disease care.",
-    href: "https://academic.lifequality.org.in/teaching/2026-MD-teaching",
-    source: "Academic site",
-  },
+
   {
     type: "Talk",
     date: "20 Jul 2026",
@@ -162,17 +128,7 @@ const academicItems: AcademicItem[] = [
     external: true,
     source: "MDPI",
   },
-  {
-    type: "Publication",
-    date: "2022",
-    title:
-      "Dietary diversity as a sustainable approach towards micronutrient deficiencies in India",
-    description:
-      "Published research examining dietary diversity as a sustainable approach to micronutrient deficiencies in India.",
-    href: "https://doi.org/10.4103/ijmr.ijmr_3314_21",
-    external: true,
-    source: "Indian Journal of Medical Research",
-  },
+
 ];
 
 const filters: AcademicType[] = [

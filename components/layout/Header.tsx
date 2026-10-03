@@ -148,11 +148,6 @@ const resources: NavItem[] = [
     icon: Activity,
   },
   {
-    label: "Health Guides",
-    href: "/resources/health-guides",
-    icon: HeartPulse,
-  },
-  {
     label: "21-Point Health Assessment",
     href: "/assessment",
     icon: Scale,

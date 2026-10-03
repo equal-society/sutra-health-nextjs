@@ -435,67 +435,7 @@ export default function ArticlesPage() {
         </div>
       </section>
 
-      {/* =====================================================
-          EXPLORE BY QUESTION
-      ===================================================== */}
-      <section className="border-y border-[var(--sutra-border)] bg-[var(--sutra-pale-sage)]">
-        <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-18 lg:px-12 lg:py-22">
-          <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
-                Explore by question
-              </p>
-
-              <h2 className="mt-4 max-w-[430px] font-[var(--font-serif)] text-[34px] font-medium leading-[1.04] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[42px]">
-                Start with what you're asking.
-              </h2>
-
-              <p className="mt-5 max-w-[390px] text-[14px] leading-7 text-[var(--sutra-muted)]">
-                Find practical health information by starting with the question
-                you already have.
-              </p>
-            </div>
-
-            <div className="border-t border-[var(--sutra-border-strong)]">
-              {questions.map((question) => (
-                <button
-                  key={question}
-                  type="button"
-                  onClick={() => {
-                    const questionQuery = question.replace("How can I ", "");
-                    setSearch(questionQuery);
-                    setSubmittedSearch(questionQuery);
-                    setActiveCategory("All");
-                    setActiveType("All");
-                    setVisibleCount(9);
-
-                    window.setTimeout(() => {
-                      document
-                        .getElementById("article-results")
-                        ?.scrollIntoView({
-                          behavior: "smooth",
-                          block: "start",
-                        });
-                    }, 50);
-                  }}
-                  className="group flex w-full items-center justify-between border-b border-[var(--sutra-border-strong)] py-5 text-left"
-                >
-                  <span className="font-[var(--font-serif)] text-[20px] leading-tight tracking-[-0.02em] text-[var(--sutra-ink)] sm:text-[23px]">
-                    {question}
-                  </span>
-
-                  <span
-                    aria-hidden="true"
-                    className="ml-6 text-[var(--sutra-teal)] transition-transform group-hover:translate-x-1"
-                  >
-                    →
-                  </span>
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+    
 
       {/* =====================================================
           SUTRA CROSS-LINKS
@@ -515,7 +455,7 @@ export default function ArticlesPage() {
 
             <div className="flex flex-wrap gap-3">
               <Link
-                href="/what-we-do"
+                href="/services"
                 className="border border-[var(--sutra-teal)] bg-[var(--sutra-teal)] px-5 py-3 text-[11px] font-semibold text-white transition-colors hover:bg-[var(--sutra-teal-hover)]"
               >
                 What We Do →

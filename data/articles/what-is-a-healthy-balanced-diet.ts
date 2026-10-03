@@ -9,7 +9,7 @@ export const whatIsAHealthyBalancedDiet: Article = {
   date: "2026-09-14",
   excerpt:
     "A practical guide to dietary variety, balance, moderation and the everyday foods that form a healthy eating pattern.",
-  image: "/images/articles/healthly-food.png",
+  image: "/images/articles/healthly-food.webp",
   content: {
     introduction:
       "There is no single perfect menu for everyone. A healthy diet is better understood as a pattern built around adequacy, balance, moderation and diversity, adapted to individual needs, culture and locally available foods.",
