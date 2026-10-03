@@ -3,7 +3,6 @@ import "./globals.css";
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/hero/Footer";
-import Chatbot from "@/components/chatbot/Chatbot";
 import WhatsAppFloat from "@/components/shared/WhatsAppFloat";
 
 import { Lora, Manrope } from "next/font/google";
@@ -93,7 +92,6 @@ export default function RootLayout({
         {children}
 
         <WhatsAppFloat />
-        <Chatbot />
 
         <Footer />
       </body>

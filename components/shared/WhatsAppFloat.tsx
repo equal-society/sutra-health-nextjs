@@ -33,15 +33,15 @@ export default function WhatsAppFloat() {
       aria-label="Chat with Sutra Health on WhatsApp"
       className="
         group fixed z-[9998]
-        bottom-4 left-4
+        bottom-4 
         flex h-12 w-12 items-center justify-center
         rounded-full border border-[#173F35]/10
         bg-[#FAF8F1] text-[#25B864]
         shadow-[0_10px_28px_rgba(18,63,53,0.16)]
         transition-all duration-300
         hover:-translate-y-0.5 hover:shadow-[0_14px_34px_rgba(18,63,53,0.20)]
-        sm:bottom-5 sm:left-5
-        lg:bottom-6 lg:left-auto lg:right-[166px]
+        sm:bottom-5 
+        lg:bottom-6 lg:left-auto lg:right-[50px]
         lg:h-11 lg:w-auto lg:gap-2 lg:rounded-full
         lg:px-4
       "
