@@ -21,11 +21,11 @@ export const metadata: Metadata = {
 };
 
 const stages = [
-  ["01", "Understand", "We discuss your concern, health history and goals."],
+  ["01", "Understand", "We discuss your concerns, health history and goals, and identify any necessary investigations."],
   ["02", "Set priorities", "We identify what needs attention first."],
   ["03", "Plan next steps", "We agree on practical steps that fit your situation."],
   ["04", "Put the plan into practice", "You try the agreed changes at a manageable pace."],
-  ["05", "Review", "We discuss what is working and what feels difficult."],
+  ["05", "Review", "We suggest rewards that can hook your body around healthy habits."],
   ["06", "Adjust", "We adapt the plan as your needs change."],
 ] as const;
 

@@ -2,190 +2,190 @@ import type { ServicePageConfig } from "./ServicePageTemplate";
 
 /* Service content source: page-specific copy only. Shared layout lives in ServicePageTemplate.tsx. */
 
-export const physicianConsultation: ServicePageConfig = {
-  heroImage: "/images/mobile.webp",
-  name: "Physician Consultation",
-  slug: "physician-consultation",
-  title: "Physician Consultation in Faridabad & Online | Sutra Health",
-  description:
-    "Discuss health concerns, medical history, existing treatment and appropriate next steps with Sutra Health's physician in Faridabad or online across India.",
-  heroDescription:
-    "A physician-led consultation to discuss your concerns, review relevant health information and clarify appropriate next steps.",
-  trust: ["Physician-led", "Faridabad & online across India"],
-  introEyebrow: "Your Consultation",
-  introTitle: "Clear guidance for your next healthcare decision.",
-  introParagraphs: [
-    "Discuss what brings you in, your relevant medical history, current treatment and questions.",
-    "Where appropriate, the physician may review available reports and recommend further investigations or follow-up. Advice is based on your individual situation.",
-  ],
-  focusEyebrow: "What We Discuss",
-  focusTitle: "A focused conversation about your health.",
-  focusIntro:
-    "The consultation centres on your concern and the information needed to guide care.",
-  focusAreas: [
-    { number: "01", title: "Your concern", description: "Symptoms, health questions or an existing diagnosis you want to discuss." },
-    { number: "02", title: "Medical history and treatment", description: "Relevant history, current medicines, treatment and available reports." },
-    { number: "03", title: "Evaluation and next steps", description: "Whether further investigations, treatment discussion or follow-up may be appropriate." },
-  ],
-  processTitle: "What to expect",
-  processIntro:
-    "The consultation is guided by your needs; not every person requires the same evaluation or follow-up.",
-  process: [
-    { number: "01", title: "Discuss", description: "Share your main concern, relevant history and questions with the physician." },
-    { number: "02", title: "Review", description: "Discuss available health information and whether any investigations are needed." },
-    { number: "03", title: "Plan", description: "Clarify appropriate care, recommendations and follow-up based on your circumstances." },
-  ],
-  contextEyebrow: "Care and Support",
-  contextTitle: "Your existing medical care remains important.",
-  contextParagraphs: [
-    "Sutra Health's physician-led consultation can consider lifestyle or supportive services when relevant, but these do not replace appropriate medical diagnosis or treatment.",
-    "Continue prescribed treatment and follow-up unless your treating clinician advises otherwise. Lifestyle Medicine, Nutrition and Therapeutic Yoga are available as separate services where suitable.",
-  ],
-  related: [
-    { title: "Lifestyle Medicine", description: "Explore the six lifestyle pillars in a dedicated service overview.", href: "/services/lifestyle" },
-    { title: "Nutrition", description: "Explore nutrition support as a separate service.", href: "/services/nutrition" },
-  ],
-  faq: [
-    { question: "Can I discuss an existing condition or treatment?", answer: "Yes. Bring relevant medical history, available reports and details of current treatment. Do not stop or change prescribed treatment without discussing it with your treating clinician." },
-    { question: "Will I need investigations?", answer: "Further investigations may be suggested when clinically appropriate. The need depends on your concern and the information available." },
-    { question: "Are online consultations available?", answer: "The legacy LifeQuality page lists online consultation and in-person care in Faridabad. Confirm current booking availability and appointment arrangements before publishing this claim." },
-  ],
-  finalTitle: "Discuss your health with a physician.",
-  finalDescription: "Bring your questions, relevant history and available reports to help make the consultation useful.",
-  serviceType: "MedicalConsultation",
-  medicalAbout: "Physician Consultation",
-};
+// export const physicianConsultation: ServicePageConfig = {
+//   heroImage: "/images/mobile.webp",
+//   name: "Physician Consultation",
+//   slug: "physician-consultation",
+//   title: "Physician Consultation in Faridabad & Online | Sutra Health",
+//   description:
+//     "Discuss health concerns, medical history, existing treatment and appropriate next steps with Sutra Health's physician in Faridabad or online across India.",
+//   heroDescription:
+//     "A physician-led consultation to discuss your concerns, review relevant health information and clarify appropriate next steps.",
+//   trust: ["Physician-led", "Faridabad & online across India"],
+//   introEyebrow: "Your Consultation",
+//   introTitle: "Clear guidance for your next healthcare decision.",
+//   introParagraphs: [
+//     "Discuss what brings you in, your relevant medical history, current treatment and questions.",
+//     "Where appropriate, the physician may review available reports and recommend further investigations or follow-up. Advice is based on your individual situation.",
+//   ],
+//   focusEyebrow: "What We Discuss",
+//   focusTitle: "A focused conversation about your health.",
+//   focusIntro:
+//     "The consultation centres on your concern and the information needed to guide care.",
+//   focusAreas: [
+//     { number: "01", title: "Your concern", description: "Symptoms, health questions or an existing diagnosis you want to discuss." },
+//     { number: "02", title: "Medical history and treatment", description: "Relevant history, current medicines, treatment and available reports." },
+//     { number: "03", title: "Evaluation and next steps", description: "Whether further investigations, treatment discussion or follow-up may be appropriate." },
+//   ],
+//   processTitle: "What to expect",
+//   processIntro:
+//     "The consultation is guided by your needs; not every person requires the same evaluation or follow-up.",
+//   process: [
+//     { number: "01", title: "Discuss", description: "Share your main concern, relevant history and questions with the physician." },
+//     { number: "02", title: "Review", description: "Discuss available health information and whether any investigations are needed." },
+//     { number: "03", title: "Plan", description: "Clarify appropriate care, recommendations and follow-up based on your circumstances." },
+//   ],
+//   contextEyebrow: "Care and Support",
+//   contextTitle: "Your existing medical care remains important.",
+//   contextParagraphs: [
+//     "Sutra Health's physician-led consultation can consider lifestyle or supportive services when relevant, but these do not replace appropriate medical diagnosis or treatment.",
+//     "Continue prescribed treatment and follow-up unless your treating clinician advises otherwise. Lifestyle Medicine, Nutrition and Therapeutic Yoga are available as separate services where suitable.",
+//   ],
+//   related: [
+//     { title: "Lifestyle Medicine", description: "Explore the six lifestyle pillars in a dedicated service overview.", href: "/services/lifestyle" },
+//     { title: "Nutrition", description: "Explore nutrition support as a separate service.", href: "/services/nutrition" },
+//   ],
+//   faq: [
+//     { question: "Can I discuss an existing condition or treatment?", answer: "Yes. Bring relevant medical history, available reports and details of current treatment. Do not stop or change prescribed treatment without discussing it with your treating clinician." },
+//     { question: "Will I need investigations?", answer: "Further investigations may be suggested when clinically appropriate. The need depends on your concern and the information available." },
+//     { question: "Are online consultations available?", answer: "The legacy LifeQuality page lists online consultation and in-person care in Faridabad. Confirm current booking availability and appointment arrangements before publishing this claim." },
+//   ],
+//   finalTitle: "Discuss your health with a physician.",
+//   finalDescription: "Bring your questions, relevant history and available reports to help make the consultation useful.",
+//   serviceType: "MedicalConsultation",
+//   medicalAbout: "Physician Consultation",
+// };
 
-export const lifestyle: ServicePageConfig = {
-  heroImage: "/images/lifestyle-home.webp",
-  name: "Lifestyle Medicine",
-  slug: "lifestyle",
-  title: "Lifestyle Medicine in Faridabad & Delhi NCR | Sutra Health",
-  description:
-    "Lifestyle Medicine at Sutra Health connects nutrition, movement, sleep, stress and everyday habits with personalised healthcare.",
+// export const lifestyle: ServicePageConfig = {
+//   heroImage: "/images/lifestyle-home.webp",
+//   name: "Lifestyle Medicine",
+//   slug: "lifestyle",
+//   title: "Lifestyle Medicine in Faridabad & Delhi NCR | Sutra Health",
+//   description:
+//     "Lifestyle Medicine at Sutra Health connects nutrition, movement, sleep, stress and everyday habits with personalised healthcare.",
  
-  heroDescription:
-    "A practical, evidence-informed approach to nutrition, movement, sleep, stress and behaviour — the daily habits that shape long-term health.",
-  trust: ["Evidence-informed", "Whole-person care", "Faridabad, Delhi NCR & online"],
-  introEyebrow: "A Practical Approach",
-  introTitle: "Your everyday life is part of your health.",
-  introParagraphs: [
-    "Lifestyle Medicine looks at the behaviours and conditions around you that can influence health over time.",
-    "Rather than treating lifestyle as a separate add-on, the approach connects nutrition, movement, sleep, stress and behaviour with your broader health needs.",
-    "The focus is on practical changes that can fit your circumstances and be reviewed over time.",
-  ],
-  focusEyebrow: "What We Look At",
-  /*
-    CHANGED: previously "The factors that shape health every day." — near
-    duplicate of the heroDescription phrase above. Now says something
-    different: what makes the four areas connected, not just a restated
-    headline.
-  */
-  focusTitle: "Four areas that work together, not in isolation.",
-  focusIntro:
-    "The balance between these areas is different for every person. The starting point depends on your health and priorities.",
-  focusAreas: [
-    { number: "01", title: "Nutrition", description: "Eating patterns, food choices and routines relevant to your health." },
-    { number: "02", title: "Movement", description: "Physical activity and movement considered alongside your abilities and circumstances." },
-    { number: "03", title: "Sleep & stress", description: "Recovery, rest and stress patterns that may be relevant to your health." },
-    { number: "04", title: "Behaviour", description: "Habits and routines that may make healthy changes easier or harder to sustain." },
-  ],
-  processTitle: "What Lifestyle Medicine support can involve",
-  processIntro:
-    "The focus starts with the areas of everyday life that are most relevant to your health and circumstances.",
-  process: [
-    { number: "01", title: "Review your routine", description: "Look at nutrition, movement, sleep, stress and habits in the context of your everyday life." },
-    { number: "02", title: "Choose priorities", description: "Identify practical areas where a change may be useful and realistic for you." },
-    { number: "03", title: "Put changes into practice", description: "Build manageable habits into your routine rather than trying to change everything at once." },
-    { number: "04", title: "Review what is working", description: "Reflect on progress and adjust the plan as your health, routine or priorities change." },
-  ],
-  contextEyebrow: "Whole-Person Care",
-  contextTitle: "Lifestyle is part of healthcare, not separate from it.",
-  contextParagraphs: [
-    "Lifestyle factors can interact with medical conditions, symptoms, treatment and overall wellbeing. Considering them together can create a clearer picture of what support may be useful.",
-    "At Sutra Health, Lifestyle Medicine can connect with physician care, Nutrition, Therapeutic Yoga and Behaviour, Stress & Mind support where appropriate.",
-  ],
-  related: [
-    { title: "Physician Consultation", description: "Begin with a doctor-led conversation about your health and medical history.", href: "/services/physician-consultation" },
-    { title: "Nutrition", description: "Explore food and eating patterns as part of your wider health approach.", href: "/services/nutrition" },
-    { title: "Behaviour, Stress & Mind", description: "Understand habits, stress and behavioural patterns that influence everyday health.", href: "/services/behaviour-stress-mind" },
-  ],
-  faq: [
-    { question: "What is Lifestyle Medicine?", answer: "Lifestyle Medicine is an approach that considers everyday factors such as nutrition, physical activity, sleep, stress and behaviour alongside appropriate medical care." },
-    { question: "Is Lifestyle Medicine only for people with a health condition?", answer: "No. It can also be relevant to people who want to improve everyday health, build healthier routines or better understand factors that may affect their wellbeing." },
-    { question: "Will I have to change everything at once?", answer: "No. A personalised approach can focus on practical priorities rather than trying to change every part of your lifestyle at the same time." },
-    { question: "Can Lifestyle Medicine work with medical treatment?", answer: "Yes. Lifestyle support can be considered alongside appropriate medical care. It should not be used as a replacement for necessary diagnosis or treatment." },
-    /*
-      FIXED: previously "Sutra Health is based in Faridabad. Current
-      in-person and online options depend on the service and your needs."
-      — same hedge on the same online-availability fact. Now direct.
-    */
-    { question: "Is Lifestyle Medicine available in Faridabad?", answer: "Yes. Online consultations are available across India, and in-person sessions are available in Faridabad, Delhi NCR." }
-  ],
-  finalTitle: "Make your everyday health easier to understand.",
-  finalDescription: "Start with the areas of daily life that matter most to your health and explore practical next steps.",
-};
+//   heroDescription:
+//     "A practical, evidence-informed approach to nutrition, movement, sleep, stress and behaviour — the daily habits that shape long-term health.",
+//   trust: ["Evidence-informed", "Whole-person care", "Faridabad, Delhi NCR & online"],
+//   introEyebrow: "A Practical Approach",
+//   introTitle: "Your everyday life is part of your health.",
+//   introParagraphs: [
+//     "Lifestyle Medicine looks at the behaviours and conditions around you that can influence health over time.",
+//     "Rather than treating lifestyle as a separate add-on, the approach connects nutrition, movement, sleep, stress and behaviour with your broader health needs.",
+//     "The focus is on practical changes that can fit your circumstances and be reviewed over time.",
+//   ],
+//   focusEyebrow: "What We Look At",
+//   /*
+//     CHANGED: previously "The factors that shape health every day." — near
+//     duplicate of the heroDescription phrase above. Now says something
+//     different: what makes the four areas connected, not just a restated
+//     headline.
+//   */
+//   focusTitle: "Four areas that work together, not in isolation.",
+//   focusIntro:
+//     "The balance between these areas is different for every person. The starting point depends on your health and priorities.",
+//   focusAreas: [
+//     { number: "01", title: "Nutrition", description: "Eating patterns, food choices and routines relevant to your health." },
+//     { number: "02", title: "Movement", description: "Physical activity and movement considered alongside your abilities and circumstances." },
+//     { number: "03", title: "Sleep & stress", description: "Recovery, rest and stress patterns that may be relevant to your health." },
+//     { number: "04", title: "Behaviour", description: "Habits and routines that may make healthy changes easier or harder to sustain." },
+//   ],
+//   processTitle: "What Lifestyle Medicine support can involve",
+//   processIntro:
+//     "The focus starts with the areas of everyday life that are most relevant to your health and circumstances.",
+//   process: [
+//     { number: "01", title: "Review your routine", description: "Look at nutrition, movement, sleep, stress and habits in the context of your everyday life." },
+//     { number: "02", title: "Choose priorities", description: "Identify practical areas where a change may be useful and realistic for you." },
+//     { number: "03", title: "Put changes into practice", description: "Build manageable habits into your routine rather than trying to change everything at once." },
+//     { number: "04", title: "Review what is working", description: "Reflect on progress and adjust the plan as your health, routine or priorities change." },
+//   ],
+//   contextEyebrow: "Whole-Person Care",
+//   contextTitle: "Lifestyle is part of healthcare, not separate from it.",
+//   contextParagraphs: [
+//     "Lifestyle factors can interact with medical conditions, symptoms, treatment and overall wellbeing. Considering them together can create a clearer picture of what support may be useful.",
+//     "At Sutra Health, Lifestyle Medicine can connect with physician care, Nutrition, Therapeutic Yoga and Behaviour, Stress & Mind support where appropriate.",
+//   ],
+//   related: [
+//     { title: "Physician Consultation", description: "Begin with a doctor-led conversation about your health and medical history.", href: "/services/physician-consultation" },
+//     { title: "Nutrition", description: "Explore food and eating patterns as part of your wider health approach.", href: "/services/nutrition" },
+//     { title: "Behaviour, Stress & Mind", description: "Understand habits, stress and behavioural patterns that influence everyday health.", href: "/services/behaviour-stress-mind" },
+//   ],
+//   faq: [
+//     { question: "What is Lifestyle Medicine?", answer: "Lifestyle Medicine is an approach that considers everyday factors such as nutrition, physical activity, sleep, stress and behaviour alongside appropriate medical care." },
+//     { question: "Is Lifestyle Medicine only for people with a health condition?", answer: "No. It can also be relevant to people who want to improve everyday health, build healthier routines or better understand factors that may affect their wellbeing." },
+//     { question: "Will I have to change everything at once?", answer: "No. A personalised approach can focus on practical priorities rather than trying to change every part of your lifestyle at the same time." },
+//     { question: "Can Lifestyle Medicine work with medical treatment?", answer: "Yes. Lifestyle support can be considered alongside appropriate medical care. It should not be used as a replacement for necessary diagnosis or treatment." },
+//     /*
+//       FIXED: previously "Sutra Health is based in Faridabad. Current
+//       in-person and online options depend on the service and your needs."
+//       — same hedge on the same online-availability fact. Now direct.
+//     */
+//     { question: "Is Lifestyle Medicine available in Faridabad?", answer: "Yes. Online consultations are available across India, and in-person sessions are available in Faridabad, Delhi NCR." }
+//   ],
+//   finalTitle: "Make your everyday health easier to understand.",
+//   finalDescription: "Start with the areas of daily life that matter most to your health and explore practical next steps.",
+// };
 
-export const nutrition: ServicePageConfig = {
-  heroImage: "/images/diet.webp",
-  name: "Nutrition",
-  shortName: "Nutrition",
-  slug: "nutrition",
-  title: "Nutrition Support in Faridabad & Delhi NCR | Sutra Health",
-  description:
-    "Personalised nutrition support connecting balanced eating, food choices, hydration and daily routines with your health needs and lifestyle.",
-  heroDescription:
-    "Practical nutrition guidance for balanced meals, everyday food choices and routines that fit your health needs and real life.",
-  trust: ["Personalised guidance", "Whole-person care", "Faridabad, Delhi NCR & online"],
-  introEyebrow: "A Practical View of Nutrition",
-  introTitle: "Food is part of everyday healthcare.",
-  introParagraphs: [
-    "Nutrition is shaped by more than individual foods. Meal timing, family and work routines, culture, preferences, activity and health needs all influence how people eat.",
-    "A useful nutrition conversation starts with your current pattern, then explores realistic ways to build variety, balance and consistency without relying on a one-size-fits-all diet.",
-    "At Sutra Health, nutrition guidance can consider familiar foods and eating patterns alongside appropriate medical care. Advice is adapted to individual needs rather than treating general food suggestions as rules for everyone.",
-  ],
-  focusEyebrow: "What We Focus On",
-  focusTitle: "Balanced choices that fit your life.",
-  focusIntro:
-    "Nutrition needs differ. Guidance can be shaped around your health, food preferences, routine, access to food and advice from your healthcare professional.",
-  focusAreas: [
-    { number: "01", title: "Balanced everyday meals", description: "Explore a varied pattern that can include vegetables, fruits, pulses, grains and suitable protein sources according to your needs and preferences." },
-    { number: "02", title: "Food choices", description: "Understand portions and how to make room for more minimally processed foods while considering highly processed snacks, excess salt and added sugars in context." },
-    { number: "03", title: "Meal timing & routine", description: "Review meal frequency and timing in relation to your schedule, appetite, nutritional needs and any relevant medical advice." },
-    { number: "04", title: "Hydration & sustainable habits", description: "Consider suitable fluids and practical habits that can be maintained across work, home and daily activities." },
-  ],
-  processTitle: "What nutrition support can involve",
-  processIntro:
-    "The discussion is based on your current eating patterns, health needs and the practical realities of your daily life.",
-  process: [
-    { number: "01", title: "Understand your eating pattern", description: "Review meals, timing, portions, food preferences, fluids and the challenges that affect how you eat." },
-    { number: "02", title: "Connect food with your needs", description: "Consider nutrition alongside your health concerns, routine, activity and goals, including any dietary guidance already provided by your clinician." },
-    { number: "03", title: "Identify practical adjustments", description: "Explore realistic meal and food choices, such as adding variety or planning suitable options around your day." },
-    { number: "04", title: "Review and adapt", description: "Discuss what is manageable and refine the approach as your needs, routine or circumstances change." },
-  ],
-  contextEyebrow: "Beyond the Diet",
-  contextTitle: "Nutrition advice should work in real life.",
-  contextParagraphs: [
-    "Everyday eating is influenced by sleep, activity, stress, work schedules, family routines, food culture, budget and personal preferences. Hydration needs can also vary with activity, climate and health circumstances.",
-    "A varied eating pattern may include seasonal vegetables and fruits, dals and other pulses, grains such as millets, and protein sources suited to individual preferences. No single food, beverage or meal schedule is required for everyone.",
-    "General guidance is not a substitute for individual clinical advice. If you have a medical condition, specific dietary restrictions or prescribed nutrition needs, recommendations should be coordinated with a qualified healthcare professional.",
-  ],
-  related: [
-    { title: "Physician Consultation", description: "Begin with a doctor-led conversation about your health concerns and medical history.", href: "/services/physician-consultation" },
-    { title: "Lifestyle Medicine", description: "Explore nutrition alongside movement, sleep, stress and other lifestyle factors.", href: "/services/lifestyle" },
-    { title: "Therapeutic Yoga", description: "Explore guided Yoga as part of a broader approach to movement and wellbeing.", href: "/services/therapeutic-yoga" },
-  ],
-  faq: [
-    { question: "What does nutrition support at Sutra Health involve?", answer: "It begins with your current meals, timing, portions, preferences and routine. Together, practical changes can be identified and reviewed rather than starting with a generic diet plan." },
-    { question: "Is nutrition support only for weight management?", answer: "No. Nutrition can be relevant to many aspects of health. The focus depends on your individual concerns, health needs and goals." },
-    { question: "Will I be given a fixed diet plan?", answer: "Guidance is intended to be personalised and may account for your health, preferences, food culture, schedule and circumstances. A fixed plan is not suitable for everyone." },
-    { question: "Which foods should I include?", answer: "A varied pattern may include vegetables, fruits, pulses, grains and suitable protein sources. The mix and portions depend on your needs, preferences and any medical advice." },
-    { question: "How often should I eat, and how much water should I drink?", answer: "Meal frequency and fluid needs vary with individual routine, activity, climate and health circumstances. Discuss specific requirements with a qualified healthcare professional when needed." },
-    { question: "Can nutrition support work alongside medical care?", answer: "Yes. Nutrition guidance can complement appropriate medical care. If you have a diagnosed condition or prescribed diet, recommendations should be coordinated with your treating clinician." },
-  ],
-  finalTitle: "Start with your everyday food and health.",
-  finalDescription: "Discuss your current eating pattern and explore practical nutrition steps that may fit your needs and daily life.",
-};
+// export const nutrition: ServicePageConfig = {
+//   heroImage: "/images/diet.webp",
+//   name: "Nutrition",
+//   shortName: "Nutrition",
+//   slug: "nutrition",
+//   title: "Nutrition Support in Faridabad & Delhi NCR | Sutra Health",
+//   description:
+//     "Personalised nutrition support connecting balanced eating, food choices, hydration and daily routines with your health needs and lifestyle.",
+//   heroDescription:
+//     "Practical nutrition guidance for balanced meals, everyday food choices and routines that fit your health needs and real life.",
+//   trust: ["Personalised guidance", "Whole-person care", "Faridabad, Delhi NCR & online"],
+//   introEyebrow: "A Practical View of Nutrition",
+//   introTitle: "Food is part of everyday healthcare.",
+//   introParagraphs: [
+//     "Nutrition is shaped by more than individual foods. Meal timing, family and work routines, culture, preferences, activity and health needs all influence how people eat.",
+//     "A useful nutrition conversation starts with your current pattern, then explores realistic ways to build variety, balance and consistency without relying on a one-size-fits-all diet.",
+//     "At Sutra Health, nutrition guidance can consider familiar foods and eating patterns alongside appropriate medical care. Advice is adapted to individual needs rather than treating general food suggestions as rules for everyone.",
+//   ],
+//   focusEyebrow: "What We Focus On",
+//   focusTitle: "Balanced choices that fit your life.",
+//   focusIntro:
+//     "Nutrition needs differ. Guidance can be shaped around your health, food preferences, routine, access to food and advice from your healthcare professional.",
+//   focusAreas: [
+//     { number: "01", title: "Balanced everyday meals", description: "Explore a varied pattern that can include vegetables, fruits, pulses, grains and suitable protein sources according to your needs and preferences." },
+//     { number: "02", title: "Food choices", description: "Understand portions and how to make room for more minimally processed foods while considering highly processed snacks, excess salt and added sugars in context." },
+//     { number: "03", title: "Meal timing & routine", description: "Review meal frequency and timing in relation to your schedule, appetite, nutritional needs and any relevant medical advice." },
+//     { number: "04", title: "Hydration & sustainable habits", description: "Consider suitable fluids and practical habits that can be maintained across work, home and daily activities." },
+//   ],
+//   processTitle: "What nutrition support can involve",
+//   processIntro:
+//     "The discussion is based on your current eating patterns, health needs and the practical realities of your daily life.",
+//   process: [
+//     { number: "01", title: "Understand your eating pattern", description: "Review meals, timing, portions, food preferences, fluids and the challenges that affect how you eat." },
+//     { number: "02", title: "Connect food with your needs", description: "Consider nutrition alongside your health concerns, routine, activity and goals, including any dietary guidance already provided by your clinician." },
+//     { number: "03", title: "Identify practical adjustments", description: "Explore realistic meal and food choices, such as adding variety or planning suitable options around your day." },
+//     { number: "04", title: "Review and adapt", description: "Discuss what is manageable and refine the approach as your needs, routine or circumstances change." },
+//   ],
+//   contextEyebrow: "Beyond the Diet",
+//   contextTitle: "Nutrition advice should work in real life.",
+//   contextParagraphs: [
+//     "Everyday eating is influenced by sleep, activity, stress, work schedules, family routines, food culture, budget and personal preferences. Hydration needs can also vary with activity, climate and health circumstances.",
+//     "A varied eating pattern may include seasonal vegetables and fruits, dals and other pulses, grains such as millets, and protein sources suited to individual preferences. No single food, beverage or meal schedule is required for everyone.",
+//     "General guidance is not a substitute for individual clinical advice. If you have a medical condition, specific dietary restrictions or prescribed nutrition needs, recommendations should be coordinated with a qualified healthcare professional.",
+//   ],
+//   related: [
+//     { title: "Physician Consultation", description: "Begin with a doctor-led conversation about your health concerns and medical history.", href: "/services/physician-consultation" },
+//     { title: "Lifestyle Medicine", description: "Explore nutrition alongside movement, sleep, stress and other lifestyle factors.", href: "/services/lifestyle" },
+//     { title: "Therapeutic Yoga", description: "Explore guided Yoga as part of a broader approach to movement and wellbeing.", href: "/services/therapeutic-yoga" },
+//   ],
+//   faq: [
+//     { question: "What does nutrition support at Sutra Health involve?", answer: "It begins with your current meals, timing, portions, preferences and routine. Together, practical changes can be identified and reviewed rather than starting with a generic diet plan." },
+//     { question: "Is nutrition support only for weight management?", answer: "No. Nutrition can be relevant to many aspects of health. The focus depends on your individual concerns, health needs and goals." },
+//     { question: "Will I be given a fixed diet plan?", answer: "Guidance is intended to be personalised and may account for your health, preferences, food culture, schedule and circumstances. A fixed plan is not suitable for everyone." },
+//     { question: "Which foods should I include?", answer: "A varied pattern may include vegetables, fruits, pulses, grains and suitable protein sources. The mix and portions depend on your needs, preferences and any medical advice." },
+//     { question: "How often should I eat, and how much water should I drink?", answer: "Meal frequency and fluid needs vary with individual routine, activity, climate and health circumstances. Discuss specific requirements with a qualified healthcare professional when needed." },
+//     { question: "Can nutrition support work alongside medical care?", answer: "Yes. Nutrition guidance can complement appropriate medical care. If you have a diagnosed condition or prescribed diet, recommendations should be coordinated with your treating clinician." },
+//   ],
+//   finalTitle: "Start with your everyday food and health.",
+//   finalDescription: "Discuss your current eating pattern and explore practical nutrition steps that may fit your needs and daily life.",
+// };
 
 export const therapeuticYoga: ServicePageConfig = {
   heroImage: "/images/what-we-do/yoga.jpg",
