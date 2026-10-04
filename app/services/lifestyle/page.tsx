@@ -7,11 +7,12 @@ const SITE_URL = "https://lifequality.org.in";
 export const metadata: Metadata = {
   title: "Lifestyle Medicine | Sutra Health",
   description:
-    "Explore the six pillars of Lifestyle Medicine and how everyday habits can be considered alongside appropriate medical care at Sutra Health.",
+    "Lifestyle Medicine at Sutra Health combines medical guidance with practical support for everyday health habits.",
   alternates: { canonical: `${SITE_URL}/services/lifestyle` },
   openGraph: {
     title: "Lifestyle Medicine | Sutra Health",
-    description: "A practical introduction to the six pillars of Lifestyle Medicine.",
+    description:
+      "Explore lifestyle-focused support alongside appropriate medical care at Sutra Health.",
     url: `${SITE_URL}/services/lifestyle`,
     siteName: "Sutra Health",
     type: "website",
@@ -19,17 +20,17 @@ export const metadata: Metadata = {
 };
 
 const pillars = [
-  ["01", "Healthy eating", "Choose balanced, varied meals that suit your health needs and everyday routine."],
-  ["02", "Physical activity", "Find safe, regular movement that fits your abilities—from walking to suitable exercise."],
-  ["03", "Restorative sleep", "Pay attention to sleep timing, regularity and routines that support adequate rest."],
-  ["04", "Positive social connections", "Relationships, family and community are part of emotional and social wellbeing."],
-  ["05", "Minimising risky substances", "Reduce health risks related to tobacco, harmful alcohol use and other risky substances."],
-  ["06", "Stress management", "Explore suitable ways to manage stress, such as relaxation, breathing practices or mindfulness."],
+  ["01", "Healthy eating", "Practical guidance for balanced meals and everyday food choices."],
+  ["02", "Physical activity", "Find safe, regular movement suited to your abilities and health needs."],
+  ["03", "Restorative sleep", "Build routines that support regular, adequate rest."],
+  ["04", "Positive social connections", "Consider how supportive relationships contribute to wellbeing."],
+  ["05", "Minimising risky substances", "Address health risks related to tobacco, harmful alcohol use and other substances."],
+  ["06", "Stress management", "Explore suitable approaches such as relaxation, breathing or mindfulness."],
 ];
 
 const faqs = [
-  ["Do I need to change all six areas at once?", "No. Begin with what feels relevant and manageable for your circumstances."],
-  ["Can Lifestyle Medicine replace medication?", "No. Lifestyle changes may complement medical care. Do not change prescribed treatment without your clinician's advice."],
+  ["Do I need to change all six areas at once?", "No. Start with one or two realistic changes based on your needs and routine."],
+  ["Can Lifestyle Medicine replace medication?", "No. It complements appropriate medical care. Do not change prescribed treatment without your clinician's advice."],
 ];
 
 const schema = {
@@ -61,18 +62,18 @@ export default function LifestyleMedicinePage() {
       <section className="relative isolate flex items-end overflow-hidden bg-[#173B36]">
         <div aria-hidden="true" className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/lifestyle-home.webp')" }} />
         <div aria-hidden="true" className="absolute inset-0 bg-[#101C19]/55" />
-          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#101C19]/85 via-[#101C19]/55 to-[#101C19]/15"/>
-          <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-12 pt-28 sm:px-8 sm:pb-16 lg:px-12">
+        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#101C19]/85 via-[#101C19]/55 to-[#101C19]/15" />
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-12 pt-28 sm:px-8 sm:pb-16 lg:px-12">
           <p className="text-xs font-medium uppercase tracking-[0.16em] text-white/75">Lifestyle Medicine</p>
           <h1 className="mt-4 max-w-3xl font-serif text-[42px] leading-[1.04] tracking-[-0.03em] text-white sm:text-6xl">
-            Everyday habits are part of your health.
+            Practical changes for better everyday health.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-7 text-white/85 sm:text-lg">
-            Six areas of daily life can help guide a more complete conversation about health.
+            Medical guidance and realistic lifestyle steps, shaped around your health and routine.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link href="/book-appointment" className="inline-flex min-h-12 items-center bg-[#F7F5EF] px-6 text-sm font-semibold text-[#17413D]">Book a consultation <span className="ml-3" aria-hidden="true">→</span></Link>
-            <a href="#six-pillars" className="inline-flex min-h-12 items-center border border-white/60 px-6 text-sm font-semibold text-white">See the six pillars</a>
+            <a href="#six-pillars" className="inline-flex min-h-12 items-center border border-white/60 px-6 text-sm font-semibold text-white">Explore the six pillars</a>
           </div>
         </div>
       </section>
@@ -80,10 +81,10 @@ export default function LifestyleMedicinePage() {
       <section className="bg-white">
         <div className="mx-auto grid max-w-7xl items-center gap-6 px-5 py-10 sm:px-8 sm:py-14 lg:grid-cols-[1fr_0.82fr] lg:gap-14 lg:px-12">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sutra-teal)]">A simple framework</p>
-            <h2 className="mt-3 max-w-xl font-serif text-3xl leading-tight sm:text-4xl">Six pillars. Different priorities for each person.</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sutra-teal)]">Our framework</p>
+            <h2 className="mt-3 max-w-xl font-serif text-3xl leading-tight sm:text-4xl">Six areas to guide your health plan.</h2>
             <p className="mt-4 max-w-xl text-base leading-7 text-[var(--sutra-muted)]">
-              Food, movement, sleep, connection, stress and substance use are connected. You do not need to change everything at once.
+              The six pillars help identify useful priorities. You can begin with the changes most relevant to you.
             </p>
           </div>
           <figure className="mx-auto w-full max-w-[440px]">
@@ -108,10 +109,11 @@ export default function LifestyleMedicinePage() {
 
       <section className="bg-white">
         <div className="mx-auto grid max-w-7xl gap-4 px-5 py-10 sm:px-8 sm:py-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:px-12">
-          <h2 className="font-serif text-3xl leading-tight sm:text-4xl">How Sutra Health uses this framework</h2>
+          <h2 className="font-serif text-3xl leading-tight sm:text-4xl">Lifestyle support at Sutra Health</h2>
           <div className="max-w-3xl space-y-3 text-base leading-7 text-[var(--sutra-muted)]">
-            <p>These pillars help frame lifestyle conversations. Depending on your needs, support may include physician consultation, nutrition counselling or Therapeutic Yoga.</p>
-            <p>They complement appropriate medical care; they do not replace diagnosis or prescribed treatment.</p>
+            <p>We discuss your health concerns, history and goals, and identify any necessary investigations.</p>
+            <p>Based on your needs, support may include nutrition counselling, Therapeutic Yoga and a practical routine to work on and review.</p>
+            <p>These services complement medical care; they do not replace diagnosis or prescribed treatment.</p>
             <Link href="/services/physician-consultation" className="inline-flex text-sm font-medium text-[var(--sutra-teal)] underline underline-offset-4">Physician consultation →</Link>
           </div>
         </div>
@@ -137,8 +139,8 @@ export default function LifestyleMedicinePage() {
       <section className="bg-[var(--sutra-teal)] text-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-10 sm:px-8 sm:py-12 lg:flex-row lg:items-center lg:justify-between lg:px-12">
           <div>
-            <h2 className="font-serif text-3xl leading-tight sm:text-4xl">Start with a conversation.</h2>
-            <p className="mt-2 text-base leading-7 text-white/80">Discuss what may be a realistic next step for you.</p>
+            <h2 className="font-serif text-3xl leading-tight sm:text-4xl">Begin with a consultation.</h2>
+            <p className="mt-2 text-base leading-7 text-white/80">Discuss a practical next step for your health.</p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link href="/book-appointment" className="inline-flex min-h-12 items-center bg-white px-5 text-sm font-semibold text-[var(--sutra-teal)]">Book consultation</Link>

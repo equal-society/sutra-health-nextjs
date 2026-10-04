@@ -6,13 +6,13 @@ const SITE_URL = "https://lifequality.org.in";
 export const metadata: Metadata = {
   title: "Physician Consultation | Sutra Health",
   description:
-    "Meet with a physician to discuss a health concern, review relevant medical information and understand appropriate clinical next steps.",
+    "Discuss your health concerns, history and goals with a physician, including whether investigations are needed.",
   alternates: { canonical: `${SITE_URL}/services/physician-consultation` },
   robots: { index: true, follow: true },
   openGraph: {
     title: "Physician Consultation | Sutra Health",
     description:
-      "A focused medical consultation for discussing health concerns and appropriate clinical next steps.",
+      "A physician consultation to review your concerns and discuss suitable next steps.",
     url: `${SITE_URL}/services/physician-consultation`,
     siteName: "Sutra Health",
     type: "website",
@@ -24,8 +24,8 @@ const discussionTopics = [
   "A current symptom, diagnosis or health concern",
   "Relevant medical history and current medicines",
   "Previous test reports or investigations",
-  "Whether further investigations or referral may be appropriate",
-  "Questions about existing treatment or medical advice",
+  "Necessary investigations or referral, if appropriate",
+  "Questions about your current care",
 ];
 
 const schema = {
@@ -90,7 +90,7 @@ export default function PhysicianConsultationPage() {
               The appointment
             </p>
             <h2 className="mt-3 max-w-xl font-serif text-3xl leading-tight sm:text-5xl">
-              Time to focus on the medical question you have.
+              Discuss what matters to your health.
             </h2>
           </div>
           <div className="max-w-3xl text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
@@ -111,7 +111,7 @@ export default function PhysicianConsultationPage() {
               You may discuss
             </p>
             <h2 className="mt-3 font-serif text-3xl leading-tight sm:text-4xl">
-              Bring the questions that matter to you.
+              What you can discuss
             </h2>
           </div>
           <ul className="max-w-3xl divide-y divide-[var(--sutra-border-strong)] border-y border-[var(--sutra-border-strong)]">
@@ -141,10 +141,10 @@ export default function PhysicianConsultationPage() {
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-10 sm:px-8 sm:py-12 lg:flex-row lg:items-center lg:justify-between lg:px-12">
           <div className="max-w-2xl">
             <h2 className="font-serif text-3xl leading-tight sm:text-4xl">
-              Book a physician consultation.
+              Speak with a physician.
             </h2>
             <p className="mt-2 text-base leading-7 text-white/80">
-              Discuss your concern and get guidance on clinically appropriate next steps.
+              Review your concern and discuss appropriate next steps.
             </p>
           </div>
           <Link
