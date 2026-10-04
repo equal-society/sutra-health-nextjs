@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -6,13 +7,13 @@ const SITE_URL = "https://lifequality.org.in";
 export const metadata: Metadata = {
   title: "Our Approach | Sutra Health",
   description:
-    "Learn how Sutra Health helps you set health priorities, take practical steps and review your care plan.",
+    "Discover how Sutra Health considers your health history, daily habits and priorities to plan practical next steps alongside appropriate medical care.",
   alternates: { canonical: `${SITE_URL}/approach` },
   robots: { index: true, follow: true },
   openGraph: {
     title: "Our Approach | Sutra Health",
     description:
-      "A practical, patient-centred approach to setting priorities and planning next steps.",
+      "Understand the patient journey at Sutra Health, from discussing your concerns to reviewing practical next steps.",
     url: `${SITE_URL}/approach`,
     siteName: "Sutra Health",
     type: "website",
@@ -21,32 +22,56 @@ export const metadata: Metadata = {
 };
 
 const stages = [
-  ["01", "Understand", "We discuss your concerns, health history and goals, and identify any necessary investigations."],
-  ["02", "Set priorities", "We identify what needs attention first."],
-  ["03", "Plan next steps", "We agree on practical steps that fit your situation."],
-  ["04", "Put the plan into practice", "You try the agreed changes at a manageable pace."],
-  ["05", "Review", "We suggest rewards that can hook your body around healthy habits."],
-  ["06", "Adjust", "We adapt the plan as your needs change."],
+  [
+    "01",
+    "Understand your health",
+    "Discuss your concerns, relevant medical history, daily routine and goals. Where appropriate, review existing reports or consider further investigations.",
+  ],
+  [
+    "02",
+    "Set priorities",
+    "Identify the concerns that need attention first, taking your health status and existing treatment into account.",
+  ],
+  [
+    "03",
+    "Plan practical steps",
+    "Discuss suitable lifestyle changes and care options that reflect your circumstances, preferences and clinical needs.",
+  ],
+  [
+    "04",
+    "Put the plan into practice",
+    "Begin with agreed steps at a manageable pace, making room for your everyday responsibilities.",
+  ],
+  [
+    "05",
+    "Review your progress",
+    "Discuss what you have been able to follow, what feels useful and where you may need further guidance.",
+  ],
+  [
+    "06",
+    "Adapt when needed",
+    "Revisit priorities and adjust the plan as your health, circumstances or goals change.",
+  ],
 ] as const;
 
 const faqs = [
   {
     question: "What happens during the first consultation?",
     answer:
-      "You can discuss your main concern, relevant health history and what you hope to address. Together, you can identify a practical starting point. No particular outcome is guaranteed.",
+      "You can discuss your main concern, relevant health history, daily routine and what you hope to address. Together, you can identify a suitable starting point and discuss any appropriate next steps. No particular outcome is guaranteed.",
   },
   {
     question: "Should I continue my current treatment?",
     answer:
-      "Yes. Continue prescribed treatment and medical follow-up. Do not change medication or treatment without discussing it with your treating clinician.",
+      "Yes. Continue prescribed treatment and medical follow-up. Do not stop or change medication or treatment without discussing it with your treating clinician.",
   },
   {
     question: "Is the plan the same for every person?",
     answer:
-      "No. Recommendations depend on your concerns, goals, existing care and circumstances. You can discuss changes as your needs evolve.",
+      "No. Recommendations depend on your health concerns, goals, existing care and circumstances. The plan can be reviewed as your needs evolve.",
   },
   {
-    question: "Is the 21-point assessment a medical diagnosis?",
+    question: "Is the 21-Point Assessment a medical diagnosis?",
     answer:
       "No. It is an optional lifestyle reflection tool. It does not diagnose a condition or replace an assessment by a qualified clinician.",
   },
@@ -89,7 +114,12 @@ export default function ApproachPage() {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-          { "@type": "ListItem", position: 2, name: "Our Approach", item: `${SITE_URL}/approach` },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Our Approach",
+            item: `${SITE_URL}/approach`,
+          },
         ],
       },
       {
@@ -121,7 +151,10 @@ export default function ApproachPage() {
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: "url('/images/approach.jpg')" }}
           />
-          <div aria-hidden="true" className="absolute inset-0 bg-[#101C19]/60" />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[#101C19]/60"
+          />
           <div
             aria-hidden="true"
             className="absolute inset-0 bg-gradient-to-r from-[#101C19]/85 via-[#101C19]/55 to-[#101C19]/15"
@@ -132,21 +165,32 @@ export default function ApproachPage() {
               <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-white/75 sm:text-xs">
                 Our approach
               </p>
+
               <h1
                 id="approach-title"
                 className="mt-5 max-w-4xl font-serif text-[44px] font-medium leading-[1.02] tracking-[-0.035em] text-white sm:text-6xl lg:text-[76px]"
               >
-              Understand the root cause of your ill-health. Find a practical way forward.       
-                     </h1>
+                Understand your health. Find a practical way forward.
+              </h1>
+
               <p className="mt-6 max-w-2xl text-base leading-7 text-white/85 sm:text-lg sm:leading-8">
-                Besides your medical history, we begin with discovering  what elements of your daily routine are unhealthy. Followed by investigations, we jointly chalk out a realistic lifestyle routine,  alongside appropriate medical care.              </p>
+                We begin by understanding your health history, daily routine
+                and priorities. Together, we consider suitable investigations
+                and realistic lifestyle steps alongside appropriate medical
+                care.
+              </p>
+
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   href="/book-appointment"
                   className="inline-flex min-h-12 items-center bg-[#F7F5EF] px-6 text-sm font-semibold text-[#17413D] transition-colors hover:bg-white"
                 >
-                  Book a consultation <span className="ml-3" aria-hidden="true">→</span>
+                  Book a consultation
+                  <span className="ml-3" aria-hidden="true">
+                    →
+                  </span>
                 </Link>
+
                 <Link
                   href="/assessment"
                   className="inline-flex min-h-12 items-center border border-white/60 px-6 text-sm font-semibold text-white transition-colors hover:bg-white/10"
@@ -162,21 +206,40 @@ export default function ApproachPage() {
         <section aria-labelledby="method-title" className="bg-white">
           <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
             <div className="max-w-3xl">
-              <p className="text-xs font-medium uppercase tracking-[0.15em] text-[#65736D]">The Sutra Health Method</p>
-              <h2 id="method-title" className="mt-4 font-serif text-4xl leading-tight tracking-[-0.03em] sm:text-5xl">
+              <p className="text-xs font-medium uppercase tracking-[0.15em] text-[#65736D]">
+                The Sutra Health Method
+              </p>
+
+              <h2
+                id="method-title"
+                className="mt-4 font-serif text-4xl leading-tight tracking-[-0.03em] sm:text-5xl"
+              >
                 Six steps, shaped around your needs.
               </h2>
+
               <p className="mt-4 max-w-2xl text-base leading-7 text-[#65736D] sm:text-lg">
-                We can revisit a step or change the plan when needed.
+                Your care plan is not fixed. Priorities and next steps can be
+                revisited as needed.
               </p>
             </div>
 
             <div className="mt-10 grid gap-x-10 md:grid-cols-2 lg:grid-cols-3">
               {stages.map(([number, title, description]) => (
-                <article key={number} className="border-t border-[#202522]/15 py-6 sm:py-7">
-                  <span className="text-xs font-semibold tracking-[0.14em] text-[#82958A]">{number}</span>
-                  <h3 className="mt-3 font-serif text-2xl leading-tight sm:text-[27px]">{title}</h3>
-                  <p className="mt-3 max-w-md text-base leading-7 text-[#65736D]">{description}</p>
+                <article
+                  key={number}
+                  className="border-t border-[#202522]/15 py-6 sm:py-7"
+                >
+                  <span className="text-xs font-semibold tracking-[0.14em] text-[#82958A]">
+                    {number}
+                  </span>
+
+                  <h3 className="mt-3 font-serif text-2xl leading-tight sm:text-[27px]">
+                    {title}
+                  </h3>
+
+                  <p className="mt-3 max-w-md text-base leading-7 text-[#65736D]">
+                    {description}
+                  </p>
                 </article>
               ))}
             </div>
@@ -189,13 +252,13 @@ export default function ApproachPage() {
                 >
                   Explore health conditions →
                 </Link>
+
                 <Link
                   href="/services"
                   className="text-sm font-medium text-[#17413D] underline underline-offset-4 hover:text-[#47645B]"
                 >
                   Explore our care services →
                 </Link>
-               
               </div>
             </div>
           </div>
@@ -204,35 +267,65 @@ export default function ApproachPage() {
         {/* Clear care boundary */}
         <section aria-labelledby="care-title" className="bg-[#E9EEE9]">
           <div className="mx-auto grid max-w-7xl gap-5 px-5 py-14 sm:px-8 sm:py-16 lg:grid-cols-[0.7fr_1.3fr] lg:items-center lg:gap-16 lg:px-12 lg:py-20">
-            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#47645B]">Care that works alongside medicine</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#47645B]">
+              Care that works alongside medicine
+            </p>
+
             <div>
-              <h2 id="care-title" className="font-serif text-3xl leading-tight tracking-[-0.025em] sm:text-4xl">
+              <h2
+                id="care-title"
+                className="font-serif text-3xl leading-tight tracking-[-0.025em] sm:text-4xl"
+              >
                 Your medical care remains central.
               </h2>
+
               <p className="mt-4 max-w-3xl text-base leading-7 text-[#53665E] sm:text-lg sm:leading-8">
-                Lifestyle changes and therapeutic practices may complement appropriate medical care. Keep following your clinician’s advice and prescribed treatment.
+                Lifestyle changes and therapeutic practices may complement
+                appropriate medical care. Continue following your clinician’s
+                advice and prescribed treatment. Discuss any proposed changes
+                to your treatment with your clinician.
               </p>
             </div>
           </div>
         </section>
 
         {/* Readable FAQs */}
-        <section aria-labelledby="approach-faq-title" className="bg-[#F7F5EF]">
+        <section
+          aria-labelledby="approach-faq-title"
+          className="bg-[#F7F5EF]"
+        >
           <div className="mx-auto max-w-5xl px-5 py-16 sm:px-8 sm:py-20 lg:py-24">
-            <p className="text-xs font-medium uppercase tracking-[0.15em] text-[#65736D]">Common questions</p>
-            <h2 id="approach-faq-title" className="mt-4 max-w-3xl font-serif text-4xl leading-tight tracking-[-0.03em] sm:text-5xl">
+            <p className="text-xs font-medium uppercase tracking-[0.15em] text-[#65736D]">
+              Common questions
+            </p>
+
+            <h2
+              id="approach-faq-title"
+              className="mt-4 max-w-3xl font-serif text-4xl leading-tight tracking-[-0.03em] sm:text-5xl"
+            >
               What to know before you begin.
             </h2>
 
             <div className="mt-9 border-t border-[#202522]/15">
               {faqs.map((faq, index) => (
-                <details key={faq.question} className="group border-b border-[#202522]/15" open={index === 0}>
+                <details
+                  key={faq.question}
+                  className="group border-b border-[#202522]/15"
+                  open={index === 0}
+                >
                   <summary className="flex cursor-pointer list-none items-start justify-between gap-5 py-6 marker:hidden focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#17413D] sm:py-7">
                     <span className="max-w-3xl font-serif text-xl font-medium leading-snug text-[#202522] sm:text-[25px] lg:text-[27px]">
                       {faq.question}
                     </span>
-                    <span aria-hidden="true" className="mt-1 flex size-8 shrink-0 items-center justify-center rounded-full border border-[#202522]/15 text-xl font-normal text-[#17413D] transition-transform group-open:rotate-45">+</span>
+
+                    <span
+                      aria-hidden="true"
+                      className="mt-1 flex size-8 shrink-0 items-center justify-center rounded-full border border-[#202522]/15 text-xl font-normal text-[#17413D] transition-transform group-open:rotate-45"
+                    >
+                      +
+                    </span>
                   </summary>
+
                   <p className="max-w-3xl pb-7 pr-10 text-base leading-7 text-[#5F7069] sm:text-lg sm:leading-8">
                     {faq.answer}
                   </p>
@@ -250,7 +343,6 @@ export default function ApproachPage() {
             </p>
           </div>
         </section>
-
       </main>
     </>
   );

@@ -188,7 +188,7 @@ import type { ServicePageConfig } from "./ServicePageTemplate";
 // };
 
 export const therapeuticYoga: ServicePageConfig = {
-  heroImage: "/images/what-we-do/yoga.jpg",
+  heroImage: "/images/yoga.jpg",
   name: "Therapeutic Yoga",
   slug: "therapeutic-yoga",
   title: "Therapeutic Yoga in Faridabad & Delhi NCR | Sutra Health",

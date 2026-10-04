@@ -1,127 +1,155 @@
+
 import type { Metadata } from "next";
 import ServicePageTemplate, {
   createServiceMetadata,
   type ServicePageConfig,
 } from "@/components/services/ServicePageTemplate";
 
-// Concise Therapeutic Yoga copy. Shared service-page UI remains unchanged.
 const therapeuticYoga: ServicePageConfig = {
   name: "Therapeutic Yoga",
   slug: "therapeutic-yoga",
+
   title: "Therapeutic Yoga in Faridabad & Delhi NCR | Sutra Health",
   description:
-    "Guided Therapeutic Yoga practices adapted to individual needs, abilities and goals at Sutra Health.",
+    "Explore guided Therapeutic Yoga in Faridabad, with practices selected around your movement abilities, experience and individual needs.",
+
   heroDescription:
-    "Guided Yoga practices adapted to your health, abilities and goals, with attention to movement, breathing and awareness.",
-  trust: ["Guided practice", "Individualised approach", "Faridabad, Delhi NCR & online"],
-  introEyebrow: "Therapeutic Yoga",
-  introTitle: "Yoga practice shaped around the individual.",
-  introParagraphs: [
-    "Therapeutic Yoga uses selected Yoga-based practices with attention to your health, physical abilities, experience and goals.",
-    "Practices are adapted to the person rather than following one fixed sequence. Therapeutic Yoga can complement appropriate medical and lifestyle care.",
+    "A guided approach to Yoga that considers your physical abilities, health context and experience before selecting suitable practices.",
+
+  trust: [
+    "Guided practice",
+    "Adapted to individual needs",
+    "Faridabad, Delhi NCR & online",
   ],
-  focusEyebrow: "What We Focus On",
-  focusTitle: "Guided practice with purpose.",
+
+  introEyebrow: "A Considered Practice",
+  introTitle: "Start with what your body can do.",
+  introParagraphs: [
+    "Therapeutic Yoga uses selected Yoga-based practices according to a person's health, movement abilities and experience. Rather than asking everyone to follow the same sequence, the approach considers which practices may be appropriate for the individual.",
+    "It can be considered alongside suitable medical care and other health services, according to individual circumstances.",
+  ],
+
+  focusEyebrow: "Practice Areas",
+  focusTitle: "Four parts of a guided session.",
   focusIntro:
-    "The practices selected depend on your needs, abilities and circumstances.",
+    "The emphasis may differ between individuals. These are areas that can be considered when selecting a practice.",
+
   focusAreas: [
     {
       number: "01",
       title: "Movement",
-      description: "Explore suitable Yoga-based movements according to your physical abilities and needs.",
+      description:
+        "Explore suitable Yoga-based movements in accordance with your mobility and physical abilities.",
     },
     {
       number: "02",
       title: "Breathing",
-      description: "Learn appropriate breathing practices as part of guided practice.",
+      description:
+        "Learn selected breathing techniques with guidance on how to practise them appropriately.",
     },
     {
       number: "03",
-      title: "Awareness",
-      description: "Develop awareness of movement, breathing and everyday patterns.",
+      title: "Body awareness",
+      description:
+        "Pay attention to posture, movement and breathing during practice.",
     },
     {
       number: "04",
-      title: "Wellbeing",
-      description: "Connect regular practice with personal health and wellbeing goals.",
+      title: "Personal goals",
+      description:
+        "Choose practices in relation to the areas of wellbeing you want to work on.",
     },
   ],
-  processTitle: "What a session can involve",
+
+  processTitle: "How your practice takes shape",
   processIntro:
-    "Practice is selected and adapted around your health, experience and goals.",
+    "The session begins with your experience and circumstances, not a predetermined routine.",
+
   process: [
     {
       number: "01",
-      title: "Discuss your needs",
-      description: "Share your health context, movement experience and what you want from practice.",
+      title: "Discuss your background",
+      description:
+        "Share relevant health information, previous Yoga experience and any movement limitations.",
     },
     {
       number: "02",
-      title: "Select practices",
-      description: "Choose suitable movement, breathing or awareness practices.",
+      title: "Choose an appropriate starting point",
+      description:
+        "Identify suitable movement, breathing or awareness practices for your circumstances.",
     },
     {
       number: "03",
-      title: "Practise with guidance",
-      description: "Learn and practise selected techniques in a guided setting.",
+      title: "Learn under guidance",
+      description:
+        "Understand the selected techniques and how they are intended to be practised.",
     },
     {
       number: "04",
-      title: "Review and adapt",
-      description: "Adjust the practice as your needs, abilities or goals change.",
+      title: "Revisit the approach",
+      description:
+        "Review the practice when your abilities, experience or needs change.",
     },
   ],
-  contextEyebrow: "Complementary Care",
-  contextTitle: "Part of a wider approach to health.",
+
+  contextEyebrow: "Care and Suitability",
+  contextTitle: "Know when to seek clinical advice.",
   contextParagraphs: [
-    "Where appropriate, Therapeutic Yoga can be considered alongside physician care, Lifestyle Medicine and Nutrition.",
-    "It does not replace medical diagnosis or prescribed treatment. Discuss relevant health concerns with a qualified healthcare professional before beginning practice.",
+    "If you have an existing medical condition, injury, pain or physical limitation, discuss your suitability for practice with a qualified healthcare professional before beginning.",
+    "Therapeutic Yoga is a complementary practice. It does not provide a medical diagnosis or replace prescribed treatment.",
   ],
+
   related: [
     {
       title: "Physician Consultation",
-      description: "Discuss health concerns and medical history with a physician.",
+      description:
+        "Discuss symptoms, medical history or concerns that may affect your practice.",
       href: "/services/physician-consultation",
     },
     {
       title: "Lifestyle Medicine",
-      description: "Explore movement alongside other everyday health factors.",
+      description:
+        "Explore the wider role of movement, sleep, nutrition and other daily health factors.",
       href: "/services/lifestyle",
     },
     {
       title: "Behaviour, Stress & Mind",
-      description: "Explore practical support for stress and everyday habits.",
+      description:
+        "Find out about support related to stress and everyday behavioural patterns.",
       href: "/services/behaviour-stress-mind",
     },
   ],
+
   faq: [
     {
-      question: "What is Therapeutic Yoga?",
+      question: "What should I expect from Therapeutic Yoga?",
       answer:
-        "It uses selected Yoga-based practices adapted to an individual's health, abilities and circumstances as part of a broader approach to wellbeing.",
+        "The approach involves selected Yoga-based practices considered in relation to your health, experience and physical abilities.",
     },
     {
-      question: "How is it different from a regular Yoga class?",
+      question: "Is it the same as a regular Yoga class?",
       answer:
-        "Therapeutic Yoga places greater emphasis on individual needs and adapting practices rather than following the same routine for everyone.",
+        "The emphasis is on individual suitability and adapting practices rather than expecting everyone to complete an identical sequence.",
     },
     {
-      question: "Do I need previous Yoga experience?",
+      question: "Can I begin without previous Yoga experience?",
       answer:
-        "Previous experience is not necessarily required. Practices can be considered according to your experience and abilities.",
+        "Previous experience is not necessarily required. The starting point can be considered according to your familiarity with Yoga and physical abilities.",
     },
     {
-      question: "Can it be used alongside medical care?",
+      question: "Should I consult a physician before starting?",
       answer:
-        "It may complement appropriate healthcare, but should not replace medical diagnosis or treatment.",
+        "If you have a medical condition, injury, pain or movement limitation, seek appropriate clinical advice before beginning. Therapeutic Yoga does not replace medical treatment.",
     },
   ],
-  finalTitle: "Begin with a guided conversation.",
+
+  finalTitle: "Find a suitable starting point for your practice.",
   finalDescription:
-    "Discuss your health, movement and what you would like your practice to support.",
+    "Discuss your experience, physical abilities and questions before deciding how to proceed.",
 };
 
-export const metadata: Metadata = createServiceMetadata(therapeuticYoga);
+export const metadata: Metadata =
+  createServiceMetadata(therapeuticYoga);
 
 export default function TherapeuticYogaPage() {
   return <ServicePageTemplate config={therapeuticYoga} />;

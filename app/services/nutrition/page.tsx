@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import ServicePageTemplate, {
   createServiceMetadata,
@@ -9,133 +10,160 @@ const nutrition: ServicePageConfig = {
   name: "Nutrition Support",
   shortName: "Nutrition",
   slug: "nutrition",
+
   title: "Nutrition Support in Faridabad & Delhi NCR | Sutra Health",
   description:
-    "Practical dietary guidance in Faridabad for familiar foods, meal routines, hydration and individual nutrition needs.",
+    "Explore nutrition support in Faridabad for familiar Indian foods, dietary choices, meal routines and individual health needs.",
+
   heroDescription:
-    "Get practical guidance on food choices, meal timing and hydration that fits your health needs and everyday routine.",
-  trust: ["Personalised dietary guidance", "Faridabad, Delhi NCR & online"],
-  introEyebrow: "Dietary Guidance",
-  introTitle: "Make everyday food choices more thoughtfully.",
-  introParagraphs: [
-    "Guidance considers your usual meals, preferences, health needs and Prakriti, as described in the legacy programme.",
+    "Understand your food choices with guidance that considers your health, preferences and everyday circumstances.",
+
+  trust: [
+    "Individual dietary guidance",
+    "Faridabad, Delhi NCR & online",
   ],
-  focusEyebrow: "Food Choices",
-  focusTitle: "Familiar foods, balanced choices.",
+
+  introEyebrow: "For Your Everyday Meals",
+  introTitle: "Your food habits are a useful place to begin.",
+  introParagraphs: [
+    "A nutrition discussion can start with what you eat at home, your meal schedule and the questions you have about your diet. There is no need to arrive with a completely changed eating pattern.",
+  ],
+
+  focusEyebrow: "Dietary Considerations",
+  focusTitle: "What is on your plate?",
   focusIntro:
-    "The legacy dietary guidance highlights the following food groups and habits. Individual suitability and portions may vary.",
+    "The earlier Life Quality guidance identifies these areas for consideration. They are reference points, not a fixed meal plan or a prescription for every person.",
+
   focusAreas: [
     {
       number: "01",
-      title: "Fruit, vegetables and pulses",
+      title: "Seasonal produce and pulses",
       description:
-        "Seasonal fruit and vegetables, salads, dals and other pulses.",
+        "The original guidance includes seasonal fruits, vegetables, salads, dals and other pulses.",
     },
     {
       number: "02",
-      title: "Grains and protein",
+      title: "Grains and protein sources",
       description:
-        "Millets such as jowar and ragi, with eggs or fish where suitable and preferred.",
+        "Jowar, ragi, eggs and fish appear in the legacy guidance, with choices depending on suitability and preference.",
     },
     {
       number: "03",
-      title: "Fats and traditional foods",
+      title: "Cooking fats and sweeteners",
       description:
-        "Desi ghee, olive oil, gur and khandsari, considered within your overall eating pattern.",
+        "Desi ghee, olive oil, gur and khandsari are mentioned in the original material. Their role and quantity should be considered within the overall diet.",
     },
     {
       number: "04",
-      title: "Foods to limit",
+      title: "Highly processed and fried foods",
       description:
-        "Excess salt, refined sugar, deep-fried snacks such as samosa and pakoda, highly processed snacks, commercial bread and heavily sweetened tea.",
+        "The legacy page advises limiting excess salt, refined sugar, samosa, pakoda, highly processed snacks, commercial bread and heavily sweetened tea.",
     },
     {
       number: "05",
-      title: "Drinks and hydration",
+      title: "Drinks and fluids",
       description:
-        "Water and suitable fluids; the legacy page also mentions green tea, buttermilk and kaada according to individual suitability.",
+        "Water and suitable fluids are relevant to hydration. Green tea, buttermilk and kaada are also mentioned in the earlier guidance, subject to individual suitability.",
     },
   ],
-  processTitle: "Guidance shaped around your routine",
+
+  processTitle: "What to expect from the discussion",
   processIntro:
-    "Discuss your current meals, schedule and health context to identify manageable adjustments.",
+    "The consultation helps put your dietary questions into context before you decide what, if anything, to change.",
+
   process: [
     {
       number: "01",
-      title: "Review meals and timing",
-      description: "Consider your usual food choices, meal frequency and daily schedule.",
+      title: "Share your current eating pattern",
+      description:
+        "Talk about a usual day's meals, food preferences and any difficulties with your routine.",
     },
     {
       number: "02",
-      title: "Discuss individual needs",
-      description: "Factor in preferences, Prakriti and relevant health circumstances.",
+      title: "Discuss relevant health factors",
+      description:
+        "Consider medical history, dietary requirements and Prakriti, which is referenced in the earlier programme.",
     },
     {
       number: "03",
-      title: "Choose practical changes",
-      description: "Explore food variety, hydration and realistic meal adjustments.",
+      title: "Identify the next practical step",
+      description:
+        "Discuss suitable adjustments or whether further clinical advice is needed.",
     },
   ],
-  contextEyebrow: "Further Reading",
-  contextTitle: "Explore the ideas behind the guidance.",
+
+  contextEyebrow: "Learning Resources",
+  contextTitle: "Read and explore beyond the consultation.",
   contextParagraphs: [
-    "The legacy page links to a Cell Metabolism study on ultra-processed diets, a TED Talk about gut health, and the 21-point healthy lifestyle framework. These resources offer further reading; they are not individual dietary prescriptions.",
-    "Meal frequency and fluid needs vary. If you have a medical condition or prescribed diet, discuss changes with your treating healthcare professional.",
+    "These are the educational resources linked by the original Life Quality dietary page. They provide additional context and should not be treated as personalised nutrition advice.",
+    "If you follow a prescribed diet or have a medical condition affecting food or fluid intake, consult your treating healthcare professional before making significant changes.",
   ],
+
   resources: [
     {
-      title: "Cell Metabolism study on ultra-processed foods",
-      description: "The research article linked from the original dietary guidance.",
-      href: "https://www.cell.com/cell-metabolism/fulltext/S1550-4131(19)30248-7",
+      title: "Research on ultra-processed diets",
+      description:
+        "The Cell Metabolism research article referenced in the original guidance.",
+      href:
+        "https://www.cell.com/cell-metabolism/fulltext/S1550-4131(19)30248-7",
     },
     {
-      title: "TED Talk: Gut health",
-      description: "The gut-health talk referenced by the legacy page.",
+      title: "Gut health talk",
+      description:
+        "The TED Talk linked from the legacy dietary page.",
       href: "https://www.youtube.com/watch?v=1sISguPDlhY",
     },
     {
       title: "21-point healthy lifestyle framework",
-      description: "The framework published on Zenodo and referenced in the original content.",
+      description:
+        "The healthy lifestyle framework referenced by Life Quality.",
       href: "https://zenodo.org/records/15814357",
     },
     {
       title: "Healthy Lifestyle Guide",
-      description: "The educational video linked from the original dietary advice page.",
-      href: "https://www.youtube.com/watch?si=JWlazmTyPDvG7fkG&v=FOGY2HSo2eY&feature=youtu.be",
+      description:
+        "The educational video included in the original dietary advice.",
+      href:
+        "https://www.youtube.com/watch?si=JWlazmTyPDvG7fkG&v=FOGY2HSo2eY&feature=youtu.be",
     },
   ],
+
   related: [
     {
       title: "Physician Consultation",
-      description: "Discuss health history and nutrition-related concerns.",
+      description:
+        "For a clinical discussion of symptoms, medical history or dietary concerns.",
       href: "/services/physician-consultation",
     },
     {
       title: "Lifestyle Medicine",
-      description: "Explore nutrition alongside other daily health habits.",
+      description:
+        "For guidance on other health-related habits, including movement and sleep.",
       href: "/services/lifestyle",
     },
   ],
+
   faq: [
     {
-      question: "Will I need to follow a strict diet?",
+      question: "Do I need to change my diet before the consultation?",
       answer:
-        "Guidance can begin with your existing meals and focus on practical changes suited to your circumstances.",
+        "No. Your current meals and routine provide a useful starting point for the discussion.",
     },
     {
-      question: "Which foods does the legacy guidance suggest limiting?",
+      question: "Does the guidance include Indian foods?",
       answer:
-        "It highlights excess salt, refined sugar, fried snacks, highly processed foods, commercial bread and heavily sweetened tea. Individual advice may differ.",
+        "The original material mentions dals, seasonal produce, jowar, ragi and other familiar foods. Their suitability depends on your individual circumstances.",
     },
     {
-      question: "Can I continue eating familiar Indian foods?",
+      question: "Can I get advice for a medical condition?",
       answer:
-        "The legacy guidance includes seasonal produce, dals, millets and other familiar foods. Choices can be considered according to your needs and preferences.",
+        "You can discuss relevant health concerns and dietary questions. Specific recommendations depend on clinical assessment and any existing treatment or prescribed diet.",
     },
   ],
-  finalTitle: "Discuss your everyday food choices.",
+
+  finalTitle: "Bring your nutrition questions to the conversation.",
   finalDescription:
-    "Bring your usual meal pattern and nutrition questions to a physician consultation.",
+    "Discuss your current eating pattern and health-related concerns through a physician consultation.",
 };
 
 export const metadata: Metadata = createServiceMetadata(nutrition);

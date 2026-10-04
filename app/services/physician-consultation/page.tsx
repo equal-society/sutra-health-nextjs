@@ -1,22 +1,29 @@
+
 import type { Metadata } from "next";
 import Link from "next/link";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/physician-consultation`;
 const BOOKING_URL = "/book-appointment";
+
 const ONLINE_URL =
   "https://www.lybrate.com/faridabad/doctor/dr-rakesh-sarwal-preventive-medicine-specialist";
 
 export const metadata: Metadata = {
   title: "Physician Consultation in Faridabad | Sutra Health",
   description:
-    "Discuss a health concern, medical history and available reports with a physician at Sutra Health in Faridabad. Review appointment options and prepare for your visit.",
-  alternates: { canonical: PAGE_URL },
-  robots: { index: true, follow: true },
+    "Prepare for a physician consultation in Faridabad. Learn what to bring, what the visit covers and how to explore appointment options at Sutra Health.",
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Physician Consultation in Faridabad | Sutra Health",
     description:
-      "Understand what to expect from a physician consultation, what to bring and how to request an appointment at Sutra Health.",
+      "Discuss a health concern, review available medical information and understand possible next steps with a physician.",
     url: PAGE_URL,
     siteName: "Sutra Health",
     type: "website",
@@ -24,56 +31,60 @@ export const metadata: Metadata = {
   },
 };
 
-const consultationIncludes = [
+const consultationSteps = [
   {
-    title: "Your main concern",
+    number: "01",
+    title: "Start with your concern",
     description:
-      "Describe your symptoms, when they started and what you want addressed first.",
+      "Explain what has changed, when it began and how it is affecting you.",
   },
   {
-    title: "Relevant health history",
+    number: "02",
+    title: "Review your medical background",
     description:
-      "Cover relevant diagnoses, past treatment, medicines and supplements.",
+      "Discuss relevant diagnoses, previous treatment, medicines and supplements.",
   },
   {
-    title: "Reports and questions",
+    number: "03",
+    title: "Look at available reports",
     description:
-      "Go through reports you already have and discuss whether further tests are needed.",
+      "Review existing findings and consider whether further evaluation is needed.",
   },
   {
-    title: "A plan for what comes next",
+    number: "04",
+    title: "Understand the way forward",
     description:
-      "Discuss suitable treatment, further evaluation, referral or follow-up.",
+      "Discuss appropriate care, possible referrals or follow-up based on the assessment.",
   },
 ];
 
 const preparation = [
-  "Recent reports or test results, if you have them",
-  "A list or photos of your current medicines and supplements",
-  "Relevant prescriptions or discharge notes",
-  "Two or three questions you want to make sure you ask",
+  "Recent test reports, if available",
+  "Current prescriptions or a list of medicines and supplements",
+  "Relevant discharge summaries or previous medical notes",
+  "Two or three questions you want to discuss",
 ];
 
 const faqs = [
   {
-    question: "Do I need to get tests done before the appointment?",
+    question: "Do I need to complete tests before visiting?",
     answer:
-      "No. Bring reports you already have. Please arrange additional tests only if a clinician has advised you to do so.",
+      "Not unless a clinician has already advised them. Bring reports you have, but do not delay necessary care because a report is unavailable.",
   },
   {
-    question: "Can I bring my current prescriptions?",
+    question: "Can I discuss more than one health concern?",
     answer:
-      "Yes. Bring your prescriptions or a list of medicines and supplements so the clinician can understand your current care.",
+      "You can mention your concerns and identify which needs attention first. The time available and clinical priorities will guide how they are addressed.",
   },
   {
-    question: "Will the consultation include lifestyle advice?",
+    question: "Will the physician discuss nutrition or daily habits?",
     answer:
-      "When relevant, the discussion may include food, activity, sleep or other daily factors. Any advice depends on your individual assessment and does not replace indicated medical treatment.",
+      "Where relevant, the discussion may include food, physical activity, sleep or other lifestyle factors alongside medical care.",
   },
   {
-    question: "Are online appointments available?",
+    question: "How can I check online appointment availability?",
     answer:
-      "An external appointment profile is linked on this page. Please check it for current availability, consultation mode and booking terms before confirming.",
+      "Use the linked external physician profile to check current appointment availability, consultation mode and booking terms.",
   },
 ];
 
@@ -100,9 +111,12 @@ export default function PhysicianConsultationPage() {
     <main className="bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schema),
+        }}
       />
 
+      {/* Hero */}
       <section
         aria-labelledby="consultation-title"
         className="relative isolate flex min-h-[500px] items-end overflow-hidden bg-[#173B36] sm:min-h-[560px] lg:min-h-[620px]"
@@ -112,67 +126,93 @@ export default function PhysicianConsultationPage() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/images/mobile.webp')" }}
         />
-        <div aria-hidden="true" className="absolute inset-0 bg-[#10211E]/65" />
+
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-[#10211E]/65"
+        />
+
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-10 pt-28 sm:px-6 sm:pb-16 md:px-8 lg:px-12 lg:pb-20">
-          <p className="text-sm font-medium uppercase tracking-[0.12em] text-white/85 sm:text-sm">
+          <p className="text-sm font-medium uppercase tracking-[0.12em] text-white/85">
             Physician consultation · Faridabad
           </p>
+
           <h1
             id="consultation-title"
             className="mt-4 max-w-3xl font-serif text-[clamp(2.25rem,6vw,4.25rem)] leading-[1.08] tracking-[-0.025em] text-white"
           >
-            Talk through your health concerns. Understand your next step.
+            Get clarity on a health concern.
           </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-white/90 sm:text-xl sm:leading-8">
-            Consultation brings medical care together with relevant discussion of nutrition, daily habits, Yoga therapy and Ayurveda, based on your health needs.
+
+          <p className="mt-5 max-w-2xl text-lg leading-8 text-white/90 sm:text-xl">
+            Discuss your symptoms, medical history and available reports with
+            a physician. Understand what may need attention and how to proceed.
           </p>
+
           <div className="mt-7 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
             <Link
               href={BOOKING_URL}
-              className="inline-flex min-h-12 w-full items-center justify-center bg-[#F7F5EF] px-5 text-base font-semibold text-[#17413D] transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto sm:px-6"
+              className="inline-flex min-h-12 w-full items-center justify-center bg-[#F7F5EF] px-6 text-base font-semibold text-[#17413D] transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto"
             >
-              Request an appointment <span className="ml-3" aria-hidden="true">→</span>
+              Request an appointment
+              <span className="ml-3" aria-hidden="true">
+                →
+              </span>
             </Link>
+
             <a
               href={ONLINE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex min-h-12 w-full items-center justify-center border border-white/55 px-5 text-base font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto sm:px-6"
+              className="inline-flex min-h-12 w-full items-center justify-center border border-white/60 px-6 text-base font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto"
             >
-              Check online appointment options <span className="ml-3" aria-hidden="true">↗</span>
+              View online appointment options
+              <span className="ml-3" aria-hidden="true">
+                ↗
+              </span>
             </a>
           </div>
         </div>
       </section>
 
-      <section aria-labelledby="consultation-includes-title" className="bg-white">
+      {/* What happens */}
+      <section aria-labelledby="visit-title" className="bg-white">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 md:px-8 lg:px-12 lg:py-20">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.12em] text-[var(--sutra-teal)]">
-              Consultation focus
+              Your visit
             </p>
+
             <h2
-              id="consultation-includes-title"
+              id="visit-title"
               className="mt-3 font-serif text-3xl leading-tight sm:text-4xl lg:text-5xl"
             >
-              A clinical review with a wider perspective.
+              What happens during a consultation?
             </h2>
-            <p className="mt-4 max-w-2xl text-lg leading-8 text-[var(--sutra-muted)] sm:text-xl sm:leading-8">
-              The physician considers your medical history, current concerns and relevant lifestyle factors. Where appropriate, the discussion may include nutrition, physical activity, emotional wellbeing, Yoga or other integrative approaches alongside medical care.
+
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-[var(--sutra-muted)]">
+              The discussion follows your concerns and relevant clinical
+              information. The next step depends on the assessment rather than
+              a fixed plan for every visitor.
             </p>
           </div>
-          <div className="mt-8 grid gap-0 border-y border-[var(--sutra-border-strong)] sm:grid-cols-2 sm:gap-x-10">
-            {consultationIncludes.map((item, index) => (
+
+          <div className="mt-8 grid gap-x-10 sm:grid-cols-2">
+            {consultationSteps.map((step) => (
               <article
-                key={item.title}
-                className="border-b border-[var(--sutra-border-strong)] py-6 last:border-b-0 sm:odd:pr-6 sm:even:pl-6 sm:nth-[n+3]:border-b-0"
+                key={step.number}
+                className="border-t border-[var(--sutra-border-strong)] py-6"
               >
-                <p className="text-sm font-semibold tracking-[0.1em] text-[var(--sutra-teal)]">
-                  0{index + 1}
-                </p>
-                <h3 className="mt-2 font-serif text-2xl leading-snug">{item.title}</h3>
+                <span className="text-sm font-semibold tracking-[0.14em] text-[var(--sutra-teal)]">
+                  {step.number}
+                </span>
+
+                <h3 className="mt-2 font-serif text-2xl leading-snug">
+                  {step.title}
+                </h3>
+
                 <p className="mt-3 text-lg leading-8 text-[var(--sutra-muted)]">
-                  {item.description}
+                  {step.description}
                 </p>
               </article>
             ))}
@@ -180,23 +220,43 @@ export default function PhysicianConsultationPage() {
         </div>
       </section>
 
-      <section aria-labelledby="prepare-title" className="bg-[var(--sutra-porcelain)]">
+      {/* Preparation */}
+      <section
+        aria-labelledby="prepare-title"
+        className="bg-[var(--sutra-porcelain)]"
+      >
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 sm:py-16 md:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 lg:px-12 lg:py-20">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.12em] text-[var(--sutra-teal)]">
-              Before you visit
+              A little preparation
             </p>
-            <h2 id="prepare-title" className="mt-3 font-serif text-3xl leading-tight sm:text-4xl">
-              Bring what you already have.
+
+            <h2
+              id="prepare-title"
+              className="mt-3 font-serif text-3xl leading-tight sm:text-4xl"
+            >
+              Bring the information you already have.
             </h2>
+
             <p className="mt-4 text-lg leading-8 text-[var(--sutra-muted)]">
-              Bring available information if convenient; a missing document should not delay necessary care.
+              These details can help make your medical history easier to
+              discuss. Missing documents should not prevent you from seeking
+              necessary care.
             </p>
           </div>
+
           <ul className="divide-y divide-[var(--sutra-border)] border-y border-[var(--sutra-border)]">
             {preparation.map((item) => (
-              <li key={item} className="flex gap-3 py-4 text-lg leading-8 text-[var(--sutra-muted)] sm:text-xl">
-                <span aria-hidden="true" className="mt-0.5 text-[var(--sutra-teal)]">✓</span>
+              <li
+                key={item}
+                className="flex gap-3 py-4 text-lg leading-8 text-[var(--sutra-muted)]"
+              >
+                <span
+                  aria-hidden="true"
+                  className="text-[var(--sutra-teal)]"
+                >
+                  ✓
+                </span>
                 <span>{item}</span>
               </li>
             ))}
@@ -204,86 +264,113 @@ export default function PhysicianConsultationPage() {
         </div>
       </section>
 
-      <section aria-labelledby="clinician-title" className="border-y border-[var(--sutra-border)] bg-[var(--sutra-pale-sage)]">
-        <div className="mx-auto grid max-w-7xl gap-5 px-5 py-10 sm:px-8 sm:py-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 lg:px-12">
+      {/* Physician details */}
+      <section
+        aria-labelledby="physician-title"
+        className="bg-[var(--sutra-pale-sage)]"
+      >
+        <div className="mx-auto grid max-w-7xl gap-5 px-4 py-12 sm:px-6 sm:py-16 md:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 lg:px-12">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.12em] text-[var(--sutra-teal)]">
-              Consultation
+              Physician
             </p>
-            <h2 id="clinician-title" className="mt-3 font-serif text-3xl leading-tight sm:text-4xl">
+
+            <h2
+              id="physician-title"
+              className="mt-3 font-serif text-3xl leading-tight sm:text-4xl"
+            >
               Dr. Rakesh Sarwal
             </h2>
-            <p className="mt-2 text-base leading-7 text-[var(--sutra-muted)]">
+
+            <p className="mt-2 text-lg text-[var(--sutra-muted)]">
               MBBS, MPH, DrPH
             </p>
           </div>
-          <div className="max-w-3xl text-lg leading-8 text-[var(--sutra-muted)] sm:text-xl sm:leading-8">
-            <p>
-              Dr. Rakesh Sarwal is listed on the Life Quality consultation page for physician consultations in Faridabad.
-            </p>
-            <p className="mt-4 text-base leading-7">
-              Suggested donation listed by Life Quality: Rs. 100 per consultation. Online appointment options are linked through Dr. Rakesh Sarwal’s Lybrate profile.
-            </p>
-          </div>
-        </div>
-      </section>
 
-      <section aria-labelledby="abha-title" className="bg-[var(--sutra-porcelain)]">
-        <div className="mx-auto grid max-w-7xl gap-6 px-4 py-12 sm:px-6 sm:py-16 md:px-8 lg:grid-cols-[1fr_auto] lg:items-center lg:px-12 lg:py-20">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.12em] text-[var(--sutra-teal)]">Digital health identity</p>
-            <h2 id="abha-title" className="mt-3 font-serif text-3xl leading-tight sm:text-4xl">Get your ABHA</h2>
-            <p className="mt-4 text-lg leading-8 text-[var(--sutra-muted)]">An Ayushman Bharat Health Account (ABHA) provides a digital health identity that can be used to access and manage health records through participating digital health services.</p>
+            <p className="text-lg leading-8 text-[var(--sutra-muted)]">
+              Dr. Rakesh Sarwal is listed for physician consultations at Life
+              Quality in Faridabad.
+            </p>
+
+            <p className="mt-4 text-base leading-7 text-[var(--sutra-muted)]">
+              The legacy page lists a suggested donation of ₹100 per
+              consultation. Confirm the current amount and appointment
+              arrangements before visiting.
+            </p>
+
+            <a
+              href={ONLINE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex min-h-11 items-center font-semibold text-[var(--sutra-teal)] underline underline-offset-4"
+            >
+              View physician profile ↗
+            </a>
           </div>
-          <a href="https://abha.abdm.gov.in/abha/v3" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center border border-[var(--sutra-teal)] px-6 text-base font-semibold text-[var(--sutra-teal)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--sutra-teal)]">Create ABHA account <span className="ml-3" aria-hidden="true">↗</span></a>
         </div>
       </section>
 
-      <section aria-labelledby="health-tools-title" className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 md:px-8 lg:px-12 lg:py-20">
+      {/* ABHA */}
+      <section aria-labelledby="abha-title" className="bg-white">
+        <div className="mx-auto grid max-w-7xl gap-6 px-4 py-12 sm:px-6 sm:py-16 md:px-8 lg:grid-cols-[1fr_auto] lg:items-center lg:px-12 lg:py-16">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.12em] text-[var(--sutra-teal)]">For awareness</p>
-            <h2 id="health-tools-title" className="mt-3 font-serif text-3xl leading-tight sm:text-4xl">Useful self-assessment tools</h2>
-            <p className="mt-4 text-lg leading-8 text-[var(--sutra-muted)]">These resources offer general health information. They are not diagnostic tools and do not replace clinical assessment.</p>
-          </div>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
-            <article className="border border-[var(--sutra-border)] p-6 sm:p-7">
-              <h3 className="font-serif text-2xl">Test your pulse</h3>
-              <p className="mt-3 text-base leading-7 text-[var(--sutra-muted)]">EQUAL lists HeartBeat for exploring pulse measurements on Android. Phone-based readings are for awareness, not diagnosis.</p>
-              <a className="mt-5 inline-flex min-h-11 items-center font-semibold text-[var(--sutra-teal)] underline underline-offset-4" href="https://f-droid.org/packages/eu.berdosi.app.heartbeat/" target="_blank" rel="noopener noreferrer">Get HeartBeat from F-Droid ↗</a>
-            </article>
-            <article className="border border-[var(--sutra-border)] p-6 sm:p-7">
-              <h3 className="font-serif text-2xl">Understand HRV</h3>
-              <p className="mt-3 text-base leading-7 text-[var(--sutra-muted)]">HRV measures variation in the time between heartbeats and is studied in relation to stress, recovery and autonomic function.</p>
-              <a className="mt-5 inline-flex min-h-11 items-center font-semibold text-[var(--sutra-teal)] underline underline-offset-4" href="https://play.google.com/store/apps/details?id=com.kubioshrvapp" target="_blank" rel="noopener noreferrer">Get Kubios HRV ↗</a>
-            </article>
-            <article className="border border-[var(--sutra-border)] p-6 sm:p-7">
-              <h3 className="font-serif text-2xl">Explore brain health</h3>
-              <p className="mt-3 text-base leading-7 text-[var(--sutra-muted)]">The Think Brain Health Hub tool introduces factors associated with brain health. This self-assessment is for awareness and does not provide a medical diagnosis.</p>
-              <a className="mt-5 inline-flex min-h-11 items-center font-semibold text-[var(--sutra-teal)] underline underline-offset-4" href="https://www.alzheimersresearchuk.org/brain-health-check-in/start-what-to-expect/" target="_blank" rel="noopener noreferrer">Check brain health ↗</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section aria-labelledby="consultation-faq-title" className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 md:px-8 lg:px-12 lg:py-20">
-          <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.12em] text-[var(--sutra-teal)]">
-              Before booking
+              Digital health identity
             </p>
-            <h2 id="consultation-faq-title" className="mt-3 font-serif text-3xl leading-tight sm:text-4xl">
-              Common questions
+
+            <h2
+              id="abha-title"
+              className="mt-3 font-serif text-3xl leading-tight sm:text-4xl"
+            >
+              About ABHA
             </h2>
+
+            <p className="mt-4 text-lg leading-8 text-[var(--sutra-muted)]">
+              An Ayushman Bharat Health Account provides a digital health
+              identity that can support access to health records through
+              participating digital health services.
+            </p>
           </div>
-          <div className="mt-7 max-w-4xl divide-y divide-[var(--sutra-border)] border-y border-[var(--sutra-border)]">
+
+          <a
+            href="https://abha.abdm.gov.in/abha/v3"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-12 items-center justify-center border border-[var(--sutra-teal)] px-6 font-semibold text-[var(--sutra-teal)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--sutra-teal)]"
+          >
+            Visit ABHA portal ↗
+          </a>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section
+        aria-labelledby="faq-title"
+        className="bg-[var(--sutra-porcelain)]"
+      >
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 md:px-8 lg:px-12 lg:py-20">
+          <h2
+            id="faq-title"
+            className="font-serif text-3xl leading-tight sm:text-4xl"
+          >
+            Before your appointment
+          </h2>
+
+          <div className="mt-6 max-w-4xl divide-y divide-[var(--sutra-border)] border-y border-[var(--sutra-border)]">
             {faqs.map((faq) => (
               <details key={faq.question} className="group py-5">
-                <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 py-1 text-base font-semibold leading-7 text-[var(--sutra-ink)] marker:content-none sm:text-lg sm:leading-8">
+                <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold leading-7 marker:content-none">
                   <span>{faq.question}</span>
-                  <span aria-hidden="true" className="text-xl text-[var(--sutra-teal)] transition-transform group-open:rotate-45">+</span>
+                  <span
+                    aria-hidden="true"
+                    className="text-xl text-[var(--sutra-teal)] transition-transform group-open:rotate-45"
+                  >
+                    +
+                  </span>
                 </summary>
-                <p className="max-w-3xl pt-3 pr-2 text-lg leading-8 text-[var(--sutra-muted)] sm:pr-8">
+
+                <p className="max-w-3xl pt-3 text-lg leading-8 text-[var(--sutra-muted)]">
                   {faq.answer}
                 </p>
               </details>
@@ -292,31 +379,34 @@ export default function PhysicianConsultationPage() {
         </div>
       </section>
 
+      {/* Closing CTA */}
       <section className="bg-[var(--sutra-teal)] text-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 px-4 py-10 sm:px-6 sm:py-12 md:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-12">
           <div className="max-w-2xl">
             <h2 className="font-serif text-3xl leading-tight sm:text-4xl">
-              Explore appointment options
+              Arrange your consultation.
             </h2>
-            <p className="mt-2 text-lg leading-8 text-white/90">
-              Choose an appointment route to view current options.
+
+            <p className="mt-3 text-lg leading-8 text-white/90">
+              Review the available appointment options before confirming.
             </p>
           </div>
+
           <Link
             href={BOOKING_URL}
-            className="inline-flex min-h-12 w-full items-center justify-center bg-white px-6 text-base font-semibold text-[var(--sutra-teal)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto lg:self-auto"
+            className="inline-flex min-h-12 w-full items-center justify-center bg-white px-6 font-semibold text-[var(--sutra-teal)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto"
           >
-            Request an appointment <span className="ml-3" aria-hidden="true">→</span>
+            Request an appointment →
           </Link>
         </div>
       </section>
 
-      <p className="mx-auto max-w-7xl px-4 py-5 text-base leading-7 text-[var(--sutra-muted)] sm:px-6 md:px-8 lg:px-12">
-        This page is for general information and does not provide a diagnosis or
-        emergency service. Treatment and investigation decisions depend on an
-        individual clinical assessment. Continue prescribed care unless your
-        treating clinician advises otherwise. For urgent symptoms, seek timely
-        medical care through an appropriate local service.
+      <p className="mx-auto max-w-7xl px-4 py-5 text-sm leading-6 text-[var(--sutra-muted)] sm:px-6 md:px-8 lg:px-12">
+        This page provides general information and is not a diagnosis or
+        emergency service. Treatment decisions require individual clinical
+        assessment. Do not stop prescribed treatment without speaking with
+        your treating clinician. For urgent symptoms, seek appropriate local
+        medical care.
       </p>
     </main>
   );

@@ -243,11 +243,26 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-    {/* HERO */}
-      <section className="border-b border-[#202522]/10 bg-[#F7F5EF]">
+      {/* HERO */}
+      <section className="relative isolate overflow-hidden border-b border-[#202522]/10 bg-[#202522]">
+        {/* Background image */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-20 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/images/nature.jpg')",
+          }}
+        />
+
+        {/* Image overlay */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 bg-gradient-to-r from-[#142D2B]/90 via-[#142D2B]/70 to-[#142D2B]/25"
+        />
+
         <Container>
-          <div className="max-w-5xl py-14 sm:py-18 lg:py-22 xl:py-24">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#65736D] sm:text-xs">
+          <div className="max-w-5xl py-20 sm:py-24 lg:py-32 xl:py-36">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#D5C9AE] sm:text-xs">
               About Sutra Health
             </p>
 
@@ -260,7 +275,7 @@ export default function AboutPage() {
                 font-medium
                 leading-[0.98]
                 tracking-[-0.04em]
-                text-[#202522]
+                text-white
                 sm:text-[58px]
                 md:text-[64px]
                 lg:text-[76px]
@@ -269,7 +284,9 @@ export default function AboutPage() {
             >
               A commitment to
               <br />
-              <span className="text-[#17413D]">better quality of life.</span>
+              <span className="text-[#D5C9AE]">
+                better quality of life.
+              </span>
             </h1>
 
             <p
@@ -278,7 +295,7 @@ export default function AboutPage() {
                 max-w-[680px]
                 text-[17px]
                 leading-8
-                text-[#65736D]
+                text-white/85
                 sm:mt-8
                 sm:text-[18px]
                 sm:leading-9
@@ -292,9 +309,9 @@ export default function AboutPage() {
             <div className="mt-7 flex items-start gap-4">
               <span
                 aria-hidden="true"
-                className="mt-2 h-10 w-px shrink-0 bg-[#C8BDA7]"
+                className="mt-2 h-10 w-px shrink-0 bg-[#D5C9AE]"
               />
-              <p className="max-w-[560px] text-[14px] leading-7 text-[#65736D] sm:text-[15px]">
+              <p className="max-w-[560px] text-[14px] leading-7 text-white/75 sm:text-[15px]">
                 Explore our story, the people behind Sutra Health and the
                 thinking that shapes how we approach care.
               </p>

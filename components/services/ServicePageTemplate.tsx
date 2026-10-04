@@ -111,7 +111,7 @@ export default function ServicePageTemplate({ config }: { config: ServicePageCon
       {/* Full-view image hero */}
       <section
         aria-labelledby="service-hero-title"
-        className="relative isolate flex items-end overflow-hidden bg-[#18332F]"
+        className="relative isolate flex min-h-[min(780px,calc(100svh-72px))] items-end overflow-hidden bg-[#18332F] sm:min-h-[min(820px,calc(100svh-80px))]"
       >
         <div
           aria-hidden="true"
