@@ -36,25 +36,25 @@ const consultationSteps = [
     number: "01",
     title: "Start with your concern",
     description:
-      "Explain what has changed, when it began and how it is affecting you.",
+      "Explain the timeline, pattern and practical effect of the issue you want to address.",
   },
   {
     number: "02",
     title: "Review your medical background",
     description:
-      "Discuss relevant diagnoses, previous treatment, medicines and supplements.",
+      "Consider medical conditions, earlier treatment and medicines that may affect the discussion.",
   },
   {
     number: "03",
     title: "Look at available reports",
     description:
-      "Review existing findings and consider whether further evaluation is needed.",
+      "Review findings already available and clarify whether any further assessment is indicated.",
   },
   {
     number: "04",
     title: "Understand the way forward",
     description:
-      "Discuss appropriate care, possible referrals or follow-up based on the assessment.",
+      "Leave with a clearer understanding of the options discussed, including referral or review where appropriate.",
   },
 ];
 
@@ -84,7 +84,7 @@ const faqs = [
   {
     question: "How can I check online appointment availability?",
     answer:
-      "Use the linked external physician profile to check current appointment availability, consultation mode and booking terms.",
+      "The external listing is the place to confirm available slots, format and booking conditions; these details can change.",
   },
 ];
 
@@ -141,12 +141,11 @@ export default function PhysicianConsultationPage() {
             id="consultation-title"
             className="mt-4 max-w-3xl font-serif text-[clamp(2.25rem,6vw,4.25rem)] leading-[1.08] tracking-[-0.025em] text-white"
           >
-            Get clarity on a health concern.
+            A physician visit shaped around your questions.
           </h1>
 
           <p className="mt-5 max-w-2xl text-lg leading-8 text-white/90 sm:text-xl">
-            Discuss your symptoms, medical history and available reports with
-            a physician. Understand what may need attention and how to proceed.
+            Bring the details that matter to you. Use the visit to discuss your concerns, clarify findings and understand what may warrant attention.
           </p>
 
           <div className="mt-7 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
@@ -187,13 +186,11 @@ export default function PhysicianConsultationPage() {
               id="visit-title"
               className="mt-3 font-serif text-3xl leading-tight sm:text-4xl lg:text-5xl"
             >
-              What happens during a consultation?
+              What to expect during the visit
             </h2>
 
             <p className="mt-4 max-w-2xl text-lg leading-8 text-[var(--sutra-muted)]">
-              The discussion follows your concerns and relevant clinical
-              information. The next step depends on the assessment rather than
-              a fixed plan for every visitor.
+              The discussion moves from your main concern to the information needed to consider it. The clinician will explain any limits or uncertainties in the available information.
             </p>
           </div>
 
@@ -235,13 +232,11 @@ export default function PhysicianConsultationPage() {
               id="prepare-title"
               className="mt-3 font-serif text-3xl leading-tight sm:text-4xl"
             >
-              Bring the information you already have.
+              Prepare what is readily available.
             </h2>
 
             <p className="mt-4 text-lg leading-8 text-[var(--sutra-muted)]">
-              These details can help make your medical history easier to
-              discuss. Missing documents should not prevent you from seeking
-              necessary care.
+              Bring what you already have. Missing paperwork should not prevent you from seeking care when it is needed.
             </p>
           </div>
 
@@ -289,14 +284,11 @@ export default function PhysicianConsultationPage() {
 
           <div className="max-w-3xl">
             <p className="text-lg leading-8 text-[var(--sutra-muted)]">
-              Dr. Rakesh Sarwal is listed for physician consultations at Life
-              Quality in Faridabad.
+              The current physician listing identifies Dr. Rakesh Sarwal for consultations associated with Life Quality in Faridabad.
             </p>
 
             <p className="mt-4 text-base leading-7 text-[var(--sutra-muted)]">
-              The legacy page lists a suggested donation of ₹100 per
-              consultation. Confirm the current amount and appointment
-              arrangements before visiting.
+              The earlier Life Quality page listed a suggested donation of ₹100 per consultation. Please confirm the current amount and appointment arrangements before visiting.
             </p>
 
             <a
@@ -327,9 +319,7 @@ export default function PhysicianConsultationPage() {
             </h2>
 
             <p className="mt-4 text-lg leading-8 text-[var(--sutra-muted)]">
-              An Ayushman Bharat Health Account provides a digital health
-              identity that can support access to health records through
-              participating digital health services.
+              An Ayushman Bharat Health Account (ABHA) is a digital health identity. Participating services may use it to support access to health records.
             </p>
           </div>
 
@@ -354,7 +344,7 @@ export default function PhysicianConsultationPage() {
             id="faq-title"
             className="font-serif text-3xl leading-tight sm:text-4xl"
           >
-            Before your appointment
+            Common appointment questions
           </h2>
 
           <div className="mt-6 max-w-4xl divide-y divide-[var(--sutra-border)] border-y border-[var(--sutra-border)]">
@@ -384,11 +374,11 @@ export default function PhysicianConsultationPage() {
         <div className="mx-auto flex max-w-7xl flex-col gap-5 px-4 py-10 sm:px-6 sm:py-12 md:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-12">
           <div className="max-w-2xl">
             <h2 className="font-serif text-3xl leading-tight sm:text-4xl">
-              Arrange your consultation.
+              Plan your visit with current details.
             </h2>
 
             <p className="mt-3 text-lg leading-8 text-white/90">
-              Review the available appointment options before confirming.
+              Confirm the consultation format, timing and any applicable terms directly before you travel.
             </p>
           </div>
 
@@ -396,7 +386,7 @@ export default function PhysicianConsultationPage() {
             href={BOOKING_URL}
             className="inline-flex min-h-12 w-full items-center justify-center bg-white px-6 font-semibold text-[var(--sutra-teal)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto"
           >
-            Request an appointment →
+            Confirm visit details →
           </Link>
         </div>
       </section>

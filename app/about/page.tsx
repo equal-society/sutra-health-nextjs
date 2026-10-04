@@ -7,9 +7,9 @@ import YouTubeFacade from "@/components/shared/YouTubeFacade";
 const SITE_URL = "https://lifequality.org.in";
 
 export const metadata: Metadata = {
-  title: "About Sutra Health | Lifestyle & Integrative Healthcare",
+  title: "About Sutra Health | Our Story and EQUAL Society",
   description:
-    "Learn about Sutra Health, its roots in EQUAL Society since 1997, clinical leadership and approach to lifestyle medicine, nutrition, yoga therapy and whole-person wellbeing.",
+    "Learn about Sutra Health, its connection with EQUAL Society, the organisation’s health and community roots, and the people behind its work.",
   alternates: {
     canonical: `${SITE_URL}/about`,
   },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Sutra Health | Lifestyle & Integrative Healthcare",
     description:
-      "Discover the story, clinical leadership and whole-person approach behind Sutra Health and its roots in EQUAL Society.",
+      "Learn about Sutra Health, its connection with EQUAL Society and the organisation behind its work.",
     url: `${SITE_URL}/about`,
     siteName: "Sutra Health",
     type: "website",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About Sutra Health | Lifestyle & Integrative Healthcare",
     description:
-      "Discover the story, clinical leadership and whole-person approach behind Sutra Health.",
+      "Explore the story and organisational roots behind Sutra Health.",
     images: [`${SITE_URL}/images/about-us.webp`],
   },
 };
@@ -77,49 +77,26 @@ const foundation = [
   },
 ];
 
-const pillars = [
-  ["01", "Lifestyle", "Healthy everyday habits that support long-term wellbeing."],
-  ["02", "Nutrition", "Practical nutrition and dietary guidance."],
-  ["03", "Yogasana", "Yoga-based practices for movement and wellbeing."],
-  ["04", "Breath", "Breathing practices supporting calm and awareness."],
-  ["05", "Mind", "Mindfulness and positive mental wellbeing."],
-];
-
 const faqs = [
   {
     question: "What is EQUAL Society?",
     answer:
-      "EQUAL (Effort For Quality of Life) Society is a Faridabad-based not-for-profit organization, registered under the Societies Registration Act, 1860, in Haryana (registration no. 363, dated 28 May 1997). Sutra Health is rooted in this organization's work in health, wellbeing, education and community.",
+      "EQUAL (Effort For Quality of Life) Society is described in the current site materials as a Faridabad-based not-for-profit organisation working across health, family welfare, education and quality of life. Its legal and registration details should be confirmed against official records.",
   },
   {
     question: "How is Sutra Health connected with EQUAL Society?",
     answer:
-      "Sutra Health grows from the work and values of EQUAL Society. The broader organization has worked across health advancement, family welfare, education, empowerment, sustainable living and quality of life since 1997.",
+      "Sutra Health is connected with EQUAL Society and its wider focus on health, wellbeing and quality of life. The precise operating and legal relationship should be described consistently across the organisation’s public information.",
   },
   {
-    question: "Where is EQUAL Society located?",
+    question: "Who is associated with Sutra Health’s clinical leadership?",
     answer:
-      "EQUAL Society is based in Sector 46, Faridabad, Haryana. Sutra Health also offers online consultations for people across India.",
+      "The current site identifies Dr. Rakesh Sarwal (MBBS, MPH, DrPH), a public health physician and Therapeutic Yoga Consultant. Visit the Doctors page for his fuller profile and linked academic information.",
   },
   {
-    question: "Who founded EQUAL Society?",
+    question: "Are lifestyle and yoga-based practices a replacement for medical treatment?",
     answer:
-      "EQUAL Society was founded in 1997 by Dr. Rakesh Sarwal (MBBS, MPH, DrPH), a public health physician and Therapeutic Yoga Consultant.",
-  },
-  {
-    question: "What does integrative healthcare mean at Sutra Health?",
-    answer:
-      "The approach brings together lifestyle, nutrition, yoga, breath and mind practices with appropriate medical care, rather than treating these as competing systems.",
-  },
-  {
-    question: "Do you offer online consultations?",
-    answer:
-      "Yes. Lifestyle medicine and yoga therapy consultations are available online for people across India, alongside in-person consultations in Faridabad.",
-  },
-  {
-    question: "Is the lifestyle and yoga approach a substitute for medical treatment?",
-    answer:
-      "No. These approaches are intended to complement appropriate medical care, not replace it. People with existing health conditions should continue working with their treating physician.",
+      "No. Lifestyle and yoga-based practices should complement appropriate medical care, not replace it. Continue care with your treating clinician and discuss complementary practices with them.",
   },
 ];
 
@@ -151,21 +128,13 @@ const aboutPageSchema = {
 
 const organizationSchema = {
   "@context": "https://schema.org",
-  "@type": ["NGO", "MedicalBusiness"],
+  "@type": "Organization",
   "@id": `${SITE_URL}/#organization`,
   name: "Sutra Health",
   alternateName: "Life Quality",
-  legalName: "Effort For Quality of Life (EQUAL) Society",
   url: `${SITE_URL}/`,
   description:
-    "Sutra Health is rooted in EQUAL Society, a Faridabad-based not-for-profit registered in 1997, working in health, wellbeing, education, lifestyle medicine, yoga therapy, nutrition and community wellbeing.",
-  foundingDate: "1997-05-28",
-  founder: {
-    "@type": "Person",
-    name: "Dr. Rakesh Sarwal",
-    honorificSuffix: "MBBS, MPH, DrPH",
-    url: "https://academic.lifequality.org.in/",
-  },
+    "Sutra Health is connected with EQUAL (Effort For Quality of Life) Society and its stated work across health, education, family welfare and quality of life.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Faridabad",
@@ -180,7 +149,6 @@ const organizationSchema = {
     "Nutrition Counselling",
     "Health and Wellness Education",
   ],
-  medicalSpecialty: ["Lifestyle Medicine", "Integrative Medicine"],
   sameAs: [
     "https://academic.lifequality.org.in/",
     "https://pmc.ncbi.nlm.nih.gov/articles/PMC12975079/",
@@ -243,82 +211,93 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* HERO */}
-      <section className="relative isolate overflow-hidden border-b border-[#202522]/10 bg-[#202522]">
-        {/* Background image */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-20 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/images/nature.jpg')",
-          }}
-        />
+    {/* HERO */}
+<section className="relative isolate min-h-[560px] overflow-hidden bg-[#202522] sm:min-h-[620px] lg:min-h-[680px]">
+  {/* Background Image */}
+  <div
+    aria-hidden="true"
+    className="absolute inset-0 -z-20 bg-cover bg-center"
+    style={{
+      backgroundImage: "url('/images/nature.jpg')",
+    }}
+  />
 
-        {/* Image overlay */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-gradient-to-r from-[#142D2B]/90 via-[#142D2B]/70 to-[#142D2B]/25"
-        />
+  {/* Dark Gradient Overlay */}
+  <div
+    aria-hidden="true"
+    className="absolute inset-0 -z-10 bg-gradient-to-r from-[#172B29]/90 via-[#172B29]/70 to-[#172B29]/25"
+  />
 
-        <Container>
-          <div className="max-w-5xl py-20 sm:py-24 lg:py-32 xl:py-36">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#D5C9AE] sm:text-xs">
-              About Sutra Health
-            </p>
+  {/* Bottom Overlay */}
+  <div
+    aria-hidden="true"
+    className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-[#172B29]/35 to-transparent"
+  />
 
-            <h1
-              className="
-                mt-5
-                max-w-[900px]
-                font-serif
-                text-[46px]
-                font-medium
-                leading-[0.98]
-                tracking-[-0.04em]
-                text-white
-                sm:text-[58px]
-                md:text-[64px]
-                lg:text-[76px]
-                xl:text-[82px]
-              "
-            >
-              A commitment to
-              <br />
-              <span className="text-[#D5C9AE]">
-                better quality of life.
-              </span>
-            </h1>
+  <Container>
+    <div className="flex min-h-[560px] items-center py-20 sm:min-h-[620px] sm:py-24 lg:min-h-[680px] lg:py-28">
+      <div className="max-w-5xl">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#D5C9AE] sm:text-xs">
+          About Sutra Health
+        </p>
 
-            <p
-              className="
-                mt-7
-                max-w-[680px]
-                text-[17px]
-                leading-8
-                text-white/85
-                sm:mt-8
-                sm:text-[18px]
-                sm:leading-9
-              "
-            >
-              Sutra Health is rooted in EQUAL Society, registered in 1997 —
-              nearly three decades working in health, wellbeing, education
-              and community.
-            </p>
+        <h1
+          className="
+            mt-6
+            max-w-[900px]
+            font-serif
+            text-[44px]
+            font-medium
+            leading-[1.02]
+            tracking-[-0.04em]
+            text-white
+            sm:text-[58px]
+            md:text-[68px]
+            lg:text-[78px]
+            xl:text-[84px]
+          "
+        >
+          A story shaped by
+          <br />
+          <span className="text-[#D5C9AE]">
+            community and quality of life.
+          </span>
+        </h1>
 
-            <div className="mt-7 flex items-start gap-4">
-              <span
-                aria-hidden="true"
-                className="mt-2 h-10 w-px shrink-0 bg-[#D5C9AE]"
-              />
-              <p className="max-w-[560px] text-[14px] leading-7 text-white/75 sm:text-[15px]">
-                Explore our story, the people behind Sutra Health and the
-                thinking that shapes how we approach care.
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
+        <p
+          className="
+            mt-7
+            max-w-[680px]
+            text-[16px]
+            leading-8
+            text-white/85
+            sm:mt-8
+            sm:text-[18px]
+            sm:leading-9
+          "
+        >
+          Sutra Health is connected with EQUAL (Effort For Quality of Life)
+          Society, a Faridabad-based organisation whose work is described
+          in the supplied site materials as beginning in 1997. This page
+          introduces the organisation behind Sutra Health, its roots and
+          the people associated with its health work.
+        </p>
+
+        <div className="mt-8 flex items-start gap-4">
+          <span
+            aria-hidden="true"
+            className="mt-2 h-10 w-px shrink-0 bg-[#D5C9AE]"
+          />
+
+          <p className="max-w-[560px] text-[14px] leading-7 text-white/75 sm:text-[15px]">
+            Explore the organisation’s background and the people connected
+            with its health work.
+          </p>
+        </div>
+      </div>
+    </div>
+  </Container>
+</section>
 
       {/* STORY */}
       <section className="bg-white py-20 sm:py-24 lg:py-28">
@@ -342,30 +321,24 @@ export default function AboutPage() {
               </p>
 
               <h2 className="mt-4 font-serif text-[38px] leading-[1.07] tracking-[-0.035em] sm:text-[50px]">
-                Rooted in a commitment to quality of life.
+                A community-rooted foundation.
               </h2>
 
               <div className="mt-7 space-y-5 text-[16px] leading-[1.78] text-[#65736D] sm:text-[17px]">
                 <p>
                   Sutra Health is connected with Effort For Quality of Life
-                  (EQUAL) Society, a not-for-profit organization registered
-                  under the Societies Registration Act, 1860, in Haryana
-                  (registration no. 363, dated 28 May 1997).
+                  (EQUAL) Society. The organisation’s existing public materials
+                  record its registration in Haryana in 1997. The registration
+                  details should be checked against the official record before
+                  this page is published.
                 </p>
 
                 <p>
-                  EQUAL Society&apos;s work spans health advancement, family
-                  welfare, quality of life, education, empowerment and
-                  sustainable living — bringing together yoga therapy,
-                  nutrition and modern medicine as complementary parts of one
-                  approach.
+                  Its stated areas of work include health advancement, family welfare, education, empowerment, sustainable living and quality of life. Sutra Health is one expression of that wider commitment.
                 </p>
 
                 <p>
-                  EQUAL Society is also a signatory to the Traditional
-                  Complementary Integrative Healthcare (TCIH) Declaration,
-                  affirming a commitment to inclusive, evidence-based health
-                  practices.
+                  The current site also refers to EQUAL Society’s association with the Traditional Complementary Integrative Healthcare (TCIH) Declaration. Retain this statement only with a verified authoritative reference and approval.
                 </p>
               </div>
 
@@ -390,13 +363,11 @@ export default function AboutPage() {
             </p>
 
             <h2 className="mt-4 font-serif text-[38px] leading-[1.07] tracking-[-0.035em] sm:text-[50px]">
-              Health, family, community and dignity.
+              Health, family and quality of life.
             </h2>
 
             <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-[1.75] text-[#65736D] sm:text-[17px]">
-              EQUAL Society&apos;s work spans the continuum from prevention to
-              rehabilitation, and from individual wellbeing to community
-              health.
+              The organisation’s stated themes span health advancement, family welfare, education and community-focused work.
             </p>
           </div>
 
@@ -431,35 +402,12 @@ export default function AboutPage() {
             </p>
 
             <h2 className="mt-4 font-serif text-[38px] leading-[1.07] tracking-[-0.035em] sm:text-[50px]">
-              Whole-person care.
-              <br />
-              Connected thinking.
+              A connected view of health.
             </h2>
 
             <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-[1.75] text-[#65736D] sm:text-[17px]">
-              Integrative medicine brings together different systems and
-              approaches to care for the complete person rather than looking
-              at health in isolation.
+              The organisation’s background informs Sutra Health’s work. The care philosophy and its stages are explained separately on the Approach page.
             </p>
-          </div>
-
-          <div className="mx-auto mt-12 max-w-5xl border-y border-[#202522]/10">
-            {pillars.map(([number, title, description]) => (
-              <div
-                key={number}
-                className="grid gap-3 border-b border-[#202522]/10 py-6 last:border-b-0 sm:grid-cols-[72px_0.7fr_1.3fr] sm:items-center sm:gap-8"
-              >
-                <p className="font-serif text-[23px] text-[#91A298]">
-                  {number}
-                </p>
-                <h3 className="font-serif text-[26px] leading-tight text-[#17413D]">
-                  {title}
-                </h3>
-                <p className="text-[15px] leading-[1.7] text-[#65736D] sm:text-[16px]">
-                  {description}
-                </p>
-              </div>
-            ))}
           </div>
 
           <div className="mt-9 text-center">
@@ -467,7 +415,7 @@ export default function AboutPage() {
               href="/approach"
               className="inline-flex items-center gap-2 text-[14px] font-semibold text-[#17413D] underline decoration-[#91A298] underline-offset-4"
             >
-              Explore our approach
+              Read about our care approach
               <span aria-hidden="true">→</span>
             </Link>
           </div>
@@ -505,15 +453,11 @@ export default function AboutPage() {
 
               <div className="mt-7 space-y-5 text-[16px] leading-[1.78] text-[#65736D] sm:text-[17px]">
                 <p>
-                  Dr. Rakesh Sarwal is a public health physician and
-                  Therapeutic Yoga Consultant with published research on
-                  lifestyle-based approaches to health.
+                  The current site identifies Dr. Rakesh Sarwal as a public health physician and Therapeutic Yoga Consultant.
                 </p>
 
                 <p>
-                  His work emphasizes prevention and helping people take an
-                  active role in their health through evidence-informed
-                  lifestyle change, alongside appropriate medical care.
+                  His professional background and academic work are available through his profile and publications.
                 </p>
               </div>
 
@@ -541,7 +485,7 @@ export default function AboutPage() {
               </p>
 
               <h2 className="mt-4 font-serif text-[38px] leading-[1.07] tracking-[-0.035em] sm:text-[50px]">
-                A long-term commitment to health.
+                From organisational roots to Sutra Health.
               </h2>
             </div>
 
@@ -565,12 +509,10 @@ export default function AboutPage() {
                   Today
                 </p>
                 <h3 className="mt-5 font-serif text-[24px] leading-tight text-[#17413D]">
-                  Integrative health
+                  Sutra Health today
                 </h3>
                 <p className="mt-4 text-[15px] leading-[1.7] text-[#65736D]">
-                  Sutra Health continues this philosophy through lifestyle
-                  medicine, yoga therapy, nutrition and integrative
-                  healthcare.
+                  Sutra Health is connected with this organisational background. See Our Approach for how care is structured and What We Do for current service information.
                 </p>
               </article>
             </div>
@@ -583,16 +525,15 @@ export default function AboutPage() {
         <Container>
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.17em] text-[#17413D]">
-              Watch
+              EQUAL Society
             </p>
 
             <h2 className="mt-4 font-serif text-[38px] leading-[1.07] tracking-[-0.035em] sm:text-[50px]">
-              EQUAL Society — Video
+              A closer look at EQUAL Society
             </h2>
 
             <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-[1.75] text-[#65736D] sm:text-[17px]">
-              Learn more about EQUAL Society and its work in health, wellness
-              and community service.
+              This video provides further context about the organisation. Keep the embed only while it remains current, accessible and approved for public use.
             </p>
           </div>
 
@@ -614,12 +555,11 @@ export default function AboutPage() {
               </p>
 
               <h2 className="mt-4 max-w-md font-serif text-[38px] leading-[1.07] tracking-[-0.035em] sm:text-[48px]">
-                Understanding Sutra Health.
+                About the organisation.
               </h2>
 
               <p className="mt-6 max-w-sm text-[16px] leading-[1.75] text-[#65736D]">
-                Practical answers about EQUAL Society, our approach and how
-                care works.
+                A few focused answers about the organisation and its relationship with Sutra Health.
               </p>
             </div>
 
@@ -663,22 +603,19 @@ export default function AboutPage() {
               </p>
 
               <h2 className="mt-4 font-serif text-[38px] leading-[1.07] tracking-[-0.035em] sm:text-[50px]">
-                The work extends beyond the consultation room.
+                Community work remains part of the wider story.
               </h2>
 
               <p className="mt-6 text-[16px] leading-[1.75] text-[#65736D] sm:text-[17px]">
-                EQUAL Society&apos;s broader work includes health awareness,
-                wellness, education, community empowerment and quality of life.
-                Explore the community and volunteer work to learn how to get
-                involved.
+                EQUAL Society’s stated wider work includes health awareness, education and community initiatives. Visit the community page for current participation information.
               </p>
             </div>
 
             <Link
-              href="/volunteer"
-              className="inline-flex min-h-12 items-center justify-center gap-2  bg-[#17413D] px-7 text-[14px] font-semibold text-white transition-colors hover:bg-[#12332F]"
+              href="/community"
+              className="inline-flex min-h-12 items-center justify-center gap-2 bg-[#17413D] px-7 text-[14px] font-semibold text-white transition-colors hover:bg-[#12332F]"
             >
-              Community &amp; Volunteer
+              Explore community work
               <span aria-hidden="true">→</span>
             </Link>
           </div>

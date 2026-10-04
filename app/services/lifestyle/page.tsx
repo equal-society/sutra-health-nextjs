@@ -9,7 +9,7 @@ const PAGE_URL = `${SITE_URL}/services/lifestyle`;
 export const metadata: Metadata = {
   title: "Lifestyle Medicine in Faridabad | Sutra Health",
   description:
-    "Explore lifestyle medicine in Faridabad, including six health pillars, lifestyle coaching, Yoga, Pranayam, Meditation and practical health habits.",
+    "Learn about lifestyle medicine in Faridabad, the six areas it considers, and how practical health habits may be discussed alongside medical care.",
   alternates: {
     canonical: PAGE_URL,
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Lifestyle Medicine | Sutra Health",
     description:
-      "Learn how food, movement, sleep, social connection and stress management fit into lifestyle medicine.",
+      "Understand the six lifestyle medicine areas and the role of practical habit support alongside appropriate healthcare.",
     url: PAGE_URL,
     siteName: "Sutra Health",
     type: "website",
@@ -33,37 +33,37 @@ const pillars = [
     number: "01",
     title: "Healthy eating",
     description:
-      "Consider food variety, meal patterns and dietary choices in the context of your health and circumstances.",
+      "Discuss food choices, meal patterns and variety in relation to your health needs, preferences and routine.",
   },
   {
     number: "02",
     title: "Physical activity",
     description:
-      "Explore suitable movement, walking or guided activity according to your abilities and needs.",
+      "Consider walking or other appropriate activity in light of your mobility, health and current abilities.",
   },
   {
     number: "03",
     title: "Restorative sleep",
     description:
-      "Look at sleep duration, regularity and routines that may affect the quality of your rest.",
+      "Review sleep timing, consistency and everyday routines that may be affecting your rest.",
   },
   {
     number: "04",
     title: "Positive social connections",
     description:
-      "Recognise the place of supportive relationships and meaningful connection in daily life.",
+      "Consider how supportive relationships and social connection fit into your wellbeing and daily circumstances.",
   },
   {
     number: "05",
     title: "Minimising risky substances",
     description:
-      "Address tobacco, harmful alcohol use and other substance-related concerns where relevant.",
+      "Discuss tobacco, harmful alcohol use or other substance-related concerns when relevant to your health.",
   },
   {
     number: "06",
     title: "Stress management",
     description:
-      "Explore suitable approaches such as breathing practices, meditation or relaxation.",
+      "Consider appropriate ways to respond to stress, which may include breathing practices, meditation or relaxation.",
   },
 ];
 
@@ -71,7 +71,7 @@ const faqs = [
   {
     question: "Do I have to change all six areas at once?",
     answer:
-      "No. Priorities can be selected gradually according to your health needs, preferences and daily circumstances.",
+      "No. You can identify one or two priorities to discuss first. Any changes should be realistic for your health, preferences and daily routine.",
   },
   {
     question: "Does lifestyle medicine replace medication?",
@@ -81,12 +81,12 @@ const faqs = [
   {
     question: "What is included in the Healthy Lifestyle Coaching Program?",
     answer:
-      "The legacy programme describes personalised food guidance, Yoga, Pranayam, Meditation, habit-tracking tools and health consultations. Confirm current programme availability and details with Life Quality.",
+      "Earlier programme information describes food guidance, Yoga, Pranayam, Meditation, habit-tracking tools and health consultations. Please confirm which elements are currently offered and how the programme is organised with Life Quality.",
   },
   {
     question: "Can lifestyle guidance be relevant if I already have a medical condition?",
     answer:
-      "Lifestyle factors may be discussed alongside your existing care. Recommendations depend on your clinical circumstances and should be coordinated with your treating healthcare professional.",
+      "Yes. Lifestyle questions can be discussed in the context of your condition and current treatment. Advice should reflect your circumstances and remain coordinated with your treating healthcare professional.",
   },
 ];
 
@@ -137,7 +137,7 @@ export default function LifestyleMedicinePage() {
           aria-hidden="true"
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/images/lifestyle-home.webp')",
+            backgroundImage: "url('/images/nature.jpg')",
           }}
         />
 
@@ -160,12 +160,11 @@ export default function LifestyleMedicinePage() {
             id="lifestyle-title"
             className="mt-4 max-w-3xl font-serif text-[clamp(2.25rem,6vw,4.25rem)] leading-[1.08] tracking-[-0.03em] text-white"
           >
-            Your daily habits are part of your health.
+            Everyday habits can be part of your care conversation.
           </h1>
 
           <p className="mt-5 max-w-2xl text-lg leading-8 text-white/90 sm:text-xl">
-            Explore how food, movement, sleep, relationships and stress
-            management can be considered as part of your healthcare.
+            Learn how six areas of daily life may be considered alongside your health history, priorities and appropriate medical care.
           </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -203,12 +202,11 @@ export default function LifestyleMedicinePage() {
                 id="pillars-title"
                 className="mt-3 max-w-xl font-serif text-3xl leading-tight sm:text-4xl lg:text-5xl"
               >
-                Six areas that shape everyday health.
+                A practical framework for discussing daily habits.
               </h2>
 
               <p className="mt-4 max-w-2xl text-lg leading-8 text-[var(--sutra-muted)]">
-                Lifestyle medicine considers these connected areas rather than
-                treating daily habits as isolated tasks.
+                These areas can influence one another. Their relevance and priority will differ from person to person.
               </p>
             </div>
 
@@ -268,15 +266,11 @@ export default function LifestyleMedicinePage() {
 
           <div className="max-w-3xl">
             <p className="text-lg leading-8 text-[var(--sutra-muted)] sm:text-xl">
-              The legacy programme brings together food guidance, Yoga,
-              Pranayam, Meditation, habit-tracking tools and health
-              consultations.
+              Earlier programme information brings together food guidance, Yoga, Pranayam, Meditation, habit-tracking tools and health consultations.
             </p>
 
             <p className="mt-4 text-lg leading-8 text-[var(--sutra-muted)]">
-              Participants can begin with realistic goals and review selected
-              habits over time. The current programme format and availability
-              should be confirmed with Life Quality.
+              A gradual approach may help people review selected habits over time. Confirm the programme’s current format and availability with Life Quality before making plans.
             </p>
 
             <nav
@@ -323,12 +317,11 @@ export default function LifestyleMedicinePage() {
               id="assessment-title"
               className="mt-3 font-serif text-3xl leading-tight sm:text-4xl"
             >
-              Identify the areas you want to discuss.
+              Prepare the questions you want to raise.
             </h2>
 
             <p className="mt-4 text-lg leading-8 text-[var(--sutra-muted)]">
-              The 21-Point Assessment can help you organise questions about
-              your health and lifestyle priorities before a consultation.
+              The 21-Point Assessment is an option for organising health and lifestyle questions before a consultation. Review the assessment page for its scope and current process.
             </p>
           </div>
 
@@ -356,7 +349,7 @@ export default function LifestyleMedicinePage() {
               id="lifestyle-faq-title"
               className="mt-3 font-serif text-3xl leading-tight sm:text-4xl"
             >
-              Questions about lifestyle medicine
+              Lifestyle medicine: common questions
             </h2>
           </div>
 

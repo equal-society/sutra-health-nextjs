@@ -43,14 +43,7 @@ const services = [
     image: "/images/what-we-do/mind.png",
     href: "/services/behaviour-stress-mind",
   },
-  {
-    number: "06",
-    title: "Traditional Therapies",
-    description:
-      "Ask whether practices such as Shirodhara or Abhyanga are appropriate for you.",
-    image: "/images/what-we-do/Shirodhara.webp",
-    href: "/services/traditional-therapies",
-  },
+ 
 ];
 
 const healthAreas = [
@@ -226,7 +219,7 @@ export default function ServicesPage() {
             </h2>
           </div>
           <p className="mt-5 max-w-3xl text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
-            Explore the services below to understand the kind of support each one offers. If you are unsure where to begin, a physician consultation is a reasonable starting point for discussing your health concerns and next steps.
+            Each service has a distinct role. Review its focus before choosing; a physician consultation can help clarify which options fit your situation.
           </p>
 
           <div className="mt-9 grid gap-4 sm:mt-12 lg:grid-cols-2 lg:gap-5">
@@ -289,7 +282,7 @@ export default function ServicesPage() {
                 Find information about your health concern.
               </h2>
               <p className="mt-4 max-w-2xl text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
-                Health needs can involve more than one aspect of daily life. Explore our condition pages for information about specific concerns and the support that may be relevant.
+                Browse condition guides for focused information on symptoms, contributing factors, and topics to discuss with a healthcare professional.
               </p>
             </div>
             <Link

@@ -7,13 +7,13 @@ const SITE_URL = "https://lifequality.org.in";
 export const metadata: Metadata = {
   title: "Our Approach | Sutra Health",
   description:
-    "Discover how Sutra Health considers your health history, daily habits and priorities to plan practical next steps alongside appropriate medical care.",
+    "Explore the decision-making framework behind Sutra Health: how context is considered, priorities are selected and care decisions may be reviewed.",
   alternates: { canonical: `${SITE_URL}/approach` },
   robots: { index: true, follow: true },
   openGraph: {
     title: "Our Approach | Sutra Health",
     description:
-      "Understand the patient journey at Sutra Health, from discussing your concerns to reviewing practical next steps.",
+      "An overview of the principles and six-stage framework that guide how Sutra Health considers and revisits care decisions.",
     url: `${SITE_URL}/approach`,
     siteName: "Sutra Health",
     type: "website",
@@ -24,84 +24,58 @@ export const metadata: Metadata = {
 const stages = [
   [
     "01",
-    "Understand your health",
-    "Discuss your concerns, relevant medical history, daily routine and goals. Where appropriate, review existing reports or consider further investigations.",
+    "Establish the context",
+    "Review relevant health information, existing records and the person’s circumstances. Consider whether anything important is missing before deciding what needs attention.",
   ],
   [
     "02",
-    "Set priorities",
-    "Identify the concerns that need attention first, taking your health status and existing treatment into account.",
+    "Choose the question to address first",
+    "Identify what is most important to address now, while keeping longer-term health aims in view. Urgency and clinical context help determine the order.",
   ],
   [
     "03",
-    "Plan practical steps",
-    "Discuss suitable lifestyle changes and care options that reflect your circumstances, preferences and clinical needs.",
+    "Select a considered direction",
+    "Consider suitable options in light of the available information, preferences and practical constraints. Agree on a direction for discussion rather than applying a standard package.",
   ],
   [
     "04",
-    "Put the plan into practice",
-    "Begin with agreed steps at a manageable pace, making room for your everyday responsibilities.",
+    "Translate decisions into action",
+    "Make the agreed next step clear: what to begin, what support is involved and what still needs clarification. Actions depend on the confirmed care plan.",
   ],
   [
     "05",
-    "Review your progress",
-    "Discuss what you have been able to follow, what feels useful and where you may need further guidance.",
+    "Examine what the experience shows",
+    "At an agreed review, look at what has changed, what has been manageable and what barriers arose. The review schedule follows the care arrangement.",
   ],
   [
     "06",
-    "Adapt when needed",
-    "Revisit priorities and adjust the plan as your health, circumstances or goals change.",
+    "Reconsider the next decision",
+    "Use the review and any new information to decide whether to continue, modify the plan or seek further clinical discussion. A change is considered when the situation warrants it.",
   ],
 ] as const;
 
 const faqs = [
   {
-    question: "What happens during the first consultation?",
+    question: "Are the six stages a fixed treatment programme?",
     answer:
-      "You can discuss your main concern, relevant health history, daily routine and what you hope to address. Together, you can identify a suitable starting point and discuss any appropriate next steps. No particular outcome is guaranteed.",
+      "No. The stages are a guide to decision-making, not a fixed programme. The steps and timing depend on the person’s needs and the agreed care arrangement.",
   },
   {
-    question: "Should I continue my current treatment?",
+    question: "Does every concern need to be addressed at once?",
     answer:
-      "Yes. Continue prescribed treatment and medical follow-up. Do not stop or change medication or treatment without discussing it with your treating clinician.",
+      "No. The order can reflect urgency and what is practical to address first. Urgent or worsening symptoms should be assessed through appropriate medical services.",
   },
   {
-    question: "Is the plan the same for every person?",
+    question: "Does this framework guarantee a health outcome?",
     answer:
-      "No. Recommendations depend on your health concerns, goals, existing care and circumstances. The plan can be reviewed as your needs evolve.",
-  },
-  {
-    question: "Is the 21-Point Assessment a medical diagnosis?",
-    answer:
-      "No. It is an optional lifestyle reflection tool. It does not diagnose a condition or replace an assessment by a qualified clinician.",
+      "No. It helps organise discussion and decisions but cannot promise improvement, prevention or a particular result.",
   },
 ];
-
-const organizationSchema = {
-  "@type": ["Organization", "MedicalBusiness"],
-  "@id": `${SITE_URL}/#organization`,
-  name: "Sutra Health",
-  url: SITE_URL,
-  founder: {
-    "@type": "Person",
-    name: "Dr. Rakesh Sarwal",
-    honorificSuffix: "MBBS, MPH, DrPH",
-    url: "https://academic.lifequality.org.in/",
-  },
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Faridabad",
-    addressRegion: "Haryana",
-    addressCountry: "IN",
-  },
-  areaServed: { "@type": "Country", name: "India" },
-};
 
 export default function ApproachPage() {
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
-      organizationSchema,
       {
         "@type": "WebPage",
         "@id": `${SITE_URL}/approach#webpage`,
@@ -109,6 +83,7 @@ export default function ApproachPage() {
         name: "Our Approach | Sutra Health",
         description: metadata.description,
         isPartOf: { "@id": `${SITE_URL}/#website` },
+        publisher: { "@id": `${SITE_URL}/#organization` },
       },
       {
         "@type": "BreadcrumbList",
@@ -170,14 +145,11 @@ export default function ApproachPage() {
                 id="approach-title"
                 className="mt-5 max-w-4xl font-serif text-[44px] font-medium leading-[1.02] tracking-[-0.035em] text-white sm:text-6xl lg:text-[76px]"
               >
-                Understand your health. Find a practical way forward.
+                A framework for making considered care decisions.
               </h1>
 
               <p className="mt-6 max-w-2xl text-base leading-7 text-white/85 sm:text-lg sm:leading-8">
-                We begin by understanding your health history, daily routine
-                and priorities. Together, we consider suitable investigations
-                and realistic lifestyle steps alongside appropriate medical
-                care.
+                The Sutra Health Method describes how a care question can be examined, prioritised and revisited. It is a decision framework, not a fixed treatment protocol or a promise of a particular result.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -214,12 +186,11 @@ export default function ApproachPage() {
                 id="method-title"
                 className="mt-4 font-serif text-4xl leading-tight tracking-[-0.03em] sm:text-5xl"
               >
-                Six steps, shaped around your needs.
+                Six stages for clearer decisions.
               </h2>
 
               <p className="mt-4 max-w-2xl text-base leading-7 text-[#65736D] sm:text-lg">
-                Your care plan is not fixed. Priorities and next steps can be
-                revisited as needed.
+                The stages describe a way of thinking through decisions. They are not necessarily separate appointments or a mandatory sequence; the appropriate process depends on the individual situation.
               </p>
             </div>
 
@@ -268,7 +239,7 @@ export default function ApproachPage() {
         <section aria-labelledby="care-title" className="bg-[#E9EEE9]">
           <div className="mx-auto grid max-w-7xl gap-5 px-5 py-14 sm:px-8 sm:py-16 lg:grid-cols-[0.7fr_1.3fr] lg:items-center lg:gap-16 lg:px-12 lg:py-20">
             <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[#47645B]">
-              Care that works alongside medicine
+              Clinical judgement comes first
             </p>
 
             <div>
@@ -276,14 +247,11 @@ export default function ApproachPage() {
                 id="care-title"
                 className="font-serif text-3xl leading-tight tracking-[-0.025em] sm:text-4xl"
               >
-                Your medical care remains central.
+                A framework does not replace clinical assessment.
               </h2>
 
               <p className="mt-4 max-w-3xl text-base leading-7 text-[#53665E] sm:text-lg sm:leading-8">
-                Lifestyle changes and therapeutic practices may complement
-                appropriate medical care. Continue following your clinician’s
-                advice and prescribed treatment. Discuss any proposed changes
-                to your treatment with your clinician.
+                This page explains a general approach, not an individual diagnosis or treatment recommendation. Decisions about investigations, medication and medical treatment belong with appropriately qualified clinicians. Do not stop or alter prescribed care on the basis of website information.
               </p>
             </div>
           </div>
@@ -303,7 +271,7 @@ export default function ApproachPage() {
               id="approach-faq-title"
               className="mt-4 max-w-3xl font-serif text-4xl leading-tight tracking-[-0.03em] sm:text-5xl"
             >
-              What to know before you begin.
+              Questions about the method.
             </h2>
 
             <div className="mt-9 border-t border-[#202522]/15">

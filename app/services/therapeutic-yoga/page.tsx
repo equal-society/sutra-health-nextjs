@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import ServicePageTemplate, {
   createServiceMetadata,
@@ -6,146 +5,152 @@ import ServicePageTemplate, {
 } from "@/components/services/ServicePageTemplate";
 
 const therapeuticYoga: ServicePageConfig = {
+  heroImage: "/images/what-we-do/yoga.jpg",
   name: "Therapeutic Yoga",
   slug: "therapeutic-yoga",
 
   title: "Therapeutic Yoga in Faridabad & Delhi NCR | Sutra Health",
   description:
-    "Explore guided Therapeutic Yoga in Faridabad, with practices selected around your movement abilities, experience and individual needs.",
+    "Explore guided Therapeutic Yoga in Faridabad, including traditional asana, breathing practices, preparation and participation considerations.",
 
   heroDescription:
-    "A guided approach to Yoga that considers your physical abilities, health context and experience before selecting suitable practices.",
+    "A guided way to approach traditional Yoga practices, with the choice and level of each activity considered in relation to the participant.",
 
   trust: [
-    "Guided practice",
-    "Adapted to individual needs",
-    "Faridabad, Delhi NCR & online",
+    "Traditional Yoga practices",
+    "Guidance on modifications",
+    "Faridabad, Delhi NCR & online — confirm current format",
   ],
 
-  introEyebrow: "A Considered Practice",
-  introTitle: "Start with what your body can do.",
+  introEyebrow: "Traditional Practice, Considered Individually",
+  introTitle: "A traditional sequence needs a suitable starting point.",
   introParagraphs: [
-    "Therapeutic Yoga uses selected Yoga-based practices according to a person's health, movement abilities and experience. Rather than asking everyone to follow the same sequence, the approach considers which practices may be appropriate for the individual.",
-    "It can be considered alongside suitable medical care and other health services, according to individual circumstances.",
+    "Life Quality’s earlier Yoga resource presents a 20-part sequence inspired by Swami Sivananda. It includes familiar practices such as Tadasana, Vriksha Asana, Surya Namaskar, Shavasana and Pranayama, alongside more demanding postures. These are examples from the legacy resource, not a prescribed routine for every participant.",
+    "In a therapeutic setting, the choice to include, adapt or omit a practice should take account of experience, mobility and relevant health advice. Yoga is complementary to appropriate medical care, not a substitute for it.",
   ],
 
-  focusEyebrow: "Practice Areas",
-  focusTitle: "Four parts of a guided session.",
+  focusEyebrow: "Practice Elements",
+  focusTitle: "From foundational movement to breath and rest.",
   focusIntro:
-    "The emphasis may differ between individuals. These are areas that can be considered when selecting a practice.",
+    "The former Life Quality sequence offers a traditional reference point. A guided session may draw on selected elements rather than attempt the full sequence.",
 
   focusAreas: [
     {
       number: "01",
-      title: "Movement",
+      title: "Foundational asana",
       description:
-        "Explore suitable Yoga-based movements in accordance with your mobility and physical abilities.",
+        "Standing and supported positions, including examples such as Tadasana, can introduce posture, alignment and balance. The range or position may be changed when needed.",
     },
     {
       number: "02",
-      title: "Breathing",
+      title: "Sequenced movement",
       description:
-        "Learn selected breathing techniques with guidance on how to practise them appropriately.",
+        "Surya Namaskar is described in the legacy resource as a coordinated sequence of twelve positions and breath. It is not suitable for everyone in its standard form and may be omitted or adapted.",
     },
     {
       number: "03",
-      title: "Body awareness",
+      title: "Rest and recovery",
       description:
-        "Pay attention to posture, movement and breathing during practice.",
+        "Shavasana appears in the earlier material as a closing relaxation posture. A comfortable resting position may be selected according to the participant’s needs.",
     },
     {
       number: "04",
-      title: "Personal goals",
+      title: "Pranayama",
       description:
-        "Choose practices in relation to the areas of wellbeing you want to work on.",
+        "The legacy protocol includes traditional breathing practices. Instruction should specify the technique and pace; forceful breathwork or breath retention should not be assumed to be appropriate for all.",
     },
   ],
 
-  processTitle: "How your practice takes shape",
+  processTitle: "Preparing for a guided session",
   processIntro:
-    "The session begins with your experience and circumstances, not a predetermined routine.",
+    "The older resource emphasizes preparation and warm-up. Use these practical points as prompts, while confirming the current session format with the team.",
 
   process: [
     {
       number: "01",
-      title: "Discuss your background",
+      title: "Share relevant health context",
       description:
-        "Share relevant health information, previous Yoga experience and any movement limitations.",
+        "Mention injuries, symptoms, movement restrictions, balance concerns and any clinical advice that may affect participation.",
     },
     {
       number: "02",
-      title: "Choose an appropriate starting point",
+      title: "Arrive ready to move comfortably",
       description:
-        "Identify suitable movement, breathing or awareness practices for your circumstances.",
+        "Choose comfortable clothing and avoid beginning immediately after a heavy meal. Ask the instructor about any specific preparation guidance for your session.",
     },
     {
       number: "03",
-      title: "Learn under guidance",
+      title: "Begin with a gentle warm-up",
       description:
-        "Understand the selected techniques and how they are intended to be practised.",
+        "Allow time to settle into the practice. Start with low-demand movements and follow the instructor’s directions rather than attempting advanced poses independently.",
     },
     {
       number: "04",
-      title: "Revisit the approach",
+      title: "Review what was manageable",
       description:
-        "Review the practice when your abilities, experience or needs change.",
+        "Share which activities felt comfortable or difficult so the next practice can be discussed and adjusted where appropriate.",
     },
   ],
 
-  contextEyebrow: "Care and Suitability",
-  contextTitle: "Know when to seek clinical advice.",
+  contextEyebrow: "Safety and Suitability",
+  contextTitle: "Some traditional postures need particular caution.",
   contextParagraphs: [
-    "If you have an existing medical condition, injury, pain or physical limitation, discuss your suitability for practice with a qualified healthcare professional before beginning.",
-    "Therapeutic Yoga is a complementary practice. It does not provide a medical diagnosis or replace prescribed treatment.",
+    "The legacy sequence includes inversions and advanced positions, including Sarvangasana, Halasana, Shirshasana and Mayurasana. Their presence in an educational sequence does not mean they are suitable for every person or should be attempted without qualified instruction. Seek clinical advice first if you have a medical condition, recent injury, pain, balance difficulty or movement restriction.",
+    "Stop an activity if it causes pain, dizziness, breathlessness or other concerning symptoms. Therapeutic Yoga does not diagnose or treat disease and must not replace prescribed care.",
   ],
 
   related: [
     {
       title: "Physician Consultation",
       description:
-        "Discuss symptoms, medical history or concerns that may affect your practice.",
+        "Discuss a health concern or restriction that could affect participation.",
       href: "/services/physician-consultation",
     },
     {
       title: "Lifestyle Medicine",
       description:
-        "Explore the wider role of movement, sleep, nutrition and other daily health factors.",
+        "Explore the wider health programme beyond a Yoga practice session.",
       href: "/services/lifestyle",
     },
     {
       title: "Behaviour, Stress & Mind",
       description:
-        "Find out about support related to stress and everyday behavioural patterns.",
+        "See the separate service for behavioural and stress-related support.",
       href: "/services/behaviour-stress-mind",
     },
   ],
 
   faq: [
     {
-      question: "What should I expect from Therapeutic Yoga?",
+      question: "Does Therapeutic Yoga follow the full 20-pose sequence?",
       answer:
-        "The approach involves selected Yoga-based practices considered in relation to your health, experience and physical abilities.",
+        "Not necessarily. The earlier Life Quality page documents a Sivananda-inspired 20-part protocol as a traditional resource. A therapeutic session should select practices according to suitability rather than require every participant to complete the entire sequence.",
     },
     {
-      question: "Is it the same as a regular Yoga class?",
+      question: "Are advanced poses such as headstand or shoulder stand required?",
       answer:
-        "The emphasis is on individual suitability and adapting practices rather than expecting everyone to complete an identical sequence.",
+        "No. Shirshasana, Sarvangasana and other demanding postures are not prerequisites. They may be inappropriate for some people; do not attempt them without qualified instruction and suitable clinical guidance where needed.",
     },
     {
-      question: "Can I begin without previous Yoga experience?",
+      question: "What should I do before practice?",
       answer:
-        "Previous experience is not necessarily required. The starting point can be considered according to your familiarity with Yoga and physical abilities.",
+        "Wear comfortable clothing, allow time for a gentle warm-up and avoid starting immediately after a heavy meal. Confirm any additional preparation instructions with the team.",
     },
     {
-      question: "Should I consult a physician before starting?",
+      question: "Can beginners participate?",
       answer:
-        "If you have a medical condition, injury, pain or movement limitation, seek appropriate clinical advice before beginning. Therapeutic Yoga does not replace medical treatment.",
+        "Previous Yoga experience is not automatically required. Tell the instructor that you are new so the starting level and terminology can be explained clearly.",
+    },
+    {
+      question: "Where and when are sessions held?",
+      answer:
+        "The earlier Life Quality material describes rooftop morning group practice. Current venue, schedule, group format and online availability should be confirmed with Sutra Health before planning a visit.",
     },
   ],
 
-  finalTitle: "Find a suitable starting point for your practice.",
+  finalTitle: "Ask which practice format is currently available.",
   finalDescription:
-    "Discuss your experience, physical abilities and questions before deciding how to proceed.",
+    "Confirm session timing, location and suitability before booking, particularly if you have a health concern or movement restriction.",
 };
 
 export const metadata: Metadata =
