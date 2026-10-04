@@ -25,6 +25,7 @@ export type ServicePageConfig = {
   contextEyebrow: string;
   contextTitle: string;
   contextParagraphs: string[];
+  resources?: { title: string; description: string; href: string }[];
   related: { title: string; description: string; href: string }[];
   faq: { question: string; answer: string }[];
   finalTitle: string;
@@ -211,6 +212,27 @@ export default function ServicePageTemplate({ config }: { config: ServicePageCon
                   <p key={index} className="text-base leading-7 sm:text-lg sm:leading-8">{paragraph}</p>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {config.resources && config.resources.length > 0 && (
+        <section aria-labelledby="service-resources" className="bg-[var(--sutra-porcelain)]">
+          <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
+            <div className="max-w-3xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sutra-teal)]">Further reading</p>
+              <h2 id="service-resources" className="mt-3 font-[var(--font-serif)] text-3xl leading-tight sm:text-4xl">Resources from Life Quality</h2>
+              <p className="mt-3 text-base leading-7 sm:text-lg">Explore the original educational resources referenced in the dietary guidance.</p>
+            </div>
+            <div className="mt-7 grid gap-4 sm:grid-cols-2">
+              {config.resources.map((resource) => (
+                <a key={resource.href} href={resource.href} target="_blank" rel="noopener noreferrer" className="group flex min-h-32 flex-col items-start border border-[var(--sutra-border)] bg-[var(--sutra-white)] p-5 transition-colors hover:border-[var(--sutra-teal)] sm:p-6">
+                  <span className="font-semibold leading-6 text-[var(--sutra-ink)]">{resource.title}</span>
+                  <span className="mt-2 text-sm leading-6 text-[var(--sutra-muted)]">{resource.description}</span>
+                  <span className="mt-auto pt-4 inline-flex items-center gap-2 text-sm font-semibold text-[var(--sutra-teal)]">Open resource <ArrowUpRight size={16} aria-hidden="true" /></span>
+                </a>
+              ))}
             </div>
           </div>
         </section>

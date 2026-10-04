@@ -4,126 +4,138 @@ import ServicePageTemplate, {
   type ServicePageConfig,
 } from "@/components/services/ServicePageTemplate";
 
-// Concise page copy; the shared template keeps the existing UI unchanged.
 const nutrition: ServicePageConfig = {
   heroImage: "/images/diet.webp",
-  name: "Nutrition",
+  name: "Nutrition Support",
   shortName: "Nutrition",
   slug: "nutrition",
   title: "Nutrition Support in Faridabad & Delhi NCR | Sutra Health",
   description:
-    "Practical nutrition guidance for everyday food choices, meal routines and individual health needs.",
+    "Practical dietary guidance in Faridabad for familiar foods, meal routines, hydration and individual nutrition needs.",
   heroDescription:
-    "Build realistic food habits with nutrition guidance shaped around your health, preferences and daily routine.",
-  trust: ["Personalised guidance", "Faridabad, Delhi NCR & online"],
-  introEyebrow: "Nutrition Support",
-  introTitle: "Food choices that work in everyday life.",
+    "Get practical guidance on food choices, meal timing and hydration that fits your health needs and everyday routine.",
+  trust: ["Personalised dietary guidance", "Faridabad, Delhi NCR & online"],
+  introEyebrow: "Dietary Guidance",
+  introTitle: "Make everyday food choices more thoughtfully.",
   introParagraphs: [
-    "Nutrition support starts with your current meals, preferences, routine and health concerns.",
-    "Together, we identify manageable ways to improve balance and consistency, without relying on a generic diet plan.",
+    "Guidance considers your usual meals, preferences, health needs and Prakriti, as described in the legacy programme.",
   ],
-  focusEyebrow: "Areas of Support",
-  focusTitle: "Practical, personal guidance.",
+  focusEyebrow: "Food Choices",
+  focusTitle: "Familiar foods, balanced choices.",
   focusIntro:
-    "The focus depends on your needs, food preferences and any relevant medical advice.",
+    "The legacy dietary guidance highlights the following food groups and habits. Individual suitability and portions may vary.",
   focusAreas: [
     {
       number: "01",
-      title: "Balanced meals",
+      title: "Fruit, vegetables and pulses",
       description:
-        "Build variety with suitable vegetables, fruits, pulses, grains and protein sources.",
+        "Seasonal fruit and vegetables, salads, dals and other pulses.",
     },
     {
       number: "02",
-      title: "Everyday food choices",
+      title: "Grains and protein",
       description:
-        "Consider portions, food quality and realistic changes to your usual meals.",
+        "Millets such as jowar and ragi, with eggs or fish where suitable and preferred.",
     },
     {
       number: "03",
-      title: "Meal routine",
+      title: "Fats and traditional foods",
       description:
-        "Review meal timing and frequency in the context of your schedule and needs.",
+        "Desi ghee, olive oil, gur and khandsari, considered within your overall eating pattern.",
     },
     {
       number: "04",
-      title: "Sustainable habits",
+      title: "Foods to limit",
       description:
-        "Find practical eating and hydration habits that fit your day.",
+        "Excess salt, refined sugar, deep-fried snacks such as samosa and pakoda, highly processed snacks, commercial bread and heavily sweetened tea.",
+    },
+    {
+      number: "05",
+      title: "Drinks and hydration",
+      description:
+        "Water and suitable fluids; the legacy page also mentions green tea, buttermilk and kaada according to individual suitability.",
     },
   ],
-  processTitle: "How nutrition support works",
+  processTitle: "Guidance shaped around your routine",
   processIntro:
-    "We start with your current routine and focus on a few useful, achievable changes.",
+    "Discuss your current meals, schedule and health context to identify manageable adjustments.",
   process: [
     {
       number: "01",
-      title: "Understand",
-      description:
-        "Discuss your meals, preferences, routine and health concerns.",
+      title: "Review meals and timing",
+      description: "Consider your usual food choices, meal frequency and daily schedule.",
     },
     {
       number: "02",
-      title: "Identify priorities",
-      description:
-        "Consider what may be useful in light of your needs and existing medical advice.",
+      title: "Discuss individual needs",
+      description: "Factor in preferences, Prakriti and relevant health circumstances.",
     },
     {
       number: "03",
-      title: "Make practical changes",
-      description:
-        "Explore realistic food choices and adjustments for daily life.",
-    },
-    {
-      number: "04",
-      title: "Review",
-      description:
-        "Revisit what is manageable and adjust when circumstances change.",
+      title: "Choose practical changes",
+      description: "Explore food variety, hydration and realistic meal adjustments.",
     },
   ],
-  contextEyebrow: "Everyday Nutrition",
-  contextTitle: "No one-size-fits-all diet.",
+  contextEyebrow: "Further Reading",
+  contextTitle: "Explore the ideas behind the guidance.",
   contextParagraphs: [
-    "Food choices are shaped by culture, budget, family and work routines, activity and personal preferences.",
-    "Advice can be adapted to familiar foods and individual needs. For diagnosed conditions or prescribed diets, coordinate changes with your healthcare professional.",
+    "The legacy page links to a Cell Metabolism study on ultra-processed diets, a TED Talk about gut health, and the 21-point healthy lifestyle framework. These resources offer further reading; they are not individual dietary prescriptions.",
+    "Meal frequency and fluid needs vary. If you have a medical condition or prescribed diet, discuss changes with your treating healthcare professional.",
+  ],
+  resources: [
+    {
+      title: "Cell Metabolism study on ultra-processed foods",
+      description: "The research article linked from the original dietary guidance.",
+      href: "https://www.cell.com/cell-metabolism/fulltext/S1550-4131(19)30248-7",
+    },
+    {
+      title: "TED Talk: Gut health",
+      description: "The gut-health talk referenced by the legacy page.",
+      href: "https://www.youtube.com/watch?v=1sISguPDlhY",
+    },
+    {
+      title: "21-point healthy lifestyle framework",
+      description: "The framework published on Zenodo and referenced in the original content.",
+      href: "https://zenodo.org/records/15814357",
+    },
+    {
+      title: "Healthy Lifestyle Guide",
+      description: "The educational video linked from the original dietary advice page.",
+      href: "https://www.youtube.com/watch?si=JWlazmTyPDvG7fkG&v=FOGY2HSo2eY&feature=youtu.be",
+    },
   ],
   related: [
     {
       title: "Physician Consultation",
-      description: "Discuss health concerns and medical history with a physician.",
+      description: "Discuss health history and nutrition-related concerns.",
       href: "/services/physician-consultation",
     },
     {
       title: "Lifestyle Medicine",
-      description: "Explore nutrition alongside other lifestyle factors.",
+      description: "Explore nutrition alongside other daily health habits.",
       href: "/services/lifestyle",
     },
   ],
   faq: [
     {
-      question: "Is nutrition support only for weight management?",
+      question: "Will I need to follow a strict diet?",
       answer:
-        "No. The focus may include everyday eating habits or other nutrition concerns, depending on your needs.",
+        "Guidance can begin with your existing meals and focus on practical changes suited to your circumstances.",
     },
     {
-      question: "Will I receive a fixed diet plan?",
+      question: "Which foods does the legacy guidance suggest limiting?",
       answer:
-        "Guidance is personalised where possible; a fixed plan is not suitable for everyone.",
+        "It highlights excess salt, refined sugar, fried snacks, highly processed foods, commercial bread and heavily sweetened tea. Individual advice may differ.",
     },
     {
-      question: "Which foods should I eat?",
+      question: "Can I continue eating familiar Indian foods?",
       answer:
-        "A varied pattern may include vegetables, fruits, pulses, grains and suitable protein sources. Choices depend on your needs and preferences.",
-    },
-    {
-      question: "Can this work alongside medical care?",
-      answer:
-        "Yes. If you have a diagnosed condition or prescribed diet, coordinate nutrition changes with your treating clinician.",
+        "The legacy guidance includes seasonal produce, dals, millets and other familiar foods. Choices can be considered according to your needs and preferences.",
     },
   ],
-  finalTitle: "Take a practical first step.",
+  finalTitle: "Discuss your everyday food choices.",
   finalDescription:
-    "Discuss your current eating habits and identify realistic nutrition changes.",
+    "Bring your usual meal pattern and nutrition questions to a physician consultation.",
 };
 
 export const metadata: Metadata = createServiceMetadata(nutrition);

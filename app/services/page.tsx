@@ -7,7 +7,7 @@ const services = [
     number: "01",
     title: "Physician Consultation",
     description:
-      "Discuss your symptoms, health history and current treatment with a physician. Leave with clear next steps.",
+      "Discuss your symptoms, health history and current treatment with a physician. Leave with clearer next steps for your care.",
     image: "/images/mobile.webp",
     href: "/services/physician-consultation",
   },
@@ -15,7 +15,7 @@ const services = [
     number: "02",
     title: "Lifestyle Medicine",
     description:
-      "Build practical habits around food, movement, sleep and stress alongside medical care.",
+      "Build practical habits around food, movement, sleep and stress, considered alongside appropriate medical care.",
     image: "/images/lifestyle-home.webp",
     href: "/services/lifestyle",
   },
@@ -23,7 +23,7 @@ const services = [
     number: "03",
     title: "Nutrition",
     description:
-      "Get meal and food guidance shaped around your health needs, preferences and daily routine.",
+      "Explore food and meal guidance shaped around your health needs, preferences and everyday routine.",
     image: "/images/what-we-do/diet.webp",
     href: "/services/nutrition",
   },
@@ -31,7 +31,7 @@ const services = [
     number: "04",
     title: "Therapeutic Yoga",
     description:
-      "Explore yoga practices adapted to your comfort, mobility and health needs.",
+      "Explore yoga practices adapted to your comfort, mobility and health needs, where appropriate.",
     image: "/images/what-we-do/yoga.jpg",
     href: "/services/therapeutic-yoga",
   },
@@ -39,7 +39,7 @@ const services = [
     number: "05",
     title: "Behaviour & Stress Support",
     description:
-      "Work through stress and everyday barriers to make health changes easier to maintain.",
+      "Work through everyday barriers and explore practical ways to support healthier routines and wellbeing.",
     image: "/images/what-we-do/mind.png",
     href: "/services/behaviour-stress-mind",
   },
@@ -193,8 +193,8 @@ export default function ServicesPage() {
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-white/90 sm:mt-6 sm:text-lg sm:leading-8">
               Tell us what is concerning you and what support you are looking
-              for. We can discuss medical guidance and practical lifestyle
-              support for your needs.
+              for. Explore medical consultation and practical support for
+              lifestyle, nutrition, movement and wellbeing.
             </p>
             <div className="mt-7 flex flex-col items-start gap-4 sm:mt-8 sm:flex-row sm:items-center sm:gap-6">
               <Link
@@ -205,7 +205,7 @@ export default function ServicesPage() {
                 <ArrowUpRight size={16} className="ml-3" aria-hidden="true" />
               </Link>
               <span className="text-sm leading-6 text-white/80">
-                Faridabad · Delhi NCR · Online across India
+                Faridabad · Delhi NCR · Ask about online availability
               </span>
             </div>
           </div>
@@ -225,6 +225,9 @@ export default function ServicesPage() {
               What would you like help with?
             </h2>
           </div>
+          <p className="mt-5 max-w-3xl text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
+            Explore the services below to understand the kind of support each one offers. If you are unsure where to begin, a physician consultation is a reasonable starting point for discussing your health concerns and next steps.
+          </p>
 
           <div className="mt-9 grid gap-4 sm:mt-12 lg:grid-cols-2 lg:gap-5">
             {services.map((service) => (
@@ -254,7 +257,7 @@ export default function ServicesPage() {
                       {service.description}
                     </p>
                     <span className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[var(--sutra-sage)] sm:mt-4">
-                      View service
+                      Explore service
                       <ArrowUpRight
                         size={16}
                         aria-hidden="true"
@@ -277,14 +280,17 @@ export default function ServicesPage() {
           <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
-                Health concerns
+                Support for different health concerns
               </p>
               <h2
                 id="health-areas-title"
                 className="mt-3 max-w-2xl font-[var(--font-serif)] text-3xl font-medium leading-[1.12] tracking-[-0.02em] sm:text-5xl"
               >
-                Find information about your concern.
+                Find information about your health concern.
               </h2>
+              <p className="mt-4 max-w-2xl text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
+                Health needs can involve more than one aspect of daily life. Explore our condition pages for information about specific concerns and the support that may be relevant.
+              </p>
             </div>
             <Link
               href="/conditions"
@@ -363,9 +369,10 @@ export default function ServicesPage() {
       <div className="bg-[var(--sutra-porcelain)]">
         <div className="mx-auto max-w-7xl px-5 py-5 sm:px-8 lg:px-10">
           <p className="text-sm leading-6 text-[var(--sutra-muted)]">
-            These services do not replace emergency care, medical diagnosis or
-            prescribed treatment. Speak with your clinician before changing
-            treatment.
+            Information on this website is for general education and does not
+            replace professional medical advice, diagnosis or treatment. Do not
+            stop or change prescribed treatment without consulting your
+            healthcare professional.
           </p>
         </div>
       </div>
