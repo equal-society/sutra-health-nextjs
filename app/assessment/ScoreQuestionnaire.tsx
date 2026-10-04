@@ -1,6 +1,7 @@
-"use client";
+ "use client";
 
 import Container from "@/components/shared/Container";
+import Link from "next/link";
 import { useState } from "react";
 
 const questions = [
@@ -28,195 +29,144 @@ const questions = [
 ];
 
 export default function ScoreQuestionnaire() {
-  const [answers, setAnswers] = useState<number[]>(
-    questions.map((_, index) => (index < 7 ? 1 : 0))
-  );
+  const [answers, setAnswers] = useState<number[]>(questions.map((_, i) => (i < 7 ? 1 : 0)));
   const [score, setScore] = useState<number | null>(null);
 
   function choose(index: number, value: number) {
-    setAnswers((current) => {
-      const next = [...current];
-      next[index] = value;
-      return next;
-    });
+    setAnswers((current) => current.map((answer, i) => (i === index ? value : answer)));
     setScore(null);
   }
 
   function calculateScore() {
-    const total = answers.reduce((sum, value) => sum + value, 0);
-    setScore(total);
-
-    requestAnimationFrame(() => {
-      document.getElementById("score-result")?.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
-    });
+    setScore(answers.reduce((sum, value) => sum + value, 0));
+    requestAnimationFrame(() =>
+      document.getElementById("score-result")?.scrollIntoView({ behavior: "smooth", block: "center" })
+    );
   }
 
   return (
     <main className="bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">
-      <section className="border-b border-[var(--sutra-border)] bg-[var(--sutra-porcelain)]">
+      <section aria-labelledby="assessment-title" className="relative flex min-h-[min(700px,calc(100svh-80px))] items-end overflow-hidden bg-[#172D29]">
+        <div aria-hidden="true" className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/nature.jpg')" }} />
+        <div aria-hidden="true" className="absolute inset-0 bg-[#101C19]/55" />
+        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#101C19]/85 via-[#101C19]/55 to-[#101C19]/20" />
         <Container>
-          <div className="max-w-5xl py-14 sm:py-18 lg:py-22 xl:py-24">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-xs">
-              21-Point Health Assessment
-            </p>
-            <h1 className="mt-5 max-w-[920px] font-[var(--font-serif)] text-[46px] font-medium leading-[0.98] tracking-[-0.04em] text-[var(--sutra-ink)] sm:text-[58px] md:text-[64px] lg:text-[76px] xl:text-[82px]">
-              How do your everyday habits
-              <br />
-              <span className="text-[var(--sutra-teal)]">measure up?</span>
+          <div className="relative z-10 max-w-4xl py-20 sm:py-24 lg:py-28">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/75">21-point lifestyle assessment</p>
+            <h1 id="assessment-title" className="mt-5 max-w-4xl font-[var(--font-serif)] text-[44px] font-medium leading-[1.02] tracking-[-0.04em] text-white sm:text-6xl lg:text-[76px]">
+              Take a closer look at your everyday habits.
             </h1>
-            <div className="mt-7 flex items-start gap-4 sm:mt-8">
-              <span aria-hidden="true" className="mt-2 h-10 w-px shrink-0 bg-[var(--sutra-sand)]" />
-              <p className="max-w-[680px] text-[16px] leading-8 text-[var(--sutra-muted)] sm:text-[17px] sm:leading-9">
-                Review 21 everyday food, movement, sleep and lifestyle habits.
-                Answer each statement and calculate your lifestyle score.
-              </p>
-            </div>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-white/85 sm:text-lg sm:leading-8">
+              Food, movement, sleep and daily routines all contribute to your health. These questions offer a simple way to reflect on what your usual days look like.
+            </p>
+            <a href="#questions" className="mt-8 inline-flex min-h-12 items-center bg-[#F7F5EF] px-6 text-sm font-semibold text-[#17413D] transition-colors hover:bg-white">
+              Start the questions <span aria-hidden="true" className="ml-3">↓</span>
+            </a>
           </div>
         </Container>
       </section>
 
-      <section className="border-b border-[var(--sutra-border)] bg-[var(--sutra-white)]">
+      <section id="questions" className="scroll-mt-24 bg-[var(--sutra-porcelain)]">
         <Container>
-          <div className="grid gap-8 py-10 sm:py-12 lg:grid-cols-[minmax(0,1fr)_220px] lg:items-end lg:gap-16 lg:py-14">
-            <div className="max-w-[760px]">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-[11px]">
-                Before you begin
-              </p>
-              <h2 className="mt-3 font-[var(--font-serif)] text-[32px] font-medium leading-[1.05] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[40px]">
-                Start with an honest look at your routine.
-              </h2>
-              <p className="mt-5 max-w-[680px] text-[14px] leading-7 text-[var(--sutra-muted)] sm:text-[15px] sm:leading-8">
-                Select Yes or No for every statement. The first seven questions
-                use reverse scoring, following the original questionnaire.
-              </p>
-            </div>
-            <div className="border-t border-[var(--sutra-border-strong)] pt-4 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
-                Questions
-              </p>
-              <p className="mt-1 font-[var(--font-serif)] text-[44px] font-medium leading-none tracking-[-0.04em] text-[var(--sutra-teal)]">
-                21
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      <section aria-label="21-point lifestyle questionnaire">
-        <Container>
-          <div className="py-12 sm:py-16 lg:py-20">
-            <div className="mx-auto max-w-[920px]">
-              <div className="border-y border-[var(--sutra-border)]">
-                {questions.map((question, index) => {
-                  const yesValue = index < 7 ? 0 : 1;
-                  const noValue = index < 7 ? 1 : 0;
-
-                  return (
-                    <fieldset
-                      key={question}
-                      className="m-0 min-w-0 border-0 border-b border-[var(--sutra-border)] px-0 py-7 last:border-b-0 sm:py-8"
-                    >
-                      <legend className="w-full p-0">
-                        <div className="grid grid-cols-[36px_minmax(0,1fr)] gap-4 sm:grid-cols-[44px_minmax(0,1fr)] sm:gap-5">
-                          <span className="pt-0.5 font-[var(--font-serif)] text-[16px] font-medium leading-none text-[var(--sutra-sand)] sm:text-[18px]">
-                            {String(index + 1).padStart(2, "0")}
-                          </span>
-                          <span className="max-w-[760px] text-[14px] font-medium leading-7 text-[var(--sutra-ink)] sm:text-[15px] sm:leading-8">
-                            {question}
-                          </span>
-                        </div>
-                      </legend>
-
-                      <div className="ml-[52px] mt-5 flex gap-5 sm:ml-[64px] sm:gap-7">
-                        <label className="group inline-flex cursor-pointer items-center gap-2 text-[12px] font-semibold text-[var(--sutra-muted)]">
-                          <input
-                            type="radio"
-                            name={`question-${index}`}
-                            value={yesValue}
-                            checked={answers[index] === yesValue}
-                            onChange={() => choose(index, yesValue)}
-                            className="peer sr-only"
-                          />
-                          <span
-                            className="flex h-5 w-5 items-center justify-center border border-[var(--sutra-border-strong)] transition-colors peer-checked:border-[var(--sutra-teal)] peer-checked:bg-[var(--sutra-teal)]"
-                            aria-hidden="true"
-                          >
-                            <span className="h-1.5 w-1.5 bg-white opacity-0 transition-opacity peer-checked:opacity-100" />
-                          </span>
-                          <span className="transition-colors group-hover:text-[var(--sutra-ink)]">Yes</span>
-                        </label>
-
-                        <label className="group inline-flex cursor-pointer items-center gap-2 text-[12px] font-semibold text-[var(--sutra-muted)]">
-                          <input
-                            type="radio"
-                            name={`question-${index}`}
-                            value={noValue}
-                            checked={answers[index] === noValue}
-                            onChange={() => choose(index, noValue)}
-                            className="peer sr-only"
-                          />
-                          <span
-                            className="flex h-5 w-5 items-center justify-center border border-[var(--sutra-border-strong)] transition-colors peer-checked:border-[var(--sutra-teal)] peer-checked:bg-[var(--sutra-teal)]"
-                            aria-hidden="true"
-                          >
-                            <span className="h-1.5 w-1.5 bg-white opacity-0 transition-opacity peer-checked:opacity-100" />
-                          </span>
-                          <span className="transition-colors group-hover:text-[var(--sutra-ink)]">No</span>
-                        </label>
-                      </div>
-                    </fieldset>
-                  );
-                })}
+          <div className="mx-auto max-w-5xl py-12 sm:py-16 lg:py-20">
+            <div className="grid gap-6 border-b border-[var(--sutra-border-strong)] pb-8 sm:grid-cols-[minmax(0,1fr)_130px] sm:items-end sm:gap-10">
+              <div className="max-w-3xl">
+                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--sutra-muted)]">Before you answer</p>
+                <h2 className="mt-3 font-[var(--font-serif)] text-4xl font-medium leading-tight tracking-[-0.03em] sm:text-6xl">
+                  Think about your usual routine.
+                </h2>
+                <p className="mt-4 text-base leading-7 text-[var(--sutra-muted)]">
+                  Choose Yes or No for each statement based on what is typical for you, not an unusual day. The first seven items follow a reverse-scoring rule in this questionnaire.
+                </p>
               </div>
+              <div className="flex items-center gap-3 border-t border-[var(--sutra-border)] pt-4 sm:block sm:border-l sm:border-t-0 sm:pl-5 sm:pt-0">
+                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--sutra-muted)]">Questions</span>
+                <span className="font-[var(--font-serif)] text-5xl leading-none text-[var(--sutra-teal)]">21</span>
+              </div>
+            </div>
 
-              <div className="mt-10">
-                <button
-                  type="button"
-                  onClick={calculateScore}
-                  className="group inline-flex w-full items-center justify-center gap-3 border border-[var(--sutra-teal)] bg-[var(--sutra-teal)] px-6 py-4 text-[12px] font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[var(--sutra-teal-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--sutra-sage)] focus:ring-offset-2 focus:ring-offset-[var(--sutra-porcelain)] sm:w-auto sm:min-w-[260px]"
-                >
-                  Calculate My Score
-                  <span aria-hidden="true" className="text-base leading-none transition-transform duration-300 group-hover:translate-x-1">
-                    →
-                  </span>
-                </button>
-
-                {score !== null && (
-                  <div
-                    id="score-result"
-                    role="status"
-                    aria-live="polite"
-                    className="mt-8 border-y border-[var(--sutra-border-strong)] bg-[var(--sutra-pale-sage)] px-5 py-6 sm:px-7 sm:py-7"
-                  >
-                    <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-                      <div className="max-w-[560px]">
-                        <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
-                          Your lifestyle score
-                        </p>
-                        <p className="mt-3 font-[var(--font-serif)] text-[28px] font-medium leading-tight tracking-[-0.03em] text-[var(--sutra-ink)]">
-                          A snapshot of the habits you reviewed today.
-                        </p>
-                        <p className="mt-3 text-[13px] leading-6 text-[var(--sutra-muted)]">
-                          Your result is based on the 21-point questionnaire.
-                        </p>
-                      </div>
-                      <strong className="shrink-0 font-[var(--font-serif)] text-[52px] font-medium leading-none tracking-[-0.05em] text-[var(--sutra-teal)]">
-                        {score} / 21
-                      </strong>
+            <div className="mt-8 space-y-3 sm:mt-10">
+              {questions.map((question, index) => {
+                const yesValue = index < 7 ? 0 : 1;
+                const noValue = index < 7 ? 1 : 0;
+                return (
+                  <fieldset key={index} className="grid min-w-0 scroll-mt-28 gap-4 border border-[var(--sutra-border)] bg-white px-4 py-5 transition-colors sm:grid-cols-[minmax(0,1fr)_176px] sm:items-center sm:gap-8 sm:px-6 sm:py-5">
+                    <legend className="sr-only">Question {index + 1}: {question}</legend>
+                    <div className="grid grid-cols-[34px_minmax(0,1fr)] gap-3 sm:gap-4">
+                      <span aria-hidden="true" className="pt-0.5 font-[var(--font-serif)] text-base text-[var(--sutra-sand)]">{String(index + 1).padStart(2, "0")}</span>
+                      <p className="text-[15px] font-medium leading-7 text-[var(--sutra-ink)] sm:text-base sm:leading-7">{question}</p>
                     </div>
-                  </div>
-                )}
-              </div>
+                    <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                      {[["Yes", yesValue], ["No", noValue]].map(([label, value]) => {
+                        const selected = answers[index] === value;
+                        return (
+                          <label key={label} className="group cursor-pointer">
+                            <input
+                              type="radio"
+                              name={`question-${index}`}
+                              value={value}
+                              checked={selected}
+                              onChange={() => choose(index, Number(value))}
+                              className="peer sr-only"
+                            />
+                            <span className={`flex min-h-11 items-center justify-center gap-2 border px-3 text-sm font-medium transition-colors peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-[var(--sutra-teal)] ${selected ? "border-[var(--sutra-teal)] bg-[var(--sutra-teal)] text-white" : "border-[var(--sutra-border-strong)] bg-white text-[var(--sutra-muted)] group-hover:border-[var(--sutra-teal)] group-hover:text-[var(--sutra-ink)]"}`}>
+                              <span aria-hidden="true" className={`flex h-4 w-4 items-center justify-center border ${selected ? "border-white bg-white" : "border-[var(--sutra-border-strong)] bg-transparent"}`}>
+                                {selected && <span className="h-2 w-2 bg-[var(--sutra-teal)]" />}
+                              </span>
+                              {label}
+                            </span>
+                          </label>
+                        );
+                      })}
+                    </div>
+                  </fieldset>
+                );
+              })}
+            </div>
 
-              <p className="mt-8 max-w-[760px] border-l border-[var(--sutra-sand)] pl-4 text-[12px] leading-6 text-[var(--sutra-muted)]">
-                <span className="font-semibold text-[var(--sutra-ink)]">Please note:</span>{" "}
-                This is a lifestyle self-assessment, not a medical diagnosis
-                or a substitute for professional medical advice.
+            <div className="mt-9 flex flex-col gap-4 border-t border-[var(--sutra-border-strong)] pt-7 sm:flex-row sm:items-center sm:justify-between">
+              <p className="max-w-xl text-sm leading-6 text-[var(--sutra-muted)]">You can change any answer before calculating your result.</p>
+              <button
+                type="button"
+                onClick={calculateScore}
+                className="inline-flex min-h-12 w-full items-center justify-center bg-[var(--sutra-teal)] px-7 py-4 text-sm font-semibold text-white transition-colors hover:bg-[var(--sutra-teal-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--sutra-teal)] focus-visible:ring-offset-2 sm:w-auto"
+              >
+                Calculate my score <span aria-hidden="true" className="ml-3">→</span>
+              </button>
+            </div>
+
+            {score !== null && (
+              <div id="score-result" role="status" aria-live="polite" className="mt-8 border border-[var(--sutra-border-strong)] bg-[var(--sutra-pale-sage)] p-5 sm:p-8 scroll-mt-28">
+                <div className="grid gap-5 sm:grid-cols-[minmax(0,1fr)_minmax(180px,240px)] sm:items-center sm:gap-8">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--sutra-muted)]">Your result</p>
+                    <h2 className="mt-2 font-[var(--font-serif)] text-3xl leading-tight text-[var(--sutra-ink)] sm:text-4xl">Your lifestyle assessment score</h2>
+                   
+                  </div>
+                  <div className="flex items-baseline gap-2 border-t border-[var(--sutra-border-strong)] pt-5 sm:justify-end sm:border-l sm:border-t-0 sm:pl-7 sm:pt-0">
+                    <strong className="font-[var(--font-serif)] text-7xl font-medium leading-none tracking-[-0.05em] text-[var(--sutra-teal)] sm:text-8xl">{score}</strong>
+                    <span className="text-xl text-[var(--sutra-muted)] sm:text-2xl">/ 21</span>
+                  </div>
+                </div>
+                <div className="mt-6 flex flex-col gap-3 border-t border-[var(--sutra-border-strong)] pt-5 sm:flex-row sm:items-center sm:justify-between">
+                  <p className="max-w-xl text-sm leading-6 text-[var(--sutra-muted)]">
+                    For personal guidance, discuss your habits with a healthcare professional.
+                  </p>
+                  <Link href="/book-appointment" className="inline-flex min-h-11 shrink-0 items-center justify-center bg-[var(--sutra-teal)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--sutra-teal-hover)]">
+                    Book a consultation <span aria-hidden="true" className="ml-3">→</span>
+                  </Link>
+                </div>
+              </div>
+            )}
+            <div className="mt-8 border-l-2 border-[var(--sutra-sand)] pl-4">
+              <p className="text-sm leading-6 text-[var(--sutra-muted)]">
+                For reflection only; not a diagnosis or substitute for professional medical advice. Do not change prescribed treatment based on this score.
               </p>
             </div>
+            <nav aria-label="Related information" className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm">
+              <Link href="/approach" className="font-medium text-[var(--sutra-teal)] underline underline-offset-4">Our approach</Link>
+              <Link href="/services" className="font-medium text-[var(--sutra-teal)] underline underline-offset-4">Explore services</Link>
+            </nav>
           </div>
         </Container>
       </section>

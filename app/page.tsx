@@ -88,11 +88,10 @@ function Hero() {
       <Container>
         <div className="relative z-10 flex min-h-[580px] flex-col justify-center py-16 sm:min-h-[640px] lg:min-h-[700px]">
           <div className="max-w-[780px]">
-            <Eyebrow light>
-            Sutra Health</Eyebrow>
+           
 
             <h1 id="home-title" className="mt-5 max-w-[760px] font-serif text-[44px] font-medium leading-[1.05] tracking-[-0.04em] text-white sm:text-[62px] lg:text-[76px]">
-              Your lifestyle shapes your health, longevity and happiness.
+              Your lifestyle shapes your health.
             </h1>
 
             <p className="mt-5 max-w-[620px] text-base leading-7 text-white/85 sm:text-[18px] sm:leading-8">
@@ -103,7 +102,7 @@ function Hero() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link href="/assessment" className="inline-flex min-h-[52px] items-center justify-center bg-white px-7 text-center text-base font-semibold text-[#17413D] transition-colors hover:bg-white/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
-                Assist with Your Lifestyle Score
+                Assess Your Lifestyle Score
                 <ArrowUpRight size={17} className="ml-2" />
               </Link>
 
@@ -332,59 +331,18 @@ function HomeFAQs() {
       <Container>
         <div className="py-14 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-6xl">
-            {/* Header */}
-            <div className="mb-9 flex items-center justify-between">
-              <Eyebrow>Common questions</Eyebrow>
-            
-            </div>
+            <Eyebrow>Need a little clarity?</Eyebrow>
 
-            <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-16">
-              {/* Introduction */}
-              <div>
-                <h2
-                  id="home-faq-title"
-                  className="max-w-[480px] font-serif text-[36px] leading-[1.1] tracking-[-0.035em] text-[#202522] sm:text-[48px] lg:text-[54px]"
-                >
-                  Good questions deserve clear answers.
-                </h2>
+            <h2
+              id="home-faq-title"
+              className="mt-3 max-w-[750px] font-serif text-[36px] leading-[1.1] tracking-[-0.035em] text-[#202522] sm:text-[48px] lg:text-[54px]"
+            >
+              Have questions before getting started?
+            </h2>
 
-                <p className="mt-4 max-w-[420px] text-sm leading-7 text-[#65736D] sm:text-base">
-                  A little more clarity about our care, consultations
-                  and approach to wellbeing.
-                </p>
-              </div>
-
-              {/* Featured question */}
-              <article className="border border-[#202522]/10 bg-white p-6 sm:p-9 lg:p-10">
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#65736D]">
-                    Lifestyle medicine
-                  </span>
-
-                  <span
-                    aria-hidden="true"
-                    className="flex size-8 items-center justify-center rounded-full bg-[#FAF8F2] text-[#17413D]"
-                  >
-                     +
-                  </span>
-                </div>
-
-                <h3 className="mt-6 font-serif text-2xl leading-snug text-[#202522] sm:text-[32px]">
-                  What is lifestyle medicine?
-                </h3>
-
-                <p className="mt-4 max-w-[580px] text-sm leading-7 text-[#65736D] sm:text-base">
-                  Lifestyle medicine uses evidence-informed changes
-                  in food, physical activity, sleep and stress
-                  management alongside appropriate medical care.
-                </p>
-              </article>
-            </div>
-
-            {/* All FAQs link */}
-            <div className="mt-8 flex justify-end border-t border-[#202522]/15 pt-5">
+            <div className="mt-7 border-t border-[#202522]/15 pt-5">
               <TextLink href="/faqs">
-                Explore All Frequently Asked Questions
+                Explore All FAQs
               </TextLink>
             </div>
           </div>
@@ -393,7 +351,6 @@ function HomeFAQs() {
     </section>
   );
 }
-
 
 const structuredData = {
   "@context": "https://schema.org",

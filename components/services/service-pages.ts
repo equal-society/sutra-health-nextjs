@@ -3,6 +3,7 @@ import type { ServicePageConfig } from "./ServicePageTemplate";
 /* Service content source: page-specific copy only. Shared layout lives in ServicePageTemplate.tsx. */
 
 export const physicianConsultation: ServicePageConfig = {
+  heroImage: "/images/mobile.webp",
   name: "Physician Consultation",
   slug: "physician-consultation",
   title: "Physician Consultation in Faridabad & Delhi NCR | Sutra Health",
@@ -68,17 +69,13 @@ export const physicianConsultation: ServicePageConfig = {
 };
 
 export const lifestyle: ServicePageConfig = {
+  heroImage: "/images/lifestyle-home.webp",
   name: "Lifestyle Medicine",
   slug: "lifestyle",
   title: "Lifestyle Medicine in Faridabad & Delhi NCR | Sutra Health",
   description:
     "Lifestyle Medicine at Sutra Health connects nutrition, movement, sleep, stress and everyday habits with personalised healthcare.",
-  /*
-    CHANGED: removed "the everyday factors that shape your health" — the
-    same phrase (or a near-clone of it) repeated across the homepage and
-    this page's own focusTitle below. Rewritten to say something the
-    focusTitle doesn't already say.
-  */
+ 
   heroDescription:
     "A practical, evidence-informed approach to nutrition, movement, sleep, stress and behaviour — the daily habits that shape long-term health.",
   trust: ["Evidence-informed", "Whole-person care", "Faridabad, Delhi NCR & online"],
@@ -142,6 +139,7 @@ export const lifestyle: ServicePageConfig = {
 };
 
 export const nutrition: ServicePageConfig = {
+  heroImage: "/images/diet.webp",
   name: "Nutrition",
   shortName: "Nutrition",
   slug: "nutrition",
@@ -202,6 +200,7 @@ export const nutrition: ServicePageConfig = {
 };
 
 export const therapeuticYoga: ServicePageConfig = {
+  heroImage: "/images/what-we-do/yoga.jpg",
   name: "Therapeutic Yoga",
   slug: "therapeutic-yoga",
   title: "Therapeutic Yoga in Faridabad & Delhi NCR | Sutra Health",
@@ -272,6 +271,7 @@ export const therapeuticYoga: ServicePageConfig = {
 };
 
 export const behaviourStressMind: ServicePageConfig = {
+  heroImage: "/images/what-we-do/mindl.png",
   name: "Behaviour, Stress & Mind",
   slug: "behaviour-stress-mind",
   title: "Behaviour, Stress & Mind Support in Faridabad & Delhi NCR | Sutra Health",
@@ -329,6 +329,7 @@ export const behaviourStressMind: ServicePageConfig = {
 };
 
 export const traditionalTherapies: ServicePageConfig = {
+  heroImage: "/images/retreat/Shirodhara.webp",
   name: "Traditional Therapies",
   shortName: "Traditional Therapies",
   slug: "traditional-therapies",
@@ -338,24 +339,19 @@ export const traditionalTherapies: ServicePageConfig = {
   heroDescription:
     "Traditional practices including Shirodhara and Abhyanga, offered as part of a considered approach to rest, relaxation and wellbeing.",
   eyebrow: "Traditional Therapies",
-  trust: [
-    "Traditional practices",
-    "Individualised approach",
-    "Faridabad, Delhi NCR & online",
-  ],
+  trust: ["Shirodhara", "Abhyanga", "Faridabad / Delhi NCR"],
 
   introEyebrow: "A Traditional Practice",
-  introTitle: "Traditional therapies, approached with care and context.",
+  introTitle: "A quiet, guided session with clear expectations.",
   introParagraphs: [
-    "Traditional therapies can be part of a wider wellbeing approach when they are appropriate for the individual and their circumstances.",
-    "At Sutra Health, the focus is on understanding what you are looking for, explaining what a session involves and considering the practice alongside your broader health needs.",
-    "Our Traditional Therapies offering includes Shirodhara and Abhyanga. These practices are presented for relaxation and wellbeing and are not a substitute for appropriate medical diagnosis or treatment.",
+    "Sutra Health offers Shirodhara and Abhyanga for people seeking a traditional, guided relaxation practice. Before booking, you can discuss what the session involves and whether it is suitable for you.",
+    "These therapies are complementary wellbeing practices. They do not diagnose or treat medical conditions and should not replace care recommended by your healthcare professional.",
   ],
 
   focusEyebrow: "What We Offer",
-  focusTitle: "Two traditional practices, one considered approach.",
+  focusTitle: "Choose the practice you want to know about.",
   focusIntro:
-    "The experience depends on the practice selected, your needs and the way the session is planned.",
+    "Each practice is different. The team can explain the session and answer practical questions before you decide.",
 
   focusAreas: [
     {

@@ -1,29 +1,29 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 const services = [
   {
     number: "01",
     title: "Physician Consultation",
     description:
-      "Doctor-led consultation to understand your health concerns, medical history, lifestyle and next steps.",
-    image: "/images/retreat/doctor.webp",
+      "Discuss your concerns, health history and current treatment with a physician, then agree on practical next steps.",
+    image: "/images/mobile.webp",
     href: "/services/physician-consultation",
   },
   {
     number: "02",
     title: "Lifestyle Medicine",
     description:
-      "Practical support around nutrition, sleep, stress and everyday habits.",
-    image: "/images/what-we-do/lifestyle-medicine.webp",
+      "Work on food, activity, sleep and stress habits alongside appropriate medical care.",
+    image: "/images/lifestyle-home.webp",
     href: "/services/lifestyle",
   },
   {
     number: "03",
     title: "Nutrition",
     description:
-      "Personalised guidance around food and eating habits that fits your daily life.",
+      "Get food and meal guidance that considers your preferences, routine and health needs.",
     image: "/images/what-we-do/diet.webp",
     href: "/services/nutrition",
   },
@@ -31,15 +31,15 @@ const services = [
     number: "04",
     title: "Therapeutic Yoga",
     description:
-      "Adapted yoga practices shaped around your health, ability and comfort.",
-    image: "/images/what-we-do/yoga.png",
+      "Practise yoga with adjustments for your comfort, mobility and health needs.",
+    image: "/images/what-we-do/yoga.jpg",
     href: "/services/therapeutic-yoga",
   },
   {
     number: "05",
     title: "Behaviour, Stress & Mind",
     description:
-      "Practical support for habits, stress and changes you can sustain in everyday life.",
+      "Explore ways to manage stress and make changes that are realistic for your day-to-day life.",
     image: "/images/what-we-do/mind.png",
     href: "/services/behaviour-stress-mind",
   },
@@ -47,7 +47,7 @@ const services = [
     number: "06",
     title: "Traditional Therapies",
     description:
-      "Traditional wellness practices including Shirodhara and Abhyanga, offered with attention to individual suitability.",
+      "Ask about traditional practices such as Shirodhara and Abhyanga and whether they are suitable for you.",
     image: "/images/what-we-do/Shirodhara.webp",
     href: "/services/traditional-therapies",
   },
@@ -133,45 +133,43 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      <section className="border-b border-[var(--sutra-border)]">
-        <div className="mx-auto max-w-7xl px-6 pb-16 pt-14 sm:px-8 sm:pb-20 sm:pt-20 lg:px-10 lg:pb-24 lg:pt-24">
-          <div className="max-w-4xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
-              Services
-            </p>
-            <h1 className="mt-5 max-w-4xl font-[var(--font-serif)] text-4xl font-medium leading-[1.06] tracking-[-0.025em] sm:text-5xl lg:text-7xl">
-              Care built around
-              <br className="hidden sm:block" />
-              the whole you.
+      <section aria-labelledby="services-hero-title" className="relative isolate flex min-h-[460px] items-end overflow-hidden bg-[#18332F] sm:min-h-[min(720px,calc(100svh-80px))]">
+        <div aria-hidden="true" className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/yoga.webp')" }} />
+        <div aria-hidden="true" className="absolute inset-0 bg-[#101C19]/65" />
+        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#101C19]/85 via-[#101C19]/55 to-[#101C19]/20" />
+                
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-12 sm:px-8 sm:pb-20 sm:pt-32 lg:px-10 lg:pb-24">
+          <div className="max-w-3xl">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/75">Care and services</p>
+            <h1 id="services-hero-title" className="mt-4 max-w-3xl font-[var(--font-serif)] text-[2.55rem] font-medium leading-[1.04] tracking-[-0.035em] text-white sm:mt-5 sm:text-6xl lg:text-7xl">
+              Care that starts with listening.
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
-              Sutra Health offers doctor-led consultation, lifestyle and nutrition support,
-              Therapeutic Yoga, behaviour and stress support, and traditional
-              therapies. The right combination depends on your health, needs and goals.
+            <p className="mt-5 max-w-2xl text-[15px] leading-6 text-white/85 sm:mt-6 sm:text-lg sm:leading-8">
+              Tell us what has been troubling you, what you have already tried, and what you want help with. Our team can discuss medical guidance and lifestyle support suited to your needs.
             </p>
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm text-[var(--sutra-muted)]">
-              <span>Doctor-led</span>
-              <span>Evidence-informed</span>
-              <span>Faridabad, Delhi NCR & online across India</span>
+            <div className="mt-7 flex flex-col items-start gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-5">
+              <Link href="/book-appointment" className="inline-flex min-h-12 items-center bg-[#F7F5EF] px-6 text-sm font-semibold text-[#17413D] transition-colors hover:bg-white">
+                Book a consultation <ArrowUpRight size={16} className="ml-3" aria-hidden="true" />
+              </Link>
+              <span className="text-sm text-white/75">Faridabad · Delhi NCR · Online across India</span>
             </div>
           </div>
         </div>
       </section>
-
       <section aria-labelledby="services-title" className="bg-[var(--sutra-white)]">
-        <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+        <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
           <div className="max-w-2xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+            <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
               Our services
             </p>
             <h2
               id="services-title"
-              className="mt-4 font-[var(--font-serif)] text-3xl font-medium leading-[1.12] tracking-[-0.02em] sm:text-4xl"
+              className="mt-4 font-[var(--font-serif)] text-4xl font-medium leading-[1.12] tracking-[-0.02em] sm:text-6xl"
             >
-              Choose the support that fits your needs.
+              What would you like help with?
             </h2>
             <p className="mt-5 max-w-xl text-base leading-7 text-[var(--sutra-muted)]">
-              Each service has a distinct role. Where appropriate, more than one service can be part of your wider care.
+              Read what each service involves, then discuss which options may suit your situation.
             </p>
           </div>
 
@@ -182,13 +180,13 @@ export default function ServicesPage() {
                 href={service.href}
                 className="group border border-[var(--sutra-border-strong)] bg-[var(--sutra-porcelain)] transition-colors duration-300 hover:border-[var(--sutra-sage)]/50"
               >
-                <div className="flex gap-5 p-5 sm:gap-6 sm:p-6">
-                  <div className="relative h-[116px] w-[116px] shrink-0 overflow-hidden sm:h-[128px] sm:w-[128px]">
+                <div className="flex min-w-0 items-start gap-3 p-4 sm:items-center sm:gap-6 sm:p-6">
+                  <div className="relative h-[84px] w-[84px] shrink-0 overflow-hidden sm:h-[112px] sm:w-[112px] lg:h-[128px] lg:w-[128px]">
                     <Image
                       src={service.image}
                       alt={`${service.title} at Sutra Health`}
                       fill
-                      sizes="128px"
+                      sizes="(max-width: 639px) 84px, (max-width: 1023px) 112px, 128px"
                       className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     />
                   </div>
@@ -196,13 +194,13 @@ export default function ServicesPage() {
                     <span className="text-[11px] font-medium tracking-[0.12em] text-[var(--sutra-muted)]">
                       {service.number}
                     </span>
-                    <h3 className="mt-2 font-[var(--font-serif)] text-xl font-medium leading-[1.2] tracking-[-0.015em] sm:text-2xl">
+                    <h3 className="mt-1.5 break-words font-[var(--font-serif)] text-lg font-medium leading-[1.2] tracking-[-0.015em] sm:mt-2 sm:text-2xl">
                       {service.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-6 text-[var(--sutra-muted)] sm:text-base sm:leading-7">
+                    <p className="mt-2 text-[13px] leading-[1.55] text-[var(--sutra-muted)] sm:mt-3 sm:text-base sm:leading-7">
                       {service.description}
                     </p>
-                    <div className="mt-4 flex items-center gap-2 text-sm font-semibold text-[var(--sutra-sage)]">
+                    <div className="mt-3 flex items-center gap-2 text-sm font-semibold text-[var(--sutra-sage)] sm:mt-4">
                       <span>Explore</span>
                       <ArrowUpRight
                         size={15}
@@ -220,17 +218,17 @@ export default function ServicesPage() {
       </section>
 
       <section aria-labelledby="health-areas-title" className="bg-[var(--sutra-white)]">
-        <div className="mx-auto max-w-7xl px-6 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
-          <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+        <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
+          <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
-                Health areas
+                Health concerns
               </p>
               <h2
                 id="health-areas-title"
-                className="mt-4 font-[var(--font-serif)] text-3xl font-medium leading-[1.12] tracking-[-0.02em] sm:text-4xl"
+                className="mt-3 max-w-xl font-[var(--font-serif)] text-[1.8rem] font-medium leading-[1.12] tracking-[-0.02em] sm:mt-4 sm:text-4xl"
               >
-                Explore the areas we support.
+                Health concerns we can discuss.
               </h2>
             </div>
             <Link
