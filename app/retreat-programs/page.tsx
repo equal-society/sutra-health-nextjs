@@ -101,7 +101,7 @@ const experiences = [
       "Expressive movement",
       "Group sessions when arranged",
     ],
-    image: "/images/retreat/Kirtan.webp",
+    image: "/images/retreat/dance.png",
     imageAlt: "Singing and Kirtan experience at Sutra Health Retreat",
   },
   {
@@ -115,7 +115,7 @@ const experiences = [
       "Mindfulness and awareness",
       "Time for quiet reflection",
     ],
-    image: "/images/retreat/meditation.webp",
+    image: "/images/what-we-do/mind.png",
     imageAlt: "Meditation practice at Sutra Health Retreat",
   },
   {
@@ -129,7 +129,7 @@ const experiences = [
       "Bhramari",
       "Guided breath awareness",
     ],
-    image: "/images/retreat/pranayama.webp",
+    image: "/images/retreat/pranayama.png",
     imageAlt: "Pranayama breathing practice at Sutra Health Retreat",
   },
   {
@@ -143,7 +143,7 @@ const experiences = [
       "Movement adapted where appropriate",
       "Rooftop practice when scheduled and suitable",
     ],
-    image: "/images/retreat/yoga-asana.webp",
+    image: "/images/retreat/yoga-asana.png",
     imageAlt: "Yoga asana practice at Sutra Health Retreat",
   },
 ];
@@ -166,17 +166,17 @@ const faqs = [
   {
     question: "What is a wellness retreat near Delhi?",
     answer:
-      "A wellness retreat offers time away from your usual routine to explore activities such as yoga, meditation, breathing practices, nutrition guidance and other wellbeing experiences. Sutra Health Retreat is listed in Faridabad, Haryana, near Delhi.",
+      "A wellness retreat offers a stay away from usual routines, with opportunities to enquire about practices such as yoga, meditation, breathing exercises and nutrition guidance. Sutra Health Retreat is listed in Faridabad, Haryana, near Delhi.",
   },
   {
     question: "Which practices can I ask about?",
     answer:
-      "The listed experiences include physician consultation, dietary advice, Shirodhara, My Buddy companionship, singing and Kirtan, meditation, Pranayama and yoga asana practice. Confirm the schedule, availability and suitability of activities for your dates with the team.",
+      "Experiences listed include physician consultation, dietary advice, Shirodhara, My Buddy companionship, singing and Kirtan, meditation, Pranayama and yoga asana. Confirm which options are scheduled and suitable for your dates.",
   },
   {
     question: "Can I visit on my own?",
     answer:
-      "You can enquire about a solo stay. Before booking, confirm room arrangements, availability, planned activities and any support you may need during your visit.",
+      "You can ask the team about a solo stay. Confirm room arrangements, scheduled activities and any assistance you may need before booking.",
   },
   {
     question: "Where is the retreat located?",
@@ -294,22 +294,21 @@ export default function RetreatProgramsPage() {
             <div>
               <p className={eyebrow}>01 · The retreat</p>
               <h2 className="mt-3 max-w-xl font-serif text-4xl leading-[1.08] tracking-[-0.035em] sm:text-5xl">
-                A wellness retreat near Delhi, with room to pause.
+                A wellness retreat near Delhi, with space to step away.
               </h2>
             </div>
 
             <div className="max-w-2xl">
               <p className="text-base leading-8 text-[var(--sutra-muted)] sm:text-[17px]">
                 Sutra Health Retreat is a wellness-focused stay in Faridabad,
-                near Delhi. It brings guided practices and practical health
-                conversations together in a setting away from everyday demands.
+                near Delhi. Guests can enquire about guided activities and
+                practical health conversations during their visit.
               </p>
 
               <p className="mt-4 text-base leading-8 text-[var(--sutra-muted)] sm:text-[17px]">
-                Explore yoga, Pranayama, meditation, nutrition guidance,
-                physician consultation and traditional wellness experiences.
-                Speak with the team to confirm availability and suitability
-                before booking.
+                Listed experiences include yoga, Pranayama, meditation, dietary
+                advice, physician consultation and Shirodhara. Ask the team
+                which options are available and appropriate for your dates.
               </p>
             </div>
           </div>
@@ -322,7 +321,7 @@ export default function RetreatProgramsPage() {
           <div className="max-w-3xl">
             <p className={eyebrow}>02 · A different pace</p>
             <h2 className="mt-3 font-serif text-4xl leading-tight tracking-[-0.035em] sm:text-5xl">
-              Step out of routine. Make space for what matters.
+              A change of pace, shaped around your stay.
             </h2>
           </div>
 
@@ -331,22 +330,22 @@ export default function RetreatProgramsPage() {
               [
                 "01",
                 "Pause",
-                "Set aside time for rest, reflection and a change of pace.",
+                "Make time for rest and a quieter daily rhythm.",
               ],
               [
                 "02",
                 "Participate",
-                "Explore suitable movement, breathing, meditation and food practices.",
+                "Ask about movement, breathing and meditation sessions available during your visit.",
               ],
               [
                 "03",
                 "Connect",
-                "Choose quiet time or join shared activities and companionship.",
+                "Spend time independently or enquire about group activities and companionship.",
               ],
               [
                 "04",
                 "Reflect",
-                "Consider realistic habits you may want to continue at home.",
+                "Reflect on everyday routines you may choose to carry home.",
               ],
             ].map(([number, title, copy]) => (
               <article
@@ -372,12 +371,12 @@ export default function RetreatProgramsPage() {
           <div className="max-w-3xl">
             <p className={eyebrow}>03 · Retreat experiences</p>
             <h2 className="mt-3 font-serif text-4xl leading-tight tracking-[-0.035em] sm:text-5xl">
-              Explore the experiences available at the retreat.
+              Activities to ask about before your visit.
             </h2>
             <p className="mt-4 text-base leading-7 text-[var(--sutra-muted)]">
-              From physician consultation and nutrition guidance to yoga,
-              meditation and traditional wellness practices, ask the team about
-              the options planned for your dates.
+              The retreat lists several guided and traditional experiences.
+              Confirm availability, session timing and suitability with the
+              team before booking.
             </p>
           </div>
 
@@ -456,9 +455,9 @@ export default function RetreatProgramsPage() {
 
             <div className="max-w-2xl">
               <p className="text-base leading-8 text-[var(--sutra-muted)] sm:text-[17px]">
-                You can enquire about a solo stay. Speak with the team before
-                booking to confirm room arrangements, available activities and
-                the support that can be offered during your visit.
+                You can enquire about staying on your own. Before booking, confirm
+                room arrangements, which activities are scheduled and what
+                assistance may be available during your visit.
               </p>
 
               <a
@@ -495,14 +494,14 @@ export default function RetreatProgramsPage() {
             <div>
               <p className={eyebrow}>05 · Accommodation</p>
               <h2 className="mt-3 font-serif text-4xl leading-tight tracking-[-0.035em] sm:text-5xl">
-                A simple place to stay.
+                Accommodation for your visit.
               </h2>
             </div>
 
             <p className="max-w-xl text-sm leading-7 text-[var(--sutra-muted)]">
-              The listed residence is a three-bedroom stay in Sector 46,
-              Faridabad. Confirm current capacity, room configuration and
-              inclusions with the team before booking.
+              The listed residence is in Sector 46, Faridabad, with three
+              bedrooms. Confirm current guest capacity, room arrangements
+              and inclusions with the team before booking.
             </p>
           </div>
 
@@ -552,10 +551,9 @@ export default function RetreatProgramsPage() {
 
             <div className="max-w-2xl">
               <p className="text-base leading-8 text-[var(--sutra-muted)] sm:text-[17px]">
-                Sutra Health Retreat is listed in Sector 46, Faridabad,
-                Haryana, near the Aravallis. The residence includes rooftop
-                space; outdoor activities depend on arrangements and
-                suitability.
+                The retreat is listed in Sector 46, Faridabad, Haryana, near the
+                Aravallis. Ask the team for directions and whether outdoor
+                activities are planned for your dates.
               </p>
 
               <Link
