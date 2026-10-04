@@ -136,11 +136,10 @@ export default function ApproachPage() {
                 id="approach-title"
                 className="mt-5 max-w-4xl font-serif text-[44px] font-medium leading-[1.02] tracking-[-0.035em] text-white sm:text-6xl lg:text-[76px]"
               >
-                Understand your health. Find a practical way forward.
-              </h1>
+              Understand the root cause of your ill-health. Find a practical way forward.       
+                     </h1>
               <p className="mt-6 max-w-2xl text-base leading-7 text-white/85 sm:text-lg sm:leading-8">
-                We discuss what matters to you and agree on realistic next steps alongside appropriate medical care.
-              </p>
+                Besides your medical history, we begin with discovering  what elements of your daily routine are unhealthy. Followed by investigations, we jointly chalk out a realistic lifestyle routine,  alongside appropriate medical care.              </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   href="/book-appointment"
