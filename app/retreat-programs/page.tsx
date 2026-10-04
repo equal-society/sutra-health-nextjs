@@ -1,122 +1,90 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-
 import RetreatHeroSlider from "@/components/retreat/RetreatHeroSlider";
 import Container from "@/components/shared/Container";
+
+const siteUrl = "https://lifequality.org.in";
+const pageUrl = `${siteUrl}/retreat-programs`;
+const bookingUrl =
+  "https://bookretreats.com/r/6-day-rejuvenation-in-nature-moments-from-civilization-in-india";
+const whatsappUrl =
+  "https://wa.me/919013103676?text=Hi%20Sutra%20Health%2C%20I%20want%20to%20know%20more%20about%20your%20wellness%20retreat%20in%20Faridabad.";
 
 export const metadata: Metadata = {
   title: "Wellness Retreat Near Delhi | Sutra Health",
   description:
-    "Experience a restorative wellness retreat near Delhi with yoga, meditation, nutrition guidance, physician consultation and traditional wellness practices at Sutra Health Retreat in Faridabad.",
-  alternates: {
-    canonical: "https://lifequality.org.in/retreat-programs",
-  },
+    "Explore a wellness retreat in Faridabad near Delhi, with yoga, meditation, nutrition guidance, physician consultation and traditional wellness experiences.",
+  alternates: { canonical: pageUrl },
   openGraph: {
     title: "Wellness Retreat Near Delhi | Sutra Health",
     description:
-      "A restorative wellness retreat near Delhi combining yoga, meditation, nutrition guidance and personalised health support.",
-    url: "https://lifequality.org.in/retreat-programs",
+      "A restorative retreat in Faridabad with guided wellness practices, practical health guidance and time to pause.",
+    url: pageUrl,
     siteName: "Sutra Health",
     type: "website",
     locale: "en_IN",
   },
 };
 
-const bookingUrl =
-  "https://bookretreats.com/r/6-day-rejuvenation-in-nature-moments-from-civilization-in-india";
-
-const whatsappUrl =
-  "https://wa.me/919013103676?text=Hi%20Sutra%20Health%2C%20I%20want%20to%20know%20more%20about%20your%20wellness%20retreat%20in%20Faridabad.";
-
-const retreatPractices = [
+const experiences = [
   {
     number: "01",
-    category: "Medical Wellness",
-    title: "Physician Consultation",
+    category: "Medical wellness",
+    title: "Physician consultation",
     description:
-      "A personal health session to discuss your health concerns, lifestyle, daily routine and goals, helping shape practical guidance for your stay.",
-    points: [
-      "Health history and lifestyle discussion",
-      "Individualised health guidance",
-      "Lifestyle-focused recommendations",
-      "Opportunity to discuss ongoing health concerns",
-    ],
+      "Discuss your health history, concerns, daily routine and goals with a physician. The conversation can inform practical, lifestyle-focused guidance.",
+    points: ["Health and lifestyle discussion", "Individual guidance where appropriate", "Space to raise ongoing health concerns"],
     image: "/images/retreat/doctor.webp",
     imageAlt: "Physician consultation at Sutra Health Retreat",
   },
   {
     number: "02",
     category: "Nutrition",
-    title: "Dietary Advice",
+    title: "Dietary advice",
     description:
-      "Practical nutrition guidance shaped around your health needs, food habits, preferences and everyday routine.",
-    points: [
-      "Personalised nutrition guidance",
-      "Food and lifestyle discussion",
-      "Practical meal planning",
-      "Suggestions designed for everyday life",
-    ],
+      "Explore food choices and realistic nutrition habits in the context of your preferences, health needs and everyday routine.",
+    points: ["Nutrition and food-habit discussion", "Practical meal-planning ideas", "Suggestions for daily life"],
     image: "/images/retreat/diet.webp",
     imageAlt: "Nutrition and healthy food at Sutra Health Retreat",
   },
   {
     number: "03",
-    category: "Traditional Wellness",
+    category: "Traditional wellness",
     title: "Shirodhara",
     description:
-      "A traditional Ayurvedic wellness practice involving the gentle flow of warm oil over the forehead, offered as part of the retreat experience.",
-    points: [
-      "Warm oil therapy",
-      "Traditional Ayurvedic practice",
-      "Quiet wellness setting",
-      "Dedicated relaxation session",
-    ],
+      "A traditional Ayurvedic practice involving a gentle stream of warm oil over the forehead, offered as a relaxation experience.",
+    points: ["Traditional Ayurvedic practice", "A dedicated session in a quiet setting", "Discuss suitability before participation"],
     image: "/images/retreat/Shirodhara.webp",
     imageAlt: "Shirodhara wellness practice at Sutra Health Retreat",
   },
   {
     number: "04",
-    category: "Support & Companionship",
+    category: "Companionship",
     title: "My Buddy",
     description:
-      "A supportive companionship option built around conversation, check-ins, gentle motivation and participation in retreat activities.",
-    points: [
-      "Regular check-ins",
-      "Support and encouragement",
-      "Conversation and companionship",
-      "Support for walks and activities",
-    ],
+      "A companionship option built around conversation, check-ins and encouragement to take part in suitable retreat activities.",
+    points: ["Friendly check-ins and conversation", "Encouragement and companionship", "Walks or activity support, as available"],
     image: "/images/retreat/my-buddy.webp",
     imageAlt: "Companionship experience at Sutra Health Retreat",
   },
   {
     number: "05",
-    category: "Music & Movement",
-    title: "Singing, Kirtan & Dance",
+    category: "Music and movement",
+    title: "Singing, Kirtan and dance",
     description:
-      "Shared music and movement experiences that create opportunities for connection, expression and participation during your stay.",
-    points: [
-      "Kirtan and communal singing",
-      "Expressive movement",
-      "Music and creative participation",
-      "Rooftop sessions",
-    ],
+      "Shared music and movement offer ways to participate, express yourself and connect with others during the retreat.",
+    points: ["Communal singing and Kirtan", "Expressive movement", "Group sessions when arranged"],
     image: "/images/retreat/Kirtan.webp",
     imageAlt: "Singing and Kirtan experience at Sutra Health Retreat",
   },
   {
     number: "06",
-    category: "Mental Wellbeing",
+    category: "Mental wellbeing",
     title: "Meditation",
     description:
-      "Guided meditation practices that create space for stillness, awareness and reflection during your retreat.",
-    points: [
-      "Guided meditation",
-      "Breath-based awareness",
-      "Mindfulness practices",
-      "Quiet retreat environment",
-    ],
+      "Guided meditation creates time for stillness, attention and reflection. Discuss available practices with the team before your stay.",
+    points: ["Guided meditation", "Mindfulness and awareness", "Time for quiet reflection"],
     image: "/images/retreat/meditation.webp",
     imageAlt: "Meditation practice at Sutra Health Retreat",
   },
@@ -125,118 +93,77 @@ const retreatPractices = [
     category: "Breathwork",
     title: "Pranayama",
     description:
-      "Guided breathing practices that can become part of a mindful daily routine, with practices adapted to the individual where appropriate.",
-    points: [
-      "Nadi Shodhana",
-      "Bhramari",
-      "Guided breathing practice",
-      "Breath awareness",
-    ],
+      "Guided breathing practices introduce ways to bring breath awareness into a mindful routine. Practice should be adapted to individual needs.",
+    points: ["Nadi Shodhana", "Bhramari", "Guided breath awareness"],
     image: "/images/retreat/pranayama.webp",
     imageAlt: "Pranayama breathing practice at Sutra Health Retreat",
   },
   {
     number: "08",
-    category: "Movement & Yoga",
-    title: "Yoga Asana Protocol",
+    category: "Yoga and movement",
+    title: "Yoga asana practice",
     description:
-      "A structured yoga practice shaped around individual needs and goals, combining appropriate asana practice with mindful movement.",
-    points: [
-      "Individualised yoga practice",
-      "Movement suited to your needs",
-      "Guided asana practice",
-      "Rooftop practice when appropriate",
-    ],
+      "A guided yoga session with movement selected around your needs and comfort, where appropriate.",
+    points: ["Guided asana practice", "Movement adapted where appropriate", "Rooftop practice when scheduled and suitable"],
     image: "/images/retreat/yoga-asana.webp",
-    imageAlt: "Yoga Asana practice at Sutra Health Retreat",
+    imageAlt: "Yoga asana practice at Sutra Health Retreat",
   },
 ];
 
 const stayDetails = [
-  {
-    value: "3",
-    label: "Bedrooms",
-  },
-  {
-    value: "6",
-    label: "Beds",
-  },
-  {
-    value: "3",
-    label: "Bathrooms",
-  },
-  {
-    value: "6",
-    label: "Guests",
-  },
+  { value: "3", label: "Bedrooms" },
+  { value: "6", label: "Beds" },
+  { value: "3", label: "Bathrooms" },
+  { value: "6", label: "Guest capacity" },
 ];
 
-const amenities = [
-  "Rooftop terrace",
-  "Free Wi-Fi",
-  "Free parking",
-  "Full kitchen",
-];
+const amenities = ["Rooftop terrace", "Free Wi-Fi", "Free parking", "Full kitchen"];
 
 const faqs = [
   {
     question: "What is a wellness retreat near Delhi?",
     answer:
-      "A wellness retreat near Delhi gives you time away from your usual routine while bringing together practices such as yoga, meditation, nutrition guidance, breathing practices and other wellbeing experiences. Sutra Health Retreat is located in Faridabad, Haryana.",
+      "A wellness retreat gives you time away from your usual routine to explore practices such as yoga, meditation, breathing, nutrition guidance and other wellbeing activities. Sutra Health Retreat is in Faridabad, Haryana, near Delhi.",
   },
   {
-    question: "What wellness practices are available at Sutra Health Retreat?",
+    question: "Which practices can I ask about?",
     answer:
-      "The retreat includes physician consultation, dietary advice, Shirodhara, My Buddy companionship, singing and Kirtan, meditation, Pranayama and Yoga Asana practice.",
+      "Experiences listed include physician consultation, dietary advice, Shirodhara, My Buddy companionship, singing and Kirtan, meditation, Pranayama and yoga asana practice. Confirm availability for your dates and booking with the team.",
   },
   {
-    question: "Can I come to the retreat alone?",
+    question: "Can I visit on my own?",
     answer:
-      "Yes. You do not need to bring a companion to enquire about or plan a retreat stay. If you are travelling alone, contact the Sutra Health team before booking so you can understand the accommodation, stay arrangements and available support.",
+      "You can enquire about a solo stay. Before booking, confirm accommodation arrangements, availability, activities and any support you may need.",
   },
   {
-    question: "Where is Sutra Health Retreat located?",
+    question: "Where is the retreat located?",
     answer:
-      "Sutra Health Retreat is located in Sector 46, Faridabad, Haryana, near the Aravallis. The setting provides access to rooftop space and opportunities for outdoor activities.",
+      "The retreat is listed in Sector 46, Faridabad, Haryana, near the Aravallis. Contact Sutra Health for exact directions and travel details.",
   },
   {
-    question: "Is the retreat a replacement for medical care?",
+    question: "Does the retreat replace medical treatment?",
     answer:
-      "No. The retreat is a wellness experience and can include physician guidance where appropriate. Lifestyle and wellness practices should complement appropriate medical care rather than replace necessary diagnosis or treatment.",
+      "No. It is a wellness experience, not a substitute for diagnosis or necessary treatment. Continue care from your treating clinician and discuss relevant health concerns before participating.",
   },
 ];
 
-const retreatJsonLd = {
+const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://lifequality.org.in/retreat-programs#webpage",
-      url: "https://lifequality.org.in/retreat-programs",
+      "@id": `${pageUrl}#webpage`,
+      url: pageUrl,
       name: "Wellness Retreat Near Delhi | Sutra Health",
       description:
-        "A restorative wellness retreat near Delhi combining yoga, meditation, nutrition guidance and personalised health support.",
-      isPartOf: {
-        "@type": "WebSite",
-        name: "Sutra Health",
-        url: "https://lifequality.org.in/",
-      },
+        "A wellness retreat in Faridabad with yoga, meditation, nutrition guidance and practical health support.",
+      isPartOf: { "@type": "WebSite", name: "Sutra Health", url: `${siteUrl}/` },
     },
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        {
-          "@type": "ListItem",
-          position: 1,
-          name: "Sutra Health",
-          item: "https://lifequality.org.in/",
-        },
-        {
-          "@type": "ListItem",
-          position: 2,
-          name: "Retreats",
-          item: "https://lifequality.org.in/retreat-programs",
-        },
+        { "@type": "ListItem", position: 1, name: "Sutra Health", item: `${siteUrl}/` },
+        { "@type": "ListItem", position: 2, name: "Retreats", item: pageUrl },
       ],
     },
     {
@@ -244,333 +171,140 @@ const retreatJsonLd = {
       mainEntity: faqs.map((faq) => ({
         "@type": "Question",
         name: faq.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer,
-        },
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
       })),
     },
   ],
 };
 
+const buttonPrimary =
+  "inline-flex min-h-12 items-center justify-center gap-2 bg-[var(--sutra-teal)] px-5 text-sm font-semibold text-white transition-colors hover:bg-[var(--sutra-teal-hover)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--sutra-teal)]";
+const eyebrow =
+  "text-[11px] font-medium uppercase tracking-[0.14em] text-[var(--sutra-muted)] sm:text-[12px]";
+
 export default function RetreatProgramsPage() {
   return (
-    <main className="bg-[var(--sutra-porcelain)] text-[var(--sutra-teal)]">
+    <main className="overflow-hidden bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(retreatJsonLd),
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
 
-     {/* =========================================================
-    HERO
-========================================================= */}
-
-  <section className="border-b border-[var(--sutra-border)] bg-[var(--sutra-porcelain)]">
-  <Container>
-    <div className="py-12 sm:py-16 lg:py-22 xl:py-24">
-      
-
-      <div className="mt-10 grid items-center gap-12 lg:mt-14 lg:grid-cols-[0.86fr_1.14fr] lg:gap-16 xl:gap-20">
-        <div className="min-w-0">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
-            Sutra Health Retreat
-          </p>
-
-          <h1 className="mt-5 max-w-[650px] font-serif text-[46px] font-medium leading-[0.98] tracking-[-0.04em] text-[var(--sutra-ink)] sm:text-[58px] md:text-[68px] lg:text-[74px] xl:text-[80px]">
-            Wellness retreat
-            <br />
-            <span className="text-[var(--sutra-teal)]">near Delhi.</span>
-          </h1>
-
-          <p className="mt-8 max-w-[600px] text-[17px] leading-8 text-[var(--sutra-muted)] sm:text-[19px] sm:leading-9">
-            Step away from your usual routine and make space for rest,
-            movement, nourishment and mindful living. Experience yoga,
-            breathing, meditation and practical lifestyle guidance in a
-            peaceful retreat setting in Faridabad.
-          </p>
-
-          {/* <div className="mt-7 flex max-w-[540px] items-start gap-4">
-            <span aria-hidden="true" className="mt-2 h-10 w-px shrink-0 bg-[var(--sutra-sand)]" />
-            <p className="font-serif text-[20px] leading-7 tracking-[-0.015em] text-[var(--sutra-teal)] sm:text-[22px]">
-              Come for a pause.
-              <br />
-              <span className="italic">Leave with a clearer way forward.</span>
-            </p>
-          </div> */}
-
-          <div className="mt-9 flex flex-wrap gap-3.5">
-            <a
-              href={bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-12 items-center gap-2 rounded-none bg-[var(--sutra-teal)] px-6 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-[var(--sutra-teal-hover)]"
-            >
-              Explore Retreat & Book
-              <span aria-hidden="true">↗</span>
-            </a>
-            <a
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-12 items-center gap-2 rounded-none border border-[var(--sutra-border-strong)] bg-[var(--sutra-white)] px-6 py-3.5 text-[13px] font-semibold text-[var(--sutra-teal)] transition-colors hover:bg-[var(--sutra-pale-sage)]"
-            >
-              Ask About Your Stay
-              <span aria-hidden="true">→</span>
-            </a>
-          </div>
-
-          <p className="mt-5 text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)] sm:hidden">
-            Faridabad · Haryana
-          </p>
-        </div>
-
-        <div className="min-w-0">
-          <div className="overflow-hidden ">
-            <div className="relative aspect-[4/3] min-h-[300px] sm:aspect-[5/4] sm:min-h-0">
-              <RetreatHeroSlider />
-            </div>
-          </div>
-       
-        </div>
-      </div>
-
-      <div className="mt-12 border-t border-[var(--sutra-border)] pt-6 sm:mt-16">
-        <div className="grid gap-5 sm:grid-cols-3 sm:gap-8">
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">Slow down</p>
-            <p className="mt-1.5 text-[13px] leading-6 text-[var(--sutra-muted)]">Create space away from everyday routines.</p>
-          </div>
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">Practice wellbeing</p>
-            <p className="mt-1.5 text-[13px] leading-6 text-[var(--sutra-muted)]">Explore movement, food, breath and mindful living.</p>
-          </div>
-          <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">Near Delhi</p>
-            <p className="mt-1.5 text-[13px] leading-6 text-[var(--sutra-muted)]">A peaceful retreat setting in Faridabad, Haryana.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </Container>
-</section>
-
-      {/* =========================================================
-          DIRECT ANSWER / SUMMARY
-      ========================================================= */}
-
-      <section className="border-b border-[var(--sutra-teal)]/10 bg-[var(--sutra-pale-sage)]">
+      <section className="border-b border-[var(--sutra-border)]">
+        <RetreatHeroSlider />
         <Container>
-          <div className="grid gap-8 py-12 sm:py-16 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20 lg:py-20">
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--sutra-sage)]">
-                In brief
-              </p>
-
-              <h2 className="mt-3 max-w-[430px] font-serif text-[38px] leading-[1.06] tracking-[-0.035em] sm:text-[46px]">
-                What is the retreat experience?
-              </h2>
-            </div>
-
-            <div className="max-w-[720px]">
-              <p className="text-[16px] leading-8 text-[var(--sutra-muted)] sm:text-[17px]">
-                Sutra Health Retreat is a wellness-focused stay in Faridabad,
-                near Delhi, where you can step away from everyday routines and
-                spend time with practices that support healthier living.
-              </p>
-
-              <p className="mt-5 text-[16px] leading-8 text-[var(--sutra-muted)] sm:text-[17px]">
-                The retreat brings together yoga, Pranayama, meditation,
-                nutrition guidance, physician consultation and traditional
-                wellness practices. The experience can be approached according
-                to your circumstances, interests and goals.
-              </p>
-
-              <div className="mt-7 border-t border-[var(--sutra-teal)]/10 pt-6">
-                <ul className="grid gap-3 sm:grid-cols-2">
-                  {[
-                    "Time away from everyday routines",
-                    "Yoga and mindful movement",
-                    "Meditation and breathing practices",
-                    "Nutrition and lifestyle guidance",
-                    "Traditional wellness experiences",
-                    "Physician guidance where appropriate",
-                  ].map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-3 text-[14px] leading-7 text-[var(--sutra-muted)]"
-                    >
-                      <span aria-hidden="true" className="mt-[10px] h-px w-5 shrink-0 bg-[var(--sutra-sage)]" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+          <div className="grid gap-5 py-6 sm:grid-cols-2 sm:gap-8 sm:py-8 lg:grid-cols-3">
+            {[
+              ["A pause", "Make room for time away from familiar routines."],
+              ["Guided experiences", "Explore suitable practices for movement, food, breath and reflection."],
+              ["Faridabad, Haryana", "A residential retreat setting near Delhi."],
+            ].map(([label, copy]) => (
+              <div key={label} className="border-l-2 border-[var(--sutra-sage)] pl-4">
+                <p className={eyebrow}>{label}</p>
+                <p className="mt-1.5 text-sm leading-6 text-[var(--sutra-muted)]">{copy}</p>
               </div>
-            </div>
+            ))}
           </div>
         </Container>
       </section>
-
-      {/* =========================================================
-          WHY RETREAT
-      ========================================================= */}
-
-      <section className="border-b border-[var(--sutra-teal)]/10">
-        <Container>
-          <div className="py-12 sm:py-16 lg:py-20">
-            <div className="flex flex-col gap-5 border-b border-[var(--sutra-teal)]/10 pb-8 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--sutra-sage)]">
-                  Why a retreat
-                </p>
-
-                <h2 className="mt-3 max-w-[650px] font-serif text-[42px] leading-[1.06] tracking-[-0.035em] sm:text-[50px]">
-                  A little distance from routine can create space for attention.
-                </h2>
-              </div>
-
-              <Link
-                href="/approach"
-                className="shrink-0 text-[12px] font-semibold text-[var(--sutra-teal)] underline decoration-[var(--sutra-sage)]/50 underline-offset-4 transition-colors hover:text-[var(--sutra-sage)]"
-              >
-                Explore the Sutra Health Method →
-              </Link>
-            </div>
-
-            <div className="mt-8 divide-y divide-[var(--sutra-teal)]/10">
-              {[
-                {
-                  number: "01",
-                  title: "Slow down",
-                  text: "Step away from familiar schedules and create time for rest, reflection and intentional routines.",
-                },
-                {
-                  number: "02",
-                  title: "Practise",
-                  text: "Experience movement, yoga, breathing, meditation, nutrition and other wellness practices in one setting.",
-                },
-                {
-                  number: "03",
-                  title: "Reconnect",
-                  text: "Spend time with yourself and, where you choose, with other people through shared activities and companionship.",
-                },
-                {
-                  number: "04",
-                  title: "Take something home",
-                  text: "Use the retreat as an opportunity to notice which practical habits and practices may fit your everyday life.",
-                },
-              ].map((item) => (
-                <div
-                  key={item.number}
-                  className="grid gap-4 py-7 sm:grid-cols-[80px_0.7fr_1.3fr] sm:items-start sm:gap-8"
-                >
-                  <span className="text-[10px] font-semibold tracking-[0.16em] text-[var(--sutra-sage)]">
-                    {item.number}
-                  </span>
-
-                  <h3 className="font-serif text-[27px] leading-tight tracking-[-0.025em]">
-                    {item.title}
-                  </h3>
-
-                  <p className="max-w-[620px] text-[14px] leading-7 text-[var(--sutra-muted)]">
-                    {item.text}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* =========================================================
-          PROGRAMS INTRO
-      ========================================================= */}
 
       <section className="bg-[var(--sutra-pale-sage)]">
         <Container>
-          <div className="py-12 sm:py-16 lg:py-20">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--sutra-sage)]">
-              What you can experience
-            </p>
-
-            <h2 className="mt-3 max-w-[760px] font-serif text-[42px] leading-[1.06] tracking-[-0.035em] sm:text-[52px]">
-              Wellness practices that work together as a retreat experience.
-            </h2>
-
-            <p className="mt-5 max-w-[700px] text-[15px] leading-7 text-[var(--sutra-muted)] sm:text-[16px] sm:leading-8">
-              The retreat includes a range of practices and experiences.
-              Explore each one below and contact the team if you would like to
-              understand what may be appropriate for your stay.
-            </p>
+          <div className="grid gap-6 py-14 sm:py-16 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 lg:py-20">
+            <div>
+              <p className={eyebrow}>01 · The retreat</p>
+              <h2 className="mt-3 max-w-xl font-serif text-4xl leading-[1.08] tracking-[-0.035em] sm:text-5xl">
+                Time and space to practise wellbeing.
+              </h2>
+            </div>
+            <div className="max-w-2xl">
+              <p className="text-base leading-8 text-[var(--sutra-muted)] sm:text-[17px]">
+                Sutra Health Retreat is a wellness-focused stay in Faridabad, near Delhi. It brings guided practices and practical health conversations together in a setting away from everyday demands.
+              </p>
+              <p className="mt-4 text-base leading-8 text-[var(--sutra-muted)] sm:text-[17px]">
+                Explore yoga, Pranayama, meditation, nutrition guidance, physician consultation and traditional wellness experiences. Confirm availability and suitability with the team before booking.
+              </p>
+            </div>
           </div>
         </Container>
       </section>
 
-      {/* =========================================================
-          PRACTICES — EDITORIAL ROWS
-      ========================================================= */}
-
-      <section>
+      <section className="py-14 sm:py-16 lg:py-20">
         <Container>
-          <div className="divide-y divide-[var(--sutra-teal)]/10">
-            {retreatPractices.map((practice) => (
+          <div className="max-w-3xl">
+            <p className={eyebrow}>02 · A different pace</p>
+            <h2 className="mt-3 font-serif text-4xl leading-tight tracking-[-0.035em] sm:text-5xl">
+              Step out of routine. Pay attention to what supports you.
+            </h2>
+          </div>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              ["01", "Pause", "Set aside time for rest, reflection and a change of pace."],
+              ["02", "Participate", "Explore suitable movement, breathing, meditation and food practices."],
+              ["03", "Connect", "Choose quiet time or join shared activities and companionship."],
+              ["04", "Reflect", "Consider realistic habits you may want to continue at home."],
+            ].map(([number, title, copy]) => (
+              <article key={number} className="border-t border-[var(--sutra-border-strong)] pt-4">
+                <span className="text-xs font-semibold tracking-widest text-[var(--sutra-sage)]">{number}</span>
+                <h3 className="mt-3 font-serif text-2xl">{title}</h3>
+                <p className="mt-2 text-sm leading-7 text-[var(--sutra-muted)]">{copy}</p>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-[var(--sutra-pale-sage)] py-14 sm:py-16 lg:py-20">
+        <Container>
+          <div className="max-w-3xl">
+            <p className={eyebrow}>03 · Retreat experiences</p>
+            <h2 className="mt-3 font-serif text-4xl leading-tight tracking-[-0.035em] sm:text-5xl">
+              Find experiences that fit your stay.
+            </h2>
+            <p className="mt-4 text-base leading-7 text-[var(--sutra-muted)]">
+              These are the practices and support options listed for the retreat. Ask about scheduling, availability and suitability for your dates.
+            </p>
+          </div>
+
+          <div className="mt-9 grid items-stretch gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {experiences.map((item) => (
               <article
-                key={practice.number}
-                className="grid gap-8 py-12 sm:py-16 lg:grid-cols-[64px_minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-10 lg:py-20"
+                key={item.number}
+                className="group flex h-full flex-col overflow-hidden border border-[var(--sutra-border)] bg-[var(--sutra-white)]"
               >
-                <div>
-                  <span className="text-[10px] font-semibold tracking-[0.16em] text-[var(--sutra-sage)]">
-                    {practice.number}
+                <div className="relative aspect-[16/10] overflow-hidden border-b border-[var(--sutra-border)] bg-[var(--sutra-pale-sage)]">
+                  <Image
+                    src={item.image}
+                    alt={item.imageAlt}
+                    fill
+                    sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.03]"
+                  />
+                  <span className="absolute left-4 top-4 bg-[var(--sutra-porcelain)] px-3 py-1.5 text-[10px] font-semibold tracking-[0.12em] text-[var(--sutra-teal)]">
+                    {item.number}
                   </span>
                 </div>
-
-                <div>
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-sage)]">
-                    {practice.category}
-                  </p>
-
-                  <h2 className="mt-3 font-serif text-[34px] leading-[1.02] tracking-[-0.035em] sm:text-[42px]">
-                    {practice.title}
-                  </h2>
-
-                  <div className="group mt-6 overflow-hidden border border-[var(--sutra-border)] bg-[var(--sutra-pale-sage)] lg:max-w-[430px]">
-                    <div className="relative aspect-[16/9] min-w-0 overflow-hidden">
-                      <Image
-                        src={practice.image}
-                        alt={practice.imageAlt}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 40vw"
-                        className="object-cover motion-safe:transition-transform motion-safe:duration-700 motion-safe:ease-out motion-safe:group-hover:scale-[1.02]"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="max-w-[620px] lg:pt-7">
-                  <p className="text-[15px] leading-7 text-[var(--sutra-muted)] sm:text-[16px] sm:leading-8">
-                    {practice.description}
-                  </p>
-
-                  <div className="mt-6 border-t border-[var(--sutra-teal)]/10 pt-5">
-                    <ul className="space-y-3">
-                      {practice.points.map((point) => (
-                        <li
-                          key={point}
-                          className="flex items-start gap-3 text-[14px] leading-7 text-[var(--sutra-muted)]"
-                        >
-                          <span aria-hidden="true" className="mt-[10px] h-px w-5 shrink-0 bg-[var(--sutra-sage)]" />
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
+                <div className="flex flex-1 flex-col p-5 sm:p-6">
+                  <p className={eyebrow}>{item.category}</p>
+                  <h3 className="mt-2 font-serif text-[26px] leading-tight tracking-[-0.02em] text-[var(--sutra-ink)]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-[var(--sutra-muted)]">{item.description}</p>
+                  <ul className="mt-4 space-y-2 border-t border-[var(--sutra-border)] pt-4">
+                    {item.points.map((point) => (
+                      <li key={point} className="flex gap-2.5 text-sm leading-6 text-[var(--sutra-muted)]">
+                        <span aria-hidden="true" className="mt-[11px] h-px w-3 shrink-0 bg-[var(--sutra-sage)]" />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
                   <Link
-                    href="/book-appointment"
-                    className="mt-6 inline-flex text-[12px] font-semibold text-[var(--sutra-teal)] underline decoration-[var(--sutra-sage)]/50 underline-offset-4 transition-colors hover:text-[var(--sutra-sage)]"
+                    href="/contact"
+                    className="mt-auto inline-flex w-fit pt-5 text-sm font-semibold text-[var(--sutra-teal)] underline decoration-[var(--sutra-sage)] underline-offset-4"
                   >
-                    Ask about this experience →
+                    Ask about this experience <span aria-hidden="true" className="ml-1">→</span>
                   </Link>
                 </div>
               </article>
@@ -579,309 +313,96 @@ export default function RetreatProgramsPage() {
         </Container>
       </section>
 
-      {/* =========================================================
-          COMING ALONE
-      ========================================================= */}
-
-      <section className="border-t border-[var(--sutra-teal)]/10 bg-[var(--sutra-pale-sage)]">
+      <section className="py-14 sm:py-16 lg:py-20">
         <Container>
-          <div className="grid gap-8 py-14 sm:py-16 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 lg:py-20">
+          <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--sutra-sage)]">
-                Coming alone?
-              </p>
-
-              <h2 className="mt-3 max-w-[500px] font-serif text-[42px] leading-[1.06] tracking-[-0.035em] sm:text-[50px]">
-                You don't have to bring someone with you.
+              <p className={eyebrow}>04 · Planning your stay</p>
+              <h2 className="mt-3 font-serif text-4xl leading-tight tracking-[-0.035em] sm:text-5xl">
+                Coming on your own?
               </h2>
             </div>
-
-            <div className="max-w-[700px]">
-              <p className="text-[16px] leading-8 text-[var(--sutra-muted)]">
-                A retreat can be a personal experience. If you are considering
-                coming on your own, you can speak with the Sutra Health team
-                before booking to understand the stay, accommodation,
-                activities and support available.
+            <div className="max-w-2xl">
+              <p className="text-base leading-8 text-[var(--sutra-muted)] sm:text-[17px]">
+                You can enquire about visiting alone. Speak with the team before booking to confirm room arrangements, available activities and the support that can be offered during your stay.
               </p>
-
-              <div className="mt-7 divide-y divide-[var(--sutra-teal)]/10 border-y border-[var(--sutra-teal)]/10">
-                {[
-                  {
-                    title: "Before you arrive",
-                    text: "Ask about the stay, available practices and anything you need to know before planning your visit.",
-                  },
-                  {
-                    title: "During your stay",
-                    text: "Participate at your own pace. Some experiences are shared, while others allow time for quiet and reflection.",
-                  },
-                  {
-                    title: "If you have health concerns",
-                    text: "Discuss relevant health information with the team so that appropriate guidance can be considered alongside necessary medical care.",
-                  },
-                ].map((item) => (
-                  <div
-                    key={item.title}
-                    className="grid gap-2 py-5 sm:grid-cols-[180px_1fr] sm:gap-10"
-                  >
-                    <h3 className="text-[13px] font-semibold text-[var(--sutra-teal)]">
-                      {item.title}
-                    </h3>
-
-                    <p className="text-[14px] leading-7 text-[var(--sutra-muted)]">
-                      {item.text}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-7 inline-flex items-center gap-2 rounded-none bg-[var(--sutra-teal)] px-6 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-[var(--sutra-teal-hover)]"
-              >
-                Talk to Sutra Health
-                <span aria-hidden="true">↗</span>
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={`${buttonPrimary} mt-6`}>
+                Ask about a solo stay <span aria-hidden="true">↗</span>
               </a>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* =========================================================
-          STAY
-      ========================================================= */}
-
-      <section className="border-t border-[var(--sutra-teal)]/10">
+      <section className="border-y border-[var(--sutra-border)] bg-[var(--sutra-pale-sage)] py-14 sm:py-16 lg:py-20">
         <Container>
-          <div className="py-12 sm:py-16 lg:py-20">
-            <div className="flex flex-col gap-5 border-b border-[var(--sutra-teal)]/10 pb-8 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--sutra-sage)]">
-                  Your stay
-                </p>
-
-                <h2 className="mt-3 max-w-[650px] font-serif text-[42px] leading-[1.06] tracking-[-0.035em] sm:text-[50px]">
-                  A simple space to stay, rest and recharge.
-                </h2>
+          <div className="grid gap-4 sm:grid-cols-[0.8fr_1.2fr] sm:items-end">
+            <div>
+              <p className={eyebrow}>05 · Accommodation</p>
+              <h2 className="mt-3 font-serif text-4xl leading-tight tracking-[-0.035em] sm:text-5xl">A simple place to stay.</h2>
+            </div>
+            <p className="max-w-xl text-sm leading-7 text-[var(--sutra-muted)]">
+              The listed residence is a three-bedroom stay in Sector 46, Faridabad. Confirm current capacity, room configuration and inclusions before booking.
+            </p>
+          </div>
+          <div className="mt-8 grid grid-cols-2 border-y border-[var(--sutra-border-strong)] sm:grid-cols-4">
+            {stayDetails.map((item, index) => (
+              <div key={item.label} className={`py-5 sm:py-6 ${index > 0 ? "border-l border-[var(--sutra-border)] pl-4 sm:pl-6" : ""}`}>
+                <p className="font-serif text-3xl text-[var(--sutra-ink)]">{item.value}</p>
+                <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--sutra-muted)]">{item.label}</p>
               </div>
+            ))}
+          </div>
+          <div className="mt-6 flex flex-wrap gap-x-7 gap-y-2">
+            {amenities.map((amenity) => (
+              <span key={amenity} className="text-sm leading-7 text-[var(--sutra-muted)]">{amenity}</span>
+            ))}
+          </div>
+        </Container>
+      </section>
 
-              <p className="max-w-[330px] text-[13px] leading-7 text-[var(--sutra-muted)]">
-                The retreat offers a three-bedroom rooftop stay in Sector 46,
-                Faridabad.
+      <section className="py-14 sm:py-16 lg:py-20">
+        <Container>
+          <div className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
+            <div>
+              <p className={eyebrow}>06 · Location</p>
+              <h2 className="mt-3 font-serif text-4xl leading-tight tracking-[-0.035em] sm:text-5xl">Faridabad, near Delhi.</h2>
+            </div>
+            <div className="max-w-2xl">
+              <p className="text-base leading-8 text-[var(--sutra-muted)] sm:text-[17px]">
+                Sutra Health Retreat is listed in Sector 46, Faridabad, Haryana, near the Aravallis. The residence includes rooftop space; outdoor activities depend on arrangements and suitability.
               </p>
-            </div>
-
-            <div className="mt-8 grid grid-cols-2 border-y border-[var(--sutra-teal)]/10 sm:grid-cols-4">
-              {stayDetails.map((item, index) => (
-                <div
-                  key={item.label}
-                  className={`py-7 ${
-                    index > 0
-                      ? "border-l border-[var(--sutra-teal)]/10 pl-5 sm:pl-7"
-                      : ""
-                  }`}
-                >
-                  <p className="font-serif text-[34px] tracking-[-0.03em] text-[var(--sutra-teal)]">
-                    {item.value}
-                  </p>
-
-                  <p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.15em] text-[var(--sutra-muted)]">
-                    {item.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-8 grid gap-8 sm:grid-cols-[0.7fr_1.3fr]">
-              <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-sage)]">
-                  Stay features
-                </p>
-              </div>
-
-              <div className="flex flex-wrap gap-x-8 gap-y-4">
-                {amenities.map((amenity) => (
-                  <span
-                    key={amenity}
-                    className="text-[13px] text-[var(--sutra-muted)]"
-                  >
-                    {amenity}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* =========================================================
-          LOCATION
-      ========================================================= */}
-
-      <section className="border-t border-[var(--sutra-teal)]/10 bg-[var(--sutra-pale-sage)]">
-        <Container>
-          <div className="py-12 sm:py-16 lg:py-20">
-            <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-              <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--sutra-sage)]">
-                  The setting
-                </p>
-
-                <h2 className="mt-3 max-w-[500px] font-serif text-[42px] leading-[1.06] tracking-[-0.035em] sm:text-[50px]">
-                  Near Delhi, with space to slow down.
-                </h2>
-              </div>
-
-              <div className="max-w-[700px]">
-                <p className="text-[16px] leading-8 text-[var(--sutra-muted)]">
-                  Sutra Health Retreat is located in Sector 46, Faridabad,
-                  Haryana, near the Aravallis. The retreat setting includes a
-                  rooftop space for selected activities and opportunities to
-                  spend time outdoors.
-                </p>
-
-                <p className="mt-5 text-[16px] leading-8 text-[var(--sutra-muted)]">
-                  The surrounding area also offers opportunities for walks,
-                  cycling, temples and parks, giving you options beyond the
-                  retreat itself.
-                </p>
-
-                <div className="mt-7 border-t border-[var(--sutra-teal)]/10 pt-6">
-                  <div className="grid gap-5 sm:grid-cols-3">
-                    <div>
-                      <p className="font-serif text-[24px]">Faridabad</p>
-                      <p className="mt-1 text-[9px] uppercase tracking-[0.14em] text-[var(--sutra-muted)]">
-                        Haryana
-                      </p>
-                    </div>
-
-                    <div>
-                      <p className="font-serif text-[24px]">Sector 46</p>
-                      <p className="mt-1 text-[9px] uppercase tracking-[0.14em] text-[var(--sutra-muted)]">
-                        Retreat location
-                      </p>
-                    </div>
-
-                    <div>
-                      <p className="font-serif text-[24px]">Aravallis</p>
-                      <p className="mt-1 text-[9px] uppercase tracking-[0.14em] text-[var(--sutra-muted)]">
-                        Nearby
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <Link
-                  href="/contact"
-                  className="mt-7 inline-flex text-[12px] font-semibold text-[var(--sutra-teal)] underline decoration-[var(--sutra-sage)]/50 underline-offset-4 hover:text-[var(--sutra-sage)]"
-                >
-                  Contact Sutra Health for location details →
-                </Link>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* =========================================================
-          FAQ
-      ========================================================= */}
-
-      <section className="border-t border-[var(--sutra-teal)]/10">
-        <Container>
-          <div className="py-12 sm:py-16 lg:py-20">
-            <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
-              <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--sutra-sage)]">
-                  Retreat FAQ
-                </p>
-
-                <h2 className="mt-3 font-serif text-[42px] leading-[1.06] tracking-[-0.035em] sm:text-[48px]">
-                  Questions before you come.
-                </h2>
-              </div>
-
-              <div className="divide-y divide-[var(--sutra-teal)]/10 border-y border-[var(--sutra-teal)]/10">
-                {faqs.map((faq) => (
-                  <details
-                    key={faq.question}
-                    className="group py-5"
-                  >
-                    <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-5 text-[15px] font-medium text-[var(--sutra-teal)]">
-                      <span>{faq.question}</span>
-
-                      <span
-                        aria-hidden="true"
-                        className="text-[20px] font-normal text-[var(--sutra-sage)] transition-transform duration-300 group-open:rotate-45"
-                      >
-                        +
-                      </span>
-                    </summary>
-
-                    <p className="mt-4 max-w-[700px] pr-8 text-[13px] leading-7 text-[var(--sutra-muted)]">
-                      {faq.answer}
-                    </p>
-                  </details>
-                ))}
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* =========================================================
-          FINAL CTA
-      ========================================================= */}
-
-      <section className="bg-[var(--sutra-teal)]">
-        <Container>
-          <div className="py-16 text-center sm:py-20 lg:py-24">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--sutra-pale-sage)]">
-              Sutra Health Retreat
-            </p>
-
-            <h2 className="mx-auto mt-4 max-w-[780px] font-serif text-[40px] leading-[1.02] tracking-[-0.04em] text-[var(--sutra-porcelain)] sm:text-[52px] lg:text-[60px]">
-              Take a little time away from the usual.
-            </h2>
-
-            <p className="mx-auto mt-5 max-w-[620px] text-[14px] leading-7 text-[var(--sutra-pale-sage)] sm:text-[15px] sm:leading-8">
-              Explore the retreat, understand what is included and speak with
-              the Sutra Health team before planning your stay.
-            </p>
-
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <a
-                href={bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-none bg-[var(--sutra-porcelain)] px-6 py-3.5 text-[13px] font-semibold text-[var(--sutra-teal)] transition-colors hover:bg-white"
-              >
-                Explore & Book Retreat
-                <span aria-hidden="true">↗</span>
-              </a>
-
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-none border border-white/25 px-6 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-white/10"
-              >
-                Enquire on WhatsApp
-                <span aria-hidden="true">↗</span>
-              </a>
-
-              <Link
-                href="/book-appointment"
-                className="inline-flex items-center gap-2 rounded-none border border-white/25 px-6 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-white/10"
-              >
-                Book a Consultation
-                <span aria-hidden="true">→</span>
+              <Link href="/contact" className="mt-5 inline-flex text-sm font-semibold text-[var(--sutra-teal)] underline decoration-[var(--sutra-sage)] underline-offset-4">
+                Get location details →
               </Link>
             </div>
           </div>
         </Container>
       </section>
+
+      <section className="border-t border-[var(--sutra-border)] bg-[var(--sutra-pale-sage)] py-14 sm:py-16 lg:py-20">
+        <Container>
+          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
+            <div>
+              <p className={eyebrow}>07 · Common questions</p>
+              <h2 className="mt-3 font-serif text-4xl leading-tight tracking-[-0.035em] sm:text-5xl">Before you plan your visit.</h2>
+            </div>
+            <div className="divide-y divide-[var(--sutra-border-strong)] border-y border-[var(--sutra-border-strong)]">
+              {faqs.map((faq) => (
+                <details key={faq.question} className="group py-5">
+                  <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-5 text-[19px] leading-snug text-[var(--sutra-teal)] marker:hidden sm:text-[23px] [&::-webkit-details-marker]:hidden">
+                    <span>{faq.question}</span>
+                    <span aria-hidden="true" className="shrink-0 text-2xl font-light text-[var(--sutra-sage)] transition-transform group-open:rotate-45">+</span>
+                  </summary>
+                  <p className="mt-3 max-w-3xl pr-8 text-base leading-7 text-[var(--sutra-muted)] sm:text-[17px] sm:leading-8">{faq.answer}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+    
     </main>
   );
 }

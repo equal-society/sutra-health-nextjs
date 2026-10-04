@@ -62,63 +62,103 @@ function TextLink({ href, children }: { href: string; children: React.ReactNode 
   );
 }
 
+
 function Hero() {
   return (
-     <section
+    <section
       aria-labelledby="home-title"
-      className="relative isolate overflow-hidden bg-[var(--color-text-primary)]"
+      className="relative isolate overflow-hidden bg-[#F7F5EF] lg:min-h-[min(780px,calc(100svh-80px))] lg:bg-[#101C19]"
     >
-      <div aria-hidden="true" className="absolute inset-0">
+      {/* Desktop video background */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 hidden lg:block"
+      >
         <video
           autoPlay
           muted
           loop
           playsInline
           preload="metadata"
-          className="absolute inset-0 h-full w-full object-cover motion-reduce:hidden"
+          // poster="/images/desktop.webp"
+          className="absolute inset-0 h-full w-full object-cover"
         >
           <source src="/videos/hero-video.mp4" type="video/mp4" />
         </video>
-         
-  <div className="absolute inset-0 bg-[#101C19]/45" />
 
-  <div className="absolute inset-0 bg-gradient-to-r from-[#101C19]/85 via-[#101C19]/55 to-[#101C19]/20" />
-</div>
+        <div className="absolute inset-0 bg-[#101C19]/35" />
 
-      <Container>
-        <div className="relative z-10 flex min-h-[580px] flex-col justify-center py-16 sm:min-h-[640px] lg:min-h-[700px]">
-          <div className="max-w-[780px]">
-           
+        <div className="absolute inset-0 bg-gradient-to-r from-[#101C19]/90 via-[#101C19]/60 to-[#101C19]/20" />
 
-            <h1 id="home-title" className="mt-5 max-w-[760px] font-serif text-[44px] font-medium leading-[1.05] tracking-[-0.04em] text-white sm:text-[62px] lg:text-[76px]">
-              Your lifestyle shapes your health.
-            </h1>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#101C19]/45 via-transparent to-[#101C19]/10" />
+      </div>
 
-            <p className="mt-5 max-w-[620px] text-base leading-7 text-white/85 sm:text-[18px] sm:leading-8">
-              Your health is influenced by everyday habits such as food, physical
-              activity, sleep and stress. We help you understand these factors and
-              make practical lifestyle changes alongside appropriate medical care.
-            </p>
+      {/* Text content */}
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-col justify-center px-5 pb-9 pt-12 sm:px-8 sm:pb-12 lg:min-h-[min(780px,calc(100svh-80px))] lg:px-12 lg:py-24">
+        <div className="max-w-4xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.17em] text-[#55736D] lg:text-white/75">
+            Doctor-led integrative lifestyle healthcare
+          </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/assessment" className="inline-flex min-h-[52px] items-center justify-center bg-white px-7 text-center text-base font-semibold text-[#17413D] transition-colors hover:bg-white/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
-                Assess Your Lifestyle Score
-                <ArrowUpRight size={17} className="ml-2" />
-              </Link>
+          <h1
+            id="home-title"
+            className="mt-5 max-w-4xl font-serif text-[42px] font-medium leading-[1.04] tracking-[-0.04em] text-[#18332F] sm:text-6xl lg:text-[76px] lg:leading-[1.02] lg:text-white"
+          >
+            Your lifestyle shapes
+            <br className="hidden sm:block" />
+            your health.
+          </h1>
 
-              <Link href="/approach" className="inline-flex min-h-[52px] items-center justify-center border border-white/75 px-7 text-center text-base font-medium text-white transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
-                Explore Our Approach
-                <ArrowUpRight size={16} className="ml-2" />
-              </Link>
-            </div>
+          <p className="mt-5 max-w-2xl text-base leading-7 text-[#52645F] sm:text-lg sm:leading-8 lg:mt-6 lg:text-white/85">
+            Your health is influenced by everyday habits such as food,
+            physical activity, sleep and stress. We help you understand
+            these factors and make practical lifestyle changes alongside
+            appropriate medical care.
+          </p>
 
+          <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center lg:mt-8">
+            <Link
+              href="/assessment"
+              className="inline-flex min-h-12 items-center justify-center bg-[#17413D] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#22564F] lg:bg-[#F7F5EF] lg:text-[#17413D] lg:hover:bg-white"
+            >
+              Take the 21-Point Assessment
+              <span className="ml-3" aria-hidden="true">→</span>
+            </Link>
 
+            <Link
+              href="/approach"
+              className="inline-flex min-h-12 items-center justify-center border border-[#17413D]/35 px-6 py-3 text-sm font-semibold text-[#17413D] transition-colors hover:bg-[#17413D]/5 lg:border-white/60 lg:text-white lg:hover:bg-white/10"
+            >
+              Explore Our Approach
+            </Link>
           </div>
         </div>
-      </Container>
+      </div>
+
+      {/* Mobile video appears after the text */}
+      <div className="relative h-[230px] overflow-hidden bg-[#18332F] sm:h-[320px] lg:hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/images/desktop.webp"
+          aria-label="Sutra Health lifestyle healthcare introduction"
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/videos/hero-video.mp4" type="video/mp4" />
+        </video>
+
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-t from-[#101C19]/35 to-transparent"
+        />
+      </div>
     </section>
   );
 }
+
 
 function EverydayHealth() {
   const services = [

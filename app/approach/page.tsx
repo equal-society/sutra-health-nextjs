@@ -21,12 +21,12 @@ export const metadata: Metadata = {
 };
 
 const stages = [
-  ["01", "Understand", "We listen to your concerns, health history and what you want help with."],
-  ["02", "Set priorities", "Together, we decide what needs attention first and what can wait."],
-  ["03", "Make a plan", "We discuss practical next steps that suit your needs and circumstances."],
-  ["04", "Put it into practice", "You try the agreed steps and notice what feels manageable and useful."],
-  ["05", "Review", "We discuss your experience, questions and any barriers you have faced."],
-  ["06", "Adjust", "The next steps can change as your needs, progress or circumstances change."],
+  ["01", "Understand", "We discuss your concern, health history and goals."],
+  ["02", "Set priorities", "We identify what needs attention first."],
+  ["03", "Plan next steps", "We agree on practical steps that fit your situation."],
+  ["04", "Put the plan into practice", "You try the agreed changes at a manageable pace."],
+  ["05", "Review", "We discuss what is working and what feels difficult."],
+  ["06", "Adjust", "We adapt the plan as your needs change."],
 ] as const;
 
 const faqs = [
@@ -139,14 +139,14 @@ export default function ApproachPage() {
                 Understand your health. Find a practical way forward.
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-7 text-white/85 sm:text-lg sm:leading-8">
-                We begin with what matters to you, identify what needs attention and agree on realistic next steps alongside appropriate medical care.
+                We discuss what matters to you and agree on realistic next steps alongside appropriate medical care.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   href="/book-appointment"
                   className="inline-flex min-h-12 items-center bg-[#F7F5EF] px-6 text-sm font-semibold text-[#17413D] transition-colors hover:bg-white"
                 >
-                  Book a Consultation <span className="ml-3" aria-hidden="true">→</span>
+                  Book a consultation <span className="ml-3" aria-hidden="true">→</span>
                 </Link>
                 <Link
                   href="/assessment"
@@ -168,7 +168,7 @@ export default function ApproachPage() {
                 Six steps, shaped around your needs.
               </h2>
               <p className="mt-4 max-w-2xl text-base leading-7 text-[#65736D] sm:text-lg">
-                The process is a guide, not a rigid sequence. A review may lead us to revisit a concern or change the plan.
+                We can revisit a step or change the plan when needed.
               </p>
             </div>
 
@@ -183,9 +183,6 @@ export default function ApproachPage() {
             </div>
 
             <div className="mt-8 border-t border-[#202522]/10 pt-5">
-              <p className="max-w-3xl text-base leading-7 text-[#65736D]">
-                Explore health concerns and the care services available at Sutra Health.
-              </p>
               <div className="mt-4 flex flex-wrap gap-x-6 gap-y-3">
                 <Link
                   href="/conditions"
@@ -255,23 +252,6 @@ export default function ApproachPage() {
           </div>
         </section>
 
-        {/* One closing action */}
-        <section className="bg-[#17413D] text-white">
-          <div className="mx-auto flex max-w-7xl flex-col gap-6 px-5 py-14 sm:px-8 sm:py-16 lg:flex-row lg:items-center lg:justify-between lg:px-12 lg:py-20">
-            <div>
-              <p className="text-xs font-medium uppercase tracking-[0.15em] text-white/65">Start with a conversation</p>
-              <h2 className="mt-3 max-w-3xl font-serif text-3xl leading-tight tracking-[-0.025em] sm:text-4xl lg:text-5xl">
-                Let’s discuss what matters to your health.
-              </h2>
-            </div>
-            <Link
-              href="/book-appointment"
-              className="inline-flex min-h-12 w-fit shrink-0 items-center bg-[#F7F5EF] px-6 text-sm font-semibold text-[#17413D] transition-colors hover:bg-white"
-            >
-              Book a Consultation <span className="ml-3" aria-hidden="true">→</span>
-            </Link>
-          </div>
-        </section>
       </main>
     </>
   );
