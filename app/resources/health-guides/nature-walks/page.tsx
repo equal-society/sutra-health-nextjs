@@ -85,7 +85,7 @@ export default function NatureWalksPage() {
     aria-hidden="true"
     className="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat"
     style={{
-      backgroundImage: "url('/images/nature.jpg')",
+      backgroundImage: "url('/images/indoor.jpg')",
     }}
   />
 
@@ -286,17 +286,7 @@ export default function NatureWalksPage() {
         </div>
       </section>
 
-      <section className="bg-[#17413D]">
-        <div className="mx-auto flex max-w-[1180px] flex-col gap-6 px-5 py-12 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-12 lg:py-16">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#91A298]">Sutra Health</p>
-            <h2 className="mt-2 font-serif text-[30px] text-white sm:text-[38px]">Continue exploring health guides.</h2>
-          </div>
-          <Link href="/resources/health-guides" className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#91A298] px-6 text-sm font-semibold text-[#202522] hover:bg-[#A7B4AC]">
-            Explore Health Guides
-          </Link>
-        </div>
-      </section>
+   
     </main>
   );
 }
