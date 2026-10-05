@@ -160,12 +160,10 @@ export default function LifestyleMedicinePage() {
             id="lifestyle-title"
             className="mt-4 max-w-3xl font-serif text-[clamp(2.25rem,6vw,4.25rem)] leading-[1.08] tracking-[-0.03em] text-white"
           >
-            Six everyday areas can help you identify realistic priorities.
-          </h1>
+          Everyday health is shaped by more than medical treatment.          </h1>
 
           <p className="mt-5 max-w-2xl text-lg leading-8 text-white/90 sm:text-xl">
-            Use six everyday areas to identify realistic priorities that can be discussed alongside appropriate medical care.
-          </p>
+        Lifestyle medicine looks at the habits, routines and circumstances that can influence health, alongside appropriate medical care.          </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link
