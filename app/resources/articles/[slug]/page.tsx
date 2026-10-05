@@ -740,10 +740,10 @@ export default async function ArticlePage({
               </Link>
 
               <Link
-                href="/what-we-do"
+                href="/services"
                 className="inline-flex items-center gap-3 border border-white/30 px-5 py-3.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-white transition-colors hover:bg-white/10"
               >
-                What We Do
+                Services
                 <span aria-hidden="true">→</span>
               </Link>
             </div>

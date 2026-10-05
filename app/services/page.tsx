@@ -8,7 +8,7 @@ const services = [
     title: "Physician Consultation",
     description:
       "Discuss your symptoms, health history and current treatment with a physician. Leave with clearer next steps for your care.",
-    image: "/images/mobile.webp",
+    image: "/images/approach.jpg",
     href: "/services/physician-consultation",
   },
   {
@@ -16,7 +16,7 @@ const services = [
     title: "Lifestyle Medicine",
     description:
       "Build practical habits around food, movement, sleep and stress, considered alongside appropriate medical care.",
-    image: "/images/lifestyle-home.webp",
+    image: "/images/rooftop.avif",
     href: "/services/lifestyle",
   },
   {
@@ -32,7 +32,7 @@ const services = [
     title: "Therapeutic Yoga",
     description:
       "Explore yoga practices adapted to your comfort, mobility and health needs, where appropriate.",
-    image: "/images/what-we-do/yoga.jpg",
+    image: "/images/yoga2.jpg",
     href: "/services/therapeutic-yoga",
   },
   {

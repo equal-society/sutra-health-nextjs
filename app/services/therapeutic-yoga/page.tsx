@@ -5,7 +5,7 @@ import ServicePageTemplate, {
 } from "@/components/services/ServicePageTemplate";
 
 const therapeuticYoga: ServicePageConfig = {
-  heroImage: "/images/what-we-do/yoga.jpg",
+  heroImage: "/images/yoga2.jpg",
   name: "Therapeutic Yoga",
   slug: "therapeutic-yoga",
 

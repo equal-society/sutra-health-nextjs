@@ -90,7 +90,7 @@ export default function SoftSunRaysPage() {
     aria-hidden="true"
     className="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat"
     style={{
-      backgroundImage: "url('/images/nature.jpg')",
+      backgroundImage: "url('/images/rooftop1.jpg')",
     }}
   />
 
@@ -228,7 +228,7 @@ export default function SoftSunRaysPage() {
 
             <div className="relative min-h-[280px] bg-[#C8BDA7] lg:min-h-[390px]">
               <Image
-                src="/images/retreat/rooftop.avif"
+                src="/images/rooftop.avif"
                 alt=""
                 fill
                 sizes="(max-width: 1024px) 100vw, 34vw"

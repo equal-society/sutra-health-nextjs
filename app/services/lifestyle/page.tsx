@@ -137,7 +137,7 @@ export default function LifestyleMedicinePage() {
           aria-hidden="true"
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/images/nature.jpg')",
+            backgroundImage: "url('/images/rooftop.avif')",
           }}
         />
 

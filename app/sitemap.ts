@@ -15,10 +15,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   );
 
+  const healthGuidePages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/resources/health-guides/positive-thinking`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/resources/health-guides/soft-sun-rays`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/resources/health-guides/nature-walks`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+  ];
+
+  const servicePages: MetadataRoute.Sitemap = [
+    "/services/physician-consultation",
+    "/services/lifestyle",
+    "/services/nutrition",
+    "/services/therapeutic-yoga",
+    "/services/behaviour-stress-mind",
+  ].map((path) => ({
+    url: `${baseUrl}${path}`,
+    lastModified,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
   return [
-    // ─────────────────────────────
     // PRIMARY
-    // ─────────────────────────────
     {
       url: baseUrl,
       lastModified,
@@ -26,73 +58,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
 
-    // ─────────────────────────────
     // CONDITIONS
-    // ─────────────────────────────
     {
       url: `${baseUrl}/conditions`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.9,
     },
-
     ...conditionPages,
 
-    // ─────────────────────────────
     // SERVICES
-    // ─────────────────────────────
     {
       url: `${baseUrl}/services`,
       lastModified,
       changeFrequency: "monthly",
-      priority: 0.8,
-    },   
-
-    {
-      url: `${baseUrl}/services/lifestyle`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
+      priority: 0.9,
     },
+    ...servicePages,
 
-    {
-      url: `${baseUrl}/services/therapeutic-yoga`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-
-    {
-      url: `${baseUrl}/services/nutrition`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    
-    {
-      url: `${baseUrl}/services/behaviour-stress-mind`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-
-     {
-      url: `${baseUrl}/services/physician-consultation`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-
-     {
-      url: `${baseUrl}/services/traditional-therapies`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-
-    // ─────────────────────────────
-    // OUR APPROACH
-    // ─────────────────────────────
+    // APPROACH
     {
       url: `${baseUrl}/approach`,
       lastModified,
@@ -100,44 +84,62 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
 
-    // ─────────────────────────────
     // INFORMATION
-    // ─────────────────────────────
     {
       url: `${baseUrl}/about`,
       lastModified,
       changeFrequency: "monthly",
-      priority: 0.6,
+      priority: 0.7,
     },
-
     {
       url: `${baseUrl}/doctors`,
       lastModified,
       changeFrequency: "monthly",
-      priority: 0.6,
+      priority: 0.7,
     },
-
-     // ─────────────────────────────
-    // RESOURCES
-    // ─────────────────────────────
-
     {
-      url: `${baseUrl}/resources/articles`,
+      url: `${baseUrl}/resources`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+
+    // HEALTH GUIDES
+    {
+      url: `${baseUrl}/resources/health-guides`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    ...healthGuidePages,
+
+    // OTHER INDEXABLE PAGES
+    {
+      url: `${baseUrl}/archive`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/retreat-programs`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/volunteer`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/contact`,
       lastModified,
       changeFrequency: "monthly",
       priority: 0.6,
     },
 
-     {
-      url: `${baseUrl}/resources/research`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-
-    // ─────────────────────────────
-    // TOOLS / ENGAGEMENT
-    // ─────────────────────────────
+    // ASSESSMENT
     {
       url: `${baseUrl}/assessment`,
       lastModified,
@@ -145,16 +147,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
 
-    {
-      url: `${baseUrl}/archive`,
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-
-    // ─────────────────────────────
     // CONVERSION
-    // ─────────────────────────────
     {
       url: `${baseUrl}/book-appointment`,
       lastModified,
