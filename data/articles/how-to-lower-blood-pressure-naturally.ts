@@ -12,12 +12,12 @@ export const howToLowerBloodPressureNaturally: Article = {
   image: "/images/conditions/high-blood-pressure.webp",
   content: {
     introduction:
-      "Blood pressure can be influenced by eating patterns, sodium intake, physical activity, body weight, sleep, stress and other factors. Lifestyle changes can help prevent or treat elevated blood pressure, but they do not replace prescribed treatment when medication is needed.",
+      "If you are trying to improve your blood pressure through everyday habits, the useful question is not which single change works best, but which changes are realistic for you to maintain. Food choices, sodium, activity, sleep and stress can all be relevant, while some people also need prescribed treatment.",
     sections: [
       {
-        heading: "Start with the basics",
+        heading: "Build a practical blood-pressure routine",
         paragraphs: [
-          "The American Heart Association's current guidance includes healthy weight, a heart-healthy eating pattern, lower sodium intake, physical activity, stress management and appropriate alcohol use among lifestyle measures for blood pressure.",
+          "Instead of changing everything at once, choose one or two habits that fit your normal routine. A consistent eating pattern, regular activity, attention to sodium and a reliable sleep schedule are easier to assess when they are introduced as sustainable habits.",
         ],
       },
       {
@@ -27,9 +27,9 @@ export const howToLowerBloodPressureNaturally: Article = {
         ],
       },
       {
-        heading: "Move regularly",
+        heading: "Make activity part of the week",
         paragraphs: [
-          "Regular physical activity can help control blood pressure, weight and stress. Brisk walking is one practical moderate-intensity option for many adults.",
+          "Choose an activity you can repeat consistently rather than treating exercise as a short-term intervention. Walking is one option for many adults, but the appropriate amount and intensity depend on fitness, health and medical advice.",
         ],
       },
       {
@@ -46,15 +46,15 @@ export const howToLowerBloodPressureNaturally: Article = {
       },
     ],
     takeaway:
-      "Healthy eating, regular movement, appropriate weight management, lower sodium intake, good sleep and stress management can all contribute to healthier blood pressure.",
+      "There is no single natural fix for high blood pressure. Sustainable changes to everyday habits can support blood-pressure management, with medical treatment added when it is needed.",
     whenToSeekHelp:
       "If your blood pressure readings are repeatedly high, discuss them with a healthcare professional rather than relying on lifestyle changes alone.",
   },
   faqs: [
     {
-      question: "Can walking lower blood pressure?",
+      question: "How should I start changing my lifestyle?",
       answer:
-        "Regular moderate activity such as brisk walking can help control blood pressure and also support weight and stress management.",
+        "Start with one or two realistic changes, such as reducing high-sodium foods or establishing a regular activity routine, then build from there rather than changing everything at once.",
     },
     {
       question: "Should I stop blood-pressure medicine if lifestyle changes work?",
@@ -62,9 +62,9 @@ export const howToLowerBloodPressureNaturally: Article = {
         "No. Do not change or stop prescribed medication without discussing it with the clinician who prescribed it.",
     },
     {
-      question: "Can stress affect blood pressure?",
+      question: "How can I tell whether lifestyle changes are helping?",
       answer:
-        "Stress can affect blood pressure and behaviours that influence blood pressure. Stress management is included among recommended lifestyle measures.",
+        "Regular, correctly performed blood-pressure measurements can help you and your healthcare professional assess the pattern over time. Do not make medication changes based on home readings alone.",
     },
   ],
   sources: [

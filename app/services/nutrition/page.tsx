@@ -16,7 +16,7 @@ const nutrition: ServicePageConfig = {
     "Explore nutrition support in Faridabad for familiar Indian foods, dietary choices, meal routines and individual health needs.",
 
   heroDescription:
-    "Look at familiar meals, ingredients and eating patterns through a nutrition-focused lens.",
+    "Start with the meals you already eat and identify the nutrition question worth reviewing.",
 
   trust: [
     "Individual dietary guidance",
@@ -24,13 +24,13 @@ const nutrition: ServicePageConfig = {
   ],
 
   introEyebrow: "For Your Everyday Meals",
-  introTitle: "Make your existing food pattern the starting point.",
+  introTitle: "Start with what is already on your plate.",
   introParagraphs: [
-    "A typical day of meals can reveal practical details worth reviewing: timing, ingredients, portions, preferences and constraints. No advance diet change is required.",
+    "A usual day of meals gives useful context: what you eat, when you eat, how food is prepared and what constraints shape your choices. You do not need to change your diet before the discussion.",
   ],
 
   focusEyebrow: "Dietary Considerations",
-  focusTitle: "Food patterns and ingredients",
+  focusTitle: "What is already part of your diet",
   focusIntro:
     "Life Quality’s earlier guidance highlights these food and drink categories for discussion. They are reference points, not a universal meal plan or individual prescription.",
 
@@ -69,7 +69,7 @@ const nutrition: ServicePageConfig = {
 
   processTitle: "What to expect from the discussion",
   processIntro:
-    "Nutrition support is centred on how food is selected, prepared and fitted into daily life—not on adopting a one-size-fits-all menu.",
+    "The discussion stays close to your actual meals and routines rather than starting with a generic menu.",
 
   process: [
     {
@@ -161,7 +161,7 @@ const nutrition: ServicePageConfig = {
     },
   ],
 
-  finalTitle: "Explore a more workable approach to everyday meals.",
+  finalTitle: "Bring your usual meals into the conversation.",
   finalDescription:
     "Use your current food routine to identify nutrition questions for an individual review.",
 };

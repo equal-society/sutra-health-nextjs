@@ -95,12 +95,12 @@ export const howToManageStress: Article = {
 
 
       {
-        heading: "Can breathing and mindfulness help with stress?",
+        heading: "Use brief pauses to interrupt stressful periods",
 
         paragraphs: [
-          "Breathing and mindfulness practices can provide a structured opportunity to slow down and pay attention to the present moment.",
+          "A short pause can create a transition between demanding parts of the day. Comfortable breathing, stepping away from a screen or spending a few quiet minutes outside are simple options.",
 
-          "For some people, a few minutes of comfortable breathing or mindful attention can become a useful part of a wider stress-management routine. The practice should feel manageable rather than becoming another source of pressure.",
+          "The aim is not to eliminate stress immediately, but to create small opportunities for recovery that you can repeat without adding another demanding task to your schedule.",
         ],
       },
 
@@ -171,17 +171,10 @@ export const howToManageStress: Article = {
     },
 
     {
-      question: "Can yoga help with stress?",
+      question: "What can I do during a stressful moment?",
 
       answer:
-        "Yoga combines movement, breathing and focused attention. It may be included as part of a broader approach to stress management when the practice is appropriate for the individual.",
-    },
-
-    {
-      question: "Can breathing exercises help with stress?",
-
-      answer:
-        "Comfortable, slow breathing can provide an opportunity to pause and focus attention. It can be used as one component of a broader stress-management routine.",
+        "A brief pause, comfortable breathing, a short walk or stepping away from the immediate task can create space to reset. Choose an option that is safe and realistic in your situation.",
     },
 
     {

@@ -6,85 +6,74 @@ export const womensHealth: Condition = {
   title: "Women's Health",
 
   shortDescription:
-    "Focused on PCOS and menopause-related symptoms — the two areas where lifestyle and yoga interventions have real, specific clinical evidence.",
+    "A focused guide to the areas currently covered here: PCOS and menopause-related symptoms, with lifestyle evidence kept alongside appropriate medical care.",
 
   introduction:
-    "\"Women's health\" covers a huge range of things, and we'd rather be specific than vague. Our lifestyle medicine approach has real evidence behind it in two areas particularly: PCOS (polycystic ovary syndrome) and menopause-related symptoms. For pregnancy care, gynecological conditions, or anything requiring obstetric or gynecological medical management, please see an OB-GYN — that's outside what a lifestyle medicine clinic should be treating.",
+    "Women’s health covers many medical needs. This page deliberately focuses on PCOS and menopause-related symptoms because those are the areas supported by the evidence and scope represented on this site. Pregnancy care and gynecological conditions requiring medical management belong with the appropriate specialist.",
 
   concerns: [
-    "PCOS (polycystic ovary syndrome) and insulin resistance",
-    "Irregular cycles connected to PCOS",
-    "Menopause-related symptoms (hot flashes, mood, sleep disruption)",
-    "Wanting lifestyle support alongside gynecological or endocrine care",
-    "Uncertainty about which lifestyle changes are actually evidence-backed for these conditions specifically",
+    "PCOS and questions about insulin resistance or lifestyle support",
+    "Irregular cycles associated with PCOS",
+    "Menopause-related symptoms affecting mood or sleep",
+    "Questions about structured yoga or mindfulness alongside medical care",
+    "Uncertainty about which lifestyle practices have condition-specific evidence",
   ],
 
   lifestyleFactors: [
     {
-      title: "Structured yoga practice (for PCOS)",
-      description:
-        "Specifically studied for its effect on insulin resistance in PCOS — a different mechanism than general fitness.",
+      title: "PCOS and structured movement",
+      description: "Research on PCOS includes structured yoga interventions, including outcomes related to insulin resistance and androgen levels.",
     },
     {
-      title: "Dietary pattern (for PCOS)",
-      description:
-        "Insulin resistance in PCOS responds to the same dietary-pattern principles covered on our Nutrition page.",
+      title: "Dietary pattern",
+      description: "Nutrition may be relevant to metabolic health in PCOS and should be considered in the context of the person’s broader clinical picture.",
     },
     {
-      title: "Mindfulness-based practice (for menopause)",
-      description:
-        "Structured mindfulness programs have trial evidence specifically for menopausal symptom reduction.",
+      title: "Mindfulness for menopause",
+      description: "Structured mindfulness programmes have been studied for menopausal symptoms, including mood-related outcomes.",
     },
     {
       title: "Sleep",
-      description:
-        "Sleep disruption is common in both PCOS and menopause, and is addressed as part of the broader lifestyle plan.",
+      description: "Sleep disruption can accompany both PCOS and menopause and may be worth addressing as part of broader support.",
     },
   ],
 
   sections: [
     {
-      title: "PCOS: yoga ranked highest among exercise types for insulin resistance",
+      title: "Keep the scope specific",
       content: [
-        "A Bayesian network meta-analysis of 19 randomized controlled trials (808 women with PCOS) compared six exercise approaches — yoga, moderate-intensity training, high-intensity interval training, resistance training, combined training, and no-exercise controls — for their effect on insulin resistance (HOMA-IR) and testosterone levels.",
-        "Yoga ranked highest of all six approaches for reducing insulin resistance (SUCRA = 90.73%, meaning it outperformed the other approaches most consistently across the pooled trials), ahead of high-intensity interval training, which ranked second. This is a genuinely strong, comparative finding — not just 'yoga helps a little,' but yoga outperforming other studied exercise types specifically for this outcome.",
-        "Separately, a randomized controlled trial found regular mindful yoga practice improved androgen levels in women with PCOS, addressing a core hormonal feature of the condition rather than just a downstream symptom.",
+        "This page is intentionally narrower than the term “women’s health” suggests. The current evidence and service scope represented here concern PCOS and menopause-related symptoms.",
+        "Pregnancy care, gynecological diagnosis and conditions requiring obstetric or gynecological management should be handled by the relevant medical specialist.",
       ],
     },
     {
-      title: "Why insulin resistance matters so much in PCOS specifically",
+      title: "What the selected evidence shows",
       content: [
-        "Insulin resistance is considered a hallmark driver of PCOS, independent of body weight, and is linked to the hormonal, reproductive, and metabolic features of the condition. This is exactly why the yoga research here connects directly to our Diabetes & Blood Sugar approach — PCOS and metabolic health share real physiological overlap, not just a coincidental lifestyle connection.",
+        "The research represented on this page includes studies of structured yoga in PCOS and mindfulness-based practice for menopause-related symptoms. The evidence section provides the selected studies and their sources.",
+        "These findings support specific adjunctive practices; they do not mean that yoga, nutrition or mindfulness can replace endocrine, gynecological or other medical care.",
       ],
     },
     {
-      title: "Menopause: mindfulness with measured symptom reduction",
+      title: "Choose support around the clinical need",
       content: [
-        "A randomized controlled trial comparing an 8-week Mindfulness-Based Stress Reduction (MBSR) program against menopause education found both groups improved, but the MBSR group showed a significantly greater reduction specifically in anxiety and depression symptom scores related to menopause by 8 months.",
-        "This connects directly to the broader mindfulness evidence on our Breath & Mindfulness page — the same structured approach, applied specifically to menopausal symptoms.",
-      ],
-    },
-    {
-      title: "How Sutra Health builds a plan around this",
-      content: [
-        "For PCOS, we build a plan around structured yoga specifically informed by the insulin-resistance research above, combined with dietary pattern guidance. For menopause-related symptoms, we use structured mindfulness practice with a real trial basis.",
-        "This is not a substitute for gynecological or endocrine medical care. PCOS diagnosis and hormonal management should involve your treating physician; we coordinate with that care rather than replace it.",
+        "For PCOS, the useful discussion may involve metabolic health, nutrition and appropriate movement. For menopause-related symptoms, sleep, stress and structured mindfulness may be relevant.",
+        "The right starting point depends on the individual symptoms, diagnosis, current treatment and questions they want to discuss with their healthcare team.",
       ],
     },
   ],
 
   approach: [
-    "Structured therapeutic yoga (PCOS-specific)",
-    "Dietary pattern guidance",
-    "Mindfulness-based practice (menopause-specific)",
-    "Sleep support",
+    "Keep the underlying diagnosis and specialist care central",
+    "Use condition-specific evidence rather than generic women’s-health claims",
+    "Review nutrition and movement in the context of PCOS when relevant",
+    "Use structured mindfulness and sleep support for appropriate menopause-related concerns",
   ],
 
   support: [
-    "PCOS-informed yoga practice",
-    "Nutrition counselling for insulin resistance",
-    "Structured mindfulness practice for menopausal symptoms",
-    "Coordination with your gynecologist or endocrinologist",
+    "Nutrition counselling where metabolic or dietary questions are relevant",
+    "Therapeutic yoga and movement for appropriate PCOS-related support",
+    "Behaviour and stress support for relevant menopause-related concerns",
+    "Coordination with the treating gynecologist, endocrinologist or other clinician",
   ],
 
   evidence: [
@@ -110,34 +99,25 @@ export const womensHealth: Condition = {
 
   faqs: [
     {
-      question: "Can yoga help with PCOS?",
-      answer:
-        "There's genuinely strong comparative evidence for this. A network meta-analysis of 19 randomized trials (808 women with PCOS) found yoga ranked highest among six studied exercise types for reducing insulin resistance — a core driver of PCOS. A separate trial found yoga improved androgen levels specifically. This is one of the stronger evidence bases on our whole site.",
+      question: "What women’s health concerns are covered here?",
+      answer: "The current scope is focused on PCOS and menopause-related symptoms because these are the areas represented by the evidence and content on this site.",
     },
     {
-      question: "Can yoga or lifestyle changes help with menopause symptoms?",
-      answer:
-        "Structured mindfulness practice has trial evidence here specifically. An 8-week MBSR program showed significantly greater reductions in anxiety and depression symptoms related to menopause compared to a menopause-education program.",
+      question: "Can yoga help with PCOS?",
+      answer: "The selected research includes clinical studies of structured yoga in PCOS, including outcomes related to insulin resistance and androgen levels. It should be considered alongside appropriate medical care.",
     },
     {
       question: "Do you provide pregnancy or gynecological care?",
-      answer:
-        "No. We're a lifestyle medicine clinic, not an obstetric or gynecological practice. For pregnancy care or gynecological conditions requiring medical management, please see an OB-GYN. We focus specifically on PCOS and menopause-related lifestyle support, alongside your existing medical care.",
+      answer: "No. Pregnancy care and gynecological conditions requiring medical management should be handled by the appropriate obstetric or gynecological specialist.",
     },
   ],
 
-  relatedConditions: ["diabetes-blood-sugar", "weight-management","high-blood-pressure"],
+  relatedConditions: ["diabetes-blood-sugar", "weight-management", "high-blood-pressure"],
 
-  // JUDGMENT CALL — flag for client review: this link previously pointed to
-  // "/approach/breath-mindfulness", which doesn't correspond to any of the 5
-  // established service pages. Retargeted to Behaviour, Stress & Mind as the
-  // closest existing match (mindfulness/stress fits there; breath practices
-  // are also covered under Therapeutic Yoga's focus areas). Confirm this is
-  // the right destination, or build a dedicated page if one is planned.
   internalLinks: [
     { label: "Diabetes & Blood Sugar", href: "/conditions/diabetes-blood-sugar" },
-    { label: "Breath & Mindfulness", href: "/what-we-do/behaviour-stress-mind" },
-    { label: "Therapeutic Yoga & Movement", href: "/what-we-do/therapeutic-yoga" },
-    { label: "Nutrition", href: "/what-we-do/nutrition" },
+    { label: "Behaviour, Stress & Mind", href: "/services/behaviour-stress-mind" },
+    { label: "Therapeutic Yoga & Movement", href: "/services/therapeutic-yoga" },
+    { label: "Nutrition", href: "/services/nutrition" },
   ],
 };

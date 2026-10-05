@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
   description:
 
-    "Explore Dr. Rakesh Sarwal’s professional background, areas of academic work and selected publications associated with Sutra Health.",
+    "Meet the practitioners and professionals represented by Sutra Health, including their qualifications, roles and areas of work.",
 
   alternates: {
 
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
     description:
 
-      "Professional background and selected academic work associated with Sutra Health.",
+      "Additional practitioners represented by Sutra Health and explore their professional backgrounds and areas of work.",
 
     url: "https://lifequality.org.in/doctors",
 
@@ -50,7 +50,7 @@ const experts = [
 
     description:
 
-      "Public Health physician, Professor of Community Medicine and Head of the Integrated Health Clinic at ESIC Medical College & Hospital, Faridabad. His academic work spans lifestyle medicine, nutrition, yoga, health systems for universal health coverage and public health policy.",
+      "Public Health physician and Professor of Community Medicine, with academic and clinical work connected to the Integrated Health Clinic at ESIC Medical College & Hospital, Faridabad. His listed areas of work include lifestyle medicine, nutrition, yoga, health systems and public health policy.",
 
     image: "/images/doctor.webp",
 
@@ -68,7 +68,7 @@ const experts = [
 
     description:
 
-      "30+ years experience in wellness, healthy diet, yoga and natural living — inspiring communities toward sustainable health.",
+      "More than 30 years of experience in wellness, healthy diet, yoga and natural living.",
 
     image: "/images/doctor-icon.webp",
 
@@ -84,7 +84,7 @@ const experts = [
 
     description:
 
-      "Experienced healthcare professional with a focus on maternal and family healthcare delivery.",
+      "Healthcare professional with a focus on maternal and family healthcare delivery.",
 
     image: "/images/doctor-icon.webp",
 
@@ -148,15 +148,16 @@ export default function DoctorsPage() {
             xl:text-[82px]
           "
         >
-          Care guided by
+          The people who
+
           <br />
           <span className="text-[#D5C9AE]">
-            experience, evidence and understanding.
+            shape the work.
           </span>
         </h1>
 
         <p className="mt-7 max-w-[680px] text-[16px] leading-8 text-white/85 sm:mt-8 sm:text-[18px] sm:leading-9">
-          Professional background, areas of work and selected academic publications.
+          Meet the practitioners and professionals represented by Sutra Health, with their roles and areas of work in one place.
         </p>
       </div>
     </div>
@@ -199,7 +200,8 @@ export default function DoctorsPage() {
 
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
 
-                Medical & research leadership
+                Medical &amp; academic leadership
+
 
               </p>
 
@@ -331,19 +333,18 @@ export default function DoctorsPage() {
 
             <h2 className="mt-4 font-serif text-[38px] font-medium leading-[1.03] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[50px]">
 
-              Meet the people
+              Additional practitioners
 
               <br />
 
-              <span className="text-[var(--sutra-teal)]">behind your care.</span>
+              <span className="text-[var(--sutra-teal)]">represented here.</span>
 
             </h2>
 
             <p className="mt-5 max-w-[620px] text-[15px] leading-8 text-[var(--sutra-muted)]">
 
-              The team brings together medical and wellness experience across
+            Two additional profiles are included here alongside the featured academic and medical profile.
 
-              different aspects of health.
 
             </p>
 
@@ -397,7 +398,7 @@ export default function DoctorsPage() {
 
                     src={expert.image}
 
-                    alt=""
+                    alt={expert.name}
 
                     fill
 
@@ -468,8 +469,8 @@ export default function DoctorsPage() {
               </p>
 
               <h2 className="mt-4 font-serif text-[38px] font-medium leading-[1.03] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[50px]">
+                Related information
 
-                Explore care and consultation details.
 
               </h2>
 
@@ -523,17 +524,18 @@ export default function DoctorsPage() {
 
             <h2 className="mt-4 font-serif text-[40px] font-medium leading-[1.03] tracking-[-0.035em] text-[var(--sutra-porcelain)] sm:text-[52px]">
 
-              Understand your health
+              If you want to discuss a health concern,
+
 
               <br className="hidden sm:block" />
 
-              with the right guidance.
+              use the appointment pathway.
 
             </h2>
 
             <p className=" mt-5 max-w-xl text-[14px] leading-7 text-[var(--sutra-pale-sage)] sm:text-[15px] sm:leading-8">
 
-              Use the appointment page to review the available next step.
+              Review the appointment process and available options before deciding on your next step.
 
             </p>
 

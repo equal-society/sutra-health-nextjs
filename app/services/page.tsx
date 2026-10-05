@@ -73,9 +73,9 @@ const faqs = [
       "Online consultations are listed as an option. Use the booking page to ask about availability and the best format for your appointment.",
   },
   {
-    question: "Are traditional therapies suitable for everyone?",
+    question: "How do I know when I should start with a physician?",
     answer:
-      "Not always. Suitability depends on your health, symptoms and current treatment. Discuss this with the team before starting a therapy.",
+      "A physician consultation is a useful starting point when you have symptoms, a medical concern, questions about current treatment or uncertainty about which service is appropriate.",
   },
 ];
 
@@ -84,13 +84,13 @@ const siteUrl = "https://lifequality.org.in";
 export const metadata = {
   title: "Health Services | Sutra Health",
   description:
-    "Explore physician consultation, lifestyle medicine, nutrition, therapeutic yoga, stress support and traditional therapies at Sutra Health.",
+    "Explore physician consultation, lifestyle medicine, nutrition, therapeutic yoga and behaviour & stress support at Sutra Health.",
   alternates: { canonical: `${siteUrl}/services` },
   robots: { index: true, follow: true },
   openGraph: {
     title: "Health Services | Sutra Health",
     description:
-      "Explore the health services available at Sutra Health.",
+      "Compare the health services available at Sutra Health and choose where to begin.",
     url: `${siteUrl}/services`,
     siteName: "Sutra Health",
     type: "website",
@@ -106,7 +106,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Health Services | Sutra Health",
-    description: "Explore the health services available at Sutra Health.",
+    description: "Compare the health services available at Sutra Health and choose where to begin.",
     images: [`${siteUrl}/images/hero-desktop.webp`],
   },
 };
@@ -182,12 +182,12 @@ export default function ServicesPage() {
               id="services-hero-title"
               className="mt-4 max-w-3xl font-[var(--font-serif)] text-[2.65rem] font-medium leading-[1.04] tracking-[-0.035em] text-white sm:mt-5 sm:text-6xl lg:text-7xl"
             >
-              Care that starts with listening.
+              Choose the kind of support you want to explore.
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-white/90 sm:mt-6 sm:text-lg sm:leading-8">
-              Tell us what is concerning you and what support you are looking
-              for. Explore medical consultation and practical support for
-              lifestyle, nutrition, movement and wellbeing.
+              Start with the health question you want to discuss. Review the
+              services below to understand what each one is designed to help
+              you explore.
             </p>
             <div className="mt-7 flex flex-col items-start gap-4 sm:mt-8 sm:flex-row sm:items-center sm:gap-6">
               <Link
@@ -219,7 +219,7 @@ export default function ServicesPage() {
             </h2>
           </div>
           <p className="mt-5 max-w-3xl text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
-            Each service has a distinct role. Review its focus before choosing; a physician consultation can help clarify which options fit your situation.
+            Each service answers a different need. Start with the option that matches the question you want to explore; a physician consultation can help when you are unsure where to begin.
           </p>
 
           <div className="mt-9 grid gap-4 sm:mt-12 lg:grid-cols-2 lg:gap-5">
@@ -279,10 +279,10 @@ export default function ServicesPage() {
                 id="health-areas-title"
                 className="mt-3 max-w-2xl font-[var(--font-serif)] text-3xl font-medium leading-[1.12] tracking-[-0.02em] sm:text-5xl"
               >
-                Find information about your health concern.
+                Browse the health concerns covered on the site.
               </h2>
               <p className="mt-4 max-w-2xl text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
-                Browse condition guides for focused information on symptoms, contributing factors, and topics to discuss with a healthcare professional.
+                These guides provide condition-specific information. Use them to understand a concern before deciding which service or clinical question to discuss.
               </p>
             </div>
             <Link

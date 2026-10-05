@@ -12,7 +12,7 @@ export const whatIsPrediabetesAndCanItBeReversed: Article = {
   image: "/images/conditions/metabolic-health.webp",
   content: {
     introduction:
-      "Prediabetes means blood glucose is higher than the usual range but not yet in the range used to diagnose type 2 diabetes. It is an important opportunity to identify risk early and make changes that can lower the chance of progressing to type 2 diabetes.",
+      "Prediabetes describes blood glucose levels that are higher than usual but below the diagnostic range for type 2 diabetes. The important practical step is to recognise it early, confirm what the result means and discuss follow-up rather than treating the label as a diagnosis of diabetes.",
     sections: [
       {
         heading: "What is prediabetes?",
@@ -29,15 +29,15 @@ export const whatIsPrediabetesAndCanItBeReversed: Article = {
         ],
       },
       {
-        heading: "What lifestyle changes can help?",
+        heading: "What should you do after a prediabetes result?",
         paragraphs: [
-          "Evidence-based prevention programmes focus on sustainable changes rather than extreme diets. Regular physical activity, healthier eating patterns and modest weight loss when appropriate are central components.",
+          "A useful next step is to understand which test showed the abnormal result, discuss your individual risk factors and agree on follow-up with a healthcare professional. Lifestyle changes can then be tailored to your circumstances rather than based on a one-size-fits-all diet.",
         ],
         bullets: [
-          "Aim for regular moderate physical activity.",
-          "Build meals around vegetables, pulses, whole grains and other nutritious foods.",
-          "Reduce excess calories and highly processed foods where appropriate.",
-          "If you have overweight, discuss a realistic weight goal with your healthcare professional.",
+          "Confirm which blood test was used.",
+          "Discuss your individual risk factors.",
+          "Choose sustainable changes to activity and eating patterns.",
+          "Consider weight management if it is appropriate for you.",
           "Keep follow-up testing as recommended.",
         ],
       },
@@ -55,7 +55,7 @@ export const whatIsPrediabetesAndCanItBeReversed: Article = {
       },
     ],
     takeaway:
-      "Prediabetes is a signal to act early. Sustainable changes in activity, eating patterns and weight when appropriate can help reduce the risk of type 2 diabetes.",
+      "Prediabetes is a point at which early assessment and practical changes can reduce future risk. The right plan depends on the person's test results, risk factors and circumstances.",
     whenToSeekHelp:
       "Discuss blood glucose testing and follow-up with a qualified healthcare professional, especially if you have risk factors or previous abnormal results.",
   },

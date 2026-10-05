@@ -7,19 +7,19 @@ export const migraineHeadacheSubpages: ConditionSubpage[] = [
     parentSlug: "migraine-headache",
     question: "Can yoga replace migraine medication?",
     shortAnswer:
-      "Not entirely, but the evidence for reducing reliance on medication is genuinely strong. In a randomized controlled trial of 160 patients (the CONTAIN trial, published in Neurology), patients practicing yoga alongside standard medical therapy reduced their medication use to roughly half their usual dose, while achieving better outcomes than medication alone. This was studied as an addition to medical care, not a replacement.",
+      "No. The trial described on this site studied yoga alongside standard medical therapy, not instead of it. If yoga changes your headache frequency, intensity or medication needs, that information can be reviewed with the clinician managing your migraine treatment.",
     detail: [
       {
-        title: "What the trial actually measured",
+        title: "What the trial actually compared",
         content: [
-          "Patients continued their prescribed medical therapy throughout the trial — the yoga was added on top, and pill count reduction was tracked as one of several outcomes, alongside headache frequency, intensity, and disability scores.",
-          "This means the roughly 50% reduction in medication use happened within a structure of continued medical supervision, not instead of it — an important distinction if you're considering this for yourself.",
+          "The CONTAIN trial followed 160 patients who continued standard medical therapy while adding a yoga programme. Medication use was one of the outcomes measured, alongside headache frequency, intensity and disability.",
+          "The reported reduction in medication use therefore occurred within continued medical care. It should not be interpreted as evidence that people can safely replace prescribed migraine treatment with yoga on their own.",
         ],
       },
       {
-        title: "Why this still needs your doctor",
+        title: "Use improvement as information, not as a reason to self-adjust",
         content: [
-          "Migraine medication, particularly preventive medication, is adjusted based on your headache pattern and response over time. If yoga is helping reduce your frequency or intensity, that's valuable information to bring to your neurologist or physician — who can then appropriately reassess your treatment plan, rather than adjusting it yourself.",
+          "If your headaches become less frequent or severe after adding yoga, keep track of that change and discuss it with your physician or neurologist. Any medication adjustment should follow a clinical review of the pattern over time.",
         ],
       },
     ],
@@ -30,21 +30,19 @@ export const migraineHeadacheSubpages: ConditionSubpage[] = [
     parentSlug: "migraine-headache",
     question: "Which yoga poses help relieve migraine?",
     shortAnswer:
-      "Gentle, restorative poses that release tension in the neck, shoulders, and upper back tend to help most — including Child's Pose (Balasana), Legs-Up-the-Wall (Viparita Karani), Cat-Cow (Marjariasana/Bitilasana), and Corpse Pose (Savasana). These are typically combined with slow, deep breathing rather than practiced as isolated stretches.",
+      "Gentle, restorative positions that reduce physical tension may be more suitable for people with migraine than demanding sequences. Examples in the source material include Child's Pose, Legs-Up-the-Wall, Cat-Cow and Savasana, often paired with slow breathing.",
     detail: [
       {
-        title: "Poses commonly used for migraine relief",
+        title: "Gentle options to consider",
         content: [
-          "Child's Pose (Balasana) — releases tension in the neck and shoulders; resting the forehead on the mat can create a calming pressure response some people find soothing during an attack.",
-          "Legs-Up-the-Wall (Viparita Karani) — a passive inversion that improves venous drainage and shifts the nervous system toward a calmer state within minutes.",
-          "Cat-Cow (Marjariasana/Bitilasana) — improves circulation and gently stretches the neck and spine.",
-          "Corpse Pose (Savasana) — allows the mind and body to fully rest, often used at the end of a session or during an attack itself.",
+          "Child's Pose can provide a supported resting position, Legs-Up-the-Wall is a passive posture, Cat-Cow uses gentle spinal movement, and Savasana provides a period of rest. The right choice depends on whether movement feels comfortable at that point in a migraine episode.",
+          "These poses should not be treated as a guaranteed way to stop an attack. Migraine triggers and responses vary considerably between people.",
         ],
       },
       {
-        title: "Why breath matters as much as the pose",
+        title: "Breathing can be part of the practice",
         content: [
-          "Slow, deep breathing techniques — particularly alternate nostril breathing (Nadi Shodhana) and three-part breath (Dirgha Pranayama) — are specifically chosen for migraine because they shift the nervous system away from the sympathetic (stress) response and toward the parasympathetic (rest) response, which is the mechanism most consistently linked to migraine relief in the research.",
+          "The source material also describes slow breathing practices such as alternate-nostril breathing and three-part breathing. Keep the practice comfortable and avoid forcing the breath, especially if a technique feels unpleasant during an episode.",
         ],
       },
     ],
@@ -55,20 +53,18 @@ export const migraineHeadacheSubpages: ConditionSubpage[] = [
     parentSlug: "migraine-headache",
     question: "Which yoga styles should be avoided with migraine?",
     shortAnswer:
-      "Heated styles (hot yoga, Bikram), vigorous or fast-paced styles (Ashtanga, Power Yoga), and classes involving extreme or unfamiliar postures are generally avoided with migraine — some patients report these can actually trigger an attack rather than relieve symptoms.",
+      "Heated classes, vigorous fast-paced practice and unfamiliar extreme postures may be poor choices for someone whose migraine is triggered by heat, dehydration or physical strain. A gentle, restorative format is a more cautious starting point.",
     detail: [
       {
-        title: "Why heat and intensity are a specific concern for migraine",
+        title: "Why class intensity can matter",
         content: [
-          "Unlike most conditions on this site, migraine is one where the wrong type of exercise can genuinely trigger the problem you're trying to manage. Heat exposure, dehydration risk, and the physical strain of vigorous or unfamiliar postures have all been reported by patients as migraine triggers.",
-          "This is different from arthritis or blood pressure, where caution is mainly about specific poses — for migraine, the overall style and intensity of the class matters as much as any individual posture.",
+          "Hot yoga, Bikram-style practice, Power Yoga and other vigorous formats combine factors that some people with migraine identify as triggers, including heat, dehydration and high physical demand. Individual triggers still vary, so there is no single style that must be avoided by everyone.",
         ],
       },
       {
-        title: "What to look for instead",
+        title: "A lower-demand alternative",
         content: [
-          "Gentle Hatha yoga, restorative yoga (using props to support longer, passive holds), and yoga nidra are the styles most consistently recommended for migraine specifically.",
-          "If attending a class, telling your instructor about your migraine history lets them suggest alternatives for anything that feels uncomfortable — this matters more here than in most other conditions, since triggers are highly individual.",
+          "Gentle Hatha, restorative yoga and yoga nidra are described in the source material as more suitable options for migraine. If you attend a class, tell the instructor about your migraine history and choose modifications that keep the practice comfortable.",
         ],
       },
     ],

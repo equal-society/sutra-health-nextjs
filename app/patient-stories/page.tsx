@@ -64,12 +64,11 @@ export default function PatientStoriesPage() {
               id="stories-title"
               className="mt-3 max-w-[800px] font-serif text-[40px] leading-[1.08] tracking-[-0.035em] text-[#202522] sm:text-[60px]"
             >
-              Stories from the Sutra Health community.
+              Experiences shared by visitors and patients.
             </h1>
 
             <p className="mt-5 max-w-[650px] text-base leading-8 text-[#65736D] sm:text-lg">
-              Hear from people who have shared their experiences with
-              our consultations, yoga sessions and wellness approach.
+              Read the experiences currently published on this site. They cover consultations, Yoga sessions and stays at Sutra Health.
             </p>
 
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

@@ -6,86 +6,74 @@ export const migraineHeadache: Condition = {
   title: "Migraine & Headache",
 
   shortDescription:
-    "Yoga and lifestyle support for migraine, backed by a large Indian randomized controlled trial published in Neurology, alongside your medical care.",
+    "A practical guide to migraine-related lifestyle factors, including sleep, regular meals, hydration, stress and the evidence on yoga as an adjunct to treatment.",
 
   introduction:
-    "Migraine has genuine, well-studied non-drug support options — yoga among them, with some of the strongest evidence coming from a large trial conducted right here in India. We build a lifestyle and yoga plan around what the research actually supports, coordinated with your neurologist or physician, not as a replacement for medical care.",
+    "Migraine is a neurological condition, not simply a stress or lifestyle problem. Lifestyle factors can influence patterns and day-to-day management, while diagnosis and appropriate treatment remain important.",
 
   concerns: [
-    "Recurring migraine attacks",
-    "Frequent tension-type headaches",
-    "Wanting to reduce reliance on medication (always in consultation with your doctor)",
-    "Stress or sleep patterns that seem connected to headache frequency",
-    "Uncertainty about which yoga is actually safe for migraine, since some exercise can trigger attacks",
-    "Wanting evidence-based support, not just generic relaxation advice",
+    "Recurring migraine attacks or headache days",
+    "Irregular sleep or meals around headache episodes",
+    "Stress or routines that appear to influence symptoms",
+    "Questions about yoga or movement during migraine care",
+    "Wanting to understand when lifestyle support is appropriate alongside medical treatment",
   ],
 
   lifestyleFactors: [
     {
       title: "Sleep consistency",
-      description:
-        "Irregular sleep is a commonly reported migraine trigger; consistent sleep timing is a foundational lifestyle factor.",
+      description: "Regular sleep and wake times can be worth reviewing when attacks appear connected with disrupted sleep or changing routines.",
     },
     {
-      title: "Gentle, specific yoga practice",
-      description:
-        "The style and intensity of yoga matters significantly here — gentle, breath-focused practice helps; intense or heated practice can trigger attacks.",
+      title: "Meal and hydration patterns",
+      description: "Skipping meals or inconsistent hydration may be relevant for some people. Individual triggers vary, so tracking patterns can be more useful than assuming one trigger applies to everyone.",
     },
     {
-      title: "Stress and nervous system regulation",
-      description:
-        "Migraine and stress are closely linked; practices that shift the nervous system toward rest-and-digest are central to the evidence base.",
+      title: "Stress and nervous-system load",
+      description: "Stress can be relevant to migraine patterns, but migraine should not be reduced to stress alone.",
     },
     {
-      title: "Hydration and meal regularity",
-      description:
-        "Skipped meals and dehydration are commonly reported individual triggers, worth tracking alongside other lifestyle factors.",
+      title: "Gentle, appropriate movement",
+      description: "Movement may be useful between attacks for some people, while intensity and specific practices may need adjustment around symptoms.",
     },
   ],
 
   sections: [
     {
-      title: "What a large Indian clinical trial found",
+      title: "Understand migraine before treating it as a lifestyle issue",
       content: [
-        "The CONTAIN trial — a randomized controlled trial conducted at a tertiary academic hospital in New Delhi, published in the journal Neurology — studied 160 patients with episodic migraine over 3 months. Patients who received yoga alongside standard medical therapy showed significantly greater reductions in headache frequency, headache intensity, and disability (measured by the Headache Impact Test and Migraine Disability Assessment) compared to medical therapy alone.",
-        "Notably, patients in the yoga group were also able to reduce their medication use substantially — reported at roughly half their usual dose — while achieving better outcomes, though this was a secondary finding within a trial designed around yoga as an addition to care, not a replacement.",
+        "Recurring headaches have different causes, and migraine has specific diagnostic features. New, severe or changing headaches should be medically assessed rather than attributed to lifestyle factors.",
+        "For people with an established migraine diagnosis, lifestyle review can complement — but not replace — appropriate medical treatment.",
       ],
     },
     {
-      title: "This finding has been replicated, not just a one-off result",
+      title: "What the yoga research shows",
       content: [
-        "A separate randomized controlled trial of patients with migraine without aura found significant reductions in headache frequency, intensity, and pain scores after 3 months of yoga therapy compared to self-care alone, alongside improvements in anxiety and depression scores.",
-        "Reviews covering the broader evidence base describe yoga as having a grade B recommendation as an adjunct migraine-preventive treatment, based on multiple systematic reviews and randomized trials.",
+        "Clinical trials have studied yoga as an add-on to medical therapy for migraine. The evidence section summarises the selected trials and reviews without turning those findings into a promise of medication reduction or symptom elimination.",
+        "The specific question pages can address yoga practice choices in more detail; this parent page keeps the focus on migraine management as a whole.",
       ],
     },
     {
-      title: "Why the type of yoga matters more here than for most conditions",
+      title: "Look for patterns that are useful to you",
       content: [
-        "This is an important distinction from most conditions on this site: not all yoga is safe for migraine, and some practices can actually trigger an attack. Neurologists specializing in migraine generally advise avoiding heated (Bikram/hot), vigorous (Ashtanga, Power), or extreme-posture styles — these have been reported by patients to trigger migraine rather than relieve it.",
-        "Gentle, breath-focused styles — Hatha, restorative yoga, yoga nidra — are what the clinical evidence and specialist guidance both point toward. See the linked pages below for specific poses that help and styles to avoid.",
-      ],
-    },
-    {
-      title: "How Sutra Health builds a plan around this",
-      content: [
-        "We build a gentle, breath-focused yoga and lifestyle plan specifically suited to migraine — not a generic yoga routine — coordinated with your neurologist or physician, particularly around medication.",
-        "New, severe, or changing headache patterns need medical evaluation before starting any lifestyle program; this isn't a substitute for that assessment.",
+        "Sleep regularity, meal timing, hydration, stress and activity are reasonable areas to observe when looking for patterns. A headache diary can help separate recurring associations from assumptions.",
+        "The most useful lifestyle change is one that is safe, practical and compatible with the person’s migraine treatment plan.",
       ],
     },
   ],
 
   approach: [
-    "Gentle, breath-focused yoga (not intense or heated styles)",
-    "Sleep-routine consistency",
-    "Stress and nervous-system regulation",
-    "Hydration and meal-timing awareness",
+    "Keep migraine diagnosis and medical treatment at the centre",
+    "Review sleep, meals, hydration and stress patterns",
+    "Choose movement appropriate to the person and current symptoms",
+    "Use yoga as an adjunct rather than a replacement for preventive or acute treatment",
   ],
 
   support: [
-    "Personalized, migraine-appropriate yoga practice",
-    "Pranayama and nervous-system regulation techniques",
-    "Sleep and routine consistency guidance",
-    "Coordination with your neurologist or physician",
+    "Therapeutic yoga and movement where appropriate",
+    "Behaviour and stress support for relevant routines",
+    "Lifestyle guidance around sleep, meals and activity",
+    "Physician consultation for diagnosis, changing symptoms or treatment questions",
   ],
 
   evidence: [
@@ -110,38 +98,24 @@ export const migraineHeadache: Condition = {
 
   faqs: [
     {
-      question: "Can yoga help with migraine?",
-      answer:
-        "Yes. A large randomized controlled trial conducted in New Delhi (published in Neurology) found yoga added to standard medical therapy significantly reduced headache frequency, intensity, and disability compared to medication alone. This has been supported by additional randomized trials.",
+      question: "Can lifestyle changes help with migraine?",
+      answer: "Lifestyle measures can be part of migraine management, particularly around regular sleep, meals, hydration and activity. Individual triggers and responses vary.",
     },
     {
       question: "Can yoga replace migraine medication?",
-      answer:
-        "Not entirely, but it can meaningfully reduce reliance on it. In the largest relevant trial, patients practicing yoga alongside medical care were able to reduce their medication use by roughly half while achieving better outcomes than medication alone — but this was alongside continued medical care, not instead of it. Any medication changes should go through your doctor.",
+      answer: "No. Research has generally examined yoga as an adjunct to medical treatment. Medication decisions should be made with the treating clinician.",
     },
     {
-      question: "Is all yoga safe for migraine?",
-      answer:
-        "No — this is genuinely different from most conditions. Heated, vigorous, or extreme-posture styles (hot yoga, Ashtanga, Power yoga) have been reported to trigger migraine attacks in some people. Gentle, breath-focused styles are what the evidence and specialist guidance support instead.",
-    },
-    {
-      question: "How long before yoga makes a difference for migraine?",
-      answer:
-        "The clinical trials showing significant benefit generally involved 3 months of consistent practice. Individual response varies, and tracking your headache frequency alongside your practice is a useful way to gauge your own progress.",
+      question: "When should a new headache be medically assessed?",
+      answer: "A new, unusually severe, rapidly changing or otherwise concerning headache should be medically assessed rather than assumed to be migraine or a lifestyle-related symptom.",
     },
   ],
 
   relatedConditions: ["digestive-gut-health", "womens-health", "high-blood-pressure"],
 
-  // JUDGMENT CALL — flag for client review: this link previously pointed to
-  // "/approach/breath-mindfulness", which doesn't correspond to any of the 5
-  // established service pages. Retargeted to Behaviour, Stress & Mind as the
-  // closest existing match (mindfulness/stress fits there; breath practices
-  // are also covered under Therapeutic Yoga's focus areas). Confirm this is
-  // the right destination, or build a dedicated page if one is planned.
   internalLinks: [
-    { label: "Breath & Mindfulness", href: "/what-we-do/behaviour-stress-mind" },
-    { label: "Therapeutic Yoga & Movement", href: "/what-we-do/therapeutic-yoga" },
+    { label: "Behaviour, Stress & Mind", href: "/services/behaviour-stress-mind" },
+    { label: "Therapeutic Yoga & Movement", href: "/services/therapeutic-yoga" },
     { label: "Digestive & Gut Health", href: "/conditions/digestive-gut-health" },
   ],
 };

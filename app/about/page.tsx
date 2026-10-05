@@ -276,11 +276,9 @@ export default function AboutPage() {
             sm:leading-9
           "
         >
-          Sutra Health is connected with EQUAL (Effort For Quality of Life)
-          Society, a Faridabad-based organisation whose work is described
-          in the supplied site materials as beginning in 1997. This page
-          introduces the organisation behind Sutra Health, its roots and
-          the people associated with its health work.
+          This page introduces the organisation behind Sutra Health, its
+          community roots, history and the people associated with its health
+          work.
         </p>
 
         <div className="mt-8 flex items-start gap-4">
@@ -290,8 +288,8 @@ export default function AboutPage() {
           />
 
           <p className="max-w-[560px] text-[14px] leading-7 text-white/75 sm:text-[15px]">
-            Explore the organisation’s background and the people connected
-            with its health work.
+            Learn where the organisation comes from and how that background
+            connects with Sutra Health today.
           </p>
         </div>
       </div>
@@ -367,7 +365,7 @@ export default function AboutPage() {
             </h2>
 
             <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-[1.75] text-[#65736D] sm:text-[17px]">
-              The organisation’s stated themes span health advancement, family welfare, education and community-focused work.
+              These themes provide the wider context for the organisation’s work and its connection with Sutra Health.
             </p>
           </div>
 
@@ -406,7 +404,7 @@ export default function AboutPage() {
             </h2>
 
             <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-[1.75] text-[#65736D] sm:text-[17px]">
-              The organisation’s background informs Sutra Health’s work. The care philosophy and its stages are explained separately on the Approach page.
+              The organisation provides the background; the Approach page explains how Sutra Health structures care decisions.
             </p>
           </div>
 

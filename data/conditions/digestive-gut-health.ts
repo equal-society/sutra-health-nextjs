@@ -6,86 +6,74 @@ export const digestiveGutHealth: Condition = {
   title: "Digestive & Gut Health",
 
   shortDescription:
-    "Personalized nutrition, yoga, and lifestyle support for digestive wellbeing — with an honest look at what the research does and doesn't yet support.",
+    "A practical guide to digestive wellbeing, with attention to eating patterns, routine, stress and the limits of current evidence for yoga in IBS.",
 
   introduction:
-    "Digestive wellbeing connects to eating patterns, stress, movement, and daily routines. This is also an area where the research is genuinely mixed rather than settled, and we think that's worth saying plainly rather than overselling. We build support around what's actually known, alongside appropriate medical evaluation for persistent or concerning symptoms.",
+    "Digestive symptoms can have many causes. This guide focuses on everyday factors that may be relevant to digestive wellbeing while keeping diagnosis, persistent symptoms and medical evaluation separate from general lifestyle advice.",
 
   concerns: [
-    "Irritable bowel syndrome (IBS) symptoms",
-    "Bloating, gas, or general digestive discomfort",
-    "Irregular bowel habits or constipation",
-    "Digestive symptoms that seem connected to stress",
-    "Wanting an honest picture of what lifestyle changes can realistically do here",
-    "Interest in a whole-person approach alongside medical care",
+    "Bloating, constipation or irregular bowel habits",
+    "Digestive symptoms that seem related to eating patterns or timing",
+    "IBS and questions about lifestyle support",
+    "Stress that appears to affect digestive symptoms",
+    "Uncertainty about when digestive symptoms need medical assessment",
   ],
 
   lifestyleFactors: [
     {
       title: "Eating patterns and timing",
-      description:
-        "What and when you eat directly affects digestive comfort — including timing yoga practice around meals appropriately.",
+      description: "Usual foods, meal timing, portion patterns and individual tolerance can be useful starting points when digestive symptoms are being tracked.",
     },
     {
-      title: "Gentle, specific movement",
-      description:
-        "Certain yoga poses are traditionally used for digestive comfort, though the strength of clinical evidence varies by specific condition.",
+      title: "Gentle movement",
+      description: "Appropriate movement may support general wellbeing and can be considered around symptoms, but there is no single routine that fits every digestive condition.",
     },
     {
       title: "Stress and the gut-brain connection",
-      description:
-        "IBS in particular is closely linked to the gut-brain axis, making stress management a genuinely relevant, evidence-supported factor.",
+      description: "Stress can interact with digestive symptoms, particularly in functional gastrointestinal disorders, without meaning that symptoms are imaginary or caused only by stress.",
     },
     {
-      title: "Daily routine consistency",
-      description:
-        "Regular meal timing and daily structure can support more predictable digestive patterns.",
+      title: "Routine consistency",
+      description: "Regular meals, sleep, hydration and activity can make symptoms easier to observe and manage for some people.",
     },
   ],
 
   sections: [
     {
-      title: "The honest picture on yoga and IBS specifically",
+      title: "Start with the symptom, not a generic gut-health claim",
       content: [
-        "This is genuinely mixed evidence, and we think it's worth being direct about that. Earlier reviews found real benefit: a systematic review of 6 randomized controlled trials (273 patients) found yoga produced significantly decreased bowel symptoms, IBS severity, and anxiety compared to no treatment, with improved quality of life.",
-        "A more recent, larger systematic review and meta-analysis, however, found the evidence 'uncertain' — concluding that yoga did not significantly reduce gastrointestinal symptom severity, anxiety, or depression, or improve quality of life in IBS specifically, and citing considerable methodological differences and risk of bias across the existing trials. That review does not yet recommend yoga as a treatment for IBS.",
-        "Our honest position: yoga may help some people with IBS, particularly through stress reduction and the gut-brain connection, but the evidence isn't yet strong or consistent enough to promise symptom relief. We treat it as a reasonable complementary practice worth trying alongside appropriate medical care, not a proven treatment.",
+        "Bloating, constipation, abdominal pain and changes in bowel habits can have different causes. Persistent, severe or changing symptoms should be medically evaluated rather than treated as a general “gut health” problem.",
+        "For a diagnosed condition such as IBS, lifestyle support can be considered within the broader management plan.",
       ],
     },
     {
-      title: "What's better supported: general digestive comfort and stress-linked symptoms",
+      title: "What the evidence says about yoga and IBS",
       content: [
-        "Separate from the IBS-specific evidence, gentle yoga practices — particularly abdominal-compression poses combined with slow breathing — are widely used for general bloating, gas, and constipation-related discomfort, with a plausible mechanism (stimulating peristalsis, the wave-like movement that moves waste through the intestines) supporting their traditional use.",
-        "Stress and the gut-brain axis are well-established in digestive medicine generally, which is why breath-based and relaxation practices have a reasonable rationale even where large-scale trial evidence for specific conditions remains limited.",
+        "Research on yoga and IBS is mixed. Earlier studies reported improvements in symptoms and anxiety, while more recent evidence has highlighted uncertainty and methodological differences. The selected studies are listed in the evidence section below.",
+        "That is why this site should describe yoga as a possible adjunct rather than a proven stand-alone treatment for IBS.",
       ],
     },
     {
-      title: "A relevant published case report",
+      title: "Build from the routine you already have",
       content: [
-        "Dr. Rakesh Sarwal, who leads the clinical approach at Sutra Health, has published a case report documenting IBS symptom remission through a combined diet, lifestyle, and yoga approach. A single case report is not the same as a randomized controlled trial — it doesn't establish that this approach works broadly — but it reflects the same combined, whole-person approach we bring to digestive concerns, informed by direct clinical experience alongside the wider research.",
-      ],
-    },
-    {
-      title: "How Sutra Health builds a plan around this",
-      content: [
-        "We look at eating patterns, stress, movement, and routine together, and are upfront about where the evidence is strong versus where it's still developing — particularly for IBS specifically.",
-        "Persistent, severe, or changing digestive symptoms need appropriate medical evaluation. Lifestyle support complements that care; it doesn't substitute for it.",
+        "A useful review can start with meals, symptom timing, hydration, sleep, stress and activity. Tracking these patterns can help a person discuss relevant changes with a clinician or nutrition professional.",
+        "If symptoms are persistent, severe, associated with bleeding, unexplained weight loss or other concerning changes, medical assessment should take priority over self-directed lifestyle experimentation.",
       ],
     },
   ],
 
   approach: [
-    "Nutrition and eating pattern review",
-    "Gentle, digestion-supportive yoga",
-    "Stress management and the gut-brain connection",
-    "Daily routine consistency",
+    "Identify the digestive symptom and any existing diagnosis first",
+    "Review meals, timing and individual tolerance rather than applying a generic diet",
+    "Consider stress, sleep and routine as supporting factors",
+    "Use yoga or movement only as complementary support where appropriate",
   ],
 
   support: [
-    "Personalized nutrition counselling",
-    "Digestion-focused yoga practice",
-    "Breath and stress-management practices",
-    "Coordination with medical evaluation where needed",
+    "Nutrition counselling around meals and eating patterns",
+    "Behaviour and stress support where relevant",
+    "Therapeutic yoga and gentle movement as an adjunct",
+    "Physician consultation when symptoms need diagnosis or further assessment",
   ],
 
   evidence: [
@@ -117,33 +105,24 @@ export const digestiveGutHealth: Condition = {
 
   faqs: [
     {
-      question: "Can yoga help with IBS?",
-      answer:
-        "The evidence is genuinely mixed. Some earlier trials and reviews found meaningful improvement in IBS symptoms and quality of life. A more recent, larger systematic review found the evidence uncertain and didn't recommend yoga as a proven IBS treatment. We think it's reasonable to try alongside medical care, but we won't promise results the current evidence doesn't support.",
+      question: "Can lifestyle changes help digestive symptoms?",
+      answer: "They can be useful for some digestive conditions, but the right changes depend on the symptom pattern and diagnosis. A generic “gut health” programme is not appropriate for every person.",
     },
     {
-      question: "Can yoga help with bloating or constipation generally?",
-      answer:
-        "Gentle yoga poses involving abdominal compression and twisting, combined with slow breathing, are widely used for general bloating and constipation-related discomfort, with a plausible mechanism supporting their use. This is separate from the more specific, mixed evidence on diagnosed IBS.",
+      question: "Is yoga proven to treat IBS?",
+      answer: "The evidence is mixed. Some studies report improvements, while newer reviews have highlighted uncertainty. Yoga can be discussed as a complementary option rather than a guaranteed treatment.",
     },
     {
-      question: "Is yoga a substitute for medical evaluation of digestive symptoms?",
-      answer:
-        "No. Persistent, severe, or changing digestive symptoms should be evaluated by a healthcare professional. Lifestyle and yoga support can complement medical care but shouldn't delay appropriate diagnosis and treatment.",
+      question: "When should digestive symptoms be medically assessed?",
+      answer: "Persistent, severe, changing or concerning symptoms should be evaluated by a healthcare professional, particularly when there are warning signs such as bleeding or unexplained weight loss.",
     },
   ],
 
   relatedConditions: ["weight-management", "diabetes-blood-sugar", "womens-health"],
 
-  // JUDGMENT CALL — flag for client review: this link previously pointed to
-  // "/approach/breath-mindfulness", which doesn't correspond to any of the 5
-  // established service pages. Retargeted to Behaviour, Stress & Mind as the
-  // closest existing match (mindfulness/stress fits there; breath practices
-  // are also covered under Therapeutic Yoga's focus areas). Confirm this is
-  // the right destination, or build a dedicated page if one is planned.
   internalLinks: [
-    { label: "Nutrition", href: "/what-we-do/nutrition" },
-    { label: "Breath & Mindfulness", href: "/what-we-do/behaviour-stress-mind" },
-    { label: "Therapeutic Yoga & Movement", href: "/what-we-do/therapeutic-yoga" },
+    { label: "Nutrition", href: "/services/nutrition" },
+    { label: "Behaviour, Stress & Mind", href: "/services/behaviour-stress-mind" },
+    { label: "Therapeutic Yoga & Movement", href: "/services/therapeutic-yoga" },
   ],
 };

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Physician Consultation in Faridabad | Sutra Health",
     description:
-      "Discuss a health concern, review available medical information and understand possible next steps with a physician.",
+      "Discuss a health concern, review the information you already have and clarify appropriate next steps with a physician.",
     url: PAGE_URL,
     siteName: "Sutra Health",
     type: "website",
@@ -54,7 +54,7 @@ const consultationSteps = [
     number: "04",
     title: "Understand the way forward",
     description:
-      "Leave with a clearer understanding of the options discussed, including referral or review where appropriate.",
+      "Clarify the options discussed and whether follow-up, referral or further review is appropriate.",
   },
 ];
 
@@ -77,9 +77,9 @@ const faqs = [
       "You can mention your concerns and identify which needs attention first. The time available and clinical priorities will guide how they are addressed.",
   },
   {
-    question: "Will the physician discuss nutrition or daily habits?",
+    question: "Can I bring questions about lifestyle or nutrition?",
     answer:
-      "Where relevant, the discussion may include food, physical activity, sleep or other lifestyle factors alongside medical care.",
+      "Yes, when relevant to the concern. The clinician can discuss lifestyle or nutrition questions in the context of the medical issue and current care.",
   },
   {
     question: "How can I check online appointment availability?",
@@ -124,7 +124,7 @@ export default function PhysicianConsultationPage() {
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/mobile.webp')" }}
+          style={{ backgroundImage: "url('/images/nature.jpg')" }}
         />
 
         <div
@@ -141,11 +141,11 @@ export default function PhysicianConsultationPage() {
             id="consultation-title"
             className="mt-4 max-w-3xl font-serif text-[clamp(2.25rem,6vw,4.25rem)] leading-[1.08] tracking-[-0.025em] text-white"
           >
-            A physician visit shaped around your questions.
+            Bring the health question you need a clinician to review.
           </h1>
 
           <p className="mt-5 max-w-2xl text-lg leading-8 text-white/90 sm:text-xl">
-            Bring the details that matter to you. Use the visit to discuss your concerns, clarify findings and understand what may warrant attention.
+            Bring the information you already have. The consultation is a place to explain the concern, review relevant findings and clarify what needs attention next.
           </p>
 
           <div className="mt-7 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
@@ -190,7 +190,7 @@ export default function PhysicianConsultationPage() {
             </h2>
 
             <p className="mt-4 max-w-2xl text-lg leading-8 text-[var(--sutra-muted)]">
-              The discussion moves from your main concern to the information needed to consider it. The clinician will explain any limits or uncertainties in the available information.
+              The visit starts with the concern you want addressed, then moves through the history and information relevant to that question. Any uncertainty or need for further assessment can be discussed.
             </p>
           </div>
 

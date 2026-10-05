@@ -7,19 +7,19 @@ export const arthritisJointPainSubpages: ConditionSubpage[] = [
     parentSlug: "arthritis-joint-pain",
     question: "Which yoga poses help arthritis and joint pain?",
     shortAnswer:
-      "Gentle, low-impact poses that build strength around the joint without deep bending or extended weight-bearing tend to help most — including supported chair poses, gentle seated twists, and passive restorative poses. Yin yoga (slow, floor-based, held poses) is generally well-suited for connective tissue flexibility, though it should be avoided during active flare-ups.",
+      "For arthritis, yoga is generally adapted around the affected joint rather than following a fixed pose list. Supported standing work, gentle seated movement and props-assisted variations can help keep movement comfortable while building or maintaining strength and flexibility.",
     detail: [
       {
-        title: "What generally helps",
+        title: "What a joint-friendly practice looks like",
         content: [
-          "Poses that strengthen the muscles supporting an affected joint — without deep flexion or significant weight-bearing on that joint — are the pattern across most clinical protocols. This includes supported standing poses, gentle seated stretches, and props-assisted variations using chairs, blocks, or straps.",
-          "Yin yoga, with its slow, passive, floor-based poses, is often recommended for connective tissue flexibility and stress relief, though it should be paused during active flares and approached cautiously if joints are hypermobile.",
+          "Chair support, blocks, straps and bolsters can reduce the load on a painful joint and make a movement easier to control. The appropriate range depends on which joint is affected, how symptoms behave and whether there is an active flare.",
+          "Gentle, slower practices may be more suitable than demanding sequences. The goal is to work within a manageable range rather than force a joint deeper simply to reach a particular shape.",
         ],
       },
       {
-        title: "Why props and modification matter here more than in general yoga",
+        title: "Let the affected joint guide the modification",
         content: [
-          "Chair yoga, bolster support, and blocks under the hips or knees aren't a lesser version of the practice for arthritis — they're often exactly what makes a pose safe and effective for an arthritic joint. Modification is the point, not a compromise.",
+          "A pose that feels comfortable for one person may aggravate another person's knee, hip, wrist or shoulder. If a movement increases joint pain or symptoms persist after practice, reduce the range, add support or stop and seek appropriate clinical advice.",
         ],
       },
     ],
@@ -33,22 +33,19 @@ export const arthritisJointPainSubpages: ConditionSubpage[] = [
     parentSlug: "arthritis-joint-pain",
     question: "Which yoga poses should be avoided with arthritis?",
     shortAnswer:
-      "Poses requiring deep knee bends past 90 degrees, extended weight-bearing on the wrists (like a full Downward Dog), one-legged balance poses, and intense backbends are generally avoided with arthritic joints. Specific poses commonly flagged include Crane Pose (Bakasana), Bow Pose (Dhanurasana), Plow Pose (Halasana), and Full Lotus (Padmasana).",
+      "There is no universal arthritis avoid-list because the safest practice depends on the joint involved and the type of arthritis. Deep joint flexion, heavy weight-bearing and demanding balances may need modification when they increase symptoms.",
     detail: [
       {
-        title: "Poses to approach with caution or avoid",
+        title: "Movements that may need modification",
         content: [
-          "Crane Pose (Bakasana) — puts significant stress on the wrists and hands.",
-          "Bow Pose (Dhanurasana) — requires considerable flexibility and can strain the back and neck.",
-          "Plow Pose (Halasana) — puts pressure on the cervical spine and shoulders.",
-          "Full Lotus (Padmasana) — requires significant hip, knee, and ankle flexibility that can aggravate joint symptoms.",
-          "Deep squats, full weight-bearing Downward Dog, and fast-paced styles like Ashtanga, Power Yoga, or Hot/Bikram Yoga are also generally approached with caution, as heat and pace can both increase strain on affected joints.",
+          "Deep squats, full weight-bearing through a painful wrist, demanding balances and advanced poses such as Crane, Bow, Plow or Full Lotus can place substantial demands on joints. They are not automatically unsafe for every person, but they may be inappropriate when they reproduce or worsen symptoms.",
+          "Fast or very intense styles can also make it harder to control range and load. A slower class with accessible modifications can make it easier to adjust the practice to the affected joint.",
         ],
       },
       {
-        title: "The general rule that matters more than any specific list",
+        title: "Pain is the useful signal",
         content: [
-          "Discomfort is different from pain. Mild discomfort while working within a safe range of motion is normal; if a pose increases symptoms rather than just creating temporary sensation, that's the signal to modify or stop — not push through.",
+          "Do not use a pose list as a reason to push through joint pain. Modify or stop a movement that increases symptoms, particularly during an active flare, and discuss persistent or significant symptoms with your clinician.",
         ],
       },
     ],
@@ -59,20 +56,19 @@ export const arthritisJointPainSubpages: ConditionSubpage[] = [
     parentSlug: "arthritis-joint-pain",
     question: "Does yoga work differently for osteoarthritis versus rheumatoid arthritis?",
     shortAnswer:
-      "Yes, and the clinical evidence reflects this. For osteoarthritis, yoga has shown meaningful pain reduction, performing comparably to standard strengthening exercise in a randomized trial. For rheumatoid arthritis, a meta-analysis of 10 trials found yoga improved physical function, disease activity, and grip strength — but did not show a significant effect on pain, joint counts, or inflammation.",
+      "Yes. Osteoarthritis and rheumatoid arthritis have different underlying processes, so the purpose and limits of a yoga programme are not identical. Research has reported functional benefits in rheumatoid arthritis and pain or function benefits in osteoarthritis, but yoga should not be presented as treating the underlying disease process in either condition.",
     detail: [
       {
-        title: "Why the distinction matters for what to expect",
+        title: "The conditions are not interchangeable",
         content: [
-          "Osteoarthritis is primarily a mechanical, wear-related joint condition — yoga's strengthening and alignment benefits map fairly directly onto that. Rheumatoid arthritis is an autoimmune, inflammatory condition — yoga can genuinely help with the functional and quality-of-life impact of living with RA, but it isn't shown to address the underlying inflammatory process the way it can address OA's mechanical factors.",
-          "This is also why pose selection differs: holding poses longer builds the static strength useful for osteoarthritis, while rheumatoid arthritis generally calls for shorter holds and avoiding high-intensity postures, particularly during flares.",
+          "Osteoarthritis is primarily associated with changes in joints and their surrounding structures, while rheumatoid arthritis is an inflammatory autoimmune condition. That difference affects how symptoms, flares and exercise tolerance are managed.",
+          "For osteoarthritis, a programme may emphasise comfortable movement and strengthening around the affected joint. With rheumatoid arthritis, activity often needs closer adjustment around inflammation, fatigue and periods of increased symptoms.",
         ],
       },
       {
-        title: "What this means for your practice",
+        title: "Set expectations around function",
         content: [
-          "If you have osteoarthritis, expect a program built around strengthening and pain reduction for the specific joint involved.",
-          "If you have rheumatoid arthritis, expect a program focused on maintaining function, mobility, and quality of life — with realistic expectations about pain and inflammation, and closer coordination with your rheumatologist around flare management.",
+          "Yoga may be one part of a broader plan for mobility, function and quality of life. It should sit alongside appropriate medical management, particularly for rheumatoid arthritis, rather than being framed as a treatment for inflammation itself.",
         ],
       },
     ],

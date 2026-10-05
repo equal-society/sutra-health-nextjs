@@ -252,66 +252,20 @@ export default function BookAppointmentPage() {
     <main className="min-h-screen bg-[#FAF8F1]">
       {/* ================= HERO ================= */}
       <section className="relative isolate overflow-hidden ">
-  {/* Background */}
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 -z-20 bg-[linear-gradient(135deg,#FAF8F1_0%,#F4F2E8_42%,#E7EFE7_100%)]"
-  />
-
-  {/* Organic gradient shapes */}
-  <div
-    aria-hidden="true"
-    className="absolute -right-32 -top-32 -z-10 h-[420px] w-[420px] rounded-full bg-[#A9C5AC]/35 blur-3xl sm:h-[520px] sm:w-[520px]"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute -bottom-48 left-[38%] -z-10 h-[420px] w-[420px] rounded-full bg-[#D8C9A9]/25 blur-3xl"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute -left-32 top-[28%] -z-10 h-[260px] w-[260px] rounded-full bg-[#C6D9CA]/25 blur-3xl"
-  />
-
-  {/* Fine editorial grid */}
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 -z-10 opacity-[0.035]"
-    style={{
-      backgroundImage:
-        "linear-gradient(#173F35 1px, transparent 1px), linear-gradient(90deg, #173F35 1px, transparent 1px)",
-      backgroundSize: "56px 56px",
-    }}
-  />
-
-  {/* Decorative rings */}
-  <div
-    aria-hidden="true"
-    className="absolute right-[7%] top-[16%] -z-10 hidden h-44 w-44 rounded-full border border-[#173F35]/10 lg:block"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute right-[10%] top-[21%] -z-10 hidden h-28 w-28 rounded-full border border-[#65966F]/15 lg:block"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute bottom-[13%] left-[8%] -z-10 hidden h-20 w-20 rounded-full border border-[#173F35]/10 lg:block"
-  />
+ 
       <section className="border-b border-[#173F35]/10 py-14 sm:py-18 lg:py-20">
       
       <Container>
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
-              Book an appointment
+            Appointment booking
+
             </p>
 
             <h1 className="mt-4 font-serif text-4xl leading-[1.05] tracking-[-0.04em] text-[#123F35] sm:text-5xl lg:text-6xl">
-              Start with a conversation
+              Choose your appointment
               <br />
-              about your health.
+              date and time.
             </h1>
 
             <p className="mx-auto mt-5 max-w-2xl text-[14px] leading-6 text-[#687A73] sm:text-[15px] sm:leading-7">
@@ -327,16 +281,16 @@ export default function BookAppointmentPage() {
       <section className="bg-[#F1F4ED] py-12 sm:py-16 lg:py-20">
         <Container>
           <div className="mx-auto max-w-5xl">
-            <div className="overflow-hidden rounded-[28px] border border-[#173F35]/10 bg-white shadow-[0_20px_60px_rgba(23,63,53,0.07)]">
+            <div className="overflow-hidden border border-[#173F35]/10 bg-white shadow-[0_20px_60px_rgba(23,63,53,0.07)]">
               <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
                 {/* ================= LEFT ================= */}
                 <div className="bg-[#173F35] p-7 text-[#FAF8F1] sm:p-9 lg:p-10">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B5CEB6]">
-                    Your appointment
+                    Booking details
                   </p>
 
                   <h2 className="mt-4 font-serif text-3xl leading-tight sm:text-4xl">
-                    One step toward better health.
+                    Choose a date that works for you.
                   </h2>
 
                   <p className="mt-5 text-sm leading-6 text-[#CBDAD1]">
@@ -352,11 +306,11 @@ export default function BookAppointmentPage() {
 
                       <div>
                         <p className="text-sm font-semibold">
-                          Personalized conversation
+                          Appointment information
                         </p>
 
                         <p className="mt-1 text-xs leading-5 text-[#BFD1C6]">
-                          Discuss your health goals and concerns.
+                          Provide the details needed to arrange your appointment.
                         </p>
                       </div>
                     </div>
@@ -368,11 +322,11 @@ export default function BookAppointmentPage() {
 
                       <div>
                         <p className="text-sm font-semibold">
-                          Flexible appointment times
+                          Current available times
                         </p>
 
                         <p className="mt-1 text-xs leading-5 text-[#BFD1C6]">
-                          Select from the doctor's available slots.
+                          Choose from the slots available for your selected date.
                         </p>
                       </div>
                     </div>
@@ -384,12 +338,11 @@ export default function BookAppointmentPage() {
 
                       <div>
                         <p className="text-sm font-semibold">
-                          Online consultation
+                          Online appointment
                         </p>
 
                         <p className="mt-1 text-xs leading-5 text-[#BFD1C6]">
-                          Meeting details will be provided after
-                          confirmation.
+                          Meeting details will be provided after confirmation.
                         </p>
                       </div>
                     </div>
@@ -626,7 +579,7 @@ export default function BookAppointmentPage() {
 
                     {/* ================= SUCCESS ================= */}
                     {success && (
-                      <div className="mt-6 rounded-2xl border border-[#65966F]/20 bg-[#EAF1E7] p-5">
+                      <div className="mt-6 border border-[#65966F]/20 bg-[#EAF1E7] p-5">
                         <div className="flex items-start gap-3">
                           <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#65966F] text-sm font-bold text-white">
                             ✓
@@ -657,7 +610,7 @@ export default function BookAppointmentPage() {
                         loadingSlots ||
                         !form.time
                       }
-                      className="mt-7 flex w-full items-center justify-center gap-2 rounded-full bg-[#173F35] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#0D332C] disabled:cursor-not-allowed disabled:opacity-50"
+                      className="mt-7 flex w-full items-center justify-center gap-2 bg-[#173F35] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#0D332C] disabled:cursor-not-allowed disabled:opacity-50"
                     >
                       {submitting
                         ? "Confirming appointment..."

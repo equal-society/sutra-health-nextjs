@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+
 import Container from "@/components/shared/Container";
 import ContactForm from "@/components/contact/ContactForm";
 
@@ -71,8 +72,8 @@ const contactPoints = [
   },
   {
     label: "Email",
-    value: "info@lifequality.org.in",
-    href: "mailto:info@lifequality.org.in",
+    value: "equal.society@gmail.com",
+    href: "mailto:equal.society@gmail.com",
     note: "For general enquiries and information",
   },
   {
@@ -102,78 +103,58 @@ export default function ContactPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema),
+        }}
       />
 
-      <main className="bg-[#FAF8F1] text-[#173F35]">
-        {/* HERO */}
-<section className="relative isolate overflow-hidden border-b border-[#173F35]/10">
-  {/* Background */}
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 -z-20 bg-[linear-gradient(135deg,#FAF8F1_0%,#F4F2E8_42%,#E7EFE7_100%)]"
-  />
+      <main className="bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">
+        {/* =====================================================
+            HERO
+        ===================================================== */}
+        <section className="relative isolate overflow-hidden border-b border-[var(--sutra-border)] bg-[var(--sutra-ink)]">
 
-  {/* Organic gradient shapes */}
-  <div
-    aria-hidden="true"
-    className="absolute -right-32 -top-32 -z-10 h-[420px] w-[420px] rounded-full bg-[#A9C5AC]/35 blur-3xl sm:h-[520px] sm:w-[520px]"
-  />
+          {/* Background image */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: "url('/images/nature.jpg')",
+            }}
+          />
 
-  <div
-    aria-hidden="true"
-    className="absolute -bottom-48 left-[38%] -z-10 h-[420px] w-[420px] rounded-full bg-[#D8C9A9]/25 blur-3xl"
-  />
+          {/* Sutra Health overlay */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 -z-10 bg-[var(--sutra-ink)]/60"
+          />
 
-  <div
-    aria-hidden="true"
-    className="absolute -left-32 top-[28%] -z-10 h-[260px] w-[260px] rounded-full bg-[#C6D9CA]/25 blur-3xl"
-  />
+          {/* Bottom gradient for depth/readability */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 -z-10 bg-gradient-to-t from-[var(--sutra-ink)]/70 via-transparent to-[var(--sutra-ink)]/20"
+          />
 
-  {/* Fine editorial grid */}
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 -z-10 opacity-[0.035]"
-    style={{
-      backgroundImage:
-        "linear-gradient(#173F35 1px, transparent 1px), linear-gradient(90deg, #173F35 1px, transparent 1px)",
-      backgroundSize: "56px 56px",
-    }}
-  />
-
-  {/* Decorative rings */}
-  <div
-    aria-hidden="true"
-    className="absolute right-[7%] top-[16%] -z-10 hidden h-44 w-44 rounded-full border border-[#173F35]/10 lg:block"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute right-[10%] top-[21%] -z-10 hidden h-28 w-28 rounded-full border border-[#65966F]/15 lg:block"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute bottom-[13%] left-[8%] -z-10 hidden h-20 w-20 rounded-full border border-[#173F35]/10 lg:block"
-  />
           <Container>
-            <div className="grid gap-10 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20 lg:py-24">
+            <div className="relative z-10 grid gap-10 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20 text-white lg:py-24">
+
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#65966F] sm:text-[11px]">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em]  sm:text-[11px]">
                   Contact Sutra Health
                 </p>
 
-                <h1 className="mt-5 max-w-[760px] font-serif text-[46px] leading-[0.98] tracking-[-0.045em] sm:text-[60px] lg:text-[72px]">
+                <h1 className="mt-5 max-w-[760px] font-[var(--font-serif)] text-[46px] leading-[0.98] tracking-[-0.045em] text-[var(--sutra-white)] sm:text-[60px] lg:text-[72px]">
                   Begin your
                   <br />
-                  <span className="italic text-[#65966F]">wellness journey.</span>
+                  <span>
+                    wellness journey.
+                  </span>
                 </h1>
 
-                <p className="mt-7 max-w-[650px] text-[15px] leading-7 text-[#687A73] sm:text-[17px] sm:leading-8">
-                  A welcoming space for health and wellness in Sector 46,
-                  Faridabad. Get in touch to learn about Sutra Health, yoga
-                  therapy, integrative health practices and healthy lifestyle
-                  approaches.
+                <p className="mt-7 max-w-[650px] text-[15px] leading-7  sm:text-[17px] sm:leading-8">
+                  A contact point for Sutra Health and EQUAL Society in Sector
+                  46, Faridabad. Get in touch for enquiries, appointments and
+                  other practical questions.
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3">
@@ -181,51 +162,61 @@ export default function ContactPage() {
                     href="https://wa.me/919013103676"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full bg-[#173F35] px-6 py-3.5 text-[13px] font-semibold text-white transition hover:bg-[#12352D]"
+                    className="inline-flex items-center gap-2 bg-[var(--sutra-white)] px-6 py-3.5 text-[13px] font-semibold text-[var(--sutra-teal)] transition hover:bg-[var(--sutra-porcelain)] focus:outline-none focus:ring-2 focus:ring-[var(--color-focus-ring)] focus:ring-offset-2 focus:ring-offset-[var(--sutra-ink)]"
                   >
-                    WhatsApp us <span aria-hidden>↗</span>
+                    WhatsApp us
+                    <span aria-hidden>↗</span>
                   </a>
+
                   <Link
                     href="/book-appointment"
-                    className="inline-flex items-center gap-2 rounded-full border border-[#173F35]/15 px-6 py-3.5 text-[13px] font-semibold text-[#173F35] transition hover:bg-[#F0F4ED]"
+                    className="inline-flex items-center gap-2 border border-[var(--sutra-white)]/45 px-6 py-3.5 text-[13px] font-semibold text-[var(--sutra-white)] transition hover:border-[var(--sutra-white)] hover:bg-[var(--sutra-white)]/10 focus:outline-none focus:ring-2 focus:ring-[var(--color-focus-ring)] focus:ring-offset-2 focus:ring-offset-[var(--sutra-ink)]"
                   >
-                    Book a consultation <span aria-hidden>→</span>
+                    Book a consultation
+                    <span aria-hidden>→</span>
                   </Link>
                 </div>
               </div>
 
               <div className="self-end lg:pb-2">
-                <div className="border-l border-[#173F35]/15 pl-6 sm:pl-8">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#65966F]">
+                <div className="border-l border-[var(--sutra-white)]/30 pl-6 sm:pl-8">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] ">
                     A direct line
                   </p>
-                  <p className="mt-4 max-w-[430px] font-serif text-[27px] leading-tight tracking-[-0.025em] text-[#173F35] sm:text-[34px]">
+
+                  <p className="mt-4 max-w-[430px] font-[var(--font-serif)] text-[27px] leading-tight tracking-[-0.025em]  sm:text-[34px]">
                     Sometimes the simplest way to begin is simply to ask.
                   </p>
-                  <p className="mt-5 max-w-[430px] text-[14px] leading-7 text-[#687A73]">
+
+                  <p className="mt-5 max-w-[430px] text-[14px] leading-7 ">
                     Call, WhatsApp, email or send a message. We can help you
-                    find the most relevant next step.
+                    find the right contact or appointment route.
                   </p>
                 </div>
               </div>
+
             </div>
           </Container>
         </section>
 
-        {/* DIRECT CONTACT */}
-        <section className="border-b border-[#173F35]/10">
+        {/* =====================================================
+            DIRECT CONTACT
+        ===================================================== */}
+        <section className="border-b border-[var(--sutra-border)]">
           <Container>
-            <div className="grid divide-y divide-[#173F35]/10 sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
+            <div className="grid divide-y divide-[var(--sutra-border)] sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
               {contactPoints.map((item) => {
                 const content = (
                   <>
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#65966F]">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-sage)]">
                       {item.label}
                     </p>
-                    <p className="mt-3 font-serif text-[20px] leading-snug tracking-[-0.015em] text-[#173F35]">
+
+                    <p className="mt-3 font-[var(--font-serif)] text-[20px] leading-snug tracking-[-0.015em] text-[var(--sutra-ink)]">
                       {item.value}
                     </p>
-                    <p className="mt-2 text-[12px] leading-5 text-[#7A8982]">
+
+                    <p className="mt-2 text-[12px] leading-5 text-[var(--sutra-muted)]">
                       {item.note}
                     </p>
                   </>
@@ -235,14 +226,23 @@ export default function ContactPage() {
                   <a
                     key={item.label}
                     href={item.href}
-                    target={item.href.startsWith("http") ? "_blank" : undefined}
-                    rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="px-1 py-7 transition hover:bg-[#F0F4ED] sm:px-6 lg:px-7"
+                    target={
+                      item.href.startsWith("http") ? "_blank" : undefined
+                    }
+                    rel={
+                      item.href.startsWith("http")
+                        ? "noopener noreferrer"
+                        : undefined
+                    }
+                    className="px-1 py-7 transition hover:bg-[var(--sutra-pale-sage)] focus:outline-none focus:ring-2 focus:ring-[var(--color-focus-ring)] focus:ring-inset sm:px-6 lg:px-7"
                   >
                     {content}
                   </a>
                 ) : (
-                  <div key={item.label} className="px-1 py-7 sm:px-6 lg:px-7">
+                  <div
+                    key={item.label}
+                    className="px-1 py-7 sm:px-6 lg:px-7"
+                  >
                     {content}
                   </div>
                 );
@@ -251,18 +251,22 @@ export default function ContactPage() {
           </Container>
         </section>
 
-        {/* FORM + MAP */}
+        {/* =====================================================
+            FORM + MAP
+        ===================================================== */}
         <section>
           <Container>
             <div className="grid gap-12 py-16 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:py-24">
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--sutra-sage)]">
                   Send a message
                 </p>
-                <h2 className="mt-4 max-w-[560px] font-serif text-[38px] leading-[1.02] tracking-[-0.035em] sm:text-[48px]">
+
+                <h2 className="mt-4 max-w-[560px] font-[var(--font-serif)] text-[38px] leading-[1.02] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[48px]">
                   Tell us what you are looking for.
                 </h2>
-                <p className="mt-5 max-w-[520px] text-[14px] leading-7 text-[#687A73]">
+
+                <p className="mt-5 max-w-[520px] text-[14px] leading-7 text-[var(--sutra-muted)]">
                   Use the form to start a conversation. Your message will open
                   in WhatsApp so you can send it directly to the Sutra Health
                   team.
@@ -274,7 +278,7 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <div className="overflow-hidden rounded-[24px] border border-[#173F35]/10 bg-white">
+                <div className="overflow-hidden border border-[var(--sutra-border)] bg-[var(--sutra-white)]">
                   <iframe
                     title="Sutra Health location in Sector 46, Faridabad"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.488925408195!2d77.29599867601114!3d28.43467429303718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1fe57a810dd1%3A0x75e55aae4d53097b!2sSutra%20Health!5e0!3m2!1sen!2sin!4v1781511407911!5m2!1sen!2sin"
@@ -284,20 +288,22 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <div className="mt-5 flex flex-wrap items-center justify-between gap-4 border-t border-[#173F35]/10 pt-5">
+                <div className="mt-5 flex flex-wrap items-center justify-between gap-4 border-t border-[var(--sutra-border)] pt-5">
                   <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#65966F]">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-sage)]">
                       Sector 46 · Faridabad
                     </p>
-                    <p className="mt-1 text-[13px] text-[#687A73]">
+
+                    <p className="mt-1 text-[13px] text-[var(--sutra-muted)]">
                       House No. 229, Roof-Top
                     </p>
                   </div>
+
                   <a
                     href="https://maps.app.goo.gl/Bso3TJCkvqDSLWKP9"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[13px] font-semibold text-[#173F35] underline decoration-[#65966F] underline-offset-4"
+                    className="text-[13px] font-semibold text-[var(--sutra-teal)] underline decoration-[var(--sutra-sage)] underline-offset-4"
                   >
                     Open in Google Maps →
                   </a>
@@ -307,17 +313,21 @@ export default function ContactPage() {
           </Container>
         </section>
 
-        {/* SOCIAL + NEXT STEP */}
-        <section className="border-t border-[#173F35]/10 bg-[#F0F4ED]">
+        {/* =====================================================
+            SOCIAL + NEXT STEP
+        ===================================================== */}
+        <section className="border-t border-[var(--sutra-border)] bg-[var(--sutra-pale-sage)]">
           <Container>
             <div className="grid gap-10 py-14 sm:py-16 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F]">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--sutra-sage)]">
                   Stay connected
                 </p>
-                <h2 className="mt-3 font-serif text-[32px] tracking-[-0.03em] sm:text-[40px]">
+
+                <h2 className="mt-3 font-[var(--font-serif)] text-[32px] tracking-[-0.03em] text-[var(--sutra-ink)] sm:text-[40px]">
                   Follow the work of Sutra Health.
                 </h2>
+
                 <div className="mt-5 flex flex-wrap gap-x-5 gap-y-3">
                   {socialLinks.map(([label, href]) => (
                     <a
@@ -325,7 +335,7 @@ export default function ContactPage() {
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[13px] font-semibold text-[#173F35] underline decoration-[#65966F]/60 underline-offset-4"
+                      className="text-[13px] font-semibold text-[var(--sutra-teal)] underline decoration-[var(--sutra-sage)]/60 underline-offset-4"
                     >
                       {label}
                     </a>
@@ -336,15 +346,16 @@ export default function ContactPage() {
               <div className="flex flex-wrap gap-3">
                 <Link
                   href="/conditions"
-                  className="rounded-full border border-[#173F35]/15 bg-[#FAF8F1] px-5 py-3 text-[13px] font-semibold"
+                  className="border bg-[var(--sutra-porcelain)] px-5 py-3 text-[13px] font-semibold text-[var(--sutra-teal)] transition hover:bg-[var(--sutra-white)]"
                 >
-                  Explore health topics
+                  Health information
                 </Link>
+
                 <Link
                   href="/retreat-programs"
-                  className="rounded-full bg-[#173F35] px-5 py-3 text-[13px] font-semibold text-white"
+                  className="bg-[var(--sutra-teal)] px-5 py-3 text-[13px] font-semibold text-[var(--sutra-white)] transition hover:bg-[var(--sutra-teal-hover)]"
                 >
-                  Explore retreat programs
+                  Retreat information
                 </Link>
               </div>
             </div>

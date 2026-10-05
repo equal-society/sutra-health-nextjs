@@ -7,20 +7,19 @@ export const highBloodPressureSubpages: ConditionSubpage[] = [
     parentSlug: "high-blood-pressure",
     question: "Can yoga replace blood pressure medication?",
     shortAnswer:
-      "No. Clinical research studies yoga as a complementary, non-pharmacological measure used alongside standard medical care — not a replacement for medication. Some studies show meaningful reductions in blood pressure from consistent yoga practice, but stopping or reducing medication should only ever happen under your doctor's guidance, based on your actual readings over time.",
+      "No. The research on yoga and blood pressure treats yoga as an addition to standard care, not a replacement for prescribed medication. If your readings improve with regular practice or other lifestyle changes, use that information with your doctor when reviewing your treatment.",
     detail: [
       {
-        title: "What the research actually studies",
+        title: "What the evidence is actually testing",
         content: [
-          "Clinical trials on yoga and blood pressure are almost always designed as an addition to standard care, not a substitute for it. The studies showing 4–10 mmHg reductions did so in patients who were also receiving appropriate medical management.",
-          "This distinction matters: a lifestyle measure that helps alongside medication is a genuinely different claim from a lifestyle measure that replaces it, and the evidence only supports the former.",
+          "Studies of yoga for blood pressure generally add a yoga programme to usual care. Reported reductions therefore do not show that yoga can take the place of medication prescribed for hypertension.",
+          "The useful question is whether yoga can be part of a broader blood-pressure plan. The available research supports considering it as a complementary lifestyle measure rather than presenting it as a substitute treatment.",
         ],
       },
       {
-        title: "Why this decision needs your doctor",
+        title: "If your readings are changing",
         content: [
-          "Blood pressure medication is titrated based on your specific readings, risk factors, and response over time. Reducing or stopping medication without medical supervision — even if your readings look better — can be genuinely risky.",
-          "If your blood pressure is improving through lifestyle changes, that's exactly the kind of progress worth discussing with your physician, who can adjust your care plan appropriately.",
+          "Keep taking prescribed medicines unless your treating clinician tells you otherwise. Bring a record of your blood-pressure readings and any changes in your routine to the next review so treatment decisions can be based on your response over time.",
         ],
       },
     ],
@@ -34,21 +33,19 @@ export const highBloodPressureSubpages: ConditionSubpage[] = [
     parentSlug: "high-blood-pressure",
     question: "Which yoga poses help lower blood pressure?",
     shortAnswer:
-      "Gentle, restorative poses that emphasize slow breathing and relaxation — such as Shavasana, Balasana, and Viparita Karani — combined with pranayama (breathing) practices, are the poses most consistently used in the clinical studies on yoga and blood pressure. Vigorous or inverted poses are generally avoided (see related question below).",
+      "Clinical yoga programmes for blood pressure commonly emphasise gentle movement, relaxation and controlled breathing. Examples include Shavasana, Balasana, Viparita Karani and seated practice with pranayama. The evidence is stronger for structured practice than for any single pose in isolation.",
     detail: [
       {
-        title: "Poses commonly used in studied protocols",
+        title: "Examples used in yoga programmes",
         content: [
-          "Shavasana (corpse pose) — deep relaxation, slow breathing, minimal physical exertion.",
-          "Balasana (child's pose) — a gentle resting posture that supports slow, controlled breathing.",
-          "Viparita Karani (legs-up-the-wall) — a passive, restorative inversion that promotes relaxation without the strain of a full inversion.",
-          "Sukhasana (easy pose) combined with pranayama — seated breathwork is central to most studied protocols, not an add-on.",
+          "Shavasana provides a low-effort period of relaxation and slow breathing. Balasana is a gentle resting posture. Viparita Karani offers a supported, restorative position, while Sukhasana can provide a seated position for breathing practice.",
+          "These examples should not be treated as a prescription for every person with hypertension. Starting position, symptoms, mobility and other health conditions can change what is appropriate.",
         ],
       },
       {
-        title: "Why gentle poses, not intense ones",
+        title: "Think beyond a list of poses",
         content: [
-          "The mechanism behind yoga's effect on blood pressure is largely about activating the body's relaxation response through breath and gentle movement — not building cardiovascular intensity the way vigorous exercise does. That's why gentle, breath-focused practice is the pattern across the clinical research, not strenuous flows.",
+          "The studies discussed on this site generally evaluate a programme rather than one asana. For that reason, consistency, comfortable breathing and an appropriate level of effort matter more than collecting a long list of poses.",
         ],
       },
     ],
@@ -62,19 +59,19 @@ export const highBloodPressureSubpages: ConditionSubpage[] = [
     parentSlug: "high-blood-pressure",
     question: "Which yoga poses should be avoided with high blood pressure?",
     shortAnswer:
-      "Inverted poses where the head drops below the heart — such as Shirshasana (headstand) and Adho Mukha Vrksasana (handstand) — are generally avoided with high blood pressure, as they can cause a sudden increase in blood flow and pressure to the head. Intense backbends and breath-holding practices are also approached with caution.",
+      "People with high blood pressure are generally advised to be cautious with demanding inversions, intense backbends and breath-holding practices. A safer starting point is usually a gentle, supported practice rather than testing difficult postures without guidance.",
     detail: [
       {
-        title: "Why inversions are a concern",
+        title: "Why intensity and inversions need care",
         content: [
-          "In a headstand or handstand, gravity works against normal blood flow regulation, briefly increasing pressure in the blood vessels of the head and neck. For someone with hypertension, this can be a meaningful risk rather than a minor discomfort.",
+          "Headstands, handstands and other demanding inversions can place substantially different demands on the body than a supported restorative posture. Intense backbends and breath-holding can also make a practice inappropriate for some people with cardiovascular concerns.",
+          "The relevant question is not simply whether a pose appears on an avoid list. Your blood-pressure control, symptoms, experience level and other medical conditions all affect what should be included or modified.",
         ],
       },
       {
-        title: "What to do instead",
+        title: "Choose a supported starting point",
         content: [
-          "Passive, supported inversions like Viparita Karani (legs-up-the-wall) offer some of the circulatory benefits without the strain of a full inversion, and are commonly included in studied protocols instead.",
-          "Any new yoga practice, especially with an existing cardiovascular condition, is worth discussing with your doctor first — and worth learning under guidance rather than from a video alone.",
+          "If you have hypertension and want to begin yoga, discuss the type and intensity of practice with your clinician and learn modifications from an appropriately trained instructor. Stop if a practice causes concerning symptoms rather than pushing through them.",
         ],
       },
     ],
@@ -85,19 +82,18 @@ export const highBloodPressureSubpages: ConditionSubpage[] = [
     parentSlug: "high-blood-pressure",
     question: "How long does it take for yoga to lower blood pressure?",
     shortAnswer:
-      "Clinical studies showing measurable blood pressure reductions generally involved consistent practice — typically 3 or more sessions per week — sustained over 8 to 12 weeks. Individual timelines vary based on starting blood pressure, consistency of practice, and other lifestyle factors alongside it.",
+      "There is no single timeline for everyone. Studies reporting measurable changes generally used regular practice over several weeks, with some reviews finding benefits associated with three or more sessions per week. Your own response should be judged from repeated blood-pressure readings rather than a fixed deadline.",
     detail: [
       {
-        title: "What the studies actually measured",
+        title: "What the study pattern suggests",
         content: [
-          "The systematic review of 49 trials found associations with blood pressure reduction specifically at a frequency of three or more sessions weekly — infrequent or inconsistent practice was not the pattern studied, and shouldn't be expected to produce the same result.",
-          "This mirrors what's generally true of lifestyle interventions: the studies measure sustained, consistent behaviour change, not occasional effort.",
+          "The research reviewed for this topic includes programmes lasting roughly 8 to 12 weeks and, in some analyses, a frequency of at least three sessions per week. This describes how the research was conducted; it does not guarantee that an individual will see the same change on the same schedule.",
         ],
       },
       {
-        title: "Setting realistic expectations",
+        title: "Track your own response",
         content: [
-          "Results vary by individual, starting blood pressure, and what else is part of your lifestyle plan (diet, sleep, stress). Regular monitoring with your doctor is the reliable way to track your own progress, rather than expecting a fixed timeline.",
+          "Blood pressure varies with medication, sleep, stress, food, activity and measurement conditions. Regular readings taken appropriately give you and your clinician a better basis for deciding whether your overall plan is helping than relying on how you feel after a few yoga sessions.",
         ],
       },
     ],

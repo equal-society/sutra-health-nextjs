@@ -248,62 +248,92 @@ export default async function ConditionPage({
       />
 
       <main className="bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">
-        {/* HERO — premium editorial condition introduction */}
-        <section className="border-b border-[var(--sutra-border)] bg-[var(--sutra-porcelain)]">
+        {/* HERO — full-image condition introduction */}
+        <section className="relative isolate min-h-[620px] overflow-hidden border-b border-[var(--sutra-border)] bg-[var(--sutra-ink)] sm:min-h-[660px] lg:min-h-[680px]">
+          {/* Full Background Image */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-cover bg-[center_center] bg-no-repeat sm:bg-center"
+            style={{
+              backgroundImage: `url('/images/conditions/${condition.slug}.webp')`,
+            }}
+          />
+
+          {/* Dark Overlay */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[var(--sutra-ink)]/60"
+          />
+
+          {/* Subtle bottom gradient for mobile readability */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-gradient-to-t from-[var(--sutra-ink)]/70 via-transparent to-[var(--sutra-ink)]/20"
+          />
+
           <Container>
-            <div className="mx-auto max-w-7xl">
-              <div className="grid lg:grid-cols-[minmax(0,0.92fr)_minmax(420px,0.78fr)] lg:items-center lg:gap-16 xl:grid-cols-[minmax(0,1fr)_520px] xl:gap-20">
-                <div className="py-14 sm:py-18 lg:py-24 xl:py-28">
-                  <div className="flex items-center gap-3">
-                    <span
-                      aria-hidden="true"
-                      className="h-px w-9 bg-[var(--sutra-sand)]"
-                    />
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--sutra-muted)] sm:text-[11px]">
-                      Health condition
-                    </p>
-                  </div>
+            <div className="relative z-10 mx-auto flex min-h-[620px] max-w-7xl items-center sm:min-h-[660px] lg:min-h-[680px]">
+              <div className="w-full max-w-[1050px] py-16 sm:py-20 lg:py-28 xl:py-32">
 
-                  <h1 className="mt-6 max-w-[820px] font-[var(--font-serif)] text-[50px] font-medium leading-[0.94] tracking-[-0.05em] text-[var(--sutra-ink)] sm:text-[62px] md:text-[70px] lg:text-[76px] xl:text-[88px]">
-                    {condition.title}
-                  </h1>
+                {/* Eyebrow */}
+                <div className="flex items-center gap-3">
+                  <span
+                    aria-hidden="true"
+                    className="h-px w-7 shrink-0 bg-[var(--sutra-sand)] sm:w-9"
+                  />
 
-                  <div className="mt-8 flex max-w-[700px] items-start gap-4">
-                    <span
-                      aria-hidden="true"
-                      className="mt-2 h-12 w-px shrink-0 bg-[var(--sutra-sand)]"
-                    />
-                    <p className="text-[16px] leading-8 text-[var(--sutra-muted)] sm:text-[18px] sm:leading-9">
-                      {condition.shortDescription}
-                    </p>
-                  </div>
-
-                  <div className="mt-9 flex flex-wrap items-center gap-x-5 gap-y-2 text-[9px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)] sm:text-[10px]">
-                    <span>Sutra Health</span>
-                    <span aria-hidden="true" className="text-[var(--sutra-sand)]">
-                      ·
-                    </span>
-                    <span>Condition guide</span>
-                  </div>
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-white/80 sm:text-[11px] sm:tracking-[0.2em]">
+                    Health condition
+                  </p>
                 </div>
 
-                <figure className="pb-10 sm:pb-12 lg:py-14 xl:py-16">
-                  <div className="relative aspect-[4/3] w-full overflow-hidden border border-[var(--sutra-border)] bg-[var(--sutra-pale-sage)]">
-                    <Image
-                      src={`/images/conditions/${condition.slug}.webp`}
-                      alt={`${condition.title} - Sutra Health`}
-                      fill
-                      priority
-                      sizes="(max-width: 1024px) 100vw, 520px"
-                      className="object-cover transition-transform duration-700 hover:scale-[1.015]"
-                    />
-                  </div>
+                {/* Heading */}
+                <h1
+                  className="
+                    mt-5
+                    max-w-[1000px]
+                    font-[var(--font-lora)]
+                    text-[44px]
+                    font-medium
+                    leading-[0.98]
+                    tracking-[-0.04em]
+                    text-white
+                    sm:mt-6
+                    sm:text-[60px]
+                    sm:leading-[0.96]
+                    md:text-[68px]
+                    lg:text-[76px]
+                    xl:text-[82px]
+                  "
+                >
+                  {condition.title}
+                </h1>
 
-                  <figcaption className="mt-3 flex items-center justify-between gap-4 text-[9px] font-semibold uppercase tracking-[0.15em] text-[var(--sutra-muted)]">
-                    <span>Understanding {condition.title.toLowerCase()}</span>
-                    <span className="hidden sm:inline">Sutra Health</span>
-                  </figcaption>
-                </figure>
+                {/* Description */}
+                <div className="mt-7 flex max-w-[720px] items-start gap-3 sm:mt-8 sm:gap-4">
+                  <span
+                    aria-hidden="true"
+                    className="mt-1.5 h-10 w-px shrink-0 bg-[var(--sutra-sand)] sm:mt-2 sm:h-12"
+                  />
+
+                  <p className="text-[15px] leading-7 text-white/85 sm:text-[18px] sm:leading-9">
+                    {condition.shortDescription}
+                  </p>
+                </div>
+
+                {/* Brand / Guide */}
+                <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-[8px] font-semibold uppercase tracking-[0.14em] text-white/65 sm:mt-9 sm:gap-x-5 sm:text-[10px] sm:tracking-[0.16em]">
+                  <span>Sutra Health</span>
+
+                  <span
+                    aria-hidden="true"
+                    className="text-[var(--sutra-sand)]"
+                  >
+                    ·
+                  </span>
+
+                  <span>Condition guide</span>
+                </div>
               </div>
             </div>
           </Container>

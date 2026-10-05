@@ -131,74 +131,101 @@ export default function ConditionsPage() {
       />
 
       <main className="bg-[#F7F5EF] text-[#202522]">
-       {/* =========================================================
-    HERO
-========================================================= */}
-<section className="border-b border-[var(--sutra-border)] bg-[var(--sutra-porcelain)]">
-  <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
-    <div className="max-w-5xl py-14 sm:py-18 lg:py-22 xl:py-24">
-      {/* Eyebrow */}
-      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-xs">
-        Health Conditions
-      </p>
+       
 
-      {/* Heading */}
-      <h1
-        className="
-          mt-5
-          max-w-[900px]
-          font-[var(--font-serif)]
-          text-[46px]
-          font-medium
-          leading-[0.98]
-          tracking-[-0.04em]
-          text-[var(--sutra-ink)]
-          sm:text-[58px]
-          md:text-[64px]
-          lg:text-[76px]
-          xl:text-[82px]
-        "
-      >
-        Understand your health.
-        <br />
-        <span className="text-[var(--sutra-teal)]">
-          Find practical support.
-        </span>
-      </h1>
+        {/* =========================================================
+            HERO
+        ========================================================= */}
+        <section className="relative isolate min-h-[560px] overflow-hidden border-b border-[var(--sutra-border)] bg-[var(--sutra-ink)] sm:min-h-[620px] lg:min-h-[680px]">
+          {/* Background Image */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 -z-20 bg-cover bg-center"
+            style={{
+              backgroundImage: "url('/images/nature.jpg')",
+            }}
+          />
 
-      {/* Primary introduction */}
-      <p
-        className="
-          mt-7
-          max-w-[680px]
-          text-[17px]
-          leading-8
-          text-[var(--sutra-muted)]
-          sm:mt-8
-          sm:text-[18px]
-          sm:leading-9
-        "
-      >
-        Explore common health concerns through a whole-person,
-        lifestyle-focused approach that considers nutrition, movement,
-        breath, mind and everyday habits alongside your individual needs.
-      </p>
+          {/* Dark Overlay */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 -z-10 bg-gradient-to-r from-[#172B29]/90 via-[#172B29]/72 to-[#172B29]/30"
+          />
 
-      {/* Supporting direction */}
-      <div className="mt-7 flex items-start gap-4">
-        <span
-          aria-hidden="true"
-          className="mt-2 h-10 w-px shrink-0 bg-[var(--sutra-sand)]"
-        />
+          {/* Bottom Gradient */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-[#172B29]/40 to-transparent"
+          />
 
-        <p className="max-w-[560px] text-[14px] leading-7 text-[var(--sutra-muted)] sm:text-[15px]">
-          Select a condition to explore relevant health information,
-          lifestyle considerations and practical support.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+            <div className="flex min-h-[560px] items-center py-20 sm:min-h-[620px] sm:py-24 lg:min-h-[680px] lg:py-28">
+              <div className="max-w-5xl">
+
+                {/* Eyebrow */}
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#D5C9AE] sm:text-xs">
+                  Health Conditions
+                </p>
+
+                {/* Heading */}
+                <h1
+                  className="
+                    mt-6
+                    max-w-[900px]
+                    font-[var(--font-serif)]
+                    text-[44px]
+                    font-medium
+                    leading-[1.02]
+                    tracking-[-0.04em]
+                    text-white
+                    sm:text-[58px]
+                    md:text-[68px]
+                    lg:text-[76px]
+                    xl:text-[82px]
+                  "
+                >
+                  Understand your health.
+                  <br />
+                  <span className="text-[#D5C9AE]">
+                    Find practical support.
+                  </span>
+                </h1>
+
+                {/* Primary Introduction */}
+                <p
+                  className="
+                    mt-7
+                    max-w-[680px]
+                    text-[16px]
+                    leading-8
+                    text-white/85
+                    sm:mt-8
+                    sm:text-[18px]
+                    sm:leading-9
+                  "
+                >
+                  Explore common health concerns through a whole-person,
+                  lifestyle-focused approach that considers nutrition, movement,
+                  breath, mind and everyday habits alongside your individual needs.
+                </p>
+
+                {/* Supporting Direction */}
+                <div className="mt-8 flex items-start gap-4">
+                  <span
+                    aria-hidden="true"
+                    className="mt-2 h-10 w-px shrink-0 bg-[#D5C9AE]"
+                  />
+
+                  <p className="max-w-[560px] text-[14px] leading-7 text-white/75 sm:text-[15px]">
+                    Select a condition to explore relevant health information,
+                    lifestyle considerations and practical support.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* =========================================================
             CONDITION HUBS

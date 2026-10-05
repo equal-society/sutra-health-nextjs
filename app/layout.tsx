@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import Header from "@/components/layout/Header";
-import Footer from "@/components/hero/Footer";
+import Footer from "@/components/layout/Footer";
 import WhatsAppFloat from "@/components/shared/WhatsAppFloat";
 
 import { Lora, Manrope } from "next/font/google";

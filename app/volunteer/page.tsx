@@ -5,14 +5,14 @@ import Container from "@/components/shared/Container";
 export const metadata: Metadata = {
   title: "Volunteer With Sutra Health | Community Health & Yoga",
   description:
-    "Join Sutra Health's volunteer community in Faridabad and support yoga, wellness and community health activities.",
+    "Join Sutra Health's volunteer community in Faridabad and support yoga, community health and wellness activities.",
   alternates: {
     canonical: "https://lifequality.org.in/volunteer",
   },
   openGraph: {
     title: "Volunteer With Sutra Health | Community Health & Yoga",
     description:
-      "Join the Sutra Health volunteer community and support yoga, wellness and community health activities.",
+      "Learn about volunteering with Sutra Health and the community activities currently described on this site.",
     url: "https://lifequality.org.in/volunteer",
     siteName: "Sutra Health",
     type: "website",
@@ -93,11 +93,27 @@ export default function VolunteerPage() {
         {/* =====================================================
             HERO
         ===================================================== */}
-        <section className="border-b border-[var(--sutra-border)] bg-[var(--sutra-porcelain)]">
+        <section className="relative overflow-hidden border-b border-[var(--sutra-border)] bg-[var(--sutra-porcelain)]">
+
+          {/* Background Image */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: "url('/images/nature.jpg')",
+            }}
+          />
+
+          {/* Image Overlay */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[var(--sutra-ink)]/55"
+          />
+
           <Container>
-            <div className="grid gap-10 py-14 sm:py-18 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20 lg:py-22 xl:py-24">
+            <div className="relative z-10 grid gap-10 py-14 sm:py-18 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20 lg:py-22 xl:py-24">
               <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-xs">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white sm:text-xs">
                   Join our movement
                 </p>
 
@@ -110,22 +126,22 @@ export default function VolunteerPage() {
                     font-medium
                     leading-[0.96]
                     tracking-[-0.045em]
-                    text-[var(--sutra-ink)]
+                    text-white
                     sm:text-[62px]
                     lg:text-[78px]
                     xl:text-[84px]
                   "
                 >
                   Heal
-                  <span className="text-[var(--sutra-teal)]"> together.</span>
+                  <span className="text-[#D5C9AE]"> together.</span>
                   <br />
                   Grow together.
                 </h1>
 
-                <p className="mt-7 max-w-[650px] text-[17px] leading-8 text-[var(--sutra-muted)] sm:text-[18px] sm:leading-9">
+                <p className="mt-7 max-w-[650px] text-[17px] leading-8 text-white/85 sm:text-[18px] sm:leading-9">
                   Sutra Health is more than a clinic — it is a living movement.
                   Join our Faridabad-based volunteer community supporting yoga,
-                  wellness and community health activities.
+                  community health and wellness activities.
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3">
@@ -133,7 +149,7 @@ export default function VolunteerPage() {
                     href={volunteerForm}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 border border-[var(--sutra-teal)] bg-[var(--sutra-teal)] px-6 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-[var(--sutra-teal-hover)]"
+                    className="inline-flex items-center gap-3 border border-[var(--sutra-teal)] bg-white px-6 py-3.5 text-[13px] font-semibold text-[var(--sutra-teal)] transition-colors"
                   >
                     Volunteer with us
                     <span aria-hidden="true">↗</span>
@@ -143,7 +159,7 @@ export default function VolunteerPage() {
                     href="https://wa.me/919013103676"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 border border-[var(--sutra-border-strong)] px-6 py-3.5 text-[13px] font-semibold text-[var(--sutra-teal)] transition-colors hover:bg-[var(--sutra-pale-sage)]"
+                    className="inline-flex items-center gap-3 border border-white/60 px-6 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-white/10"
                   >
                     Ask on WhatsApp
                     <span aria-hidden="true">↗</span>
@@ -152,13 +168,13 @@ export default function VolunteerPage() {
               </div>
 
               <div className="flex items-end">
-                <div className="w-full border-t border-[var(--sutra-border-strong)] pt-7">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+                <div className="w-full border-t border-white/50 pt-7">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/70">
                     Community work
                   </p>
 
-                  <p className="mt-4 max-w-[430px] font-serif text-[30px] font-medium leading-[1.12] tracking-[-0.025em] text-[var(--sutra-ink)] sm:text-[38px]">
-                    Small contributions can help make healthier living more
+                  <p className="mt-4 max-w-[430px] font-serif text-[30px] font-medium leading-[1.12] tracking-[-0.025em] text-white sm:text-[38px]">
+                    Volunteering can support the community activities described by Sutra Health and EQUAL Society.
                     accessible.
                   </p>
                 </div>
@@ -271,7 +287,7 @@ export default function VolunteerPage() {
                 </h2>
 
                 <p className="mt-5 max-w-[470px] text-[14px] leading-7 text-[var(--sutra-muted)]">
-                  The previous Sutra Health site highlighted these annual health
+                  Earlier Sutra Health material highlighted annual health
                   awareness days as opportunities for community education and
                   participation.
                 </p>

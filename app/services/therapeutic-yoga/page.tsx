@@ -14,7 +14,7 @@ const therapeuticYoga: ServicePageConfig = {
     "Explore guided Therapeutic Yoga in Faridabad, including traditional asana, breathing practices, preparation and participation considerations.",
 
   heroDescription:
-    "A guided way to approach traditional Yoga practices, with the choice and level of each activity considered in relation to the participant.",
+    "A guided way to explore selected Yoga practices, with the starting level and activities considered in relation to the participant.",
 
   trust: [
     "Traditional Yoga practices",
@@ -23,16 +23,16 @@ const therapeuticYoga: ServicePageConfig = {
   ],
 
   introEyebrow: "Traditional Practice, Considered Individually",
-  introTitle: "A traditional sequence needs a suitable starting point.",
+  introTitle: "Choose the practice that is appropriate for your starting point.",
   introParagraphs: [
     "Life Quality’s earlier Yoga resource presents a 20-part sequence inspired by Swami Sivananda. It includes familiar practices such as Tadasana, Vriksha Asana, Surya Namaskar, Shavasana and Pranayama, alongside more demanding postures. These are examples from the legacy resource, not a prescribed routine for every participant.",
     "In a therapeutic setting, the choice to include, adapt or omit a practice should take account of experience, mobility and relevant health advice. Yoga is complementary to appropriate medical care, not a substitute for it.",
   ],
 
   focusEyebrow: "Practice Elements",
-  focusTitle: "From foundational movement to breath and rest.",
+  focusTitle: "Selected practices, from movement to rest.",
   focusIntro:
-    "The former Life Quality sequence offers a traditional reference point. A guided session may draw on selected elements rather than attempt the full sequence.",
+    "The former Life Quality sequence is a reference point, not a requirement to complete every practice. A guided session may use selected elements according to suitability.",
 
   focusAreas: [
     {
@@ -61,7 +61,7 @@ const therapeuticYoga: ServicePageConfig = {
     },
   ],
 
-  processTitle: "Preparing for a guided session",
+  processTitle: "Before you begin",
   processIntro:
     "The older resource emphasizes preparation and warm-up. Use these practical points as prompts, while confirming the current session format with the team.",
 
@@ -148,7 +148,7 @@ const therapeuticYoga: ServicePageConfig = {
     },
   ],
 
-  finalTitle: "Ask which practice format is currently available.",
+  finalTitle: "Confirm the current practice format before booking.",
   finalDescription:
     "Confirm session timing, location and suitability before booking, particularly if you have a health concern or movement restriction.",
 };

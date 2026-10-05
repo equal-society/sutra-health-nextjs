@@ -160,11 +160,11 @@ export default function LifestyleMedicinePage() {
             id="lifestyle-title"
             className="mt-4 max-w-3xl font-serif text-[clamp(2.25rem,6vw,4.25rem)] leading-[1.08] tracking-[-0.03em] text-white"
           >
-            Everyday habits can be part of your care conversation.
+            Six everyday areas can help you identify realistic priorities.
           </h1>
 
           <p className="mt-5 max-w-2xl text-lg leading-8 text-white/90 sm:text-xl">
-            Learn how six areas of daily life may be considered alongside your health history, priorities and appropriate medical care.
+            Use six everyday areas to identify realistic priorities that can be discussed alongside appropriate medical care.
           </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -202,11 +202,11 @@ export default function LifestyleMedicinePage() {
                 id="pillars-title"
                 className="mt-3 max-w-xl font-serif text-3xl leading-tight sm:text-4xl lg:text-5xl"
               >
-                A practical framework for discussing daily habits.
+                Six areas to review, not six changes to make at once.
               </h2>
 
               <p className="mt-4 max-w-2xl text-lg leading-8 text-[var(--sutra-muted)]">
-                These areas can influence one another. Their relevance and priority will differ from person to person.
+                Use the framework to decide what deserves attention first; not every area will be equally relevant to you.
               </p>
             </div>
 
@@ -270,7 +270,7 @@ export default function LifestyleMedicinePage() {
             </p>
 
             <p className="mt-4 text-lg leading-8 text-[var(--sutra-muted)]">
-              A gradual approach may help people review selected habits over time. Confirm the programme’s current format and availability with Life Quality before making plans.
+              The earlier programme material describes several activities, but its current structure is not confirmed here. Treat it as background information and verify what is currently offered before making plans.
             </p>
 
             <nav
@@ -317,11 +317,11 @@ export default function LifestyleMedicinePage() {
               id="assessment-title"
               className="mt-3 font-serif text-3xl leading-tight sm:text-4xl"
             >
-              Prepare the questions you want to raise.
+              Use the assessment to organise your starting questions.
             </h2>
 
             <p className="mt-4 text-lg leading-8 text-[var(--sutra-muted)]">
-              The 21-Point Assessment is an option for organising health and lifestyle questions before a consultation. Review the assessment page for its scope and current process.
+              The assessment can help you organise questions across everyday health areas before a consultation. See the assessment page for its current scope and process.
             </p>
           </div>
 

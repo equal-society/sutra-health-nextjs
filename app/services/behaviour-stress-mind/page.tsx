@@ -11,16 +11,16 @@ const behaviourStressMind: ServicePageConfig = {
   description:
     "Learn about Behaviour & Stress Support at Sutra Health, with a focus on understanding personal responses, recurring patterns and practical next steps.",
   heroDescription:
-    "A space to discuss stress-related challenges, recurring responses and changes you would like to approach differently, in the context of your circumstances.",
+    "A focused conversation about stress-related situations, recurring responses and changes you would like to make, considered in the context of your circumstances.",
   trust: ["Practical, individual-focused support", "Faridabad & Delhi NCR"],
   introEyebrow: "The Service",
-  introTitle: "Understand the patterns behind difficult moments.",
+  introTitle: "Make sense of recurring stress and behaviour patterns.",
   introParagraphs: [
-    "Stress can affect how people respond to situations, make decisions and manage everyday responsibilities. Sometimes, a useful starting point is to look more closely at what is happening and what feels difficult to change.",
-    "This service is presented as a discussion of personal responses, recurring situations and behaviour-related barriers. The focus should be agreed with you and kept realistic; the available session format and methods must be confirmed with the Sutra Health team.",
+    "Stressful situations can shape responses, decisions and everyday routines. This service gives you a place to describe a pattern and consider what, if anything, you would like to change.",
+    "The discussion centres on the situation you bring rather than a fixed programme. Confirm the practitioner, session format and methods currently available before booking.",
   ],
   focusEyebrow: "Areas for Discussion",
-  focusTitle: "Bring the situation you want to understand.",
+  focusTitle: "Start with the situation, not a prescribed programme.",
   focusIntro:
     "These are possible topics for discussion, not a fixed programme or a promise of a particular result.",
   focusAreas: [
@@ -49,7 +49,7 @@ const behaviourStressMind: ServicePageConfig = {
         "Identify a realistic question or action to consider, where appropriate to the service and your needs.",
     },
   ],
-  processTitle: "A conversation shaped around your concern",
+  processTitle: "A conversation focused on one practical question",
   processIntro:
     "The actual appointment format, practitioner role and techniques available should be confirmed with the Sutra Health team before booking.",
   process: [
@@ -73,7 +73,7 @@ const behaviourStressMind: ServicePageConfig = {
     },
   ],
   contextEyebrow: "Scope and Care",
-  contextTitle: "Choose support that fits the concern.",
+  contextTitle: "Know when another form of care is needed.",
   contextParagraphs: [
     "The supplied project information does not confirm psychotherapy, psychiatric assessment, crisis intervention or a named evidence-based psychological treatment as part of this service. Do not present these as available unless the client verifies them.",
     "This service should not replace medical assessment or prescribed treatment. If distress is severe or persistent, or you feel unsafe or may harm yourself or someone else, seek timely help from a qualified mental-health professional or local emergency services. Do not wait for a wellness appointment in an emergency.",

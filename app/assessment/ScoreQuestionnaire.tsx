@@ -54,10 +54,10 @@ export default function ScoreQuestionnaire() {
           <div className="relative z-10 max-w-4xl py-20 sm:py-24 lg:py-28">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/75">21-point lifestyle assessment</p>
             <h1 id="assessment-title" className="mt-5 max-w-4xl font-[var(--font-serif)] text-[44px] font-medium leading-[1.02] tracking-[-0.04em] text-white sm:text-6xl lg:text-[76px]">
-              Take a closer look at your everyday habits.
+              Use 21 questions to review the habits covered by this assessment.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-7 text-white/85 sm:text-lg sm:leading-8">
-              Food, movement, sleep and daily routines all contribute to your health. These questions offer a simple way to reflect on what your usual days look like.
+              Review the statements against your usual routine. The questionnaire covers food choices, activity, sleep, substances and other everyday practices; the result is a simple self-reflection score, not a clinical assessment.
             </p>
             <a href="#questions" className="mt-8 inline-flex min-h-12 items-center bg-[#F7F5EF] px-6 text-sm font-semibold text-[#17413D] transition-colors hover:bg-white">
               Start the questions <span aria-hidden="true" className="ml-3">↓</span>
@@ -76,7 +76,7 @@ export default function ScoreQuestionnaire() {
                   Think about your usual routine.
                 </h2>
                 <p className="mt-4 text-base leading-7 text-[var(--sutra-muted)]">
-                  Choose Yes or No for each statement based on what is typical for you, not an unusual day. The first seven items follow a reverse-scoring rule in this questionnaire.
+                  Choose Yes or No based on what is typical for you rather than an unusual day. The first seven statements use the questionnaire’s reverse-scoring rule, so answer each statement as written.
                 </p>
               </div>
               <div className="flex items-center gap-3 border-t border-[var(--sutra-border)] pt-4 sm:block sm:border-l sm:border-t-0 sm:pl-5 sm:pt-0">
@@ -140,7 +140,7 @@ export default function ScoreQuestionnaire() {
                 <div className="grid gap-5 sm:grid-cols-[minmax(0,1fr)_minmax(180px,240px)] sm:items-center sm:gap-8">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--sutra-muted)]">Your result</p>
-                    <h2 className="mt-2 font-[var(--font-serif)] text-3xl leading-tight text-[var(--sutra-ink)] sm:text-4xl">Your lifestyle assessment score</h2>
+                    <h2 className="mt-2 font-[var(--font-serif)] text-3xl leading-tight text-[var(--sutra-ink)] sm:text-4xl">Your questionnaire score</h2>
                    
                   </div>
                   <div className="flex items-baseline gap-2 border-t border-[var(--sutra-border-strong)] pt-5 sm:justify-end sm:border-l sm:border-t-0 sm:pl-7 sm:pt-0">
@@ -150,7 +150,7 @@ export default function ScoreQuestionnaire() {
                 </div>
                 <div className="mt-6 flex flex-col gap-3 border-t border-[var(--sutra-border-strong)] pt-5 sm:flex-row sm:items-center sm:justify-between">
                   <p className="max-w-xl text-sm leading-6 text-[var(--sutra-muted)]">
-                    For personal guidance, discuss your habits with a healthcare professional.
+                    Use the result as a prompt for discussion, not as a measure of disease risk or treatment need. If you want personal guidance, discuss your responses with an appropriate healthcare professional.
                   </p>
                   <Link href="/book-appointment" className="inline-flex min-h-11 shrink-0 items-center justify-center bg-[var(--sutra-teal)] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[var(--sutra-teal-hover)]">
                     Book a consultation <span aria-hidden="true" className="ml-3">→</span>
@@ -160,7 +160,7 @@ export default function ScoreQuestionnaire() {
             )}
             <div className="mt-8 border-l-2 border-[var(--sutra-sand)] pl-4">
               <p className="text-sm leading-6 text-[var(--sutra-muted)]">
-                For reflection only; not a diagnosis or substitute for professional medical advice. Do not change prescribed treatment based on this score.
+                This questionnaire is for reflection only. It is not a diagnosis, clinical risk score or substitute for professional medical advice. Do not start, stop or change prescribed treatment based on this result.
               </p>
             </div>
             <nav aria-label="Related information" className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm">

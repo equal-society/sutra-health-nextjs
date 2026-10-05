@@ -54,7 +54,7 @@ export default function ContactForm() {
           type="text"
           placeholder="Full name *"
           autoComplete="name"
-          className="w-full rounded-2xl border border-[#173F35]/12 bg-white px-4 py-3.5 text-[14px] text-[#173F35] outline-none transition placeholder:text-[#8A9690] focus:border-[#65966F]"
+          className="w-full border border-[#173F35]/12 bg-white px-4 py-3.5 text-[14px] text-[#173F35] outline-none transition placeholder:text-[#8A9690] focus:border-[#65966F]"
           required
         />
       </div>
@@ -65,14 +65,14 @@ export default function ContactForm() {
           type="tel"
           placeholder="Phone / WhatsApp"
           autoComplete="tel"
-          className="w-full rounded-2xl border border-[#173F35]/12 bg-white px-4 py-3.5 text-[14px] text-[#173F35] outline-none transition placeholder:text-[#8A9690] focus:border-[#65966F]"
+          className="w-full border border-[#173F35]/12 bg-white px-4 py-3.5 text-[14px] text-[#173F35] outline-none transition placeholder:text-[#8A9690] focus:border-[#65966F]"
         />
         <input
           name="email"
           type="email"
           placeholder="Email"
           autoComplete="email"
-          className="w-full rounded-2xl border border-[#173F35]/12 bg-white px-4 py-3.5 text-[14px] text-[#173F35] outline-none transition placeholder:text-[#8A9690] focus:border-[#65966F]"
+          className="w-full border border-[#173F35]/12 bg-white px-4 py-3.5 text-[14px] text-[#173F35] outline-none transition placeholder:text-[#8A9690] focus:border-[#65966F]"
         />
       </div>
 
@@ -80,14 +80,14 @@ export default function ContactForm() {
         name="message"
         placeholder="How can we help? *"
         rows={6}
-        className="w-full resize-none rounded-2xl border border-[#173F35]/12 bg-white px-4 py-3.5 text-[14px] text-[#173F35] outline-none transition placeholder:text-[#8A9690] focus:border-[#65966F]"
+        className="w-full resize-none border border-[#173F35]/12 bg-white px-4 py-3.5 text-[14px] text-[#173F35] outline-none transition placeholder:text-[#8A9690] focus:border-[#65966F]"
         required
       />
 
       <div className="flex flex-wrap items-center gap-4">
         <button
           type="submit"
-          className="rounded-full bg-[#173F35] px-6 py-3.5 text-[13px] font-semibold text-white transition hover:bg-[#12352D]"
+          className=" bg-[#173F35] px-6 py-3.5 text-[13px] font-semibold text-white transition hover:bg-[#12352D]"
         >
           Continue on WhatsApp →
         </button>

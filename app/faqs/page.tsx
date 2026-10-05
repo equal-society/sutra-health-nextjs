@@ -20,12 +20,12 @@ const faqs = [
   {
     question: "How long before I see results?",
     answer:
-      "There is no single timeline. Some people notice changes within weeks, while other improvements take longer. Results depend on the individual, the health concern and consistency with the plan.",
+      "There is no single timeline that applies to everyone. The next steps depend on the individual, the health concern and the plan discussed with the healthcare professional.",
   },
   {
     question: "How do I get started with Sutra Health?",
     answer:
-      "You can start by booking a consultation. We will discuss your health concerns, goals and current situation and help identify the most appropriate next step.",
+      "You can start by booking a consultation. The discussion can cover your health concerns, goals and current situation before the next step is considered.",
   },
 ];
 

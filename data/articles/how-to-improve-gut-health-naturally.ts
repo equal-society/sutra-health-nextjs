@@ -12,7 +12,7 @@ export const howToImproveGutHealthNaturally: Article = {
   image: "/images/conditions/digestive-gut-health.webp",
   content: {
     introduction:
-      "Gut health is not a single symptom or a single food. Digestive wellbeing is influenced by diet, hydration, movement, sleep, stress and individual health conditions. A practical approach starts with habits that are appropriate and sustainable.",
+      "There is no single food or routine that defines good gut health. For everyday digestive wellbeing, a useful starting point is to look at food variety, fibre tolerance, hydration and your own symptom pattern rather than following a universal list of foods.",
     sections: [
       {
         heading: "Start with dietary variety",
@@ -40,14 +40,14 @@ export const howToImproveGutHealthNaturally: Article = {
         ],
       },
       {
-        heading: "Look beyond food",
+        heading: "Use your symptoms to guide the next step",
         paragraphs: [
-          "Regular movement, adequate sleep and attention to stress can form part of a broader approach to wellbeing. These habits should complement, not replace, assessment when digestive symptoms are persistent or concerning.",
+          "If a change in diet repeatedly brings symptoms back, note the pattern rather than continuing to remove foods indefinitely. A food-and-symptom record can make a later discussion with a healthcare professional more useful.",
         ],
       },
     ],
     takeaway:
-      "Supporting gut health is usually about the overall pattern: varied foods, appropriate fibre and fluids, regular movement and attention to individual symptoms.",
+      "A practical approach to everyday gut health is to build a varied eating pattern, introduce fibre at a tolerable pace and pay attention to recurring symptoms rather than chasing a single 'gut-health' food.",
     whenToSeekHelp:
       "Persistent, severe or unexplained digestive symptoms should be assessed by a qualified healthcare professional, especially when symptoms are new or worsening.",
   },

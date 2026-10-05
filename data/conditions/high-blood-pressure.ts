@@ -6,88 +6,74 @@ export const highBloodPressure: Condition = {
   title: "High Blood Pressure",
 
   shortDescription:
-    "Lifestyle and yoga-based support for blood pressure management, grounded in published clinical research, alongside your doctor's care.",
+    "A practical guide to lifestyle factors relevant to blood pressure, including diet, activity, sleep, stress and the evidence on yoga as an adjunct to care.",
 
   introduction:
-    "High blood pressure rarely has one single cause, and it rarely responds to one single fix. Diet, physical activity, sleep, stress, and breathing patterns all influence it. At Sutra Health, we build a lifestyle plan around the factors that are actually relevant to you — informed by clinical research on yoga and lifestyle modification, and delivered alongside your existing medical care, not instead of it.",
+    "High blood pressure is influenced by several factors, and lifestyle changes are usually considered alongside appropriate medical assessment and treatment. This guide focuses on the everyday factors most relevant to blood-pressure care and explains where the available yoga evidence fits.",
 
   concerns: [
-    "Newly diagnosed hypertension or prehypertension",
-    "Blood pressure that stays borderline despite medication",
-    "Wanting to reduce reliance on medication through lifestyle change (always in consultation with your doctor)",
-    "Stress-related blood pressure spikes",
-    "Difficulty maintaining consistent diet, sleep, or activity habits",
-    "Uncertainty about which lifestyle changes actually make a measurable difference",
+    "A new or repeatedly elevated blood-pressure reading",
+    "Questions about diet, sodium, activity or sleep",
+    "Stress or routines that make healthy habits difficult to maintain",
+    "Interest in yoga or breathing practices alongside standard care",
+    "Wanting to understand which lifestyle changes are worth prioritising",
   ],
 
   lifestyleFactors: [
     {
-      title: "Diet and sodium intake",
-      description:
-        "Reducing sodium intake and improving overall diet quality is one of the most consistently evidence-backed lifestyle changes for blood pressure.",
+      title: "Diet and sodium",
+      description: "Dietary pattern and sodium intake are established areas to review as part of blood-pressure management, with individual needs depending on overall health and medical advice.",
     },
     {
-      title: "Physical activity and yoga",
-      description:
-        "Regular movement, including yoga practiced consistently, has been studied specifically for its effect on blood pressure — see the evidence below.",
+      title: "Physical activity",
+      description: "Regular appropriate activity can be part of cardiovascular risk reduction. The right intensity depends on fitness, symptoms and medical circumstances.",
     },
     {
-      title: "Sleep quality",
-      description:
-        "Poor sleep and irregular sleep patterns are linked to higher blood pressure variability.",
+      title: "Sleep",
+      description: "Sleep quality and regularity can be relevant to cardiovascular health and are worth discussing when sleep is consistently poor.",
     },
     {
-      title: "Stress and breathing patterns",
-      description:
-        "Chronic stress activates the sympathetic nervous system, which raises blood pressure. Breathing-based practices target this mechanism directly.",
+      title: "Stress and breathing",
+      description: "Stress management may support healthier routines. Breathing practices can be considered as a complementary practice, but they should not replace blood-pressure treatment or monitoring.",
     },
   ],
 
   sections: [
     {
-      title: "What actually influences blood pressure",
+      title: "Know the reading before choosing the intervention",
       content: [
-        "Blood pressure is affected by how much your blood vessels resist blood flow, which in turn is influenced by diet, activity levels, stress hormones, sleep, and body weight. No single lifestyle change fixes all of these at once — which is why a scattered approach (just cutting salt, or just exercising more) often produces smaller results than a coordinated plan.",
-        "A 2023 clinical trial conducted specifically in an Indian hypertensive and prehypertensive population (Journal of the Practice of Cardiovascular Sciences) studied 300 patients using a structured, non-pharmacological approach alongside standard care — reflecting the same principle: lifestyle changes work best when they're coordinated, not piecemeal.",
+        "A single reading does not provide the full clinical picture. Persistent elevation, the measurement context and other cardiovascular risk factors all matter.",
+        "If you have been diagnosed with hypertension, lifestyle measures should sit alongside the monitoring and treatment plan recommended by your clinician.",
       ],
     },
     {
-      title: "What the research says about yoga specifically",
+      title: "What the yoga evidence shows",
       content: [
-        "This isn't a fringe claim — it's been studied in randomized controlled trials. A study published in Hypertension Research (Nature) found that adding yoga to standard lifestyle modification reduced systolic blood pressure by 6 mmHg, compared to 4 mmHg with lifestyle modification alone.",
-        "A meta-analysis pooling 16 separate studies (962 participants) found yoga reduced systolic blood pressure by an average of 4.35 mmHg and diastolic by 2.06 mmHg — with a notably larger effect specifically in Asian populations (5.52 / 2.81 mmHg).",
-        "A systematic review of 49 clinical trials found that practicing yoga at least three times a week was associated with a 10 mmHg reduction in systolic and 6 mmHg reduction in diastolic blood pressure — a meaningful effect size in cardiovascular terms.",
-        "These are averages across study populations, not a promise about any individual's results. Your own response depends on your starting point, consistency, and what else is part of your care plan.",
+        "The selected research on this site suggests yoga can produce modest improvements in blood pressure when used as an adjunct to standard lifestyle care. The evidence section gives the specific studies and findings rather than treating yoga as a stand-alone treatment.",
+        "The size of any effect varies between studies and populations, so an evidence-based approach should avoid promising a particular reduction for an individual.",
       ],
     },
     {
-      title: "Why breathing practices are not just relaxation",
+      title: "Choose priorities you can maintain",
       content: [
-        "Slow, controlled breathing activates the parasympathetic nervous system — the body's counterbalance to the stress response that raises blood pressure. This is a specific, studied mechanism, not a general wellness claim.",
-        "Pranayama practices are included in most of the clinical yoga protocols studied above, not used as a separate, unrelated relaxation technique.",
-      ],
-    },
-    {
-      title: "How Sutra Health builds a plan around this",
-      content: [
-        "We look at your diet, activity levels, sleep, and stress patterns together, and build a lifestyle and yoga plan informed by the research above — coordinated with your doctor, particularly around any medication changes.",
-        "This is not a replacement for medical care. Blood pressure that is significantly elevated needs medical evaluation, and any changes to medication must go through your physician.",
+        "A useful starting point is to identify one or two practical areas: dietary pattern, activity, sleep or stress. The priority should fit your current health status and existing medical plan.",
+        "If readings are substantially high, symptoms are concerning or medication decisions are needed, seek medical care rather than relying on lifestyle practices alone.",
       ],
     },
   ],
 
   approach: [
-    "Diet and sodium reduction",
-    "Structured yoga practice (asana + pranayama)",
-    "Sleep consistency",
-    "Stress and breathing-based interventions",
+    "Review blood-pressure readings and existing medical advice first",
+    "Prioritise practical dietary and activity changes that fit the person",
+    "Address sleep and stress where they interfere with routine",
+    "Use yoga or breathing practices as complementary options, not substitutes for treatment",
   ],
 
   support: [
-    "Personalized lifestyle and nutrition guidance",
-    "Structured therapeutic yoga informed by clinical protocols",
-    "Pranayama and breath-based stress management",
-    "Coordination with your existing medical care",
+    "Nutrition counselling around dietary patterns and sodium",
+    "Lifestyle support for activity, sleep and routines",
+    "Therapeutic yoga or movement as an adjunct to care",
+    "Physician consultation when readings, symptoms or treatment decisions need review",
   ],
 
   evidence: [
@@ -120,39 +106,25 @@ export const highBloodPressure: Condition = {
 
   faqs: [
     {
-      question: "Can yoga lower blood pressure?",
-      answer:
-        "Multiple randomized controlled trials and meta-analyses have found that yoga, practiced consistently, is associated with measurable reductions in both systolic and diastolic blood pressure — typically in the range of 4 to 10 mmHg depending on the study and practice frequency. Individual results vary, and yoga works best alongside your existing medical care, not as a replacement for it.",
+      question: "Can lifestyle changes help lower blood pressure?",
+      answer: "They can be part of blood-pressure management, particularly around diet, physical activity, weight, sleep and other cardiovascular risk factors. The appropriate plan depends on the individual.",
     },
     {
-      question: "Can yoga cure high blood pressure permanently?",
-      answer:
-        "No. Yoga and lifestyle changes are studied as complementary, non-pharmacological measures that can meaningfully reduce blood pressure — they are not a cure, and blood pressure can rise again if the practice or other lifestyle factors aren't maintained. Any decision to reduce or stop medication must be made with your doctor.",
+      question: "Can yoga replace blood-pressure medication?",
+      answer: "No. The research represented here studies yoga as a complementary intervention. Do not stop or change prescribed medication without discussing it with your clinician.",
     },
     {
-      question: "How long does it take to see a change?",
-      answer:
-        "Clinical studies that showed measurable reductions generally involved consistent practice over 8 to 12 weeks, several times per week. Individual timelines vary based on starting blood pressure, consistency, and other lifestyle factors.",
-    },
-    {
-      question: "Is this a substitute for blood pressure medication?",
-      answer:
-        "No. The research on yoga and lifestyle modification studies it as a complementary approach used alongside standard medical care, not a replacement. Never change or stop medication without your doctor's guidance.",
+      question: "When should high blood pressure be medically assessed?",
+      answer: "Repeated elevated readings should be discussed with a qualified clinician. Very high readings or concerning symptoms require prompt medical assessment rather than self-management alone.",
     },
   ],
 
   relatedConditions: ["diabetes-blood-sugar", "weight-management", "digestive-gut-health"],
 
-  // JUDGMENT CALL — flag for client review: this link previously pointed to
-  // "/approach/breath-mindfulness", which doesn't correspond to any of the 5
-  // established service pages. Retargeted to Behaviour, Stress & Mind as the
-  // closest existing match (mindfulness/stress fits there; breath practices
-  // are also covered under Therapeutic Yoga's focus areas). Confirm this is
-  // the right destination, or build a dedicated page if one is planned.
   internalLinks: [
-    { label: "Nutrition", href: "/what-we-do/nutrition" },
-    { label: "Therapeutic Yoga & Movement", href: "/what-we-do/therapeutic-yoga" },
-    { label: "Breath & Mindfulness", href: "/what-we-do/behaviour-stress-mind" },
+    { label: "Nutrition", href: "/services/nutrition" },
+    { label: "Therapeutic Yoga & Movement", href: "/services/therapeutic-yoga" },
+    { label: "Behaviour, Stress & Mind", href: "/services/behaviour-stress-mind" },
     { label: "Diabetes & Blood Sugar", href: "/conditions/diabetes-blood-sugar" },
   ],
 };

@@ -21,7 +21,7 @@ const academicItems: AcademicItem[] = [
     date: "26 Jun 2026",
     title: "Empowering patients through three Evidence-Based Lifestyle Practices",
     description:
-      "An introduction to the Three-Layered Approach, bringing Lifestyle Medicine, Integrative Medicine and Natural Healing together to help patients make informed decisions with healthcare professionals.",
+      "A source article on evidence-informed lifestyle practices and the ideas discussed through the Three-Layered Approach.",
     href: "https://academic.lifequality.org.in/posts/2026/06/empowering-patients-tla/",
     source: "Academic site",
   },
@@ -31,7 +31,7 @@ const academicItems: AcademicItem[] = [
     title:
       "Micronutrient Deficiencies: Why Dietary Diversity, Not More Pills, May Be the Sustainable Fix",
     description:
-      "A discussion of dietary diversity and a sustainable approach to micronutrient deficiencies, published through the Integrative Wellness Journal on Medium.",
+      "A discussion of dietary diversity and practical questions around micronutrient deficiencies.",
     href: "https://academic.lifequality.org.in/posts/2026/06/micronutrient-deficiencies-tla/",
     source: "Academic site",
   },
@@ -41,7 +41,7 @@ const academicItems: AcademicItem[] = [
     title:
       "A CT Scan Said IBD. A Colonoscopy Said Otherwise. What Finally Helped This IBS Patient Wasn’t a Drug",
     description:
-      "A case-based account describing structured diet, yoga and a traffic-light system in the management of a chronic IBS case.",
+      "A case-based account describing diet, yoga and a traffic-light system in one chronic IBS case.",
     href: "https://academic.lifequality.org.in/posts/2026/05/restlessness-to-actively-calm",
     source: "Academic site",
   },
@@ -162,14 +162,34 @@ export default function AcademicResearchPage() {
       {/* Hero */}
       <section
         aria-labelledby="academic-research-title"
-        className="overflow-hidden border-b border-[#202522]/10 bg-[#F7F5EF]"
+        className="relative isolate overflow-hidden border-b border-[#202522]/10 bg-[#202522]"
       >
-        <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-12">
+        {/* Background image */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/images/nature.jpg')",
+          }}
+        />
+
+        {/* Overlay */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-[#202522]/60"
+        />
+
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-t from-[#202522]/70 via-[#202522]/20 to-[#202522]/25"
+        />
+
+        <div className="relative z-10 mx-auto max-w-[1440px] px-5 py-3 sm:px-8 lg:px-12">
           {/* Eyebrow */}
-          <div className=" py-6 sm:py-8">
-            <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#65736D] sm:text-[11px] sm:tracking-[0.24em]">
+          <div className="py-6 sm:py-8">
+            <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/75 sm:text-[11px] sm:tracking-[0.24em]">
               <span
-                className="h-px w-6 shrink-0 bg-[#91A298] sm:w-8"
+                className="h-px w-6 shrink-0 bg-white/70 sm:w-8"
                 aria-hidden="true"
               />
               Academic &amp; Research
@@ -177,44 +197,35 @@ export default function AcademicResearchPage() {
           </div>
 
           {/* Main statement */}
-          <div className="border-b border-[#202522]/10 py-6">
+          <div className="border-b border-white/20 py-3">
             <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
               <h1
                 id="academic-research-title"
-                className="max-w-[1080px] font-serif text-[clamp(2.75rem,5.8vw,5.75rem)] leading-[0.93] tracking-[-0.04em] text-[#202522] sm:leading-[0.88]"
+                className="max-w-[1080px] font-[var(--font-lora)] text-[clamp(2.75rem,5.8vw,5.75rem)] leading-[0.93] tracking-[-0.04em] text-white sm:leading-[0.88]"
               >
                 Academic &amp; Research
                 <br className="hidden sm:block" />
                 behind better health.
               </h1>
-
-            
             </div>
           </div>
 
           {/* Intro */}
-          <div className=" py-3 sm:py-5">
-            <p className="max-w-4xl text-[1.125rem] leading-7 tracking-[-0.01em] text-[#202522] sm:text-2xl sm:leading-9">
-              Research, publications, teaching, talks and practical writing connected
-              with the work behind Sutra Health.
+          <div className="py-3 sm:py-5">
+            <p className="max-w-4xl text-[1.125rem] leading-7 tracking-[-0.01em] text-white/90 sm:text-2xl sm:leading-9">
+              Browse selected academic material here, then follow each link to the
+              original publication, presentation or teaching source.
             </p>
           </div>
 
-          {/* Supporting copy */}
-          <div className="border-b border-[#202522]/10">
-            <p className="max-w-3xl text-[13px] leading-6 text-[#65736D] sm:text-base sm:leading-7">
-              Explore recent articles, publications, lectures and talks. When
-              you want the complete work, follow the link to its original
-              academic or publishing source.
-            </p>
-          </div>
+         
 
           {/* CTA */}
-          <div className="border-b border-[#202522]/10 py-6 sm:py-8">
+          <div className="border-b border-white/20 py-6 sm:py-8">
             <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
               <Link
                 href="#latest-work"
-                className="inline-flex min-h-11 w-full items-center justify-center gap-3 bg-[#17413D] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#12332F] focus:outline-none focus:ring-2 focus:ring-[#17413D] focus:ring-offset-2 focus:ring-offset-[#F7F5EF] sm:w-auto"
+                className="inline-flex min-h-11 w-full items-center justify-center gap-3 bg-white px-5 py-3 text-sm font-semibold text-[#17413D] transition-colors hover:bg-[#F7F5EF] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#202522] sm:w-auto"
               >
                 Explore latest work
                 <span aria-hidden="true">↓</span>
@@ -224,7 +235,7 @@ export default function AcademicResearchPage() {
                 href="https://academic.lifequality.org.in/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-11 w-full items-center justify-center gap-2 border border-[#202522]/15 px-5 py-3 text-sm font-semibold text-[#17413D] transition-colors hover:border-[#17413D] focus:outline-none focus:ring-2 focus:ring-[#17413D] focus:ring-offset-2 focus:ring-offset-[#F7F5EF] sm:w-auto"
+                className="inline-flex min-h-11 w-full items-center justify-center gap-2 border border-white/45 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#202522] sm:w-auto"
               >
                 Academic site
                 <span aria-hidden="true">↗</span>
@@ -234,9 +245,9 @@ export default function AcademicResearchPage() {
 
           {/* Brand line */}
           <div className="py-5 sm:py-6">
-            <p className="max-w-xl text-[10px] leading-5 text-[#65736D] sm:text-[11px]">
-              Your partner in recovery and wellness through science-based
-              traditional wisdom
+            <p className="max-w-xl text-[10px] leading-5 text-white/65 sm:text-[11px]">
+              Original research, teaching and publications related to health,
+              lifestyle medicine and public health.
             </p>
           </div>
         </div>
@@ -367,17 +378,16 @@ export default function AcademicResearchPage() {
               </p>
 
               <h2 className="mt-4 font-serif text-[2.35rem] leading-[1.05] tracking-[-0.025em] sm:text-5xl">
-                From research to practical health knowledge.
+                A record of the work behind the health information.
               </h2>
             </div>
 
             <div className="max-w-2xl lg:pt-7">
               <p className="text-[15px] leading-7 text-[#202522]/80 sm:text-lg sm:leading-8">
-                The academic work spans Lifestyle Medicine, Nutrition, Yoga,
-                health systems and public health policy. It combines research,
-                teaching, clinical experience and practical writing rather
-                than treating academic knowledge as separate from everyday
-                health decisions.
+                The academic record spans Lifestyle Medicine, Nutrition, Yoga,
+                health systems and public health policy. This page provides
+                a concise index; the linked source remains the place for the
+                complete paper, lecture or presentation.
               </p>
 
               <div className="mt-7 flex flex-col gap-3 text-sm font-semibold text-[#17413D] sm:flex-row sm:flex-wrap sm:gap-x-7">
@@ -416,18 +426,18 @@ export default function AcademicResearchPage() {
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
           <div>
             <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#65736D] sm:text-[11px]">
-              One connected knowledge ecosystem
+              How to use this library
             </p>
 
             <h2 className="max-w-3xl font-serif text-[2.35rem] leading-[1.05] tracking-[-0.025em] sm:text-5xl">
-              Research can inform practice. Practice can generate learning.
+              Find the original source behind the work.
             </h2>
           </div>
 
           <p className="max-w-xl text-[13px] leading-6 text-[#65736D] sm:text-base sm:leading-7">
-            Sutra Health is the patient-facing front door, while the academic
-            site provides the deeper research, teaching and knowledge record
-            behind the work.
+            Use this page to discover the source material. Patient-facing health
+            information remains on Sutra Health, while the linked academic
+            pages provide the full research, teaching and publication record.
           </p>
         </div>
 
@@ -435,7 +445,7 @@ export default function AcademicResearchPage() {
           {[
             ["01", "Research", "Publications, evidence and academic work."],
             ["02", "Teaching", "Lectures, seminars and practical learning."],
-            ["03", "Practice", "Health knowledge translated into care."],
+            ["03", "Talks & publications", "Presentations, public talks and published work."],
           ].map(([number, title, description]) => (
             <div
               key={number}

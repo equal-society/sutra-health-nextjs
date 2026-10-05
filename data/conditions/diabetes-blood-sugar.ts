@@ -6,88 +6,74 @@ export const diabetesBloodSugar: Condition = {
   title: "Diabetes & Blood Sugar",
 
   shortDescription:
-    "Lifestyle and yoga-based support for blood sugar and metabolic wellbeing, grounded in clinical research — including a large India-specific prevention trial — alongside your doctor's care.",
+    "A condition guide to blood-sugar management, with evidence on nutrition, physical activity, yoga and structured lifestyle support alongside medical care.",
 
   introduction:
-    "Metabolic health — how your body manages blood sugar, weight, and related processes — responds to nutrition, movement, sleep, and stress together, not any single lever pulled in isolation. We build a plan around what clinical research actually supports, including strong evidence specific to Indian populations, coordinated with your existing medical care.",
+    "Blood-sugar health involves more than one behaviour. Nutrition, physical activity, sleep, stress and prescribed treatment can all be relevant, with the right combination depending on whether the concern is prediabetes, type 2 diabetes or another metabolic issue.",
 
   concerns: [
-    "Prediabetes and wanting to avoid progression to diabetes",
-    "Type 2 diabetes with blood sugar that's hard to keep in range",
-    "Wanting to reduce reliance on medication through lifestyle change (always in consultation with your doctor)",
-    "Elevated HbA1c or fasting glucose",
-    "Weight and metabolic risk factors together",
-    "Uncertainty about how much yoga can realistically do here",
+    "Prediabetes and concern about progression to diabetes",
+    "Type 2 diabetes with blood sugar that is difficult to keep in range",
+    "Questions about lifestyle changes alongside prescribed treatment",
+    "Elevated HbA1c or fasting glucose results",
+    "Wanting a structured way to review everyday factors affecting metabolic health",
   ],
 
   lifestyleFactors: [
     {
-      title: "Diet and eating patterns",
-      description:
-        "Nutrition is central to metabolic health — what and when you eat directly affects blood sugar regulation.",
+      title: "Eating pattern",
+      description: "Meal composition, timing and overall dietary pattern can be reviewed alongside blood-sugar goals and existing medical advice.",
     },
     {
-      title: "Structured yoga practice",
-      description:
-        "Clinical trials specifically measure yoga's effect on HbA1c and fasting glucose — this is a studied intervention, not a general wellness claim.",
+      title: "Physical activity",
+      description: "Regular movement can support metabolic health. The appropriate activity depends on health status, fitness and any complications or restrictions.",
     },
     {
-      title: "Physical activity beyond yoga",
-      description:
-        "Muscle-building activity plays a distinct, complementary role in glucose metabolism — see the honest discussion below.",
+      title: "Yoga and structured practice",
+      description: "Clinical studies have examined yoga as an adjunct to standard care, including research on HbA1c and fasting glucose. It should not be presented as a replacement for diabetes treatment.",
     },
     {
       title: "Sleep and stress",
-      description:
-        "Both affect insulin sensitivity and blood sugar regulation independent of diet and activity.",
+      description: "Sleep quality and stress can affect routines and self-management. They may be useful targets when day-to-day diabetes care is difficult to sustain.",
     },
   ],
 
   sections: [
     {
-      title: "What the clinical research actually shows",
+      title: "Start with the type of blood-sugar concern",
       content: [
-        "A 2026 Bayesian meta-analysis of randomized controlled trials in adults with type 2 diabetes found yoga was associated with a 0.64% reduction in HbA1c and a 1.36 mmol/L reduction in fasting blood glucose — both exceeding commonly used clinical significance thresholds. The benefit was largest in patients with poorer baseline control.",
-        "A separate systematic review and meta-analysis (13 studies) found yoga significantly improved HbA1c, fasting blood glucose, post-prandial blood glucose, and triglycerides in people with type 2 diabetes — though it found no significant effect on total cholesterol or BMI specifically.",
-        "Both reviews describe yoga the same way: as a feasible complementary addition to standard diabetes care, not a replacement for it.",
+        "Prediabetes and established type 2 diabetes are not the same clinical situation. The appropriate next step depends on the diagnosis, laboratory results, current treatment and other health factors.",
+        "This page provides lifestyle context rather than a substitute for diagnosis, medication decisions or individual diabetes management.",
       ],
     },
     {
-      title: "A large India-specific trial on preventing diabetes altogether",
+      title: "What the research can and cannot tell us",
       content: [
-        "A multicenter cluster-randomized controlled trial conducted across India (the NMB Trial) tested a yoga-based lifestyle protocol in a high-risk cohort with prediabetes. Participants who received the yoga-based lifestyle intervention were significantly less likely to progress to diabetes over the following months compared to those receiving standard-of-care advice alone — a relative risk reduction of roughly 64%.",
-        "This is one of the more compelling findings in this space specifically because it was conducted in an Indian population, at scale, with diabetes progression as the actual measured outcome — not just a lab marker.",
+        "Clinical research has examined yoga and other lifestyle interventions as additions to standard diabetes care. The evidence section summarises the studies already selected for this site, including an India-based prevention trial.",
+        "Research findings should be interpreted as evidence about a studied intervention and population, not as a promise that the same result will occur for every person.",
       ],
     },
     {
-      title: "The honest, contested part: can yoga 'reverse' diabetes?",
+      title: "Use lifestyle support alongside medical care",
       content: [
-        "Some sources describe yoga as capable of reversing or curing type 2 diabetes. This claim is disputed, and reasonably so: yoga does not build muscle mass the way resistance training does, and muscle is the body's primary site for glucose disposal. A credible clinical counter-argument holds that without that muscle-building stimulus, yoga alone doesn't correct the underlying insulin resistance driving type 2 diabetes.",
-        "The research that does hold up — the meta-analyses above — supports yoga as producing real, clinically meaningful improvements in blood sugar markers as an adjunct to standard care, not as a cure or a replacement for muscle-building activity, diet, or medication.",
-        "Our approach reflects this: yoga and lifestyle changes as a genuine, evidence-backed complement to your medical care and, where appropriate, other forms of physical activity — not a substitute for either.",
-      ],
-    },
-    {
-      title: "How Sutra Health builds a plan around this",
-      content: [
-        "We look at your diet, activity levels, sleep, and stress together, and build a lifestyle and yoga plan informed by the research above — coordinated with your doctor, particularly around any medication changes.",
-        "This is not a replacement for medical care or monitoring. Blood sugar management needs regular medical oversight, and any changes to medication must go through your physician.",
+        "A practical plan can focus on the parts of daily life that are most relevant to blood-sugar management: food, movement, sleep, stress and adherence to prescribed care.",
+        "Do not stop, reduce or change diabetes medication because of lifestyle changes without discussing it with the prescribing clinician.",
       ],
     },
   ],
 
   approach: [
-    "Nutrition and eating patterns",
-    "Structured therapeutic yoga",
-    "Movement and activity planning",
-    "Sleep and stress management",
+    "Clarify whether the question concerns prediabetes or diagnosed diabetes",
+    "Review eating and activity patterns alongside current treatment",
+    "Use structured yoga or movement only as an adjunct to medical care",
+    "Track relevant results with the treating clinician",
   ],
 
   support: [
-    "Personalized nutrition guidance",
-    "Structured yoga informed by clinical protocols",
-    "Movement planning, including complementary activity beyond yoga where appropriate",
-    "Coordination with your existing medical care",
+    "Nutrition counselling around everyday eating patterns",
+    "Lifestyle support for activity, sleep and stress",
+    "Therapeutic yoga or movement as an adjunct where appropriate",
+    "Physician consultation for questions about diagnosis, results or treatment",
   ],
 
   evidence: [
@@ -119,32 +105,24 @@ export const diabetesBloodSugar: Condition = {
 
   faqs: [
     {
-      question: "Can yoga help with diabetes or blood sugar control?",
-      answer:
-        "Yes. Multiple meta-analyses of randomized controlled trials show yoga produces clinically meaningful reductions in HbA1c and fasting blood glucose in people with type 2 diabetes, with the largest benefits seen in those with poorer baseline control. It's studied and used as an adjunct to standard diabetes care, not a replacement.",
-    },
-    {
-      question: "Can yoga reverse or cure diabetes?",
-      answer:
-        "This is genuinely disputed. The strongest research shows meaningful improvement in blood sugar markers, not reversal of the underlying condition. A reasonable clinical counter-argument notes that yoga doesn't build the muscle mass that plays a major role in glucose disposal, unlike resistance training. We treat yoga as a real, evidence-backed complement to your care — not a cure — and don't make claims the research doesn't support.",
-    },
-    {
-      question: "Can yoga help prevent prediabetes from becoming diabetes?",
-      answer:
-        "There's strong evidence for this specifically. A large multicenter trial conducted across India found a yoga-based lifestyle protocol reduced progression from prediabetes to diabetes by roughly 64% relative to standard care advice — one of the more compelling findings in this area.",
+      question: "Can lifestyle changes help with blood sugar?",
+      answer: "Yes. Nutrition, physical activity, sleep and stress management can be part of diabetes and prediabetes care, but the appropriate plan depends on the individual diagnosis and treatment.",
     },
     {
       question: "Can yoga replace diabetes medication?",
-      answer:
-        "No. The research studies yoga as a complementary approach used alongside medical care, not a replacement for medication. Any changes to your diabetes medication should only be made with your doctor, based on your actual blood sugar readings over time.",
+      answer: "No. The clinical studies represented on this site evaluate yoga as an addition to standard care, not as a replacement for prescribed diabetes treatment.",
+    },
+    {
+      question: "What should I do if I have an elevated HbA1c?",
+      answer: "Discuss the result with a qualified clinician who can interpret it in context, confirm the diagnosis when needed and advise on appropriate treatment and follow-up.",
     },
   ],
 
   relatedConditions: ["weight-management", "high-blood-pressure", "digestive-gut-health"],
 
   internalLinks: [
-    { label: "Nutrition", href: "/what-we-do/nutrition" },
-    { label: "Therapeutic Yoga & Movement", href: "/what-we-do/therapeutic-yoga" },
+    { label: "Nutrition", href: "/services/nutrition" },
+    { label: "Therapeutic Yoga & Movement", href: "/services/therapeutic-yoga" },
     { label: "Weight Management", href: "/conditions/weight-management" },
     { label: "High Blood Pressure", href: "/conditions/high-blood-pressure" },
   ],

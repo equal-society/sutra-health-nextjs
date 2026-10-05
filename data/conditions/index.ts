@@ -16,17 +16,7 @@ import { womensHealth } from "./womens-health";
 
 import { highBloodPressureSubpages } from "./subpages/high-blood-pressure";
 import { arthritisJointPainSubpages } from "./subpages/arthritis-joint-pain";
-/*
-  NOT YET RENAMED: this still imports from "./subpages/metabolic-health"
-  because that file hasn't been provided. That file's contents almost
-  certainly still reference the OLD slug "metabolic-health" internally
-  (breadcrumbs, canonical URLs, parentSlug fields) — those question pages
-  will be broken now that the parent slug here is "diabetes-blood-sugar".
-  Rename this import (and the file itself, and everything inside it,
-  replacing "metabolic-health" with "diabetes-blood-sugar") once that
-  file is available.
-*/
-import { metabolicHealthSubpages } from "./subpages/metabolic-health";
+import { diabetesBloodSugarSubpages } from "./subpages/diabetes-blood-sugar";
 import { migraineHeadacheSubpages } from "./subpages/migraine-headache";
 import { digestiveGutHealthSubpages } from "./subpages/digestive-gut-health";
 // weight-management and womens-health remain unresearched — see the
@@ -51,7 +41,7 @@ export const conditions: Condition[] = [
 const subpagesByCondition: Record<string, ConditionSubpage[]> = {
  "high-blood-pressure": highBloodPressureSubpages,
   "arthritis-joint-pain": arthritisJointPainSubpages,
-  "diabetes-blood-sugar": metabolicHealthSubpages,
+  "diabetes-blood-sugar": diabetesBloodSugarSubpages,
   "migraine-headache": migraineHeadacheSubpages,
   "digestive-gut-health": digestiveGutHealthSubpages,
   // Not yet researched — intentionally empty, not placeholder content.

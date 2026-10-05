@@ -8,16 +8,16 @@ export const canWalkingHelpLowerBloodPressure: Article = {
   readTime: "6 min read",
   date: "2026-09-17",
   excerpt:
-    "Walking is a practical form of moderate activity that can support blood-pressure management, fitness, weight and stress.",
+    "Walking is a practical way to add regular moderate activity to the week. For people who can walk safely, it can be one component of a broader blood-pressure plan.",
   image: "/images/conditions/high-blood-pressure.webp",
   content: {
     introduction:
-      "Regular physical activity can help control blood pressure. Brisk walking is one accessible form of moderate activity for many adults and can also support weight management and stress reduction.",
+      "Walking matters here because it is simple to repeat. The aim is not a special walking technique but a sustainable amount of moderate activity that fits your current health and routine.",
     sections: [
       {
         heading: "How can walking affect blood pressure?",
         paragraphs: [
-          "The American Heart Association notes that regular exercise can help control high blood pressure, weight and stress. Walking is specifically identified as a beneficial moderate activity when done regularly.",
+          "Brisk walking is generally considered moderate-intensity activity. Its usefulness comes from regular participation rather than from a single long walk.",
         ],
       },
       {
@@ -42,7 +42,7 @@ export const canWalkingHelpLowerBloodPressure: Article = {
       {
         heading: "Is walking enough if blood pressure is high?",
         paragraphs: [
-          "Walking is useful, but it is one part of blood-pressure care. Eating patterns, sodium intake, weight, sleep, stress, medications and other health factors may also matter.",
+          "Walking is one part of blood-pressure care. Whether it is enough depends on your overall health, starting blood pressure, other lifestyle factors and any treatment already prescribed.",
         ],
       },
     ],
@@ -63,9 +63,9 @@ export const canWalkingHelpLowerBloodPressure: Article = {
         "Not necessarily. Activity can be divided into shorter periods across the day, depending on your circumstances and health.",
     },
     {
-      question: "Can I walk if I already take blood-pressure medicine?",
+      question: "How should I increase walking if I am currently inactive?",
       answer:
-        "Many people can be physically active while taking medication, but the appropriate level of activity depends on individual health. Ask your healthcare professional if you are unsure.",
+        "Begin with an amount that feels manageable and increase gradually if it remains comfortable. If you have a medical condition or concerns about exercise, ask a healthcare professional about an appropriate starting level.",
     },
   ],
   sources: [

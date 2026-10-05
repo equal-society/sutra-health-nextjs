@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import styles from "./archive.module.css";
 
 export const metadata: Metadata = {
-  title: "Sutra Health Archive | Wellness, Lifestyle & Clinic Resources",
+  title: "Sutra Health Archive | Health, Lifestyle & Publication Resources",
   description:
-    "Explore Sutra Health's archive of wellness, lifestyle, clinic, publication, yoga and practitioner resources.",
+    "Browse the health, lifestyle, clinic, publication and practitioner material collected in the Sutra Health archive.",
   alternates: {
     canonical: "https://lifequality.org.in/archive",
   },
   openGraph: {
     title: "Sutra Health Archive",
     description:
-      "Explore wellness, lifestyle, clinic and publication resources from Sutra Health.",
+      "Browse selected health, lifestyle, clinic and publication collections from Sutra Health.",
     url: "https://lifequality.org.in/archive",
     type: "website",
   },
@@ -27,7 +27,7 @@ type ArchiveCategory = {
 const CATEGORIES: ArchiveCategory[] = [
   {
     title: "Nature",
-    subtitle: "Nature and wellness",
+    subtitle: "Nature and wellness material",
     id: "sutra-health-nature",
     url: "https://archive.org/details/sutra-health-nature",
   },
@@ -39,25 +39,25 @@ const CATEGORIES: ArchiveCategory[] = [
   },
   {
     title: "Lifestyle Doctor",
-    subtitle: "Doctor and lifestyle content",
+    subtitle: "Doctor and lifestyle material",
     id: "Lifestyle-doctor",
     url: "https://archive.org/details/Lifestyle-doctor",
   },
   {
     title: "Principal Crude Herbal Drugs of India",
-    subtitle: "Yoga books and academic resources",
+    subtitle: "Academic and reference material",
     id: "yoga-books",
     url: "https://archive.org/details/yoga-books/Academic/Principal_Crude_Herbal_Drugs_of_Indi/",
   },
   {
     title: "Sutra Health Brochure",
-    subtitle: "Brochures and publications",
+    subtitle: "Brochure and publication material",
     id: "sutra_health",
     url: "https://archive.org/details/sutra_health/Sutra-Health/brochure/",
   },
   {
     title: "Clinic",
-    subtitle: "Clinic resources",
+    subtitle: "Clinic-related resources",
     id: "lifestyle_clinic",
     url: "https://archive.org/details/lifestyle_clinic",
   },
@@ -69,13 +69,13 @@ const CATEGORIES: ArchiveCategory[] = [
   },
   {
     title: "Lifestyle Food",
-    subtitle: "Food and healthy lifestyle",
+    subtitle: "Food and healthy-lifestyle material",
     id: "sutra_health_lifestyle_food",
     url: "https://archive.org/details/sutra_health_lifestyle_food",
   },
   {
     title: "Surya Yoga Sequence",
-    subtitle: "Yoga Asana Content",
+    subtitle: "Yoga asana material",
     id: "surya-yoga-sequence",
     url: "  https://archive.org/details/surya-yoga-sequence",
   },
@@ -88,33 +88,49 @@ function archiveThumbUrl(identifier: string) {
 export default function ArchivePage() {
   return (
     <main className={styles.page}>
-      <section className={styles.hero} aria-labelledby="archive-title">
-        <div className={styles.container}>
-          <div className={styles.heroGrid}>
-            <div className={styles.heroCopy}>
-              <p className={styles.eyebrow}>Sutra Health · Archive</p>
-              <h1 id="archive-title">
-                A collection of our
-                <span> health and wellbeing resources.</span>
-              </h1>
-              <p className={styles.heroText}>
-                Explore wellness, lifestyle, clinic and publication resources
-                collected by Sutra Health.
-              </p>
-              <a
-                className={styles.primaryLink}
-                href="https://archive.org/details/@sutra_health"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Visit the complete archive <span aria-hidden="true">↗</span>
-              </a>
-            </div>
+    <section className={styles.hero} aria-labelledby="archive-title">
+      {/* Full Background Image */}
+      <div
+        className={styles.heroBackground}
+        aria-hidden="true"
+      />
 
-           
+      {/* Dark Overlay */}
+      <div
+        className={styles.heroOverlay}
+        aria-hidden="true"
+      />
+
+      <div className={styles.container}>
+        <div className={styles.heroGrid}>
+          <div className={styles.heroCopy}>
+            <p className={styles.eyebrow}>
+              Sutra Health · Archive
+            </p>
+
+            <h1 id="archive-title">
+              A collection of our
+              <span> health and wellbeing resources.</span>
+            </h1>
+
+            <p className={styles.heroText}>
+              Browse selected material preserved in the Sutra Health archive,
+              from lifestyle and clinic resources to publications and yoga.
+            </p>
+
+            <a
+              className={styles.primaryLink}
+              href="https://archive.org/details/@sutra_health"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open the archive
+              <span aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       <section className={styles.collection} aria-labelledby="resources-title">
         <div className={styles.container}>
@@ -124,8 +140,8 @@ export default function ArchivePage() {
               <h2 id="resources-title">Browse the collection</h2>
             </div>
             <p>
-              Eight collections covering lifestyle guidance, clinic material,
-              publications, food, nature and practitioner experiences.
+              Nine collections covering lifestyle guidance, clinic material,
+              publications, food, nature, yoga and practitioner experiences.
             </p>
           </div>
 
@@ -169,10 +185,10 @@ export default function ArchivePage() {
           <div className={styles.bottomCta}>
             <div>
               <p className={styles.eyebrow}>Internet Archive</p>
-              <h2>See the complete collection.</h2>
+              <h2>Browse the wider collection.</h2>
               <p>
-                Open the Sutra Health archive to browse everything currently
-                available.
+                Open the Sutra Health archive to see the material currently
+                available in the collection.
               </p>
             </div>
 
@@ -182,7 +198,7 @@ export default function ArchivePage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Open archive <span aria-hidden="true">↗</span>
+              Browse archive <span aria-hidden="true">↗</span>
             </a>
           </div>
         </div>

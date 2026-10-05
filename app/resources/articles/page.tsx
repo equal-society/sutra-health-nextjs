@@ -85,42 +85,74 @@ export default function ArticlesPage() {
     setVisibleCount(9);
   };
 
-  const questions = [
-    "How can I manage stress?",
-    "How can I improve my gut health?",
-    "How can I sleep better?",
-    "How can I build healthier habits?",
-  ];
+
 
   return (
     <main className="bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">
       {/* =====================================================
           HERO
-          Clayo-inspired centered publication introduction,
-          adapted to Sutra Health.
+          Premium editorial journal introduction
       ===================================================== */}
-      <section className="border-b border-[var(--sutra-border)] bg-[var(--sutra-porcelain)]">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+      <section className="relative isolate overflow-hidden border-b border-[var(--sutra-border)] bg-[var(--sutra-ink)]">
+        {/* Background Image */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/images/nature.jpg')",
+          }}
+        />
+
+        {/* Overlay */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-[var(--sutra-ink)]/65"
+        />
+
+        {/* Bottom readability gradient */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-t from-[var(--sutra-ink)]/65 via-transparent to-[var(--sutra-ink)]/15"
+        />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
           <div className="mx-auto max-w-[820px] py-16 text-center sm:py-20 lg:py-24 xl:py-28">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--sutra-muted)] sm:text-[11px]">
+
+            {/* Eyebrow */}
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/75 sm:text-[11px]">
               Sutra Health Journal
             </p>
 
-            <h1 className="mt-5 font-[var(--font-serif)] text-[48px] font-medium leading-[0.98] tracking-[-0.045em] text-[var(--sutra-ink)] sm:text-[62px] md:text-[72px] lg:text-[82px]">
+            {/* Heading */}
+            <h1
+              className="
+                mt-5
+                font-[var(--font-lora)]
+                text-[48px]
+                font-medium
+                leading-[0.98]
+                tracking-[-0.045em]
+                text-white
+                sm:text-[62px]
+                md:text-[72px]
+                lg:text-[82px]
+              "
+            >
               Health knowledge
               <br />
-              <span className="text-[var(--sutra-teal)]">
+              <span className="text-[var(--sutra-sand)]">
                 for everyday life.
               </span>
             </h1>
 
-            <p className="mx-auto mt-7 max-w-[650px] text-[16px] leading-8 text-[var(--sutra-muted)] sm:text-[17px] sm:leading-9">
-              Practical health information on lifestyle, nutrition, movement,
-              mindfulness, sleep and everyday wellbeing — created to help you
-              understand health and make informed next steps.
+            {/* Intro */}
+            <p className="mx-auto mt-7 max-w-[650px] text-[16px] leading-8 text-white/85 sm:text-[17px] sm:leading-9">
+              Focused answers to everyday health questions, with practical guidance,
+              evidence-aware explanations and clear boundaries about when
+              individual medical advice is needed.
             </p>
 
-            {/* Search — retained as a useful function, visually quieter */}
+            {/* Search */}
             <form
               className="mx-auto mt-9 max-w-[650px] text-left"
               onSubmit={(event) => {
@@ -135,7 +167,8 @@ export default function ArticlesPage() {
                 Search health articles
               </label>
 
-              <div className="flex min-h-14 flex-col border border-[var(--sutra-border-strong)] bg-[var(--sutra-white)] sm:flex-row">
+              <div className="flex min-h-14 flex-col border border-white/25 bg-white/95 sm:flex-row">
+
                 <div className="flex min-w-0 flex-1 items-center px-4">
                   <span
                     aria-hidden="true"
@@ -179,7 +212,7 @@ export default function ArticlesPage() {
 
               {submittedSearch && (
                 <p
-                  className="mt-3 text-center text-[11px] font-semibold text-[var(--sutra-teal)]"
+                  className="mt-3 text-center text-[11px] font-semibold text-white/85"
                   role="status"
                   aria-live="polite"
                 >
@@ -196,7 +229,7 @@ export default function ArticlesPage() {
       {/* =====================================================
           TOPIC NAVIGATION
       ===================================================== */}
-      <section className="border-b border-[var(--sutra-border)] bg-[var(--sutra-white)]">
+      <section className="border-b border-[var(--sutra-border)] bg-[var(--sutra-white)] mt-3">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
           <div className="flex items-center justify-center gap-7 overflow-x-auto py-5 scrollbar-hide">
             <span className="shrink-0 text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
@@ -246,7 +279,7 @@ export default function ArticlesPage() {
                 <h2 className="mt-3 font-[var(--font-serif)] text-[34px] font-medium leading-[1.05] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[42px]">
                   {submittedSearch
                     ? `Articles matching “${submittedSearch}”`
-                    : "Ideas for better everyday health."}
+                    : "Questions worth exploring."}
                 </h2>
               </div>
 
@@ -449,23 +482,23 @@ export default function ArticlesPage() {
               </p>
 
               <p className="mt-2 font-[var(--font-serif)] text-[27px] tracking-[-0.025em] text-[var(--sutra-ink)]">
-                Explore how we approach health.
+                Need more context?
               </p>
             </div>
 
             <div className="flex flex-wrap gap-3">
               <Link
-                href="/services"
+                href="/conditions"
                 className="border border-[var(--sutra-teal)] bg-[var(--sutra-teal)] px-5 py-3 text-[11px] font-semibold text-white transition-colors hover:bg-[var(--sutra-teal-hover)]"
               >
-                What We Do →
+                Browse health concerns →
               </Link>
 
               <Link
-                href="/approach"
+                href="/services"
                 className="border border-[var(--sutra-border-strong)] bg-[var(--sutra-white)] px-5 py-3 text-[11px] font-semibold text-[var(--sutra-ink)] transition-colors hover:border-[var(--sutra-teal)] hover:text-[var(--sutra-teal)]"
               >
-                Our Approach →
+                See available services →
               </Link>
             </div>
           </div>

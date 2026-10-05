@@ -63,8 +63,8 @@ export default function Footer() {
               </Link>
 
               <p className="mt-5 max-w-[400px] text-[15px] leading-7 text-white/70 sm:text-base sm:leading-7">
-                Doctor-led, personalised healthcare that brings medical care,
-                lifestyle and everyday wellbeing into one connected approach.
+                Health information, services and practical support to help you understand
+                your options and decide where to begin.
               </p>
 
               <div
@@ -179,8 +179,7 @@ export default function Footer() {
             </div>
 
             <p className="mt-5 max-w-[920px] text-[10px] leading-5 text-white/40">
-              Sutra Health provides integrative and lifestyle-focused support
-              alongside appropriate medical care. It does not replace
+              Information on this website is for general education and does not replace
               diagnosis, treatment or advice from your doctor.
             </p>
           </div>

@@ -12,12 +12,12 @@ export const howDoesSleepAffectWeightLoss: Article = {
   image: "/images/conditions/weight-management.webp",
   content: {
     introduction:
-      "Weight management is influenced by more than food and exercise. Sleep, stress, medications, medical conditions, age, genes and the environment can all affect the process, so sleep should be considered as part of the wider picture.",
+      "Sleep does not determine weight on its own, but it is one part of the environment in which eating, activity and recovery happen. Looking at sleep can therefore be useful when weight-management efforts feel difficult to sustain.",
     sections: [
       {
-        heading: "Why does sleep matter for weight?",
+        heading: "Where does sleep fit into weight management?",
         paragraphs: [
-          "CDC guidance on healthy weight includes enough sleep alongside healthy eating, physical activity and stress management. Good sleep also supports mood, metabolism and overall health.",
+          "Adequate sleep supports overall health and can make healthy routines easier to maintain. It is best viewed as one supporting factor rather than a separate weight-loss treatment.",
         ],
       },
       {
@@ -40,9 +40,9 @@ export const howDoesSleepAffectWeightLoss: Article = {
         ],
       },
       {
-        heading: "Why weight loss should not be reduced to sleep",
+        heading: "What should you expect from improving sleep?",
         paragraphs: [
-          "Sleep is important, but it is only one factor. Sustainable weight management also involves eating patterns, physical activity, stress, medications, health conditions and the environment.",
+          "Improving sleep may support healthier routines, but it should not be presented as a guaranteed way to lose weight. Changes in weight are influenced by many factors and may require a broader assessment.",
         ],
       },
     ],

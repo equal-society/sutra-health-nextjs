@@ -270,7 +270,7 @@ export default function RetreatProgramsPage() {
               ],
               [
                 "Faridabad, Haryana",
-                "A residential wellness retreat near Delhi.",
+                "A residential wellness stay near Delhi.",
               ],
             ].map(([label, copy]) => (
               <div
@@ -294,15 +294,15 @@ export default function RetreatProgramsPage() {
             <div>
               <p className={eyebrow}>01 · The retreat</p>
               <h2 className="mt-3 max-w-xl font-serif text-4xl leading-[1.08] tracking-[-0.035em] sm:text-5xl">
-                A wellness retreat near Delhi, with space to step away.
+                A wellness retreat near Delhi, with space for a different pace.
               </h2>
             </div>
 
             <div className="max-w-2xl">
               <p className="text-base leading-8 text-[var(--sutra-muted)] sm:text-[17px]">
-                Sutra Health Retreat is a wellness-focused stay in Faridabad,
-                near Delhi. Guests can enquire about guided activities and
-                practical health conversations during their visit.
+                Sutra Health Retreat is a wellness-focused stay in Faridabad, near Delhi.
+                Guests can enquire about the listed activities and practical details
+                for their visit.
               </p>
 
               <p className="mt-4 text-base leading-8 text-[var(--sutra-muted)] sm:text-[17px]">
@@ -374,7 +374,7 @@ export default function RetreatProgramsPage() {
               Activities to ask about before your visit.
             </h2>
             <p className="mt-4 text-base leading-7 text-[var(--sutra-muted)]">
-              The retreat lists several guided and traditional experiences.
+              The listed retreat experiences
               Confirm availability, session timing and suitability with the
               team before booking.
             </p>

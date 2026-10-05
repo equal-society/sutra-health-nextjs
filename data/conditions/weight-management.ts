@@ -6,86 +6,74 @@ export const weightManagement: Condition = {
   title: "Weight Management",
 
   shortDescription:
-    "An honest look at what actually helps with weight — nutrition and behavioral change more than yoga alone — grounded in real research.",
+    "A practical guide to weight management, with attention to eating patterns, activity, sleep, stress and the behaviours that make changes easier to sustain.",
 
   introduction:
-    "We want to be direct about something most wellness sites aren't: yoga alone has not been shown, in the largest available research, to significantly reduce weight, body fat, or waist circumference. What does have real evidence behind it — dietary pattern, sleep, stress, and behavioral support around eating — is what we actually build a plan around, informed by Dr. Rakesh Sarwal, MBBS, MPH, DrPH.",
+    "Weight management is not determined by one food, exercise or practice. This guide focuses on the everyday factors that can influence weight and related health, while keeping the discussion separate from treatment of an underlying medical condition.",
 
   concerns: [
     "Difficulty maintaining a healthy weight",
     "Repeated weight-loss and weight-gain cycles",
-    "Stress eating or emotional eating patterns",
-    "Wanting an honest picture, not a miracle claim",
-    "Difficulty sustaining nutrition and activity changes long-term",
-    "Weight goals connected to a broader health concern (blood pressure, blood sugar)",
+    "Stress eating or eating patterns that feel difficult to manage",
+    "Difficulty sustaining nutrition or activity changes",
+    "Weight goals connected with blood pressure, blood sugar or another health concern",
   ],
 
   lifestyleFactors: [
     {
       title: "Dietary pattern",
-      description:
-        "The strongest evidence for weight-related outcomes comes from sustained dietary pattern change, not any single practice — see our Nutrition approach.",
+      description: "Regular eating patterns and the overall quality of the diet are central to weight management. The useful question is what can be maintained within your usual routine, preferences and health needs.",
     },
     {
       title: "Sleep and stress",
-      description:
-        "Sleep and stress affect eating behavior and hunger regulation, independent of diet and exercise.",
+      description: "Sleep and stress can affect appetite, eating behaviour and daily routines. They are useful areas to review when weight-related changes repeatedly become difficult to sustain.",
     },
     {
-      title: "Eating behavior and self-regulation",
-      description:
-        "Reducing dietary lapses — stress eating, overeating, loss of control around food — has real supporting evidence, distinct from weight loss itself.",
+      title: "Eating behaviour",
+      description: "Stress eating, overeating and difficulty maintaining planned eating patterns can be relevant even when someone understands what they want to change.",
     },
     {
-      title: "Movement, including but not limited to yoga",
-      description:
-        "Physical activity matters for weight management broadly; yoga specifically plays a more limited, behavioral-support role than a direct metabolic one.",
+      title: "Movement",
+      description: "Regular physical activity matters for overall health and weight management. The type and amount should fit current ability, preferences and any medical considerations.",
     },
   ],
 
   sections: [
     {
-      title: "Being honest: what the largest research actually shows about yoga and weight",
+      title: "What matters beyond the number on the scale",
       content: [
-        "A systematic review and meta-analysis of 30 randomized controlled trials (2,173 participants) found yoga did not significantly affect weight, body fat percentage, or waist circumference across the general population studied. Some effect on BMI was found specifically in overweight or obese participants compared to usual care, but this finding wasn't robust against risk of bias in the underlying studies.",
-        "We're saying this plainly because a lot of wellness marketing implies yoga is a weight-loss tool, and the strongest available evidence doesn't support that claim as stated. This doesn't mean yoga has no role — it means the role is different from what's often implied.",
+        "Weight management is better understood as a long-term health goal than as a short-term diet. Eating patterns, movement, sleep, stress and behaviour can interact, so the most useful starting point is to identify which of these factors is actually getting in the way.",
+        "The research on yoga is more limited for direct weight loss than wellness marketing often suggests. That distinction matters: a practice may be useful for behaviour, stress or activity without being a stand-alone weight-loss treatment.",
       ],
     },
     {
-      title: "Where yoga's real value shows up: eating behavior, not the scale directly",
+      title: "Where the evidence is strongest",
       content: [
-        "A randomized trial studying yoga alongside behavioral weight-loss treatment found yoga participants reported fewer lapses from their dietary plan — less overeating, less stress eating, less difficulty resisting food temptations — compared to a contact-matched control group.",
-        "In that same research, among participants who had already lost a meaningful amount of weight (5% or more) in the first three months, those also practicing yoga went on to lose significantly more weight by 6 months, alongside greater improvements in distress tolerance, mindfulness, and self-compassion. This suggests yoga's role may be supporting the psychological and behavioral side of weight management, for people already engaged in a structured plan — not acting as a standalone weight-loss method.",
+        "Dietary patterns and sustained behaviour change have a more established role in weight-related care than any single exercise or wellness practice. The evidence section below summarises the research available for yoga specifically.",
+        "If weight is accompanied by diabetes, high blood pressure, medication use or another diagnosed condition, lifestyle changes should be considered alongside appropriate medical care rather than as a replacement for it.",
       ],
     },
     {
-      title: "What actually has stronger evidence: nutrition and sustained habits",
+      title: "A useful starting point",
       content: [
-        "The dietary pattern evidence — particularly DASH and Mediterranean-style eating — has a considerably stronger and more consistent research base for weight-related outcomes than yoga does specifically. See our Nutrition approach page for the actual trial evidence behind these patterns.",
-        "Sleep and stress management also have real, separate evidence connecting them to eating behavior and weight regulation, covered on our Lifestyle Medicine page.",
-      ],
-    },
-    {
-      title: "How Sutra Health builds a plan around this",
-      content: [
-        "We build weight-related plans around dietary pattern, sleep, stress, and behavioral support — with yoga included specifically for its role in reducing dietary lapses and supporting self-regulation, not marketed as a direct weight-loss method it hasn't been shown to be.",
-        "This is not a replacement for medical evaluation where weight is connected to another diagnosed condition; we coordinate with your physician where relevant.",
+        "Begin with the part of your routine that is most realistic to review: what you eat and when, how active you are, how you sleep, or situations that lead to unplanned eating.",
+        "The aim is not to change everything at once. A focused conversation can help identify a manageable priority and clarify when nutrition, lifestyle or medical support is appropriate.",
       ],
     },
   ],
 
   approach: [
-    "Dietary pattern (DASH / Mediterranean-style)",
-    "Sleep and stress management",
-    "Eating-behavior and self-regulation support",
-    "Movement, including yoga for its behavioral role",
+    "Review the eating pattern before choosing a restrictive plan",
+    "Match physical activity to current ability and routine",
+    "Consider sleep and stress when eating behaviour is difficult to sustain",
+    "Use yoga or mindfulness only for roles supported by the available evidence",
   ],
 
   support: [
-    "Personalized nutrition counselling",
-    "Sleep and stress-management guidance",
-    "Yoga and mindfulness practices supporting eating behavior",
-    "Coordination with medical care where weight connects to another condition",
+    "Nutrition counselling for eating patterns and practical dietary changes",
+    "Lifestyle support around activity, sleep and daily routines",
+    "Behaviour and stress support when eating patterns are difficult to sustain",
+    "Physician involvement when weight is connected with another medical concern",
   ],
 
   evidence: [
@@ -111,34 +99,25 @@ export const weightManagement: Condition = {
 
   faqs: [
     {
-      question: "Does yoga help with weight loss?",
-      answer:
-        "The largest available evidence — a meta-analysis of 30 RCTs with over 2,000 participants — found yoga alone did not significantly reduce weight, body fat, or waist circumference. Where yoga does show a real, evidence-backed role is in supporting eating behavior: reducing dietary lapses and stress eating, particularly when combined with a structured nutrition plan. We won't claim yoga drives weight loss on its own, because the research doesn't support that.",
+      question: "Is weight management only about diet?",
+      answer: "No. Eating patterns are important, but activity, sleep, stress and behaviour can also affect how sustainable weight-related changes are.",
     },
     {
-      question: "What actually works for weight management, if not yoga alone?",
-      answer:
-        "Sustained dietary pattern change (see our Nutrition approach, particularly DASH and Mediterranean-style evidence), sleep and stress management, and behavioral support around eating have stronger, more consistent evidence than yoga specifically for weight-related outcomes.",
+      question: "Does yoga directly cause weight loss?",
+      answer: "The available research does not support presenting yoga alone as a reliable weight-loss treatment. Some research suggests a role in behaviour and self-regulation, which is different from claiming a direct effect on body weight.",
     },
     {
-      question: "Is there any role for yoga in a weight management plan?",
-      answer:
-        "Yes, but a specific one: supporting self-regulation and reducing dietary lapses like stress eating and overeating, rather than acting as a direct weight-loss method. One trial found this effect was strongest for people who had already started losing weight through a structured plan.",
+      question: "When should I discuss weight with a doctor?",
+      answer: "Discuss weight with a clinician when it is linked with a diagnosed condition, medication, significant or unexplained change, or when you are unsure which approach is medically appropriate.",
     },
   ],
 
   relatedConditions: ["diabetes-blood-sugar", "high-blood-pressure", "digestive-gut-health"],
 
-  // JUDGMENT CALL — flag for client review: this link previously pointed to
-  // "/approach/breath-mindfulness", which doesn't correspond to any of the 5
-  // established service pages. Retargeted to Behaviour, Stress & Mind as the
-  // closest existing match (mindfulness/stress fits there; breath practices
-  // are also covered under Therapeutic Yoga's focus areas). Confirm this is
-  // the right destination, or build a dedicated page if one is planned.
   internalLinks: [
-    { label: "Nutrition", href: "/what-we-do/nutrition" },
-    { label: "Lifestyle Medicine", href: "/what-we-do/lifestyle" },
-    { label: "Breath & Mindfulness", href: "/what-we-do/behaviour-stress-mind" },
+    { label: "Nutrition", href: "/services/nutrition" },
+    { label: "Lifestyle Medicine", href: "/services/lifestyle" },
+    { label: "Behaviour, Stress & Mind", href: "/services/behaviour-stress-mind" },
     { label: "Diabetes & Blood Sugar", href: "/conditions/diabetes-blood-sugar" },
   ],
 };

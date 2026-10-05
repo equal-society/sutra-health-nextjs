@@ -6,87 +6,74 @@ export const arthritisJointPain: Condition = {
   title: "Arthritis & Joint Pain",
 
   shortDescription:
-    "Yoga and lifestyle support for joint pain and arthritis, grounded in clinical research, adapted to your specific joints and condition.",
+    "A condition guide to joint pain and arthritis, with attention to diagnosis, appropriate movement, strength, function and the evidence on yoga.",
 
   introduction:
-    "Arthritis isn't one condition — osteoarthritis and rheumatoid arthritis behave differently, and the evidence on yoga reflects that difference. We build a movement and lifestyle plan around your specific joints, your specific type of arthritis, and what the research actually supports — not a generic stretching routine, and always alongside your doctor's care.",
+    "Arthritis is not one condition, and joint pain can have different causes. This guide separates the need for appropriate diagnosis from the lifestyle questions that may be useful after the clinical picture is understood.",
 
   concerns: [
-    "Knee, hip, or hand osteoarthritis",
-    "Rheumatoid arthritis affecting function and daily activity",
-    "Joint stiffness, especially morning stiffness",
-    "Reduced range of motion affecting daily life",
-    "Wanting to stay active without aggravating joints",
-    "Uncertainty about which movement is actually safe",
+    "Osteoarthritis-related pain or reduced function",
+    "Rheumatoid arthritis and questions about activity",
+    "Stiffness or reduced mobility affecting everyday tasks",
+    "Uncertainty about which movement is appropriate",
+    "Wanting lifestyle support alongside medical treatment",
   ],
 
   lifestyleFactors: [
     {
       title: "Joint-appropriate movement",
-      description:
-        "The right kind of movement depends on which joints are affected and which type of arthritis you have — this isn't one-size-fits-all.",
+      description: "Movement should be adapted to the affected joint, symptoms, fitness and diagnosis rather than following a generic routine.",
     },
     {
-      title: "Muscle strength around the joint",
-      description:
-        "Building strength in the muscles supporting an affected joint reduces load on the joint itself.",
+      title: "Strength and function",
+      description: "Maintaining useful strength and physical function can support everyday activity. The appropriate exercises depend on the person and condition.",
     },
     {
-      title: "Weight-related load on joints",
-      description:
-        "For weight-bearing joints like knees and hips, body weight directly affects joint load.",
+      title: "Weight-related load",
+      description: "For some people with weight-bearing joint problems, weight management may be one relevant part of a broader plan.",
     },
     {
-      title: "Stress and pain perception",
-      description:
-        "Stress and sleep quality influence how pain is experienced, alongside the physical condition of the joint itself.",
+      title: "Pain and stress",
+      description: "Pain, sleep and stress can influence how manageable activity feels. These factors may need to be considered without assuming they explain the underlying joint condition.",
     },
   ],
 
   sections: [
     {
-      title: "Osteoarthritis and rheumatoid arthritis respond differently — and that matters",
+      title: "Start with the diagnosis",
       content: [
-        "A randomized clinical trial published in JAMA Network Open (117 participants) found yoga was noninferior to a standard strengthening exercise program for knee osteoarthritis pain over 12 weeks, with yoga showing modestly greater improvement in pain, function, and quality of life by 24 weeks.",
-        "The picture is different for rheumatoid arthritis. A systematic review and meta-analysis of 10 trials (840 patients with RA) found yoga improved physical function, disease activity, and grip strength — but found no significant effect on pain, tender or swollen joint counts, or inflammatory markers specifically.",
-        "This distinction matters for what to expect: if you have osteoarthritis, the evidence supports yoga as a genuine option for pain reduction. If you have rheumatoid arthritis, the evidence supports yoga for function and quality of life, but you shouldn't expect it to meaningfully reduce joint pain or inflammation on its own.",
+        "Osteoarthritis and rheumatoid arthritis have different disease processes and treatment needs. Joint pain can also have other causes, so persistent or unexplained symptoms should be assessed appropriately.",
+        "Lifestyle support should therefore follow the clinical picture rather than assuming that one exercise or yoga sequence is suitable for everyone.",
       ],
     },
     {
-      title: "What a 2015 trial found — and what held up nine months later",
+      title: "What the evidence says about movement and yoga",
       content: [
-        "A randomized controlled trial published in the Journal of Rheumatology found that people with arthritis who practiced yoga three times a week saw improvements in pain levels, energy, mood, and physical health compared to a non-yoga control group — and these improvements were still evident nine months later.",
-        "A separate randomized trial (Journal of Rheumatology, sedentary adults with arthritis) found yoga had a notable effect on reducing pain (standardized mean difference −0.74) and pain-related disability, alongside improved mood.",
+        "The selected research includes trials in knee osteoarthritis and rheumatoid arthritis. Overall, the evidence supports studying yoga as a form of adapted movement, while not suggesting that it replaces disease-specific medical treatment.",
+        "The evidence section keeps the specific trial findings and sources in one place so this overview does not duplicate the detailed question pages.",
       ],
     },
     {
-      title: "Why the right poses matter more than 'doing yoga' in general",
+      title: "Make movement fit the joint",
       content: [
-        "Not all yoga is appropriate for arthritic joints, and the wrong poses can genuinely aggravate symptoms. Specialists (including the Johns Hopkins Arthritis Center, which ran one of the largest RCTs on yoga for arthritis) generally advise against deep knee bends past 90 degrees, extended weight-bearing on the wrists, and fast-paced styles like Ashtanga, Power, or Bikram/Hot Yoga.",
-        "See the linked pages below for specific poses that help and poses to avoid — this is detailed enough to matter, and generic advice isn't good enough here.",
-      ],
-    },
-    {
-      title: "How Sutra Health builds a plan around this",
-      content: [
-        "We look at which joints are affected, which type of arthritis you have, and your current mobility and strength — then build a yoga and lifestyle plan around what the research actually supports for your specific situation, coordinated with your existing medical care.",
-        "This is not a replacement for medical evaluation, particularly for new, worsening, or significantly swollen joints, which need appropriate medical assessment.",
+        "A useful starting point is the movement you can perform safely and consistently. Range of motion, strength, balance, pain response and daily function can all matter when choosing activity.",
+        "If a movement increases pain substantially, causes new symptoms or conflicts with medical restrictions, stop and seek appropriate professional advice.",
       ],
     },
   ],
 
   approach: [
-    "Joint-specific therapeutic yoga",
-    "Strength-building around affected joints",
-    "Weight-related lifestyle support where relevant",
-    "Stress and pain-perception management",
+    "Clarify the type of arthritis or joint problem before choosing a routine",
+    "Use movement that matches current mobility, strength and symptoms",
+    "Consider strength and functional activity alongside flexibility",
+    "Use yoga as adapted movement rather than a generic sequence",
   ],
 
   support: [
-    "Personalized, joint-specific yoga practice",
-    "Movement guidance suited to osteoarthritis or rheumatoid arthritis specifically",
-    "Nutrition guidance where weight is a relevant factor",
-    "Breath and relaxation practices",
+    "Therapeutic yoga and movement adapted to the person",
+    "Lifestyle support around activity and daily routines",
+    "Nutrition support where weight or diet is relevant to the broader plan",
+    "Physician involvement for diagnosis, medication or disease-specific treatment",
   ],
 
   evidence: [
@@ -118,32 +105,24 @@ export const arthritisJointPain: Condition = {
 
   faqs: [
     {
-      question: "Can yoga help with arthritis?",
-      answer:
-        "Yes, but the evidence differs by type. For osteoarthritis, clinical trials show yoga can meaningfully reduce pain and improve function, performing comparably to standard strengthening exercise. For rheumatoid arthritis, research shows yoga improves physical function, mood, and quality of life, but doesn't show a significant effect on pain or inflammation specifically.",
+      question: "Is yoga suitable for arthritis?",
+      answer: "Research supports yoga as one possible form of adapted movement for some people with arthritis, but the appropriate practice depends on the diagnosis, joint involved, symptoms and medical advice.",
     },
     {
-      question: "Can yoga cure arthritis?",
-      answer:
-        "No. Arthritis is a joint condition that yoga doesn't reverse. What the research supports is yoga as a genuine option for managing symptoms — particularly pain and function in osteoarthritis, and function and quality of life in rheumatoid arthritis — alongside appropriate medical care.",
+      question: "Should arthritis pain be assessed before starting exercise?",
+      answer: "Persistent, severe, new or unexplained joint pain should be assessed. A diagnosis helps determine which movements are appropriate.",
     },
     {
-      question: "How often do I need to practice for it to help?",
-      answer:
-        "The clinical trials showing meaningful benefit generally involved practicing 2-3 times per week over 8-12 weeks or longer. One trial found benefits were still present nine months after a 3-times-weekly practice.",
-    },
-    {
-      question: "Is yoga safe for arthritis, or can it make it worse?",
-      answer:
-        "Yoga is generally considered safe for arthritis when the right poses and pace are chosen — but the wrong poses can aggravate symptoms. This is why joint-specific, personalized guidance matters more than following a generic yoga routine.",
+      question: "Can yoga replace arthritis treatment?",
+      answer: "No. Yoga may be used as complementary movement support, but it does not replace disease-specific medical treatment or prescribed medication.",
     },
   ],
 
   relatedConditions: ["weight-management", "diabetes-blood-sugar", "migraine-headache"],
 
   internalLinks: [
-    { label: "Therapeutic Yoga & Movement", href: "/what-we-do/therapeutic-yoga" },
-    { label: "Lifestyle Medicine", href: "/what-we-do/lifestyle" },
+    { label: "Therapeutic Yoga & Movement", href: "/services/therapeutic-yoga" },
+    { label: "Lifestyle Medicine", href: "/services/lifestyle" },
     { label: "Weight Management", href: "/conditions/weight-management" },
   ],
 };
