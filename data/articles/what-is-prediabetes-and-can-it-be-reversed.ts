@@ -6,6 +6,7 @@ export const whatIsPrediabetesAndCanItBeReversed: Article = {
   category: "Health Conditions",
   type: "Condition Guide",
   readTime: "7 min read",
+  updatedDate: "2026-10-05",
   date: "2026-09-12",
   excerpt:
     "Understand what prediabetes means, how it is identified and which lifestyle changes can help prevent or delay type 2 diabetes.",
@@ -51,6 +52,26 @@ export const whatIsPrediabetesAndCanItBeReversed: Article = {
         heading: "When should you get checked?",
         paragraphs: [
           "If you have risk factors for prediabetes or have been told that your blood glucose is elevated, ask a healthcare professional whether testing is appropriate. The right test and follow-up interval depend on your individual circumstances.",
+        ],
+      },
+      {
+        heading: "Which lifestyle changes are most practical?",
+        paragraphs: [
+          "The most useful changes are the ones that can be repeated. This can mean walking regularly, improving the overall quality of meals, increasing activity gradually or working on weight management when it is appropriate. A plan should take account of your current routine, access to food, work schedule and other health conditions.",
+          "Avoid treating one food, supplement or exercise as a guaranteed solution. Prediabetes is a health finding that deserves follow-up, and the right combination of lifestyle changes and monitoring depends on your individual risk and test results.",
+        ],
+      },
+      {
+        heading: "How should you think about follow-up?",
+        paragraphs: [
+          "Follow-up testing gives you a way to see whether blood glucose is changing over time. Your healthcare professional can advise when testing should be repeated and whether additional assessment is needed. Keeping a record of your results and the changes you have made can make these discussions more useful.",
+        ],
+      },
+      {
+        heading: "What should you avoid after a prediabetes result?",
+        paragraphs: [
+          "Avoid panic and avoid treating the result as a reason for extreme dieting. Prediabetes is an opportunity to understand your risk and make sustainable changes. It is also not a reason to stop prescribed medicines or delay follow-up testing.",
+          "If you are unsure what your result means, take the report to a healthcare professional and ask which test was used, what your result means and when follow-up is recommended. Clear information is more useful than trying to interpret one number in isolation.",
         ],
       },
     ],

@@ -48,7 +48,7 @@
   position: absolute;
   inset: 0;
   z-index: -2;
-  background-image: url("/images/nature.jpg");
+  background-image: url("/images/nature.webp");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

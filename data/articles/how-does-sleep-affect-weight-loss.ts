@@ -6,6 +6,7 @@ export const howDoesSleepAffectWeightLoss: Article = {
   category: "Sleep & Recovery",
   type: "Explainer",
   readTime: "6 min read",
+  updatedDate: "2026-10-05",
   date: "2026-09-16",
   excerpt:
     "Sleep is one part of healthy weight management. Learn how sleep fits alongside eating patterns, activity, stress and other factors.",
@@ -43,6 +44,38 @@ export const howDoesSleepAffectWeightLoss: Article = {
         heading: "What should you expect from improving sleep?",
         paragraphs: [
           "Improving sleep may support healthier routines, but it should not be presented as a guaranteed way to lose weight. Changes in weight are influenced by many factors and may require a broader assessment.",
+        ],
+      },
+      {
+        heading: "Why sleep habits can be hard to change",
+        paragraphs: [
+          "Sleep is influenced by work schedules, family responsibilities, stress, light exposure, caffeine, medicines and the sleeping environment. That means a useful plan starts with the parts of your routine that you can actually change. Trying to fix every sleep habit at once can make the plan harder to maintain.",
+          "A simple sleep review can look at your usual bedtime, wake time, time spent using a phone or computer in the evening, caffeine timing and whether your bedroom is comfortable. These details can help identify one practical change to try first.",
+        ],
+      },
+      {
+        heading: "How can sleep fit into a weight-management plan?",
+        paragraphs: [
+          "Think of sleep as one part of the same routine that includes food, movement and stress management. A consistent schedule can make it easier to plan meals and activity, while better recovery may make everyday routines feel more manageable. It should still be combined with an eating pattern and activity plan that suits your circumstances.",
+        ],
+      },
+      {
+        heading: "A simple sleep check-in",
+        paragraphs: [
+          "Before changing your routine, write down your usual sleep and wake times for several days. Notice whether you regularly feel rested, whether you wake during the night and what tends to delay bedtime. This gives you a starting point and can reveal a small change that is more realistic than a complete routine overhaul.",
+          "If you improve one habit, give it enough time to become familiar before adding several more. Consistency is useful because sleep and weight-management routines both depend on what you can repeat across ordinary weeks, not only on your best days.",
+        ],
+      },
+      {
+        heading: "Start with one change",
+        paragraphs: [
+          "If your sleep is irregular, choose one change such as a consistent wake time and make that the first target. Once it feels manageable, review whether another habit needs attention. This gradual approach keeps the focus on routines you can maintain.",
+        ],
+      },
+      {
+        heading: "Review the pattern, not one night",
+        paragraphs: [
+          "One late night does not define your health. Look for repeated patterns across several days and weeks. If sleep remains difficult despite reasonable changes, that is a reason to discuss the problem rather than keep adding self-help rules.",
         ],
       },
     ],

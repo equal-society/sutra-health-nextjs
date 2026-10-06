@@ -5,7 +5,7 @@ import Container from "@/components/shared/Container";
 import ContactForm from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Sutra Health | EQUAL Society, Faridabad",
+  title: "Contact | Sutra Health Faridabad",
   description:
     "Contact Sutra Health and EQUAL Society in Sector 46, Faridabad for health, wellness, yoga therapy and community-focused activities.",
   alternates: {
@@ -19,49 +19,18 @@ export const metadata: Metadata = {
     siteName: "Sutra Health",
     type: "website",
     locale: "en_IN",
+    images: [
+      {
+        url: "https://lifequality.org.in/images/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Sutra Health",
+      },
+    ],
   },
 };
 
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Life Quality",
-  alternateName: ["Sutra Health", "EQUAL Society - Effort For Quality of Life"],
-  legalName: "Effort For Quality of Life (EQUAL) Society",
-  description:
-    "Faridabad-based not-for-profit society promoting health awareness, wellness, education, family welfare and quality of life through an integrative and community-focused approach.",
-  slogan: "Promoting Healthier Living and Quality of Life",
-  foundingDate: "1997-05-28",
-  email: "info@lifequality.org.in",
-  telephone: "+91-9013103676",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "House No. 229, Roof-Top, Sector 46",
-    addressLocality: "Faridabad",
-    addressRegion: "Haryana",
-    postalCode: "121010",
-    addressCountry: "IN",
-  },
-  areaServed: "India",
-  knowsAbout: [
-    "Health Awareness",
-    "Yoga",
-    "Pranayama",
-    "Wellness Education",
-    "Nutrition Education",
-    "Community Health",
-    "Healthy Living",
-  ],
-  sameAs: [
-    "https://www.instagram.com/sutrahealth/",
-    "https://www.facebook.com/people/Sutrahealth-Equal/",
-    "https://www.youtube.com/@sutra-health",
-    "https://www.linkedin.com/in/equal-society-ngo",
-    "https://sutra-health.medium.com/",
-    "https://in.pinterest.com/equal_society/",
-    "https://wa.me/919013103676",
-  ],
-};
+
 
 const contactPoints = [
   {
@@ -101,13 +70,6 @@ const socialLinks = [
 export default function ContactPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(organizationSchema),
-        }}
-      />
-
       <main className="bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">
         {/* =====================================================
             HERO
@@ -119,7 +81,7 @@ export default function ContactPage() {
             aria-hidden="true"
             className="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: "url('/images/nature.jpg')",
+              backgroundImage: "url('/images/nature.webp')",
             }}
           />
 
@@ -144,10 +106,10 @@ export default function ContactPage() {
                 </p>
 
                 <h1 className="mt-5 max-w-[760px] font-[var(--font-serif)] text-[46px] leading-[0.98] tracking-[-0.045em] text-[var(--sutra-white)] sm:text-[60px] lg:text-[72px]">
-                  Begin your
+                  Contact Sutra Health
                   <br />
                   <span>
-                    wellness journey.
+                    about your health needs.
                   </span>
                 </h1>
 
@@ -263,7 +225,7 @@ export default function ContactPage() {
                 </p>
 
                 <h2 className="mt-4 max-w-[560px] font-[var(--font-serif)] text-[38px] leading-[1.02] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[48px]">
-                  Tell us what you are looking for.
+                  Tell us how we can help
                 </h2>
 
                 <p className="mt-5 max-w-[520px] text-[14px] leading-7 text-[var(--sutra-muted)]">
@@ -325,7 +287,7 @@ export default function ContactPage() {
                 </p>
 
                 <h2 className="mt-3 font-[var(--font-serif)] text-[32px] tracking-[-0.03em] text-[var(--sutra-ink)] sm:text-[40px]">
-                  Follow the work of Sutra Health.
+                  Stay connected with Sutra Health
                 </h2>
 
                 <div className="mt-5 flex flex-wrap gap-x-5 gap-y-3">

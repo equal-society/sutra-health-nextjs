@@ -1,15 +1,15 @@
-
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import ContextualBookingCTA from "@/components/shared/ContextualBookingCTA";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/lifestyle`;
 
 export const metadata: Metadata = {
-  title: "Lifestyle Medicine in Faridabad | Sutra Health",
+  title: "Practical Lifestyle Medicine in Faridabad",
   description:
-    "Learn about lifestyle medicine in Faridabad, the six areas it considers, and how practical health habits may be discussed alongside medical care.",
+    "Understand lifestyle medicine in Faridabad and how food, activity, sleep, stress and other daily factors may be discussed alongside appropriate medical care.",
   alternates: {
     canonical: PAGE_URL,
   },
@@ -18,13 +18,21 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Lifestyle Medicine | Sutra Health",
+    title: "Lifestyle Medicine",
     description:
       "Understand the six lifestyle medicine areas and the role of practical habit support alongside appropriate healthcare.",
     url: PAGE_URL,
     siteName: "Sutra Health",
     type: "website",
     locale: "en_IN",
+    images: [
+      {
+        url: "https://lifequality.org.in/images/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Sutra Health",
+      },
+    ],
   },
 };
 
@@ -79,12 +87,13 @@ const faqs = [
       "No. Lifestyle support complements appropriate medical care. Do not stop or change prescribed treatment without discussing it with your treating clinician.",
   },
   {
-    question: "What is included in the Healthy Lifestyle Coaching Program?",
+    question: "What is included in the Healthy Lifestyle Coaching?",
     answer:
-      "Earlier programme information describes food guidance, Yoga, Pranayam, Meditation, habit-tracking tools and health consultations. Please confirm which elements are currently offered and how the programme is organised with Life Quality.",
+      "Healthy Lifestyle Coaching may bring together food guidance, Yoga, Pranayam, meditation, habit tracking and health consultations. Confirm the current format and available elements with Sutra Health.",
   },
   {
-    question: "Can lifestyle guidance be relevant if I already have a medical condition?",
+    question:
+      "Can lifestyle guidance be relevant if I already have a medical condition?",
     answer:
       "Yes. Lifestyle questions can be discussed in the context of your condition and current treatment. Advice should reflect your circumstances and remain coordinated with your treating healthcare professional.",
   },
@@ -141,10 +150,7 @@ export default function LifestyleMedicinePage() {
           }}
         />
 
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-[#101C19]/65"
-        />
+        <div aria-hidden="true" className="absolute inset-0 bg-[#101C19]/65" />
 
         <div
           aria-hidden="true"
@@ -160,17 +166,20 @@ export default function LifestyleMedicinePage() {
             id="lifestyle-title"
             className="mt-4 max-w-3xl font-serif text-[clamp(2.25rem,6vw,4.25rem)] leading-[1.08] tracking-[-0.03em] text-white"
           >
-          Everyday health is shaped by more than medical treatment.          </h1>
+            Lifestyle Medicine in Faridabad{" "}
+          </h1>
 
           <p className="mt-5 max-w-2xl text-lg leading-8 text-white/90 sm:text-xl">
-        Lifestyle medicine looks at the habits, routines and circumstances that can influence health, alongside appropriate medical care.          </p>
+            Lifestyle medicine looks at the habits, routines and circumstances
+            that can influence health, alongside appropriate medical care.{" "}
+          </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link
               href="/assessment"
               className="inline-flex min-h-12 w-full items-center justify-center bg-[#F7F5EF] px-6 text-base font-semibold text-[#17413D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto"
             >
-              Explore the 21-Point Assessment →
+              Review the 21-Point Assessment →
             </Link>
 
             <a
@@ -200,17 +209,18 @@ export default function LifestyleMedicinePage() {
                 id="pillars-title"
                 className="mt-3 max-w-xl font-serif text-3xl leading-tight sm:text-4xl lg:text-5xl"
               >
-                Six areas to review, not six changes to make at once.
+                Six lifestyle areas to review
               </h2>
 
               <p className="mt-4 max-w-2xl text-lg leading-8 text-[var(--sutra-muted)]">
-                Use the framework to decide what deserves attention first; not every area will be equally relevant to you.
+                Use the framework to decide what deserves attention first; not
+                every area will be equally relevant to you.
               </p>
             </div>
 
             <figure className="mx-auto w-full max-w-[400px]">
               <Image
-                src="/images/six-pillars.png"
+                src="/images/six-pillars.webp"
                 alt="Six lifestyle medicine pillars: healthy eating, physical activity, restorative sleep, social connection, minimising risky substances and stress management."
                 width={474}
                 height={355}
@@ -258,17 +268,20 @@ export default function LifestyleMedicinePage() {
               id="programme-title"
               className="mt-3 font-serif text-3xl leading-tight sm:text-4xl"
             >
-              Healthy Lifestyle Coaching Program
+              Healthy Lifestyle Coaching
             </h2>
           </div>
 
           <div className="max-w-3xl">
             <p className="text-lg leading-8 text-[var(--sutra-muted)] sm:text-xl">
-              Earlier programme information brings together food guidance, Yoga, Pranayam, Meditation, habit-tracking tools and health consultations.
+              Healthy Lifestyle Coaching may combine food guidance, Yoga,
+              Pranayam, meditation, habit tracking and health consultations.
             </p>
 
             <p className="mt-4 text-lg leading-8 text-[var(--sutra-muted)]">
-              The earlier programme material describes several activities, but its current structure is not confirmed here. Treat it as background information and verify what is currently offered before making plans.
+              Programme details can vary. Confirm the current format,
+              practitioner and inclusions with the Sutra Health team before
+              booking.
             </p>
 
             <nav
@@ -301,10 +314,7 @@ export default function LifestyleMedicinePage() {
       </section>
 
       {/* Assessment */}
-      <section
-        aria-labelledby="assessment-title"
-        className="bg-white"
-      >
+      <section aria-labelledby="assessment-title" className="bg-white">
         <div className="mx-auto grid max-w-7xl gap-6 px-4 py-12 sm:px-6 sm:py-16 md:px-8 lg:grid-cols-[1fr_auto] lg:items-center lg:px-12 lg:py-16">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--sutra-teal)]">
@@ -315,11 +325,13 @@ export default function LifestyleMedicinePage() {
               id="assessment-title"
               className="mt-3 font-serif text-3xl leading-tight sm:text-4xl"
             >
-              Use the assessment to organise your starting questions.
+              Use the 21-point assessment to choose a starting point.
             </h2>
 
             <p className="mt-4 text-lg leading-8 text-[var(--sutra-muted)]">
-              The assessment can help you organise questions across everyday health areas before a consultation. See the assessment page for its current scope and process.
+              The 21-point assessment can help you organise questions about
+              everyday health areas before a consultation. It is a reflective
+              check-in, not a diagnosis.
             </p>
           </div>
 
@@ -347,7 +359,7 @@ export default function LifestyleMedicinePage() {
               id="lifestyle-faq-title"
               className="mt-3 font-serif text-3xl leading-tight sm:text-4xl"
             >
-              Lifestyle medicine: common questions
+              Common questions about lifestyle medicine
             </h2>
           </div>
 
@@ -374,12 +386,19 @@ export default function LifestyleMedicinePage() {
         </div>
       </section>
 
+      <ContextualBookingCTA
+        eyebrow="Ready to discuss your priorities?"
+        title="Turn the framework into a conversation about your health."
+        description="You do not need to change all six areas first. Bring the questions you have and use the appointment to decide what deserves attention."
+        label="Choose an appointment time"
+      />
+
       {/* Disclaimer */}
       <p className="mx-auto max-w-7xl px-4 py-5 text-sm leading-6 text-[var(--sutra-muted)] sm:px-6 md:px-8 lg:px-12">
         Lifestyle medicine is complementary to appropriate medical care.
-        Information on this page is educational and does not replace
-        individual medical advice, diagnosis or treatment. Consult your
-        treating healthcare professional before changing prescribed care.
+        Information on this page is educational and does not replace individual
+        medical advice, diagnosis or treatment. Consult your treating healthcare
+        professional before changing prescribed care.
       </p>
     </main>
   );

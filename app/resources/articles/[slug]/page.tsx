@@ -21,6 +21,42 @@ type PageProps = {
 
 const SITE_URL = "https://lifequality.org.in";
 
+const articleContextLinks: Record<string, { label: string; href: string }[]> = {
+  "can-walking-help-lower-blood-pressure": [
+    { label: "High blood pressure lifestyle support", href: "/conditions/high-blood-pressure" },
+    { label: "Lifestyle Medicine", href: "/services/lifestyle" },
+  ],
+  "how-to-lower-blood-pressure-naturally": [
+    { label: "High blood pressure lifestyle support", href: "/conditions/high-blood-pressure" },
+    { label: "Nutrition support", href: "/services/nutrition" },
+  ],
+  "what-is-prediabetes-and-can-it-be-reversed": [
+    { label: "Diabetes and blood sugar support", href: "/conditions/diabetes-blood-sugar" },
+    { label: "Lifestyle Medicine", href: "/services/lifestyle" },
+  ],
+  "how-does-sleep-affect-weight-loss": [
+    { label: "Weight management support", href: "/conditions/weight-management" },
+    { label: "Lifestyle Medicine", href: "/services/lifestyle" },
+  ],
+  "how-to-improve-gut-health-naturally": [
+    { label: "Digestive and gut health support", href: "/conditions/digestive-gut-health" },
+    { label: "Nutrition support", href: "/services/nutrition" },
+  ],
+  "what-is-a-healthy-balanced-diet": [
+    { label: "Nutrition support", href: "/services/nutrition" },
+    { label: "Lifestyle Medicine", href: "/services/lifestyle" },
+  ],
+  "how-to-manage-stress": [
+    { label: "Stress and behaviour support", href: "/services/behaviour-stress-mind" },
+    { label: "Lifestyle Medicine", href: "/services/lifestyle" },
+  ],
+  "yoga-for-stress-relief": [
+    { label: "Therapeutic Yoga", href: "/services/therapeutic-yoga" },
+    { label: "Stress and behaviour support", href: "/services/behaviour-stress-mind" },
+  ],
+};
+
+
 /* =========================================================
    STATIC PARAMS
 ========================================================= */
@@ -65,9 +101,7 @@ export async function generateMetadata({
     */
     title: article.title,
 
-    description:
-      article.excerpt ||
-      `Practical health guidance from Sutra Health about ${article.title.toLowerCase()}.`,
+    description: `${(article.excerpt || `Practical health guidance from Sutra Health about ${article.title.toLowerCase()}.`).slice(0, 112)} Read the guide.`,
 
     alternates: {
       canonical: `/resources/articles/${article.slug}`,
@@ -81,9 +115,7 @@ export async function generateMetadata({
     openGraph: {
       title: article.title,
 
-      description:
-        article.excerpt ||
-        `Practical health guidance from Sutra Health about ${article.title.toLowerCase()}.`,
+      description: `${(article.excerpt || `Practical health guidance from Sutra Health about ${article.title.toLowerCase()}.`).slice(0, 125)} Read the practical guide.`,
 
       type: "article",
 
@@ -106,9 +138,7 @@ export async function generateMetadata({
 
       title: article.title,
 
-      description:
-        article.excerpt ||
-        `Practical health guidance from Sutra Health about ${article.title.toLowerCase()}.`,
+      description: `${(article.excerpt || `Practical health guidance from Sutra Health about ${article.title.toLowerCase()}.`).slice(0, 125)} Read the practical guide.`,
 
       images: article.image ? [article.image] : [],
     },
@@ -136,6 +166,68 @@ export default async function ArticlePage({
 
   const relatedArticles = getRelatedArticles(article, 3);
 
+  const relatedCare = (() => {
+    const slug = article.slug;
+    if (slug.includes("blood-pressure")) {
+      return [
+        { href: "/conditions/high-blood-pressure", label: "High Blood Pressure", type: "Health condition" },
+        { href: "/services/lifestyle", label: "Lifestyle Medicine", type: "Service" },
+        { href: "/services/physician-consultation", label: "Physician Consultation", type: "Service" },
+      ];
+    }
+    if (slug.includes("prediabetes")) {
+      return [
+        { href: "/conditions/diabetes-blood-sugar", label: "Diabetes & Blood Sugar", type: "Health condition" },
+        { href: "/services/lifestyle", label: "Lifestyle Medicine", type: "Service" },
+        { href: "/services/nutrition", label: "Nutrition Counselling", type: "Service" },
+      ];
+    }
+    if (slug.includes("gut-health")) {
+      return [
+        { href: "/conditions/digestive-gut-health", label: "Digestive & Gut Health", type: "Health condition" },
+        { href: "/services/nutrition", label: "Nutrition Counselling", type: "Service" },
+      ];
+    }
+    if (slug.includes("yoga")) {
+      return [
+        { href: "/services/therapeutic-yoga", label: "Therapeutic Yoga", type: "Service" },
+        { href: "/services/behaviour-stress-mind", label: "Behaviour & Stress Support", type: "Service" },
+      ];
+    }
+    if (slug.includes("stress")) {
+      return [
+        { href: "/services/behaviour-stress-mind", label: "Behaviour & Stress Support", type: "Service" },
+        { href: "/services/lifestyle", label: "Lifestyle Medicine", type: "Service" },
+      ];
+    }
+    if (slug.includes("diet")) {
+      return [
+        { href: "/services/nutrition", label: "Nutrition Counselling", type: "Service" },
+        { href: "/services/lifestyle", label: "Lifestyle Medicine", type: "Service" },
+      ];
+    }
+    if (slug.includes("sleep")) {
+      return [
+        { href: "/services/lifestyle", label: "Lifestyle Medicine", type: "Service" },
+      ];
+    }
+    return [
+      { href: "/services", label: "Health Services", type: "Services" },
+      { href: "/conditions", label: "Health Conditions", type: "Health concerns" },
+    ];
+  })();
+  const contextLinks = articleContextLinks[article.slug] ?? [
+    { label: "Explore all health conditions", href: "/conditions" },
+    { label: "Explore health services", href: "/services" },
+  ];
+  const wordCount = [
+    article.content.introduction,
+    ...article.content.sections.flatMap((section) => [section.heading, ...section.paragraphs, ...(section.bullets ?? [])]),
+    article.content.takeaway ?? "",
+    article.content.whenToSeekHelp ?? "",
+    ...(article.faqs ?? []).flatMap((faq) => [faq.question, faq.answer]),
+  ].join(" ").trim().split(/\s+/).filter(Boolean).length;
+
   /* =======================================================
      DATE
   ======================================================= */
@@ -147,6 +239,14 @@ export default async function ArticlePage({
     month: "long",
     year: "numeric",
   });
+
+  const formattedUpdatedDate = article.updatedDate
+    ? new Date(article.updatedDate).toLocaleDateString("en-IN", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      })
+    : null;
 
   /* =======================================================
      FULL URL
@@ -179,7 +279,7 @@ export default async function ArticlePage({
 
     datePublished: article.date,
 
-    dateModified: article.date,
+    dateModified: article.updatedDate ?? article.date,
 
     inLanguage: "en-IN",
 
@@ -195,13 +295,20 @@ export default async function ArticlePage({
 
     author: {
       "@type": "Organization",
-
       "@id": `${SITE_URL}/#organization`,
-
-      name: "Sutra Health",
-
+      name: "Sutra Health Editorial Team",
       url: SITE_URL,
     },
+
+    wordCount,
+
+    ...(article.sources?.length
+      ? {
+          citation: article.sources
+            .map((source) => source.split("|")[1]?.trim())
+            .filter((url): url is string => Boolean(url)),
+        }
+      : {}),
 
     isPartOf: {
       "@type": "WebSite",
@@ -283,22 +390,6 @@ export default async function ArticlePage({
   };
 
   /* =======================================================
-     ORGANIZATION SCHEMA
-  ======================================================= */
-
-  const organizationSchema = {
-    "@context": "https://schema.org",
-
-    "@type": "Organization",
-
-    "@id": `${SITE_URL}/#organization`,
-
-    name: "Sutra Health",
-
-    url: SITE_URL,
-  };
-
-  /* =======================================================
      FAQ SCHEMA
   ======================================================= */
 
@@ -339,13 +430,6 @@ export default async function ArticlePage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(breadcrumbSchema),
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(organizationSchema),
         }}
       />
 
@@ -406,6 +490,12 @@ export default async function ArticlePage({
 
                     <figcaption className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-[11px] text-[var(--sutra-muted)]">
                       <span>Published {formattedDate}</span>
+                      {formattedUpdatedDate && (
+                        <>
+                          <span aria-hidden="true">·</span>
+                          <span>Updated {formattedUpdatedDate}</span>
+                        </>
+                      )}
                       <span aria-hidden="true">·</span>
                       <span>{article.readTime}</span>
                     </figcaption>
@@ -415,6 +505,7 @@ export default async function ArticlePage({
 
               {/* Article body */}
               <article className="min-w-0 py-12 sm:py-16 lg:py-20">
+                <div className="mb-5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)]">Quick answer</div>
                 <p className="max-w-[790px] text-[17px] leading-8 text-[var(--sutra-muted)] sm:text-[18px] sm:leading-9">
                   {article.content.introduction}
                 </p>
@@ -483,6 +574,18 @@ export default async function ArticlePage({
                   </section>
                 )}
 
+                <section className="border-y border-[var(--sutra-border)] py-9 sm:py-10" aria-labelledby="related-care-title">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">Related Sutra Health resources</p>
+                  <h2 id="related-care-title" className="mt-3 font-[var(--font-serif)] text-[28px] font-medium leading-tight tracking-[-0.025em] sm:text-[34px]">Continue with a related topic</h2>
+                  <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3">
+                    {contextLinks.map((link) => (
+                      <Link key={link.href} href={link.href} className="text-[15px] font-semibold text-[var(--sutra-teal)] underline decoration-[var(--sutra-sand)] underline-offset-4 hover:text-[var(--sutra-ink)]">
+                        {link.label} →
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+
                 {article.faqs && article.faqs.length > 0 && (
                   <section className="py-12 sm:py-16">
                     <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
@@ -490,7 +593,7 @@ export default async function ArticlePage({
                     </p>
 
                     <h2 className="mt-3 font-[var(--font-serif)] text-[34px] font-medium leading-[1.12] tracking-[-0.03em] text-[var(--sutra-ink)] sm:text-[42px]">
-                      Frequently asked questions
+                      Common questions about this topic
                     </h2>
 
                     <div className="mt-8 border-y border-[var(--sutra-border)]">
@@ -593,7 +696,7 @@ export default async function ArticlePage({
 
                 <div className="mt-10">
                   <p className="text-[15px] font-medium text-[var(--sutra-ink)]">
-                    Written by
+                    Editorial team
                   </p>
 
                   <div className="mt-5 flex items-center gap-4">
@@ -606,7 +709,7 @@ export default async function ArticlePage({
 
                     <div>
                       <p className="text-[17px] font-medium text-[var(--sutra-ink)]">
-                        Sutra Health
+                        Sutra Health Editorial Team
                       </p>
                       <p className="mt-1 text-[13px] leading-5 text-[var(--sutra-muted)]">
                         Integrative Lifestyle Healthcare
@@ -621,6 +724,19 @@ export default async function ArticlePage({
                   </p>
                   <p className="mt-2 text-[12px] text-[var(--sutra-muted)]">
                     {formattedDate}
+                  </p>
+                  {formattedUpdatedDate && (
+                    <>
+                      <p className="mt-5 text-[11px] font-medium text-[var(--sutra-ink)]">Updated</p>
+                      <p className="mt-2 text-[12px] text-[var(--sutra-muted)]">{formattedUpdatedDate}</p>
+                    </>
+                  )}
+
+                  <p className="mt-5 text-[11px] font-medium text-[var(--sutra-ink)]">
+                    Approx. word count
+                  </p>
+                  <p className="mt-2 text-[12px] text-[var(--sutra-muted)]">
+                    {wordCount.toLocaleString("en-IN")} words
                   </p>
 
                   <p className="mt-5 text-[11px] font-medium text-[var(--sutra-ink)]">
@@ -640,6 +756,34 @@ export default async function ArticlePage({
                 </div>
               </div>
             </aside>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================
+          RELATED CARE
+      ===================================================== */}
+      <section className="border-t border-[var(--sutra-border)] bg-[var(--sutra-porcelain)]">
+        <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-12 lg:py-16">
+          <div className="max-w-3xl">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
+              Related care
+            </p>
+            <h2 className="mt-3 font-[var(--font-serif)] text-[32px] font-medium leading-[1.08] tracking-[-0.03em] text-[var(--sutra-ink)] sm:text-[40px]">
+              Explore the relevant health topic or service
+            </h2>
+            <p className="mt-4 text-[14px] leading-7 text-[var(--sutra-muted)] sm:text-[15px] sm:leading-8">
+              If you want to take the next step, these pages provide more specific information about the health concern or support discussed in this article.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {relatedCare.map((item) => (
+              <Link key={item.href} href={item.href} className="border border-[var(--sutra-border)] bg-[var(--sutra-white)] p-5 transition-colors hover:border-[var(--sutra-teal)]">
+                <span className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[var(--sutra-muted)]">{item.type}</span>
+                <span className="mt-3 block font-[var(--font-serif)] text-[21px] font-medium leading-tight text-[var(--sutra-ink)]">{item.label}</span>
+                <span className="mt-4 block text-[10px] font-semibold uppercase tracking-[0.1em] text-[var(--sutra-teal)]">Explore →</span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -722,11 +866,10 @@ export default async function ArticlePage({
                 Sutra Health
               </p>
               <h2 className="mt-4 font-[var(--font-serif)] text-[38px] font-medium leading-[1.05] tracking-[-0.035em] text-white sm:text-[50px]">
-                Want practical support for your health?
+                Want to discuss what this means for you?
               </h2>
               <p className="mt-5 max-w-2xl text-[15px] leading-7 text-white/70 sm:text-[16px] sm:leading-8">
-                Explore a personalised approach that brings together lifestyle,
-                nutrition, movement, breath and mindful behaviour change.
+                General information is a useful starting point. If your question is specific to your health, discuss the relevant details with a qualified professional.
               </p>
             </div>
 
@@ -735,7 +878,7 @@ export default async function ArticlePage({
                 href="/book-appointment"
                 className="inline-flex items-center gap-3 bg-white px-5 py-3.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--sutra-teal)] transition-colors hover:bg-[var(--sutra-pale-sage)]"
               >
-                Book a Consultation
+                See appointment options
                 <span aria-hidden="true">→</span>
               </Link>
 

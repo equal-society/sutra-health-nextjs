@@ -30,13 +30,11 @@ export default function BookingCTA() {
                 id="booking-cta-heading"
                 className="mt-5 max-w-3xl font-serif text-4xl leading-[1.04] tracking-[-0.025em] sm:text-5xl lg:text-6xl"
               >
-                Start with a conversation about your health.
+                Talk through the question that brought you here.
               </h2>
 
               <p className="mt-6 max-w-2xl text-base leading-7 text-white/70 sm:text-lg sm:leading-8">
-                Share what you are dealing with, what you want to change and
-                what support you are looking for. We can then discuss the most
-                appropriate next step for you.
+                Share the main concern you want to discuss. You can choose a suitable appointment time and clarify the next step with the team.
               </p>
             </div>
 

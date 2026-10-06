@@ -6,6 +6,7 @@ export const canWalkingHelpLowerBloodPressure: Article = {
   category: "Preventive Health",
   type: "How-to",
   readTime: "6 min read",
+  updatedDate: "2026-10-05",
   date: "2026-09-17",
   excerpt:
     "Walking is a practical way to add regular moderate activity to the week. For people who can walk safely, it can be one component of a broader blood-pressure plan.",
@@ -43,6 +44,38 @@ export const canWalkingHelpLowerBloodPressure: Article = {
         heading: "Is walking enough if blood pressure is high?",
         paragraphs: [
           "Walking is one part of blood-pressure care. Whether it is enough depends on your overall health, starting blood pressure, other lifestyle factors and any treatment already prescribed.",
+        ],
+      },
+      {
+        heading: "How can you build walking into a normal day?",
+        paragraphs: [
+          "The easiest walking plan is usually the one that fits around things you already do. You might walk part of a commute, take a short walk after a meal, use stairs where appropriate or set aside a regular time in the evening. The goal is to reduce the amount of planning needed each time you want to be active.",
+          "Keep a simple record for a few weeks if it helps you notice your pattern. You can track days walked, approximate duration and how the activity felt. This is more useful than chasing a perfect daily number, especially when your schedule changes.",
+        ],
+      },
+      {
+        heading: "What if walking feels difficult?",
+        paragraphs: [
+          "A lower starting point is reasonable if you have been inactive. Shorter bouts can be accumulated across the day, and the pace can be adjusted to your current ability. If pain, breathlessness, dizziness or another symptom makes activity difficult, stop and discuss an appropriate level of activity with a healthcare professional.",
+        ],
+      },
+      {
+        heading: "Questions to ask before increasing activity",
+        paragraphs: [
+          "If you have been inactive, think about your current fitness, symptoms, existing health conditions and any advice you have already received. You do not need to start with a demanding programme. A gradual approach can help you learn what feels comfortable and sustainable.",
+          "If you already have a blood-pressure treatment plan, keep using it while adding activity. Walking can support the plan, but it should not be used as a reason to stop or change prescribed treatment without professional advice.",
+        ],
+      },
+      {
+        heading: "Keep walking practical",
+        paragraphs: [
+          "You do not need a special location or expensive equipment to begin. Comfortable footwear, a safe route and a realistic schedule may be enough. What matters most is choosing an activity pattern you can repeat safely.",
+        ],
+      },
+      {
+        heading: "Progress can be gradual",
+        paragraphs: [
+          "If your first week is inconsistent, restart without treating it as failure. A walking habit can be built around the days and times that are most realistic for you. The longer-term goal is regular activity that supports your broader health plan.",
         ],
       },
     ],

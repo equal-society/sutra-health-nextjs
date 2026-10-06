@@ -10,9 +10,9 @@ const ONLINE_URL =
   "https://www.lybrate.com/faridabad/doctor/dr-rakesh-sarwal-preventive-medicine-specialist";
 
 export const metadata: Metadata = {
-  title: "Physician Consultation in Faridabad | Sutra Health",
+  title: "Physician Consultation in Faridabad",
   description:
-    "Prepare for a physician consultation in Faridabad. Learn what to bring, what the visit covers and how to explore appointment options at Sutra Health.",
+    "Prepare for a physician consultation in Faridabad, understand what the visit covers and explore appointment options.",
   alternates: {
     canonical: PAGE_URL,
   },
@@ -21,13 +21,21 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Physician Consultation in Faridabad | Sutra Health",
+    title: "Physician Consultation in Faridabad",
     description:
       "Discuss a health concern, review the information you already have and clarify appropriate next steps with a physician.",
     url: PAGE_URL,
     siteName: "Sutra Health",
     type: "website",
     locale: "en_IN",
+    images: [
+      {
+        url: "https://lifequality.org.in/images/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Sutra Health",
+      },
+    ],
   },
 };
 
@@ -124,7 +132,7 @@ export default function PhysicianConsultationPage() {
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/nature.jpg')" }}
+          style={{ backgroundImage: "url('/images/nature.webp')" }}
         />
 
         <div
@@ -141,7 +149,7 @@ export default function PhysicianConsultationPage() {
             id="consultation-title"
             className="mt-4 max-w-3xl font-serif text-[clamp(2.25rem,6vw,4.25rem)] leading-[1.08] tracking-[-0.025em] text-white"
           >
-            Bring the health question you need a clinician to review.
+            Physician Consultation in Faridabad
           </h1>
 
           <p className="mt-5 max-w-2xl text-lg leading-8 text-white/90 sm:text-xl">
@@ -186,7 +194,7 @@ export default function PhysicianConsultationPage() {
               id="visit-title"
               className="mt-3 font-serif text-3xl leading-tight sm:text-4xl lg:text-5xl"
             >
-              What to expect during the visit
+              What happens during a physician consultation
             </h2>
 
             <p className="mt-4 max-w-2xl text-lg leading-8 text-[var(--sutra-muted)]">
@@ -232,7 +240,7 @@ export default function PhysicianConsultationPage() {
               id="prepare-title"
               className="mt-3 font-serif text-3xl leading-tight sm:text-4xl"
             >
-              Prepare what is readily available.
+              What to bring to your consultation
             </h2>
 
             <p className="mt-4 text-lg leading-8 text-[var(--sutra-muted)]">
@@ -284,12 +292,9 @@ export default function PhysicianConsultationPage() {
 
           <div className="max-w-3xl">
             <p className="text-lg leading-8 text-[var(--sutra-muted)]">
-              The current physician listing identifies Dr. Rakesh Sarwal for consultations associated with Life Quality in Faridabad.
+              Dr. Rakesh Sarwal is listed for physician consultations associated with Life Quality in Faridabad. Confirm the current practitioner, appointment format and availability before booking.
             </p>
 
-            <p className="mt-4 text-base leading-7 text-[var(--sutra-muted)]">
-              The earlier Life Quality page listed a suggested donation of ₹100 per consultation. Please confirm the current amount and appointment arrangements before visiting.
-            </p>
 
             <a
               href={ONLINE_URL}
@@ -344,7 +349,7 @@ export default function PhysicianConsultationPage() {
             id="faq-title"
             className="font-serif text-3xl leading-tight sm:text-4xl"
           >
-            Common appointment questions
+            Common questions about physician consultations
           </h2>
 
           <div className="mt-6 max-w-4xl divide-y divide-[var(--sutra-border)] border-y border-[var(--sutra-border)]">
@@ -374,11 +379,11 @@ export default function PhysicianConsultationPage() {
         <div className="mx-auto flex max-w-7xl flex-col gap-5 px-4 py-10 sm:px-6 sm:py-12 md:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-12">
           <div className="max-w-2xl">
             <h2 className="font-serif text-3xl leading-tight sm:text-4xl">
-              Plan your visit with current details.
+              Before you book
             </h2>
 
             <p className="mt-3 text-lg leading-8 text-white/90">
-              Confirm the consultation format, timing and any applicable terms directly before you travel.
+              Check the current appointment format, timing, availability and any applicable terms before you travel.
             </p>
           </div>
 

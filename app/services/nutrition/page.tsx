@@ -7,16 +7,16 @@ import ServicePageTemplate, {
 
 const nutrition: ServicePageConfig = {
   heroImage: "/images/diet.webp",
-  name: "Nutrition Support",
+  name: "Nutrition Counselling in Faridabad",
   shortName: "Nutrition",
   slug: "nutrition",
 
-  title: "Nutrition Support in Faridabad & Delhi NCR | Sutra Health",
+  title: "Practical Nutrition Counselling in Faridabad",
   description:
-    "Explore nutrition support in Faridabad for familiar Indian foods, dietary choices, meal routines and individual health needs.",
+    "Nutrition counselling in Faridabad focused on your usual meals, food routines, dietary needs and practical changes that fit everyday life.",
 
   heroDescription:
-    "Start with the meals you already eat and identify the nutrition question worth reviewing.",
+    "Review the food choices and routines that matter to your health, without starting with a generic meal plan.",
 
   trust: [
     "Individual dietary guidance",
@@ -24,50 +24,50 @@ const nutrition: ServicePageConfig = {
   ],
 
   introEyebrow: "For Your Everyday Meals",
-  introTitle: "Start with what is already on your plate.",
+  introTitle: "Start with the food you already eat.",
   introParagraphs: [
     "A usual day of meals gives useful context: what you eat, when you eat, how food is prepared and what constraints shape your choices. You do not need to change your diet before the discussion.",
   ],
 
   focusEyebrow: "Dietary Considerations",
-  focusTitle: "What is already part of your diet",
+  focusTitle: "Look at the pattern, not one food in isolation",
   focusIntro:
-    "Life Quality’s earlier guidance highlights these food and drink categories for discussion. They are reference points, not a universal meal plan or individual prescription.",
+    "These food and drink categories can help structure a discussion about your overall eating pattern. They are not a universal meal plan or individual prescription.",
 
   focusAreas: [
     {
       number: "01",
       title: "Seasonal produce and pulses",
       description:
-        "The earlier guidance mentions seasonal fruits and vegetables, salads, dals and other pulses.",
+        "Seasonal fruits and vegetables, salads, dals and other pulses can be considered as part of a varied eating pattern.",
     },
     {
       number: "02",
       title: "Grains and protein sources",
       description:
-        "Jowar, ragi, eggs and fish are included in the earlier material; choices depend on personal preference and suitability.",
+        "Jowar, ragi, eggs and fish are examples of foods that may fit into a varied diet, depending on personal preference and suitability.",
     },
     {
       number: "03",
       title: "Cooking fats and sweeteners",
       description:
-        "The earlier material names desi ghee, olive oil, gur and khandsari. Consider their type and quantity as part of the overall eating pattern.",
+        "Cooking fats and sweeteners can be considered by type and quantity as part of the overall eating pattern.",
     },
     {
       number: "04",
       title: "Highly processed and fried foods",
       description:
-        "The earlier page advises limiting excess salt and refined sugar, along with fried foods, highly processed snacks, commercial bread and heavily sweetened tea.",
+        "Excess salt, refined sugar, fried foods and heavily processed snacks can be considered in the context of your overall eating pattern.",
     },
     {
       number: "05",
       title: "Drinks and fluids",
       description:
-        "Water and appropriate fluids contribute to hydration. Green tea, buttermilk and kaada also appear in the earlier guidance; suitability can vary.",
+        "Water and appropriate fluids contribute to hydration. Other drinks may be considered according to your preferences and health needs.",
     },
   ],
 
-  processTitle: "What to expect from the discussion",
+  processTitle: "Turn a food question into a practical next step",
   processIntro:
     "The discussion stays close to your actual meals and routines rather than starting with a generic menu.",
 
@@ -82,7 +82,7 @@ const nutrition: ServicePageConfig = {
       number: "02",
       title: "Account for dietary requirements",
       description:
-        "Consider documented dietary requirements and, where relevant to the earlier programme, the concept of Prakriti. Its use should be clarified with the clinician.",
+        "Consider documented dietary requirements and, where relevant, traditional concepts such as Prakriti. Discuss their use with the clinician when they are part of your care.",
     },
     {
       number: "03",
@@ -95,7 +95,7 @@ const nutrition: ServicePageConfig = {
   contextEyebrow: "Learning Resources",
   contextTitle: "Read and explore beyond the consultation.",
   contextParagraphs: [
-    "The resources below were linked from Life Quality’s earlier dietary page. They offer general context, not personalised nutrition advice.",
+    "These resources offer general context for further reading. They are not personalised nutrition advice.",
     "If you have a prescribed diet or a condition that affects food or fluid intake, speak with your treating healthcare professional before making significant changes.",
   ],
 
@@ -103,26 +103,26 @@ const nutrition: ServicePageConfig = {
     {
       title: "Research on ultra-processed diets",
       description:
-        "Research article linked in the earlier dietary guidance.",
+        "Research exploring dietary patterns and metabolic health.",
       href:
         "https://www.cell.com/cell-metabolism/fulltext/S1550-4131(19)30248-7",
     },
     {
       title: "Gut health talk",
       description:
-        "TED Talk linked from the earlier dietary page.",
+        "A public talk exploring the connection between food and gut health.",
       href: "https://www.youtube.com/watch?v=1sISguPDlhY",
     },
     {
       title: "21-point healthy lifestyle framework",
       description:
-        "Framework referenced in Life Quality’s earlier material.",
+        "A practical framework for discussing everyday food choices.",
       href: "https://zenodo.org/records/15814357",
     },
     {
       title: "Healthy Lifestyle Guide",
       description:
-        "Educational video linked in the earlier dietary guidance.",
+        "An educational video for general nutrition and lifestyle context.",
       href:
         "https://www.youtube.com/watch?si=JWlazmTyPDvG7fkG&v=FOGY2HSo2eY&feature=youtu.be",
     },
@@ -152,7 +152,7 @@ const nutrition: ServicePageConfig = {
     {
       question: "Does the guidance include Indian foods?",
       answer:
-        "Yes. The earlier material includes dals, seasonal produce, jowar and ragi. Whether a food is suitable depends on your health needs and circumstances.",
+        "Yes. Dals, seasonal produce, jowar and ragi can all be part of a varied diet when they suit your health needs, preferences and routine.",
     },
     {
       question: "Can I get advice for a medical condition?",
@@ -161,6 +161,7 @@ const nutrition: ServicePageConfig = {
     },
   ],
 
+  ctaLabel: "Discuss your nutrition needs",
   finalTitle: "Bring your usual meals into the conversation.",
   finalDescription:
     "Use your current food routine to identify nutrition questions for an individual review.",

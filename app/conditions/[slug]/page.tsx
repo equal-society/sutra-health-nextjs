@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import Container from "@/components/shared/Container";
+import ContextualBookingCTA from "@/components/shared/ContextualBookingCTA";
 import {
   conditions,
   getCondition,
@@ -62,7 +63,7 @@ export async function generateMetadata({
     return {};
   }
 
-  const title = `${condition.title} | Sutra Health`;
+  const title = condition.title;
 
   const description = truncateAtWord(condition.shortDescription, 152);
 
@@ -759,6 +760,13 @@ export default async function ConditionPage({
             </Container>
           </section>
         )}
+
+        <ContextualBookingCTA
+          eyebrow="If you want to go further"
+          title={`Want to discuss ${condition.title.toLowerCase()} with a clinician?`}
+          description="Use the information here to prepare your questions. An appointment can help put your symptoms, history and priorities into the right context."
+          label="Choose an appointment time"
+        />
 
         {/* RELATED CONDITIONS */}
         {relatedConditions.length > 0 && (

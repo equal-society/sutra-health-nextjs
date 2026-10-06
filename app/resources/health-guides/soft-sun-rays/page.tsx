@@ -1,15 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
+import ContextualBookingCTA from "@/components/shared/ContextualBookingCTA";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Benefits of Soft Sun Rays | Morning Sunlight & Wellbeing | Sutra Health",
+  title: "Morning Sunlight: Benefits & Safe Habits",
   description:
     "Explore morning daylight, outdoor routines, Vitamin D and sensible sun exposure as part of everyday wellbeing.",
   alternates: {
     canonical:
       "https://lifequality.org.in/resources/health-guides/soft-sun-rays",
   },
+  
+  openGraph: {
+    title: "Morning Sunlight: Benefits & Safe Habits | Sutra Health",
+    description: "Explore daylight, outdoor routines and sensible sun exposure for everyday wellbeing.",
+    url: "https://lifequality.org.in/resources/health-guides/soft-sun-rays",
+    siteName: "Sutra Health",
+    type: "article",
+    locale: "en_IN",
+    images: [{ url: "https://lifequality.org.in/images/og-image.webp", width: 1200, height: 630, alt: "Morning sunlight health guide" }],
+  },
+  twitter: { card: "summary_large_image", title: "Morning Sunlight: Benefits & Safe Habits | Sutra Health", description: "Explore daylight and sensible outdoor routines.", images: ["https://lifequality.org.in/images/og-image.webp"] },
 };
 
 const benefits = [
@@ -80,9 +92,33 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://lifequality.org.in" },
+    { "@type": "ListItem", position: 2, name: "Resources", item: "https://lifequality.org.in/resources" },
+    { "@type": "ListItem", position: 3, name: "Health Guides", item: "https://lifequality.org.in/resources/health-guides" },
+    { "@type": "ListItem", position: 4, name: "Morning Sunlight: Benefits & Safe Habits", item: "https://lifequality.org.in/resources/health-guides/soft-sun-rays" },
+  ],
+};
+
 export default function SoftSunRaysPage() {
   return (
-    <main className="bg-[#F7F5EF] text-[#202522]">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <main className="bg-[#F7F5EF] text-[#202522]">
       <header className="relative isolate overflow-hidden border-b border-[var(--sutra-border)] bg-[var(--sutra-ink)]">
 
   {/* Background image */}
@@ -90,7 +126,7 @@ export default function SoftSunRaysPage() {
     aria-hidden="true"
     className="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat"
     style={{
-      backgroundImage: "url('/images/rooftop1.jpg')",
+      backgroundImage: "url('/images/rooftop1.webp')",
     }}
   />
 
@@ -302,6 +338,13 @@ export default function SoftSunRaysPage() {
         </div>
       </section>
 
+      <ContextualBookingCTA
+        eyebrow="A useful next step"
+        title="Want to connect a health question to your own routine?"
+        description="General guidance cannot account for every medical or skin-related circumstance. Bring your specific question to an appropriate professional."
+        label="See appointment options"
+      />
+
       <section className="border-t border-[rgba(32,37,34,0.10)] bg-[#F7F5EF]">
         <div className="mx-auto max-w-[1180px] px-5 py-10 sm:px-8 lg:px-12 lg:py-14">
           <p className="max-w-3xl text-[13px] leading-6 text-[#65736D]">
@@ -314,6 +357,7 @@ export default function SoftSunRaysPage() {
       </section>
 
      
-    </main>
+      </main>
+    </>
   );
 }

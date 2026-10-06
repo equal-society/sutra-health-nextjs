@@ -1,4 +1,30 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+const SITE_URL = "https://lifequality.org.in";
+
+export const metadata: Metadata = {
+  title: "FAQs | Consultations & Wellness",
+  description:
+    "Find answers about lifestyle medicine, nutrition, therapeutic yoga, consultations, online care and getting started with Sutra Health.",
+  alternates: { canonical: `${SITE_URL}/faqs` },
+  openGraph: {
+    title: "Sutra Health FAQs",
+    description:
+      "Answers about Sutra Health consultations, services and practical lifestyle support.",
+    url: `${SITE_URL}/faqs`,
+    siteName: "Sutra Health",
+    type: "website",
+    locale: "en_IN",
+    images: [{ url: `${SITE_URL}/images/og-image.webp`, width: 1200, height: 630, alt: "Sutra Health FAQs" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sutra Health FAQs",
+    description: "Clear answers about consultations, services, assessment, appointments and what to expect from Sutra Health.",
+    images: [`${SITE_URL}/images/og-image.webp`],
+  },
+};
 
 const faqs = [
   {
@@ -29,9 +55,31 @@ const faqs = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+    { "@type": "ListItem", position: 2, name: "FAQs", item: `${SITE_URL}/faqs` },
+  ],
+};
+
 export default function FAQsPage() {
   return (
-    <main className="bg-[#FAF8F2]">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <main className="bg-[#FAF8F2]">
       <section aria-labelledby="faqs-title">
         <div className="mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10">
           <div className="py-16 sm:py-20 lg:py-24">
@@ -45,7 +93,7 @@ export default function FAQsPage() {
                 id="faqs-title"
                 className="mt-4 font-serif text-[40px] leading-[1.08] tracking-[-0.035em] text-[#202522] sm:text-[56px] lg:text-[64px]"
               >
-                Clear answers to help you begin.
+                Sutra Health FAQs
               </h1>
 
               <p className="mt-5 max-w-2xl text-base leading-8 text-[#65736D] sm:text-lg">
@@ -94,11 +142,11 @@ export default function FAQsPage() {
             <div className="mt-12 flex flex-col gap-4 border border-[#202522]/10 bg-white p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
               <div>
                 <h2 className="font-serif text-2xl text-[#202522]">
-                  Still have a question?
+                  Need help choosing where to begin?
                 </h2>
 
                 <p className="mt-2 text-sm leading-6 text-[#65736D]">
-                  Our team can help you understand the next step.
+                  Use the service pages to compare your options, or contact the team if you need help understanding the booking route.
                 </p>
               </div>
 
@@ -123,6 +171,7 @@ export default function FAQsPage() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 } 

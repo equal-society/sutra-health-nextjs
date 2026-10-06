@@ -47,14 +47,14 @@ export default function ScoreQuestionnaire() {
   return (
     <main className="bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">
       <section aria-labelledby="assessment-title" className="relative flex min-h-[min(700px,calc(100svh-80px))] items-end overflow-hidden bg-[#172D29]">
-        <div aria-hidden="true" className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/nature.jpg')" }} />
+        <div aria-hidden="true" className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/nature.webp')" }} />
         <div aria-hidden="true" className="absolute inset-0 bg-[#101C19]/55" />
         <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#101C19]/85 via-[#101C19]/55 to-[#101C19]/20" />
         <Container>
           <div className="relative z-10 max-w-4xl py-20 sm:py-24 lg:py-28">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/75">21-point lifestyle assessment</p>
             <h1 id="assessment-title" className="mt-5 max-w-4xl font-[var(--font-serif)] text-[44px] font-medium leading-[1.02] tracking-[-0.04em] text-white sm:text-6xl lg:text-[76px]">
-              Use 21 questions to review the habits covered by this assessment.
+              21-Point Lifestyle Assessment
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-7 text-white/85 sm:text-lg sm:leading-8">
               Review the statements against your usual routine. The questionnaire covers food choices, activity, sleep, substances and other everyday practices; the result is a simple self-reflection score, not a clinical assessment.
@@ -73,7 +73,7 @@ export default function ScoreQuestionnaire() {
               <div className="max-w-3xl">
                 <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--sutra-muted)]">Before you answer</p>
                 <h2 className="mt-3 font-[var(--font-serif)] text-4xl font-medium leading-tight tracking-[-0.03em] sm:text-6xl">
-                  Think about your usual routine.
+                  Review your usual routine
                 </h2>
                 <p className="mt-4 text-base leading-7 text-[var(--sutra-muted)]">
                   Choose Yes or No based on what is typical for you rather than an unusual day. The first seven statements use the questionnaire’s reverse-scoring rule, so answer each statement as written.
@@ -140,7 +140,7 @@ export default function ScoreQuestionnaire() {
                 <div className="grid gap-5 sm:grid-cols-[minmax(0,1fr)_minmax(180px,240px)] sm:items-center sm:gap-8">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--sutra-muted)]">Your result</p>
-                    <h2 className="mt-2 font-[var(--font-serif)] text-3xl leading-tight text-[var(--sutra-ink)] sm:text-4xl">Your questionnaire score</h2>
+                    <h2 className="mt-2 font-[var(--font-serif)] text-3xl leading-tight text-[var(--sutra-ink)] sm:text-4xl">Your assessment results</h2>
                    
                   </div>
                   <div className="flex items-baseline gap-2 border-t border-[var(--sutra-border-strong)] pt-5 sm:justify-end sm:border-l sm:border-t-0 sm:pl-7 sm:pt-0">

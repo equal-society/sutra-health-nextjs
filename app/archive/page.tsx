@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import styles from "./archive.module.css";
 
 export const metadata: Metadata = {
-  title: "Sutra Health Archive | Health, Lifestyle & Publication Resources",
+  title: "Archive | Health & Publication Resources",
   description:
     "Browse the health, lifestyle, clinic, publication and practitioner material collected in the Sutra Health archive.",
   alternates: {
@@ -14,6 +14,14 @@ export const metadata: Metadata = {
       "Browse selected health, lifestyle, clinic and publication collections from Sutra Health.",
     url: "https://lifequality.org.in/archive",
     type: "website",
+    images: [
+      {
+        url: "https://lifequality.org.in/images/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Sutra Health",
+      },
+    ],
   },
 };
 
@@ -109,8 +117,8 @@ export default function ArchivePage() {
             </p>
 
             <h1 id="archive-title">
-              A collection of our
-              <span> health and wellbeing resources.</span>
+              Health & Wellbeing
+              <span> Resource Archive</span>
             </h1>
 
             <p className={styles.heroText}>
@@ -137,7 +145,7 @@ export default function ArchivePage() {
           <div className={styles.sectionIntro}>
             <div>
               <p className={styles.eyebrow}>Explore</p>
-              <h2 id="resources-title">Browse the collection</h2>
+              <h2 id="resources-title">Browse the resource collection</h2>
             </div>
             <p>
               Nine collections covering lifestyle guidance, clinic material,
@@ -185,7 +193,7 @@ export default function ArchivePage() {
           <div className={styles.bottomCta}>
             <div>
               <p className={styles.eyebrow}>Internet Archive</p>
-              <h2>Browse the wider collection.</h2>
+              <h2>Explore more health resources</h2>
               <p>
                 Open the Sutra Health archive to see the material currently
                 available in the collection.

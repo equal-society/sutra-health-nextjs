@@ -1,7 +1,34 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Search } from "lucide-react";
 
 import Container from "@/components/shared/Container";
+
+const SITE_URL = "https://lifequality.org.in";
+
+export const metadata: Metadata = {
+  title: "Health Guides | Practical Everyday Wellbeing",
+  description:
+    "Browse practical Sutra Health guides about mindset, sunlight, nature walks, movement and everyday wellbeing.",
+  alternates: { canonical: `${SITE_URL}/resources/health-guides` },
+  openGraph: {
+    title: "Health Guides",
+    description:
+      "Practical health and wellbeing guides for everyday routines.",
+    url: `${SITE_URL}/resources/health-guides`,
+    siteName: "Sutra Health",
+    type: "website",
+    locale: "en_IN",
+    images: [{ url: `${SITE_URL}/images/og-image.webp`, width: 1200, height: 630, alt: "Sutra Health health guides" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Health Guides | Sutra Health",
+    description: "Practical health and wellbeing guides for everyday routines.",
+    images: [`${SITE_URL}/images/og-image.webp`],
+  },
+};
+
 
 const healthGuides = [
   {
@@ -44,7 +71,7 @@ export default function HealthGuidesPage() {
           aria-hidden="true"
           className="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/images/nature.jpg')",
+            backgroundImage: "url('/images/nature.webp')",
           }}
         />
 
@@ -87,11 +114,7 @@ export default function HealthGuidesPage() {
 
               {/* Heading */}
               <h1 className="font-[var(--font-serif)] text-[48px] leading-[0.96] tracking-[-0.045em] text-[var(--sutra-white)] sm:text-[64px] lg:text-[78px] xl:text-[84px]">
-                Practical guidance
-                <br />
-                <span>
-                  for everyday wellbeing.
-                </span>
+                Practical Health Guides
               </h1>
 
               {/* Intro */}
@@ -143,7 +166,7 @@ export default function HealthGuidesPage() {
                 </p>
 
                 <h2 className="mt-3 font-[var(--font-serif)] text-[34px] leading-tight tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[44px]">
-                  Explore the guides.
+                  Explore the health guides.
                 </h2>
               </div>
 
@@ -236,7 +259,7 @@ export default function HealthGuidesPage() {
               </p>
 
               <h2 className="mt-3 font-[var(--font-serif)] text-[34px] leading-tight tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[44px]">
-                Reading is a starting point.
+                Use a guide as a starting point.
               </h2>
 
               <p className="mt-5 max-w-[620px] text-[14px] leading-7 text-[var(--sutra-muted)]">
@@ -260,7 +283,7 @@ export default function HealthGuidesPage() {
                   </p>
 
                   <h3 className="mt-1 font-[var(--font-serif)] text-[22px] tracking-[-0.02em] text-[var(--sutra-ink)]">
-                    Meet Our Doctors
+                    Meet the Sutra Health doctors
                   </h3>
 
                   <p className="mt-1 max-w-[650px] text-[13px] leading-6 text-[var(--sutra-muted)]">
@@ -288,7 +311,7 @@ export default function HealthGuidesPage() {
                   </p>
 
                   <h3 className="mt-1 font-[var(--font-serif)] text-[22px] tracking-[-0.02em] text-[var(--sutra-ink)]">
-                    Explore Services
+                    Explore health services
                   </h3>
 
                   <p className="mt-1 max-w-[650px] text-[13px] leading-6 text-[var(--sutra-muted)]">
@@ -316,7 +339,7 @@ export default function HealthGuidesPage() {
                   </p>
 
                   <h3 className="mt-1 font-[var(--font-serif)] text-[22px] tracking-[-0.02em] text-[var(--sutra-ink)]">
-                    Book an Appointment
+                    Book a consultation
                   </h3>
 
                   <p className="mt-1 max-w-[650px] text-[13px] leading-6 text-[var(--sutra-muted)]">
@@ -344,7 +367,7 @@ export default function HealthGuidesPage() {
                   </p>
 
                   <h3 className="mt-1 font-[var(--font-serif)] text-[22px] tracking-[-0.02em] text-[var(--sutra-ink)]">
-                    Explore Retreat Programmes
+                    Explore retreat programmes
                   </h3>
 
                   <p className="mt-1 max-w-[650px] text-[13px] leading-6 text-[var(--sutra-muted)]">

@@ -6,6 +6,7 @@ export const whatIsAHealthyBalancedDiet: Article = {
   category: "Nutrition",
   type: "Nutrition Guide",
   readTime: "7 min read",
+  updatedDate: "2026-10-05",
   date: "2026-09-14",
   excerpt:
     "A practical guide to dietary variety, balance, moderation and the everyday foods that form a healthy eating pattern.",
@@ -43,6 +44,38 @@ export const whatIsAHealthyBalancedDiet: Article = {
         heading: "How can you make healthy eating practical?",
         paragraphs: [
           "Start with changes that fit your normal meals. Adding vegetables or pulses to familiar dishes, choosing whole grains more often and reducing highly processed snacks can be more sustainable than following a rigid short-term diet.",
+        ],
+      },
+      {
+        heading: "How do you build a balanced plate in everyday life?",
+        paragraphs: [
+          "There is no requirement for every meal to contain the same foods. Across the day and week, aim for variety and an appropriate balance of staple foods, vegetables or fruit, protein sources and sources of healthy fats. The exact combination can reflect familiar Indian meals and the foods available to you.",
+          "For example, a meal can be built around a staple such as rice, roti or another grain, with vegetables and a pulse or other suitable protein source. The useful question is whether your overall pattern provides enough variety and fits your energy and health needs, not whether one meal is perfect.",
+        ],
+      },
+      {
+        heading: "How can you improve a diet without following a strict plan?",
+        paragraphs: [
+          "Small substitutions can be easier to maintain than a complete diet overhaul. Add a vegetable to a familiar meal, choose pulses more often, use whole grains where they fit your routine and keep highly processed snacks as an occasional choice. If a change makes eating socially or culturally difficult, adapt it rather than abandoning the whole plan.",
+        ],
+      },
+      {
+        heading: "Balance matters across the whole pattern",
+        paragraphs: [
+          "A healthy eating pattern can include foods you enjoy. You do not need to remove every snack, staple or culturally familiar dish to eat well. Portion size, frequency, variety and the rest of the day's food choices all matter.",
+          "If you are changing your diet for a specific medical reason, use general healthy-eating principles as a starting point rather than a substitute for individual advice. Conditions such as diabetes, kidney disease and food allergies can require a more tailored approach.",
+        ],
+      },
+      {
+        heading: "Use familiar foods",
+        paragraphs: [
+          "Healthy eating does not require a separate menu or expensive ingredients. Familiar staples, seasonal vegetables, pulses and other foods already used in your household can be combined in a varied pattern that fits your culture and budget.",
+        ],
+      },
+      {
+        heading: "Think in weeks, not perfect meals",
+        paragraphs: [
+          "A balanced diet is judged by the overall pattern. A meal that is higher in one type of food does not undo a varied week, just as one healthy meal does not compensate for an otherwise poor pattern. Aim for consistency without perfection.",
         ],
       },
     ],

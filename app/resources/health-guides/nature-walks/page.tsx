@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import ContextualBookingCTA from "@/components/shared/ContextualBookingCTA";
 import type { Metadata } from "next";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/resources/health-guides/nature-walks`;
 
 export const metadata: Metadata = {
-  title: "Nature Walks & Indoor Plants for Everyday Wellbeing | Sutra Health",
+  title: "Nature Walks & Indoor Plants",
   description:
     "A practical guide to walking in natural settings, building a manageable walking habit and caring for familiar indoor plants.",
   keywords: [
@@ -25,15 +26,23 @@ export const metadata: Metadata = {
       "A practical guide to walking in natural settings, building a manageable walking habit and caring for familiar indoor plants.",
     siteName: "Sutra Health",
     locale: "en_IN",
+    images: [
+      {
+        url: "https://lifequality.org.in/images/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Sutra Health",
+      },
+    ],
   },
 };
 
 const plants = [
-  ["Peace Lily", "Spathiphyllum", "/images/Peace-Lily.jpg", "A flowering houseplant that generally prefers indirect light and consistent moisture."],
-  ["Spider Plant", "Chlorophytum comosum", "/images/Spider-Plant.jpg", "A familiar, relatively easy-to-grow houseplant that can adapt to a range of indoor conditions."],
-  ["Money Plant", "Golden Pothos", "/images/money-plant.jpg", "A hardy trailing plant that can add greenery to indoor spaces when given suitable care."],
-  ["Snake Plant", "Dracaena trifasciata", "/images/snake-plant.jpg", "A relatively low-maintenance houseplant that tolerates a range of indoor conditions."],
-  ["Boston Fern", "Nephrolepis exaltata", "/images/Boston-Fern.jpg", "A leafy fern that can bring texture and greenery indoors and generally prefers consistent moisture."],
+  ["Peace Lily", "Spathiphyllum", "/images/Peace-Lily.webp", "A flowering houseplant that generally prefers indirect light and consistent moisture."],
+  ["Spider Plant", "Chlorophytum comosum", "/images/Spider-Plant.webp", "A familiar, relatively easy-to-grow houseplant that can adapt to a range of indoor conditions."],
+  ["Money Plant", "Golden Pothos", "/images/money-plant.webp", "A hardy trailing plant that can add greenery to indoor spaces when given suitable care."],
+  ["Snake Plant", "Dracaena trifasciata", "/images/snake-plant.webp", "A relatively low-maintenance houseplant that tolerates a range of indoor conditions."],
+  ["Boston Fern", "Nephrolepis exaltata", "/images/Boston-Fern.webp", "A leafy fern that can bring texture and greenery indoors and generally prefers consistent moisture."],
 ];
 
 const routine = [
@@ -62,6 +71,16 @@ const articleSchema = {
   publisher: { "@type": "Organization", name: "Sutra Health", url: SITE_URL },
 };
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map(([question, answer]) => ({
+    "@type": "Question",
+    name: question,
+    acceptedAnswer: { "@type": "Answer", text: answer },
+  })),
+};
+
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -78,6 +97,7 @@ export default function NatureWalksPage() {
     <main className="bg-[#F7F5EF] text-[#202522]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <header className="relative isolate overflow-hidden border-b border-[var(--sutra-border)] bg-[var(--sutra-ink)]">
   {/* Background image */}
@@ -85,7 +105,7 @@ export default function NatureWalksPage() {
     aria-hidden="true"
     className="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat"
     style={{
-      backgroundImage: "url('/images/indoor.jpg')",
+      backgroundImage: "url('/images/indoor.webp')",
     }}
   />
 
@@ -277,6 +297,13 @@ export default function NatureWalksPage() {
           </div>
         </div>
       </section>
+
+      <ContextualBookingCTA
+        eyebrow="A useful next step"
+        title="Nature walks are one part of everyday health."
+        description="If your activity question is specific to your health or mobility, discuss it with a qualified professional before making a major change."
+        label="Choose an appointment time"
+      />
 
       <section className="border-t border-[rgba(32,37,34,0.10)] bg-[#F7F5EF]">
         <div className="mx-auto max-w-[1180px] px-5 py-10 sm:px-8 lg:px-12 lg:py-14">

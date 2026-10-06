@@ -26,6 +26,9 @@ export type Article = {
 
   date: string;
 
+  /** Last substantive content update, when different from publication date. */
+  updatedDate?: string;
+
   excerpt: string;
 
   image: string;

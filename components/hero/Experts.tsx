@@ -14,7 +14,7 @@ export default function Experts() {
           <div className="relative">
             <div className="relative aspect-[4/4.7] w-full max-w-[520px] overflow-hidden">
               <Image
-                src="/images/doctors.png"
+                src="/images/doctor.webp"
                 alt="Dr. Rakesh Sarwal, public health physician and Therapeutic Yoga Consultant"
                 fill
                 sizes="(max-width: 1023px) 100vw, 42vw"

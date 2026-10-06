@@ -1,5 +1,32 @@
+import type { Metadata } from "next";
 import Container from "@/components/shared/Container";
 import { ArrowUpRight } from "lucide-react";
+
+
+const SITE_URL = "https://lifequality.org.in";
+
+export const metadata: Metadata = {
+  title: "Patient Experiences",
+  description:
+    "Read published patient experiences about consultations, Yoga sessions and stays at Sutra Health. Individual experiences do not guarantee similar outcomes.",
+  alternates: { canonical: `${SITE_URL}/patient-stories` },
+  openGraph: {
+    title: "Patient Experiences | Sutra Health",
+    description:
+      "Read published experiences from people who have used Sutra Health services and programs.",
+    url: `${SITE_URL}/patient-stories`,
+    siteName: "Sutra Health",
+    type: "website",
+    locale: "en_IN",
+    images: [{ url: `${SITE_URL}/images/og-image.webp`, width: 1200, height: 630, alt: "Sutra Health patient experiences" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Patient Experiences | Sutra Health",
+    description: "Published patient experiences from Sutra Health.",
+    images: [`${SITE_URL}/images/og-image.webp`],
+  },
+};
 
 function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
   return (
@@ -64,7 +91,7 @@ export default function PatientStoriesPage() {
               id="stories-title"
               className="mt-3 max-w-[800px] font-serif text-[40px] leading-[1.08] tracking-[-0.035em] text-[#202522] sm:text-[60px]"
             >
-              Experiences shared by visitors and patients.
+              Patient Experiences at Sutra Health
             </h1>
 
             <p className="mt-5 max-w-[650px] text-base leading-8 text-[#65736D] sm:text-lg">

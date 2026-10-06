@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import Container from "@/components/shared/Container";
+import ContextualBookingCTA from "@/components/shared/ContextualBookingCTA";
 import {
   getAllSubpageParams,
   getCondition,
@@ -49,6 +50,16 @@ export async function generateMetadata({
       description: subpage.shortAnswer.slice(0, 155),
       type: "article",
       url: canonicalUrl,
+      siteName: "Sutra Health",
+      locale: "en_IN",
+      images: [
+        {
+          url: `https://lifequality.org.in/images/conditions/${condition.slug}.webp`,
+          width: 1200,
+          height: 630,
+          alt: condition.title,
+        },
+      ],
     },
   };
 }
@@ -334,7 +345,7 @@ export default async function ConditionSubpage({ params }: PageProps) {
                       Evidence
                     </p>
                     <h2 className="mt-4 font-serif text-[30px] font-medium leading-[1.15] tracking-[-0.02em] text-[#202522] sm:text-[36px]">
-                      Evidence and Further Reading
+                      Sources and Evidence
                     </h2>
 
                     <div className="mt-7 space-y-7">
@@ -379,7 +390,7 @@ export default async function ConditionSubpage({ params }: PageProps) {
                       Common questions
                     </p>
                     <h2 className="mt-4 font-serif text-[30px] font-medium leading-[1.15] tracking-[-0.02em] text-[#202522] sm:text-[36px]">
-                      Frequently Asked Questions
+                      Questions About This Health Question
                     </h2>
 
                     <div className="mt-7 divide-y divide-[#202522]/10">
@@ -404,6 +415,13 @@ export default async function ConditionSubpage({ params }: PageProps) {
                     </div>
                   </section>
                 )}
+
+                <ContextualBookingCTA
+                  eyebrow="From information to your situation"
+                  title="Need help applying this information to your situation?"
+                  description="Bring the question, symptoms or practical concern that led you to this page. A consultation can help you work out what is relevant to you."
+                  label="See appointment options"
+                />
 
                 {/* Parent navigation */}
                 <div className="pt-10 sm:pt-12">

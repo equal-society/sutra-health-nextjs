@@ -7,35 +7,35 @@ const services = [
     title: "Physician Consultation",
     description:
       "Doctor-led consultation to understand your health and discuss appropriate next steps.",
-    href: "/what-we-do/physician-consultation",
+    href: "/services/physician-consultation",
   },
   {
     number: "02",
     title: "Lifestyle Medicine",
     description:
       "Practical support around nutrition, sleep, stress and everyday habits.",
-    href: "/what-we-do/lifestyle",
+    href: "/services/lifestyle",
   },
   {
     number: "03",
     title: "Nutrition",
     description:
       "Personalised guidance around food and healthier eating habits.",
-    href: "/what-we-do/nutrition",
+    href: "/services/nutrition",
   },
   {
     number: "04",
     title: "Therapeutic Yoga",
     description:
       "Adapted yoga practices shaped around your health and ability.",
-    href: "/what-we-do/therapeutic-yoga",
+    href: "/services/therapeutic-yoga",
   },
   {
     number: "05",
     title: "Behaviour, Stress & Mind",
     description:
       "Practical support for habits, stress and sustainable behaviour change.",
-    href: "/what-we-do/behaviour-stress-mind",
+    href: "/services/behaviour-stress-mind",
   },
 ];
 
@@ -157,30 +157,14 @@ export default function WhatWeDo() {
           ))}
         </div>
 
-        {/*
-          PRICING TRANSPARENCY LINE — required per audit.
-          Replace the placeholder below with your real starting price
-          before this goes live. Do not ship with the placeholder text.
-        */}
-        <p className="mt-6 font-sans text-[14px] leading-6 text-[#65736D]">
-          Physician consultations start at{" "}
-          <strong className="text-[#202522]">
-            ₹[ADD STARTING PRICE HERE]
-          </strong>
-          . See full{" "}
-          <Link
-            href="/pricing"
-            className="font-medium text-[#17413D] underline underline-offset-2"
-          >
-            pricing details
-          </Link>
-          .
+        <p className="mt-6 max-w-2xl text-[14px] leading-6 text-[#65736D]">
+          Not sure where to begin? A physician consultation can help you decide which type of support fits your question.
         </p>
 
         {/* All services */}
         <div className="mt-6">
           <Link
-            href="/what-we-do"
+            href="/services"
             className="
               group inline-flex items-center gap-2
               font-sans text-[14px] font-medium text-[#17413D]
@@ -191,7 +175,7 @@ export default function WhatWeDo() {
               focus-visible:ring-offset-4
             "
           >
-            Explore all services
+            Compare all services
             <ArrowUpRight
               size={16}
               strokeWidth={1.5}

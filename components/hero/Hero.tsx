@@ -20,7 +20,7 @@ export default function Hero() {
               />
 
               <p className="font-sans text-[10px] font-medium uppercase tracking-[0.15em] text-[var(--sutra-muted)] sm:text-[11px]">
-                Doctor-led integrative healthcare
+                Doctor-led integrative lifestyle healthcare
               </p>
             </div>
 
@@ -28,10 +28,9 @@ export default function Hero() {
               id="hero-title"
               className="mt-4 max-w-[700px] font-serif text-[39px] font-medium leading-[1.02] tracking-[-0.035em] text-[var(--sutra-ink)] sm:mt-5 sm:text-[48px] md:text-[56px] lg:mt-6 lg:text-[62px] xl:text-[68px]"
             >
-              Integrative healthcare,
+              Your partner in recovery
               <br />
-              built around{" "}
-              <span className="text-[var(--sutra-teal)]">your life.</span>
+              <span className="text-[var(--sutra-teal)]">and wellness.</span>
             </h1>
 
             <p className="mt-5 max-w-[590px] font-sans text-[14px] leading-[1.55] text-[var(--sutra-muted)] sm:mt-6 sm:text-[16px] lg:text-[17px] lg:leading-[1.6]">
@@ -81,7 +80,7 @@ export default function Hero() {
               playsInline
               preload="metadata"
               aria-hidden="true"
-              poster="/images/hero-desktop.webp"
+              poster="/images/og-image.webp"
               className="absolute inset-0 h-full w-full object-cover object-center"
             >
               <source src="/videos/hero-video.mp4" type="video/mp4" />

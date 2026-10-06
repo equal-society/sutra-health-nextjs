@@ -6,6 +6,7 @@ export const howToImproveGutHealthNaturally: Article = {
   category: "Gut Health & Digestion",
   type: "Guide",
   readTime: "7 min read",
+  updatedDate: "2026-10-05",
   date: "2026-09-15",
   excerpt:
     "Explore practical ways to support digestive health through food choices, fibre, movement and sustainable everyday habits.",
@@ -43,6 +44,38 @@ export const howToImproveGutHealthNaturally: Article = {
         heading: "Use your symptoms to guide the next step",
         paragraphs: [
           "If a change in diet repeatedly brings symptoms back, note the pattern rather than continuing to remove foods indefinitely. A food-and-symptom record can make a later discussion with a healthcare professional more useful.",
+        ],
+      },
+      {
+        heading: "Build a gut-friendly routine without a long food list",
+        paragraphs: [
+          "A practical digestive-health routine can include regular meals, enough fluids, a varied diet and activity that you can maintain. It is usually more useful to improve the overall pattern than to collect a long list of foods labelled as good or bad for the gut.",
+          "If you are changing several foods at once, it becomes harder to know what affected your symptoms. One small change at a time can make your own response easier to understand and can reduce unnecessary food restriction.",
+        ],
+      },
+      {
+        heading: "When should you avoid self-treating digestive symptoms?",
+        paragraphs: [
+          "Recurring digestive symptoms can have many causes. If symptoms are persistent, severe, unexplained or changing, professional assessment is more useful than repeatedly removing foods on your own. A clinician or dietitian can help decide whether testing, dietary adjustment or another approach is appropriate.",
+        ],
+      },
+      {
+        heading: "Keep the goal simple",
+        paragraphs: [
+          "Instead of asking which supplement or single food will fix digestion, ask which part of your routine is most useful to improve. That might be adding variety, changing the pace of fibre increases, drinking enough fluids or making meals more regular. A simple goal is easier to review after a few weeks.",
+          "If a change helps, keep it. If it clearly worsens symptoms, stop and discuss the pattern rather than assuming you need to remove more foods. This keeps your diet as varied as possible while leaving room for individual needs.",
+        ],
+      },
+      {
+        heading: "Give changes time",
+        paragraphs: [
+          "Digestive symptoms can change from day to day. Give a sensible dietary or routine change enough time to observe a pattern, unless it clearly makes symptoms worse. Record what changed so you can describe the result accurately if you need professional advice.",
+        ],
+      },
+      {
+        heading: "Avoid unnecessary restriction",
+        paragraphs: [
+          "Removing many foods can make a diet less varied and may create nutritional gaps. Unless a healthcare professional has advised a restriction, focus on a broad pattern and use recurring symptoms as a reason to seek assessment rather than continually narrowing your diet.",
         ],
       },
     ],

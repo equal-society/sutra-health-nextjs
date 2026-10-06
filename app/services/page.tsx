@@ -8,7 +8,7 @@ const services = [
     title: "Physician Consultation",
     description:
       "Discuss your symptoms, health history and current treatment with a physician. Leave with clearer next steps for your care.",
-    image: "/images/approach.jpg",
+    image: "/images/approach.webp",
     href: "/services/physician-consultation",
   },
   {
@@ -32,7 +32,7 @@ const services = [
     title: "Therapeutic Yoga",
     description:
       "Explore yoga practices adapted to your comfort, mobility and health needs, where appropriate.",
-    image: "/images/yoga2.jpg",
+    image: "/images/yoga2.webp",
     href: "/services/therapeutic-yoga",
   },
   {
@@ -40,7 +40,7 @@ const services = [
     title: "Behaviour & Stress Support",
     description:
       "Work through everyday barriers and explore practical ways to support healthier routines and wellbeing.",
-    image: "/images/what-we-do/mind.png",
+    image: "/images/what-we-do/mind.webp",
     href: "/services/behaviour-stress-mind",
   },
  
@@ -82,21 +82,21 @@ const faqs = [
 const siteUrl = "https://lifequality.org.in";
 
 export const metadata = {
-  title: "Health Services | Sutra Health",
+  title: "Health Services in Faridabad",
   description:
     "Explore physician consultation, lifestyle medicine, nutrition, therapeutic yoga and behaviour & stress support at Sutra Health.",
   alternates: { canonical: `${siteUrl}/services` },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Health Services | Sutra Health",
+    title: "Health Services in Faridabad | Sutra Health",
     description:
-      "Compare the health services available at Sutra Health and choose where to begin.",
+      "Explore physician consultation, lifestyle medicine, nutrition counselling, Therapeutic Yoga and behaviour support at Sutra Health.",
     url: `${siteUrl}/services`,
     siteName: "Sutra Health",
     type: "website",
     images: [
       {
-        url: `${siteUrl}/images/hero-desktop.webp`,
+        url: `${siteUrl}/images/og-image.webp`,
         width: 1200,
         height: 630,
         alt: "Sutra Health services",
@@ -105,9 +105,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Health Services | Sutra Health",
-    description: "Compare the health services available at Sutra Health and choose where to begin.",
-    images: [`${siteUrl}/images/hero-desktop.webp`],
+    title: "Health Services in Faridabad | Sutra Health",
+    description: "Explore physician consultation, lifestyle medicine, nutrition counselling, Therapeutic Yoga and behaviour support at Sutra Health.",
+    images: [`${siteUrl}/images/og-image.webp`],
   },
 };
 
@@ -182,7 +182,7 @@ export default function ServicesPage() {
               id="services-hero-title"
               className="mt-4 max-w-3xl font-[var(--font-serif)] text-[2.65rem] font-medium leading-[1.04] tracking-[-0.035em] text-white sm:mt-5 sm:text-6xl lg:text-7xl"
             >
-              Choose the kind of support you want to explore.
+              Health Services in Faridabad
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-white/90 sm:mt-6 sm:text-lg sm:leading-8">
               Start with the health question you want to discuss. Review the
@@ -215,7 +215,7 @@ export default function ServicesPage() {
               id="services-title"
               className="mt-3 font-[var(--font-serif)] text-4xl font-medium leading-[1.1] tracking-[-0.025em] sm:text-5xl"
             >
-              What would you like help with?
+              Choose the service that fits your question
             </h2>
           </div>
           <p className="mt-5 max-w-3xl text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
@@ -279,7 +279,7 @@ export default function ServicesPage() {
                 id="health-areas-title"
                 className="mt-3 max-w-2xl font-[var(--font-serif)] text-3xl font-medium leading-[1.12] tracking-[-0.02em] sm:text-5xl"
               >
-                Browse the health concerns covered on the site.
+                Explore the health concerns covered on this site
               </h2>
               <p className="mt-4 max-w-2xl text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
                 These guides provide condition-specific information. Use them to understand a concern before deciding which service or clinical question to discuss.
@@ -329,7 +329,7 @@ export default function ServicesPage() {
               id="services-faq-title"
               className="mt-3 font-[var(--font-serif)] text-4xl font-medium leading-[1.1] tracking-[-0.025em] sm:text-5xl"
             >
-              Questions about our services
+              Common questions about our services
             </h2>
           </div>
 

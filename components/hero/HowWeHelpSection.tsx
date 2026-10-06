@@ -26,7 +26,7 @@ const services = [
     description:
       "Guided practices adapted to your mobility, comfort and health context.",
     href: "/services/therapeutic-yoga",
-    image: "/images/what-we-do/yoga.png",
+    image: "/images/what-we-do/yoga.webp",
   },
   {
     number: "04",
@@ -34,7 +34,7 @@ const services = [
     description:
       "Tools to work through barriers, stress and routines that are hard to sustain.",
     href: "/services/behaviour-stress-mind",
-    image: "/images/what-we-do/mind.png",
+    image: "/images/what-we-do/mind.webp",
   },
 ];
 

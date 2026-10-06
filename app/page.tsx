@@ -12,10 +12,10 @@ const brandByline =
   "Medical guidance and practical lifestyle support, grounded in evidence and everyday care.";
 
 export const metadata: Metadata = {
-  title: "Sutra Health | Integrative Lifestyle Healthcare",
+  title: { absolute: "Sutra Health | Doctor-Led Integrative Lifestyle Healthcare" },
 
   description:
-    "Discover physician consultation and practical lifestyle support at Sutra Health, including nutrition counselling and Therapeutic Yoga.",
+    "Doctor-led healthcare bringing medical guidance, nutrition, Therapeutic Yoga and everyday lifestyle support together in Faridabad.",
 
   alternates: {
     canonical: siteUrl,
@@ -27,9 +27,10 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Sutra Health | Integrative Lifestyle Healthcare",
+    title: "Sutra Health | Doctor-Led Integrative Lifestyle Healthcare",
 
-    description: brandByline,
+    description:
+      "Doctor-led healthcare bringing medical guidance, nutrition, Therapeutic Yoga and everyday lifestyle support together in Faridabad.",
 
     url: siteUrl,
 
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: `${siteUrl}/images/hero-desktop.webp`,
+        url: `${siteUrl}/images/og-image.webp`,
         width: 1200,
         height: 630,
         alt: "Sutra Health",
@@ -52,11 +53,12 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title: "Sutra Health | Integrative Lifestyle Healthcare",
+    title: "Sutra Health | Doctor-Led Integrative Lifestyle Healthcare",
 
-    description: brandByline,
+    description:
+      "Doctor-led healthcare bringing medical guidance, nutrition, Therapeutic Yoga and everyday lifestyle support together in Faridabad.",
 
-    images: [`${siteUrl}/images/hero-desktop.webp`],
+    images: [`${siteUrl}/images/og-image.webp`],
   },
 };
 
@@ -206,7 +208,7 @@ function Hero() {
               sm:text-xs
             "
           >
-            Medical guidance with practical lifestyle support
+            Doctor-led integrative lifestyle healthcare
           </p>
 
           {/* Heading */}
@@ -227,11 +229,7 @@ function Hero() {
             "
           >
             <span className="block">
-              A more connected
-            </span>
-
-            <span className="block">
-              approach to your health.
+              Your partner in recovery and wellness.
             </span>
           </h1>
 
@@ -248,9 +246,7 @@ function Hero() {
               lg:mt-6
             "
           >
-            Start with the health question that matters to you. We connect
-            physician guidance with practical options around lifestyle,
-            nutrition, movement and everyday wellbeing.
+            We bring medical guidance, nutrition, everyday practices and Therapeutic Yoga into one conversation about your health.
           </p>
 
           {/* Buttons */}
@@ -267,7 +263,7 @@ function Hero() {
             "
           >
             <Link
-              href="/assessment"
+              href="/book-appointment"
               className="
                 inline-flex
                 min-h-12
@@ -289,7 +285,7 @@ function Hero() {
                 sm:w-auto
               "
             >
-              Take the 21-Point Assessment
+              Book a Consultation
 
               <span
                 className="ml-3"
@@ -369,7 +365,7 @@ function EverydayHealth() {
       <Container>
         <div className="py-16 sm:py-20 lg:py-24">
           <Eyebrow>
-            Lifestyle &amp; Health
+            Lifestyle and health
           </Eyebrow>
 
           <h2
@@ -385,12 +381,11 @@ function EverydayHealth() {
               sm:text-[56px]
             "
           >
-            Find the right place to start.
+            Your everyday habit is part of your health.
           </h2>
 
           <p className="mt-5 max-w-[720px] text-base leading-8 text-[#65736D] sm:text-[18px]">
-            Explore the services available for different health questions,
-            then open the option that best matches what you want to discuss.
+            Food, movement, sleep and stress all contribute to your health. We help you explore practical changes alongside appropriate medical care.
           </p>
 
           <div className="mt-9 grid gap-x-2 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
@@ -439,7 +434,7 @@ function ConditionsPreview() {
               sm:text-[52px]
             "
           >
-            Explore guidance for your health concerns.
+            Explore care for the whole picture.
           </h2>
 
           <div className="mt-7 grid grid-cols-1 gap-x-8 sm:grid-cols-2">
@@ -589,6 +584,95 @@ function AppointmentCTA() {
 }
 
 /* =========================================================
+   OUR APPROACH
+========================================================= */
+
+function HomeApproach() {
+  const steps = [
+    ["01", "Understand", "Your health, concerns, routine and priorities guide the conversation."],
+    ["02", "Personalise", "Agree on practical steps suited to your needs and ability."],
+    ["03", "Practise", "Work on manageable changes that can fit into everyday life."],
+    ["04", "Review", "Discuss progress and adapt the plan when needed."],
+  ];
+
+  return (
+    <section aria-labelledby="home-approach-title" className="bg-white">
+      <Container>
+        <div className="py-16 sm:py-20 lg:py-24">
+          <Eyebrow>Our approach</Eyebrow>
+          <h2 id="home-approach-title" className="mt-3 max-w-[850px] font-serif text-[38px] leading-[1.08] tracking-[-0.035em] text-[#202522] sm:text-[56px]">
+            Medical guidance, with room for real life.
+          </h2>
+          {/* <p className="mt-5 max-w-[720px] text-base leading-8 text-[#65736D] sm:text-[18px]">
+            Lifestyle support may complement your medical care. Together, we consider your wider health and identify manageable changes to practise and review.
+          </p>
+          <div className="mt-9 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {steps.map(([number, title, description]) => (
+              <div key={number} className="border-t border-[#202522]/15 pt-4">
+                <p className="text-xs font-semibold tracking-[0.14em] text-[#68766F]">{number}</p>
+                <h3 className="mt-3 font-serif text-2xl text-[#202522]">{title}</h3>
+                <p className="mt-2 text-sm leading-6 text-[#65736D]">{description}</p>
+              </div>
+            ))}
+          </div> */}
+          <div className="mt-7"><TextLink href="/approach">How care works</TextLink></div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+/* =========================================================
+   DOCTOR-LED CARE
+========================================================= */
+
+function HomeDoctorLedCare() {
+  return (
+    <section aria-labelledby="home-doctor-title" className="bg-[#F7F5EF]">
+      <Container>
+        <div className="py-16 sm:py-20 lg:py-24">
+          <Eyebrow>Doctor-led care</Eyebrow>
+          <h2 id="home-doctor-title" className="mt-3 max-w-[850px] font-serif text-[38px] leading-[1.08] tracking-[-0.035em] text-[#202522] sm:text-[56px]">
+            Care shaped around what you need.
+          </h2>
+          <div className="mt-6 max-w-[760px]">
+            <p className="text-xl font-medium text-[#202522]">Dr. Rakesh Sarwal, MBBS, MPH, DrPH</p>
+            <p className="mt-2 text-base leading-7 text-[#65736D]">Public health physician and Therapeutic Yoga Consultant.</p>
+            <p className="mt-4 text-base leading-8 text-[#65736D] sm:text-[18px]">
+              Your health history, goals and daily routine guide the conversation. Medical guidance, nutrition and lifestyle support are considered in the context of your needs.
+            </p>
+          </div>
+          <div className="mt-7"><TextLink href="/doctors">Meet Dr. Sarwal</TextLink></div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+/* =========================================================
+   21-POINT ASSESSMENT
+========================================================= */
+
+function HomeAssessment() {
+  return (
+    <section aria-labelledby="home-assessment-title" className="bg-white">
+      <Container>
+        <div className="py-16 sm:py-20 lg:py-24">
+          <Eyebrow>21-point lifestyle assessment</Eyebrow>
+          <h2 id="home-assessment-title" className="mt-3 max-w-[850px] font-serif text-[38px] leading-[1.08] tracking-[-0.035em] text-[#202522] sm:text-[56px]">
+            See which lifestyle habits support your health — and which need attention.
+          </h2>
+          <p className="mt-5 max-w-[720px] text-base leading-8 text-[#65736D] sm:text-[18px]">
+            Use the assessment as a structured starting point for reflecting on everyday health habits. It is a check-in, not a diagnosis or a substitute for clinical care.
+          </p>
+          <div className="mt-7"><TextLink href="/assessment">Take the assessment</TextLink></div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+/* =========================================================
    PATIENT STORIES
 ========================================================= */
 
@@ -619,13 +703,12 @@ function PatientStories() {
                   sm:text-[52px]
                 "
               >
-                Hear from people in our community.
+                What people have shared.
               </h2>
 
-              <p className="mt-4 text-base leading-7 text-[#65736D]">
-                Personal experiences from people who have been part of
-                the Sutra Health community.
-              </p>
+              {/* <p className="mt-4 text-base leading-7 text-[#65736D]">
+                Experiences shared by people who have interacted with Sutra Health and its practitioners.
+              </p> */}
 
               <div className="mt-6">
                 <TextLink href="/patient-stories">
@@ -655,7 +738,7 @@ function HomeFAQs() {
           <div className="gap-10 lg:items-center lg:gap-16">
             <div>
               <Eyebrow>
-                Need a little clarity?
+                Frequently asked questions
               </Eyebrow>
 
               <h2
@@ -672,7 +755,7 @@ function HomeFAQs() {
                   lg:text-[54px]
                 "
               >
-                A few things you may want to know.
+                Questions about your care.
               </h2>
 
               <div className="mt-7 border-t border-[#202522]/15 pt-5">
@@ -696,60 +779,6 @@ const structuredData = {
   "@context": "https://schema.org",
 
   "@graph": [
-    {
-      "@type": "Organization",
-
-      "@id": `${siteUrl}/#organization`,
-
-      name: "Sutra Health",
-
-      url: siteUrl,
-
-      slogan: brandByline,
-
-      founder: {
-        "@type": "Person",
-        name: "Dr. Rakesh Sarwal",
-        honorificSuffix: "MBBS, MPH, DrPH",
-        url: "https://academic.lifequality.org.in/",
-      },
-
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "House No. 229, Roof-Top, Sector 46",
-        addressLocality: "Faridabad",
-        addressRegion: "Haryana",
-        postalCode: "121010",
-        addressCountry: "IN",
-      },
-
-      telephone: "+91-9013103676",
-
-      areaServed: [
-        {
-          "@type": "City",
-          name: "Faridabad",
-        },
-        {
-          "@type": "AdministrativeArea",
-          name: "Delhi NCR",
-        },
-        {
-          "@type": "Country",
-          name: "India",
-        },
-      ],
-
-      sameAs: [
-        "https://academic.lifequality.org.in/",
-        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12975079/",
-        "https://www.instagram.com/sutrahealth/",
-        "https://www.facebook.com/people/Sutrahealth-Equal/",
-        "https://www.youtube.com/@sutra-health",
-        "https://www.linkedin.com/in/equal-society-ngo",
-      ],
-    },
-
     {
       "@type": "WebSite",
 
@@ -849,6 +878,12 @@ export default function Home() {
         <EverydayHealth />
 
         <ConditionsPreview />
+
+        <HomeApproach />
+
+        {/* <HomeDoctorLedCare />
+
+        <HomeAssessment /> */}
 
         <PatientStories />
 

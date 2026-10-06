@@ -48,11 +48,21 @@ export function createServiceMetadata(config: ServicePageConfig): Metadata {
       url: canonical,
       siteName: "Sutra Health",
       type: "website",
+      locale: "en_IN",
+      images: [
+        {
+          url: `https://lifequality.org.in/images/og-image.webp`,
+          width: 1200,
+          height: 630,
+          alt: `${config.name} at Sutra Health`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: config.title,
       description: config.description,
+      images: ["https://lifequality.org.in/images/og-image.webp"],
     },
   };
 }
@@ -68,7 +78,7 @@ function getSchema(config: ServicePageConfig) {
         name: config.name,
         url,
         description: config.description,
-        isPartOf: { "@type": "WebSite", name: "Sutra Health", url: baseUrl },
+        isPartOf: { "@id": `${baseUrl}/#website` },
         about: { "@type": "Thing", name: config.medicalAbout || config.name },
       },
       {
@@ -83,7 +93,7 @@ function getSchema(config: ServicePageConfig) {
         "@type": "Service",
         name: config.name,
         description: config.description,
-        provider: { "@type": "MedicalOrganization", name: "Sutra Health", url: baseUrl },
+        provider: { "@id": `${baseUrl}/#organization` },
         areaServed: [
           { "@type": "City", name: "Faridabad" },
           { "@type": "AdministrativeArea", name: "Delhi NCR" },
@@ -131,7 +141,7 @@ export default function ServicePageTemplate({ config }: { config: ServicePageCon
             </p>
             <div className="mt-7 flex flex-col items-start gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-5">
               <Link href="/book-appointment" className="inline-flex min-h-12 items-center justify-center bg-[var(--sutra-white)] px-6 py-3 text-sm font-semibold text-[var(--sutra-teal)] transition-colors hover:bg-white">
-                {config.ctaLabel || "Book a consultation"} <ArrowUpRight size={17} className="ml-3" aria-hidden="true" />
+                {config.ctaLabel || "Choose an appointment time"} <ArrowUpRight size={17} className="ml-3" aria-hidden="true" />
               </Link>
               <span className="max-w-full text-sm leading-6 text-white/80 sm:max-w-[420px]">{config.trust.join(" · ")}</span>
             </div>
@@ -222,7 +232,7 @@ export default function ServicePageTemplate({ config }: { config: ServicePageCon
           <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
             <div className="max-w-3xl">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sutra-teal)]">Further reading</p>
-              <h2 id="service-resources" className="mt-3 font-[var(--font-serif)] text-3xl leading-tight sm:text-4xl">Resources from Life Quality</h2>
+              <h2 id="service-resources" className="mt-3 font-[var(--font-serif)] text-3xl leading-tight sm:text-4xl">Further reading and related resources</h2>
               <p className="mt-3 text-base leading-7 sm:text-lg">Explore the original educational resources referenced in the dietary guidance.</p>
             </div>
             <div className="mt-7 grid gap-4 sm:grid-cols-2">
@@ -243,7 +253,7 @@ export default function ServicePageTemplate({ config }: { config: ServicePageCon
           <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
             <div className="max-w-3xl">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sutra-teal)]">Related care</p>
-              <h2 className="mt-3 font-[var(--font-serif)] text-3xl leading-tight sm:text-5xl">Other services you may want to explore</h2>
+              <h2 className="mt-3 font-[var(--font-serif)] text-3xl leading-tight sm:text-5xl">Explore another care option</h2>
             </div>
             <div className="mt-7 grid gap-3 sm:grid-cols-2 sm:gap-4">
               {config.related.map((item) => (
@@ -289,7 +299,7 @@ export default function ServicePageTemplate({ config }: { config: ServicePageCon
             <p className="mt-3 text-base leading-7 text-white/80 sm:text-lg">{config.finalDescription}</p>
           </div>
           <Link href="/book-appointment" className="inline-flex min-h-12 shrink-0 items-center justify-center bg-[var(--sutra-white)] px-6 py-3 text-sm font-semibold text-[var(--sutra-teal)] hover:bg-white">
-            {config.ctaLabel || "Book a consultation"} <ArrowUpRight size={17} className="ml-3" aria-hidden="true" />
+            {config.ctaLabel || "Choose an appointment time"} <ArrowUpRight size={17} className="ml-3" aria-hidden="true" />
           </Link>
         </div>
       </section>

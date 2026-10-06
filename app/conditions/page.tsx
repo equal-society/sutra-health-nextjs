@@ -6,7 +6,7 @@ import Container from "@/components/shared/Container";
 import { getAllConditions } from "@/data/conditions";
 
 export const metadata: Metadata = {
-  title: "Health Conditions We Support | Lifestyle & Integrative Health",
+  title: "Health Conditions We Support",
   description:
     "Explore lifestyle-focused support for weight management, metabolic health, high blood pressure, joint pain, migraine, digestive health and women's health.",
   alternates: {
@@ -142,7 +142,7 @@ export default function ConditionsPage() {
             aria-hidden="true"
             className="absolute inset-0 -z-20 bg-cover bg-center"
             style={{
-              backgroundImage: "url('/images/nature.jpg')",
+              backgroundImage: "url('/images/nature.webp')",
             }}
           />
 
@@ -184,10 +184,10 @@ export default function ConditionsPage() {
                     xl:text-[82px]
                   "
                 >
-                  Understand your health.
+                  Health Conditions & Lifestyle
                   <br />
                   <span className="text-[#D5C9AE]">
-                    Find practical support.
+                    Support in Faridabad
                   </span>
                 </h1>
 
@@ -250,7 +250,7 @@ export default function ConditionsPage() {
                   lg:text-[44px]
                 "
               >
-                Health conditions we commonly support
+                Health conditions we support
               </h2>
 
               <p className="mt-4 max-w-[650px] font-sans text-[15px] leading-7 text-[#65736D] sm:text-[16px]">
@@ -365,7 +365,7 @@ export default function ConditionsPage() {
                     sm:text-[44px]
                   "
                 >
-                  Start with the health question that matters to you.
+                  Find the health question you want to understand
                 </h2>
               </div>
 
@@ -412,7 +412,7 @@ export default function ConditionsPage() {
                     sm:text-[44px]
                   "
                 >
-                  Understanding your care.
+                  How to think about your care
                 </h2>
 
                 <p className="mt-5 max-w-[400px] font-sans text-[14px] leading-7 text-[#65736D]">

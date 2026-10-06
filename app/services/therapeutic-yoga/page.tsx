@@ -5,13 +5,13 @@ import ServicePageTemplate, {
 } from "@/components/services/ServicePageTemplate";
 
 const therapeuticYoga: ServicePageConfig = {
-  heroImage: "/images/yoga2.jpg",
-  name: "Therapeutic Yoga",
+  heroImage: "/images/yoga2.webp",
+  name: "Therapeutic Yoga in Faridabad",
   slug: "therapeutic-yoga",
 
-  title: "Therapeutic Yoga in Faridabad & Delhi NCR | Sutra Health",
+  title: "Therapeutic Yoga in Faridabad",
   description:
-    "Explore guided Therapeutic Yoga in Faridabad, including traditional asana, breathing practices, preparation and participation considerations.",
+    "Explore guided therapeutic Yoga in Faridabad, including movement, breathing practices and sensible participation guidance.",
 
   heroDescription:
     "A guided way to explore selected Yoga practices, with the starting level and activities considered in relation to the participant.",
@@ -25,14 +25,14 @@ const therapeuticYoga: ServicePageConfig = {
   introEyebrow: "Traditional Practice, Considered Individually",
   introTitle: "Choose the practice that is appropriate for your starting point.",
   introParagraphs: [
-    "Life Quality’s earlier Yoga resource presents a 20-part sequence inspired by Swami Sivananda. It includes familiar practices such as Tadasana, Vriksha Asana, Surya Namaskar, Shavasana and Pranayama, alongside more demanding postures. These are examples from the legacy resource, not a prescribed routine for every participant.",
+    "Therapeutic Yoga may include familiar practices such as Tadasana, Vriksha Asana, Surya Namaskar, Shavasana and Pranayama, alongside other postures. The practices selected should reflect the participant’s experience, mobility and relevant health considerations rather than follow one routine for everyone.",
     "In a therapeutic setting, the choice to include, adapt or omit a practice should take account of experience, mobility and relevant health advice. Yoga is complementary to appropriate medical care, not a substitute for it.",
   ],
 
   focusEyebrow: "Practice Elements",
   focusTitle: "Selected practices, from movement to rest.",
   focusIntro:
-    "The former Life Quality sequence is a reference point, not a requirement to complete every practice. A guided session may use selected elements according to suitability.",
+    "A guided session may use selected elements according to suitability. There is no requirement to complete every traditional practice or sequence.",
 
   focusAreas: [
     {
@@ -45,25 +45,25 @@ const therapeuticYoga: ServicePageConfig = {
       number: "02",
       title: "Sequenced movement",
       description:
-        "Surya Namaskar is described in the legacy resource as a coordinated sequence of twelve positions and breath. It is not suitable for everyone in its standard form and may be omitted or adapted.",
+        "Surya Namaskar combines movement and breath. It is not suitable for everyone in its standard form and may be omitted or adapted.",
     },
     {
       number: "03",
       title: "Rest and recovery",
       description:
-        "Shavasana appears in the earlier material as a closing relaxation posture. A comfortable resting position may be selected according to the participant’s needs.",
+        "Shavasana is a resting posture that may be used for relaxation. A comfortable resting position can be selected according to the participant’s needs.",
     },
     {
       number: "04",
       title: "Pranayama",
       description:
-        "The legacy protocol includes traditional breathing practices. Instruction should specify the technique and pace; forceful breathwork or breath retention should not be assumed to be appropriate for all.",
+        "Breathing practices can be adapted to the participant. Forceful breathwork or breath retention should not be assumed to be appropriate for everyone.",
     },
   ],
 
   processTitle: "Before you begin",
   processIntro:
-    "The older resource emphasizes preparation and warm-up. Use these practical points as prompts, while confirming the current session format with the team.",
+    "Preparation and a gentle warm-up can help you begin comfortably. Confirm the current session format and any specific preparation instructions with the team.",
 
   process: [
     {
@@ -95,7 +95,7 @@ const therapeuticYoga: ServicePageConfig = {
   contextEyebrow: "Safety and Suitability",
   contextTitle: "Some traditional postures need particular caution.",
   contextParagraphs: [
-    "The legacy sequence includes inversions and advanced positions, including Sarvangasana, Halasana, Shirshasana and Mayurasana. Their presence in an educational sequence does not mean they are suitable for every person or should be attempted without qualified instruction. Seek clinical advice first if you have a medical condition, recent injury, pain, balance difficulty or movement restriction.",
+    "Inversions and advanced positions such as Sarvangasana, Halasana, Shirshasana and Mayurasana require particular caution. They are not suitable for everyone and should not be attempted without qualified instruction. Seek clinical advice first if you have a medical condition, recent injury, pain, balance difficulty or movement restriction.",
     "Stop an activity if it causes pain, dizziness, breathlessness or other concerning symptoms. Therapeutic Yoga does not diagnose or treat disease and must not replace prescribed care.",
   ],
 
@@ -124,7 +124,7 @@ const therapeuticYoga: ServicePageConfig = {
     {
       question: "Does Therapeutic Yoga follow the full 20-pose sequence?",
       answer:
-        "Not necessarily. The earlier Life Quality page documents a Sivananda-inspired 20-part protocol as a traditional resource. A therapeutic session should select practices according to suitability rather than require every participant to complete the entire sequence.",
+        "Not necessarily. A therapeutic session should select practices according to suitability rather than require every participant to complete an entire traditional sequence.",
     },
     {
       question: "Are advanced poses such as headstand or shoulder stand required?",
@@ -144,13 +144,14 @@ const therapeuticYoga: ServicePageConfig = {
     {
       question: "Where and when are sessions held?",
       answer:
-        "The earlier Life Quality material describes rooftop morning group practice. Current venue, schedule, group format and online availability should be confirmed with Sutra Health before planning a visit.",
+        "Session location, schedule, group format and online availability should be confirmed with Sutra Health before planning a visit.",
     },
   ],
 
-  finalTitle: "Confirm the current practice format before booking.",
+  ctaLabel: "Ask about suitable sessions",
+  finalTitle: "Confirm the current practice format before choosing a session.",
   finalDescription:
-    "Confirm session timing, location and suitability before booking, particularly if you have a health concern or movement restriction.",
+    "Confirm session timing, location and suitability, particularly if you have a health concern or movement restriction.",
 };
 
 export const metadata: Metadata =

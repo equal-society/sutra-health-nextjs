@@ -3,7 +3,7 @@ import Link from "next/link";
 import Container from "@/components/shared/Container";
 
 export const metadata: Metadata = {
-  title: "Volunteer With Sutra Health | Community Health & Yoga",
+  title: "Volunteer | Community Health & Yoga",
   description:
     "Join Sutra Health's volunteer community in Faridabad and support yoga, community health and wellness activities.",
   alternates: {
@@ -17,6 +17,14 @@ export const metadata: Metadata = {
     siteName: "Sutra Health",
     type: "website",
     locale: "en_IN",
+    images: [
+      {
+        url: "https://lifequality.org.in/images/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Sutra Health",
+      },
+    ],
   },
 };
 
@@ -100,7 +108,7 @@ export default function VolunteerPage() {
             aria-hidden="true"
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: "url('/images/nature.jpg')",
+              backgroundImage: "url('/images/nature.webp')",
             }}
           />
 
@@ -132,10 +140,8 @@ export default function VolunteerPage() {
                     xl:text-[84px]
                   "
                 >
-                  Heal
-                  <span className="text-[#D5C9AE]"> together.</span>
-                  <br />
-                  Grow together.
+                  Volunteer with Sutra Health
+                  <span className="text-[#D5C9AE]"> & EQUAL Society</span>
                 </h1>
 
                 <p className="mt-7 max-w-[650px] text-[17px] leading-8 text-white/85 sm:text-[18px] sm:leading-9">
@@ -222,7 +228,7 @@ export default function VolunteerPage() {
                 </p>
 
                 <h2 className="mt-4 max-w-[560px] font-serif text-[40px] font-medium leading-[1.02] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[52px]">
-                  Bring your time, skills or energy.
+                  Bring your time, skills or energy
                 </h2>
               </div>
 
@@ -283,13 +289,12 @@ export default function VolunteerPage() {
                 </p>
 
                 <h2 className="mt-4 max-w-[600px] font-serif text-[40px] font-medium leading-[1.02] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[50px]">
-                  Health conversations, throughout the year.
+                  Community health work throughout the year
                 </h2>
 
                 <p className="mt-5 max-w-[470px] text-[14px] leading-7 text-[var(--sutra-muted)]">
-                  Earlier Sutra Health material highlighted annual health
-                  awareness days as opportunities for community education and
-                  participation.
+                  Health awareness days can provide opportunities for community education and
+                  participation throughout the year.
                 </p>
               </div>
 
@@ -325,7 +330,7 @@ export default function VolunteerPage() {
                 </p>
 
                 <h2 className="mt-4 max-w-[720px] font-serif text-[42px] font-medium leading-[1.02] tracking-[-0.04em] text-[var(--sutra-ink)] sm:text-[56px]">
-                  If you want to contribute, start with a conversation.
+                  Interested in contributing? Start with a conversation.
                 </h2>
 
                 <p className="mt-5 max-w-[600px] text-[14px] leading-7 text-[var(--sutra-muted)]">

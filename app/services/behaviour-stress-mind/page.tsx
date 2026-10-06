@@ -4,12 +4,12 @@ import ServicePageTemplate, {
 } from "@/components/services/ServicePageTemplate";
 
 const behaviourStressMind: ServicePageConfig = {
-  heroImage: "/images/what-we-do/mindl.png",
-  name: "Behaviour & Stress Support",
+  heroImage: "/images/what-we-do/mindl.webp",
+  name: "Stress & Behaviour Support in Faridabad",
   slug: "behaviour-stress-mind",
-  title: "Behaviour & Stress Support in Faridabad & Delhi NCR | Sutra Health",
+  title: "Behaviour & Stress Support in Faridabad",
   description:
-    "Learn about Behaviour & Stress Support at Sutra Health, with a focus on understanding personal responses, recurring patterns and practical next steps.",
+    "Explore stress and behaviour support in Faridabad for recurring patterns, personal responses and manageable next steps.",
   heroDescription:
     "A focused conversation about stress-related situations, recurring responses and changes you would like to make, considered in the context of your circumstances.",
   trust: ["Practical, individual-focused support", "Faridabad & Delhi NCR"],
@@ -75,8 +75,8 @@ const behaviourStressMind: ServicePageConfig = {
   contextEyebrow: "Scope and Care",
   contextTitle: "Know when another form of care is needed.",
   contextParagraphs: [
-    "The supplied project information does not confirm psychotherapy, psychiatric assessment, crisis intervention or a named evidence-based psychological treatment as part of this service. Do not present these as available unless the client verifies them.",
-    "This service should not replace medical assessment or prescribed treatment. If distress is severe or persistent, or you feel unsafe or may harm yourself or someone else, seek timely help from a qualified mental-health professional or local emergency services. Do not wait for a wellness appointment in an emergency.",
+    "This service focuses on practical discussion around stress, behaviour and everyday patterns. It is not a substitute for diagnosis or treatment from a qualified mental-health professional.",
+    "This support should not replace medical assessment or prescribed treatment. If distress is severe or persistent, or you feel unsafe or may harm yourself or someone else, seek timely help from a qualified mental-health professional or local emergency services.",
   ],
   related: [
     {
@@ -98,6 +98,7 @@ const behaviourStressMind: ServicePageConfig = {
       href: "/services/therapeutic-yoga",
     },
   ],
+  ctaLabel: "Discuss your situation",
   faq: [
     {
       question: "What can I discuss in this service?",
@@ -107,12 +108,12 @@ const behaviourStressMind: ServicePageConfig = {
     {
       question: "Is this psychotherapy or psychiatric care?",
       answer:
-        "The available project information does not establish that psychotherapy, psychiatric assessment or treatment is provided through this service. For mental-health diagnosis or treatment, contact a qualified mental-health professional.",
+        "This service is not presented as psychotherapy or psychiatric treatment. For mental-health diagnosis or treatment, contact a qualified mental-health professional.",
     },
     {
       question: "Will I receive a fixed technique or programme?",
       answer:
-        "A fixed method or programme is not confirmed in the supplied service information. Ask the team which approaches, if any, are currently offered.",
+        "A fixed method or programme is not part of this general service description. Ask the team which approaches, if any, are currently offered.",
     },
     {
       question: "Can this support be considered alongside medical care?",
@@ -125,9 +126,9 @@ const behaviourStressMind: ServicePageConfig = {
         "This service is not described as crisis care. If you or someone else is in immediate danger, contact local emergency services or seek urgent help from a qualified professional.",
     },
   ],
-  finalTitle: "Start with what you would like to discuss.",
+  finalTitle: "Start with the situation you want to understand.",
   finalDescription:
-    "Before booking, ask the Sutra Health team about the practitioner, session format, suitability and current appointment options.",
+    "Ask about the practitioner, session format, suitability and current appointment options before you choose a time.",
 };
 
 

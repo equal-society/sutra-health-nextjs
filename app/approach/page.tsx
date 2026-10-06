@@ -5,7 +5,7 @@ import Link from "next/link";
 const SITE_URL = "https://lifequality.org.in";
 
 export const metadata: Metadata = {
-  title: "Our Approach | Sutra Health",
+  title: "Our Approach",
   description:
     "Explore the decision-making framework behind Sutra Health: how context is considered, priorities are selected and care decisions may be reviewed.",
   alternates: { canonical: `${SITE_URL}/approach` },
@@ -18,6 +18,14 @@ export const metadata: Metadata = {
     siteName: "Sutra Health",
     type: "website",
     locale: "en_IN",
+    images: [
+      {
+        url: "https://lifequality.org.in/images/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Sutra Health",
+      },
+    ],
   },
 };
 
@@ -124,7 +132,7 @@ export default function ApproachPage() {
           <div
             aria-hidden="true"
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('/images/approach.jpg')" }}
+            style={{ backgroundImage: "url('/images/approach.webp')" }}
           />
           <div
             aria-hidden="true"
@@ -145,11 +153,11 @@ export default function ApproachPage() {
                 id="approach-title"
                 className="mt-5 max-w-4xl font-serif text-[44px] font-medium leading-[1.02] tracking-[-0.035em] text-white sm:text-6xl lg:text-[76px]"
               >
-                A framework for making considered care decisions.
+                How Sutra Health Approaches Care
               </h1>
 
               <p className="mt-6 max-w-2xl text-base leading-7 text-white/85 sm:text-lg sm:leading-8">
-                The Sutra Health Method describes how a care question can be examined, prioritised and revisited. It is a decision framework, not a fixed treatment protocol or a promise of a particular result.
+                Our approach explains how a health concern can be understood, prioritised and reviewed over time. It is a decision framework, not a fixed treatment protocol or a promise of a particular result.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
@@ -186,11 +194,11 @@ export default function ApproachPage() {
                 id="method-title"
                 className="mt-4 font-serif text-4xl leading-tight tracking-[-0.03em] sm:text-5xl"
               >
-                Six stages for clearer decisions.
+                Six stages for making care decisions
               </h2>
 
               <p className="mt-4 max-w-2xl text-base leading-7 text-[#65736D] sm:text-lg">
-                The stages describe a way of thinking through decisions. They are not necessarily separate appointments or a mandatory sequence; the appropriate process depends on the individual situation.
+                These stages describe how conversations and decisions can be structured. They are not necessarily separate appointments or a mandatory sequence; the appropriate process depends on the individual situation.
               </p>
             </div>
 
@@ -247,7 +255,7 @@ export default function ApproachPage() {
                 id="care-title"
                 className="font-serif text-3xl leading-tight tracking-[-0.025em] sm:text-4xl"
               >
-                A framework does not replace clinical assessment.
+                This approach does not replace clinical assessment
               </h2>
 
               <p className="mt-4 max-w-3xl text-base leading-7 text-[#53665E] sm:text-lg sm:leading-8">
@@ -271,7 +279,7 @@ export default function ApproachPage() {
               id="approach-faq-title"
               className="mt-4 max-w-3xl font-serif text-4xl leading-tight tracking-[-0.03em] sm:text-5xl"
             >
-              Questions about the method.
+              Questions about our approach
             </h2>
 
             <div className="mt-9 border-t border-[#202522]/15">

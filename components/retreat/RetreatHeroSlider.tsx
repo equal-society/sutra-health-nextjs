@@ -120,9 +120,9 @@ export default function RetreatHeroSlider() {
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/80">
               Sutra Health Retreat
             </p>
-            <h1 className="mt-4 font-[var(--font-serif)] text-6xl font-medium leading-[1.04] tracking-[-0.035em] text-white xl:text-7xl">
+            <h2 className="mt-4 font-[var(--font-serif)] text-6xl font-medium leading-[1.04] tracking-[-0.035em] text-white xl:text-7xl">
               A wellness stay with room to pause.
-            </h1>
+            </h2>
             <p className="mt-5 max-w-xl text-lg leading-8 text-white/85">
               Explore the retreat spaces for rest, guided practice and time
               away from everyday distractions.
