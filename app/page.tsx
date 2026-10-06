@@ -384,9 +384,9 @@ function EverydayHealth() {
             Your everyday habit is part of your health.
           </h2>
 
-          <p className="mt-5 max-w-[720px] text-base leading-8 text-[#65736D] sm:text-[18px]">
+          {/* <p className="mt-5 max-w-[720px] text-base leading-8 text-[#65736D] sm:text-[18px]">
             Food, movement, sleep and stress all contribute to your health. We help you explore practical changes alongside appropriate medical care.
-          </p>
+          </p> */}
 
           <div className="mt-9 grid gap-x-2 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
