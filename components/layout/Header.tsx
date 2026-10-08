@@ -78,6 +78,26 @@ const services: NavItem[] = [
     href: "/services/behaviour-stress-mind",
     icon: Brain,
   },
+  {
+    label: "Shirodhara",
+    href: "/services/shirodhara",
+    icon: Sparkles,
+  },
+  {
+    label: "My Buddy",
+    href: "/services/my-buddy",
+    icon: UsersRound,
+  },
+  {
+    label: "Singing, Kirtan & Dance",
+    href: "/services/singing-kirtan-dance",
+    icon: Sparkles,
+  },
+  {
+    label: "Nature Connect",
+    href: "/services/nature-connect",
+    icon: Sparkles,
+  },
 ];
 
 const conditions: NavItem[] = [
@@ -147,26 +167,18 @@ const resources: NavItem[] = [
     href: "/resources/articles",
     icon: Activity,
   },
-  {
-    label: "21-Point Health Assessment",
-    href: "/assessment",
-    icon: Scale,
-  },
+ 
   {
     label: "Academic & Research",
     href: "/resources/research",
     icon: Brain,
   },
-  {
-    label: "Health Guides",
-    href: "/resources/health-guides",
-    icon: HeartPulse,
-  },
-    {
-    label: "Archive",
-    href: "/archive",
-    icon: Sparkles,
-  },
+  // {
+  //   label: "Health Guides",
+  //   href: "/resources/health-guides",
+  //   icon: HeartPulse,
+  // },
+ 
 
 ];
 
@@ -424,8 +436,6 @@ export default function Header() {
     setOpenDropdown((current) => (current === name ? null : name));
   };
 
-  const approachActive = isActivePath(pathname, "/approach");
-
   return (
     <header
       ref={headerRef}
@@ -486,16 +496,6 @@ export default function Header() {
             pathname={pathname}
           />
 
-          <Link
-            href="/approach"
-            className={`navLink ${
-              approachActive ? "navLinkActive" : ""
-            }`}
-            onClick={closeNavigation}
-          >
-            Our Approach
-          </Link>
-
           <DesktopDropdown
             name="about"
             label="About"
@@ -509,7 +509,7 @@ export default function Header() {
            <Link
             href="/retreat-programs"
             className={`navLink ${
-              approachActive ? "navLinkActive" : ""
+              isActivePath(pathname, "/retreat-programs") ? "navLinkActive" : ""
             }`}
             onClick={closeNavigation}
           >
@@ -525,6 +525,16 @@ export default function Header() {
             closeNavigation={closeNavigation}
             pathname={pathname}
           />
+
+           <Link
+            href="/archive"
+            className={`navLink ${
+              isActivePath(pathname, "/archive") ? "navLinkActive" : ""
+            }`}
+            onClick={closeNavigation}
+          >
+            Gallery
+          </Link>
         </nav>
 
         {/* DESKTOP CTA */}
@@ -595,17 +605,6 @@ export default function Header() {
             closeNavigation={closeNavigation}
           />
 
-          <Link
-            href="/approach"
-            className={`mobileNavLink ${
-              approachActive ? "mobileNavLinkActive" : ""
-            }`}
-            onClick={closeNavigation}
-          >
-            <span>Our Approach</span>
-            <span aria-hidden="true">→</span>
-          </Link>
-
           <MobileDropdown
             name="about"
             label="About"
@@ -634,6 +633,19 @@ export default function Header() {
             onClick={closeNavigation}
           >
             <span>Retreats</span>
+            <span aria-hidden="true">→</span>
+          </Link>
+
+            <Link
+            href="/archive"
+            className={`mobileNavLink ${
+              pathname.startsWith("/archive")
+                ? "mobileNavLinkActive"
+                : ""
+            }`}
+            onClick={closeNavigation}
+          >
+            <span>Gallery</span>
             <span aria-hidden="true">→</span>
           </Link>
 

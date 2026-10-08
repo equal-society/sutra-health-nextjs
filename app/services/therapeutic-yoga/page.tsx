@@ -5,17 +5,16 @@ import ServicePageTemplate, {
 } from "@/components/services/ServicePageTemplate";
 
 const therapeuticYoga: ServicePageConfig = {
-  heroImage: "/images/yoga2.webp",
-  name: "Therapeutic Yoga in Faridabad",
+  heroImage: "/images/service-hero.webp",
+  name: "Looking for guided Yoga that fits your situation?",
   slug: "therapeutic-yoga",
 
-  title: "Therapeutic Yoga in Faridabad",
+  title: "Therapeutic Yoga in Faridabad | Sutra Health",
   description:
-    "Explore guided therapeutic Yoga in Faridabad, including movement, breathing practices and sensible participation guidance.",
+    "Explore guided Therapeutic Yoga in Faridabad, including movement, breathing and mindful practices considered in the context of individual needs.",
 
   heroDescription:
-    "A guided way to explore selected Yoga practices, with the starting level and activities considered in relation to the participant.",
-
+"Therapeutic Yoga adapts movement, breathing and relaxation practices to your needs.",
   trust: [
     "Traditional Yoga practices",
     "Guidance on modifications",
@@ -148,7 +147,7 @@ const therapeuticYoga: ServicePageConfig = {
     },
   ],
 
-  ctaLabel: "Ask about suitable sessions",
+  ctaLabel: "Book a Consultation",
   finalTitle: "Confirm the current practice format before choosing a session.",
   finalDescription:
     "Confirm session timing, location and suitability, particularly if you have a health concern or movement restriction.",

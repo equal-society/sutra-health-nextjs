@@ -4,14 +4,14 @@ import ServicePageTemplate, {
 } from "@/components/services/ServicePageTemplate";
 
 const behaviourStressMind: ServicePageConfig = {
-  heroImage: "/images/what-we-do/mindl.webp",
-  name: "Stress & Behaviour Support in Faridabad",
+  heroImage: "/images/service-hero.webp",
+  name: "When changing your habits feels harder than knowing what to change.",
   slug: "behaviour-stress-mind",
-  title: "Behaviour & Stress Support in Faridabad",
+  title: "Stress & Behaviour Support | Sutra Health Faridabad",
   description:
-    "Explore stress and behaviour support in Faridabad for recurring patterns, personal responses and manageable next steps.",
+    "Explore practical support for stress, behaviour change, mindset and everyday habits as part of a broader lifestyle-focused health approach.",
   heroDescription:
-    "A focused conversation about stress-related situations, recurring responses and changes you would like to make, considered in the context of your circumstances.",
+    "Behaviour change is rarely just about knowing what to do. Explore practical support for stress, mindset, routines and the small decisions that shape everyday health.",
   trust: ["Practical, individual-focused support", "Faridabad & Delhi NCR"],
   introEyebrow: "The Service",
   introTitle: "Make sense of recurring stress and behaviour patterns.",
@@ -98,7 +98,7 @@ const behaviourStressMind: ServicePageConfig = {
       href: "/services/therapeutic-yoga",
     },
   ],
-  ctaLabel: "Discuss your situation",
+  ctaLabel: "Explore Support",
   faq: [
     {
       question: "What can I discuss in this service?",

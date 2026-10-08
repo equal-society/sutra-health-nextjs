@@ -63,11 +63,9 @@ export default function RetreatHeroSlider() {
           id="retreat-hero-title"
           className="mt-3 max-w-2xl font-[var(--font-serif)] text-[2.55rem] font-medium leading-[1.05] tracking-[-0.035em] sm:text-5xl"
         >
-          A wellness stay with room to pause.
-        </h1>
+          Looking for a wellness retreat near Delhi?          </h1>
         <p className="mt-4 max-w-xl text-base leading-7 text-[#596A63] sm:text-lg sm:leading-8">
-          See the spaces available for your stay and enquire about guided
-          activities, rest and time away from your usual routine.
+         Take a slower approach to wellbeing with guided practices, nutrition, reflection and supportive health conversations in a Faridabad setting.
         </p>
         <Link
           href="/book-appointment"
@@ -121,11 +119,10 @@ export default function RetreatHeroSlider() {
               Sutra Health Retreat
             </p>
             <h2 className="mt-4 font-[var(--font-serif)] text-6xl font-medium leading-[1.04] tracking-[-0.035em] text-white xl:text-7xl">
-              A wellness stay with room to pause.
+              Looking for a wellness retreat near Delhi?
             </h2>
             <p className="mt-5 max-w-xl text-lg leading-8 text-white/85">
-              Explore the retreat spaces for rest, guided practice and time
-              away from everyday distractions.
+            Take a slower approach to wellbeing with guided practices, nutrition, reflection and supportive health conversations in a Faridabad setting.
             </p>
             <Link
               href="/book-appointment"

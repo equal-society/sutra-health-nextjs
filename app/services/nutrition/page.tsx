@@ -6,17 +6,17 @@ import ServicePageTemplate, {
 } from "@/components/services/ServicePageTemplate";
 
 const nutrition: ServicePageConfig = {
-  heroImage: "/images/diet.webp",
-  name: "Nutrition Counselling in Faridabad",
+  heroImage: "/images/service-hero.webp",
+  name: "Want practical guidance for what you eat every day?",
   shortName: "Nutrition",
   slug: "nutrition",
 
-  title: "Practical Nutrition Counselling in Faridabad",
+  title: "Nutrition Counselling in Faridabad | Sutra Health",
   description:
-    "Nutrition counselling in Faridabad focused on your usual meals, food routines, dietary needs and practical changes that fit everyday life.",
+    "Practical nutrition counselling in Faridabad focused on your usual meals, food routines, dietary needs and realistic changes for everyday life.",
 
   heroDescription:
-    "Review the food choices and routines that matter to your health, without starting with a generic meal plan.",
+    "Nutrition counselling helps you make food choices that fit your health and everyday routine.",
 
   trust: [
     "Individual dietary guidance",
@@ -161,7 +161,7 @@ const nutrition: ServicePageConfig = {
     },
   ],
 
-  ctaLabel: "Discuss your nutrition needs",
+  ctaLabel: "Book a Consultation",
   finalTitle: "Bring your usual meals into the conversation.",
   finalDescription:
     "Use your current food routine to identify nutrition questions for an individual review.",

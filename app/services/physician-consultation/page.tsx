@@ -10,9 +10,9 @@ const ONLINE_URL =
   "https://www.lybrate.com/faridabad/doctor/dr-rakesh-sarwal-preventive-medicine-specialist";
 
 export const metadata: Metadata = {
-  title: "Physician Consultation in Faridabad",
+  title: "Physician Consultation in Faridabad | Sutra Health",
   description:
-    "Prepare for a physician consultation in Faridabad, understand what the visit covers and explore appointment options.",
+    "Book a physician consultation in Faridabad to discuss your medical history, lifestyle, nutrition, daily habits and appropriate next steps.",
   alternates: {
     canonical: PAGE_URL,
   },
@@ -132,7 +132,7 @@ export default function PhysicianConsultationPage() {
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/nature.webp')" }}
+          style={{ backgroundImage: "url('/images/service-hero.webp')" }}
         />
 
         <div
@@ -149,11 +149,11 @@ export default function PhysicianConsultationPage() {
             id="consultation-title"
             className="mt-4 max-w-3xl font-serif text-[clamp(2.25rem,6vw,4.25rem)] leading-[1.08] tracking-[-0.025em] text-white"
           >
-            Physician Consultation in Faridabad
+            Not sure what is affecting your health or where to begin?
           </h1>
 
           <p className="mt-5 max-w-2xl text-lg leading-8 text-white/90 sm:text-xl">
-            Bring the information you already have. The consultation is a place to explain the concern, review relevant findings and clarify what needs attention next.
+          A physician consultation gives you space to discuss your concerns, history and next steps. 
           </p>
 
           <div className="mt-7 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
@@ -161,7 +161,7 @@ export default function PhysicianConsultationPage() {
               href={BOOKING_URL}
               className="inline-flex min-h-12 w-full items-center justify-center bg-[#F7F5EF] px-6 text-base font-semibold text-[#17413D] transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto"
             >
-              Request an appointment
+              Book a Consultation
               <span className="ml-3" aria-hidden="true">
                 →
               </span>

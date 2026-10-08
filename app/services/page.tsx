@@ -8,7 +8,7 @@ const services = [
     title: "Physician Consultation",
     description:
       "Discuss your symptoms, health history and current treatment with a physician. Leave with clearer next steps for your care.",
-    image: "/images/approach.webp",
+    image: "/images/service-hero.webp",
     href: "/services/physician-consultation",
   },
   {
@@ -42,6 +42,38 @@ const services = [
       "Work through everyday barriers and explore practical ways to support healthier routines and wellbeing.",
     image: "/images/what-we-do/mind.webp",
     href: "/services/behaviour-stress-mind",
+  },
+  {
+    number: "06",
+    title: "Shirodhara",
+    description:
+      "Explore a traditional wellness practice and what to expect before choosing a session.",
+    image: "/images/service-hero.webp",
+    href: "/services/shirodhara",
+  },
+  {
+    number: "07",
+    title: "My Buddy",
+    description:
+      "Learn about peer support, companionship and community wellbeing.",
+    image: "/images/service-hero.webp",
+    href: "/services/my-buddy",
+  },
+  {
+    number: "08",
+    title: "Singing, Kirtan & Dance",
+    description:
+      "Explore music, movement and connection as community wellbeing activities.",
+    image: "/images/service-hero.webp",
+    href: "/services/singing-kirtan-dance",
+  },
+  {
+    number: "09",
+    title: "Nature Connect",
+    description:
+      "Explore nature-based activities and everyday outdoor habits that support wellbeing.",
+    image: "/images/service-hero.webp",
+    href: "/services/nature-connect",
   },
  
 ];
@@ -181,14 +213,10 @@ export default function ServicesPage() {
             <h1
               id="services-hero-title"
               className="mt-4 max-w-3xl font-[var(--font-serif)] text-[2.65rem] font-medium leading-[1.04] tracking-[-0.035em] text-white sm:mt-5 sm:text-6xl lg:text-7xl"
-            >
-              Health Services in Faridabad
-            </h1>
+           >
+             Care for your health, your habits and your everyday life.            </h1>
             <p className="mt-5 max-w-2xl text-base leading-7 text-white/90 sm:mt-6 sm:text-lg sm:leading-8">
-              Start with the health question you want to discuss. Review the
-              services below to understand what each one is designed to help
-              you explore.
-            </p>
+            Choose the right support, from physician consultation and nutrition to Lifestyle Medicine and Therapeutic Yoga.            </p>
             <div className="mt-7 flex flex-col items-start gap-4 sm:mt-8 sm:flex-row sm:items-center sm:gap-6">
               <Link
                 href="/book-appointment"

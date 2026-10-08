@@ -7,9 +7,9 @@ const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/lifestyle`;
 
 export const metadata: Metadata = {
-  title: "Practical Lifestyle Medicine in Faridabad",
+  title: "Lifestyle Medicine in Faridabad | Sutra Health",
   description:
-    "Understand lifestyle medicine in Faridabad and how food, activity, sleep, stress and other daily factors may be discussed alongside appropriate medical care.",
+    "Explore lifestyle medicine in Faridabad and how food, activity, sleep, stress and daily habits may be considered alongside appropriate medical care.",
   alternates: {
     canonical: PAGE_URL,
   },
@@ -146,7 +146,7 @@ export default function LifestyleMedicinePage() {
           aria-hidden="true"
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/images/rooftop.avif')",
+            backgroundImage: "url('/images/service-hero.webp')",
           }}
         />
 
@@ -166,12 +166,11 @@ export default function LifestyleMedicinePage() {
             id="lifestyle-title"
             className="mt-4 max-w-3xl font-serif text-[clamp(2.25rem,6vw,4.25rem)] leading-[1.08] tracking-[-0.03em] text-white"
           >
-            Lifestyle Medicine in Faridabad{" "}
+          Your everyday habits are part of your health.
           </h1>
 
           <p className="mt-5 max-w-2xl text-lg leading-8 text-white/90 sm:text-xl">
-            Lifestyle medicine looks at the habits, routines and circumstances
-            that can influence health, alongside appropriate medical care.{" "}
+          Food, movement, sleep and daily routines all play a role in your health.
           </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -179,7 +178,7 @@ export default function LifestyleMedicinePage() {
               href="/assessment"
               className="inline-flex min-h-12 w-full items-center justify-center bg-[#F7F5EF] px-6 text-base font-semibold text-[#17413D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto"
             >
-              Review the 21-Point Assessment →
+              Book a Consultation →
             </Link>
 
             <a
