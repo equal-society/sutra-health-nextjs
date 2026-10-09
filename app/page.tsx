@@ -263,7 +263,7 @@ function Hero() {
             "
           >
             <Link
-              href="/book-appointment"
+              href="/assessment"
               className="
                 inline-flex
                 min-h-12
@@ -285,7 +285,7 @@ function Hero() {
                 sm:w-auto
               "
             >
-              Book a Consultation
+              Take Your Health Assessment
 
               <span
                 className="ml-3"
@@ -296,7 +296,7 @@ function Hero() {
             </Link>
 
             <Link
-              href="/approach"
+              href="/services"
               className="
                 inline-flex
                 min-h-12
@@ -319,7 +319,7 @@ function Hero() {
                 sm:w-auto
               "
             >
-              Explore Our Approach
+              Explore Our Services
             </Link>
           </div>
 
@@ -381,12 +381,12 @@ function EverydayHealth() {
               sm:text-[56px]
             "
           >
-            Your everyday habit is part of your health.
+            Your everyday life is part of your health.
           </h2>
 
-          {/* <p className="mt-5 max-w-[720px] text-base leading-8 text-[#65736D] sm:text-[18px]">
+          <p className="mt-5 max-w-[720px] text-base leading-8 text-[#65736D] sm:text-[18px]">
             Food, movement, sleep and stress all contribute to your health. We help you explore practical changes alongside appropriate medical care.
-          </p> */}
+          </p>
 
           <div className="mt-9 grid gap-x-2 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
@@ -434,7 +434,7 @@ function ConditionsPreview() {
               sm:text-[52px]
             "
           >
-            Explore care for the whole picture.
+            Explore the health concerns we support.
           </h2>
 
           <div className="mt-7 grid grid-cols-1 gap-x-8 sm:grid-cols-2">
@@ -583,94 +583,7 @@ function AppointmentCTA() {
   );
 }
 
-/* =========================================================
-   OUR APPROACH
-========================================================= */
 
-function HomeApproach() {
-  const steps = [
-    ["01", "Understand", "Your health, concerns, routine and priorities guide the conversation."],
-    ["02", "Personalise", "Agree on practical steps suited to your needs and ability."],
-    ["03", "Practise", "Work on manageable changes that can fit into everyday life."],
-    ["04", "Review", "Discuss progress and adapt the plan when needed."],
-  ];
-
-  return (
-    <section aria-labelledby="home-approach-title" className="bg-white">
-      <Container>
-        <div className="py-16 sm:py-20 lg:py-24">
-          <Eyebrow>Our approach</Eyebrow>
-          <h2 id="home-approach-title" className="mt-3 max-w-[850px] font-serif text-[38px] leading-[1.08] tracking-[-0.035em] text-[#202522] sm:text-[56px]">
-            Medical guidance, with room for real life.
-          </h2>
-          {/* <p className="mt-5 max-w-[720px] text-base leading-8 text-[#65736D] sm:text-[18px]">
-            Lifestyle support may complement your medical care. Together, we consider your wider health and identify manageable changes to practise and review.
-          </p>
-          <div className="mt-9 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {steps.map(([number, title, description]) => (
-              <div key={number} className="border-t border-[#202522]/15 pt-4">
-                <p className="text-xs font-semibold tracking-[0.14em] text-[#68766F]">{number}</p>
-                <h3 className="mt-3 font-serif text-2xl text-[#202522]">{title}</h3>
-                <p className="mt-2 text-sm leading-6 text-[#65736D]">{description}</p>
-              </div>
-            ))}
-          </div> */}
-          <div className="mt-7"><TextLink href="/approach">How care works</TextLink></div>
-        </div>
-      </Container>
-    </section>
-  );
-}
-
-/* =========================================================
-   DOCTOR-LED CARE
-========================================================= */
-
-function HomeDoctorLedCare() {
-  return (
-    <section aria-labelledby="home-doctor-title" className="bg-[#F7F5EF]">
-      <Container>
-        <div className="py-16 sm:py-20 lg:py-24">
-          <Eyebrow>Doctor-led care</Eyebrow>
-          <h2 id="home-doctor-title" className="mt-3 max-w-[850px] font-serif text-[38px] leading-[1.08] tracking-[-0.035em] text-[#202522] sm:text-[56px]">
-            Care shaped around what you need.
-          </h2>
-          <div className="mt-6 max-w-[760px]">
-            <p className="text-xl font-medium text-[#202522]">Dr. Rakesh Sarwal, MBBS, MPH, DrPH</p>
-            <p className="mt-2 text-base leading-7 text-[#65736D]">Public health physician and Therapeutic Yoga Consultant.</p>
-            <p className="mt-4 text-base leading-8 text-[#65736D] sm:text-[18px]">
-              Your health history, goals and daily routine guide the conversation. Medical guidance, nutrition and lifestyle support are considered in the context of your needs.
-            </p>
-          </div>
-          <div className="mt-7"><TextLink href="/doctors">Meet Dr. Sarwal</TextLink></div>
-        </div>
-      </Container>
-    </section>
-  );
-}
-
-/* =========================================================
-   21-POINT ASSESSMENT
-========================================================= */
-
-function HomeAssessment() {
-  return (
-    <section aria-labelledby="home-assessment-title" className="bg-white">
-      <Container>
-        <div className="py-16 sm:py-20 lg:py-24">
-          <Eyebrow>21-point lifestyle assessment</Eyebrow>
-          <h2 id="home-assessment-title" className="mt-3 max-w-[850px] font-serif text-[38px] leading-[1.08] tracking-[-0.035em] text-[#202522] sm:text-[56px]">
-            See which lifestyle habits support your health — and which need attention.
-          </h2>
-          <p className="mt-5 max-w-[720px] text-base leading-8 text-[#65736D] sm:text-[18px]">
-            Use the assessment as a structured starting point for reflecting on everyday health habits. It is a check-in, not a diagnosis or a substitute for clinical care.
-          </p>
-          <div className="mt-7"><TextLink href="/assessment">Take the assessment</TextLink></div>
-        </div>
-      </Container>
-    </section>
-  );
-}
 
 /* =========================================================
    PATIENT STORIES
@@ -706,9 +619,9 @@ function PatientStories() {
                 What people have shared.
               </h2>
 
-              {/* <p className="mt-4 text-base leading-7 text-[#65736D]">
+              <p className="mt-4 text-base leading-7 text-[#65736D]">
                 Experiences shared by people who have interacted with Sutra Health and its practitioners.
-              </p> */}
+              </p>
 
               <div className="mt-6">
                 <TextLink href="/patient-stories">
@@ -879,11 +792,8 @@ export default function Home() {
 
         <ConditionsPreview />
 
-        <HomeApproach />
 
-        {/* <HomeDoctorLedCare />
 
-        <HomeAssessment /> */}
 
         <PatientStories />
 

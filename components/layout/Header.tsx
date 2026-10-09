@@ -53,51 +53,13 @@ type DropdownName =
   | null;
 
 const services: NavItem[] = [
-  {
-    label: "Physician Consultation",
-    href: "/services/physician-consultation",
-    icon: HeartPulse,
-  },
-  {
-    label: "Lifestyle Medicine",
-    href: "/services/lifestyle",
-    icon: Activity,
-  },
-  {
-    label: "Nutrition",
-    href: "/services/nutrition",
-    icon: Apple,
-  },
-  {
-    label: "Therapeutic Yoga",
-    href: "/services/therapeutic-yoga",
-    icon: PersonStanding,
-  },
-  {
-    label: "Behaviour, Stress & Mind",
-    href: "/services/behaviour-stress-mind",
-    icon: Brain,
-  },
-  {
-    label: "Shirodhara",
-    href: "/services/shirodhara",
-    icon: Sparkles,
-  },
-  {
-    label: "My Buddy",
-    href: "/services/my-buddy",
-    icon: UsersRound,
-  },
-  {
-    label: "Singing, Kirtan & Dance",
-    href: "/services/singing-kirtan-dance",
-    icon: Sparkles,
-  },
-  {
-    label: "Nature Connect",
-    href: "/services/nature-connect",
-    icon: Sparkles,
-  },
+  { label: "Physician Consultation", href: "/services/physician-consultation", icon: HeartPulse },
+  { label: "Lifestyle Medicine", href: "/services/lifestyle", icon: Activity },
+  { label: "Nutrition Counselling", href: "/services/nutrition", icon: Apple },
+  { label: "Therapeutic Yoga", href: "/services/therapeutic-yoga", icon: PersonStanding },
+  { label: "Behaviour, Stress and Mind", href: "/services/behaviour-stress-mind", icon: Brain },
+  { label: "Shirodhara", href: "/services/shirodhara", icon: Sparkles },
+  { label: "My Buddy", href: "/services/my-buddy", icon: UsersRound },
 ];
 
 const conditions: NavItem[] = [
@@ -169,7 +131,7 @@ const resources: NavItem[] = [
   },
  
   {
-    label: "Academic & Research",
+    label: "Research & Evidence",
     href: "/resources/research",
     icon: Brain,
   },
@@ -518,7 +480,7 @@ export default function Header() {
 
           <DesktopDropdown
             name="resources"
-            label="Resources"
+            label="Academics and Research"
             items={resources}
             openDropdown={openDropdown}
             setOpenDropdown={setOpenDropdown}
@@ -616,7 +578,7 @@ export default function Header() {
 
           <MobileDropdown
             name="resources"
-            label="Resources"
+            label="Academics and Research"
             items={resources}
             openDropdown={openDropdown}
             toggleDropdown={toggleDropdown}
