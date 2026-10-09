@@ -9,13 +9,13 @@ const PAGE_URL = `${SITE_URL}/services/lifestyle/six-pillar`;
 export const metadata: Metadata = {
   title: "The Six Pillars of Lifestyle Medicine | Sutra Health",
   description:
-    "Explore six areas commonly considered in lifestyle medicine: healthy eating, physical activity, restorative sleep, social connection, substance-related risks and stress management.",
+    "The six areas lifestyle medicine looks at: healthy eating, physical activity, sleep, social connection, risky substances and stress. What each means and where to start.",
   alternates: { canonical: PAGE_URL },
   robots: { index: true, follow: true },
   openGraph: {
     title: "The Six Pillars of Lifestyle Medicine | Sutra Health",
     description:
-      "Learn how six everyday health areas may be considered as part of a whole-person approach alongside appropriate medical care.",
+      "What the six pillars of lifestyle medicine are, how they relate to everyday health and where to begin.",
     url: PAGE_URL,
     siteName: "Sutra Health",
     type: "website",
@@ -28,21 +28,19 @@ const pillars = [
   {
     number: "01",
     title: "Healthy eating",
-    summary: "Food choices and meal patterns",
+    summary: "What and how you eat",
     content:
-      "Everyday meals are shaped by food access, culture, budget, preferences and health needs. Rather than following one universal diet, review the variety of foods you usually eat and identify practical changes that suit your circumstances.",
-    startingPoint:
-      "Look at a typical day of meals. Is there one realistic way to add variety or make a meal work better for you?",
-    service: { label: "Nutrition counselling", href: "/services/nutrition" },
+      "Food is shaped by culture, budget, access, preferences and health needs. There is no single diet that suits everyone. The aim is to eat a good variety of foods and to adjust your usual meals in ways you can keep up.",
+    startingPoint: "Look at a typical day of meals and pick one realistic way to add variety.",
+    service: { label: "Nutrition", href: "/services/nutrition" },
   },
   {
     number: "02",
     title: "Physical activity",
     summary: "Movement that fits your day",
     content:
-      "Movement can include walking, everyday tasks, mobility work and structured exercise. The right type and amount depend on your current ability, health, mobility and preferences. Consistency matters more than choosing an activity that does not fit your life.",
-    startingPoint:
-      "Notice where movement already fits into your day and what tends to get in the way. Choose a manageable option that is appropriate for you.",
+      "Movement can be walking, daily chores, mobility work or structured exercise. The right type and amount depend on your health, mobility and routine. Doing a little regularly usually beats an ambitious plan you drop.",
+    startingPoint: "Notice where movement already fits into your day and choose one manageable addition.",
     service: { label: "Therapeutic Yoga", href: "/services/therapeutic-yoga" },
   },
   {
@@ -50,37 +48,35 @@ const pillars = [
     title: "Restorative sleep",
     summary: "Routines that make room for rest",
     content:
-      "Sleep timing, regularity and the routines around bedtime are useful areas to review. Work, caring responsibilities, discomfort and other factors can affect sleep, so advice should reflect the person's circumstances. Persistent sleep problems may need clinical assessment.",
-    startingPoint:
-      "Notice your usual sleep and wake times and what interrupts rest. If difficulties persist or affect daily functioning, discuss them with a qualified healthcare professional.",
-    service: { label: "Physician consultation", href: "/services/physician-consultation" },
+      "Regular sleep and wake times and a calm wind-down can help. Work, caring duties, pain and other factors also affect sleep. Sleep problems that last or affect your day need a medical review.",
+    startingPoint: "Note your usual sleep and wake times and what interrupts rest.",
+    service: { label: "Physician Consultation", href: "/services/physician-consultation" },
   },
   {
     number: "04",
     title: "Positive social connection",
-    summary: "The role of supportive relationships",
+    summary: "Supportive relationships",
     content:
-      "Connection may come from family, friends, peers or community. People's circumstances and preferences differ; this is not about expecting everyone to have the same social life. The useful question is whether the support and connection a person values are available to them.",
-    startingPoint:
-      "Consider who you feel comfortable turning to, or whether there is a community or activity where you would like to build connection at your own pace.",
+      "Support can come from family, friends, peers or a community. People need different amounts of company. The useful question is whether you have the support you value.",
+    startingPoint: "Think about who you can turn to, or one activity where you would like to meet people.",
   },
   {
     number: "05",
-    title: "Minimising risky substances",
-    summary: "Understanding substance-related health risks",
+    title: "Avoiding risky substances",
+    summary: "Tobacco, alcohol and other substances",
     content:
-      "Tobacco, alcohol and other substances can affect health. Conversations about use should be respectful and practical, without blame. The right support depends on the substance, pattern of use, health circumstances and whether stopping suddenly could be unsafe.",
+      "Tobacco, alcohol and other substances can harm health. The right support depends on the substance, how much and how often it is used, and your health. Stopping suddenly can be unsafe for some people.",
     startingPoint:
-      "If you have concerns about substance use, consider discussing them confidentially with a qualified healthcare professional before making changes, particularly if you may be dependent on a substance.",
+      "If you are worried about your use, talk to a healthcare professional in confidence before making changes, especially if you may be dependent.",
   },
   {
     number: "06",
     title: "Stress management",
-    summary: "Understanding stress patterns and support",
+    summary: "Understanding stress and getting support",
     content:
-      "Stress can affect routines, attention and how people respond to demanding situations. There is no single method that suits everyone. Depending on the person and situation, options may include breathing practices, meditation, supportive conversation, changes to routines or professional care.",
+      "Stress affects routines, attention and how we handle demands. No single method suits everyone. Options include breathing practices, meditation, talking to someone, changing routines, or professional care.",
     startingPoint:
-      "Identify one recurring stressful situation, how you tend to respond and what kind of support might be appropriate. Severe or persistent distress deserves professional support.",
+      "Pick one situation that regularly stresses you and note how you respond. Severe or lasting distress needs professional support.",
     service: { label: "Behaviour, Stress & Mind Support", href: "/services/behaviour-stress-mind" },
   },
 ];
@@ -88,18 +84,17 @@ const pillars = [
 const faqs = [
   {
     question: "Do I have to change all six areas at once?",
-    answer:
-      "No. You can identify one or two priorities to discuss first. Any changes should be realistic for your health, preferences and daily routine.",
+    answer: "No. Pick one or two to discuss first and keep the changes realistic for your health and routine.",
   },
   {
     question: "Does lifestyle medicine replace medication?",
     answer:
-      "No. Lifestyle support complements appropriate medical care. Do not stop or change prescribed treatment without discussing it with your treating clinician.",
+      "No. It works alongside medical care. Do not stop or change prescribed treatment without speaking to your treating clinician.",
   },
   {
-    question: "Can these areas be relevant if I already have a medical condition?",
+    question: "Do these areas matter if I already have a medical condition?",
     answer:
-      "Lifestyle questions can be discussed in the context of your condition and current treatment. Advice should reflect your circumstances and remain coordinated with your treating healthcare professional.",
+      "Yes, they can be discussed in the context of your condition and treatment. Any advice should fit your situation and stay in step with your treating clinician.",
   },
 ];
 
@@ -112,7 +107,17 @@ const schema = {
       name: "The Six Pillars of Lifestyle Medicine | Sutra Health",
       url: PAGE_URL,
       description: String(metadata.description),
+      inLanguage: "en-IN",
       isPartOf: { "@type": "WebSite", name: "Sutra Health", url: `${SITE_URL}/` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+        { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services` },
+        { "@type": "ListItem", position: 3, name: "Lifestyle Medicine", item: `${SITE_URL}/services/lifestyle` },
+        { "@type": "ListItem", position: 4, name: "The Six Pillars", item: PAGE_URL },
+      ],
     },
     {
       "@type": "FAQPage",
@@ -138,12 +143,12 @@ export default function SixPillarLifestylePage() {
               <span className="mx-2" aria-hidden="true">/</span>
               <span aria-current="page">The Six Pillars</span>
             </nav>
-            <p className="mt-8 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#D8C99F] sm:text-xs">A whole-person framework</p>
+            <p className="mt-8 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#D8C99F] sm:text-xs">Lifestyle Medicine framework</p>
             <h1 id="pillars-title" className="mt-4 max-w-4xl font-serif text-[clamp(2.5rem,5.6vw,4.75rem)] leading-[1.06] tracking-[-0.04em]">
-              Six areas that can shape everyday health.
+              The six pillars of lifestyle medicine
             </h1>
             <p className="mt-6 max-w-3xl text-base leading-8 text-white/80 sm:text-lg sm:leading-9">
-              Lifestyle medicine considers habits and circumstances that may influence health. These six areas offer a framework for discussion—not a checklist you must complete all at once. The right priorities depend on your needs and should complement appropriate medical care.
+              Lifestyle medicine looks at six everyday areas that can affect health. They are a guide for a conversation, not a checklist to finish. Your priorities depend on your needs, and the work sits alongside medical care.
             </p>
             <Link href="/services/lifestyle" className="mt-7 inline-flex min-h-11 items-center font-semibold text-white underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">← Back to Lifestyle Medicine</Link>
           </div>
@@ -162,7 +167,7 @@ export default function SixPillarLifestylePage() {
                 </div>
                 <div>
                   <p className="text-base leading-8 text-[var(--sutra-muted)] sm:text-lg">{pillar.content}</p>
-                  <p className="mt-4 text-base leading-8 sm:text-lg"><span className="font-semibold">A practical starting point: </span><span className="text-[var(--sutra-muted)]">{pillar.startingPoint}</span></p>
+                  <p className="mt-4 text-base leading-8 sm:text-lg"><span className="font-semibold">Where to start: </span><span className="text-[var(--sutra-muted)]">{pillar.startingPoint}</span></p>
                   {pillar.service && (
                     <Link href={pillar.service.href} className="mt-4 inline-flex min-h-11 items-center font-semibold text-[var(--sutra-teal)] underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">
                       Explore {pillar.service.label} <span className="ml-2" aria-hidden="true">↗</span>
@@ -175,12 +180,24 @@ export default function SixPillarLifestylePage() {
         </Container>
       </section>
 
+      <section aria-labelledby="pillars-next-title" className="bg-[var(--sutra-porcelain)]">
+        <Container>
+          <div className="py-12 sm:py-14">
+            <h2 id="pillars-next-title" className="font-serif text-2xl leading-tight sm:text-3xl">Ready to act on one of these?</h2>
+            <p className="mt-3 max-w-3xl text-base leading-8 text-[var(--sutra-muted)] sm:text-lg">
+              <Link href="/services/lifestyle/daily-habits" className="font-semibold text-[var(--sutra-teal)] underline underline-offset-4">See daily habit ideas</Link> for small first steps, or{" "}
+              <Link href="/services/lifestyle/healthy-lifestyle-coaching" className="font-semibold text-[var(--sutra-teal)] underline underline-offset-4">learn about lifestyle coaching</Link> for ongoing support.
+            </p>
+          </div>
+        </Container>
+      </section>
+
       <section aria-labelledby="pillars-faq-title" className="bg-[var(--sutra-pale-sage)]">
         <Container>
           <div className="py-14 sm:py-18 lg:py-20">
             <div className="max-w-2xl">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">Common questions</p>
-              <h2 id="pillars-faq-title" className="mt-4 font-serif text-3xl leading-tight sm:text-4xl">Understanding the six pillars</h2>
+              <h2 id="pillars-faq-title" className="mt-4 font-serif text-3xl leading-tight sm:text-4xl">About the six pillars</h2>
             </div>
             <div className="mt-7 max-w-4xl divide-y divide-[var(--sutra-border-strong)] border-y border-[var(--sutra-border-strong)]">
               {faqs.map((faq) => (
@@ -197,10 +214,15 @@ export default function SixPillarLifestylePage() {
         </Container>
       </section>
 
-      <ContextualBookingCTA eyebrow="Choose a place to begin" title="Discuss the health priorities that matter to you." description="You do not need to work on every area at once. A consultation can help you discuss your circumstances and appropriate next steps." label="Choose an appointment time" />
+      <ContextualBookingCTA
+        eyebrow="Choose a place to begin"
+        title="Discuss which area matters most for you."
+        description="You do not need to work on all six. A consultation can help you choose where to start."
+        label="Book an appointment"
+      />
 
       <p className="mx-auto max-w-7xl px-4 py-5 text-sm leading-6 text-[var(--sutra-muted)] sm:px-6 md:px-8 lg:px-12">
-        This information is educational and does not replace individual medical advice, diagnosis or treatment. Lifestyle changes should be considered alongside appropriate healthcare. Do not change prescribed treatment without consulting your treating healthcare professional.
+        This page is general information, not medical advice, diagnosis or treatment. Do not change prescribed treatment without speaking to your treating clinician.
       </p>
     </main>
   );

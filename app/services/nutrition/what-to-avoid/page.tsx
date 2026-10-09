@@ -2,94 +2,227 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/shared/Container";
 
+// Route note: the URL slug stays "what-to-avoid" to protect existing links and rankings.
+// The page title and H1 say "limit" because that matches the advice.
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/nutrition/what-to-avoid`;
+const BOOKING_URL = "/book-appointment";
+const TITLE = "Foods to Limit for a Healthier Diet | Sutra Health";
+const DESCRIPTION =
+  "Which foods to eat less often and why: added sugar, salt, deep-fried and highly processed foods. Learn the difference between limiting and avoiding.";
 
 export const metadata: Metadata = {
-  title: "Foods to Limit | Nutrition Guidance | Sutra Health",
-  description: "Explore practical guidance on limiting added sugar, excess salt, deep-fried foods and highly processed snacks as part of an overall eating pattern.",
+  title: TITLE,
+  description: DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   robots: { index: true, follow: true },
-  openGraph: { title: "Foods to Limit | Nutrition Guidance | Sutra Health", description: "Explore practical guidance on limiting added sugar, excess salt, deep-fried foods and highly processed snacks as part of an overall eating pattern.", url: PAGE_URL, siteName: "Sutra Health", type: "website", locale: "en_IN", images: [{ url: `${SITE_URL}/images/og-image.webp`, width: 1200, height: 630, alt: "Sutra Health" }] },
-  twitter: { card: "summary_large_image", title: "Foods to Limit | Nutrition Guidance | Sutra Health", description: "Explore practical guidance on limiting added sugar, excess salt, deep-fried foods and highly processed snacks as part of an overall eating pattern.", images: [`${SITE_URL}/images/og-image.webp`] },
+  openGraph: { title: TITLE, description: DESCRIPTION, url: PAGE_URL, siteName: "Sutra Health", type: "website", locale: "en_IN", images: [{ url: `${SITE_URL}/images/og-image.webp`, width: 1200, height: 630, alt: "Sutra Health" }] },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION, images: [`${SITE_URL}/images/og-image.webp`] },
 };
 
-const pageSchema = {
+const groups = [
+  {
+    title: "Added sugar",
+    foods: "Refined white sugar, sweetened tea and other sweetened drinks, gur and khandsari.",
+    note: "Gur (jaggery) and khandsari are less refined, but they are still sugar. Treat them like any other sweetener: use small amounts, not as a free swap or a remedy. People with diabetes should ask their clinician how much sweetener is suitable.",
+  },
+  {
+    title: "Salt",
+    foods: "Added salt, and salty snacks and pickles.",
+    note: "Salt comes from cooking, the table and packaged foods. If you have high blood pressure, heart or kidney disease, follow the salt advice you have been given.",
+  },
+  {
+    title: "Deep-fried foods",
+    foods: "Samosa, pakoda and similar fried snacks.",
+    note: "Fine now and then. The aim is to make them an occasional food rather than a daily habit. Baked, roasted or steamed versions are options.",
+  },
+  {
+    title: "Highly processed foods",
+    foods: "Chips and packaged snacks.",
+    note: "These are made mainly from refined ingredients and additives. Check how often they replace meals made from simpler foods.",
+  },
+];
+
+const faqs = [
+  {
+    q: "Do I have to avoid all of these foods?",
+    a: "No. For most people the goal is to eat them less often, not to cut them out. Follow specific restrictions only if a clinician has advised them.",
+  },
+  {
+    q: "Is jaggery better than white sugar?",
+    a: "Jaggery is less refined but still adds sugar to your diet. The amount you eat matters, particularly if you have diabetes.",
+  },
+  {
+    q: "Can I use this list if I have a medical condition?",
+    a: "Use it as general information only. Conditions such as diabetes, high blood pressure and kidney disease need individual advice from your clinician.",
+  },
+];
+
+const schema = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "WebPage", "@id": `${PAGE_URL}#webpage`, url: PAGE_URL, name: "Foods to Limit | Nutrition Guidance | Sutra Health", description: String(metadata.description), inLanguage: "en-IN", isPartOf: { "@type": "WebSite", "name": "Sutra Health", url: `${SITE_URL}/` } },
-    { "@type": "BreadcrumbList", itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
-      { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services` },
-      { "@type": "ListItem", position: 3, name: "Nutrition", item: `${SITE_URL}/services/nutrition` },
-      { "@type": "ListItem", position: 4, name: "What to Limit", item: PAGE_URL }
-    ] }
-  ]
+    {
+      "@type": "WebPage",
+      "@id": `${PAGE_URL}#webpage`,
+      url: PAGE_URL,
+      name: TITLE,
+      description: DESCRIPTION,
+      inLanguage: "en-IN",
+      isPartOf: { "@type": "WebSite", name: "Sutra Health", url: `${SITE_URL}/` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+        { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services` },
+        { "@type": "ListItem", position: 3, name: "Nutrition", item: `${SITE_URL}/services/nutrition` },
+        { "@type": "ListItem", position: 4, name: "Foods to Limit", item: PAGE_URL },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: { "@type": "Answer", text: item.a },
+      })),
+    },
+  ],
 };
 
-export default function WhattoLimitPage() {
+export default function FoodsToLimitPage() {
   return (
     <main className="overflow-hidden bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+
       <section aria-labelledby="page-title" className="border-b border-[var(--sutra-border)] bg-[#173B36]">
-        <Container><div className="max-w-4xl py-14 sm:py-18 lg:py-24">
-          <nav aria-label="Breadcrumb" className="mb-7 text-sm text-white/70"><Link href="/" className="underline-offset-4 hover:underline">Home</Link><span aria-hidden="true"> / </span><Link href="/services" className="underline-offset-4 hover:underline">Services</Link><span aria-hidden="true"> / </span><Link href="/services/nutrition" className="underline-offset-4 hover:underline">Nutrition</Link><span aria-hidden="true"> / </span><span aria-current="page">What to Limit</span></nav>
-          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#D8C99F] sm:text-xs">Nutrition · Food choices</p>
-          <h1 id="page-title" className="mt-5 max-w-4xl font-serif text-[clamp(2.6rem,5.8vw,4.8rem)] leading-[1.04] tracking-[-0.04em] text-white">Foods to limit, without rigid rules.</h1>
-          <p className="mt-6 max-w-3xl text-base leading-8 text-white/80 sm:text-lg sm:leading-9">The previous Life Quality dietary guidance highlighted refined white sugar, excess salt, deep-fried snacks, highly processed foods, commercial bread and highly sweetened tea. Consider these points in the context of your overall diet, preferences and health needs.</p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap"><Link href="/book-appointment" className="inline-flex min-h-12 items-center justify-center bg-white px-6 py-3 text-base font-semibold text-[#173B36] hover:opacity-90">Book a consultation ↗</Link><Link href="/services/nutrition" className="inline-flex min-h-12 items-center justify-center border border-white/40 px-6 py-3 text-base font-semibold text-white hover:bg-white/10">Nutrition overview</Link></div>
-        </div></Container>
-      </section>
-
-      <section className=" py-10 sm:py-14 lg:py-16">
         <Container>
-          <div className="grid gap-5 lg:grid-cols-[0.72fr_1.28fr] lg:gap-14">
-            <div><p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">Nutrition guidance</p><h2 className="mt-3 font-serif text-3xl leading-tight tracking-[-0.03em] sm:text-4xl">Foods the old guide advised limiting</h2></div>
-            <div className="max-w-3xl space-y-4 text-base leading-8 text-[var(--sutra-muted)] sm:text-lg">
-              <p>The source page listed refined white sugar, excess salt, deep-fried foods such as samosa and pakoda, ultra-processed snacks such as chips and packaged junk foods, commercial bread, and highly sweetened tea. These are the examples retained from the old Life Quality page.</p>
-              <p>This list is a starting point for reviewing how often these foods appear in your routine—not a claim that every listed food must be completely avoided by every person.</p>
+          <div className="max-w-4xl py-14 sm:py-18 lg:py-24">
+            <nav aria-label="Breadcrumb" className="mb-7 text-sm text-white/70">
+              <Link href="/" className="underline-offset-4 hover:underline">Home</Link>
+              <span aria-hidden="true"> / </span>
+              <Link href="/services" className="underline-offset-4 hover:underline">Services</Link>
+              <span aria-hidden="true"> / </span>
+              <Link href="/services/nutrition" className="underline-offset-4 hover:underline">Nutrition</Link>
+              <span aria-hidden="true"> / </span>
+              <span aria-current="page">Foods to Limit</span>
+            </nav>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#D8C99F] sm:text-xs">Nutrition guide</p>
+            <h1 id="page-title" className="mt-5 max-w-4xl font-serif text-[clamp(2.6rem,5.8vw,4.8rem)] leading-[1.04] tracking-[-0.04em] text-white">
+              Foods to limit for a healthier diet
+            </h1>
+            <p className="mt-6 max-w-3xl text-base leading-8 text-white/80 sm:text-lg sm:leading-9">
+              Sugar, salt, fried foods and highly processed snacks are worth eating less often. This guide explains which foods and how to think about them, without strict rules.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link href={BOOKING_URL} className="inline-flex min-h-12 items-center justify-center bg-white px-6 py-3 text-base font-semibold text-[#173B36] hover:opacity-90">Book a consultation about your diet ↗</Link>
+              <Link href="/services/nutrition" className="inline-flex min-h-12 items-center justify-center border border-white/40 px-6 py-3 text-base font-semibold text-white hover:bg-white/10">Nutrition overview</Link>
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="border-y border-[var(--sutra-border)] bg-white/70 py-10 sm:py-14 lg:py-16">
+      <section aria-labelledby="limit-vs-avoid-title" className="py-10 sm:py-14 lg:py-16">
         <Container>
           <div className="grid gap-5 lg:grid-cols-[0.72fr_1.28fr] lg:gap-14">
-            <div><p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">Nutrition guidance</p><h2 className="mt-3 font-serif text-3xl leading-tight tracking-[-0.03em] sm:text-4xl">Think about the overall pattern</h2></div>
+            <h2 id="limit-vs-avoid-title" className="font-serif text-3xl leading-tight tracking-[-0.03em] sm:text-4xl">Limiting is not the same as avoiding</h2>
             <div className="max-w-3xl space-y-4 text-base leading-8 text-[var(--sutra-muted)] sm:text-lg">
-              <p>The original page referred to a hospital-based study published in Cell Metabolism that examined an ultra-processed diet under specific study conditions. A study like this should be understood in context; it does not mean that one food alone determines health outcomes. <a href="https://www.cell.com/cell-metabolism/fulltext/S1550-4131(19)30248-7" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">Read the Cell Metabolism study ↗</a></p>
-              <p>A practical approach is to notice frequency, portion sizes and how often highly processed options replace more varied meals. Avoid turning general guidance into strict rules unless your healthcare professional has advised a specific restriction.</p>
+              <p>To limit a food is to eat it less often or in smaller amounts. To avoid it is to cut it out completely. For most people and most foods on this list, limiting is enough.</p>
+              <p>Complete avoidance is usually only needed for an allergy or when a clinician has told you to. What matters most is your overall eating pattern, not one meal.</p>
             </div>
           </div>
         </Container>
       </section>
 
-      <section className=" py-10 sm:py-14 lg:py-16">
+      <section aria-labelledby="groups-title" className="border-y border-[var(--sutra-border)] bg-white/70 py-10 sm:py-14 lg:py-16">
+        <Container>
+          <div className="max-w-3xl">
+            <h2 id="groups-title" className="font-serif text-3xl leading-tight tracking-[-0.03em] sm:text-4xl">Foods to eat less often</h2>
+          </div>
+          <div className="mt-7 divide-y divide-[var(--sutra-border-strong)] border-y border-[var(--sutra-border-strong)]">
+            {groups.map((group) => (
+              <article key={group.title} className="grid gap-3 py-6 md:grid-cols-[0.6fr_1.4fr] md:gap-10 sm:py-7">
+                <div>
+                  <h3 className="font-serif text-2xl leading-tight sm:text-3xl">{group.title}</h3>
+                  <p className="mt-2 text-base font-medium text-[var(--sutra-muted)]">{group.foods}</p>
+                </div>
+                <p className="max-w-3xl text-base leading-8 text-[var(--sutra-muted)] sm:text-lg">{group.note}</p>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section aria-labelledby="study-title" className="py-10 sm:py-14 lg:py-16">
         <Container>
           <div className="grid gap-5 lg:grid-cols-[0.72fr_1.28fr] lg:gap-14">
-            <div><p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">Nutrition guidance</p><h2 className="mt-3 font-serif text-3xl leading-tight tracking-[-0.03em] sm:text-4xl">Sweeteners and familiar foods</h2></div>
+            <h2 id="study-title" className="font-serif text-3xl leading-tight tracking-[-0.03em] sm:text-4xl">What research says about processed food</h2>
             <div className="max-w-3xl space-y-4 text-base leading-8 text-[var(--sutra-muted)] sm:text-lg">
-              <p>The old page also listed gur and khandsari among its recommended foods. These are still sweeteners and contribute sugars to the diet; they should not be treated as unlimited or as a treatment for a health condition.</p>
-              <p>Food choices may need to be adjusted for individual circumstances, including diabetes, allergies or a prescribed diet. Discuss specific restrictions with a qualified healthcare professional.</p>
+              <p>
+                A 2019 study in <em>Cell Metabolism</em> kept 20 adults in a research hospital for four weeks. Each person ate an ultra-processed diet for two weeks and an unprocessed diet for two weeks, in random order. On the ultra-processed diet people ate about 500 more calories a day and gained about 0.9 kg. On the unprocessed diet they lost about the same.
+              </p>
+              <p>
+                This was a small, short study in healthy adults under controlled conditions, so it does not show what happens to every person over years. It suggests that a diet built on ultra-processed foods can lead people to eat more.{" "}
+                <a href="https://www.cell.com/cell-metabolism/fulltext/S1550-4131(19)30248-7" target="_blank" rel="noopener noreferrer" className="font-semibold text-[var(--sutra-teal)] underline underline-offset-4">Read the study ↗</a>
+              </p>
+              <p>A practical step is to notice how often packaged snacks replace meals made from simpler foods, and change that one habit first.</p>
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="border-y border-[var(--sutra-border)] py-10 sm:py-14"><Container><div className="max-w-3xl"><p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">Explore more</p><h2 className="mt-3 font-serif text-3xl leading-tight sm:text-4xl">Related nutrition guidance</h2></div><ul className="mt-6 max-w-4xl">
-            <li className="border-t border-[var(--sutra-border-strong)] py-5 sm:py-6"><Link href="/services/nutrition/what-to-eat" className="font-serif text-2xl underline-offset-4 hover:underline">What to eat ↗</Link><p className="mt-2 max-w-2xl text-base leading-7 text-[var(--sutra-muted)]">Explore the food groups and familiar foods listed in the original dietary guidance.</p></li>
-            <li className="border-t border-[var(--sutra-border-strong)] py-5 sm:py-6"><Link href="/services/nutrition/meal-routine-hydration" className="font-serif text-2xl underline-offset-4 hover:underline">Meal routines and hydration ↗</Link><p className="mt-2 max-w-2xl text-base leading-7 text-[var(--sutra-muted)]">Review meal frequency, routine and individual fluid needs.</p></li>
-            <li className="border-t border-[var(--sutra-border-strong)] py-5 sm:py-6"><Link href="/services/nutrition" className="font-serif text-2xl underline-offset-4 hover:underline">Nutrition overview ↗</Link><p className="mt-2 max-w-2xl text-base leading-7 text-[var(--sutra-muted)]">Return to the main nutrition counselling page.</p></li>
-          </ul><p className="mt-6 max-w-3xl text-sm leading-7 text-[var(--sutra-muted)]">This information is general education, not a personal diet prescription. If you have a medical condition, food allergy or prescribed dietary restriction, follow advice from your qualified healthcare professional.</p></Container></section>
+      <section aria-labelledby="faq-title" className="border-y border-[var(--sutra-border)] bg-white py-10 sm:py-14">
+        <Container>
+          <div className="max-w-3xl">
+            <h2 id="faq-title" className="font-serif text-3xl leading-tight sm:text-4xl">Foods to limit: common questions</h2>
+          </div>
+          <div className="mt-6 max-w-4xl divide-y divide-[var(--sutra-border-strong)] border-y border-[var(--sutra-border-strong)]">
+            {faqs.map((item) => (
+              <details key={item.q} className="group py-5">
+                <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 text-base font-semibold leading-7 marker:content-none sm:text-lg">
+                  <span>{item.q}</span>
+                  <span aria-hidden="true" className="text-xl text-[var(--sutra-teal)] transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="max-w-3xl pt-3 text-base leading-8 text-[var(--sutra-muted)] sm:text-lg">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </Container>
+      </section>
 
-      <section className="py-10 sm:py-14"><Container><div className="max-w-3xl"><p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">Common questions</p><h2 className="mt-3 font-serif text-3xl sm:text-4xl">Frequently asked questions</h2></div><div className="mt-6 max-w-4xl border-t border-[var(--sutra-border)]">
-            <details className="border-b border-[var(--sutra-border)] py-5"><summary className="cursor-pointer list-none pr-6 font-semibold text-lg">Do I need to avoid all these foods?</summary><p className="mt-3 max-w-3xl text-base leading-7 text-[var(--sutra-muted)]">Not necessarily. The source lists foods to limit, but individual needs differ. Focus on your overall eating pattern and follow any personalized advice you have received.</p></details>
-            <details className="border-b border-[var(--sutra-border)] py-5"><summary className="cursor-pointer list-none pr-6 font-semibold text-lg">Is jaggery better than white sugar?</summary><p className="mt-3 max-w-3xl text-base leading-7 text-[var(--sutra-muted)]">Jaggery and other sweeteners still contribute sugars. The amount and your individual health needs matter.</p></details>
-            <details className="border-b border-[var(--sutra-border)] py-5"><summary className="cursor-pointer list-none pr-6 font-semibold text-lg">Can I follow this list for a medical condition?</summary><p className="mt-3 max-w-3xl text-base leading-7 text-[var(--sutra-muted)]">General guidance may not be appropriate for every condition. Ask your clinician or qualified nutrition professional about restrictions relevant to your health.</p></details>
-      </div></Container></section>
+      <section aria-labelledby="related-title" className="py-10 sm:py-14">
+        <Container>
+          <h2 id="related-title" className="font-serif text-3xl leading-tight sm:text-4xl">Related nutrition guides</h2>
+          <ul className="mt-6 max-w-4xl">
+            <li className="border-t border-[var(--sutra-border-strong)] py-5">
+              <Link href="/services/nutrition/what-to-eat" className="font-serif text-2xl underline-offset-4 hover:underline">What to eat ↗</Link>
+              <p className="mt-2 max-w-2xl text-base leading-7 text-[var(--sutra-muted)]">Everyday foods grouped by type.</p>
+            </li>
+            <li className="border-t border-[var(--sutra-border-strong)] py-5">
+              <Link href="/services/nutrition/meal-routine-hydration" className="font-serif text-2xl underline-offset-4 hover:underline">Meal routines and hydration ↗</Link>
+              <p className="mt-2 max-w-2xl text-base leading-7 text-[var(--sutra-muted)]">Meal timing, daily routine and fluids.</p>
+            </li>
+            <li className="border-y border-[var(--sutra-border-strong)] py-5">
+              <Link href="/services/nutrition" className="font-serif text-2xl underline-offset-4 hover:underline">Nutrition overview ↗</Link>
+              <p className="mt-2 max-w-2xl text-base leading-7 text-[var(--sutra-muted)]">Back to the main nutrition page.</p>
+            </li>
+          </ul>
+        </Container>
+      </section>
 
-      <section className="bg-[#173B36] py-10 text-white sm:py-14"><Container><div className="max-w-3xl"><h2 className="font-serif text-3xl sm:text-4xl">Need guidance for your own circumstances?</h2><p className="mt-4 text-base leading-8 text-white/80 sm:text-lg">Discuss your food choices and health-related questions with a qualified healthcare professional.</p><Link href="/book-appointment" className="mt-6 inline-flex min-h-12 items-center justify-center bg-white px-6 py-3 font-semibold text-[#173B36]">Book a physician consultation ↗</Link></div></Container></section>
+      <section className="bg-[#173B36] py-10 text-white sm:py-14">
+        <Container>
+          <div className="max-w-3xl">
+            <h2 className="font-serif text-3xl sm:text-4xl">Need advice for your own health?</h2>
+            <p className="mt-4 text-base leading-8 text-white/80 sm:text-lg">Book an appointment to talk about which changes matter most for you.</p>
+            <Link href={BOOKING_URL} className="mt-6 inline-flex min-h-12 items-center justify-center bg-white px-6 py-3 font-semibold text-[#173B36]">Book an appointment ↗</Link>
+          </div>
+        </Container>
+      </section>
+
+      <p className="mx-auto max-w-7xl px-4 py-5 text-sm leading-6 text-[var(--sutra-muted)] sm:px-6 md:px-8 lg:px-12">
+        This page is general education, not a personal diet plan. If you have a medical condition, a food allergy or a prescribed diet, follow your clinician's advice.
+      </p>
     </main>
   );
 }
