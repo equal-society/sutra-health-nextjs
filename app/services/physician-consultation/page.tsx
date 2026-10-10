@@ -162,7 +162,7 @@ export default function PhysicianConsultationPage() {
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/services/physician-consulation.jpg')" }}
+          style={{ backgroundImage: "url('/images/services/physician-consulation.webp')" }}
         />
         <div aria-hidden="true" className="absolute inset-0 bg-[#10211E]/70" />
 
@@ -189,15 +189,7 @@ export default function PhysicianConsultationPage() {
               <span className="ml-3" aria-hidden="true">→</span>
             </Link>
 
-            <a
-              href={ONLINE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-12 w-full items-center justify-center border border-white/60 px-6 text-base font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto"
-            >
-              View online appointment options
-              <span className="ml-3" aria-hidden="true">↗</span>
-            </a>
+         
           </div>
         </div>
       </section>

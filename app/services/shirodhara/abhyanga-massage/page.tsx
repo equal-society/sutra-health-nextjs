@@ -3,10 +3,10 @@ import Link from "next/link";
 import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
-const PAGE_URL = `${SITE_URL}/services/therapeutic-yoga/pranayama`;
+const PAGE_URL = `${SITE_URL}/services/shirodhara/abhyanga-massage`;
 const BOOKING_URL = "/book-appointment";
-const TITLE = "Pranayama: Yogic Breathing Practices and Safety | Sutra Health";
-const DESCRIPTION = "What Pranayama is, common yogic breathing practices, how to start safely and who should take advice first.";
+const TITLE = "What Is Abhyanga Oil Massage? | Sutra Health Faridabad";
+const DESCRIPTION = "What Abhyanga is, what happens in a session, what it is offered for and when to check with a professional first.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -59,19 +59,19 @@ type PageData = {
 };
 
 const page: PageData = {
-  "eyebrow": "Pranayama",
-  "h1": "Pranayama: yogic breathing practices",
-  "lead": "Pranayama is the practice of regulating the breath. It is usually taught as simple, slow breathing exercises, often after movement or before meditation.",
+  "eyebrow": "Abhyanga",
+  "h1": "What is Abhyanga oil massage?",
+  "lead": "Abhyanga is a traditional full-body massage with warm herbal oil, offered for relaxation and general wellbeing.",
   "primary": {
     "label": "Book a consultation",
     "href": "/book-appointment"
   },
-  "secondaryLabel": "Back to Therapeutic Yoga",
+  "secondaryLabel": "Back to Shirodhara & Abhyanga",
   "sections": [
     {
-      "h2": "What the word means",
+      "h2": "What the term means",
       "paras": [
-        "Pranayama joins two Sanskrit words: prana, meaning breath or life force, and ayama, meaning to extend or regulate. In practice it means paying attention to the breath and slowing it down."
+        "Abhyanga is a traditional Ayurvedic oil massage. The related word snehana is often explained as 'to nurture with love', because sneha in Sanskrit means both oil and affection."
       ],
       "bullets": [],
       "items": [],
@@ -83,109 +83,48 @@ const page: PageData = {
       }
     },
     {
-      "h2": "Practices commonly taught",
-      "items": [
-        {
-          "title": "Deep belly breathing",
-          "text": "A gentle breath into the lower belly. A good starting point.",
-          "image": "",
-          "imageAlt": "",
-          "sub": "",
-          "tryThis": "",
-          "link": {
-            "href": "",
-            "label": ""
-          }
-        },
-        {
-          "title": "Alternate nostril breathing",
-          "sub": "Nadi Shodhana",
-          "text": "Breathing in and out through one nostril at a time, usually taught slowly and without holding the breath.",
-          "image": "",
-          "imageAlt": "",
-          "tryThis": "",
-          "link": {
-            "href": "",
-            "label": ""
-          }
-        },
-        {
-          "title": "Humming bee breath",
-          "sub": "Bhramari",
-          "text": "A slow breath out with a soft humming sound.",
-          "image": "",
-          "imageAlt": "",
-          "tryThis": "",
-          "link": {
-            "href": "",
-            "label": ""
-          }
-        },
-        {
-          "title": "Forceful breathing",
-          "sub": "Kapalabhati, Bhastrika",
-          "text": "Fast, forceful breathing. These need qualified guidance and are not suitable for everyone.",
-          "image": "",
-          "imageAlt": "",
-          "tryThis": "",
-          "link": {
-            "href": "",
-            "label": ""
-          }
-        }
-      ],
-      "paras": [],
-      "bullets": [],
-      "links": [],
-      "image": {
-        "src": "",
-        "alt": "",
-        "caption": ""
-      }
-    },
-    {
-      "h2": "How to start safely",
-      "bullets": [
-        "Sit comfortably with your back supported if needed",
-        "Breathe through your nose unless taught otherwise",
-        "Keep the breath smooth and unforced",
-        "Do not hold your breath until you have been taught how",
-        "Stop if you feel dizzy, light-headed or breathless",
-        "Learn new practices with an instructor first"
-      ],
-      "paras": [],
-      "items": [],
-      "links": [],
-      "image": {
-        "src": "",
-        "alt": "",
-        "caption": ""
-      }
-    },
-    {
-      "h2": "Take advice first if you have",
-      "bullets": [
-        "High blood pressure or heart disease",
-        "Asthma, COPD or another lung condition",
-        "Pregnancy",
-        "Recent surgery",
-        "Anxiety or panic that gets worse when you focus on your breath"
-      ],
-      "paras": [],
-      "items": [],
-      "links": [],
-      "image": {
-        "src": "",
-        "alt": "",
-        "caption": ""
-      }
-    },
-    {
-      "h2": "What the evidence says",
+      "h2": "What happens in a session",
       "paras": [
-        "Studies of slow breathing suggest it can help some people feel calmer, but the research varies in quality and results differ between people. Breathing practices are not a treatment for any condition."
+        "Warm herbal oils are massaged over the body. Traditional practice gives particular attention to the forehead, temples, ears, palms and soles, which are described in the tradition as marma points.",
+        "Session length, oils used and the areas massaged are confirmed when you book."
       ],
+      "image": {
+        "src": "/images/services/shirodhara/abhyanga-oil-message.png",
+        "alt": "Abhyanga oil massage treatment",
+        "caption": "Abhyanga oil massage at Life Quality."
+      },
       "bullets": [],
+      "items": [],
+      "links": []
+    },
+    {
+      "h2": "What it is offered for",
+      "paras": [
+        "People choose Abhyanga to relax and ease tension. Massage in general can help people feel calmer and ease tight muscles.",
+        "Traditional descriptions also mention improved circulation, rejuvenation and detoxification. These are traditional ideas and are not proven effects of the therapy."
+      ],
+      "image": {
+        "src": "/images/services/shirodhara/leg-oil-massage.webp",
+        "alt": "Leg and foot oil massage",
+        "caption": "Leg and foot massage."
+      },
+      "bullets": [],
+      "items": [],
+      "links": []
+    },
+    {
+      "h2": "Check first if any of these apply",
+      "paras": [
+        "Tell the practitioner, or speak to your doctor first, if you have:"
+      ],
+      "bullets": [
+        "Allergies to oils or herbs",
+        "Broken, inflamed or infected skin",
+        "Varicose veins, blood clots or circulation problems",
+        "Recent injury or surgery",
+        "Fever or infection",
+        "Pregnancy"
+      ],
       "items": [],
       "links": [],
       "image": {
@@ -197,48 +136,44 @@ const page: PageData = {
   ],
   "faqs": [
     {
-      "q": "How long should I practise?",
-      "a": "There is no set time. A few comfortable minutes done regularly is more realistic than a long session you drop."
+      "q": "Is Abhyanga a medical treatment?",
+      "a": "No. It is a traditional wellness therapy offered for relaxation and does not replace medical care."
     },
     {
-      "q": "Can Pranayama replace my medicine?",
-      "a": "No. It complements medical care and does not replace it."
+      "q": "Can I do oil massage at home?",
+      "a": "Some people use gentle oil massage as part of a relaxing self-care routine. Do a small skin test first and avoid it if you have a skin condition or allergy."
     },
     {
-      "q": "Is it safe for beginners?",
-      "a": "Gentle, slow breathing usually is. Avoid forceful practices and breath holding until you have been taught by a qualified instructor."
+      "q": "Can I combine it with Shirodhara?",
+      "a": "Ask when you book. Availability and session format are confirmed then."
     }
   ],
   "related": [
     {
-      "label": "Meditation",
-      "href": "/services/therapeutic-yoga/meditation"
+      "label": "Shirodhara therapy",
+      "href": "/services/shirodhara/shirodhara-therapy"
     },
     {
-      "label": "Yoga asana protocol",
-      "href": "/services/therapeutic-yoga/yoga-asana-protocol"
-    },
-    {
-      "label": "Positive thinking",
-      "href": "/services/behaviour-stress-mind/positive-thinking"
+      "label": "Before you book",
+      "href": "/services/shirodhara/what-to-expect"
     }
   ],
   "cta": {
-    "title": "Want to learn breathing practices safely?",
-    "text": "Book an appointment and share your health context.",
+    "title": "Want to try an Abhyanga session?",
+    "text": "Book an appointment to check suitability and confirm the details.",
     "label": "Book an appointment",
     "href": "/book-appointment"
   },
-  "disclaimer": "This page is general information. Yoga is complementary to medical care and does not diagnose or treat disease or replace prescribed treatment. Stop any practice that causes pain, dizziness or breathlessness.",
+  "disclaimer": "This page is general information about traditional wellness therapies. It is not medical advice, and the therapies do not diagnose or treat any condition or replace medical care.",
   "faqTitle": "Common questions",
   "parent": {
-    "name": "Therapeutic Yoga",
-    "href": "/services/therapeutic-yoga"
+    "name": "Shirodhara & Abhyanga",
+    "href": "/services/shirodhara"
   },
-  "crumbLabel": "Pranayama"
+  "crumbLabel": "Abhyanga Oil Massage"
 };
 
-const crumbs = [{"name": "Home", "href": "/"}, {"name": "Services", "href": "/services"}, {"name": "Therapeutic Yoga", "href": "/services/therapeutic-yoga"}, {"name": "Pranayama", "href": "/services/therapeutic-yoga/pranayama"}];
+const crumbs = [{"name": "Home", "href": "/"}, {"name": "Services", "href": "/services"}, {"name": "Shirodhara & Abhyanga", "href": "/services/shirodhara"}, {"name": "Abhyanga Oil Massage", "href": "/services/shirodhara/abhyanga-massage"}];
 
 const schema = {
   "@context": "https://schema.org",
@@ -288,6 +223,7 @@ export default function Page() {
       <section className="border-b border-[var(--sutra-border)] bg-white">
         <Container>
           <div className="max-w-4xl py-10 sm:py-14 lg:py-16">
+          
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.17em] text-[var(--sutra-teal)]">{page.eyebrow}</p>
             <h1 className="mt-4 max-w-4xl font-serif text-4xl leading-[1.1] tracking-[-0.035em] sm:text-5xl lg:text-6xl">{page.h1}</h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[var(--sutra-muted)] sm:text-xl sm:leading-9">{page.lead}</p>

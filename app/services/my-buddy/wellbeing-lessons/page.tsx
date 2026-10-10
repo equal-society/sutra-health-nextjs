@@ -3,10 +3,10 @@ import Link from "next/link";
 import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
-const PAGE_URL = `${SITE_URL}/services/therapeutic-yoga/pranayama`;
+const PAGE_URL = `${SITE_URL}/services/my-buddy/wellbeing-lessons`;
 const BOOKING_URL = "/book-appointment";
-const TITLE = "Pranayama: Yogic Breathing Practices and Safety | Sutra Health";
-const DESCRIPTION = "What Pranayama is, common yogic breathing practices, how to start safely and who should take advice first.";
+const TITLE = "Six Lessons for Emotional Wellbeing | My Buddy | Sutra Health";
+const DESCRIPTION = "Six simple lessons from the My Buddy programme: acceptance, responsibility, organised surroundings, hydration, self-care and awareness.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -59,35 +59,33 @@ type PageData = {
 };
 
 const page: PageData = {
-  "eyebrow": "Pranayama",
-  "h1": "Pranayama: yogic breathing practices",
-  "lead": "Pranayama is the practice of regulating the breath. It is usually taught as simple, slow breathing exercises, often after movement or before meditation.",
+  "eyebrow": "My Buddy",
+  "h1": "Six lessons for good emotional wellbeing",
+  "lead": "These are the ideas buddies share with each other. They are simple habits, not treatments.",
   "primary": {
-    "label": "Book a consultation",
-    "href": "/book-appointment"
+    "label": "Become or find a buddy",
+    "href": "/services/my-buddy/join"
   },
-  "secondaryLabel": "Back to Therapeutic Yoga",
+  "secondaryLabel": "Back to My Buddy",
   "sections": [
     {
-      "h2": "What the word means",
-      "paras": [
-        "Pranayama joins two Sanskrit words: prana, meaning breath or life force, and ayama, meaning to extend or regulate. In practice it means paying attention to the breath and slowing it down."
-      ],
-      "bullets": [],
-      "items": [],
-      "links": [],
-      "image": {
-        "src": "",
-        "alt": "",
-        "caption": ""
-      }
-    },
-    {
-      "h2": "Practices commonly taught",
+      "h2": "The six lessons",
       "items": [
         {
-          "title": "Deep belly breathing",
-          "text": "A gentle breath into the lower belly. A good starting point.",
+          "title": "Acceptance",
+          "text": "Accept the things that cannot be changed and put your attention on what you can grow.",
+          "link": {
+            "href": "/services/behaviour-stress-mind/positive-thinking",
+            "label": "Read about positive thinking"
+          },
+          "image": "",
+          "imageAlt": "",
+          "sub": "",
+          "tryThis": ""
+        },
+        {
+          "title": "Take responsibility",
+          "text": "Focus on what you can influence, build a supportive environment and own your choices and actions.",
           "image": "",
           "imageAlt": "",
           "sub": "",
@@ -98,11 +96,11 @@ const page: PageData = {
           }
         },
         {
-          "title": "Alternate nostril breathing",
-          "sub": "Nadi Shodhana",
-          "text": "Breathing in and out through one nostril at a time, usually taught slowly and without holding the breath.",
+          "title": "Organised surroundings",
+          "text": "A clean, tidy space may help support clearer thinking and a sense of balance.",
           "image": "",
           "imageAlt": "",
+          "sub": "",
           "tryThis": "",
           "link": {
             "href": "",
@@ -110,28 +108,40 @@ const page: PageData = {
           }
         },
         {
-          "title": "Humming bee breath",
-          "sub": "Bhramari",
-          "text": "A slow breath out with a soft humming sound.",
+          "title": "Hydration",
+          "text": "Drinking enough fluid supports normal physical and mental function. How much you need varies from person to person.",
+          "link": {
+            "href": "/services/nutrition/meal-routine-hydration",
+            "label": "Read about hydration"
+          },
           "image": "",
           "imageAlt": "",
-          "tryThis": "",
-          "link": {
-            "href": "",
-            "label": ""
-          }
+          "sub": "",
+          "tryThis": ""
         },
         {
-          "title": "Forceful breathing",
-          "sub": "Kapalabhati, Bhastrika",
-          "text": "Fast, forceful breathing. These need qualified guidance and are not suitable for everyone.",
+          "title": "Self-care",
+          "text": "Some people use gentle oil massage as part of a relaxing self-care routine.",
+          "link": {
+            "href": "/services/shirodhara/abhyanga-massage",
+            "label": "Read about Abhyanga"
+          },
           "image": "",
           "imageAlt": "",
-          "tryThis": "",
+          "sub": "",
+          "tryThis": ""
+        },
+        {
+          "title": "Energy and awareness",
+          "text": "Breathing and body-awareness practices may help with relaxation and a sense of calm.",
           "link": {
-            "href": "",
-            "label": ""
-          }
+            "href": "/services/therapeutic-yoga/pranayama",
+            "label": "Read about Pranayama"
+          },
+          "image": "",
+          "imageAlt": "",
+          "sub": "",
+          "tryThis": ""
         }
       ],
       "paras": [],
@@ -142,103 +152,44 @@ const page: PageData = {
         "alt": "",
         "caption": ""
       }
-    },
-    {
-      "h2": "How to start safely",
-      "bullets": [
-        "Sit comfortably with your back supported if needed",
-        "Breathe through your nose unless taught otherwise",
-        "Keep the breath smooth and unforced",
-        "Do not hold your breath until you have been taught how",
-        "Stop if you feel dizzy, light-headed or breathless",
-        "Learn new practices with an instructor first"
-      ],
-      "paras": [],
-      "items": [],
-      "links": [],
-      "image": {
-        "src": "",
-        "alt": "",
-        "caption": ""
-      }
-    },
-    {
-      "h2": "Take advice first if you have",
-      "bullets": [
-        "High blood pressure or heart disease",
-        "Asthma, COPD or another lung condition",
-        "Pregnancy",
-        "Recent surgery",
-        "Anxiety or panic that gets worse when you focus on your breath"
-      ],
-      "paras": [],
-      "items": [],
-      "links": [],
-      "image": {
-        "src": "",
-        "alt": "",
-        "caption": ""
-      }
-    },
-    {
-      "h2": "What the evidence says",
-      "paras": [
-        "Studies of slow breathing suggest it can help some people feel calmer, but the research varies in quality and results differ between people. Breathing practices are not a treatment for any condition."
-      ],
-      "bullets": [],
-      "items": [],
-      "links": [],
-      "image": {
-        "src": "",
-        "alt": "",
-        "caption": ""
-      }
     }
   ],
   "faqs": [
     {
-      "q": "How long should I practise?",
-      "a": "There is no set time. A few comfortable minutes done regularly is more realistic than a long session you drop."
+      "q": "Do I need to follow all six lessons?",
+      "a": "No. Pick the one that feels most useful and try it for a week or two."
     },
     {
-      "q": "Can Pranayama replace my medicine?",
-      "a": "No. It complements medical care and does not replace it."
-    },
-    {
-      "q": "Is it safe for beginners?",
-      "a": "Gentle, slow breathing usually is. Avoid forceful practices and breath holding until you have been taught by a qualified instructor."
+      "q": "Can these lessons replace professional help?",
+      "a": "No. They support wellbeing but do not replace medical or mental-health care."
     }
   ],
   "related": [
     {
-      "label": "Meditation",
-      "href": "/services/therapeutic-yoga/meditation"
+      "label": "How to join My Buddy",
+      "href": "/services/my-buddy/join"
     },
     {
-      "label": "Yoga asana protocol",
-      "href": "/services/therapeutic-yoga/yoga-asana-protocol"
-    },
-    {
-      "label": "Positive thinking",
-      "href": "/services/behaviour-stress-mind/positive-thinking"
+      "label": "Daily habits",
+      "href": "/services/lifestyle/daily-habits"
     }
   ],
   "cta": {
-    "title": "Want to learn breathing practices safely?",
-    "text": "Book an appointment and share your health context.",
-    "label": "Book an appointment",
-    "href": "/book-appointment"
+    "title": "Want a buddy to practise with?",
+    "text": "Join My Buddy to share these habits with someone.",
+    "label": "Become or find a buddy",
+    "href": "/services/my-buddy/join"
   },
-  "disclaimer": "This page is general information. Yoga is complementary to medical care and does not diagnose or treat disease or replace prescribed treatment. Stop any practice that causes pain, dizziness or breathlessness.",
+  "disclaimer": "My Buddy is a peer-support initiative. It is not a substitute for professional medical or mental-health care. If you or someone else is in immediate danger, contact local emergency services.",
   "faqTitle": "Common questions",
   "parent": {
-    "name": "Therapeutic Yoga",
-    "href": "/services/therapeutic-yoga"
+    "name": "My Buddy",
+    "href": "/services/my-buddy"
   },
-  "crumbLabel": "Pranayama"
+  "crumbLabel": "Wellbeing Lessons"
 };
 
-const crumbs = [{"name": "Home", "href": "/"}, {"name": "Services", "href": "/services"}, {"name": "Therapeutic Yoga", "href": "/services/therapeutic-yoga"}, {"name": "Pranayama", "href": "/services/therapeutic-yoga/pranayama"}];
+const crumbs = [{"name": "Home", "href": "/"}, {"name": "Services", "href": "/services"}, {"name": "My Buddy", "href": "/services/my-buddy"}, {"name": "Wellbeing Lessons", "href": "/services/my-buddy/wellbeing-lessons"}];
 
 const schema = {
   "@context": "https://schema.org",
@@ -288,6 +239,7 @@ export default function Page() {
       <section className="border-b border-[var(--sutra-border)] bg-white">
         <Container>
           <div className="max-w-4xl py-10 sm:py-14 lg:py-16">
+           
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.17em] text-[var(--sutra-teal)]">{page.eyebrow}</p>
             <h1 className="mt-4 max-w-4xl font-serif text-4xl leading-[1.1] tracking-[-0.035em] sm:text-5xl lg:text-6xl">{page.h1}</h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[var(--sutra-muted)] sm:text-xl sm:leading-9">{page.lead}</p>

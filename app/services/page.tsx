@@ -59,22 +59,7 @@ const services = [
     image: "/images/service-hero.webp",
     href: "/services/my-buddy",
   },
-  {
-    number: "08",
-    title: "Singing, Kirtan & Dance",
-    description:
-      "Explore music, movement and connection as community wellbeing activities.",
-    image: "/images/service-hero.webp",
-    href: "/services/singing-kirtan-dance",
-  },
-  {
-    number: "09",
-    title: "Nature Connect",
-    description:
-      "Explore nature-based activities and everyday outdoor habits that support wellbeing.",
-    image: "/images/service-hero.webp",
-    href: "/services/nature-connect",
-  },
+
  
 ];
 

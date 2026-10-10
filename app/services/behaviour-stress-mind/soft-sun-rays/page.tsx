@@ -3,10 +3,10 @@ import Link from "next/link";
 import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
-const PAGE_URL = `${SITE_URL}/services/therapeutic-yoga/pranayama`;
+const PAGE_URL = `${SITE_URL}/services/behaviour-stress-mind/soft-sun-rays`;
 const BOOKING_URL = "/book-appointment";
-const TITLE = "Pranayama: Yogic Breathing Practices and Safety | Sutra Health";
-const DESCRIPTION = "What Pranayama is, common yogic breathing practices, how to start safely and who should take advice first.";
+const TITLE = "Benefits of Soft Morning Sunlight | Sutra Health Faridabad";
+const DESCRIPTION = "What morning sunlight can do for vitamin D, body clock and mood, what it cannot do, and how to enjoy it safely.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -59,103 +59,29 @@ type PageData = {
 };
 
 const page: PageData = {
-  "eyebrow": "Pranayama",
-  "h1": "Pranayama: yogic breathing practices",
-  "lead": "Pranayama is the practice of regulating the breath. It is usually taught as simple, slow breathing exercises, often after movement or before meditation.",
+  "eyebrow": "Daylight and wellbeing",
+  "h1": "Soft morning sunlight: what it can and cannot do",
+  "lead": "Gentle morning light can be a simple way to start the day with time outdoors. Here is what is known, and how to enjoy it safely.",
   "primary": {
     "label": "Book a consultation",
     "href": "/book-appointment"
   },
-  "secondaryLabel": "Back to Therapeutic Yoga",
+  "secondaryLabel": "Back to Behaviour, Stress & Mind",
   "sections": [
     {
-      "h2": "What the word means",
+      "h2": "Vitamin D",
       "paras": [
-        "Pranayama joins two Sanskrit words: prana, meaning breath or life force, and ayama, meaning to extend or regulate. In practice it means paying attention to the breath and slowing it down."
+        "Skin makes vitamin D when exposed to sunlight, and sun exposure is one source alongside food and supplements. How much you make depends on skin tone, season, time of day, clothing and where you live.",
+        "Low vitamin D is common in India. If you think yours may be low, ask a doctor about a blood test rather than guessing."
       ],
-      "bullets": [],
-      "items": [],
-      "links": [],
-      "image": {
-        "src": "",
-        "alt": "",
-        "caption": ""
-      }
-    },
-    {
-      "h2": "Practices commonly taught",
-      "items": [
+      "links": [
         {
-          "title": "Deep belly breathing",
-          "text": "A gentle breath into the lower belly. A good starting point.",
-          "image": "",
-          "imageAlt": "",
-          "sub": "",
-          "tryThis": "",
-          "link": {
-            "href": "",
-            "label": ""
-          }
-        },
-        {
-          "title": "Alternate nostril breathing",
-          "sub": "Nadi Shodhana",
-          "text": "Breathing in and out through one nostril at a time, usually taught slowly and without holding the breath.",
-          "image": "",
-          "imageAlt": "",
-          "tryThis": "",
-          "link": {
-            "href": "",
-            "label": ""
-          }
-        },
-        {
-          "title": "Humming bee breath",
-          "sub": "Bhramari",
-          "text": "A slow breath out with a soft humming sound.",
-          "image": "",
-          "imageAlt": "",
-          "tryThis": "",
-          "link": {
-            "href": "",
-            "label": ""
-          }
-        },
-        {
-          "title": "Forceful breathing",
-          "sub": "Kapalabhati, Bhastrika",
-          "text": "Fast, forceful breathing. These need qualified guidance and are not suitable for everyone.",
-          "image": "",
-          "imageAlt": "",
-          "tryThis": "",
-          "link": {
-            "href": "",
-            "label": ""
-          }
+          "label": "Talk to a physician",
+          "href": "/services/physician-consultation"
         }
       ],
-      "paras": [],
       "bullets": [],
-      "links": [],
-      "image": {
-        "src": "",
-        "alt": "",
-        "caption": ""
-      }
-    },
-    {
-      "h2": "How to start safely",
-      "bullets": [
-        "Sit comfortably with your back supported if needed",
-        "Breathe through your nose unless taught otherwise",
-        "Keep the breath smooth and unforced",
-        "Do not hold your breath until you have been taught how",
-        "Stop if you feel dizzy, light-headed or breathless",
-        "Learn new practices with an instructor first"
-      ],
-      "paras": [],
       "items": [],
-      "links": [],
       "image": {
         "src": "",
         "alt": "",
@@ -163,31 +89,68 @@ const page: PageData = {
       }
     },
     {
-      "h2": "Take advice first if you have",
-      "bullets": [
-        "High blood pressure or heart disease",
-        "Asthma, COPD or another lung condition",
-        "Pregnancy",
-        "Recent surgery",
-        "Anxiety or panic that gets worse when you focus on your breath"
-      ],
-      "paras": [],
-      "items": [],
-      "links": [],
-      "image": {
-        "src": "",
-        "alt": "",
-        "caption": ""
-      }
-    },
-    {
-      "h2": "What the evidence says",
+      "h2": "Daylight and your body clock",
       "paras": [
-        "Studies of slow breathing suggest it can help some people feel calmer, but the research varies in quality and results differ between people. Breathing practices are not a treatment for any condition."
+        "Light in the morning helps set your body's daily rhythm, which can support a regular sleep-wake pattern. Going outside soon after waking is a simple habit to try."
       ],
       "bullets": [],
       "items": [],
       "links": [],
+      "image": {
+        "src": "",
+        "alt": "",
+        "caption": ""
+      }
+    },
+    {
+      "h2": "Mood and general wellbeing",
+      "paras": [
+        "Time outdoors and daylight are associated with a better mood and a sense of wellbeing. This is an association, not a treatment. Sunlight does not treat depression or other conditions."
+      ],
+      "bullets": [],
+      "items": [],
+      "links": [],
+      "image": {
+        "src": "",
+        "alt": "",
+        "caption": ""
+      }
+    },
+    {
+      "h2": "Enjoy it safely",
+      "bullets": [
+        "Prefer gentle morning or late-afternoon light over the strong midday sun",
+        "Never look directly at the sun",
+        "Avoid sunburn, and protect your skin if you stay out longer",
+        "Check with your doctor if you take medicines that make skin sensitive to sun, or have a skin condition",
+        "Do not use sunlight as a replacement for treatment you have been prescribed"
+      ],
+      "paras": [],
+      "items": [],
+      "links": [],
+      "image": {
+        "src": "",
+        "alt": "",
+        "caption": ""
+      }
+    },
+    {
+      "h2": "Make it a habit",
+      "paras": [
+        "Pair morning light with something you already do, such as a short walk or a cup of tea outside."
+      ],
+      "links": [
+        {
+          "label": "Nature walks",
+          "href": "/services/behaviour-stress-mind/nature-walks"
+        },
+        {
+          "label": "Daily habits",
+          "href": "/services/lifestyle/daily-habits"
+        }
+      ],
+      "bullets": [],
+      "items": [],
       "image": {
         "src": "",
         "alt": "",
@@ -197,48 +160,44 @@ const page: PageData = {
   ],
   "faqs": [
     {
-      "q": "How long should I practise?",
-      "a": "There is no set time. A few comfortable minutes done regularly is more realistic than a long session you drop."
+      "q": "How long should I stay in the sun?",
+      "a": "There is no single answer. It depends on your skin, location and season, so ask your doctor, especially if you have a skin condition or a history of skin cancer."
     },
     {
-      "q": "Can Pranayama replace my medicine?",
-      "a": "No. It complements medical care and does not replace it."
+      "q": "Can sunlight replace vitamin D supplements?",
+      "a": "Not always. If a doctor has advised supplements, keep following that advice."
     },
     {
-      "q": "Is it safe for beginners?",
-      "a": "Gentle, slow breathing usually is. Avoid forceful practices and breath holding until you have been taught by a qualified instructor."
+      "q": "Does morning sunlight help my heart or relieve pain?",
+      "a": "There is not enough evidence to say so. Time outdoors is part of a healthy routine, but it is not a treatment."
     }
   ],
   "related": [
     {
-      "label": "Meditation",
-      "href": "/services/therapeutic-yoga/meditation"
+      "label": "Nature walks",
+      "href": "/services/behaviour-stress-mind/nature-walks"
     },
     {
-      "label": "Yoga asana protocol",
-      "href": "/services/therapeutic-yoga/yoga-asana-protocol"
-    },
-    {
-      "label": "Positive thinking",
-      "href": "/services/behaviour-stress-mind/positive-thinking"
+      "label": "Physician Consultation",
+      "href": "/services/physician-consultation"
     }
   ],
   "cta": {
-    "title": "Want to learn breathing practices safely?",
-    "text": "Book an appointment and share your health context.",
+    "title": "Concerned about vitamin D or your sleep?",
+    "text": "Book an appointment to discuss it with a physician.",
     "label": "Book an appointment",
     "href": "/book-appointment"
   },
-  "disclaimer": "This page is general information. Yoga is complementary to medical care and does not diagnose or treat disease or replace prescribed treatment. Stop any practice that causes pain, dizziness or breathlessness.",
+  "disclaimer": "This page is general information. It is not a substitute for medical assessment or diagnosis and treatment from a qualified mental-health professional. If you or someone else is in immediate danger, contact local emergency services.",
   "faqTitle": "Common questions",
   "parent": {
-    "name": "Therapeutic Yoga",
-    "href": "/services/therapeutic-yoga"
+    "name": "Behaviour, Stress & Mind",
+    "href": "/services/behaviour-stress-mind"
   },
-  "crumbLabel": "Pranayama"
+  "crumbLabel": "Soft Morning Sunlight"
 };
 
-const crumbs = [{"name": "Home", "href": "/"}, {"name": "Services", "href": "/services"}, {"name": "Therapeutic Yoga", "href": "/services/therapeutic-yoga"}, {"name": "Pranayama", "href": "/services/therapeutic-yoga/pranayama"}];
+const crumbs = [{"name": "Home", "href": "/"}, {"name": "Services", "href": "/services"}, {"name": "Behaviour, Stress & Mind", "href": "/services/behaviour-stress-mind"}, {"name": "Soft Morning Sunlight", "href": "/services/behaviour-stress-mind/soft-sun-rays"}];
 
 const schema = {
   "@context": "https://schema.org",
@@ -288,6 +247,7 @@ export default function Page() {
       <section className="border-b border-[var(--sutra-border)] bg-white">
         <Container>
           <div className="max-w-4xl py-10 sm:py-14 lg:py-16">
+          
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.17em] text-[var(--sutra-teal)]">{page.eyebrow}</p>
             <h1 className="mt-4 max-w-4xl font-serif text-4xl leading-[1.1] tracking-[-0.035em] sm:text-5xl lg:text-6xl">{page.h1}</h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[var(--sutra-muted)] sm:text-xl sm:leading-9">{page.lead}</p>

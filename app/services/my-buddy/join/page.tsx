@@ -3,10 +3,10 @@ import Link from "next/link";
 import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
-const PAGE_URL = `${SITE_URL}/services/therapeutic-yoga/pranayama`;
+const PAGE_URL = `${SITE_URL}/services/my-buddy/join`;
 const BOOKING_URL = "/book-appointment";
-const TITLE = "Pranayama: Yogic Breathing Practices and Safety | Sutra Health";
-const DESCRIPTION = "What Pranayama is, common yogic breathing practices, how to start safely and who should take advice first.";
+const TITLE = "Become a Buddy or Find a Buddy | My Buddy | Sutra Health";
+const DESCRIPTION = "How to take part in My Buddy: register to become a peer-support buddy, or contact Sutra Health to find one.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -59,103 +59,30 @@ type PageData = {
 };
 
 const page: PageData = {
-  "eyebrow": "Pranayama",
-  "h1": "Pranayama: yogic breathing practices",
-  "lead": "Pranayama is the practice of regulating the breath. It is usually taught as simple, slow breathing exercises, often after movement or before meditation.",
+  "eyebrow": "My Buddy",
+  "h1": "How to become a buddy or find one",
+  "lead": "Choose the option that fits you. Both start with a simple registration or enquiry.",
   "primary": {
-    "label": "Book a consultation",
-    "href": "/book-appointment"
+    "label": "Register to become a buddy",
+    "href": "https://docs.google.com/forms/d/e/1FAIpQLSdtgQtU1eIuwNpmgpOVOrIi_fZzHv5rOxiJe-sH_SG3NUTRiQ/viewform"
   },
-  "secondaryLabel": "Back to Therapeutic Yoga",
+  "secondaryLabel": "Back to My Buddy",
   "sections": [
     {
-      "h2": "What the word means",
+      "h2": "Become a buddy",
       "paras": [
-        "Pranayama joins two Sanskrit words: prana, meaning breath or life force, and ayama, meaning to extend or regulate. In practice it means paying attention to the breath and slowing it down."
+        "Support others as they work towards positive habits, confidence and healthier routines by being a caring and supportive companion.",
+        "Register using the form. The team will share the next steps with you."
       ],
-      "bullets": [],
-      "items": [],
-      "links": [],
-      "image": {
-        "src": "",
-        "alt": "",
-        "caption": ""
-      }
-    },
-    {
-      "h2": "Practices commonly taught",
-      "items": [
+      "links": [
         {
-          "title": "Deep belly breathing",
-          "text": "A gentle breath into the lower belly. A good starting point.",
-          "image": "",
-          "imageAlt": "",
-          "sub": "",
-          "tryThis": "",
-          "link": {
-            "href": "",
-            "label": ""
-          }
-        },
-        {
-          "title": "Alternate nostril breathing",
-          "sub": "Nadi Shodhana",
-          "text": "Breathing in and out through one nostril at a time, usually taught slowly and without holding the breath.",
-          "image": "",
-          "imageAlt": "",
-          "tryThis": "",
-          "link": {
-            "href": "",
-            "label": ""
-          }
-        },
-        {
-          "title": "Humming bee breath",
-          "sub": "Bhramari",
-          "text": "A slow breath out with a soft humming sound.",
-          "image": "",
-          "imageAlt": "",
-          "tryThis": "",
-          "link": {
-            "href": "",
-            "label": ""
-          }
-        },
-        {
-          "title": "Forceful breathing",
-          "sub": "Kapalabhati, Bhastrika",
-          "text": "Fast, forceful breathing. These need qualified guidance and are not suitable for everyone.",
-          "image": "",
-          "imageAlt": "",
-          "tryThis": "",
-          "link": {
-            "href": "",
-            "label": ""
-          }
+          "label": "Open the buddy registration form",
+          "href": "https://docs.google.com/forms/d/e/1FAIpQLSdtgQtU1eIuwNpmgpOVOrIi_fZzHv5rOxiJe-sH_SG3NUTRiQ/viewform",
+          "external": true
         }
       ],
-      "paras": [],
       "bullets": [],
-      "links": [],
-      "image": {
-        "src": "",
-        "alt": "",
-        "caption": ""
-      }
-    },
-    {
-      "h2": "How to start safely",
-      "bullets": [
-        "Sit comfortably with your back supported if needed",
-        "Breathe through your nose unless taught otherwise",
-        "Keep the breath smooth and unforced",
-        "Do not hold your breath until you have been taught how",
-        "Stop if you feel dizzy, light-headed or breathless",
-        "Learn new practices with an instructor first"
-      ],
-      "paras": [],
       "items": [],
-      "links": [],
       "image": {
         "src": "",
         "alt": "",
@@ -163,27 +90,29 @@ const page: PageData = {
       }
     },
     {
-      "h2": "Take advice first if you have",
-      "bullets": [
-        "High blood pressure or heart disease",
-        "Asthma, COPD or another lung condition",
-        "Pregnancy",
-        "Recent surgery",
-        "Anxiety or panic that gets worse when you focus on your breath"
-      ],
-      "paras": [],
-      "items": [],
-      "links": [],
-      "image": {
-        "src": "",
-        "alt": "",
-        "caption": ""
-      }
-    },
-    {
-      "h2": "What the evidence says",
+      "h2": "Find a buddy",
       "paras": [
-        "Studies of slow breathing suggest it can help some people feel calmer, but the research varies in quality and results differ between people. Breathing practices are not a treatment for any condition."
+        "Connect with someone who can offer encouragement as you work towards healthy living, emotional wellbeing and a positive mindset.",
+        "Contact Sutra Health to say you would like a buddy."
+      ],
+      "links": [
+        {
+          "label": "Contact Sutra Health",
+          "href": "/contact"
+        }
+      ],
+      "bullets": [],
+      "items": [],
+      "image": {
+        "src": "",
+        "alt": "",
+        "caption": ""
+      }
+    },
+    {
+      "h2": "Before you join",
+      "paras": [
+        "My Buddy is peer support, not professional care. If you need medical or mental-health support, speak to a qualified professional as well. If you or someone else is in immediate danger, contact local emergency services."
       ],
       "bullets": [],
       "items": [],
@@ -197,48 +126,40 @@ const page: PageData = {
   ],
   "faqs": [
     {
-      "q": "How long should I practise?",
-      "a": "There is no set time. A few comfortable minutes done regularly is more realistic than a long session you drop."
+      "q": "Do I need any experience to become a buddy?",
+      "a": "Requirements and any training are shared when you register. Ask the team if you are unsure."
     },
     {
-      "q": "Can Pranayama replace my medicine?",
-      "a": "No. It complements medical care and does not replace it."
-    },
-    {
-      "q": "Is it safe for beginners?",
-      "a": "Gentle, slow breathing usually is. Avoid forceful practices and breath holding until you have been taught by a qualified instructor."
+      "q": "Is there a fee?",
+      "a": "Details are confirmed when you register or get in touch."
     }
   ],
   "related": [
     {
-      "label": "Meditation",
-      "href": "/services/therapeutic-yoga/meditation"
+      "label": "Six wellbeing lessons",
+      "href": "/services/my-buddy/wellbeing-lessons"
     },
     {
-      "label": "Yoga asana protocol",
-      "href": "/services/therapeutic-yoga/yoga-asana-protocol"
-    },
-    {
-      "label": "Positive thinking",
-      "href": "/services/behaviour-stress-mind/positive-thinking"
+      "label": "Behaviour, Stress & Mind",
+      "href": "/services/behaviour-stress-mind"
     }
   ],
   "cta": {
-    "title": "Want to learn breathing practices safely?",
-    "text": "Book an appointment and share your health context.",
-    "label": "Book an appointment",
-    "href": "/book-appointment"
+    "title": "Questions before you join?",
+    "text": "Get in touch and ask the team.",
+    "label": "Contact Sutra Health",
+    "href": "/contact"
   },
-  "disclaimer": "This page is general information. Yoga is complementary to medical care and does not diagnose or treat disease or replace prescribed treatment. Stop any practice that causes pain, dizziness or breathlessness.",
+  "disclaimer": "My Buddy is a peer-support initiative. It is not a substitute for professional medical or mental-health care. If you or someone else is in immediate danger, contact local emergency services.",
   "faqTitle": "Common questions",
   "parent": {
-    "name": "Therapeutic Yoga",
-    "href": "/services/therapeutic-yoga"
+    "name": "My Buddy",
+    "href": "/services/my-buddy"
   },
-  "crumbLabel": "Pranayama"
+  "crumbLabel": "How to Join"
 };
 
-const crumbs = [{"name": "Home", "href": "/"}, {"name": "Services", "href": "/services"}, {"name": "Therapeutic Yoga", "href": "/services/therapeutic-yoga"}, {"name": "Pranayama", "href": "/services/therapeutic-yoga/pranayama"}];
+const crumbs = [{"name": "Home", "href": "/"}, {"name": "Services", "href": "/services"}, {"name": "My Buddy", "href": "/services/my-buddy"}, {"name": "How to Join", "href": "/services/my-buddy/join"}];
 
 const schema = {
   "@context": "https://schema.org",
@@ -288,6 +209,7 @@ export default function Page() {
       <section className="border-b border-[var(--sutra-border)] bg-white">
         <Container>
           <div className="max-w-4xl py-10 sm:py-14 lg:py-16">
+           
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.17em] text-[var(--sutra-teal)]">{page.eyebrow}</p>
             <h1 className="mt-4 max-w-4xl font-serif text-4xl leading-[1.1] tracking-[-0.035em] sm:text-5xl lg:text-6xl">{page.h1}</h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[var(--sutra-muted)] sm:text-xl sm:leading-9">{page.lead}</p>

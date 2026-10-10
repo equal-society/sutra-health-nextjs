@@ -3,10 +3,10 @@ import Link from "next/link";
 import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
-const PAGE_URL = `${SITE_URL}/services/therapeutic-yoga/pranayama`;
+const PAGE_URL = `${SITE_URL}/services/behaviour-stress-mind/nature-walks`;
 const BOOKING_URL = "/book-appointment";
-const TITLE = "Pranayama: Yogic Breathing Practices and Safety | Sutra Health";
-const DESCRIPTION = "What Pranayama is, common yogic breathing practices, how to start safely and who should take advice first.";
+const TITLE = "Nature Walks and Indoor Plants for Everyday Wellbeing | Sutra Health";
+const DESCRIPTION = "Simple ways to build nature walks into your routine and add greenery at home, with easy indoor plants and honest notes on what plants can and cannot do for air quality.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -59,35 +59,36 @@ type PageData = {
 };
 
 const page: PageData = {
-  "eyebrow": "Pranayama",
-  "h1": "Pranayama: yogic breathing practices",
-  "lead": "Pranayama is the practice of regulating the breath. It is usually taught as simple, slow breathing exercises, often after movement or before meditation.",
+  "eyebrow": "Nature and wellbeing",
+  "h1": "Nature walks and indoor plants for everyday wellbeing",
+  "lead": "Simple ways to spend more time outdoors, enjoy walking in green spaces and bring greenery into your home.",
   "primary": {
     "label": "Book a consultation",
     "href": "/book-appointment"
   },
-  "secondaryLabel": "Back to Therapeutic Yoga",
+  "secondaryLabel": "Back to Behaviour, Stress & Mind",
   "sections": [
     {
-      "h2": "What the word means",
+      "h2": "Why nature walks",
       "paras": [
-        "Pranayama joins two Sanskrit words: prana, meaning breath or life force, and ayama, meaning to extend or regulate. In practice it means paying attention to the breath and slowing it down."
+        "A nature walk combines gentle physical activity with time outdoors. Walking in a green or natural setting can be an enjoyable way to move, take a break from screens and vary your day.",
+        "It does not need to be long or hard. Choose a safe route that suits your fitness, the weather and your surroundings."
       ],
+      "image": {
+        "src": "/images/Nature%20Walks.jpg",
+        "alt": "Person taking a nature walk outdoors",
+        "caption": "A comfortable pace and a safe route are enough."
+      },
       "bullets": [],
       "items": [],
-      "links": [],
-      "image": {
-        "src": "",
-        "alt": "",
-        "caption": ""
-      }
+      "links": []
     },
     {
-      "h2": "Practices commonly taught",
+      "h2": "Make nature walks part of your routine",
       "items": [
         {
-          "title": "Deep belly breathing",
-          "text": "A gentle breath into the lower belly. A good starting point.",
+          "title": "Choose a comfortable route",
+          "text": "Pick a safe path, park or green space that fits your mobility and time.",
           "image": "",
           "imageAlt": "",
           "sub": "",
@@ -98,11 +99,11 @@ const page: PageData = {
           }
         },
         {
-          "title": "Alternate nostril breathing",
-          "sub": "Nadi Shodhana",
-          "text": "Breathing in and out through one nostril at a time, usually taught slowly and without holding the breath.",
+          "title": "Walk at a sustainable pace",
+          "text": "A pace you can repeat is more useful than a hard workout you skip.",
           "image": "",
           "imageAlt": "",
+          "sub": "",
           "tryThis": "",
           "link": {
             "href": "",
@@ -110,11 +111,11 @@ const page: PageData = {
           }
         },
         {
-          "title": "Humming bee breath",
-          "sub": "Bhramari",
-          "text": "A slow breath out with a soft humming sound.",
+          "title": "Cut digital distractions",
+          "text": "When it is safe, put the phone away and notice your surroundings.",
           "image": "",
           "imageAlt": "",
+          "sub": "",
           "tryThis": "",
           "link": {
             "href": "",
@@ -122,11 +123,11 @@ const page: PageData = {
           }
         },
         {
-          "title": "Forceful breathing",
-          "sub": "Kapalabhati, Bhastrika",
-          "text": "Fast, forceful breathing. These need qualified guidance and are not suitable for everyone.",
+          "title": "Care for indoor greenery",
+          "text": "Choose plants that suit your home's light and your time. Watering can become a small daily routine.",
           "image": "",
           "imageAlt": "",
+          "sub": "",
           "tryThis": "",
           "link": {
             "href": "",
@@ -144,46 +145,10 @@ const page: PageData = {
       }
     },
     {
-      "h2": "How to start safely",
-      "bullets": [
-        "Sit comfortably with your back supported if needed",
-        "Breathe through your nose unless taught otherwise",
-        "Keep the breath smooth and unforced",
-        "Do not hold your breath until you have been taught how",
-        "Stop if you feel dizzy, light-headed or breathless",
-        "Learn new practices with an instructor first"
-      ],
-      "paras": [],
-      "items": [],
-      "links": [],
-      "image": {
-        "src": "",
-        "alt": "",
-        "caption": ""
-      }
-    },
-    {
-      "h2": "Take advice first if you have",
-      "bullets": [
-        "High blood pressure or heart disease",
-        "Asthma, COPD or another lung condition",
-        "Pregnancy",
-        "Recent surgery",
-        "Anxiety or panic that gets worse when you focus on your breath"
-      ],
-      "paras": [],
-      "items": [],
-      "links": [],
-      "image": {
-        "src": "",
-        "alt": "",
-        "caption": ""
-      }
-    },
-    {
-      "h2": "What the evidence says",
+      "h2": "What indoor plants can and cannot do",
       "paras": [
-        "Studies of slow breathing suggest it can help some people feel calmer, but the research varies in quality and results differ between people. Breathing practices are not a treatment for any condition."
+        "Plants add greenery and can be enjoyable to look after. Some studies have found plants can take up certain air pollutants under controlled laboratory conditions. This does not show that a few houseplants clean the air in a real home.",
+        "Plants are not a substitute for ventilation, an air purifier or reducing sources of pollution."
       ],
       "bullets": [],
       "items": [],
@@ -193,30 +158,110 @@ const page: PageData = {
         "alt": "",
         "caption": ""
       }
+    },
+    {
+      "h2": "Five easy indoor plants",
+      "paras": [
+        "Choose according to light, watering needs, space and who lives in the home. Some of these plants are harmful if eaten, so keep them away from small children and pets."
+      ],
+      "items": [
+        {
+          "title": "Peace Lily",
+          "sub": "Spathiphyllum",
+          "text": "A flowering plant that prefers indirect light and steady moisture. Harmful to pets and children if eaten.",
+          "image": "/images/Peace%20Lily.jpg",
+          "imageAlt": "Peace Lily indoor plant",
+          "tryThis": "",
+          "link": {
+            "href": "",
+            "label": ""
+          }
+        },
+        {
+          "title": "Spider Plant",
+          "sub": "Chlorophytum comosum",
+          "text": "A forgiving choice for beginners that adapts to most indoor conditions with suitable light and watering. Generally considered safe around pets.",
+          "image": "/images/Spider%20Plant.jpg",
+          "imageAlt": "Spider Plant indoor plant",
+          "tryThis": "",
+          "link": {
+            "href": "",
+            "label": ""
+          }
+        },
+        {
+          "title": "Money Plant",
+          "sub": "Golden pothos",
+          "text": "A hardy trailing plant grown in soil or water. Adapts well with moderate light. Harmful to pets and children if eaten.",
+          "image": "/images/money%20plant.jpg",
+          "imageAlt": "Money Plant (golden pothos) indoor plant",
+          "tryThis": "",
+          "link": {
+            "href": "",
+            "label": ""
+          }
+        },
+        {
+          "title": "Snake Plant",
+          "sub": "Sansevieria",
+          "text": "Low maintenance and tolerant of many conditions. Let the soil dry between waterings. Harmful to pets and children if eaten.",
+          "image": "/images/snake%20plant.jpg",
+          "imageAlt": "Snake Plant indoor plant",
+          "tryThis": "",
+          "link": {
+            "href": "",
+            "label": ""
+          }
+        },
+        {
+          "title": "Boston Fern",
+          "sub": "Nephrolepis exaltata",
+          "text": "A lush fern that likes indirect light, humidity and steady moisture. Generally considered safe around pets.",
+          "image": "/images/Boston%20Fern.jpg",
+          "imageAlt": "Boston Fern indoor plant",
+          "tryThis": "",
+          "link": {
+            "href": "",
+            "label": ""
+          }
+        }
+      ],
+      "bullets": [],
+      "links": [],
+      "image": {
+        "src": "",
+        "alt": "",
+        "caption": ""
+      }
     }
   ],
+  "faqTitle": "Nature walks and indoor plants: common questions",
   "faqs": [
     {
-      "q": "How long should I practise?",
-      "a": "There is no set time. A few comfortable minutes done regularly is more realistic than a long session you drop."
+      "q": "Is a nature walk different from regular walking?",
+      "a": "The activity is the same. A nature walk simply takes place in a park, trail or other green setting."
     },
     {
-      "q": "Can Pranayama replace my medicine?",
-      "a": "No. It complements medical care and does not replace it."
+      "q": "Can indoor plants improve air quality?",
+      "a": "Plants have been studied in controlled settings, but a few houseplants are not enough to clean the air in a real home. Ventilation matters more."
     },
     {
-      "q": "Is it safe for beginners?",
-      "a": "Gentle, slow breathing usually is. Avoid forceful practices and breath holding until you have been taught by a qualified instructor."
+      "q": "Which indoor plants are easiest to look after?",
+      "a": "Snake plants and spider plants are commonly considered forgiving. Care still depends on light, watering and temperature."
+    },
+    {
+      "q": "How do I start a nature-walking habit?",
+      "a": "Choose a safe route and a realistic amount of time that fits your day, then repeat it."
     }
   ],
   "related": [
     {
-      "label": "Meditation",
-      "href": "/services/therapeutic-yoga/meditation"
+      "label": "Soft morning sunlight",
+      "href": "/services/behaviour-stress-mind/soft-sun-rays"
     },
     {
-      "label": "Yoga asana protocol",
-      "href": "/services/therapeutic-yoga/yoga-asana-protocol"
+      "label": "Daily habits",
+      "href": "/services/lifestyle/daily-habits"
     },
     {
       "label": "Positive thinking",
@@ -224,21 +269,20 @@ const page: PageData = {
     }
   ],
   "cta": {
-    "title": "Want to learn breathing practices safely?",
-    "text": "Book an appointment and share your health context.",
+    "title": "Want help fitting more movement into your day?",
+    "text": "Book an appointment to talk through realistic habits.",
     "label": "Book an appointment",
     "href": "/book-appointment"
   },
-  "disclaimer": "This page is general information. Yoga is complementary to medical care and does not diagnose or treat disease or replace prescribed treatment. Stop any practice that causes pain, dizziness or breathlessness.",
-  "faqTitle": "Common questions",
+  "disclaimer": "This page is general information. It is not a substitute for medical assessment or diagnosis and treatment from a qualified mental-health professional. If you or someone else is in immediate danger, contact local emergency services.",
   "parent": {
-    "name": "Therapeutic Yoga",
-    "href": "/services/therapeutic-yoga"
+    "name": "Behaviour, Stress & Mind",
+    "href": "/services/behaviour-stress-mind"
   },
-  "crumbLabel": "Pranayama"
+  "crumbLabel": "Nature Walks & Indoor Plants"
 };
 
-const crumbs = [{"name": "Home", "href": "/"}, {"name": "Services", "href": "/services"}, {"name": "Therapeutic Yoga", "href": "/services/therapeutic-yoga"}, {"name": "Pranayama", "href": "/services/therapeutic-yoga/pranayama"}];
+const crumbs = [{"name": "Home", "href": "/"}, {"name": "Services", "href": "/services"}, {"name": "Behaviour, Stress & Mind", "href": "/services/behaviour-stress-mind"}, {"name": "Nature Walks & Indoor Plants", "href": "/services/behaviour-stress-mind/nature-walks"}];
 
 const schema = {
   "@context": "https://schema.org",
@@ -288,6 +332,7 @@ export default function Page() {
       <section className="border-b border-[var(--sutra-border)] bg-white">
         <Container>
           <div className="max-w-4xl py-10 sm:py-14 lg:py-16">
+          
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.17em] text-[var(--sutra-teal)]">{page.eyebrow}</p>
             <h1 className="mt-4 max-w-4xl font-serif text-4xl leading-[1.1] tracking-[-0.035em] sm:text-5xl lg:text-6xl">{page.h1}</h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[var(--sutra-muted)] sm:text-xl sm:leading-9">{page.lead}</p>

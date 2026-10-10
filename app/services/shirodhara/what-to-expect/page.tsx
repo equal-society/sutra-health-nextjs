@@ -3,10 +3,10 @@ import Link from "next/link";
 import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
-const PAGE_URL = `${SITE_URL}/services/therapeutic-yoga/pranayama`;
+const PAGE_URL = `${SITE_URL}/services/shirodhara/what-to-expect`;
 const BOOKING_URL = "/book-appointment";
-const TITLE = "Pranayama: Yogic Breathing Practices and Safety | Sutra Health";
-const DESCRIPTION = "What Pranayama is, common yogic breathing practices, how to start safely and who should take advice first.";
+const TITLE = "Before You Book Shirodhara or Abhyanga | Sutra Health";
+const DESCRIPTION = "Questions to ask and health information to share before booking a Shirodhara or Abhyanga session in Faridabad.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -59,21 +59,25 @@ type PageData = {
 };
 
 const page: PageData = {
-  "eyebrow": "Pranayama",
-  "h1": "Pranayama: yogic breathing practices",
-  "lead": "Pranayama is the practice of regulating the breath. It is usually taught as simple, slow breathing exercises, often after movement or before meditation.",
+  "eyebrow": "Booking guide",
+  "h1": "Before you book Shirodhara or Abhyanga",
+  "lead": "A few questions and a little health information help you and the practitioner decide whether a session suits you.",
   "primary": {
-    "label": "Book a consultation",
+    "label": "Book an appointment",
     "href": "/book-appointment"
   },
-  "secondaryLabel": "Back to Therapeutic Yoga",
+  "secondaryLabel": "Back to Shirodhara & Abhyanga",
   "sections": [
     {
-      "h2": "What the word means",
-      "paras": [
-        "Pranayama joins two Sanskrit words: prana, meaning breath or life force, and ayama, meaning to extend or regulate. In practice it means paying attention to the breath and slowing it down."
+      "h2": "Questions to ask when you book",
+      "bullets": [
+        "Which therapy is right for what I want?",
+        "How long is the session?",
+        "Which oil or liquid will be used?",
+        "What does a session cost?",
+        "Is there anything I should do or avoid beforehand, such as a heavy meal?"
       ],
-      "bullets": [],
+      "paras": [],
       "items": [],
       "links": [],
       "image": {
@@ -83,111 +87,60 @@ const page: PageData = {
       }
     },
     {
-      "h2": "Practices commonly taught",
-      "items": [
+      "h2": "Information to share",
+      "paras": [
+        "Mention anything that could affect whether the therapy is suitable:"
+      ],
+      "bullets": [
+        "Allergies to oils, milk or herbs",
+        "Skin or scalp conditions",
+        "Pregnancy",
+        "Recent injury, surgery or illness",
+        "Medicines you take regularly",
+        "Any health condition you are being treated for"
+      ],
+      "items": [],
+      "links": [],
+      "image": {
+        "src": "",
+        "alt": "",
+        "caption": ""
+      }
+    },
+    {
+      "h2": "If you have a health concern",
+      "paras": [
+        "These therapies are for relaxation. If you have symptoms or a long-term condition, a physician consultation is the better first step."
+      ],
+      "links": [
         {
-          "title": "Deep belly breathing",
-          "text": "A gentle breath into the lower belly. A good starting point.",
-          "image": "",
-          "imageAlt": "",
-          "sub": "",
-          "tryThis": "",
-          "link": {
-            "href": "",
-            "label": ""
-          }
+          "label": "Read about physician consultation",
+          "href": "/services/physician-consultation"
+        }
+      ],
+      "bullets": [],
+      "items": [],
+      "image": {
+        "src": "",
+        "alt": "",
+        "caption": ""
+      }
+    },
+    {
+      "h2": "Learn about each therapy",
+      "links": [
+        {
+          "label": "What is Shirodhara?",
+          "href": "/services/shirodhara/shirodhara-therapy"
         },
         {
-          "title": "Alternate nostril breathing",
-          "sub": "Nadi Shodhana",
-          "text": "Breathing in and out through one nostril at a time, usually taught slowly and without holding the breath.",
-          "image": "",
-          "imageAlt": "",
-          "tryThis": "",
-          "link": {
-            "href": "",
-            "label": ""
-          }
-        },
-        {
-          "title": "Humming bee breath",
-          "sub": "Bhramari",
-          "text": "A slow breath out with a soft humming sound.",
-          "image": "",
-          "imageAlt": "",
-          "tryThis": "",
-          "link": {
-            "href": "",
-            "label": ""
-          }
-        },
-        {
-          "title": "Forceful breathing",
-          "sub": "Kapalabhati, Bhastrika",
-          "text": "Fast, forceful breathing. These need qualified guidance and are not suitable for everyone.",
-          "image": "",
-          "imageAlt": "",
-          "tryThis": "",
-          "link": {
-            "href": "",
-            "label": ""
-          }
+          "label": "What is Abhyanga?",
+          "href": "/services/shirodhara/abhyanga-massage"
         }
       ],
       "paras": [],
       "bullets": [],
-      "links": [],
-      "image": {
-        "src": "",
-        "alt": "",
-        "caption": ""
-      }
-    },
-    {
-      "h2": "How to start safely",
-      "bullets": [
-        "Sit comfortably with your back supported if needed",
-        "Breathe through your nose unless taught otherwise",
-        "Keep the breath smooth and unforced",
-        "Do not hold your breath until you have been taught how",
-        "Stop if you feel dizzy, light-headed or breathless",
-        "Learn new practices with an instructor first"
-      ],
-      "paras": [],
       "items": [],
-      "links": [],
-      "image": {
-        "src": "",
-        "alt": "",
-        "caption": ""
-      }
-    },
-    {
-      "h2": "Take advice first if you have",
-      "bullets": [
-        "High blood pressure or heart disease",
-        "Asthma, COPD or another lung condition",
-        "Pregnancy",
-        "Recent surgery",
-        "Anxiety or panic that gets worse when you focus on your breath"
-      ],
-      "paras": [],
-      "items": [],
-      "links": [],
-      "image": {
-        "src": "",
-        "alt": "",
-        "caption": ""
-      }
-    },
-    {
-      "h2": "What the evidence says",
-      "paras": [
-        "Studies of slow breathing suggest it can help some people feel calmer, but the research varies in quality and results differ between people. Breathing practices are not a treatment for any condition."
-      ],
-      "bullets": [],
-      "items": [],
-      "links": [],
       "image": {
         "src": "",
         "alt": "",
@@ -197,48 +150,40 @@ const page: PageData = {
   ],
   "faqs": [
     {
-      "q": "How long should I practise?",
-      "a": "There is no set time. A few comfortable minutes done regularly is more realistic than a long session you drop."
+      "q": "Do I need a doctor's advice first?",
+      "a": "Not for everyone. If you are pregnant, have a skin condition, a long-term illness or recent surgery, check with your doctor first."
     },
     {
-      "q": "Can Pranayama replace my medicine?",
-      "a": "No. It complements medical care and does not replace it."
-    },
-    {
-      "q": "Is it safe for beginners?",
-      "a": "Gentle, slow breathing usually is. Avoid forceful practices and breath holding until you have been taught by a qualified instructor."
+      "q": "Can I stop a session if I am uncomfortable?",
+      "a": "Yes. Tell the practitioner straight away if anything feels wrong."
     }
   ],
   "related": [
     {
-      "label": "Meditation",
-      "href": "/services/therapeutic-yoga/meditation"
+      "label": "Shirodhara therapy",
+      "href": "/services/shirodhara/shirodhara-therapy"
     },
     {
-      "label": "Yoga asana protocol",
-      "href": "/services/therapeutic-yoga/yoga-asana-protocol"
-    },
-    {
-      "label": "Positive thinking",
-      "href": "/services/behaviour-stress-mind/positive-thinking"
+      "label": "Abhyanga oil massage",
+      "href": "/services/shirodhara/abhyanga-massage"
     }
   ],
   "cta": {
-    "title": "Want to learn breathing practices safely?",
-    "text": "Book an appointment and share your health context.",
+    "title": "Ready to book?",
+    "text": "Book an appointment and bring your questions.",
     "label": "Book an appointment",
     "href": "/book-appointment"
   },
-  "disclaimer": "This page is general information. Yoga is complementary to medical care and does not diagnose or treat disease or replace prescribed treatment. Stop any practice that causes pain, dizziness or breathlessness.",
+  "disclaimer": "This page is general information about traditional wellness therapies. It is not medical advice, and the therapies do not diagnose or treat any condition or replace medical care.",
   "faqTitle": "Common questions",
   "parent": {
-    "name": "Therapeutic Yoga",
-    "href": "/services/therapeutic-yoga"
+    "name": "Shirodhara & Abhyanga",
+    "href": "/services/shirodhara"
   },
-  "crumbLabel": "Pranayama"
+  "crumbLabel": "Before You Book"
 };
 
-const crumbs = [{"name": "Home", "href": "/"}, {"name": "Services", "href": "/services"}, {"name": "Therapeutic Yoga", "href": "/services/therapeutic-yoga"}, {"name": "Pranayama", "href": "/services/therapeutic-yoga/pranayama"}];
+const crumbs = [{"name": "Home", "href": "/"}, {"name": "Services", "href": "/services"}, {"name": "Shirodhara & Abhyanga", "href": "/services/shirodhara"}, {"name": "Before You Book", "href": "/services/shirodhara/what-to-expect"}];
 
 const schema = {
   "@context": "https://schema.org",
@@ -288,6 +233,11 @@ export default function Page() {
       <section className="border-b border-[var(--sutra-border)] bg-white">
         <Container>
           <div className="max-w-4xl py-10 sm:py-14 lg:py-16">
+            <nav aria-label="Breadcrumb" className="text-sm text-[var(--sutra-muted)]">
+              <Link href={page.parent.href} className="underline underline-offset-4">{page.parent.name}</Link>
+              <span className="mx-2" aria-hidden="true">/</span>
+              <span aria-current="page">{page.crumbLabel}</span>
+            </nav>
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.17em] text-[var(--sutra-teal)]">{page.eyebrow}</p>
             <h1 className="mt-4 max-w-4xl font-serif text-4xl leading-[1.1] tracking-[-0.035em] sm:text-5xl lg:text-6xl">{page.h1}</h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[var(--sutra-muted)] sm:text-xl sm:leading-9">{page.lead}</p>

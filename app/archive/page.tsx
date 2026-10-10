@@ -34,17 +34,24 @@ type ArchiveCategory = {
 
 const CATEGORIES: ArchiveCategory[] = [
   {
+    title: "Retreat",
+    subtitle: "Retreat activities and wellness experiences",
+    id: "retreat_202610",
+    url: "https://archive.org/details/retreat_202610",
+  },
+  {
     title: "Nature",
     subtitle: "Nature and wellness material",
     id: "sutra-health-nature",
     url: "https://archive.org/details/sutra-health-nature",
   },
-  {
-    title: "Lifestyle Pearls",
-    subtitle: "Lifestyle and health guidance",
-    id: "Lifestyle-pearls",
-    url: "https://archive.org/details/Lifestyle-pearls",
+   {
+    title: "Yoga Sequence",
+    subtitle: "Yoga asana material",
+    id: "surya-yoga-sequence",
+    url: "https://archive.org/details/surya-yoga-sequence",
   },
+ 
   {
     title: "Lifestyle Doctor",
     subtitle: "Doctor and lifestyle material",
@@ -56,6 +63,12 @@ const CATEGORIES: ArchiveCategory[] = [
     subtitle: "Academic and reference material",
     id: "yoga-books",
     url: "https://archive.org/details/yoga-books/Academic/Principal_Crude_Herbal_Drugs_of_Indi/",
+  },
+   {
+    title: "Lifestyle Pearls",
+    subtitle: "Lifestyle and health guidance",
+    id: "Lifestyle-pearls",
+    url: "https://archive.org/details/Lifestyle-pearls",
   },
   {
     title: "Sutra Health Brochure",
@@ -81,64 +94,45 @@ const CATEGORIES: ArchiveCategory[] = [
     id: "sutra_health_lifestyle_food",
     url: "https://archive.org/details/sutra_health_lifestyle_food",
   },
-  {
-    title: "Surya Yoga Sequence",
-    subtitle: "Yoga asana material",
-    id: "surya-yoga-sequence",
-    url: "  https://archive.org/details/surya-yoga-sequence",
-  },
+ 
 ];
 
 function archiveThumbUrl(identifier: string) {
+  // Internet Archive generated item thumbnail.
   return `https://archive.org/services/img/${encodeURIComponent(identifier)}`;
 }
 
 export default function ArchivePage() {
   return (
     <main className={styles.page}>
-    <section className={styles.hero} aria-labelledby="archive-title">
-      {/* Full Background Image */}
-      <div
-        className={styles.heroBackground}
-        aria-hidden="true"
-      />
+      <section className={styles.hero} aria-labelledby="archive-title">
+        <div className={styles.heroBackground} aria-hidden="true" />
+        <div className={styles.heroOverlay} aria-hidden="true" />
 
-      {/* Dark Overlay */}
-      <div
-        className={styles.heroOverlay}
-        aria-hidden="true"
-      />
-
-      <div className={styles.container}>
-        <div className={styles.heroGrid}>
-          <div className={styles.heroCopy}>
-            <p className={styles.eyebrow}>
-              Sutra Health · Archive
-            </p>
-
-            <h1 id="archive-title">
-              Health & Wellbeing
-              <span> Resource Archive</span>
-            </h1>
-
-            <p className={styles.heroText}>
-              Browse selected material preserved in the Sutra Health archive,
-              from lifestyle and clinic resources to publications and yoga.
-            </p>
-
-            <a
-              className={styles.primaryLink}
-              href="https://archive.org/details/@sutra_health"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open the archive
-              <span aria-hidden="true">↗</span>
-            </a>
+        <div className={styles.container}>
+          <div className={styles.heroGrid}>
+            <div className={styles.heroCopy}>
+              <p className={styles.eyebrow}>Sutra Health · Archive</p>
+              <h1 id="archive-title">
+                Health &amp; Wellbeing
+                <span> Resource Archive</span>
+              </h1>
+              <p className={styles.heroText}>
+                Browse selected material preserved in the Sutra Health archive,
+                from lifestyle and clinic resources to publications and yoga.
+              </p>
+              <a
+                className={styles.primaryLink}
+                href="https://archive.org/details/@sutra_health"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open the archive <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       <section className={styles.collection} aria-labelledby="resources-title">
         <div className={styles.container}>
@@ -148,8 +142,9 @@ export default function ArchivePage() {
               <h2 id="resources-title">Browse the resource collection</h2>
             </div>
             <p>
-              Nine collections covering lifestyle guidance, clinic material,
-              publications, food, nature, yoga and practitioner experiences.
+              {CATEGORIES.length} collections covering retreats, lifestyle
+              guidance, clinic material, publications, food, nature, yoga and
+              practitioner experiences.
             </p>
           </div>
 
@@ -167,7 +162,9 @@ export default function ArchivePage() {
                     <img
                       src={archiveThumbUrl(category.id)}
                       alt=""
-                      loading="lazy"
+                      loading={index < 3 ? "eager" : "lazy"}
+                      decoding="async"
+                      fetchPriority={index === 0 ? "high" : "auto"}
                     />
                     <div className={styles.fallback} aria-hidden="true">
                       Sutra Health
@@ -176,7 +173,6 @@ export default function ArchivePage() {
                       {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
-
                   <div className={styles.cardBody}>
                     <div className={styles.cardMeta}>
                       <span>Collection</span>
@@ -199,7 +195,6 @@ export default function ArchivePage() {
                 available in the collection.
               </p>
             </div>
-
             <a
               className={styles.secondaryLink}
               href="https://archive.org/details/@sutra_health"

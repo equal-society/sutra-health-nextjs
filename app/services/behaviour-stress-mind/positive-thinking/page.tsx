@@ -3,10 +3,10 @@ import Link from "next/link";
 import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
-const PAGE_URL = `${SITE_URL}/services/therapeutic-yoga/pranayama`;
+const PAGE_URL = `${SITE_URL}/services/behaviour-stress-mind/positive-thinking`;
 const BOOKING_URL = "/book-appointment";
-const TITLE = "Pranayama: Yogic Breathing Practices and Safety | Sutra Health";
-const DESCRIPTION = "What Pranayama is, common yogic breathing practices, how to start safely and who should take advice first.";
+const TITLE = "Positive Thinking: Practical Ways to Build a Healthier Mindset | Sutra Health";
+const DESCRIPTION = "Practical positive thinking: what it is and is not, five practices including gratitude and acceptance, a simple daily routine and when to get professional support.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -59,35 +59,21 @@ type PageData = {
 };
 
 const page: PageData = {
-  "eyebrow": "Pranayama",
-  "h1": "Pranayama: yogic breathing practices",
-  "lead": "Pranayama is the practice of regulating the breath. It is usually taught as simple, slow breathing exercises, often after movement or before meditation.",
+  "eyebrow": "Mindset",
+  "h1": "Positive thinking: practical ways to build a healthier mindset",
+  "lead": "Positive thinking is not about ignoring difficult experiences. It is noticing your thoughts and choosing more constructive responses.",
   "primary": {
     "label": "Book a consultation",
     "href": "/book-appointment"
   },
-  "secondaryLabel": "Back to Therapeutic Yoga",
+  "secondaryLabel": "Back to Behaviour, Stress & Mind",
   "sections": [
     {
-      "h2": "What the word means",
-      "paras": [
-        "Pranayama joins two Sanskrit words: prana, meaning breath or life force, and ayama, meaning to extend or regulate. In practice it means paying attention to the breath and slowing it down."
-      ],
-      "bullets": [],
-      "items": [],
-      "links": [],
-      "image": {
-        "src": "",
-        "alt": "",
-        "caption": ""
-      }
-    },
-    {
-      "h2": "Practices commonly taught",
+      "h2": "What positive thinking is, and is not",
       "items": [
         {
-          "title": "Deep belly breathing",
-          "text": "A gentle breath into the lower belly. A good starting point.",
+          "title": "In everyday life",
+          "text": "It can mean seeing a situation from more than one angle, noticing what you can control and not assuming the worst.",
           "image": "",
           "imageAlt": "",
           "sub": "",
@@ -98,11 +84,11 @@ const page: PageData = {
           }
         },
         {
-          "title": "Alternate nostril breathing",
-          "sub": "Nadi Shodhana",
-          "text": "Breathing in and out through one nostril at a time, usually taught slowly and without holding the breath.",
+          "title": "Not forced positivity",
+          "text": "Healthy thinking leaves room for disappointment, fear, anger or grief, while still allowing reflection, acceptance and action.",
           "image": "",
           "imageAlt": "",
+          "sub": "",
           "tryThis": "",
           "link": {
             "href": "",
@@ -110,23 +96,11 @@ const page: PageData = {
           }
         },
         {
-          "title": "Humming bee breath",
-          "sub": "Bhramari",
-          "text": "A slow breath out with a soft humming sound.",
+          "title": "Linked to self-awareness",
+          "text": "Noticing recurring thoughts and reactions lets you pause and choose a response that fits your values.",
           "image": "",
           "imageAlt": "",
-          "tryThis": "",
-          "link": {
-            "href": "",
-            "label": ""
-          }
-        },
-        {
-          "title": "Forceful breathing",
-          "sub": "Kapalabhati, Bhastrika",
-          "text": "Fast, forceful breathing. These need qualified guidance and are not suitable for everyone.",
-          "image": "",
-          "imageAlt": "",
+          "sub": "",
           "tryThis": "",
           "link": {
             "href": "",
@@ -144,50 +118,154 @@ const page: PageData = {
       }
     },
     {
-      "h2": "How to start safely",
-      "bullets": [
-        "Sit comfortably with your back supported if needed",
-        "Breathe through your nose unless taught otherwise",
-        "Keep the breath smooth and unforced",
-        "Do not hold your breath until you have been taught how",
-        "Stop if you feel dizzy, light-headed or breathless",
-        "Learn new practices with an instructor first"
-      ],
-      "paras": [],
-      "items": [],
-      "links": [],
-      "image": {
-        "src": "",
-        "alt": "",
-        "caption": ""
-      }
-    },
-    {
-      "h2": "Take advice first if you have",
-      "bullets": [
-        "High blood pressure or heart disease",
-        "Asthma, COPD or another lung condition",
-        "Pregnancy",
-        "Recent surgery",
-        "Anxiety or panic that gets worse when you focus on your breath"
-      ],
-      "paras": [],
-      "items": [],
-      "links": [],
-      "image": {
-        "src": "",
-        "alt": "",
-        "caption": ""
-      }
-    },
-    {
-      "h2": "What the evidence says",
+      "h2": "Five practices",
       "paras": [
-        "Studies of slow breathing suggest it can help some people feel calmer, but the research varies in quality and results differ between people. Breathing practices are not a treatment for any condition."
+        "Use these as points for reflection, not as a promise of any mental-health outcome."
+      ],
+      "items": [
+        {
+          "title": "Do not judge others",
+          "text": "People face different challenges. Compassion and understanding make for kinder interactions.",
+          "image": "",
+          "imageAlt": "",
+          "sub": "",
+          "tryThis": "",
+          "link": {
+            "href": "",
+            "label": ""
+          }
+        },
+        {
+          "title": "Accept things as they are",
+          "text": "Practise seeing a situation as it is instead of constantly wishing it were different. Acceptance can lead to calmer, more constructive responses.",
+          "image": "",
+          "imageAlt": "",
+          "sub": "",
+          "tryThis": "",
+          "link": {
+            "href": "",
+            "label": ""
+          }
+        },
+        {
+          "title": "Practise gratitude",
+          "text": "Notice and name things you value in everyday life. Gratitude helps attention settle on what is good in your relationships and day.",
+          "image": "",
+          "imageAlt": "",
+          "sub": "",
+          "tryThis": "",
+          "link": {
+            "href": "",
+            "label": ""
+          }
+        },
+        {
+          "title": "Move towards self-empowerment",
+          "text": "Take responsibility for your choices and reflect on emotions such as desire, anger, pride, fear and grief. Some people find David Hawkins's Levels of Consciousness a useful framework for reflection. It is a personal and spiritual model, not a scientific one.",
+          "link": {
+            "href": "https://thejoywithin.org/spirituality/the-levels-of-consciousness-with-david-r-hawkins",
+            "label": "Read an overview of the framework"
+          },
+          "image": "",
+          "imageAlt": "",
+          "sub": "",
+          "tryThis": ""
+        },
+        {
+          "title": "Live quietly in the moment",
+          "text": "Slow down, breathe comfortably and pay attention to what you are doing right now.",
+          "image": "",
+          "imageAlt": "",
+          "sub": "",
+          "tryThis": "",
+          "link": {
+            "href": "",
+            "label": ""
+          }
+        }
+      ],
+      "bullets": [],
+      "links": [],
+      "image": {
+        "src": "",
+        "alt": "",
+        "caption": ""
+      }
+    },
+    {
+      "h2": "A daily routine you can keep",
+      "items": [
+        {
+          "title": "Notice the thought",
+          "text": "Pause and name what you are thinking before reacting.",
+          "tryThis": "Ask, 'What am I telling myself right now?'",
+          "image": "",
+          "imageAlt": "",
+          "sub": "",
+          "link": {
+            "href": "",
+            "label": ""
+          }
+        },
+        {
+          "title": "Ask what is in your control",
+          "text": "Separate what you can influence from what you cannot change directly.",
+          "image": "",
+          "imageAlt": "",
+          "sub": "",
+          "tryThis": "",
+          "link": {
+            "href": "",
+            "label": ""
+          }
+        },
+        {
+          "title": "Write one thing you appreciate",
+          "text": "A short gratitude note helps you notice something useful or good in your day.",
+          "image": "",
+          "imageAlt": "",
+          "sub": "",
+          "tryThis": "",
+          "link": {
+            "href": "",
+            "label": ""
+          }
+        },
+        {
+          "title": "Take a present-moment pause",
+          "text": "Slow down, breathe comfortably and bring your attention back to now.",
+          "link": {
+            "href": "/services/therapeutic-yoga/meditation",
+            "label": "Learn a simple meditation"
+          },
+          "image": "",
+          "imageAlt": "",
+          "sub": "",
+          "tryThis": ""
+        }
+      ],
+      "paras": [],
+      "bullets": [],
+      "links": [],
+      "image": {
+        "src": "",
+        "alt": "",
+        "caption": ""
+      }
+    },
+    {
+      "h2": "When to get professional support",
+      "paras": [
+        "Positive thinking is not a replacement for professional care. If low mood, anxiety or distress is lasting, severe or affecting daily life, speak to a doctor or qualified mental-health professional."
+      ],
+      "links": [
+        {
+          "label": "Book a physician consultation",
+          "href": "/services/physician-consultation"
+        }
       ],
       "bullets": [],
       "items": [],
-      "links": [],
       "image": {
         "src": "",
         "alt": "",
@@ -195,50 +273,58 @@ const page: PageData = {
       }
     }
   ],
+  "faqTitle": "Positive thinking: common questions",
   "faqs": [
     {
-      "q": "How long should I practise?",
-      "a": "There is no set time. A few comfortable minutes done regularly is more realistic than a long session you drop."
+      "q": "Is positive thinking the same as being happy all the time?",
+      "a": "No. A constructive mindset can hold difficult emotions and still look for useful responses. It is not about forcing yourself to feel happy or denying problems."
     },
     {
-      "q": "Can Pranayama replace my medicine?",
-      "a": "No. It complements medical care and does not replace it."
+      "q": "What are the benefits?",
+      "a": "It can encourage reflection, gratitude and a constructive outlook. Experiences vary, and it is not a guaranteed treatment for any health condition."
     },
     {
-      "q": "Is it safe for beginners?",
-      "a": "Gentle, slow breathing usually is. Avoid forceful practices and breath holding until you have been taught by a qualified instructor."
+      "q": "How do I start?",
+      "a": "Pick one habit, such as noticing a thought, asking what is in your control, or writing one thing you appreciate, and repeat it daily."
+    },
+    {
+      "q": "How long does it take?",
+      "a": "There is no set timeline. It depends on you, your circumstances and how consistently you practise."
+    },
+    {
+      "q": "Can it replace professional mental-health support?",
+      "a": "No. If difficulties are lasting, severe or affecting daily life, speak to a qualified healthcare professional."
     }
   ],
   "related": [
+    {
+      "label": "Nature walks",
+      "href": "/services/behaviour-stress-mind/nature-walks"
+    },
     {
       "label": "Meditation",
       "href": "/services/therapeutic-yoga/meditation"
     },
     {
-      "label": "Yoga asana protocol",
-      "href": "/services/therapeutic-yoga/yoga-asana-protocol"
-    },
-    {
-      "label": "Positive thinking",
-      "href": "/services/behaviour-stress-mind/positive-thinking"
+      "label": "My Buddy",
+      "href": "/services/my-buddy"
     }
   ],
   "cta": {
-    "title": "Want to learn breathing practices safely?",
-    "text": "Book an appointment and share your health context.",
+    "title": "Want to talk it through?",
+    "text": "Book an appointment to discuss stress and mindset.",
     "label": "Book an appointment",
     "href": "/book-appointment"
   },
-  "disclaimer": "This page is general information. Yoga is complementary to medical care and does not diagnose or treat disease or replace prescribed treatment. Stop any practice that causes pain, dizziness or breathlessness.",
-  "faqTitle": "Common questions",
+  "disclaimer": "This page is general information. It is not a substitute for medical assessment or diagnosis and treatment from a qualified mental-health professional. If you or someone else is in immediate danger, contact local emergency services.",
   "parent": {
-    "name": "Therapeutic Yoga",
-    "href": "/services/therapeutic-yoga"
+    "name": "Behaviour, Stress & Mind",
+    "href": "/services/behaviour-stress-mind"
   },
-  "crumbLabel": "Pranayama"
+  "crumbLabel": "Positive Thinking"
 };
 
-const crumbs = [{"name": "Home", "href": "/"}, {"name": "Services", "href": "/services"}, {"name": "Therapeutic Yoga", "href": "/services/therapeutic-yoga"}, {"name": "Pranayama", "href": "/services/therapeutic-yoga/pranayama"}];
+const crumbs = [{"name": "Home", "href": "/"}, {"name": "Services", "href": "/services"}, {"name": "Behaviour, Stress & Mind", "href": "/services/behaviour-stress-mind"}, {"name": "Positive Thinking", "href": "/services/behaviour-stress-mind/positive-thinking"}];
 
 const schema = {
   "@context": "https://schema.org",
@@ -288,6 +374,7 @@ export default function Page() {
       <section className="border-b border-[var(--sutra-border)] bg-white">
         <Container>
           <div className="max-w-4xl py-10 sm:py-14 lg:py-16">
+           
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.17em] text-[var(--sutra-teal)]">{page.eyebrow}</p>
             <h1 className="mt-4 max-w-4xl font-serif text-4xl leading-[1.1] tracking-[-0.035em] sm:text-5xl lg:text-6xl">{page.h1}</h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[var(--sutra-muted)] sm:text-xl sm:leading-9">{page.lead}</p>
