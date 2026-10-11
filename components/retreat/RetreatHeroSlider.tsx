@@ -7,6 +7,11 @@ import { useEffect, useState } from "react";
 
 const slides = [
   {
+    src: "/images/retreat/yoga.webp",
+    alt: "Yoga practice space at Sutra Health Retreat",
+    label: "Yoga practice space",
+  },
+  {
     src: "/images/retreat/rooftop.avif",
     alt: "Rooftop space at Sutra Health Retreat",
     label: "Rooftop",
@@ -21,11 +26,7 @@ const slides = [
     alt: "Bedroom at Sutra Health Retreat",
     label: "Bedroom",
   },
-  {
-    src: "/images/retreat/yoga.webp",
-    alt: "Yoga practice space at Sutra Health Retreat",
-    label: "Yoga practice space",
-  },
+  
   {
     src: "/images/retreat/kitchen.webp",
     alt: "Kitchen at Sutra Health Retreat",

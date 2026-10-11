@@ -135,11 +135,7 @@ const resources: NavItem[] = [
     href: "/resources/research",
     icon: Brain,
   },
-  {
-    label: "Yoga Asana Protocol",
-    href: "/yoga-asana-protocol",
-    icon: PersonStanding,
-  },
+ 
  
 
 ];
