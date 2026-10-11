@@ -5,7 +5,7 @@ import Container from "@/components/shared/Container";
 import ContactForm from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact | Sutra Health Faridabad",
+  title: "Contact Us in Faridabad | Sutra Health",
   description:
     "Contact Sutra Health and EQUAL Society in Sector 46, Faridabad for health, wellness, yoga therapy and community-focused activities.",
   alternates: {
@@ -98,7 +98,7 @@ export default function ContactPage() {
           />
 
           <Container>
-            <div className="relative z-10 grid gap-10 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20 text-white lg:py-24">
+            <div className="relative z-10  gap-10 py-16 sm:py-20 lg:gap-20 text-white lg:py-24">
 
               <div>
                 <p className="text-[10px] font-semibold uppercase tracking-[0.22em]  sm:text-[11px]">
@@ -140,22 +140,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="self-end lg:pb-2">
-                <div className="border-l border-[var(--sutra-white)]/30 pl-6 sm:pl-8">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] ">
-                    A direct line
-                  </p>
-
-                  <p className="mt-4 max-w-[430px] font-[var(--font-serif)] text-[27px] leading-tight tracking-[-0.025em]  sm:text-[34px]">
-                    Sometimes the simplest way to begin is simply to ask.
-                  </p>
-
-                  <p className="mt-5 max-w-[430px] text-[14px] leading-7 ">
-                    Call, WhatsApp, email or send a message. We can help you
-                    find the right contact or appointment route.
-                  </p>
-                </div>
-              </div>
+           
 
             </div>
           </Container>

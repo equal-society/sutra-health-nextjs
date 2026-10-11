@@ -4,9 +4,8 @@ import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/my-buddy/join`;
-const BOOKING_URL = "/book-appointment";
 const TITLE = "Become a Buddy or Find a Buddy | My Buddy | Sutra Health";
-const DESCRIPTION = "How to take part in My Buddy: register to become a peer-support buddy, or contact Sutra Health to find one.";
+const DESCRIPTION = "How to take part in My Buddy: register to become a peer-support buddy, or contact Sutra Health to find one. Both start with a short registration or enquiry.";
 
 export const metadata: Metadata = {
   title: TITLE,

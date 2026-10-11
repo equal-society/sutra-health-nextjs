@@ -4,9 +4,8 @@ import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/shirodhara/abhyanga-massage`;
-const BOOKING_URL = "/book-appointment";
-const TITLE = "What Is Abhyanga Oil Massage? | Sutra Health Faridabad";
-const DESCRIPTION = "What Abhyanga is, what happens in a session, what it is offered for and when to check with a professional first.";
+const TITLE = "What Is Abhyanga Oil Massage? | Sutra Health";
+const DESCRIPTION = "What Abhyanga warm-oil massage is, what happens in a session, what it is offered for and when to check with a professional first.";
 
 export const metadata: Metadata = {
   title: TITLE,

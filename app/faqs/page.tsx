@@ -93,7 +93,7 @@ export default function FAQsPage() {
                 id="faqs-title"
                 className="mt-4 font-serif text-[40px] leading-[1.08] tracking-[-0.035em] text-[#202522] sm:text-[56px] lg:text-[64px]"
               >
-                Sutra Health FAQs
+                Your questions about lifestyle medicine and consultations
               </h1>
 
               <p className="mt-5 max-w-2xl text-base leading-8 text-[#65736D] sm:text-lg">

@@ -4,9 +4,8 @@ import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/therapeutic-yoga/pranayama`;
-const BOOKING_URL = "/book-appointment";
 const TITLE = "Pranayama: Yogic Breathing Practices and Safety | Sutra Health";
-const DESCRIPTION = "What Pranayama is, common yogic breathing practices, how to start safely and who should take advice first.";
+const DESCRIPTION = "A guide to Pranayama: what it is, common yogic breathing practices, how to start safely and who should take advice before trying them.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -216,7 +215,7 @@ const page: PageData = {
     },
     {
       "label": "Yoga asana protocol",
-      "href": "//yoga-asana-protocol"
+      "href": "/services/behaviour-stress-mind/yoga-asana-protocol"
     },
     {
       "label": "Positive thinking",

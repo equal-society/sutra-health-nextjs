@@ -3,16 +3,16 @@ import Link from "next/link";
 import Container from "@/components/shared/Container";
 
 export const metadata: Metadata = {
-  title: "Volunteer | Community Health & Yoga",
+  title: "Volunteer With Sutra Health | Community Wellness",
   description:
-    "Join Sutra Health's volunteer community in Faridabad and support yoga, community health and wellness activities.",
+    "Explore volunteer opportunities with Sutra Health in Faridabad. Learn how you can support community health, yoga and wellness activities.",
   alternates: {
     canonical: "https://lifequality.org.in/volunteer",
   },
   openGraph: {
-    title: "Volunteer With Sutra Health | Community Health & Yoga",
+    title: "Volunteer With Sutra Health | Community Wellness",
     description:
-      "Learn about volunteering with Sutra Health and the community activities currently described on this site.",
+      "Discover how to get involved with Sutra Health's community health, yoga and wellness activities in Faridabad.",
     url: "https://lifequality.org.in/volunteer",
     siteName: "Sutra Health",
     type: "website",
@@ -22,11 +22,12 @@ export const metadata: Metadata = {
         url: "https://lifequality.org.in/images/og-image.webp",
         width: 1200,
         height: 630,
-        alt: "Sutra Health",
+        alt: "Sutra Health community health and wellness",
       },
     ],
   },
 };
+
 
 const volunteerForm =
   "https://docs.google.com/forms/d/e/1FAIpQLSdtgQtU1eIuwNpmgpOVOrIi_fZzHv5rOxiJe-sH_SG3NUTRiQ/viewform";
@@ -119,7 +120,7 @@ export default function VolunteerPage() {
           />
 
           <Container>
-            <div className="relative z-10 grid gap-10 py-14 sm:py-18 lg:grid-cols-[1.15fr_0.85fr] lg:gap-20 lg:py-22 xl:py-24">
+            <div className="relative z-10  gap-10 py-14 sm:py-18  lg:gap-20 lg:py-22 xl:py-24">
               <div>
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white sm:text-xs">
                   Join our movement
@@ -141,10 +142,10 @@ export default function VolunteerPage() {
                   "
                 >
                   Volunteer with Sutra Health
-                  <span className="text-[#D5C9AE]"> & EQUAL Society</span>
+                  <span className="text-white"> & EQUAL Society</span>
                 </h1>
 
-                <p className="mt-7 max-w-[650px] text-[17px] leading-8 text-white/85 sm:text-[18px] sm:leading-9">
+                <p className="mt-7 max-w-[650px] text-[17px]  text-white sm:text-[18px] ">
                   Sutra Health is more than a clinic — it is a living movement.
                   Join our Faridabad-based volunteer community supporting yoga,
                   community health and wellness activities.
@@ -173,18 +174,7 @@ export default function VolunteerPage() {
                 </div>
               </div>
 
-              <div className="flex items-end">
-                <div className="w-full border-t border-white/50 pt-7">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white/70">
-                    Community work
-                  </p>
-
-                  <p className="mt-4 max-w-[430px] font-serif text-[30px] font-medium leading-[1.12] tracking-[-0.025em] text-white sm:text-[38px]">
-                    Volunteering can support the community activities described by Sutra Health and EQUAL Society.
-                    accessible.
-                  </p>
-                </div>
-              </div>
+             
             </div>
           </Container>
         </section>

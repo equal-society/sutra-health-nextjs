@@ -4,7 +4,6 @@ import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/therapeutic-yoga`;
-const BOOKING_URL = "/book-appointment";
 const TITLE = "Therapeutic Yoga in Faridabad | Sutra Health";
 const DESCRIPTION = "Guided Therapeutic Yoga in Faridabad: movement, breathing and relaxation practices adapted to your experience, mobility and health.";
 
@@ -53,8 +52,8 @@ type PageData = {
 const page: PageData = {
   "heroImage": "/images/services/therapeutic-yoga.webp",
   "eyebrow": "Therapeutic Yoga · Faridabad",
-  "h1": "Looking for guided Yoga that fits your situation?",
-  "lead": "Therapeutic Yoga adapts movement, breathing and relaxation practices to your needs.",
+  "h1": "Therapeutic Yoga in Faridabad, adapted to your mobility and health",
+  "lead": "Not every Yoga class suits every body. Therapeutic Yoga adjusts movement, breathing and relaxation practices to your experience, mobility and health, and is taught with guidance.",
   "primary": {
     "label": "Book a consultation",
     "href": "/book-appointment"
@@ -121,7 +120,7 @@ const page: PageData = {
       {
         "title": "Yoga asana protocol",
         "text": "The postures named in the protocol, what each is for and which need extra care.",
-        "href": "/yoga-asana-protocol",
+        "href": "/services/therapeutic-yoga/yoga-asana-protocol",
         "label": "Read the protocol"
       },
       {

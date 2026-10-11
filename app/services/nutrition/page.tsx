@@ -39,19 +39,18 @@ export default function NutritionPage() {
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-10 pt-28 sm:px-6 sm:pb-16 md:px-8 lg:px-12 lg:pb-20">
           <p className="text-sm font-medium uppercase tracking-[0.12em] text-white/85">
-            Physician consultation · Faridabad
+            Nutrition counselling  · Faridabad
           </p>
 
           <h1
             id="consultation-title"
             className="mt-4 max-w-3xl font-serif text-[clamp(2.25rem,6vw,4.25rem)] leading-[1.08] tracking-[-0.025em] text-white"
           >
-            Not sure what is affecting your health or where to begin?
+           Nutrition counselling built around your meals, routine and health needs
           </h1>
 
           <p className="mt-5 max-w-2xl text-lg leading-8 text-white/90 sm:text-xl">
-          A physician consultation gives you space to discuss your concerns, history and next steps. 
-          </p>
+          Not sure what to eat, what to cut back on, or how to space your meals? Nutrition counselling starts from your usual routine and health needs. The guides below cover food ideas, foods to limit, meal timing and hydration.          </p>
 
            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link

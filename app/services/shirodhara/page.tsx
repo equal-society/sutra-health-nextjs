@@ -4,9 +4,8 @@ import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/shirodhara`;
-const BOOKING_URL = "/book-appointment";
 const TITLE = "Shirodhara & Abhyanga Massage in Faridabad | Sutra Health";
-const DESCRIPTION = "Shirodhara (warm liquid poured over the forehead) and Abhyanga oil massage in Faridabad, offered as relaxing traditional wellness therapies. Learn what each involves before you book.";
+const DESCRIPTION = "Shirodhara (warm liquid poured over the forehead) and Abhyanga oil massage in Faridabad, offered as relaxing wellness therapies. Learn what each involves.";
 
 export const metadata: Metadata = {
   title: TITLE,

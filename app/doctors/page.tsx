@@ -138,13 +138,23 @@ export default function DoctorsPage() {
                 >
                   Doctors &amp; Health Experts
                   <br />
-                  <span className="text-[#D5C9AE]">at Sutra Health</span>
+                  <span className="text-white">at Sutra Health</span>
                 </h1>
 
                 <p className="mt-7 max-w-[680px] text-[16px] leading-8 text-white/85 sm:mt-8 sm:text-[18px] sm:leading-9">
                   Meet the practitioners and professionals represented by Sutra
                   Health, with their roles and areas of work in one place.
                 </p>
+
+                  <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                            <Link
+                              href="/book-appointment"
+                              className="inline-flex min-h-12 w-full items-center justify-center bg-[#F7F5EF] px-6 text-base font-semibold text-[#17413D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto"
+                            >
+                              Book a consultation →
+                            </Link>
+                          
+                          </div>
               </div>
             </div>
           </Container>
@@ -333,10 +343,10 @@ export default function DoctorsPage() {
 
               <div className="max-w-[700px] divide-y divide-[var(--sutra-border)] border-y border-[var(--sutra-border-strong)]">
                 <Link
-                  href="/approach"
+                  href="/conditions"
                   className="flex min-h-14 items-center justify-between gap-4 py-4 text-[15px] font-medium text-[var(--sutra-ink)] hover:text-[var(--sutra-teal)]"
                 >
-                  Our Approach
+                  Health Conditions
                   <span aria-hidden="true">↗</span>
                 </Link>
 

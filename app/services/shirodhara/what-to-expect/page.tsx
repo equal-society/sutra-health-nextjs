@@ -4,9 +4,8 @@ import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/shirodhara/what-to-expect`;
-const BOOKING_URL = "/book-appointment";
 const TITLE = "Before You Book Shirodhara or Abhyanga | Sutra Health";
-const DESCRIPTION = "Questions to ask and health information to share before booking a Shirodhara or Abhyanga session in Faridabad.";
+const DESCRIPTION = "Questions to ask and health information to share before booking a Shirodhara or Abhyanga session in Faridabad, so you can decide if it suits you.";
 
 export const metadata: Metadata = {
   title: TITLE,

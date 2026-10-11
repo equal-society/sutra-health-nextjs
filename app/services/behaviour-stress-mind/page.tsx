@@ -4,7 +4,6 @@ import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/behaviour-stress-mind`;
-const BOOKING_URL = "/book-appointment";
 const TITLE = "Stress & Behaviour Support in Faridabad | Sutra Health";
 const DESCRIPTION = "Practical support for stress, behaviour change and everyday habits in Faridabad, plus self-help guides on positive thinking, nature walks and morning sunlight.";
 
@@ -53,8 +52,8 @@ type PageData = {
 const page: PageData = {
   "heroImage": "/images/services/behaviour-stress-mind.webp",
   "eyebrow": "Behaviour, stress and mind · Faridabad",
-  "h1": "When changing your habits feels harder than knowing what to change.",
-  "lead": "Behaviour change is rarely just about knowing what to do. Explore practical support for stress, mindset, routines and the small decisions that shape everyday health.",
+  "h1": "Support for stress and habit change, when knowing what to do is not enough",
+  "lead": "Most of us already know we should sleep better, move more or worry less. This page covers practical support for stress, mindset and routines, plus self-help guides you can start today.",
   "primary": {
     "label": "Book a consultation",
     "href": "/book-appointment"
@@ -252,7 +251,7 @@ export default function Page() {
         <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#101C19]/80 via-[#101C19]/45 to-[#101C19]/10" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-12 pt-28 sm:px-6 sm:pb-16 md:px-8 lg:px-12">
           <p className="text-sm font-medium uppercase tracking-[0.16em] text-white/85">{page.eyebrow}</p>
-          <h1 id="page-title" className="mt-4 max-w-3xl font-serif text-[clamp(2.25rem,6vw,4.25rem)] leading-[1.08] tracking-[-0.03em] text-white">{page.h1}</h1>
+          <h1 id="page-title" className="mt-4 max-w-4xl font-serif text-[clamp(2.25rem,6vw,4.25rem)] leading-[1.08] tracking-[-0.03em] text-white">{page.h1}</h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-white/90 sm:text-xl">{page.lead}</p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link href={page.primary.href} className="inline-flex min-h-12 w-full items-center justify-center bg-[#F7F5EF] px-6 text-base font-semibold text-[#17413D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto">

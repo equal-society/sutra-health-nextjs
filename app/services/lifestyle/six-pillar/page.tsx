@@ -9,7 +9,7 @@ const PAGE_URL = `${SITE_URL}/services/lifestyle/six-pillar`;
 export const metadata: Metadata = {
   title: "The Six Pillars of Lifestyle Medicine | Sutra Health",
   description:
-    "The six areas lifestyle medicine looks at: healthy eating, physical activity, sleep, social connection, risky substances and stress. What each means and where to start.",
+    "The six areas lifestyle medicine covers: eating, activity, sleep, social connection, risky substances and stress. What each means and where to start.",
   alternates: { canonical: PAGE_URL },
   robots: { index: true, follow: true },
   openGraph: {

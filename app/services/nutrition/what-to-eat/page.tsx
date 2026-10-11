@@ -7,11 +7,11 @@ const PAGE_URL = `${SITE_URL}/services/nutrition/what-to-eat`;
 
 export const metadata: Metadata = {
   title: "What to Eat | Healthy Food Choices | Sutra Health",
-  description: "Explore the original Life Quality dietary guide’s food suggestions, including seasonal produce, pulses, dals, millets and suitable protein sources.",
+  description: "Ideas for building variety with familiar foods, from seasonal produce to pulses, dals, millets and protein sources. General guidance, not a fixed meal plan.",
   alternates: { canonical: PAGE_URL },
   robots: { index: true, follow: true },
   openGraph: { title: "What to Eat | Healthy Food Choices | Sutra Health", description: "Explore the original Life Quality dietary guide’s food suggestions, including seasonal produce, pulses, dals, millets and suitable protein sources.", url: PAGE_URL, siteName: "Sutra Health", type: "website", locale: "en_IN", images: [{ url: `${SITE_URL}/images/og-image.webp`, width: 1200, height: 630, alt: "Sutra Health" }] },
-  twitter: { card: "summary_large_image", title: "What to Eat | Healthy Food Choices | Sutra Health", description: "Explore the original Life Quality dietary guide’s food suggestions, including seasonal produce, pulses, dals, millets and suitable protein sources.", images: [`${SITE_URL}/images/og-image.webp`] },
+  twitter: { card: "summary_large_image", title: "What to Eat | Healthy Food Choices | Sutra Health", description: "Ideas for building variety with familiar foods, from seasonal produce to pulses, dals, millets and protein sources. General guidance, not a fixed meal plan.", images: [`${SITE_URL}/images/og-image.webp`] },
 };
 
 const pageSchema = {

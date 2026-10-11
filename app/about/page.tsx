@@ -259,7 +259,7 @@ export default function AboutPage() {
         >
           A story shaped by
           <br />
-          <span className="text-[#D5C9AE]">
+          <span className="text-white">
             community and quality of life.
           </span>
         </h1>
@@ -270,7 +270,7 @@ export default function AboutPage() {
             max-w-[680px]
             text-[16px]
             leading-8
-            text-white/85
+            text-white
             sm:mt-8
             sm:text-[18px]
             sm:leading-9

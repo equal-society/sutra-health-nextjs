@@ -4,9 +4,8 @@ import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/therapeutic-yoga/meditation`;
-const BOOKING_URL = "/book-appointment";
 const TITLE = "Meditation for Beginners: A Simple Way to Start | Sutra Health";
-const DESCRIPTION = "What meditation is, a simple way to begin, how to build a routine and when to be careful.";
+const DESCRIPTION = "A beginner's guide to meditation: what it is, a simple way to begin, how to build a routine and when to be careful.";
 
 export const metadata: Metadata = {
   title: TITLE,

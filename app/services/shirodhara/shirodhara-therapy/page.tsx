@@ -4,8 +4,7 @@ import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/shirodhara/shirodhara-therapy`;
-const BOOKING_URL = "/book-appointment";
-const TITLE = "What Is Shirodhara Therapy? | Sutra Health Faridabad";
+const TITLE = "What Is Shirodhara Therapy? | Sutra Health";
 const DESCRIPTION = "What Shirodhara is, what liquids are used, how a session works, what the evidence says and who should check with a professional first.";
 
 export const metadata: Metadata = {

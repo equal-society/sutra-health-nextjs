@@ -4,7 +4,7 @@ import styles from "./archive.module.css";
 export const metadata: Metadata = {
   title: "Archive | Health & Publication Resources",
   description:
-    "Browse the health, lifestyle, clinic, publication and practitioner material collected in the Sutra Health archive.",
+    "Browse the health, lifestyle, clinic, publication and practitioner collections held in the Sutra Health archive, hosted on Internet Archive.",
   alternates: {
     canonical: "https://lifequality.org.in/archive",
   },

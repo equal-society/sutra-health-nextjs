@@ -41,7 +41,7 @@ export default function MealRoutinesAndHydrationPage() {
                             
                               <p className="mt-6 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">Nutrition · Everyday routines</p>
                               <h1 className="mt-4 max-w-4xl font-serif text-4xl leading-[1.08] tracking-[-0.035em] sm:text-5xl lg:text-6xl">
-                                Find a routine that fits your day.
+                                Meal timing and hydration: finding a routine that fits your day
                               </h1>
                               <p className="mt-6 max-w-3xl text-base leading-8 text-[var(--sutra-muted)] sm:text-lg sm:leading-9">
                               The Sutra Health recommended regular routines for sleep, waking, meals and physical activity, while noting that meal frequency and fluid needs vary by person.                              </p>

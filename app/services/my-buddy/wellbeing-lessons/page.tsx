@@ -4,7 +4,6 @@ import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/my-buddy/wellbeing-lessons`;
-const BOOKING_URL = "/book-appointment";
 const TITLE = "Six Lessons for Emotional Wellbeing | My Buddy | Sutra Health";
 const DESCRIPTION = "Six simple lessons from the My Buddy programme: acceptance, responsibility, organised surroundings, hydration, self-care and awareness.";
 

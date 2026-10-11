@@ -4,8 +4,7 @@ import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/behaviour-stress-mind/positive-thinking`;
-const BOOKING_URL = "/book-appointment";
-const TITLE = "Positive Thinking: Practical Ways to Build a Healthier Mindset | Sutra Health";
+const TITLE = "Positive Thinking: Build a Healthier Mindset | Sutra Health";
 const DESCRIPTION = "Practical positive thinking: what it is and is not, five practices including gratitude and acceptance, a simple daily routine and when to get professional support.";
 
 export const metadata: Metadata = {

@@ -4,9 +4,8 @@ import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/behaviour-stress-mind/nature-walks`;
-const BOOKING_URL = "/book-appointment";
-const TITLE = "Nature Walks and Indoor Plants for Everyday Wellbeing | Sutra Health";
-const DESCRIPTION = "Simple ways to build nature walks into your routine and add greenery at home, with easy indoor plants and honest notes on what plants can and cannot do for air quality.";
+const TITLE = "Nature Walks and Indoor Plants for Wellbeing | Sutra Health";
+const DESCRIPTION = "Build nature walks into your routine and add easy indoor plants at home, with honest notes on what plants can and cannot do for air quality.";
 
 export const metadata: Metadata = {
   title: TITLE,

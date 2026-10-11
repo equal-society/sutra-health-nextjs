@@ -4,9 +4,8 @@ import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/my-buddy`;
-const BOOKING_URL = "/book-appointment";
 const TITLE = "My Buddy Peer Support Programme in Faridabad | Sutra Health";
-const DESCRIPTION = "My Buddy is a peer-support programme by EQUAL Society (Sutra Health) in Faridabad. Become a buddy or find one for encouragement, healthy routines and emotional wellbeing.";
+const DESCRIPTION = "My Buddy is a peer-support programme by EQUAL Society in Faridabad. Become a buddy or find one for encouragement, healthy routines and wellbeing.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -53,8 +52,8 @@ type PageData = {
 const page: PageData = {
   "heroImage": "/images/service-hero.webp",
   "eyebrow": "Peer support · Faridabad",
-  "h1": "Sometimes having someone to talk to can make a difference.",
-  "lead": "My Buddy connects people with caring companions for conversation, encouragement and healthier everyday routines.",
+  "h1": "My Buddy: peer support for encouragement and healthier routines",
+  "lead": "Sometimes having someone to talk to makes the difference. My Buddy is a peer-support programme run by EQUAL Society in Faridabad: you can become a buddy, or get in touch to find one.",
   "primary": {
     "label": "Become or find a buddy",
     "href": "/services/my-buddy/join"

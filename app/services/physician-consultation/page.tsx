@@ -6,8 +6,6 @@ const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/physician-consultation`;
 const BOOKING_URL = "/book-appointment";
 
-const ONLINE_URL =
-  "https://www.lybrate.com/faridabad/doctor/dr-rakesh-sarwal-preventive-medicine-specialist";
 
 export const metadata: Metadata = {
   title: "Physician Consultation in Faridabad | Sutra Health",
@@ -173,7 +171,7 @@ export default function PhysicianConsultationPage() {
             id="consultation-title"
             className="mt-4 max-w-3xl font-serif text-[clamp(2.25rem,6vw,4.25rem)] leading-[1.08] tracking-[-0.025em] text-white"
           >
-            Not sure what is affecting your health or where to begin?
+          Talk through your health concerns with a physician in Faridabad
           </h1>
 
           <p className="mt-5 max-w-2xl text-lg leading-8 text-white/90 sm:text-xl">

@@ -4,9 +4,8 @@ import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/behaviour-stress-mind/soft-sun-rays`;
-const BOOKING_URL = "/book-appointment";
-const TITLE = "Benefits of Soft Morning Sunlight | Sutra Health Faridabad";
-const DESCRIPTION = "What morning sunlight can do for vitamin D, body clock and mood, what it cannot do, and how to enjoy it safely.";
+const TITLE = "Benefits of Soft Morning Sunlight | Sutra Health";
+const DESCRIPTION = "A balanced look at what morning sunlight can do for vitamin D, body clock and mood, what it cannot do, and how to enjoy it safely.";
 
 export const metadata: Metadata = {
   title: TITLE,

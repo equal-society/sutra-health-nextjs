@@ -19,7 +19,6 @@ const services = [
   ["Nutrition Counselling", "/services/nutrition"],
   ["Shirodhara", "/services/shirodhara"],
   ["My Buddy", "/services/my-buddy"],
-  ["Singing, Kirtan & Dance", "/services/singing-kirtan-dance"],
   ["Meditation", "/services/therapeutic-yoga/meditation"],
   ["Pranayama", "/services/therapeutic-yoga/pranayama"],
   ["Yoga Asana Protocol", "/services/therapeutic-yoga/yoga-asana-protocol"],

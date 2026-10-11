@@ -4,14 +4,14 @@ import ScoreQuestionnaire from "./ScoreQuestionnaire";
 export const metadata: Metadata = {
   title: "21-Point Lifestyle Assessment",
   description:
-    "Use Sutra Health's 21-point questionnaire as a structured self-reflection on selected everyday health habits.",
+    "Use Sutra Health's 21-point questionnaire to reflect on everyday habits. You get a simple self-reflection score, not a clinical assessment.",
   alternates: {
     canonical: "https://lifequality.org.in/assessment",
   },
   openGraph: {
     title: "21-Point Lifestyle Assessment | Sutra Health",
     description:
-      "Use Sutra Health's 21-point questionnaire as a structured self-reflection on selected everyday health habits.",
+      "Use Sutra Health's 21-point questionnaire to reflect on everyday habits. You get a simple self-reflection score, not a clinical assessment.",
     url: "https://lifequality.org.in/assessment",
     siteName: "Sutra Health",
     type: "website",

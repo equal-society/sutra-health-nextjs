@@ -7,9 +7,9 @@ const PAGE_URL = `${SITE_URL}/services/physician-consultation/appointment-option
 const BOOKING_URL = "/book-appointment";
 const ONLINE_URL =
   "https://www.lybrate.com/faridabad/doctor/dr-rakesh-sarwal-preventive-medicine-specialist";
-const TITLE = "Book a Physician Consultation: Booking and Online Options | Sutra Health";
+const TITLE = "How to Book a Physician Consultation | Sutra Health";
 const DESCRIPTION =
-  "How to book a physician consultation at Sutra Health in Faridabad, and where to check online appointment availability.";
+  "How to book a physician consultation at Sutra Health in Faridabad, where to check online appointment availability and what is confirmed when you book.";
 
 export const metadata: Metadata = {
   title: TITLE,
