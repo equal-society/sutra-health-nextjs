@@ -117,11 +117,7 @@ export default function DailyHabitsPage() {
       <section className="border-b border-[var(--sutra-border)] bg-white">
         <Container>
           <div className="max-w-4xl py-10 sm:py-14 lg:py-16">
-            <nav aria-label="Breadcrumb" className="text-sm text-[var(--sutra-muted)]">
-              <Link href="/services/lifestyle" className="underline underline-offset-4">Lifestyle Medicine</Link>
-              <span className="mx-2" aria-hidden="true">/</span>
-              <span aria-current="page">Daily Habits</span>
-            </nav>
+           
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.17em] text-[var(--sutra-teal)]">Everyday wellbeing</p>
             <h1 className="mt-4 max-w-4xl font-serif text-4xl leading-[1.1] tracking-[-0.035em] sm:text-5xl lg:text-6xl">
               Daily health habits: six small changes to try

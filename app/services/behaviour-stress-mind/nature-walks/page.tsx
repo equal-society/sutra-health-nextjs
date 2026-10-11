@@ -75,7 +75,7 @@ const page: PageData = {
         "It does not need to be long or hard. Choose a safe route that suits your fitness, the weather and your surroundings."
       ],
       "image": {
-        "src": "/images/Nature%20Walks.jpg",
+        "src": "/images/services/indoor-plants-nature-walks.webp",
         "alt": "Person taking a nature walk outdoors",
         "caption": "A comfortable pace and a safe route are enough."
       },
@@ -169,7 +169,7 @@ const page: PageData = {
           "title": "Peace Lily",
           "sub": "Spathiphyllum",
           "text": "A flowering plant that prefers indirect light and steady moisture. Harmful to pets and children if eaten.",
-          "image": "/images/Peace%20Lily.jpg",
+          "image": "/images/services/nature/Peace-Lily.webp",
           "imageAlt": "Peace Lily indoor plant",
           "tryThis": "",
           "link": {
@@ -181,7 +181,7 @@ const page: PageData = {
           "title": "Spider Plant",
           "sub": "Chlorophytum comosum",
           "text": "A forgiving choice for beginners that adapts to most indoor conditions with suitable light and watering. Generally considered safe around pets.",
-          "image": "/images/Spider%20Plant.jpg",
+          "image": "/images/services/nature/Spider-Plant.webp",
           "imageAlt": "Spider Plant indoor plant",
           "tryThis": "",
           "link": {
@@ -193,7 +193,7 @@ const page: PageData = {
           "title": "Money Plant",
           "sub": "Golden pothos",
           "text": "A hardy trailing plant grown in soil or water. Adapts well with moderate light. Harmful to pets and children if eaten.",
-          "image": "/images/money%20plant.jpg",
+          "image": "/images/services/nature/money-plant.webp",
           "imageAlt": "Money Plant (golden pothos) indoor plant",
           "tryThis": "",
           "link": {
@@ -205,7 +205,7 @@ const page: PageData = {
           "title": "Snake Plant",
           "sub": "Sansevieria",
           "text": "Low maintenance and tolerant of many conditions. Let the soil dry between waterings. Harmful to pets and children if eaten.",
-          "image": "/images/snake%20plant.jpg",
+          "image": "/images/services/nature/snake-plant.webp",
           "imageAlt": "Snake Plant indoor plant",
           "tryThis": "",
           "link": {
@@ -217,7 +217,7 @@ const page: PageData = {
           "title": "Boston Fern",
           "sub": "Nephrolepis exaltata",
           "text": "A lush fern that likes indirect light, humidity and steady moisture. Generally considered safe around pets.",
-          "image": "/images/Boston%20Fern.jpg",
+          "image": "/images/services/nature/Boston-Fern.webp",
           "imageAlt": "Boston Fern indoor plant",
           "tryThis": "",
           "link": {

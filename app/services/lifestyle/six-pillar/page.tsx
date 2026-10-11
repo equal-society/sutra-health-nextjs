@@ -135,25 +135,25 @@ export default function SixPillarLifestylePage() {
     <main className="overflow-hidden bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      <section aria-labelledby="pillars-title" className="bg-[#173B36] text-white">
-        <Container>
-          <div className="py-14 sm:py-18 lg:py-24">
-            <nav aria-label="Breadcrumb" className="text-sm text-white/70">
-              <Link href="/services/lifestyle" className="underline underline-offset-4">Lifestyle Medicine</Link>
-              <span className="mx-2" aria-hidden="true">/</span>
-              <span aria-current="page">The Six Pillars</span>
-            </nav>
-            <p className="mt-8 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#D8C99F] sm:text-xs">Lifestyle Medicine framework</p>
-            <h1 id="pillars-title" className="mt-4 max-w-4xl font-serif text-[clamp(2.5rem,5.6vw,4.75rem)] leading-[1.06] tracking-[-0.04em]">
-              The six pillars of lifestyle medicine
-            </h1>
-            <p className="mt-6 max-w-3xl text-base leading-8 text-white/80 sm:text-lg sm:leading-9">
-              Lifestyle medicine looks at six everyday areas that can affect health. They are a guide for a conversation, not a checklist to finish. Your priorities depend on your needs, and the work sits alongside medical care.
-            </p>
-            <Link href="/services/lifestyle" className="mt-7 inline-flex min-h-11 items-center font-semibold text-white underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">← Back to Lifestyle Medicine</Link>
-          </div>
-        </Container>
-      </section>
+       <section className="border-b border-[var(--sutra-border)] bg-white">
+              <Container>
+                <div className="max-w-4xl py-10 sm:py-14 lg:py-16">
+                 
+                  <p className="mt-6 text-sm font-semibold uppercase tracking-[0.17em] text-[var(--sutra-teal)]">Lifestyle Medicine framework</p>
+                  <h1 className="mt-4 max-w-4xl font-serif text-4xl leading-[1.1] tracking-[-0.035em] sm:text-5xl lg:text-6xl">
+                    The six pillars of lifestyle medicine           
+                    </h1>
+                  <p className="mt-5 max-w-3xl text-lg leading-8 text-[var(--sutra-muted)] sm:text-xl sm:leading-9">
+                   Lifestyle medicine looks at six everyday areas that can affect health. They are a guide for a conversation, not a checklist to finish. Your priorities depend on your needs, and the work sits alongside medical care.
+                  </p>
+                  <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                    <Link href="/book-appointment" className="inline-flex min-h-12 items-center justify-center bg-[var(--sutra-teal)] px-6 py-3 text-base font-semibold text-white hover:opacity-90">
+                      Book a consultation ↗
+                    </Link>
+                  </div>
+                </div>
+              </Container>
+            </section>
 
       <section aria-label="The six pillars" className="bg-white">
         <Container>

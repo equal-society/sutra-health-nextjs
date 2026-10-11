@@ -50,11 +50,7 @@ export default function AbhaPage() {
       <section className="border-b border-[var(--sutra-border)] bg-white">
         <Container>
           <div className="max-w-4xl py-12 sm:py-16 lg:py-20">
-            <nav aria-label="Breadcrumb" className="text-sm text-[var(--sutra-muted)]">
-              <Link href="/services/physician-consultation" className="underline underline-offset-4">Physician Consultation</Link>
-              <span className="mx-2" aria-hidden="true">/</span>
-              <span aria-current="page">ABHA</span>
-            </nav>
+          
             <p className="mt-6 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">Digital health records</p>
             <h1 className="mt-4 max-w-4xl font-serif text-4xl leading-[1.08] tracking-[-0.035em] sm:text-5xl lg:text-6xl">What is an ABHA account?</h1>
             <p className="mt-6 max-w-3xl text-base leading-8 text-[var(--sutra-muted)] sm:text-lg sm:leading-9">

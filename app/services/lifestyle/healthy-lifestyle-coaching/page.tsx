@@ -97,28 +97,28 @@ export default function HealthyLifestyleCoachingPage() {
     <main className="bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      <section className="border-b border-[var(--sutra-border)] bg-white">
+       <section className="border-b border-[var(--sutra-border)] bg-white">
         <Container>
           <div className="max-w-4xl py-10 sm:py-14 lg:py-16">
-            <nav aria-label="Breadcrumb" className="text-sm text-[var(--sutra-muted)]">
-              <Link href="/services/lifestyle" className="underline underline-offset-4">Lifestyle Medicine</Link>
-              <span className="mx-2" aria-hidden="true">/</span>
-              <span aria-current="page">Healthy Lifestyle Coaching</span>
-            </nav>
+           
             <p className="mt-6 text-sm font-semibold uppercase tracking-[0.17em] text-[var(--sutra-teal)]">Lifestyle coaching</p>
             <h1 className="mt-4 max-w-4xl font-serif text-4xl leading-[1.1] tracking-[-0.035em] sm:text-5xl lg:text-6xl">
-              Healthy lifestyle coaching: turn health intentions into daily habits
-            </h1>
+              Healthy lifestyle coaching: turn health intentions into daily habits            
+              </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-[var(--sutra-muted)] sm:text-xl sm:leading-9">
               Regular, practical support to set goals, build routines and keep them going.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link href={BOOKING_URL} className="inline-flex min-h-12 items-center justify-center bg-[var(--sutra-teal)] px-6 py-3 text-base font-semibold text-white hover:opacity-90">Book a coaching consultation ↗</Link>
-              <Link href="/services/lifestyle" className="inline-flex min-h-12 items-center justify-center border border-[var(--sutra-border-strong)] px-6 py-3 text-base font-semibold text-[var(--sutra-teal)] hover:bg-white">About lifestyle medicine</Link>
+              <Link href={BOOKING_URL} className="inline-flex min-h-12 items-center justify-center bg-[var(--sutra-teal)] px-6 py-3 text-base font-semibold text-white hover:opacity-90">
+                Book a consultation ↗
+              </Link>
+             
             </div>
           </div>
         </Container>
       </section>
+
+        
 
       <section className="py-10 sm:py-14 lg:py-16">
         <Container>

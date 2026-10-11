@@ -74,7 +74,7 @@ const page: PageData = {
         "Shirodhara comes from two Sanskrit words: shiro, meaning head, and dhara, meaning flow. The name describes the practice: a continuous flow over the head."
       ],
       "image": {
-        "src": "/images/services/shirodhara/warm-herbal-oil.png",
+        "src": "/images/services/shirodhara/warm-herbal-oil.webp",
         "alt": "Warm herbal oil used in Shirodhara therapy",
         "caption": "Warm herbal oil used for Shirodhara."
       },
