@@ -121,7 +121,7 @@ const page: PageData = {
       {
         "title": "Yoga asana protocol",
         "text": "The postures named in the protocol, what each is for and which need extra care.",
-        "href": "/services/therapeutic-yoga/yoga-asana-protocol",
+        "href": "/yoga-asana-protocol",
         "label": "Read the protocol"
       },
       {

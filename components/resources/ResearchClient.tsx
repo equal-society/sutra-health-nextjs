@@ -169,7 +169,7 @@ export default function AcademicResearchPage() {
           aria-hidden="true"
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/images/nature.webp')",
+            backgroundImage: "url('/images/hero.webp')",
           }}
         />
 
@@ -235,7 +235,7 @@ export default function AcademicResearchPage() {
                 href="https://academic.lifequality.org.in/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-11 w-full items-center justify-center gap-2 border border-white/45 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#202522] sm:w-auto"
+                className="inline-flex min-h-11 w-full items-center justify-center gap-2 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#202522] sm:w-auto"
               >
                 Academic site
                 <span aria-hidden="true">↗</span>
@@ -243,13 +243,7 @@ export default function AcademicResearchPage() {
             </div>
           </div>
 
-          {/* Brand line */}
-          <div className="py-5 sm:py-6">
-            <p className="max-w-xl text-[10px] leading-5 text-white/65 sm:text-[11px]">
-              Original research, teaching and publications related to health,
-              lifestyle medicine and public health.
-            </p>
-          </div>
+        
         </div>
       </section>
 

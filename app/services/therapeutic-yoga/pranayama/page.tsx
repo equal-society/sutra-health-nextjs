@@ -216,7 +216,7 @@ const page: PageData = {
     },
     {
       "label": "Yoga asana protocol",
-      "href": "/services/therapeutic-yoga/yoga-asana-protocol"
+      "href": "//yoga-asana-protocol"
     },
     {
       "label": "Positive thinking",

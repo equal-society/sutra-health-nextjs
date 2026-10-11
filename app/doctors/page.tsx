@@ -97,7 +97,7 @@ export default function DoctorsPage() {
             aria-hidden="true"
             className="absolute inset-0 -z-20 bg-cover bg-center"
             style={{
-              backgroundImage: "url('/images/nature.webp')",
+              backgroundImage: "url('/images/doctor-hero.webp')",
             }}
           />
 

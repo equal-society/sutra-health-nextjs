@@ -218,7 +218,7 @@ export default function AboutPage() {
     aria-hidden="true"
     className="absolute inset-0 -z-20 bg-cover bg-center"
     style={{
-      backgroundImage: "url('/images/nature.jpg')",
+      backgroundImage: "url('/images/about.webp')",
     }}
   />
 
@@ -281,17 +281,15 @@ export default function AboutPage() {
           work.
         </p>
 
-        <div className="mt-8 flex items-start gap-4">
-          <span
-            aria-hidden="true"
-            className="mt-2 h-10 w-px shrink-0 bg-[#D5C9AE]"
-          />
-
-          <p className="max-w-[560px] text-[14px] leading-7 text-white/75 sm:text-[15px]">
-            Learn where the organisation comes from and how that background
-            connects with Sutra Health today.
-          </p>
-        </div>
+         <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <Link
+              href="/book-appointment"
+              className="inline-flex min-h-12 w-full items-center justify-center bg-[#F7F5EF] px-6 text-base font-semibold text-[#17413D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto"
+            >
+              Book a consultation →
+            </Link>
+          
+          </div>
       </div>
     </div>
   </Container>
@@ -391,34 +389,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* APPROACH */}
-      <section className="bg-white py-20 sm:py-24 lg:py-28">
-        <Container>
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.17em] text-[#17413D]">
-              Our approach
-            </p>
-
-            <h2 className="mt-4 font-serif text-[38px] leading-[1.07] tracking-[-0.035em] sm:text-[50px]">
-              A connected view of health.
-            </h2>
-
-            <p className="mx-auto mt-6 max-w-2xl text-[16px] leading-[1.75] text-[#65736D] sm:text-[17px]">
-              The organisation provides the background; the Approach page explains how Sutra Health structures care decisions.
-            </p>
-          </div>
-
-          <div className="mt-9 text-center">
-            <Link
-              href="/approach"
-              className="inline-flex items-center gap-2 text-[14px] font-semibold text-[#17413D] underline decoration-[#91A298] underline-offset-4"
-            >
-              Read about our care approach
-              <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        </Container>
-      </section>
+    
 
       {/* CLINICAL LEADERSHIP */}
       <section className="bg-[#F7F5EF] py-20 sm:py-24 lg:py-28">

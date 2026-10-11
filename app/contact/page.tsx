@@ -74,14 +74,14 @@ export default function ContactPage() {
         {/* =====================================================
             HERO
         ===================================================== */}
-        <section className="relative isolate overflow-hidden border-b border-[var(--sutra-border)] bg-[var(--sutra-ink)]">
+        <section className="relative isolate overflow-hidden border-b border-[var(--sutra-border)] bg-[var(--sutra-teal)]">
 
           {/* Background image */}
           <div
             aria-hidden="true"
             className="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: "url('/images/nature.webp')",
+              backgroundImage: "url('/images/hero.webp')",
             }}
           />
 

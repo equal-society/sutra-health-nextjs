@@ -135,11 +135,11 @@ const resources: NavItem[] = [
     href: "/resources/research",
     icon: Brain,
   },
-  // {
-  //   label: "Health Guides",
-  //   href: "/resources/health-guides",
-  //   icon: HeartPulse,
-  // },
+  {
+    label: "Yoga Asana Protocol",
+    href: "/yoga-asana-protocol",
+    icon: PersonStanding,
+  },
  
 
 ];

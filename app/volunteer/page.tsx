@@ -108,14 +108,14 @@ export default function VolunteerPage() {
             aria-hidden="true"
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: "url('/images/nature.webp')",
+              backgroundImage: "url('/images/volunteer.webp')",
             }}
           />
 
           {/* Image Overlay */}
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-[var(--sutra-ink)]/55"
+            className="absolute inset-0 bg-[var(--sutra-ink)]/75"
           />
 
           <Container>

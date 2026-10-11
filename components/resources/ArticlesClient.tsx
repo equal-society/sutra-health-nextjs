@@ -57,25 +57,11 @@ export default function ArticlesPage() {
   const latestArticles = filteredArticles.slice(3, visibleCount + 3);
   const hasResults = filteredArticles.length > 0;
 
-  const runSearch = () => {
-    setSubmittedSearch(search.trim());
-    setVisibleCount(9);
+  
 
-    window.setTimeout(() => {
-      document
-        .getElementById("article-results")
-        ?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 50);
-  };
 
-  const clearSearch = () => {
-    setSearch("");
-    setSubmittedSearch("");
-    setVisibleCount(9);
-  };
 
   const resetFilters = () => {
-    clearSearch();
     setActiveCategory("All");
     setActiveType("All");
   };
@@ -99,7 +85,7 @@ export default function ArticlesPage() {
           aria-hidden="true"
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/images/nature.webp')",
+            backgroundImage: "url('/images/hero.webp')",
           }}
         />
 
@@ -140,7 +126,7 @@ export default function ArticlesPage() {
             >
               Health Articles
               <br />
-              <span className="text-[var(--sutra-sand)]">
+              <span className="text-white">
                 for everyday questions.
               </span>
             </h1>
@@ -152,76 +138,7 @@ export default function ArticlesPage() {
               individual medical advice is needed.
             </p>
 
-            {/* Search */}
-            <form
-              className="mx-auto mt-9 max-w-[650px] text-left"
-              onSubmit={(event) => {
-                event.preventDefault();
-                runSearch();
-              }}
-            >
-              <label
-                htmlFor="article-search"
-                className="sr-only"
-              >
-                Search health articles
-              </label>
-
-              <div className="flex min-h-14 flex-col border border-white/25 bg-white/95 sm:flex-row">
-
-                <div className="flex min-w-0 flex-1 items-center px-4">
-                  <span
-                    aria-hidden="true"
-                    className="mr-3 text-[18px] text-[var(--sutra-muted)]"
-                  >
-                    ⌕
-                  </span>
-
-                  <input
-                    id="article-search"
-                    type="search"
-                    value={search}
-                    onChange={(event) => setSearch(event.target.value)}
-                    onKeyDown={(event) => {
-                      if (event.key === "Escape") clearSearch();
-                    }}
-                    placeholder="Search a health question or topic..."
-                    className="w-full bg-transparent py-4 text-[14px] text-[var(--sutra-ink)] outline-none placeholder:text-[var(--sutra-muted)]"
-                    autoComplete="off"
-                  />
-
-                  {search && (
-                    <button
-                      type="button"
-                      onClick={clearSearch}
-                      aria-label="Clear search"
-                      className="ml-2 flex h-8 w-8 shrink-0 items-center justify-center border border-[var(--sutra-border)] text-[15px] text-[var(--sutra-muted)] hover:border-[var(--sutra-teal)] hover:text-[var(--sutra-teal)]"
-                    >
-                      ×
-                    </button>
-                  )}
-                </div>
-
-                <button
-                  type="submit"
-                  className="min-h-12 border-t border-[var(--sutra-border-strong)] bg-[var(--sutra-teal)] px-7 text-[10px] font-semibold uppercase tracking-[0.14em] text-white transition-colors hover:bg-[var(--sutra-teal-hover)] sm:border-l sm:border-t-0"
-                >
-                  Search
-                </button>
-              </div>
-
-              {submittedSearch && (
-                <p
-                  className="mt-3 text-center text-[11px] font-semibold text-white/85"
-                  role="status"
-                  aria-live="polite"
-                >
-                  {filteredArticles.length}{" "}
-                  {filteredArticles.length === 1 ? "article" : "articles"}{" "}
-                  for “{submittedSearch}”
-                </p>
-              )}
-            </form>
+         
           </div>
         </div>
       </section>

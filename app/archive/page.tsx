@@ -115,7 +115,7 @@ export default function ArchivePage() {
               <p className={styles.eyebrow}>Sutra Health · Archive</p>
               <h1 id="archive-title">
                 Health &amp; Wellbeing
-                <span> Resource Archive</span>
+                Resource Archive
               </h1>
               <p className={styles.heroText}>
                 Browse selected material preserved in the Sutra Health archive,
