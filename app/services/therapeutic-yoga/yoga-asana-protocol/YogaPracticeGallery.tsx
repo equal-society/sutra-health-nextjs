@@ -39,19 +39,18 @@ const poses: Practice[] = [
 function ThumbnailCard({ practice, number, isWarmup = false }: { practice: Practice; number?: string; isWarmup?: boolean }) {
   const content = (
     <>
-      <div className="relative aspect-[4/3] overflow-hidden bg-[#E9EDE5]">
+      <div className="relative aspect-video overflow-hidden bg-[#E9EDE5]">
         {practice.externalImage ? (
           // YouTube-hosted thumbnails are served directly from YouTube.
           // eslint-disable-next-line @next/next/no-img-element
           <img src={practice.image} alt={`${practice.name} thumbnail`} loading="lazy" className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
         ) : (
-          <Image src={practice.image} alt={`${practice.name} thumbnail`} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" className="object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
+          <Image src={practice.image} alt={`${practice.name} thumbnail`} fill sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, (max-width: 1536px) 16vw, 10vw" className="object-cover transition-transform duration-300 group-hover:scale-[1.03]" />
         )}
-        {number && <span className="absolute left-3 top-3 flex h-8 w-8 items-center justify-center rounded-full bg-white/95 font-serif text-sm text-[#173B36]">{number}</span>}
+        {number && <span className="absolute left-1 top-1 flex h-6 w-6 items-center justify-center rounded-full bg-white/95 font-serif text-sm text-[#173B36]">{number}</span>}
       </div>
-      <div className="flex min-h-16 items-center justify-between gap-3 p-4">
-        <h3 className="font-serif text-lg leading-snug text-[#173B36] sm:text-xl">{practice.name}</h3>
-        {practice.url && <span aria-hidden="true" className="shrink-0 text-sm font-bold text-[#14564C]">Open link ↗</span>}
+      <div className="flex min-h-11  gap-2 p-2 sm:p-2.5">
+        <h3 className="font-serif text-xs leading-snug text-[#173B36] sm:text-sm 2xl:text-base">{practice.name}</h3>
       </div>
     </>
   );
@@ -70,10 +69,10 @@ function ThumbnailCard({ practice, number, isWarmup = false }: { practice: Pract
 export default function YogaPracticeGallery() {
   return (
     <div>
-      <div className="mb-8 max-w-[360px]">
-        <ThumbnailCard practice={warmup} isWarmup />
-      </div>
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+     
+      <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-6 2xl:grid-cols-6">
+                <ThumbnailCard practice={warmup} isWarmup />
+
         {poses.map((pose, index) => <ThumbnailCard key={pose.name} practice={pose} number={String(index + 1).padStart(2, "0")} />)}
       </div>
     </div>
