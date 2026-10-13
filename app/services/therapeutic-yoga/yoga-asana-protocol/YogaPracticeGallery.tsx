@@ -20,7 +20,7 @@ const practices: Practice[] = [
   { name: "Sheshank Asana", icon: "/images/thumbnails/11-sheshank-asana.webp", url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_asana/shashankasana-2026-06-13.mp4", source: "archive" },
   { name: "Bhujang / Sarpasana", icon: "/images/thumbnails/12-bhujang-asana.webp", url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_unclassed/unclassed-40-2026-08-17.mp4", source: "archive" },
   { name: "Shalabhasana", icon: "/images/thumbnails/13-shalabhasana.webp", url: "https://www.youtube.com/watch?v=5Z76Y85KZCk", source: "youtube" },
-  { name: "Dhanurasana", icon: "/images/thumbnails/14-dhanurasana.webp", url: "https://www.youtube.com/watch?v=xOQMTnV6ZUM", source: "youtube" },
+  { name: "Dhanurasana", icon: "/images/thumbnails/dhanurasana.webp", url: "https://www.youtube.com/watch?v=xOQMTnV6ZUM", source: "youtube" },
   { name: "Chakrasana", icon: "/images/thumbnails/15-chakrasana.webp", url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_asana/chakrasana-2026-07-16.mp4", source: "archive" },
   { name: "Ardha Matsyendrasana", icon: "/images/thumbnails/16-ardha-matsyendrasana.webp", url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_asana/ardha-matsyendrasana-2026-08-17.mp4", source: "archive" },
   { name: "Ustrasana", icon: "/images/thumbnails/17-ustrasana.webp", url: "https://in.pinterest.com/pin/1137158974682061121/", source: "pinterest" },

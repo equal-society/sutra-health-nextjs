@@ -307,12 +307,12 @@ export default function Page() {
             >
               {page.primary.label} →
             </Link>
-            <a
-              href="#explore"
-              className="inline-flex min-h-12 w-full items-center justify-center border border-white/70 px-6 text-base font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto"
+           <Link
+              href="/services/therapeutic-yoga/yoga-asana-protocol"
+              className="inline-flex min-h-12 w-full items-center justify-center border border-white/70 px-6 text-base font-semibold text-white transition-colors hover:bg-white hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto"
             >
-              {page.secondaryLabel}
-            </a>
+              View Yoga Practices
+            </Link>
           </div>
         </div>
       </section>

@@ -44,7 +44,7 @@ export default function YogaAsanaProtocolPage() {
           className="absolute inset-0 h-full w-full object-cover"
         >
           <source
-            src="/videos/hero-video.mp4"
+            src="/videos/yoga-asana.mp4"
             type="video/mp4"
           />
         </video>
