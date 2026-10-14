@@ -6,7 +6,7 @@ export const weightManagement: Condition = {
   title: "Weight Management",
 
   shortDescription:
-    "A practical guide to weight management, with attention to eating patterns, activity, sleep, stress and the behaviours that make changes easier to sustain.",
+    "A practical guide to weight management: eating patterns, activity, sleep, stress and the habits that make changes easier to sustain.",
 
   introduction:
     "Weight management is not determined by one food, exercise or practice. This guide focuses on the everyday factors that can influence weight and related health, while keeping the discussion separate from treatment of an underlying medical condition.",

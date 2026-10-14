@@ -6,7 +6,7 @@ export const diabetesBloodSugar: Condition = {
   title: "Diabetes & Blood Sugar",
 
   shortDescription:
-    "A condition guide to blood-sugar management, with evidence on nutrition, physical activity, yoga and structured lifestyle support alongside medical care.",
+    "A guide to blood-sugar health: nutrition, physical activity, yoga and structured lifestyle support, used alongside medical care.",
 
   introduction:
     "Blood-sugar health involves more than one behaviour. Nutrition, physical activity, sleep, stress and prescribed treatment can all be relevant, with the right combination depending on whether the concern is prediabetes, type 2 diabetes or another metabolic issue.",

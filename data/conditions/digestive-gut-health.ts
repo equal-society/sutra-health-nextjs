@@ -6,8 +6,7 @@ export const digestiveGutHealth: Condition = {
   title: "Digestive & Gut Health",
 
   shortDescription:
-    "A practical guide to digestive wellbeing, with attention to eating patterns, routine, stress and the limits of current evidence for yoga in IBS.",
-
+    "A practical guide to digestive wellbeing: eating patterns, routine and stress, and how far current evidence supports yoga for IBS.",
   introduction:
     "Digestive symptoms can have many causes. This guide focuses on everyday factors that may be relevant to digestive wellbeing while keeping diagnosis, persistent symptoms and medical evaluation separate from general lifestyle advice.",
 

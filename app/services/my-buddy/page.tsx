@@ -50,7 +50,7 @@ type PageData = {
 };
 
 const page: PageData = {
-  "heroImage": "/images/service-hero.webp",
+  "heroImage": "/images/services/my-buddy.webp",
   "eyebrow": "Peer support · Faridabad",
   "h1": "My Buddy: peer support for encouragement and healthier routines",
   "lead": "Sometimes having someone to talk to makes the difference. My Buddy is a peer-support programme run by EQUAL Society in Faridabad: you can become a buddy, or get in touch to find one.",

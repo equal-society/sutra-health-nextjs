@@ -8,7 +8,7 @@ const services = [
     title: "Physician Consultation",
     description:
       "Discuss your symptoms, health history and current treatment with a physician. Leave with clearer next steps for your care.",
-    image: "/images/service-hero.webp",
+    image: "/images/services/physician-consulation.webp",
     href: "/services/physician-consultation",
   },
   {
@@ -24,7 +24,7 @@ const services = [
     title: "Nutrition",
     description:
       "Explore food and meal guidance shaped around your health needs, preferences and everyday routine.",
-    image: "/images/what-we-do/diet.webp",
+    image: "/images/services/diet.webp",
     href: "/services/nutrition",
   },
   {
@@ -32,7 +32,7 @@ const services = [
     title: "Therapeutic Yoga",
     description:
       "Explore yoga practices adapted to your comfort, mobility and health needs, where appropriate.",
-    image: "/images/yoga2.webp",
+    image: "/images/services/therapeutic-yoga.webp",
     href: "/services/therapeutic-yoga",
   },
   {
@@ -40,7 +40,7 @@ const services = [
     title: "Behaviour & Stress Support",
     description:
       "Work through everyday barriers and explore practical ways to support healthier routines and wellbeing.",
-    image: "/images/what-we-do/mind.webp",
+    image: "/images/services/behaviour-stress-mind.webp",
     href: "/services/behaviour-stress-mind",
   },
   {
@@ -48,7 +48,7 @@ const services = [
     title: "Shirodhara",
     description:
       "Explore a traditional wellness practice and what to expect before choosing a session.",
-    image: "/images/service-hero.webp",
+    image: "/images/services/shirodhara.webp",
     href: "/services/shirodhara",
   },
   {
@@ -56,7 +56,7 @@ const services = [
     title: "My Buddy",
     description:
       "Learn about peer support, companionship and community wellbeing.",
-    image: "/images/service-hero.webp",
+    image: "/images/services/my-buddy.webp",
     href: "/services/my-buddy",
   },
 

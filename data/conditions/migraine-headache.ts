@@ -6,8 +6,7 @@ export const migraineHeadache: Condition = {
   title: "Migraine & Headache",
 
   shortDescription:
-    "A practical guide to migraine-related lifestyle factors, including sleep, regular meals, hydration, stress and the evidence on yoga as an adjunct to treatment.",
-
+    "A practical guide to migraine and lifestyle: sleep, regular meals, hydration and stress, plus the evidence on yoga as an addition to treatment.",
   introduction:
     "Migraine is a neurological condition, not simply a stress or lifestyle problem. Lifestyle factors can influence patterns and day-to-day management, while diagnosis and appropriate treatment remain important.",
 

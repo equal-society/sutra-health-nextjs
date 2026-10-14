@@ -6,7 +6,7 @@ export const highBloodPressure: Condition = {
   title: "High Blood Pressure",
 
   shortDescription:
-    "A practical guide to lifestyle factors relevant to blood pressure, including diet, activity, sleep, stress and the evidence on yoga as an adjunct to care.",
+    "A practical guide to diet, activity, sleep and stress in blood-pressure care, and where the evidence on yoga fits alongside medical treatment.",
 
   introduction:
     "High blood pressure is influenced by several factors, and lifestyle changes are usually considered alongside appropriate medical assessment and treatment. This guide focuses on the everyday factors most relevant to blood-pressure care and explains where the available yoga evidence fits.",

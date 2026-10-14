@@ -6,7 +6,7 @@ export const arthritisJointPain: Condition = {
   title: "Arthritis & Joint Pain",
 
   shortDescription:
-    "A condition guide to joint pain and arthritis, with attention to diagnosis, appropriate movement, strength, function and the evidence on yoga.",
+    "A guide to joint pain and arthritis: why diagnosis comes first, then movement, strength and function, and what the evidence says about yoga.",
 
   introduction:
     "Arthritis is not one condition, and joint pain can have different causes. This guide separates the need for appropriate diagnosis from the lifestyle questions that may be useful after the clinical picture is understood.",

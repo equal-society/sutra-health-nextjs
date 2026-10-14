@@ -6,9 +6,9 @@ export const womensHealth: Condition = {
   title: "Women's Health",
 
   shortDescription:
-    "A focused guide to the areas currently covered here: PCOS and menopause-related symptoms, with lifestyle evidence kept alongside appropriate medical care.",
-
-  introduction:
+    "A guide to lifestyle evidence for PCOS and menopause-related symptoms, kept alongside medical care. Other women's health needs are not covered here.",
+  
+    introduction:
     "Women’s health covers many medical needs. This page deliberately focuses on PCOS and menopause-related symptoms because those are the areas supported by the evidence and scope represented on this site. Pregnancy care and gynecological conditions requiring medical management belong with the appropriate specialist.",
 
   concerns: [
