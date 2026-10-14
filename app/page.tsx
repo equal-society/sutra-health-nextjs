@@ -232,7 +232,7 @@ function Hero() {
             "
           >
             <span className="block">
-            Your partner in recovery and wellness.
+            Your lifestyle shapes your health. 
             </span>
           </h1>
 
@@ -249,7 +249,9 @@ function Hero() {
               lg:mt-6
             "
           >
-           An evidence-informed integrative approach combining medical guidance, nutrition counselling, Therapeutic Yoga, and practical lifestyle changes to support your wellbeing and long-term health.
+          Food, physical activity, sleep and stress can affect your health.
+          These factors may be considered alongside your medical history
+          and treatment.
           </p>
 
           {/* Buttons */}
@@ -382,13 +384,12 @@ function EverydayHealth() {
               sm:text-[56px]
             "
           >
-          Your lifestyle shapes your health, longevity and happiness.
+          Your partner in recovery and wellness.
           </h2>
 
           {/* <p className="mt-5 max-w-[720px] text-base leading-8 text-[#65736D] sm:text-[18px]">
-          Food, physical activity, sleep and stress can affect your health.
-          These factors may be considered alongside your medical history
-          and treatment.
+            An evidence-informed integrative approach combining medical guidance, nutrition counselling, Therapeutic Yoga, and practical lifestyle changes to support your wellbeing and long-term health.
+
           </p> */}
 
           <div className="mt-9 grid gap-x-2 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
