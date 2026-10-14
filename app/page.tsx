@@ -200,7 +200,7 @@ function Hero() {
         "
       >
         <div className="max-w-4xl">
-          {/* Eyebrow
+          {/* Eyebrow */}
           <p
             className="
               text-[11px]
@@ -212,7 +212,7 @@ function Hero() {
             "
           >
             Doctor-led integrative lifestyle healthcare
-          </p> */}
+          </p>
 
           {/* Heading */}
           <h1
@@ -232,7 +232,7 @@ function Hero() {
             "
           >
             <span className="block">
-            Your lifestyle shapes your health.
+            Your partner in recovery and wellness.
             </span>
           </h1>
 
@@ -249,9 +249,7 @@ function Hero() {
               lg:mt-6
             "
           >
-           Your health is influenced by everyday habits such as food, physical
-              activity, sleep and stress. We help you understand these factors and
-              make practical lifestyle changes alongside appropriate medical care.
+           An evidence-informed integrative approach combining medical guidance, nutrition counselling, Therapeutic Yoga, and practical lifestyle changes to support your wellbeing and long-term health.
           </p>
 
           {/* Buttons */}
@@ -384,13 +382,13 @@ function EverydayHealth() {
               sm:text-[56px]
             "
           >
-          Medical care and lifestyle support, working together.
+          Your lifestyle shapes your health, longevity and happiness.
           </h2>
 
           {/* <p className="mt-5 max-w-[720px] text-base leading-8 text-[#65736D] sm:text-[18px]">
-            We combine medical guidance, nutrition counselling,
-            Therapeutic Yoga and practical lifestyle changes
-            to support your health and wellbeing.
+          Food, physical activity, sleep and stress can affect your health.
+          These factors may be considered alongside your medical history
+          and treatment.
           </p> */}
 
           <div className="mt-9 grid gap-x-2 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
