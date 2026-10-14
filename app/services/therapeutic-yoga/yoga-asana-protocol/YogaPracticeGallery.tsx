@@ -8,7 +8,6 @@ type Practice = { name: string; icon: string; url?: string; source: "archive" | 
 const practices: Practice[] = [
   { name: "Warm-up", icon: "/images/thumbnails/01-warm-up.webp", url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_asana/tadasana-2026-07-29.mp4", source: "archive" },
   { name: "Tadasana", icon: "/images/thumbnails/01-tadasana.webp", url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_asana/tadasana-2026-07-13.mp4", source: "archive" },
-  { name: "Vriksha Asana", icon: "/images/thumbnails/02-vriksha-asana.webp", source: "missing" },
   { name: "Surya Namaskar", icon: "/images/thumbnails/03-surya-namaskar.webp", url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_asana/surya-namaskar-2026-06-14.mp4", source: "archive" },
   { name: "Shavasana", icon: "/images/thumbnails/04-shavasana.webp", url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_unclassed/unclassed-11-2026-08-17.mp4", source: "archive" },
   { name: "Pawanmukt Asana", icon: "/images/thumbnails/05-pawan-mukt-asana.webp", url: "https://www.youtube.com/watch?v=b4unFpb4HW8", source: "youtube" },
@@ -25,7 +24,7 @@ const practices: Practice[] = [
   { name: "Ardha Matsyendrasana", icon: "/images/thumbnails/16-ardha-matsyendrasana.webp", url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_asana/ardha-matsyendrasana-2026-08-17.mp4", source: "archive" },
   { name: "Ustrasana", icon: "/images/thumbnails/17-ustrasana.webp", url: "https://in.pinterest.com/pin/1137158974682061121/", source: "pinterest" },
   { name: "Simhasana", icon: "/images/thumbnails/18-simhasana.webp", url: "https://www.youtube.com/watch?v=RkvdfKefcDU", source: "youtube" },
-  { name: "Mayurasana", icon: "/images/thumbnails/19-mayurasana.webp", url: "https://www.youtube.com/watch?v=aKdpdQyx-f4", source: "youtube" },
+  { name: "Mayurasana", icon: "/images/thumbnails/19-mayurasana.webp", url: "https://ia800806.us.archive.org/22/items/retreat_202610/Retreat/US/2025-08-04_us.mp4", source: "archive" },
   { name: "Pranayama", icon: "/images/thumbnails/20-pranayama.webp", url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_pranayam/pranayam-16-2026-08-17.mp4", source: "archive" },
 ];
 

@@ -138,7 +138,7 @@ export default function YogaAsanaProtocolPage() {
 
 
       <section id="practice" className="scroll-mt-20 py-14 sm:py-20"><Container>
-        <div className="flex flex-col justify-between gap-5 border-b border-[var(--sutra-border-strong)] pb-7 sm:flex-row sm:items-end sm:pb-9"><div><p className={eyebrow}>03 / Follow in order</p><h2 className="mt-4 font-serif text-4xl leading-tight tracking-tight sm:text-5xl">The Yoga asana sequence</h2><p className="mt-4 max-w-2xl text-base leading-7 text-[#3F4B46]">Warm-up comes first, followed by all 20 practices in your requested order. Select a thumbnail to open its supplied video or reference.</p></div><p className="shrink-0 text-sm text-[#3F4B46]">01 warm-up <span className="px-2 text-[var(--sutra-border-strong)]">/</span> 20 practices</p></div>
+        <div className="flex flex-col justify-between gap-5 border-b border-[var(--sutra-border-strong)] pb-7 sm:flex-row sm:items-end sm:pb-9"><div><p className={eyebrow}>03 / Follow in order</p><h2 className="mt-4 font-serif text-4xl leading-tight tracking-tight sm:text-5xl">The Yoga asana sequence</h2><p className="mt-4 max-w-2xl text-base leading-7 text-[#3F4B46]">Warm-up comes first, followed by all 19 practices in your requested order. Select a thumbnail to open its supplied video or reference.</p></div><p className="shrink-0 text-sm text-[#3F4B46]">01 warm-up <span className="px-2 text-[var(--sutra-border-strong)]">/</span> 19 practices</p></div>
         <div className="mt-8"><YogaPracticeGallery /></div>
       </Container></section>
 
