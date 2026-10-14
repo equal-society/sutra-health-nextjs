@@ -48,7 +48,7 @@ const services = [
     title: "Shirodhara",
     description:
       "Explore a traditional wellness practice and what to expect before choosing a session.",
-    image: "/images/services/shirodhara.webp",
+    image: "/images/services/shirodharaa.webp",
     href: "/services/shirodhara",
   },
   {

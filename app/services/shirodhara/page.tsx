@@ -50,7 +50,7 @@ type PageData = {
 };
 
 const page: PageData = {
-  "heroImage": "/images/services/shirodhara.webp",
+  "heroImage": "/images/services/shirodharaa.webp",
   "eyebrow": "Traditional wellness therapies · Faridabad",
   "h1": "Shirodhara and Abhyanga: traditional oil therapies for relaxation.",
   "lead": "Two Ayurvedic oil therapies offered as relaxing wellness experiences. Find out what each involves before you book.",
