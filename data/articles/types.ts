@@ -29,6 +29,9 @@ export type Article = {
   /** Last substantive content update, when different from publication date. */
   updatedDate?: string;
 
+  /** Optional editorial topics used for stronger automatic internal linking. */
+  tags?: string[];
+
   excerpt: string;
 
   image: string;

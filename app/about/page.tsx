@@ -581,7 +581,7 @@ export default function AboutPage() {
             </div>
 
             <Link
-              href="/community"
+              href="/volunteer"
               className="inline-flex min-h-12 items-center justify-center gap-2 bg-[#17413D] px-7 text-[14px] font-semibold text-white transition-colors hover:bg-[#12332F]"
             >
               Explore community work

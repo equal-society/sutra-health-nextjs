@@ -88,7 +88,7 @@ const page: PageData = {
         "Session length, oils used and the areas massaged are confirmed when you book."
       ],
       "image": {
-        "src": "/images/services/shirodhara/abhyanga-oil-message.png",
+        "src": "/images/services/shirodhara/abhyanga-oil-message.webp",
         "alt": "Abhyanga oil massage treatment",
         "caption": "Abhyanga oil massage at Life Quality."
       },

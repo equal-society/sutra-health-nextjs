@@ -91,26 +91,206 @@ export function getArticlesByType(
 
 /* =========================================================
    GET RELATED ARTICLES
+
+   Relevance is calculated automatically so newly published
+   articles get useful internal links without editing the page
+   component. Same-category articles are preferred, followed
+   by shared tags/type and finally other recent articles.
 ========================================================= */
 
 export function getRelatedArticles(
   article: Article,
   limit = 3,
 ): Article[] {
+  const articleTags = new Set(
+    (article.tags ?? []).map((tag) => tag.toLowerCase()),
+  );
+
   return articles
-    .filter(
-      (item) => item.slug !== article.slug,
-    )
-    .sort((a, b) => {
-      const aSameCategory =
-        a.category === article.category ? 1 : 0;
+    .filter((item) => item.slug !== article.slug)
+    .map((item) => {
+      const itemTags = new Set(
+        (item.tags ?? []).map((tag) => tag.toLowerCase()),
+      );
 
-      const bSameCategory =
-        b.category === article.category ? 1 : 0;
+      const sharedTags = [...articleTags].filter((tag) =>
+        itemTags.has(tag),
+      ).length;
 
-      return bSameCategory - aSameCategory;
+      const sameCategory =
+        item.category.toLowerCase() === article.category.toLowerCase()
+          ? 4
+          : 0;
+
+      const sameType = item.type === article.type ? 2 : 0;
+
+      const score = sameCategory + sameType + sharedTags;
+
+      return { item, score };
     })
-    .slice(0, limit);
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+
+      return (
+        new Date(b.item.updatedDate ?? b.item.date).getTime() -
+        new Date(a.item.updatedDate ?? a.item.date).getTime()
+      );
+    })
+    .slice(0, limit)
+    .map(({ item }) => item);
+}
+
+/* =========================================================
+   AUTOMATIC ARTICLE INTERNAL LINKS
+
+   These are derived from article topic/category/slug. A new
+   article therefore gets contextual links automatically.
+========================================================= */
+
+export type ArticleInternalLink = {
+  label: string;
+  href: string;
+  type: "Health condition" | "Service" | "Resource";
+};
+
+export function getArticleContextLinks(
+  article: Article,
+): ArticleInternalLink[] {
+  const slug = article.slug.toLowerCase();
+  const title = article.title.toLowerCase();
+  const haystack = `${slug} ${title}`;
+
+  if (haystack.includes("blood-pressure") || haystack.includes("blood pressure")) {
+    return [
+      {
+        label: "High Blood Pressure",
+        href: "/conditions/high-blood-pressure",
+        type: "Health condition",
+      },
+      {
+        label: "Lifestyle Medicine",
+        href: "/services/lifestyle",
+        type: "Service",
+      },
+    ];
+  }
+
+  if (haystack.includes("prediabetes") || haystack.includes("diabetes")) {
+    return [
+      {
+        label: "Diabetes & Blood Sugar",
+        href: "/conditions/diabetes-blood-sugar",
+        type: "Health condition",
+      },
+      {
+        label: "Nutrition Counselling",
+        href: "/services/nutrition",
+        type: "Service",
+      },
+    ];
+  }
+
+  if (haystack.includes("gut-health") || haystack.includes("gut health") || haystack.includes("digestion")) {
+    return [
+      {
+        label: "Digestive & Gut Health",
+        href: "/conditions/digestive-gut-health",
+        type: "Health condition",
+      },
+      {
+        label: "Nutrition Counselling",
+        href: "/services/nutrition",
+        type: "Service",
+      },
+    ];
+  }
+
+  if (haystack.includes("weight") || haystack.includes("sleep")) {
+    return [
+      {
+        label: "Weight & Obesity",
+        href: "/conditions/weight-management",
+        type: "Health condition",
+      },
+      {
+        label: "Lifestyle Medicine",
+        href: "/services/lifestyle",
+        type: "Service",
+      },
+    ];
+  }
+
+  if (haystack.includes("yoga") || haystack.includes("pranayama") || article.category === "Yoga & Movement") {
+    return [
+      {
+        label: "Therapeutic Yoga",
+        href: "/services/therapeutic-yoga",
+        type: "Service",
+      },
+      {
+        label: "Behaviour & Stress Support",
+        href: "/services/behaviour-stress-mind",
+        type: "Service",
+      },
+    ];
+  }
+
+  if (haystack.includes("stress") || haystack.includes("mindfulness") || article.category === "Stress & Mindfulness") {
+    return [
+      {
+        label: "Behaviour & Stress Support",
+        href: "/services/behaviour-stress-mind",
+        type: "Service",
+      },
+      {
+        label: "Lifestyle Medicine",
+        href: "/services/lifestyle",
+        type: "Service",
+      },
+    ];
+  }
+
+  if (article.category === "Nutrition" || article.type === "Nutrition Guide") {
+    return [
+      {
+        label: "Nutrition Counselling",
+        href: "/services/nutrition",
+        type: "Service",
+      },
+      {
+        label: "Lifestyle Medicine",
+        href: "/services/lifestyle",
+        type: "Service",
+      },
+    ];
+  }
+
+  return [
+    {
+      label: "Health Conditions",
+      href: "/conditions",
+      type: "Health condition",
+    },
+    {
+      label: "Health Services",
+      href: "/services",
+      type: "Service",
+    },
+  ];
+}
+
+export function getArticleRelatedCare(
+  article: Article,
+): ArticleInternalLink[] {
+  const contextLinks = getArticleContextLinks(article);
+
+  const physicianLink: ArticleInternalLink = {
+    label: "Physician Consultation",
+    href: "/services/physician-consultation",
+    type: "Service",
+  };
+
+  return [...contextLinks, physicianLink].slice(0, 3);
 }
 
 

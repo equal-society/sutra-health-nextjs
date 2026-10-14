@@ -330,7 +330,7 @@ export default function ScoreQuestionnaire() {
 
             <nav aria-label="Related information" className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm">
 
-              <Link href="/approach" className="font-medium text-[var(--sutra-teal)] underline underline-offset-4">Our approach</Link>
+              <Link href="/resources/articles" className="font-medium text-[var(--sutra-teal)] underline underline-offset-4">Read Our Articles</Link>
 
               <Link href="/services" className="font-medium text-[var(--sutra-teal)] underline underline-offset-4">Explore services</Link>
 

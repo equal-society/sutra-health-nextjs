@@ -102,7 +102,7 @@ const page: PageData = {
         "Session length, preparation and any follow-up are confirmed when you book."
       ],
       "image": {
-        "src": "/images/services/shirodhara.webp",
+        "src": "/images/services/shirodharaa.webp",
         "alt": "Shirodhara therapy session in progress at Life Quality Faridabad",
         "caption": "A Shirodhara session at Life Quality."
       },

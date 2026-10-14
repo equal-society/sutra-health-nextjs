@@ -7,6 +7,8 @@ import {
   articles,
   getArticleBySlug,
   getRelatedArticles,
+  getArticleContextLinks,
+  getArticleRelatedCare,
 } from "@/data/articles";
 
 type PageProps = {
@@ -20,42 +22,6 @@ type PageProps = {
 ========================================================= */
 
 const SITE_URL = "https://lifequality.org.in";
-
-const articleContextLinks: Record<string, { label: string; href: string }[]> = {
-  "can-walking-help-lower-blood-pressure": [
-    { label: "High blood pressure lifestyle support", href: "/conditions/high-blood-pressure" },
-    { label: "Lifestyle Medicine", href: "/services/lifestyle" },
-  ],
-  "how-to-lower-blood-pressure-naturally": [
-    { label: "High blood pressure lifestyle support", href: "/conditions/high-blood-pressure" },
-    { label: "Nutrition support", href: "/services/nutrition" },
-  ],
-  "what-is-prediabetes-and-can-it-be-reversed": [
-    { label: "Diabetes and blood sugar support", href: "/conditions/diabetes-blood-sugar" },
-    { label: "Lifestyle Medicine", href: "/services/lifestyle" },
-  ],
-  "how-does-sleep-affect-weight-loss": [
-    { label: "Weight management support", href: "/conditions/weight-management" },
-    { label: "Lifestyle Medicine", href: "/services/lifestyle" },
-  ],
-  "how-to-improve-gut-health-naturally": [
-    { label: "Digestive and gut health support", href: "/conditions/digestive-gut-health" },
-    { label: "Nutrition support", href: "/services/nutrition" },
-  ],
-  "what-is-a-healthy-balanced-diet": [
-    { label: "Nutrition support", href: "/services/nutrition" },
-    { label: "Lifestyle Medicine", href: "/services/lifestyle" },
-  ],
-  "how-to-manage-stress": [
-    { label: "Stress and behaviour support", href: "/services/behaviour-stress-mind" },
-    { label: "Lifestyle Medicine", href: "/services/lifestyle" },
-  ],
-  "yoga-for-stress-relief": [
-    { label: "Therapeutic Yoga", href: "/services/therapeutic-yoga" },
-    { label: "Stress and behaviour support", href: "/services/behaviour-stress-mind" },
-  ],
-};
-
 
 /* =========================================================
    STATIC PARAMS
@@ -166,60 +132,8 @@ export default async function ArticlePage({
 
   const relatedArticles = getRelatedArticles(article, 3);
 
-  const relatedCare = (() => {
-    const slug = article.slug;
-    if (slug.includes("blood-pressure")) {
-      return [
-        { href: "/conditions/high-blood-pressure", label: "High Blood Pressure", type: "Health condition" },
-        { href: "/services/lifestyle", label: "Lifestyle Medicine", type: "Service" },
-        { href: "/services/physician-consultation", label: "Physician Consultation", type: "Service" },
-      ];
-    }
-    if (slug.includes("prediabetes")) {
-      return [
-        { href: "/conditions/diabetes-blood-sugar", label: "Diabetes & Blood Sugar", type: "Health condition" },
-        { href: "/services/lifestyle", label: "Lifestyle Medicine", type: "Service" },
-        { href: "/services/nutrition", label: "Nutrition Counselling", type: "Service" },
-      ];
-    }
-    if (slug.includes("gut-health")) {
-      return [
-        { href: "/conditions/digestive-gut-health", label: "Digestive & Gut Health", type: "Health condition" },
-        { href: "/services/nutrition", label: "Nutrition Counselling", type: "Service" },
-      ];
-    }
-    if (slug.includes("yoga")) {
-      return [
-        { href: "/services/therapeutic-yoga", label: "Therapeutic Yoga", type: "Service" },
-        { href: "/services/behaviour-stress-mind", label: "Behaviour & Stress Support", type: "Service" },
-      ];
-    }
-    if (slug.includes("stress")) {
-      return [
-        { href: "/services/behaviour-stress-mind", label: "Behaviour & Stress Support", type: "Service" },
-        { href: "/services/lifestyle", label: "Lifestyle Medicine", type: "Service" },
-      ];
-    }
-    if (slug.includes("diet")) {
-      return [
-        { href: "/services/nutrition", label: "Nutrition Counselling", type: "Service" },
-        { href: "/services/lifestyle", label: "Lifestyle Medicine", type: "Service" },
-      ];
-    }
-    if (slug.includes("sleep")) {
-      return [
-        { href: "/services/lifestyle", label: "Lifestyle Medicine", type: "Service" },
-      ];
-    }
-    return [
-      { href: "/services", label: "Health Services", type: "Services" },
-      { href: "/conditions", label: "Health Conditions", type: "Health concerns" },
-    ];
-  })();
-  const contextLinks = articleContextLinks[article.slug] ?? [
-    { label: "Explore all health conditions", href: "/conditions" },
-    { label: "Explore health services", href: "/services" },
-  ];
+  const relatedCare = getArticleRelatedCare(article);
+  const contextLinks = getArticleContextLinks(article);
   const wordCount = [
     article.content.introduction,
     ...article.content.sections.flatMap((section) => [section.heading, ...section.paragraphs, ...(section.bullets ?? [])]),
@@ -678,7 +592,7 @@ export default async function ArticlePage({
                 RIGHT: ONE STICKY SIDEBAR FOR HERO → FULL ARTICLE
             ================================================= */}
             <aside className="hidden lg:block">
-              <div className="sticky top-28 py-14 sm:py-18 lg:py-24">
+              <div className="sticky top-28">
                 <div>
                   <p className="text-[15px] font-medium text-[var(--sutra-ink)]">
                     Category

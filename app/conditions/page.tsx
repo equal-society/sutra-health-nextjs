@@ -142,7 +142,7 @@ export default function ConditionsPage() {
             aria-hidden="true"
             className="absolute inset-0 -z-20 bg-cover bg-center"
             style={{
-              backgroundImage: "url('/images/nature.webp')",
+              backgroundImage: "url('/images/hero.webp')",
             }}
           />
 
@@ -186,7 +186,7 @@ export default function ConditionsPage() {
                 >
                   Health Conditions & Lifestyle
                   <br />
-                  <span className="text-[#D5C9AE]">
+                  <span className="text-white">
                     Support in Faridabad
                   </span>
                 </h1>
@@ -209,18 +209,7 @@ export default function ConditionsPage() {
                   breath, mind and everyday habits alongside your individual needs.
                 </p>
 
-                {/* Supporting Direction */}
-                <div className="mt-8 flex items-start gap-4">
-                  <span
-                    aria-hidden="true"
-                    className="mt-2 h-10 w-px shrink-0 bg-[#D5C9AE]"
-                  />
-
-                  <p className="max-w-[560px] text-[14px] leading-7 text-white/75 sm:text-[15px]">
-                    Select a condition to explore relevant health information,
-                    lifestyle considerations and practical support.
-                  </p>
-                </div>
+              
 
               </div>
             </div>

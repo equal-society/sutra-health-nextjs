@@ -12,7 +12,9 @@ const brandByline =
   "Medical guidance and practical lifestyle support, grounded in evidence and everyday care.";
 
 export const metadata: Metadata = {
-  title: { absolute: "Sutra Health | Doctor-Led Integrative Lifestyle Healthcare" },
+  title: {
+    absolute: "Sutra Health | Doctor-Led Integrative Lifestyle Healthcare",
+  },
 
   description:
     "Doctor-led healthcare bringing medical guidance, nutrition, Therapeutic Yoga and everyday lifestyle support together in Faridabad.",
@@ -83,6 +85,14 @@ const services = [
     label: "Stress and Behaviour Support",
     href: "/services/behaviour-stress-mind",
   },
+  {
+    label: "Shirodhara",
+    href: "/services/shirodhara",
+  },
+  {
+    label: "My Buddy",
+    href: "/services/my-buddy",
+  },
 ];
 
 function Eyebrow({
@@ -145,10 +155,7 @@ function Hero() {
       "
     >
       {/* Background Video */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0"
-      >
+      <div aria-hidden="true" className="absolute inset-0">
         <video
           autoPlay
           muted
@@ -158,10 +165,7 @@ function Hero() {
           aria-label="Sutra Health lifestyle healthcare introduction"
           className="absolute inset-0 h-full w-full object-cover"
         >
-          <source
-            src="/videos/hero-video.mp4"
-            type="video/mp4"
-          />
+          <source src="/videos/hero-video.mp4" type="video/mp4" />
         </video>
 
         {/* Base Overlay */}
@@ -196,7 +200,6 @@ function Hero() {
         "
       >
         <div className="max-w-4xl">
-
           {/* Eyebrow */}
           <p
             className="
@@ -246,7 +249,8 @@ function Hero() {
               lg:mt-6
             "
           >
-            We bring medical guidance, nutrition, everyday practices and Therapeutic Yoga into one conversation about your health.
+            We bring medical guidance, nutrition, everyday practices and
+            Therapeutic Yoga into one conversation about your health.
           </p>
 
           {/* Buttons */}
@@ -286,11 +290,7 @@ function Hero() {
               "
             >
               Take Your Health Assessment
-
-              <span
-                className="ml-3"
-                aria-hidden="true"
-              >
+              <span className="ml-3" aria-hidden="true">
                 →
               </span>
             </Link>
@@ -322,7 +322,6 @@ function Hero() {
               Explore Our Services
             </Link>
           </div>
-
         </div>
       </div>
     </section>
@@ -355,18 +354,21 @@ function EverydayHealth() {
       title: "Behaviour & Stress Management",
       href: "/services/behaviour-stress-mind",
     },
+      {
+    title: "Shirodhara",
+    href: "/services/shirodhara",
+  },
+  {
+    title: "My Buddy",
+    href: "/services/my-buddy",
+  },
   ];
 
   return (
-    <section
-      aria-labelledby="everyday-title"
-      className="bg-white"
-    >
+    <section aria-labelledby="everyday-title" className="bg-white">
       <Container>
         <div className="py-16 sm:py-20 lg:py-24">
-          <Eyebrow>
-            Lifestyle and health
-          </Eyebrow>
+          <Eyebrow>Lifestyle and health</Eyebrow>
 
           <h2
             id="everyday-title"
@@ -385,15 +387,15 @@ function EverydayHealth() {
           </h2>
 
           <p className="mt-5 max-w-[720px] text-base leading-8 text-[#65736D] sm:text-[18px]">
-            Food, movement, sleep and stress all contribute to your health. We help you explore practical changes alongside appropriate medical care.
+            Food, movement, sleep and stress all contribute to your health. We
+            help you explore practical changes alongside appropriate medical
+            care.
           </p>
 
           <div className="mt-9 grid gap-x-2 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <div key={service.title}>
-                <TextLink href={service.href}>
-                  {service.title}
-                </TextLink>
+                <TextLink href={service.href}>{service.title}</TextLink>
               </div>
             ))}
           </div>
@@ -411,15 +413,10 @@ function ConditionsPreview() {
   const conditions = getAllConditions();
 
   return (
-    <section
-      aria-labelledby="conditions-title"
-      className="bg-[#F7F5EF]"
-    >
+    <section aria-labelledby="conditions-title" className="bg-[#F7F5EF]">
       <Container>
         <div className="py-16 sm:py-20 lg:py-24">
-          <Eyebrow>
-            Health concerns
-          </Eyebrow>
+          <Eyebrow>Health concerns</Eyebrow>
 
           <h2
             id="conditions-title"
@@ -460,9 +457,7 @@ function ConditionsPreview() {
                   sm:text-[17px]
                 "
               >
-                <span>
-                  {condition.title}
-                </span>
+                <span>{condition.title}</span>
 
                 <ArrowUpRight
                   size={16}
@@ -479,9 +474,7 @@ function ConditionsPreview() {
           </div>
 
           <div className="mt-7">
-            <TextLink href="/conditions">
-              Explore All Health Concerns
-            </TextLink>
+            <TextLink href="/conditions">Explore All Health Concerns</TextLink>
           </div>
         </div>
       </Container>
@@ -495,16 +488,11 @@ function ConditionsPreview() {
 
 function AppointmentCTA() {
   return (
-    <section
-      aria-labelledby="appointment-title"
-      className="bg-[#17413D]"
-    >
+    <section aria-labelledby="appointment-title" className="bg-[#17413D]">
       <Container>
         <div className="py-16 sm:py-20 lg:py-24">
           <div className="max-w-[720px]">
-            <Eyebrow light>
-              Start a conversation
-            </Eyebrow>
+            <Eyebrow light>Start a conversation</Eyebrow>
 
             <h2
               id="appointment-title"
@@ -522,8 +510,8 @@ function AppointmentCTA() {
             </h2>
 
             <p className="mt-5 max-w-[600px] text-base leading-7 text-white/85 sm:text-[18px]">
-              Tell us what support you are looking for. Our team can explain
-              the available consultation options and how to begin.
+              Tell us what support you are looking for. Our team can explain the
+              available consultation options and how to begin.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -548,12 +536,7 @@ function AppointmentCTA() {
                 "
               >
                 Book a Consultation
-
-                <ArrowUpRight
-                  size={17}
-                  className="ml-2"
-                  aria-hidden="true"
-                />
+                <ArrowUpRight size={17} className="ml-2" aria-hidden="true" />
               </Link>
 
               <a
@@ -583,8 +566,6 @@ function AppointmentCTA() {
   );
 }
 
-
-
 /* =========================================================
    PATIENT STORIES
 ========================================================= */
@@ -600,9 +581,7 @@ function PatientStories() {
         <div className="py-16 sm:py-20 lg:py-24">
           <div className="gap-10 lg:items-center lg:gap-16">
             <div>
-              <Eyebrow>
-                Patient experiences
-              </Eyebrow>
+              <Eyebrow>Patient experiences</Eyebrow>
 
               <h2
                 id="patient-stories-title"
@@ -620,7 +599,8 @@ function PatientStories() {
               </h2>
 
               <p className="mt-4 text-base leading-7 text-[#65736D]">
-                Experiences shared by people who have interacted with Sutra Health and its practitioners.
+                Experiences shared by people who have interacted with Sutra
+                Health and its practitioners.
               </p>
 
               <div className="mt-6">
@@ -642,17 +622,12 @@ function PatientStories() {
 
 function HomeFAQs() {
   return (
-    <section
-      aria-labelledby="home-faq-title"
-      className="bg-[#FAF8F2]"
-    >
+    <section aria-labelledby="home-faq-title" className="bg-[#FAF8F2]">
       <Container>
         <div className="py-16 sm:py-20 lg:py-24">
           <div className="gap-10 lg:items-center lg:gap-16">
             <div>
-              <Eyebrow>
-                Frequently asked questions
-              </Eyebrow>
+              <Eyebrow>Frequently asked questions</Eyebrow>
 
               <h2
                 id="home-faq-title"
@@ -672,9 +647,7 @@ function HomeFAQs() {
               </h2>
 
               <div className="mt-7 border-t border-[#202522]/15 pt-5">
-                <TextLink href="/faqs">
-                  Explore All FAQs
-                </TextLink>
+                <TextLink href="/faqs">Explore All FAQs</TextLink>
               </div>
             </div>
           </div>
@@ -791,9 +764,6 @@ export default function Home() {
         <EverydayHealth />
 
         <ConditionsPreview />
-
-
-
 
         <PatientStories />
 

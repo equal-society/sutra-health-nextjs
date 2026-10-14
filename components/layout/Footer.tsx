@@ -2,7 +2,7 @@ import Link from "next/link";
 import Container from "@/components/shared/Container";
 
 const exploreLinks = [
-  { label: "Our Approach", href: "/approach" },
+  { label: "Our Services", href: "/services" },
   { label: "Conditions", href: "/conditions" },
   { label: "Resources", href: "/resources" },
 ];
