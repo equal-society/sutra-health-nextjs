@@ -96,7 +96,7 @@ export default function ScoreQuestionnaire() {
 
       <section aria-labelledby="assessment-title" className="relative flex min-h-[min(700px,calc(100svh-80px))] items-end overflow-hidden bg-[#172D29]">
 
-        <div aria-hidden="true" className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/nature.webp')" }} />
+        <div aria-hidden="true" className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/images/hero.webp')" }} />
 
         <div aria-hidden="true" className="absolute inset-0 bg-[#101C19]/55" />
 
