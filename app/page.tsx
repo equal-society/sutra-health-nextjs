@@ -200,7 +200,7 @@ function Hero() {
         "
       >
         <div className="max-w-4xl">
-          {/* Eyebrow */}
+          {/* Eyebrow
           <p
             className="
               text-[11px]
@@ -212,7 +212,7 @@ function Hero() {
             "
           >
             Doctor-led integrative lifestyle healthcare
-          </p>
+          </p> */}
 
           {/* Heading */}
           <h1
@@ -232,7 +232,7 @@ function Hero() {
             "
           >
             <span className="block">
-              Your partner in recovery and wellness.
+            Your lifestyle shapes your health.
             </span>
           </h1>
 
@@ -249,8 +249,9 @@ function Hero() {
               lg:mt-6
             "
           >
-            We bring medical guidance, nutrition, everyday practices and
-            Therapeutic Yoga into one conversation about your health.
+           Your health is influenced by everyday habits such as food, physical
+              activity, sleep and stress. We help you understand these factors and
+              make practical lifestyle changes alongside appropriate medical care.
           </p>
 
           {/* Buttons */}
@@ -289,7 +290,7 @@ function Hero() {
                 sm:w-auto
               "
             >
-              Take Your Health Assessment
+              Assess Your Lifestyle Score
               <span className="ml-3" aria-hidden="true">
                 →
               </span>
@@ -383,14 +384,14 @@ function EverydayHealth() {
               sm:text-[56px]
             "
           >
-            Your everyday life is part of your health.
+          Medical care and lifestyle support, working together.
           </h2>
 
-          <p className="mt-5 max-w-[720px] text-base leading-8 text-[#65736D] sm:text-[18px]">
-            Food, movement, sleep and stress all contribute to your health. We
-            help you explore practical changes alongside appropriate medical
-            care.
-          </p>
+          {/* <p className="mt-5 max-w-[720px] text-base leading-8 text-[#65736D] sm:text-[18px]">
+            We combine medical guidance, nutrition counselling,
+            Therapeutic Yoga and practical lifestyle changes
+            to support your health and wellbeing.
+          </p> */}
 
           <div className="mt-9 grid gap-x-2 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
@@ -595,12 +596,12 @@ function PatientStories() {
                   sm:text-[52px]
                 "
               >
-                What people have shared.
+                Every journey has a story.
               </h2>
 
               <p className="mt-4 text-base leading-7 text-[#65736D]">
-                Experiences shared by people who have interacted with Sutra
-                Health and its practitioners.
+                Personal experiences from people who have been part of
+                the Sutra Health community.
               </p>
 
               <div className="mt-6">
@@ -627,7 +628,7 @@ function HomeFAQs() {
         <div className="py-16 sm:py-20 lg:py-24">
           <div className="gap-10 lg:items-center lg:gap-16">
             <div>
-              <Eyebrow>Frequently asked questions</Eyebrow>
+              <Eyebrow>Need a little clarity?</Eyebrow>
 
               <h2
                 id="home-faq-title"
@@ -643,7 +644,7 @@ function HomeFAQs() {
                   lg:text-[54px]
                 "
               >
-                Questions about your care.
+                Have questions before getting started?
               </h2>
 
               <div className="mt-7 border-t border-[#202522]/15 pt-5">
