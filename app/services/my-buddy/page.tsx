@@ -8,7 +8,7 @@ const TITLE = "My Buddy Peer Support Programme in Faridabad | Sutra Health";
 const DESCRIPTION = "My Buddy is a peer-support programme by EQUAL Society in Faridabad. Become a buddy or find one for encouragement, healthy routines and wellbeing.";
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   robots: { index: true, follow: true },
@@ -55,8 +55,8 @@ const page: PageData = {
   "h1": "My Buddy: peer support for encouragement and healthier routines",
   "lead": "Sometimes having someone to talk to makes the difference. My Buddy is a peer-support programme run by EQUAL Society in Faridabad: you can become a buddy, or get in touch to find one.",
   "primary": {
-    "label": "Become or find a buddy",
-    "href": "/services/my-buddy/join"
+    "label": "Register to become a buddy",
+    "href": "https://docs.google.com/forms/d/e/1FAIpQLSdtgQtU1eIuwNpmgpOVOrIi_fZzHv5rOxiJe-sH_SG3NUTRiQ/viewform"
   },
   "secondaryLabel": "How My Buddy works",
   "overview": {
@@ -86,12 +86,7 @@ const page: PageData = {
     "eyebrow": "Read more",
     "title": "Start here.",
     "items": [
-      {
-        "title": "How to join",
-        "text": "Register to become a buddy, or get in touch to find one.",
-        "href": "/services/my-buddy/join",
-        "label": "See how to join"
-      },
+    
       {
         "title": "Six lessons for emotional wellbeing",
         "text": "Acceptance, responsibility, tidy surroundings, hydration, self-care and awareness.",
@@ -136,8 +131,8 @@ const page: PageData = {
   "cta": {
     "title": "Ready to take part?",
     "text": "Become a buddy, or get in touch to find one.",
-    "label": "Become or find a buddy",
-    "href": "/services/my-buddy/join"
+     "label": "Register to become a buddy",
+    "href": "https://docs.google.com/forms/d/e/1FAIpQLSdtgQtU1eIuwNpmgpOVOrIi_fZzHv5rOxiJe-sH_SG3NUTRiQ/viewform"
   },
   "disclaimer": "My Buddy is a peer-support initiative. It is not a substitute for professional medical or mental-health care. If you or someone else is in immediate danger, contact local emergency services.",
   "process": {
@@ -194,7 +189,7 @@ const schema = {
   ],
 };
 
-const eyebrow = "text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs";
+const eyebrow = "text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs";
 const h2Class = "mt-4 font-serif text-3xl leading-[1.12] tracking-[-0.03em] sm:text-4xl lg:text-5xl";
 const bodyText = "text-base leading-8 text-[var(--sutra-muted)] sm:text-lg sm:leading-9";
 const textLink = "font-semibold text-[var(--sutra-teal)] underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4";

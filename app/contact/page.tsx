@@ -5,7 +5,7 @@ import Container from "@/components/shared/Container";
 import ContactForm from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us in Faridabad | Sutra Health",
+  title: { absolute: "Contact Us in Faridabad | Sutra Health" },
   description:
     "Contact Sutra Health and EQUAL Society in Sector 46, Faridabad for health, wellness, yoga therapy and community-focused activities.",
   alternates: {
@@ -101,7 +101,7 @@ export default function ContactPage() {
             <div className="relative z-10  gap-10 py-16 sm:py-20 lg:gap-20 text-white lg:py-24">
 
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.22em]  sm:text-[11px]">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em]  sm:text-xs">
                   Contact Sutra Health
                 </p>
 
@@ -155,7 +155,7 @@ export default function ContactPage() {
               {contactPoints.map((item) => {
                 const content = (
                   <>
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-sage)]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sutra-sage)]">
                       {item.label}
                     </p>
 
@@ -205,7 +205,7 @@ export default function ContactPage() {
           <Container>
             <div className="grid gap-12 py-16 sm:py-20 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20 lg:py-24">
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--sutra-sage)]">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--sutra-sage)]">
                   Send a message
                 </p>
 
@@ -237,7 +237,7 @@ export default function ContactPage() {
 
                 <div className="mt-5 flex flex-wrap items-center justify-between gap-4 border-t border-[var(--sutra-border)] pt-5">
                   <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-sage)]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sutra-sage)]">
                       Sector 46 · Faridabad
                     </p>
 
@@ -267,7 +267,7 @@ export default function ContactPage() {
           <Container>
             <div className="grid gap-10 py-14 sm:py-16 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--sutra-sage)]">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--sutra-sage)]">
                   Stay connected
                 </p>
 

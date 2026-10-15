@@ -199,7 +199,7 @@ export default async function ConditionSubpage({ params }: PageProps) {
                   aria-hidden="true"
                   className="h-px w-8 bg-[#91A298] sm:w-10"
                 />
-                <p className="font-sans text-[11px] font-medium uppercase tracking-[0.15em] text-[#65736D] sm:text-[12px]">
+                <p className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-[#65736D] sm:text-[12px]">
                   {condition.title}
                 </p>
               </div>
@@ -224,7 +224,7 @@ export default async function ConditionSubpage({ params }: PageProps) {
               {/* Contents rail */}
               <aside className="hidden lg:block">
                 <div className="sticky top-28">
-                  <p className="font-sans text-[11px] font-medium uppercase tracking-[0.14em] text-[#65736D]">
+                  <p className="font-sans text-xs font-medium uppercase tracking-[0.14em] text-[#65736D]">
                     Contents
                   </p>
                   <div className="mt-4 h-px w-8 bg-[#C8BDA7]" />
@@ -299,7 +299,7 @@ export default async function ConditionSubpage({ params }: PageProps) {
                 {/* Opening marker */}
                 <div className="mb-10 flex items-center gap-4">
                   <span className="h-px w-10 bg-[#C8BDA7]" />
-                  <span className="font-sans text-[11px] font-medium uppercase tracking-[0.15em] text-[#65736D]">
+                  <span className="font-sans text-xs font-medium uppercase tracking-[0.15em] text-[#65736D]">
                     Health guide
                   </span>
                 </div>
@@ -341,7 +341,7 @@ export default async function ConditionSubpage({ params }: PageProps) {
                     id="evidence"
                     className="scroll-mt-28 border-b border-[#202522]/10 py-12 sm:py-14"
                   >
-                    <p className="font-sans text-[11px] font-medium uppercase tracking-[0.14em] text-[#65736D]">
+                    <p className="font-sans text-xs font-medium uppercase tracking-[0.14em] text-[#65736D]">
                       Evidence
                     </p>
                     <h2 className="mt-4 font-serif text-[30px] font-medium leading-[1.15] tracking-[-0.02em] text-[#202522] sm:text-[36px]">
@@ -386,7 +386,7 @@ export default async function ConditionSubpage({ params }: PageProps) {
                     id="faqs"
                     className="scroll-mt-28 border-b border-[#202522]/10 py-12 sm:py-14"
                   >
-                    <p className="font-sans text-[11px] font-medium uppercase tracking-[0.14em] text-[#65736D]">
+                    <p className="font-sans text-xs font-medium uppercase tracking-[0.14em] text-[#65736D]">
                       Common questions
                     </p>
                     <h2 className="mt-4 font-serif text-[30px] font-medium leading-[1.15] tracking-[-0.02em] text-[#202522] sm:text-[36px]">

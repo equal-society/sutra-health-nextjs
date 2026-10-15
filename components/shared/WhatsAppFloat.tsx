@@ -48,7 +48,7 @@ export default function WhatsAppFloat() {
     >
       <WhatsAppMark />
 
-      <span className="hidden text-[11px] font-semibold tracking-[0.01em] text-[#173F35] lg:inline">
+      <span className="hidden text-xs font-semibold tracking-[0.01em] text-[#173F35] lg:inline">
         WhatsApp
       </span>
     </a>

@@ -11,7 +11,7 @@ const DESCRIPTION =
   "What an Ayushman Bharat Health Account (ABHA) is, what it is used for, and where to create or manage one on the official portal.";
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   robots: { index: true, follow: true },
@@ -47,18 +47,56 @@ export default function AbhaPage() {
     <main className="bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      <section className="border-b border-[var(--sutra-border)] bg-white">
-        <Container>
-          <div className="max-w-4xl py-12 sm:py-16 lg:py-20">
-          
-            <p className="mt-6 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">Digital health records</p>
-            <h1 className="mt-4 max-w-4xl font-serif text-4xl leading-[1.08] tracking-[-0.035em] sm:text-5xl lg:text-6xl">What is an ABHA account?</h1>
-            <p className="mt-6 max-w-3xl text-base leading-8 text-[var(--sutra-muted)] sm:text-lg sm:leading-9">
-              An Ayushman Bharat Health Account (ABHA) is a digital health ID used in India's participating digital health services. It is not a consultation, a diagnosis or health insurance.
-            </p>
-          </div>
-        </Container>
-      </section>
+            <section className="relative overflow-hidden border-b border-[var(--sutra-border)] bg-[#18332F] text-white">
+  <img
+    src="/images/services/physician-consulation.webp"
+    alt=""
+    aria-hidden="true"
+    className="absolute inset-0 h-full w-full object-cover"
+  />
+
+  <div
+    aria-hidden="true"
+    className="absolute inset-0 bg-[#10201C]/55"
+  />
+
+  <div
+    aria-hidden="true"
+    className="absolute inset-0 bg-gradient-to-r from-[#10201C]/90 via-[#10201C]/60 to-[#10201C]/25"
+  />
+
+  <div
+    aria-hidden="true"
+    className="absolute inset-0 bg-gradient-to-t from-[#10201C]/60 via-transparent to-[#10201C]/10"
+  />
+
+  <Container>
+    <div className="relative z-10 max-w-5xl py-20 sm:py-24 lg:py-28">
+      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/80">Digital health records</p>
+      <h1 className="mt-4 max-w-5xl font-serif text-5xl leading-[1.05] tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl">
+        What is an ABHA account?
+      </h1>
+      <p className="mt-6 max-w-3xl text-lg leading-8 text-white/85 sm:text-xl sm:leading-9">
+        An Ayushman Bharat Health Account (ABHA) is a digital health ID used in India's participating digital health services. It is not a consultation, a diagnosis or health insurance.
+      </p>
+      <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <Link
+          href="/book-appointment"
+          className="inline-flex min-h-12 items-center justify-center bg-white px-6 py-3 text-base font-semibold text-[var(--sutra-teal)] transition-colors hover:bg-[#F7F5EF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+        >
+          Book a consultation ↗
+        </Link>
+
+        <Link
+          href="/services/physician-consultation"
+          className="inline-flex min-h-12 items-center justify-center border border-white/75 px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+        >
+          Back to Physician Consultation
+        </Link>
+      </div>
+    </div>
+  </Container>
+</section>
 
       <section className="py-12 sm:py-16 lg:py-20">
         <Container>

@@ -8,7 +8,7 @@ const BOOKING_URL = "/book-appointment";
 
 
 export const metadata: Metadata = {
-  title: "Physician Consultation in Faridabad | Sutra Health",
+  title: { absolute: "Physician Consultation in Faridabad | Sutra Health" },
   description:
     "Book a physician consultation at Sutra Health in Faridabad. Discuss your symptoms, medical history and lifestyle, and agree on sensible next steps.",
   alternates: { canonical: PAGE_URL },
@@ -196,7 +196,7 @@ export default function PhysicianConsultationPage() {
         <Container>
           <div className="grid gap-6 py-14 sm:py-18 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 lg:py-24">
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">The service</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">The service</p>
               <h2 id="overview-title" className="mt-4 max-w-lg font-serif text-3xl leading-[1.12] tracking-[-0.03em] sm:text-4xl lg:text-5xl">
                 A conversation about your health, led by a physician.
               </h2>
@@ -217,7 +217,7 @@ export default function PhysicianConsultationPage() {
         <Container>
           <div className="py-14 sm:py-18 lg:py-20">
             <div className="max-w-3xl">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">What you can discuss</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">What you can discuss</p>
               <h2 id="covers-title" className="mt-4 font-serif text-3xl leading-[1.12] tracking-[-0.03em] sm:text-4xl lg:text-5xl">Bring what is on your mind.</h2>
             </div>
             <div className="mt-8 grid gap-x-10 sm:grid-cols-3">
@@ -244,7 +244,7 @@ export default function PhysicianConsultationPage() {
       <section aria-labelledby="reading-title" className="bg-white">
         <Container>
           <div className="max-w-3xl pb-8 pt-14 sm:pt-18 lg:pt-24">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">Read more</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">Read more</p>
             <h2 id="reading-title" className="mt-4 font-serif text-3xl leading-[1.12] tracking-[-0.03em] sm:text-4xl lg:text-5xl">More about consultations</h2>
           </div>
           <div className="border-t border-[var(--sutra-border-strong)] pb-14 sm:pb-18 lg:pb-24">
@@ -268,7 +268,7 @@ export default function PhysicianConsultationPage() {
         <Container>
           <div className="py-14 sm:py-18 lg:py-20">
             <div className="max-w-2xl">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">Common questions</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">Common questions</p>
               <h2 id="faq-title" className="mt-4 font-serif text-3xl leading-tight sm:text-4xl">Before you book</h2>
             </div>
             <div className="mt-7 max-w-4xl divide-y divide-[var(--sutra-border-strong)] border-y border-[var(--sutra-border-strong)]">
@@ -290,7 +290,7 @@ export default function PhysicianConsultationPage() {
         <Container>
           <div className="flex flex-col gap-6 py-12 sm:py-16 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:py-20">
             <div className="max-w-3xl">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#D8C99F] sm:text-xs">Take the next step</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D8C99F] sm:text-xs">Take the next step</p>
               <h2 id="booking-title" className="mt-4 font-serif text-3xl leading-[1.12] tracking-[-0.03em] text-white sm:text-4xl lg:text-5xl">Have questions about your health?</h2>
               <p className="mt-4 max-w-2xl text-base leading-8 text-white/80 sm:text-lg sm:leading-9">Book an appointment and bring your questions. You can confirm fees and booking details when you book.</p>
             </div>

@@ -122,7 +122,7 @@ export default function VolunteerPage() {
           <Container>
             <div className="relative z-10  gap-10 py-14 sm:py-18  lg:gap-20 lg:py-22 xl:py-24">
               <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-white sm:text-xs">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white sm:text-xs">
                   Join our movement
                 </p>
 
@@ -197,7 +197,7 @@ export default function VolunteerPage() {
                   <p className="font-serif text-[32px] font-medium tracking-[-0.03em] text-[var(--sutra-ink)] sm:text-[38px]">
                     {number}
                   </p>
-                  <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
+                  <p className="mt-2 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
                     {label}
                   </p>
                 </div>
@@ -213,7 +213,7 @@ export default function VolunteerPage() {
           <Container>
             <div className="grid gap-10 py-14 sm:py-18 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20 lg:py-22">
               <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                   Ways to contribute
                 </p>
 
@@ -249,7 +249,7 @@ export default function VolunteerPage() {
                     key={number}
                     className="grid gap-4 py-7 sm:grid-cols-[56px_0.8fr_1.2fr] sm:items-start sm:gap-6"
                   >
-                    <span className="text-[11px] font-semibold tracking-[0.15em] text-[var(--sutra-sage)]">
+                    <span className="text-xs font-semibold tracking-[0.15em] text-[var(--sutra-sage)]">
                       {number}
                     </span>
 
@@ -274,7 +274,7 @@ export default function VolunteerPage() {
           <Container>
             <div className="grid gap-10 py-14 sm:py-18 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20 lg:py-22">
               <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                   Health awareness calendar
                 </p>
 
@@ -294,7 +294,7 @@ export default function VolunteerPage() {
                     key={title}
                     className="border-b border-r border-[var(--sutra-border-strong)] bg-[var(--sutra-porcelain)] p-5 sm:p-6"
                   >
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--sutra-muted)]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--sutra-muted)]">
                       {date}
                     </p>
 
@@ -315,7 +315,7 @@ export default function VolunteerPage() {
           <Container>
             <div className="grid gap-8 py-14 sm:py-18 lg:grid-cols-[1fr_auto] lg:items-end lg:py-22">
               <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                   Take the first step
                 </p>
 

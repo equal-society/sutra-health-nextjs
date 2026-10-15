@@ -4,12 +4,12 @@ import Container from "@/components/shared/Container";
 import YogaPracticeGallery from "./YogaPracticeGallery";
 
 const SITE_URL = "https://lifequality.org.in";
-const PAGE_URL = `${SITE_URL}/yoga-asana-protocol`;
+const PAGE_URL = `${SITE_URL}/services/therapeutic-yoga/yoga-asana-protocol`;
 const TITLE = "Yoga Asana Practice Guide | Sutra Health";
 const DESCRIPTION = "Explore the Yoga Asana Protocol with posture thumbnails and links to the available video demonstrations.";
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   openGraph: {
@@ -25,46 +25,83 @@ export const metadata: Metadata = {
 
 const eyebrow = "text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sutra-teal)]";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${PAGE_URL}#webpage`,
+      url: PAGE_URL,
+      name: TITLE,
+      description: DESCRIPTION,
+      isPartOf: { "@type": "WebSite", name: "Sutra Health", url: `${SITE_URL}/` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+        { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services` },
+        { "@type": "ListItem", position: 3, name: "Therapeutic Yoga", item: `${SITE_URL}/services/therapeutic-yoga` },
+        { "@type": "ListItem", position: 4, name: "Yoga Asana Protocol", item: PAGE_URL },
+      ],
+    },
+  ],
+};
+
 export default function YogaAsanaProtocolPage() {
   return (
     <main className="overflow-hidden bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">
-      <section className="relative isolate flex min-h-[520px] items-end overflow-hidden bg-[#173B36] sm:min-h-[580px]">
-        {/* Background Video */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0"
-      >
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          aria-label="Sutra Health lifestyle healthcare introduction"
-          className="absolute inset-0 h-full w-full object-cover"
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+            <section className="relative overflow-hidden border-b border-[var(--sutra-border)] bg-[#18332F] text-white">
+  <img
+    src="/images/yoga-asana.webp"
+    alt=""
+    aria-hidden="true"
+    className="absolute inset-0 h-full w-full object-cover"
+  />
+
+  <div
+    aria-hidden="true"
+    className="absolute inset-0 bg-[#10201C]/55"
+  />
+
+  <div
+    aria-hidden="true"
+    className="absolute inset-0 bg-gradient-to-r from-[#10201C]/90 via-[#10201C]/60 to-[#10201C]/25"
+  />
+
+  <div
+    aria-hidden="true"
+    className="absolute inset-0 bg-gradient-to-t from-[#10201C]/60 via-transparent to-[#10201C]/10"
+  />
+
+  <Container>
+    <div className="relative z-10 max-w-5xl py-20 sm:py-24 lg:py-28">
+      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/80">Traditional Yoga Practice</p>
+      <h1 className="mt-4 max-w-5xl font-serif text-5xl leading-[1.05] tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl">
+        Yoga Asana Protocol
+      </h1>
+      <p className="mt-6 max-w-3xl text-lg leading-8 text-white/85 sm:text-xl sm:leading-9">
+        Browse the sequence by thumbnail. Select any available card to open its video or reference in a new tab.
+      </p>
+      <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <Link
+          href="/book-appointment"
+          className="inline-flex min-h-12 items-center justify-center bg-white px-6 py-3 text-base font-semibold text-[var(--sutra-teal)] transition-colors hover:bg-[#F7F5EF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
         >
-          <source
-            src="/videos/yoga-asana.mp4"
-            type="video/mp4"
-          />
-        </video>
+          Book a consultation ↗
+        </Link>
 
-        {/* Base Overlay */}
-        <div className="absolute inset-0 bg-[#101C19]/40" />
-
-        {/* Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#101C19]/90 via-[#101C19]/65 to-[#101C19]/25" />
-
-        {/* Bottom Depth */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#101C19]/55 via-transparent to-[#101C19]/10" />
+        <Link
+          href="/services/therapeutic-yoga"
+          className="inline-flex min-h-12 items-center justify-center border border-white/75 px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+        >
+          Back to Therapeutic Yoga
+        </Link>
       </div>
-        <Container><div className="relative z-10 max-w-3xl py-20 sm:py-24 lg:py-28">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-white/80">Traditional Yoga Practice</p>
-          <h1 className="mt-4 max-w-3xl font-serif text-[clamp(2.5rem,6vw,5rem)] leading-[1.04] tracking-[-0.035em] text-white">Yoga Asana Protocol</h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/90 sm:text-xl">Browse the sequence by thumbnail. Select any available card to open its video or reference in a new tab.</p>
-          <div className="mt-8"><Link href="#practice" className="inline-flex min-h-12 items-center justify-center bg-white px-6 py-3 font-semibold text-[var(--sutra-teal)]">Start the sequence ↓</Link></div>
-        </div></Container>
-      </section>
+    </div>
+  </Container>
+</section>
 
     
 
@@ -153,7 +190,7 @@ export default function YogaAsanaProtocolPage() {
       </span>
 
       <div>
-        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#D6E0CC]">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D6E0CC]">
           Continue your practice
         </p>
 

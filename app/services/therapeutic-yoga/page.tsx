@@ -9,7 +9,7 @@ const DESCRIPTION =
   "Guided Therapeutic Yoga in Faridabad: movement, breathing and relaxation practices adapted to your experience, mobility and health.";
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   robots: { index: true, follow: true },
@@ -256,7 +256,7 @@ const schema = {
 };
 
 const eyebrow =
-  "text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs";
+  "text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs";
 const h2Class =
   "mt-4 font-serif text-3xl leading-[1.12] tracking-[-0.03em] sm:text-4xl lg:text-5xl";
 const bodyText =

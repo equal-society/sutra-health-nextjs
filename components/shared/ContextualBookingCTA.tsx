@@ -19,7 +19,7 @@ export default function ContextualBookingCTA({
       <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20">
         <div className="flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
           <div className="max-w-3xl">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-pale-sage)] sm:text-[11px]">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-pale-sage)] sm:text-xs">
               {eyebrow}
             </p>
             <h2 className="mt-3 max-w-3xl font-[var(--font-serif)] text-[34px] font-medium leading-[1.08] tracking-[-0.03em] sm:text-[46px]">

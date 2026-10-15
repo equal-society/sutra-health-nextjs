@@ -27,21 +27,6 @@ export default function DoctorLoginPage() {
 
   const loginEmail = email.trim();
 
-  const doctorEmail =
-    process.env.NEXT_PUBLIC_DOCTOR_EMAIL;
-
-  if (
-    !doctorEmail ||
-    loginEmail.toLowerCase() !==
-      doctorEmail.toLowerCase()
-  ) {
-    setError(
-      "This account is not authorized for doctor access.",
-    );
-    setLoading(false);
-    return;
-  }
-
   const { error: loginError } =
     await supabase.auth.signInWithPassword({
       email: loginEmail,

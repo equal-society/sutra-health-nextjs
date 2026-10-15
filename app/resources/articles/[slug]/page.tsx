@@ -372,7 +372,7 @@ export default async function ArticlePage({
              
 
                 <div className="mt-12">
-                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--sutra-muted)]">
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs font-medium uppercase tracking-[0.12em] text-[var(--sutra-muted)]">
                     <span>{article.category}</span>
                     <span aria-hidden="true">·</span>
                     <span>{article.type}</span>
@@ -402,7 +402,7 @@ export default async function ArticlePage({
                       />
                     </div>
 
-                    <figcaption className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-[11px] text-[var(--sutra-muted)]">
+                    <figcaption className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-[var(--sutra-muted)]">
                       <span>Published {formattedDate}</span>
                       {formattedUpdatedDate && (
                         <>
@@ -419,7 +419,7 @@ export default async function ArticlePage({
 
               {/* Article body */}
               <article className="min-w-0 py-12 sm:py-16 lg:py-20">
-                <div className="mb-5 text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)]">Quick answer</div>
+                <div className="mb-5 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)]">Quick answer</div>
                 <p className="max-w-[790px] text-[17px] leading-8 text-[var(--sutra-muted)] sm:text-[18px] sm:leading-9">
                   {article.content.introduction}
                 </p>
@@ -468,7 +468,7 @@ export default async function ArticlePage({
 
                 {article.content.takeaway && (
                   <section className="border-y border-[var(--sutra-border)] py-10 sm:py-12">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                       Key takeaway
                     </p>
                     <p className="mt-4 max-w-[720px] font-[var(--font-serif)] text-[24px] font-medium leading-[1.4] tracking-[-0.02em] text-[var(--sutra-teal)] sm:text-[29px]">
@@ -479,7 +479,7 @@ export default async function ArticlePage({
 
                 {article.content.whenToSeekHelp && (
                   <section className="border-b border-[var(--sutra-border)] py-10 sm:py-12">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                       When to seek professional support
                     </p>
                     <p className="mt-4 max-w-[720px] text-[15px] leading-8 text-[var(--sutra-muted)] sm:text-[16px] sm:leading-9">
@@ -489,7 +489,7 @@ export default async function ArticlePage({
                 )}
 
                 <section className="border-y border-[var(--sutra-border)] py-9 sm:py-10" aria-labelledby="related-care-title">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">Related Sutra Health resources</p>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">Related Sutra Health resources</p>
                   <h2 id="related-care-title" className="mt-3 font-[var(--font-serif)] text-[28px] font-medium leading-tight tracking-[-0.025em] sm:text-[34px]">Continue with a related topic</h2>
                   <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3">
                     {contextLinks.map((link) => (
@@ -502,7 +502,7 @@ export default async function ArticlePage({
 
                 {article.faqs && article.faqs.length > 0 && (
                   <section className="py-12 sm:py-16">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                       Common questions
                     </p>
 
@@ -536,7 +536,7 @@ export default async function ArticlePage({
 
                 {article.sources && article.sources.length > 0 && (
                   <section className="border-t border-[var(--sutra-border)] py-10">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                       Sources & further reading
                     </p>
 
@@ -578,7 +578,7 @@ export default async function ArticlePage({
                 )}
 
                 <div className="border-t border-[var(--sutra-border)] pt-6">
-                  <p className="max-w-[700px] text-[10px] leading-6 text-[var(--sutra-muted)]">
+                  <p className="max-w-[700px] text-xs leading-6 text-[var(--sutra-muted)]">
                     This article is provided for general health education and
                     does not replace individual medical advice, diagnosis or
                     treatment. If you have a specific health concern, consult a
@@ -633,7 +633,7 @@ export default async function ArticlePage({
                 </div>
 
                 <div className="mt-10 border-t border-[var(--sutra-border)] pt-6">
-                  <p className="text-[11px] font-medium text-[var(--sutra-ink)]">
+                  <p className="text-xs font-medium text-[var(--sutra-ink)]">
                     Published
                   </p>
                   <p className="mt-2 text-[12px] text-[var(--sutra-muted)]">
@@ -641,19 +641,19 @@ export default async function ArticlePage({
                   </p>
                   {formattedUpdatedDate && (
                     <>
-                      <p className="mt-5 text-[11px] font-medium text-[var(--sutra-ink)]">Updated</p>
+                      <p className="mt-5 text-xs font-medium text-[var(--sutra-ink)]">Updated</p>
                       <p className="mt-2 text-[12px] text-[var(--sutra-muted)]">{formattedUpdatedDate}</p>
                     </>
                   )}
 
-                  <p className="mt-5 text-[11px] font-medium text-[var(--sutra-ink)]">
+                  <p className="mt-5 text-xs font-medium text-[var(--sutra-ink)]">
                     Approx. word count
                   </p>
                   <p className="mt-2 text-[12px] text-[var(--sutra-muted)]">
                     {wordCount.toLocaleString("en-IN")} words
                   </p>
 
-                  <p className="mt-5 text-[11px] font-medium text-[var(--sutra-ink)]">
+                  <p className="mt-5 text-xs font-medium text-[var(--sutra-ink)]">
                     Reading time
                   </p>
                   <p className="mt-2 text-[12px] text-[var(--sutra-muted)]">
@@ -680,7 +680,7 @@ export default async function ArticlePage({
       <section className="border-t border-[var(--sutra-border)] bg-[var(--sutra-porcelain)]">
         <div className="mx-auto max-w-7xl px-5 py-12 sm:px-8 lg:px-12 lg:py-16">
           <div className="max-w-3xl">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
               Related care
             </p>
             <h2 className="mt-3 font-[var(--font-serif)] text-[32px] font-medium leading-[1.08] tracking-[-0.03em] text-[var(--sutra-ink)] sm:text-[40px]">
@@ -693,9 +693,9 @@ export default async function ArticlePage({
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {relatedCare.map((item) => (
               <Link key={item.href} href={item.href} className="border border-[var(--sutra-border)] bg-[var(--sutra-white)] p-5 transition-colors hover:border-[var(--sutra-teal)]">
-                <span className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[var(--sutra-muted)]">{item.type}</span>
+                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--sutra-muted)]">{item.type}</span>
                 <span className="mt-3 block font-[var(--font-serif)] text-[21px] font-medium leading-tight text-[var(--sutra-ink)]">{item.label}</span>
-                <span className="mt-4 block text-[10px] font-semibold uppercase tracking-[0.1em] text-[var(--sutra-teal)]">Explore →</span>
+                <span className="mt-4 block text-xs font-semibold uppercase tracking-[0.1em] text-[var(--sutra-teal)]">Explore →</span>
               </Link>
             ))}
           </div>
@@ -710,7 +710,7 @@ export default async function ArticlePage({
           <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-18 lg:px-12 lg:py-20">
             <div className="flex items-end justify-between gap-6 border-b border-[var(--sutra-border)] pb-7">
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
                   Continue reading
                 </p>
                 <h2 className="mt-3 font-[var(--font-serif)] text-[36px] font-medium leading-[1.08] tracking-[-0.035em] text-[var(--sutra-ink)] sm:text-[46px]">
@@ -720,7 +720,7 @@ export default async function ArticlePage({
 
               <Link
                 href="/resources/articles"
-                className="hidden text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--sutra-teal)] sm:block"
+                className="hidden text-xs font-semibold uppercase tracking-[0.1em] text-[var(--sutra-teal)] sm:block"
               >
                 View all →
               </Link>
@@ -746,7 +746,7 @@ export default async function ArticlePage({
                   )}
 
                   <div className="mt-5">
-                    <div className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[var(--sutra-muted)]">
+                    <div className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--sutra-muted)]">
                       {related.category} · {related.readTime}
                     </div>
 
@@ -758,7 +758,7 @@ export default async function ArticlePage({
                       {related.excerpt}
                     </p>
 
-                    <div className="mt-5 text-[10px] font-semibold uppercase tracking-[0.1em] text-[var(--sutra-teal)]">
+                    <div className="mt-5 text-xs font-semibold uppercase tracking-[0.1em] text-[var(--sutra-teal)]">
                       Read article →
                     </div>
                   </div>
@@ -776,7 +776,7 @@ export default async function ArticlePage({
         <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-18 lg:px-12 lg:py-20">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-3xl">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-pale-sage)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-pale-sage)]">
                 Sutra Health
               </p>
               <h2 className="mt-4 font-[var(--font-serif)] text-[38px] font-medium leading-[1.05] tracking-[-0.035em] text-white sm:text-[50px]">
@@ -790,7 +790,7 @@ export default async function ArticlePage({
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/book-appointment"
-                className="inline-flex items-center gap-3 bg-white px-5 py-3.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--sutra-teal)] transition-colors hover:bg-[var(--sutra-pale-sage)]"
+                className="inline-flex items-center gap-3 bg-white px-5 py-3.5 text-xs font-semibold uppercase tracking-[0.08em] text-[var(--sutra-teal)] transition-colors hover:bg-[var(--sutra-pale-sage)]"
               >
                 See appointment options
                 <span aria-hidden="true">→</span>
@@ -798,7 +798,7 @@ export default async function ArticlePage({
 
               <Link
                 href="/services"
-                className="inline-flex items-center gap-3 border border-white/30 px-5 py-3.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-white transition-colors hover:bg-white/10"
+                className="inline-flex items-center gap-3 border border-white/30 px-5 py-3.5 text-xs font-semibold uppercase tracking-[0.08em] text-white transition-colors hover:bg-white/10"
               >
                 Services
                 <span aria-hidden="true">→</span>

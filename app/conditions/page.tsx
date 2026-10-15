@@ -20,12 +20,14 @@ export const metadata: Metadata = {
     siteName: "Sutra Health",
     type: "website",
     locale: "en_IN",
+    images: [{ url: "https://lifequality.org.in/images/og-image.webp", width: 1200, height: 630, alt: "Sutra Health" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Health Conditions We Support | Lifestyle & Integrative Health",
     description:
       "Explore lifestyle-focused support for common health concerns through lifestyle, nutrition, movement, breath and mind practices.",
+    images: ["https://lifequality.org.in/images/og-image.webp"],
   },
   robots: {
     index: true,
@@ -163,7 +165,7 @@ export default function ConditionsPage() {
               <div className="max-w-5xl">
 
                 {/* Eyebrow */}
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#D5C9AE] sm:text-xs">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D5C9AE] sm:text-xs">
                   Health Conditions
                 </p>
 
@@ -222,7 +224,7 @@ export default function ConditionsPage() {
         <section className="bg-[#FFFFFF] py-14 sm:py-16 lg:py-20">
           <Container>
             <div className="mb-9 max-w-[720px] sm:mb-10">
-              <p className="font-sans text-[11px] font-medium uppercase tracking-[0.16em] text-[#65736D]">
+              <p className="font-sans text-xs font-medium uppercase tracking-[0.16em] text-[#65736D]">
                 Areas of Care
               </p>
 
@@ -337,7 +339,7 @@ export default function ConditionsPage() {
           <Container>
             <div className="grid gap-9 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
               <div>
-                <p className="font-sans text-[11px] font-medium uppercase tracking-[0.17em] text-[#65736D]">
+                <p className="font-sans text-xs font-medium uppercase tracking-[0.17em] text-[#65736D]">
                   Explore by concern
                 </p>
 
@@ -384,7 +386,7 @@ export default function ConditionsPage() {
           <Container>
             <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
               <div>
-                <p className="font-sans text-[11px] font-medium uppercase tracking-[0.17em] text-[#65736D]">
+                <p className="font-sans text-xs font-medium uppercase tracking-[0.17em] text-[#65736D]">
                   Common questions
                 </p>
 

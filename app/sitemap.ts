@@ -59,15 +59,12 @@ const servicePaths = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteContentLastModified = new Date("2026-10-14");
-
   const page = (
     path: string,
     changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"],
     priority: number,
   ): MetadataRoute.Sitemap[number] => ({
     url: `${baseUrl}${path}`,
-    lastModified: siteContentLastModified,
     changeFrequency,
     priority,
   });

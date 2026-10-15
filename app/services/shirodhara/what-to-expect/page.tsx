@@ -8,7 +8,7 @@ const TITLE = "Before You Book Shirodhara or Abhyanga | Sutra Health";
 const DESCRIPTION = "Questions to ask and health information to share before booking a Shirodhara or Abhyanga session in Faridabad, so you can decide if it suits you.";
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   robots: { index: true, follow: true },
@@ -217,7 +217,7 @@ const schema = {
   ],
 };
 
-const eyebrow = "text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs";
+const eyebrow = "text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs";
 const h2Class = "mt-4 font-serif text-3xl leading-[1.12] tracking-[-0.03em] sm:text-4xl lg:text-5xl";
 const bodyText = "text-base leading-8 text-[var(--sutra-muted)] sm:text-lg sm:leading-9";
 const textLink = "font-semibold text-[var(--sutra-teal)] underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4";
@@ -229,24 +229,58 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* Hero: same layout as the Lifestyle Medicine sub-pages */}
-      <section className="border-b border-[var(--sutra-border)] bg-white">
-        <Container>
-          <div className="max-w-4xl py-10 sm:py-14 lg:py-16">
-            <nav aria-label="Breadcrumb" className="text-sm text-[var(--sutra-muted)]">
-              <Link href={page.parent.href} className="underline underline-offset-4">{page.parent.name}</Link>
-              <span className="mx-2" aria-hidden="true">/</span>
-              <span aria-current="page">{page.crumbLabel}</span>
-            </nav>
-            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.17em] text-[var(--sutra-teal)]">{page.eyebrow}</p>
-            <h1 className="mt-4 max-w-4xl font-serif text-4xl leading-[1.1] tracking-[-0.035em] sm:text-5xl lg:text-6xl">{page.h1}</h1>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-[var(--sutra-muted)] sm:text-xl sm:leading-9">{page.lead}</p>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link href={page.primary.href} className="inline-flex min-h-12 items-center justify-center bg-[var(--sutra-teal)] px-6 py-3 text-base font-semibold text-white hover:opacity-90">{page.primary.label} ↗</Link>
-              <Link href={page.parent.href} className="inline-flex min-h-12 items-center justify-center border border-[var(--sutra-border-strong)] px-6 py-3 text-base font-semibold text-[var(--sutra-teal)] hover:bg-[var(--sutra-porcelain)]">{page.secondaryLabel}</Link>
-            </div>
-          </div>
-        </Container>
-      </section>
+            <section className="relative overflow-hidden border-b border-[var(--sutra-border)] bg-[#18332F] text-white">
+  <img
+    src="/images/services/shirodharaa.webp"
+    alt=""
+    aria-hidden="true"
+    className="absolute inset-0 h-full w-full object-cover"
+  />
+
+  <div
+    aria-hidden="true"
+    className="absolute inset-0 bg-[#10201C]/55"
+  />
+
+  <div
+    aria-hidden="true"
+    className="absolute inset-0 bg-gradient-to-r from-[#10201C]/90 via-[#10201C]/60 to-[#10201C]/25"
+  />
+
+  <div
+    aria-hidden="true"
+    className="absolute inset-0 bg-gradient-to-t from-[#10201C]/60 via-transparent to-[#10201C]/10"
+  />
+
+  <Container>
+    <div className="relative z-10 max-w-5xl py-20 sm:py-24 lg:py-28">
+      <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/80">
+        {page.eyebrow}
+      </p>
+      <h1 className="mt-4 max-w-5xl font-serif text-5xl leading-[1.05] tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl">
+        {page.h1}
+      </h1>
+      <p className="mt-6 max-w-3xl text-lg leading-8 text-white/85 sm:text-xl sm:leading-9">
+        {page.lead}
+      </p>
+      <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <Link
+          href="/book-appointment"
+          className="inline-flex min-h-12 items-center justify-center bg-white px-6 py-3 text-base font-semibold text-[var(--sutra-teal)] transition-colors hover:bg-[#F7F5EF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+        >
+          Book a consultation ↗
+        </Link>
+
+        <Link
+          href="/services/shirodhara"
+          className="inline-flex min-h-12 items-center justify-center border border-white/75 px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+        >
+          Back to Shirodhara & Abhyanga
+        </Link>
+      </div>
+    </div>
+  </Container>
+</section>
 
       {page.sections.map((s, idx) => (
         <section key={s.h2} aria-labelledby={`s-${idx}`} className={idx % 2 === 0 ? "bg-[var(--sutra-porcelain)]" : "bg-white"}>

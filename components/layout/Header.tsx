@@ -431,7 +431,7 @@ export default function Header() {
             label="Services"
             items={services}
             viewAll={{
-              label: "Explore A Services",
+              label: "Explore All Services",
               href: "/services",
             }}
             openDropdown={openDropdown}

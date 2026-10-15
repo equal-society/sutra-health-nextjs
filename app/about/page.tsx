@@ -237,7 +237,7 @@ export default function AboutPage() {
   <Container>
     <div className="flex min-h-[560px] items-center py-20 sm:min-h-[620px] sm:py-24 lg:min-h-[680px] lg:py-28">
       <div className="max-w-5xl">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#D5C9AE] sm:text-xs">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D5C9AE] sm:text-xs">
           About Sutra Health
         </p>
 
@@ -312,7 +312,7 @@ export default function AboutPage() {
             </div>
 
             <div className="max-w-xl">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.17em] text-[#17413D]">
+              <p className="text-xs font-semibold uppercase tracking-[0.17em] text-[#17413D]">
                 Our story
               </p>
 
@@ -354,7 +354,7 @@ export default function AboutPage() {
       <section className="border-y border-[#202522]/10 bg-[#E7EDE8] py-20 sm:py-24 lg:py-28">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.17em] text-[#17413D]">
+            <p className="text-xs font-semibold uppercase tracking-[0.17em] text-[#17413D]">
               Our foundation
             </p>
 
@@ -408,7 +408,7 @@ export default function AboutPage() {
             </div>
 
             <div className="max-w-2xl">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.17em] text-[#17413D]">
+              <p className="text-xs font-semibold uppercase tracking-[0.17em] text-[#17413D]">
                 Clinical leadership
               </p>
 
@@ -416,7 +416,7 @@ export default function AboutPage() {
                 Dr. Rakesh Sarwal
               </h2>
 
-              <p className="mt-3 text-[11px] font-semibold uppercase tracking-[0.13em] text-[#65736D] sm:text-[12px]">
+              <p className="mt-3 text-xs font-semibold uppercase tracking-[0.13em] text-[#65736D] sm:text-[12px]">
                 MBBS, MPH, DrPH · Therapeutic Yoga Consultant
               </p>
 
@@ -449,7 +449,7 @@ export default function AboutPage() {
         <Container>
           <div className="mx-auto max-w-4xl">
             <div className="text-center">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.17em] text-[#17413D]">
+              <p className="text-xs font-semibold uppercase tracking-[0.17em] text-[#17413D]">
                 Our journey
               </p>
 
@@ -493,7 +493,7 @@ export default function AboutPage() {
       <section className="bg-[#F7F5EF] py-20 sm:py-24 lg:py-28">
         <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.17em] text-[#17413D]">
+            <p className="text-xs font-semibold uppercase tracking-[0.17em] text-[#17413D]">
               EQUAL Society
             </p>
 
@@ -519,7 +519,7 @@ export default function AboutPage() {
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.17em] text-[#17413D]">
+              <p className="text-xs font-semibold uppercase tracking-[0.17em] text-[#17413D]">
                 Common questions
               </p>
 
@@ -567,7 +567,7 @@ export default function AboutPage() {
         <Container>
           <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto] lg:gap-16">
             <div className="max-w-2xl">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.17em] text-[#17413D]">
+              <p className="text-xs font-semibold uppercase tracking-[0.17em] text-[#17413D]">
                 Community
               </p>
 

@@ -62,9 +62,17 @@ const experts = [
 
 const doctorSchema = {
   "@context": "https://schema.org",
-  "@type": "Person",
+  "@type": ["Person", "Physician"],
   "@id": "https://lifequality.org.in/doctors#dr-rakesh-sarwal",
   name: "Dr. Rakesh Sarwal",
+  honorificPrefix: "Dr.",
+  medicalSpecialty: "PublicHealth",
+  hasCredential: [
+    { "@type": "EducationalOccupationalCredential", name: "MBBS" },
+    { "@type": "EducationalOccupationalCredential", name: "MPH" },
+    { "@type": "EducationalOccupationalCredential", name: "DrPH" },
+  ],
+  alumniOf: { "@type": "CollegeOrUniversity", name: "Johns Hopkins University" },
   jobTitle: "Public Health Physician and Therapeutic Yoga Consultant",
   description:
     "Public health physician and Therapeutic Yoga Consultant represented by Sutra Health.",
@@ -116,7 +124,7 @@ export default function DoctorsPage() {
           <Container>
             <div className="flex min-h-[520px] items-center py-20 sm:min-h-[600px] sm:py-24 lg:min-h-[660px] lg:py-28">
               <div className="max-w-5xl">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#D5C9AE] sm:text-xs">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D5C9AE] sm:text-xs">
                   Doctors &amp; experts
                 </p>
 
@@ -179,7 +187,7 @@ export default function DoctorsPage() {
               </div>
 
               <div className="max-w-[720px] self-center">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                   Medical &amp; academic leadership
                 </p>
 
@@ -187,7 +195,7 @@ export default function DoctorsPage() {
                   Dr. Rakesh Sarwal
                 </h2>
 
-                <p className="mt-3 max-w-[700px] text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--sutra-teal)]">
+                <p className="mt-3 max-w-[700px] text-xs font-semibold uppercase tracking-[0.14em] text-[var(--sutra-teal)]">
                   MBBS, MPH, DrPH (Johns Hopkins), Therapeutic Yoga Consultant
                 </p>
 
@@ -204,7 +212,7 @@ export default function DoctorsPage() {
                 </p>
 
                 <div className="mt-8 border-t border-[var(--sutra-border-strong)] pt-6">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
                     Areas of expertise
                   </p>
 
@@ -222,7 +230,7 @@ export default function DoctorsPage() {
                           index % 2 === 0 ? "sm:mr-6" : ""
                         }`}
                       >
-                        <span className="mr-3 text-[10px] font-semibold tracking-[0.14em] text-[var(--sutra-sage)]">
+                        <span className="mr-3 text-xs font-semibold tracking-[0.14em] text-[var(--sutra-sage)]">
                           {String(index + 1).padStart(2, "0")}
                         </span>
                         {item}
@@ -252,7 +260,7 @@ export default function DoctorsPage() {
         <section className="bg-[var(--sutra-porcelain)]">
           <Container>
             <div className="max-w-[720px] py-14 sm:py-18 lg:py-22">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                 Our team
               </p>
 
@@ -302,7 +310,7 @@ export default function DoctorsPage() {
                   </div>
 
                   <div className="max-w-[680px] self-center">
-                    <p className="text-[10px] font-semibold tracking-[0.16em] text-[var(--sutra-sage)]">
+                    <p className="text-xs font-semibold tracking-[0.16em] text-[var(--sutra-sage)]">
                       {String(index + 2).padStart(2, "0")}
                     </p>
 
@@ -310,7 +318,7 @@ export default function DoctorsPage() {
                       {expert.name}
                     </h3>
 
-                    <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--sutra-teal)]">
+                    <p className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--sutra-teal)]">
                       {expert.role}
                     </p>
 
@@ -332,7 +340,7 @@ export default function DoctorsPage() {
           <Container>
             <div className="grid gap-10 py-14 sm:py-18 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 lg:py-22">
               <div>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                   Further information
                 </p>
 
@@ -377,7 +385,7 @@ export default function DoctorsPage() {
         <section className="bg-[var(--sutra-teal)]">
           <Container>
             <div className="max-w-[760px] py-14 sm:py-18 lg:py-22">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-pale-sage)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-pale-sage)]">
                 Start a conversation
               </p>
 

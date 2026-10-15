@@ -9,9 +9,24 @@ const bookingUrl = "https://bookretreats.com/r/6-day-rejuvenation-in-nature-mome
 const whatsappUrl = "https://wa.me/919013103676?text=Hi%20Sutra%20Health%2C%20I%20want%20to%20know%20more%20about%20your%20wellness%20retreat%20in%20Faridabad.";
 
 export const metadata: Metadata = {
-  title: "Wellness Retreat Near Delhi | Sutra Health",
+  title: { absolute: "Wellness Retreat Near Delhi | Sutra Health" },
   description: "Wellness retreat in Faridabad near Delhi with guided Yoga, meditation, nutrition guidance and traditional wellness experiences.",
   alternates: { canonical: pageUrl },
+  openGraph: {
+    title: "Wellness Retreat Near Delhi | Sutra Health",
+    description: "Wellness retreat in Faridabad near Delhi with guided Yoga, meditation, nutrition guidance and traditional wellness experiences.",
+    url: pageUrl,
+    siteName: "Sutra Health",
+    type: "website",
+    locale: "en_IN",
+    images: [{ url: `${siteUrl}/images/retreat/yoga.webp`, width: 1500, height: 1000, alt: "Yoga at the Sutra Health wellness retreat" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Wellness Retreat Near Delhi | Sutra Health",
+    description: "Wellness retreat in Faridabad near Delhi with guided Yoga, meditation, nutrition guidance and traditional wellness experiences.",
+    images: [`${siteUrl}/images/retreat/yoga.webp`],
+  },
 };
 
 const services = [
@@ -35,12 +50,12 @@ const jsonLd = {
   ],
 };
 
-const eyebrow = "text-[11px] font-medium uppercase tracking-[0.14em] text-[var(--sutra-muted)] sm:text-[12px]";
-const button = "inline-flex min-h-12 items-center justify-center bg-[var(--sutra-teal)] px-5 text-sm font-semibold text-white transition-colors hover:bg-[var(--sutra-teal-hover)]";
+const eyebrow = "text-xs font-medium uppercase tracking-[0.14em] text-[var(--sutra-muted)] sm:text-[12px]";
+const button = "inline-flex min-h-12 items-center justify-center  px-5 text-sm font-semibold text-white transition-colors hover:bg-[var(--sutra-teal-hover)]";
 
 export default function RetreatProgramsPage() {
   return (
-    <main className="overflow-hidden bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">
+    <main className="overflow-hidden text-[var(--sutra-ink)]">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <section className="border-b border-[var(--sutra-border)]">
         <RetreatHeroSlider />
@@ -53,7 +68,7 @@ export default function RetreatProgramsPage() {
       <section className="bg-[var(--sutra-pale-sage)] py-12 sm:py-16">
         <Container>
           <p className={eyebrow}>The retreat</p>
-          <h1 className="mt-3 max-w-3xl font-serif text-4xl leading-tight tracking-[-0.035em] sm:text-5xl">A wellness retreat near Delhi, with space for a different pace.</h1>
+          <h2 className="mt-3 max-w-3xl font-serif text-4xl leading-tight tracking-[-0.035em] sm:text-5xl">A wellness retreat near Delhi, with space for a different pace.</h2>
           <p className="mt-5 max-w-2xl text-base leading-7 text-[var(--sutra-muted)]">Stay in Faridabad and explore guided wellness practices, practical health conversations and time away from your usual routine.</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href={bookingUrl} target="_blank" rel="noopener noreferrer" className={button}>View Retreat & Book ↗</a>

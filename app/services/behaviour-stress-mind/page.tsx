@@ -8,7 +8,7 @@ const TITLE = "Stress & Behaviour Support in Faridabad | Sutra Health";
 const DESCRIPTION = "Practical support for stress, behaviour change and everyday habits in Faridabad, plus self-help guides on positive thinking, nature walks and morning sunlight.";
 
 export const metadata: Metadata = {
-  title: TITLE,
+  title: { absolute: TITLE },
   description: DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   robots: { index: true, follow: true },
@@ -233,7 +233,7 @@ const schema = {
   ],
 };
 
-const eyebrow = "text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs";
+const eyebrow = "text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs";
 const h2Class = "mt-4 font-serif text-3xl leading-[1.12] tracking-[-0.03em] sm:text-4xl lg:text-5xl";
 const bodyText = "text-base leading-8 text-[var(--sutra-muted)] sm:text-lg sm:leading-9";
 const textLink = "font-semibold text-[var(--sutra-teal)] underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4";
@@ -257,9 +257,14 @@ export default function Page() {
             <Link href={page.primary.href} className="inline-flex min-h-12 w-full items-center justify-center bg-[#F7F5EF] px-6 text-base font-semibold text-[#17413D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto">
               {page.primary.label} →
             </Link>
-            <a href="#explore" className="inline-flex min-h-12 w-full items-center justify-center border border-white/70 px-6 text-base font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto">
-              {page.secondaryLabel}
-            </a>
+           <a
+            href="https://medium.com/integrative-wellness-journal-iwj/from-restlessness-to-actively-calm-c522960fdfdc"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-12 w-full items-center justify-center border border-white/70 px-6 text-base font-semibold text-white transition-colors hover:bg-white hover:text-[#17413D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto"
+          >
+            Read: From Restlessness to Active Calm ↗
+          </a>
           </div>
         </div>
       </section>

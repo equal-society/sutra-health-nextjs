@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 import Container from "@/components/shared/Container";
+import HeroVideo from "@/components/shared/HeroVideo";
 import { getAllConditions } from "@/data/conditions";
 
 const siteUrl = "https://lifequality.org.in";
@@ -104,7 +105,7 @@ function Eyebrow({
 }) {
   return (
     <p
-      className={`text-[11px] font-semibold uppercase tracking-[0.16em] sm:text-[12px] ${
+      className={`text-xs font-semibold uppercase tracking-[0.16em] sm:text-[12px] ${
         light ? "text-white/75" : "text-[#65736D]"
       }`}
     >
@@ -156,17 +157,7 @@ function Hero() {
     >
       {/* Background Video */}
       <div aria-hidden="true" className="absolute inset-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          aria-label="Sutra Health lifestyle healthcare introduction"
-          className="absolute inset-0 h-full w-full object-cover"
-        >
-          <source src="/videos/hero-video.mp4" type="video/mp4" />
-        </video>
+        <HeroVideo src="/videos/hero-video.mp4" poster="/images/hero-poster.webp" />
 
         {/* Base Overlay */}
         <div className="absolute inset-0 bg-[#101C19]/40" />
@@ -203,7 +194,7 @@ function Hero() {
           {/* Eyebrow */}
           <p
             className="
-              text-[11px]
+              text-xs
               font-semibold
               uppercase
               tracking-[0.17em]
@@ -231,9 +222,7 @@ function Hero() {
               lg:leading-[1.02]
             "
           >
-            <span className="block">
-            Your lifestyle shapes your health. 
-            </span>
+            <span className="block">Your lifestyle shapes your health. </span>
           </h1>
 
           {/* Introduction */}
@@ -249,9 +238,9 @@ function Hero() {
               lg:mt-6
             "
           >
-          Food, physical activity, sleep and stress can affect your health.
-          These factors may be considered alongside your medical history
-          and treatment.
+            Food, physical activity, sleep and stress can affect your health.
+            These factors may be considered alongside your medical history
+            and treatment.
           </p>
 
           {/* Buttons */}
@@ -268,7 +257,7 @@ function Hero() {
             "
           >
             <Link
-              href="/assessment"
+              href="/book-appointment"
               className="
                 inline-flex
                 min-h-12
@@ -290,14 +279,14 @@ function Hero() {
                 sm:w-auto
               "
             >
-              Assess Your Lifestyle Score
+              Book a Consultation
               <span className="ml-3" aria-hidden="true">
                 →
               </span>
             </Link>
 
             <Link
-              href="/services"
+              href="/assessment"
               className="
                 inline-flex
                 min-h-12
@@ -320,9 +309,21 @@ function Hero() {
                 sm:w-auto
               "
             >
-              Explore Our Services
+              Take the Lifestyle Assessment
             </Link>
           </div>
+
+          {/* Credential line (trust signal next to the CTA) */}
+          <p className="mt-6 text-sm leading-6 text-white/80">
+            Led by{" "}
+            <Link
+              href="/doctors"
+              className="font-semibold text-white underline decoration-white/40 underline-offset-4 hover:decoration-white"
+            >
+              Dr. Rakesh Sarwal
+            </Link>{" "}
+            · MBBS, MPH, DrPH (Johns Hopkins)
+          </p>
         </div>
       </div>
     </section>
@@ -386,11 +387,6 @@ function EverydayHealth() {
           >
           Your partner in recovery and wellness.
           </h2>
-
-          {/* <p className="mt-5 max-w-[720px] text-base leading-8 text-[#65736D] sm:text-[18px]">
-            An evidence-informed integrative approach combining medical guidance, nutrition counselling, Therapeutic Yoga, and practical lifestyle changes to support your wellbeing and long-term health.
-
-          </p> */}
 
           <div className="mt-9 grid gap-x-2 gap-y-2 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
@@ -665,6 +661,41 @@ const structuredData = {
   "@context": "https://schema.org",
 
   "@graph": [
+    {
+      "@type": "MedicalClinic",
+
+      "@id": `${siteUrl}/#clinic`,
+
+      name: "Sutra Health",
+
+      url: siteUrl,
+
+      image: `${siteUrl}/images/og-image.webp`,
+
+      telephone: "+919013103676",
+
+      medicalSpecialty: ["PublicHealth", "Lifestyle medicine"],
+
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "House No. 229, Roof-Top, Sector 46",
+        addressLocality: "Faridabad",
+        addressRegion: "Haryana",
+        addressCountry: "IN",
+      },
+
+      parentOrganization: {
+        "@id": `${siteUrl}/#organization`,
+      },
+
+      sameAs: [
+        "https://www.instagram.com/sutrahealth/",
+        "https://www.facebook.com/people/Sutrahealth-Equal/",
+        "https://www.youtube.com/@sutra-health",
+        "https://www.linkedin.com/in/equal-society-ngo",
+      ],
+    },
+
     {
       "@type": "WebSite",
 

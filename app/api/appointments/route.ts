@@ -20,6 +20,7 @@ const enrollmentFormUrl =
   "https://docs.google.com/forms/d/e/1FAIpQLSfcyoJRA-FH5XsXQ-mN6kzYNy0z3WpR7vPU_4BPr8nday_7TQ/viewform?pli=1";
 
 type AppointmentBody = {
+  website?: string; // honeypot field
   name?: string;
   email?: string;
   phone?: string;
@@ -36,6 +37,37 @@ type Schedule = {
   slot_duration_minutes: number | null;
   active: boolean;
 };
+
+/**
+ * Simple per-visitor rate limit (5 booking attempts per 10 minutes).
+ * Note: this memory is per server instance. It stops casual spam;
+ * for stronger protection add a shared store (e.g. Upstash Redis)
+ * or a captcha such as Cloudflare Turnstile.
+ */
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
+const RATE_LIMIT_MAX = 5;
+const attempts = new Map<string, number[]>();
+
+function isRateLimited(key: string): boolean {
+  const now = Date.now();
+  const recent = (attempts.get(key) ?? []).filter(
+    (time) => now - time < RATE_LIMIT_WINDOW_MS,
+  );
+
+  recent.push(now);
+  attempts.set(key, recent);
+
+  // Keep memory small
+  if (attempts.size > 5000) {
+    for (const [k, times] of attempts) {
+      if (times.every((time) => now - time >= RATE_LIMIT_WINDOW_MS)) {
+        attempts.delete(k);
+      }
+    }
+  }
+
+  return recent.length > RATE_LIMIT_MAX;
+}
 
 /**
  * Convert HH:MM into minutes.
@@ -198,6 +230,25 @@ async function sendEmailJS(
 export async function POST(request: NextRequest) {
   try {
     // ==================================================
+    // SPAM PROTECTION: rate limit
+    // ==================================================
+
+    const clientIp =
+      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      request.headers.get("x-real-ip") ||
+      "unknown";
+
+    if (isRateLimited(clientIp)) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Too many requests. Please try again in a few minutes.",
+        },
+        { status: 429 }
+      );
+    }
+
+    // ==================================================
     // ENVIRONMENT VARIABLES
     // ==================================================
 
@@ -260,6 +311,16 @@ export async function POST(request: NextRequest) {
         },
         { status: 400 }
       );
+    }
+
+    // ==================================================
+    // SPAM PROTECTION: honeypot
+    // Bots fill the hidden "website" field. Pretend it worked,
+    // but save nothing and send no email.
+    // ==================================================
+
+    if (typeof body?.website === "string" && body.website.trim() !== "") {
+      return NextResponse.json({ success: true });
     }
 
     const {

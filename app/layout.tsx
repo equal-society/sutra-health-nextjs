@@ -37,10 +37,6 @@ export const metadata: Metadata = {
   description:
     "Sutra Health provides integrative lifestyle healthcare through lifestyle medicine, nutrition, therapeutic yoga, breath and mind practices.",
 
-  alternates: {
-    canonical: "/",
-  },
-
   robots: {
     index: true,
     follow: true,
@@ -56,6 +52,14 @@ export const metadata: Metadata = {
     siteName: "Sutra Health",
     type: "website",
     locale: "en_IN",
+    images: [
+      {
+        url: "/images/og-image.webp",
+        width: 1200,
+        height: 630,
+        alt: "Sutra Health",
+      },
+    ],
   },
 
   twitter: {
@@ -63,6 +67,7 @@ export const metadata: Metadata = {
     title: "Sutra Health | Integrative Lifestyle Healthcare",
     description:
       "Personalized healthcare focused on lifestyle, nutrition, therapeutic yoga, breath and mind practices.",
+    images: ["/images/og-image.webp"],
   },
 };
 
@@ -79,13 +84,6 @@ export default function RootLayout({
     <html
       lang="en"
     >
-      <head>
-        {/* Font Awesome */}
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        />
-      </head>
 
 <body className={`${lora.variable} ${manrope.variable}`}>        <Header />
 

@@ -283,7 +283,7 @@ export default async function ConditionPage({
                     className="h-px w-7 shrink-0 bg-[var(--sutra-sand)] sm:w-9"
                   />
 
-                  <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-white/80 sm:text-[11px] sm:tracking-[0.2em]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/80 sm:text-xs sm:tracking-[0.2em]">
                     Health condition
                   </p>
                 </div>
@@ -323,7 +323,7 @@ export default async function ConditionPage({
                 </div>
 
                 {/* Brand / Guide */}
-                <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-[8px] font-semibold uppercase tracking-[0.14em] text-white/65 sm:mt-9 sm:gap-x-5 sm:text-[10px] sm:tracking-[0.16em]">
+                <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 text-[8px] font-semibold uppercase tracking-[0.14em] text-white/65 sm:mt-9 sm:gap-x-5 sm:text-xs sm:tracking-[0.16em]">
                   <span>Sutra Health</span>
 
                   <span
@@ -348,7 +348,7 @@ export default async function ConditionPage({
               <aside className="hidden lg:block">
                 <div className="sticky top-24 py-16">
                   <div className="border-l border-[var(--sutra-border-strong)] pl-5">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                       In this guide
                     </p>
 
@@ -412,7 +412,7 @@ export default async function ConditionPage({
                 {/* Mobile contents */}
                 <div className="border-b border-[var(--sutra-border)] py-5 lg:hidden">
                   <details>
-                    <summary className="flex cursor-pointer list-none items-center justify-between text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] [&::-webkit-details-marker]:hidden">
+                    <summary className="flex cursor-pointer list-none items-center justify-between text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] [&::-webkit-details-marker]:hidden">
                       <span>In this guide</span>
                       <span className="flex h-8 w-8 items-center justify-center border border-[var(--sutra-border)] text-[18px] font-normal">
                         +
@@ -464,7 +464,7 @@ export default async function ConditionPage({
 
                 {/* Understanding */}
                 <section id="understanding" className="scroll-mt-28 border-b border-[var(--sutra-border)] py-14 sm:py-18 lg:py-22">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-[11px]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-xs">
                     Understanding
                   </p>
                   <h2 className="mt-4 max-w-[760px] font-[var(--font-serif)] text-[38px] font-medium leading-[1.04] tracking-[-0.035em] text-[var(--sutra-teal)] sm:text-[48px] lg:text-[56px]">
@@ -477,7 +477,7 @@ export default async function ConditionPage({
 
                 {/* Concerns */}
                 <section id="concerns" className="scroll-mt-28 border-b border-[var(--sutra-border)] py-14 sm:py-18 lg:py-22">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-[11px]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-xs">
                     Common concerns
                   </p>
                   <h2 className="mt-4 max-w-[760px] font-[var(--font-serif)] text-[36px] font-medium leading-[1.05] tracking-[-0.035em] text-[var(--sutra-teal)] sm:text-[46px] lg:text-[54px]">
@@ -487,7 +487,7 @@ export default async function ConditionPage({
                   <div className="mt-8 border-t border-[var(--sutra-border)]">
                     {condition.concerns.map((concern, index) => (
                       <div key={concern} className="grid gap-4 border-b border-[var(--sutra-border)] py-6 sm:grid-cols-[48px_1fr] sm:gap-6 sm:py-7">
-                        <span className="text-[10px] font-semibold tracking-[0.12em] text-[var(--sutra-sand)]">
+                        <span className="text-xs font-semibold tracking-[0.12em] text-[var(--sutra-sand)]">
                           {String(index + 1).padStart(2, "0")}
                         </span>
                         <p className="text-[16px] leading-8 text-[var(--sutra-muted)] sm:text-[17px] sm:leading-9">
@@ -501,7 +501,7 @@ export default async function ConditionPage({
                 {/* Lifestyle factors */}
                 {condition.lifestyleFactors.length > 0 && (
                   <section id="lifestyle-factors" className="scroll-mt-28 border-b border-[var(--sutra-border)] py-14 sm:py-18 lg:py-22">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-[11px]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-xs">
                       Lifestyle factors
                     </p>
                     <h2 className="mt-4 max-w-[760px] font-[var(--font-serif)] text-[36px] font-medium leading-[1.05] tracking-[-0.035em] text-[var(--sutra-teal)] sm:text-[46px] lg:text-[54px]">
@@ -511,7 +511,7 @@ export default async function ConditionPage({
                     <div className="mt-8 border-t border-[var(--sutra-border)]">
                       {condition.lifestyleFactors.map((factor, index) => (
                         <div key={factor.title} className="grid gap-4 border-b border-[var(--sutra-border)] py-7 sm:grid-cols-[48px_1fr] sm:gap-6 sm:py-8">
-                          <span className="text-[10px] font-semibold tracking-[0.12em] text-[var(--sutra-sand)]">
+                          <span className="text-xs font-semibold tracking-[0.12em] text-[var(--sutra-sand)]">
                             {String(index + 1).padStart(2, "0")}
                           </span>
                           <div>
@@ -538,11 +538,11 @@ export default async function ConditionPage({
                     >
                       <div className="max-w-[780px]">
                         <div className="flex items-start gap-5 sm:gap-7">
-                          <span className="pt-1 text-[10px] font-semibold tracking-[0.12em] text-[var(--sutra-sand)]">
+                          <span className="pt-1 text-xs font-semibold tracking-[0.12em] text-[var(--sutra-sand)]">
                             {String(index + 1).padStart(2, "0")}
                           </span>
                           <div className="min-w-0 flex-1">
-                            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
+                            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
                               Condition guide
                             </p>
                             <h2 className="mt-3 font-[var(--font-serif)] text-[34px] font-medium leading-[1.06] tracking-[-0.035em] text-[var(--sutra-teal)] sm:text-[44px] lg:text-[50px]">
@@ -565,7 +565,7 @@ export default async function ConditionPage({
                 {/* Internal links */}
                 {internalLinks.length > 0 && (
                   <section className="border-b border-[var(--sutra-border)] py-12 sm:py-16">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                       Explore further
                     </p>
                     <div className="mt-5 border-t border-[var(--sutra-border)]">
@@ -587,7 +587,7 @@ export default async function ConditionPage({
 
                 {/* Approach */}
                 <section id="approach" className="scroll-mt-28 border-b border-[var(--sutra-border)] py-14 sm:py-18 lg:py-22">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-[11px]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-xs">
                     Our approach
                   </p>
                   <h2 className="mt-4 max-w-[760px] font-[var(--font-serif)] text-[36px] font-medium leading-[1.05] tracking-[-0.035em] text-[var(--sutra-teal)] sm:text-[46px] lg:text-[54px]">
@@ -596,7 +596,7 @@ export default async function ConditionPage({
                   <div className="mt-8 border-t border-[var(--sutra-border)]">
                     {condition.approach.map((item, index) => (
                       <div key={item} className="grid gap-4 border-b border-[var(--sutra-border)] py-6 sm:grid-cols-[48px_1fr] sm:gap-6 sm:py-7">
-                        <span className="text-[10px] font-semibold tracking-[0.12em] text-[var(--sutra-sand)]">
+                        <span className="text-xs font-semibold tracking-[0.12em] text-[var(--sutra-sand)]">
                           {String(index + 1).padStart(2, "0")}
                         </span>
                         <p className="text-[16px] leading-8 text-[var(--sutra-muted)] sm:text-[17px] sm:leading-9">
@@ -610,7 +610,7 @@ export default async function ConditionPage({
                 {/* Support */}
                 {condition.support?.length > 0 && (
                   <section id="support" className="scroll-mt-28 border-b border-[var(--sutra-border)] py-14 sm:py-18 lg:py-22">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-[11px]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-xs">
                       How Sutra Health can help
                     </p>
                     <h2 className="mt-4 max-w-[760px] font-[var(--font-serif)] text-[36px] font-medium leading-[1.05] tracking-[-0.035em] text-[var(--sutra-teal)] sm:text-[46px] lg:text-[54px]">
@@ -619,7 +619,7 @@ export default async function ConditionPage({
                     <div className="mt-8 border-t border-[var(--sutra-border)]">
                       {condition.support.map((item, index) => (
                         <div key={item} className="grid gap-4 border-b border-[var(--sutra-border)] py-6 sm:grid-cols-[48px_1fr] sm:gap-6 sm:py-7">
-                          <span className="text-[10px] font-semibold tracking-[0.12em] text-[var(--sutra-sand)]">
+                          <span className="text-xs font-semibold tracking-[0.12em] text-[var(--sutra-sand)]">
                             {String(index + 1).padStart(2, "0")}
                           </span>
                           <p className="text-[16px] leading-8 text-[var(--sutra-muted)] sm:text-[17px] sm:leading-9">
@@ -641,7 +641,7 @@ export default async function ConditionPage({
                 */}
                 {condition.evidence && condition.evidence.length > 0 && (
                   <section id="evidence" className="scroll-mt-28 border-b border-[var(--sutra-border)] py-14 sm:py-18 lg:py-22">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-[11px]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-xs">
                       Evidence
                     </p>
                     <h2 className="mt-4 max-w-[760px] font-[var(--font-serif)] text-[36px] font-medium leading-[1.05] tracking-[-0.035em] text-[var(--sutra-teal)] sm:text-[46px] lg:text-[54px]">
@@ -684,7 +684,7 @@ export default async function ConditionPage({
                 {/* FAQ */}
                 {condition.faqs?.length > 0 && (
                   <section id="faq" className="scroll-mt-28 py-14 sm:py-18 lg:py-22">
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-[11px]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-xs">
                       Frequently asked questions
                     </p>
                     <h2 className="mt-4 max-w-[760px] font-[var(--font-serif)] text-[36px] font-medium leading-[1.05] tracking-[-0.035em] text-[var(--sutra-teal)] sm:text-[46px] lg:text-[54px]">
@@ -695,7 +695,7 @@ export default async function ConditionPage({
                       {condition.faqs.map((faq, index) => (
                         <details key={faq.question} className="group border-b border-[var(--sutra-border)]">
                           <summary className="flex cursor-pointer list-none items-start gap-4 py-6 [&::-webkit-details-marker]:hidden sm:py-7">
-                            <span className="pt-1 text-[10px] font-semibold tracking-[0.12em] text-[var(--sutra-sand)]">
+                            <span className="pt-1 text-xs font-semibold tracking-[0.12em] text-[var(--sutra-sand)]">
                               {String(index + 1).padStart(2, "0")}
                             </span>
                             <span className="flex-1 text-[16px] font-medium leading-7 text-[var(--sutra-ink)] sm:text-[17px]">
@@ -729,7 +729,7 @@ export default async function ConditionPage({
             <Container>
               <div className="mx-auto max-w-7xl py-14 sm:py-18 lg:py-22">
                 <div className="max-w-[820px]">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-[11px]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-xs">
                     Common questions
                   </p>
                   <h2 className="mt-3 font-[var(--font-serif)] text-[38px] font-medium leading-[1.04] tracking-[-0.035em] text-[var(--sutra-teal)] sm:text-[48px] lg:text-[54px]">
@@ -743,7 +743,7 @@ export default async function ConditionPage({
                         href={`/conditions/${condition.slug}/${subpage.slug}`}
                         className="group flex items-center gap-5 border-b border-[var(--sutra-border)] py-5 transition-colors hover:bg-white sm:py-6"
                       >
-                        <span className="text-[10px] font-semibold tracking-[0.12em] text-[var(--sutra-sand)]">
+                        <span className="text-xs font-semibold tracking-[0.12em] text-[var(--sutra-sand)]">
                           {String(index + 1).padStart(2, "0")}
                         </span>
                         <span className="flex-1 text-[16px] leading-7 text-[var(--sutra-ink)] sm:text-[17px]">
@@ -775,7 +775,7 @@ export default async function ConditionPage({
               <div className="mx-auto max-w-7xl py-14 sm:py-18 lg:py-22">
                 <div className="flex flex-col gap-6 border-b border-[var(--sutra-border)] pb-8 sm:flex-row sm:items-end sm:justify-between">
                   <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-[11px]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)] sm:text-xs">
                       Explore more
                     </p>
                     <h2 className="mt-3 font-[var(--font-serif)] text-[38px] font-medium leading-[1.04] tracking-[-0.035em] text-[var(--sutra-teal)] sm:text-[48px] lg:text-[54px]">
@@ -815,7 +815,7 @@ export default async function ConditionPage({
                         </div>
 
                         <div className="flex flex-1 flex-col p-5 sm:p-6">
-                          <p className="text-[9px] font-semibold uppercase tracking-[0.15em] text-[var(--sutra-muted)]">
+                          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--sutra-muted)]">
                             Health condition
                           </p>
                           <h3 className="mt-3 font-[var(--font-serif)] text-[25px] font-medium leading-[1.08] tracking-[-0.025em] text-[var(--sutra-ink)] sm:text-[27px]">
@@ -825,7 +825,7 @@ export default async function ConditionPage({
                             {related.shortDescription}
                           </p>
                           <div className="mt-auto border-t border-[var(--sutra-border)] pt-4 mt-6">
-                            <span className="inline-flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--sutra-teal)]">
+                            <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--sutra-teal)]">
                               Explore
                               <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">
                                 →

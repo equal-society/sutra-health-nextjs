@@ -30,33 +30,13 @@ export const metadata: Metadata = {
 
 function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
   return (
-    <p className={`text-[11px] font-semibold uppercase tracking-[0.16em] sm:text-[12px] ${light ? "text-white/75" : "text-[#65736D]"}`}>
+    <p className={`text-xs font-semibold uppercase tracking-[0.16em] sm:text-[12px] ${light ? "text-white/75" : "text-[#65736D]"}`}>
       {children}
     </p>
   );
 }
 
 const stories = [
-  {
-    quote:
-      "Amazing consultation experience. The doctors patiently listened to my concerns and provided practical Natural solutions.",
-    name: "Rahul Sharma",
-  },
-  {
-    quote:
-      "Yoga therapy helped reduce my back pain significantly. Professional staff and peaceful environment.",
-    name: "Priya Verma",
-  },
-  {
-    quote:
-      "Highly recommend Sutra Health. The holistic treatment approach actually delivers long-term benefits.",
-    name: "Ankit Mehta",
-  },
-  {
-    quote:
-      "Meditation sessions transformed my daily routine. Stress levels are much lower now.",
-    name: "Neha Kapoor",
-  },
   {
     quote:
       "I had the pleasure of getting guidance from Dr. Rakesh, a humble therapeutic Yoga consultant who is an MBBS doctor as well. He guided me and my son through our Yoga journey with a smile on his face.",
@@ -117,7 +97,7 @@ export default function PatientStoriesPage() {
                       {story.name}
                     </cite>
 
-                    <p className="mt-1 text-[10px] uppercase tracking-wider text-[#65736D]">
+                    <p className="mt-1 text-xs uppercase tracking-wider text-[#65736D]">
                       Individual experience
                     </p>
                   </div>

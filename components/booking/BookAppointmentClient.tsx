@@ -11,6 +11,7 @@ type FormData = {
   age: string;
   date: string;
   time: string;
+  website: string; // honeypot: real visitors never see or fill this
 };
 
 const initialForm: FormData = {
@@ -21,6 +22,7 @@ const initialForm: FormData = {
   age: "",
   date: "",
   time: "",
+  website: "",
 };
 
 export default function BookAppointmentPage() {
@@ -231,6 +233,7 @@ export default function BookAppointmentPage() {
         age: "",
         date: "",
         time: "",
+        website: "",
       });
 
       // Clear available slots
@@ -257,7 +260,7 @@ export default function BookAppointmentPage() {
       
       <Container>
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-[11px]">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#65966F] sm:text-xs">
             Appointment booking
 
             </p>
@@ -285,7 +288,7 @@ export default function BookAppointmentPage() {
               <div className="grid lg:grid-cols-[0.8fr_1.2fr]">
                 {/* ================= LEFT ================= */}
                 <div className="bg-[#173F35] p-7 text-[#FAF8F1] sm:p-9 lg:p-10">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#B5CEB6]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#B5CEB6]">
                     Booking details
                   </p>
 
@@ -353,6 +356,23 @@ export default function BookAppointmentPage() {
                 <div className="p-7 sm:p-9 lg:p-10">
                   <form onSubmit={handleSubmit}>
                     <div className="grid gap-5 sm:grid-cols-2">
+                      {/* Spam trap: hidden from people, bots tend to fill it */}
+                      <div
+                        aria-hidden="true"
+                        className="absolute -left-[9999px] h-0 w-0 overflow-hidden"
+                      >
+                        <label htmlFor="website">Leave this field empty</label>
+                        <input
+                          id="website"
+                          name="website"
+                          type="text"
+                          tabIndex={-1}
+                          autoComplete="off"
+                          value={form.website}
+                          onChange={handleChange}
+                        />
+                      </div>
+
                       {/* Name */}
                       <div className="sm:col-span-2">
                         <label
@@ -504,7 +524,7 @@ export default function BookAppointmentPage() {
                         </label>
 
                         {loadingSlots && (
-                          <span className="text-[11px] text-[#71817A]">
+                          <span className="text-xs text-[#71817A]">
                             Loading...
                           </span>
                         )}
@@ -617,7 +637,7 @@ export default function BookAppointmentPage() {
                         : "Confirm Appointment →"}
                     </button>
 
-                    <p className="mt-4 text-center text-[10px] leading-5 text-[#89958F]">
+                    <p className="mt-4 text-center text-xs leading-5 text-[#89958F]">
                       Your information is used only to manage your
                       appointment and provide relevant communication.
                     </p>

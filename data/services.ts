@@ -137,7 +137,7 @@ export const services: Service[] = [
 
     relatedConditions: [
       "weight-management",
-      "metabolic-health",
+      "diabetes-blood-sugar",
       "high-blood-pressure",
     ],
   },
@@ -253,7 +253,7 @@ export const services: Service[] = [
     ],
 
     relatedConditions: [
-      "metabolic-health",
+      "diabetes-blood-sugar",
       "digestive-gut-health",
       "womens-health",
     ],
@@ -488,7 +488,7 @@ export const services: Service[] = [
 
     relatedConditions: [
       "weight-management",
-      "metabolic-health",
+      "diabetes-blood-sugar",
       "digestive-gut-health",
     ],
   },
@@ -722,7 +722,7 @@ export const services: Service[] = [
 
     relatedConditions: [
       "weight-management",
-      "metabolic-health",
+      "diabetes-blood-sugar",
       "digestive-gut-health",
     ],
   },

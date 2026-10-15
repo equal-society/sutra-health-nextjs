@@ -1,4 +1,16 @@
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebookF,
+  faInstagram,
+  faLinkedinIn,
+  faMediumM,
+  faPinterestP,
+  faWhatsapp,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 import Container from "@/components/shared/Container";
 
 const exploreLinks = [
@@ -13,36 +25,36 @@ const connectLinks = [
   { label: "Contact Us", href: "/contact" },
 ];
 
-const socialLinks = [
+const socialLinks: { name: string; href: string; icon: IconDefinition }[] = [
   {
     name: "Instagram",
     href: "https://www.instagram.com/sutrahealth/",
-    icon: "fa-brands fa-instagram",
+    icon: faInstagram,
   },
   {
     name: "Facebook",
     href: "https://www.facebook.com/people/Sutrahealth-Equal/",
-    icon: "fa-brands fa-facebook-f",
+    icon: faFacebookF,
   },
   {
     name: "YouTube",
     href: "https://www.youtube.com/@sutra-health",
-    icon: "fa-brands fa-youtube",
-  },
-  {
-    name: "Email",
-    href: "mailto:equal.society@gmail.com",
-    icon: "fa-solid fa-envelope",
-  },
-  {
-    name: "WhatsApp",
-    href: "https://wa.me/919013103676",
-    icon: "fa-brands fa-whatsapp",
+    icon: faYoutube,
   },
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/equal-society-ngo",
-    icon: "fa-brands fa-linkedin-in",
+    icon: faLinkedinIn,
+  },
+  {
+    name: "Medium",
+    href: "https://sutra-health.medium.com/",
+    icon: faMediumM,
+  },
+  {
+    name: "Pinterest",
+    href: "https://in.pinterest.com/equal_society/",
+    icon: faPinterestP,
   },
 ];
 
@@ -67,36 +79,40 @@ export default function Footer() {
                 your options and decide where to begin.
               </p>
 
-              <div
-                aria-label="Sutra Health social links"
-                className="mt-7 flex flex-wrap gap-2"
-              >
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target={social.href.startsWith("mailto:") ? undefined : "_blank"}
-                    rel={
-                      social.href.startsWith("mailto:")
-                        ? undefined
-                        : "noopener noreferrer"
-                    }
-                    aria-label={
-                      social.name === "Email"
-                        ? "Email Sutra Health"
-                        : `Sutra Health on ${social.name}`
-                    }
-                    className="inline-flex h-9 w-9 items-center justify-center rounded-none border border-white/15 text-[13px] text-white/65 transition-colors duration-200 hover:border-white/30 hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--sutra-teal)]"
-                  >
-                    <i className={social.icon} aria-hidden="true" />
-                  </a>
-                ))}
-              </div>
+            <div
+  aria-label="Sutra Health social links"
+  className="mt-7 flex items-center gap-4"
+>
+  {socialLinks.map((social) => (
+    <a
+      key={social.name}
+      href={social.href}
+      target={social.href.startsWith("mailto:") ? undefined : "_blank"}
+      rel={
+        social.href.startsWith("mailto:")
+          ? undefined
+          : "noopener noreferrer"
+      }
+      aria-label={
+        social.name === "Email"
+          ? "Email Sutra Health"
+          : `Sutra Health on ${social.name}`
+      }
+      className="inline-flex items-center justify-center text-white/70 transition-colors duration-200 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+    >
+      <FontAwesomeIcon
+        icon={social.icon}
+        aria-hidden="true"
+        className="h-5 w-5"
+      />
+    </a>
+  ))}
+</div>
             </div>
 
             {/* Explore */}
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/55">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/55">
                 Explore
               </p>
 
@@ -115,7 +131,7 @@ export default function Footer() {
 
             {/* Connect */}
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/55">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/55">
                 Connect
               </p>
 
@@ -134,7 +150,7 @@ export default function Footer() {
 
             {/* Contact */}
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/55">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/55">
                 Contact
               </p>
 
@@ -168,7 +184,7 @@ export default function Footer() {
           </div>
 
           <div className="mt-14 border-t border-white/10 pt-6 sm:mt-16">
-            <div className="flex flex-col gap-3 text-[11px] leading-5 text-white/50 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-col gap-3 text-xs leading-5 text-white/50 sm:flex-row sm:items-center sm:justify-between">
               <p>
                 © {new Date().getFullYear()} Sutra Health. All rights reserved.
               </p>
@@ -178,7 +194,7 @@ export default function Footer() {
               </p>
             </div>
 
-            <p className="mt-5 max-w-[920px] text-[10px] leading-5 text-white/40">
+            <p className="mt-5 max-w-[920px] text-xs leading-5 text-white/40">
               Information on this website is for general education and does not replace
               diagnosis, treatment or advice from your doctor.
             </p>

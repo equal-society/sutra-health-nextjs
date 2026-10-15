@@ -35,11 +35,6 @@ const resources = [
     href: "/resources/articles",
   },
   {
-    title: "Health Guides",
-    description: "Practical, easy-to-follow guides for building supportive habits around everyday health and wellbeing.",
-    href: "/resources/health-guides",
-  },
-  {
     title: "Research & Evidence",
     description: "Explore research, teaching and academic material connected with lifestyle medicine, Yoga and preventive health.",
     href: "/resources/research",

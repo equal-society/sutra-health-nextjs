@@ -135,54 +135,37 @@ export default function DoctorDashboard() {
 
     try {
       const {
-        data: { user },
-      } = await supabase.auth.getUser();
+        data: { session },
+      } = await supabase.auth.getSession();
 
-      if (!user) {
+      if (!session?.access_token) {
         router.replace("/doctor-login");
         return;
       }
 
-      const doctorEmail = process.env.NEXT_PUBLIC_DOCTOR_EMAIL;
+      // Patient data is loaded by the server, which checks that the
+      // logged-in user is the doctor. The browser never reads the
+      // appointments table directly.
+      const response = await fetch("/api/doctor/appointments", {
+        headers: { Authorization: `Bearer ${session.access_token}` },
+        cache: "no-store",
+      });
 
-      if (
-        !doctorEmail ||
-        !user.email ||
-        user.email.toLowerCase() !== doctorEmail.toLowerCase()
-      ) {
+      if (response.status === 401 || response.status === 403) {
         await supabase.auth.signOut();
         router.replace("/doctor-login");
         return;
       }
 
-      const { data, error: fetchError } = await supabase
-        .from("appointments")
-        .select(
-          `
-            id,
-            patient_name,
-            patient_email,
-            patient_phone,
-            patient_age,
-            patient_gender,
-            appointment_date,
-            appointment_time,
-            status,
-            meeting_url
-          `,
-        )
-        .order("appointment_date", {
-          ascending: true,
-        })
-        .order("appointment_time", {
-          ascending: true,
-        });
+      const result = await response.json().catch(() => null);
 
-      if (fetchError) {
-        console.error("Appointments error:", fetchError);
+      if (!response.ok || !result?.success) {
+        console.error("Appointments error:", result?.error);
         setError("Unable to load appointments.");
         return;
       }
+
+      const data = result.appointments;
 
       setAppointments((data ?? []) as Appointment[]);
     } catch (error) {
@@ -1164,7 +1147,7 @@ export default function DoctorDashboard() {
                           {formatTime(slot)}
 
                           {blocked && (
-                            <span className="ml-1 text-[10px]">
+                            <span className="ml-1 text-xs">
                               · blocked
                             </span>
                           )}
@@ -1455,7 +1438,7 @@ const AppointmentCard = memo(function AppointmentCard({
             </span>
 
             <span
-              className={`rounded-full px-2.5 py-1 text-[11px] font-semibold ${statusClass(
+              className={`rounded-full px-2.5 py-1 text-xs font-semibold ${statusClass(
                 appointment.status,
               )}`}
             >

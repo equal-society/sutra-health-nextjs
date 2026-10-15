@@ -187,7 +187,7 @@ export default function AcademicResearchPage() {
         <div className="relative z-10 mx-auto max-w-[1440px] px-5 py-3 sm:px-8 lg:px-12">
           {/* Eyebrow */}
           <div className="py-6 sm:py-8">
-            <p className="flex items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/75 sm:text-[11px] sm:tracking-[0.24em]">
+            <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-white/75 sm:text-xs sm:tracking-[0.24em]">
               <span
                 className="h-px w-6 shrink-0 bg-white/70 sm:w-8"
                 aria-hidden="true"
@@ -255,7 +255,7 @@ export default function AcademicResearchPage() {
         <div className="mb-8 border-b border-black/10 pb-7 sm:mb-10 sm:pb-8">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#65736D] sm:text-[11px]">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#65736D] sm:text-xs">
                 The knowledge feed
               </p>
 
@@ -301,18 +301,18 @@ export default function AcademicResearchPage() {
             >
               {/* Type */}
               <div className="mb-4 flex items-center gap-3 lg:mb-0 lg:pt-1">
-                <span className="font-mono text-[10px] text-[#91A298]">
+                <span className="font-mono text-xs text-[#91A298]">
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#65736D]">
+                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#65736D]">
                   {typeLabel[item.type]}
                 </span>
               </div>
 
               {/* Content */}
               <div className="max-w-4xl">
-                <div className="mb-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] text-[#65736D] sm:gap-x-3 sm:text-xs">
+                <div className="mb-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-[#65736D] sm:gap-x-3 sm:text-xs">
                   <span>{item.date}</span>
                   <span aria-hidden="true">·</span>
                   <span>{item.source}</span>
@@ -367,7 +367,7 @@ export default function AcademicResearchPage() {
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
           <div className="flex flex-col gap-9 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
             <div className="max-w-xl">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#65736D] sm:text-[11px]">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#65736D] sm:text-xs">
                 About the work
               </p>
 
@@ -419,7 +419,7 @@ export default function AcademicResearchPage() {
       <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-28">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
           <div>
-            <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#65736D] sm:text-[11px]">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#65736D] sm:text-xs">
               How to use this library
             </p>
 
@@ -445,7 +445,7 @@ export default function AcademicResearchPage() {
               key={number}
               className="grid grid-cols-[40px_minmax(0,1fr)] gap-4 py-6 sm:grid-cols-[60px_180px_minmax(0,1fr)] sm:items-center sm:gap-7 sm:py-7"
             >
-              <span className="font-mono text-[10px] tracking-[0.12em] text-[#91A298]">
+              <span className="font-mono text-xs tracking-[0.12em] text-[#91A298]">
                 {number}
               </span>
 
@@ -466,7 +466,7 @@ export default function AcademicResearchPage() {
         <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-16 lg:px-12 lg:py-20">
           <div className="flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/60 sm:text-[11px]">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/60 sm:text-xs">
                 Continue exploring
               </p>
 

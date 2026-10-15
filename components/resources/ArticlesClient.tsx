@@ -105,7 +105,7 @@ export default function ArticlesPage() {
           <div className="mx-auto max-w-[820px] py-16 text-center sm:py-20 lg:py-24 xl:py-28">
 
             {/* Eyebrow */}
-            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/75 sm:text-[11px]">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/75 sm:text-xs">
               Sutra Health Journal
             </p>
 
@@ -149,7 +149,7 @@ export default function ArticlesPage() {
       <section className="border-b border-[var(--sutra-border)] bg-[var(--sutra-white)] mt-3">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
           <div className="flex items-center justify-center gap-7 overflow-x-auto py-5 scrollbar-hide">
-            <span className="shrink-0 text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
+            <span className="shrink-0 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sutra-muted)]">
               Topics
             </span>
 
@@ -189,7 +189,7 @@ export default function ArticlesPage() {
           <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-18 lg:px-12 lg:py-22">
             <div className="mb-8 flex items-end justify-between">
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                   {submittedSearch ? "Search results" : "Latest from Sutra Health"}
                 </p>
 
@@ -200,7 +200,7 @@ export default function ArticlesPage() {
                 </h2>
               </div>
 
-              <span className="hidden text-[10px] uppercase tracking-[0.16em] text-[var(--sutra-muted)] sm:block">
+              <span className="hidden text-xs uppercase tracking-[0.16em] text-[var(--sutra-muted)] sm:block">
                 {filteredArticles.length} articles
               </span>
             </div>
@@ -225,7 +225,7 @@ export default function ArticlesPage() {
         </div>
 
         <div className="flex flex-1 flex-col">
-          <div className="mt-5 flex min-h-[18px] flex-wrap items-center gap-x-2 gap-y-1 text-[9px] font-semibold uppercase tracking-[0.14em] text-[var(--sutra-muted)]">
+          <div className="mt-5 flex min-h-[18px] flex-wrap items-center gap-x-2 gap-y-1 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--sutra-muted)]">
             <span>{article.category}</span>
             <span aria-hidden="true">·</span>
             <span>{article.type}</span>
@@ -243,7 +243,7 @@ export default function ArticlesPage() {
 
           {/* Always aligned at bottom */}
           <div className="mt-auto flex items-center justify-between border-t border-[var(--sutra-border)] pt-4">
-            <span className="text-[10px] text-[var(--sutra-muted)]">
+            <span className="text-xs text-[var(--sutra-muted)]">
               {article.readTime}
             </span>
 
@@ -267,7 +267,7 @@ export default function ArticlesPage() {
         <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-18 lg:px-12 lg:py-22">
           <div className="flex flex-col gap-4 border-b border-[var(--sutra-border-strong)] pb-5 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                 The Journal
               </p>
 
@@ -277,7 +277,7 @@ export default function ArticlesPage() {
             </div>
 
             <div className="flex items-center gap-4">
-              <span className="text-[11px] text-[var(--sutra-muted)]">
+              <span className="text-xs text-[var(--sutra-muted)]">
                 {filteredArticles.length}{" "}
                 {filteredArticles.length === 1 ? "article" : "articles"}
               </span>
@@ -289,7 +289,7 @@ export default function ArticlesPage() {
                 <button
                   type="button"
                   onClick={resetFilters}
-                  className="border-b border-[var(--sutra-teal)] pb-0.5 text-[10px] font-semibold text-[var(--sutra-teal)]"
+                  className="border-b border-[var(--sutra-teal)] pb-0.5 text-xs font-semibold text-[var(--sutra-teal)]"
                 >
                   Clear filters
                 </button>
@@ -310,7 +310,7 @@ export default function ArticlesPage() {
               <button
                 type="button"
                 onClick={resetFilters}
-                className="mt-6 border border-[var(--sutra-teal)] bg-[var(--sutra-teal)] px-5 py-3 text-[11px] font-semibold text-white hover:bg-[var(--sutra-teal-hover)]"
+                className="mt-6 border border-[var(--sutra-teal)] bg-[var(--sutra-teal)] px-5 py-3 text-xs font-semibold text-white hover:bg-[var(--sutra-teal-hover)]"
               >
                 View all articles
               </button>
@@ -339,7 +339,7 @@ export default function ArticlesPage() {
                     </div>
 
                     <div>
-                      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[9px] font-semibold uppercase tracking-[0.13em] text-[var(--sutra-muted)]">
+                      <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-semibold uppercase tracking-[0.13em] text-[var(--sutra-muted)]">
                         <span>{article.category}</span>
                         <span aria-hidden="true">·</span>
                         <span>{article.type}</span>
@@ -357,7 +357,7 @@ export default function ArticlesPage() {
                     </div>
 
                     <div className="flex items-center justify-between gap-5 lg:block lg:text-right">
-                      <p className="text-[10px] text-[var(--sutra-muted)]">
+                      <p className="text-xs text-[var(--sutra-muted)]">
                         {article.date}
                       </p>
 
@@ -376,7 +376,7 @@ export default function ArticlesPage() {
               <button
                 type="button"
                 onClick={() => setVisibleCount((current) => current + 9)}
-                className="border border-[var(--sutra-border-strong)] bg-[var(--sutra-white)] px-7 py-3 text-[11px] font-semibold text-[var(--sutra-ink)] transition-colors hover:border-[var(--sutra-teal)] hover:text-[var(--sutra-teal)]"
+                className="border border-[var(--sutra-border-strong)] bg-[var(--sutra-white)] px-7 py-3 text-xs font-semibold text-[var(--sutra-ink)] transition-colors hover:border-[var(--sutra-teal)] hover:text-[var(--sutra-teal)]"
               >
                 Load more articles
               </button>
@@ -394,7 +394,7 @@ export default function ArticlesPage() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
           <div className="flex flex-col gap-6 py-12 sm:flex-row sm:items-center sm:justify-between sm:py-16">
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-muted)]">
                 Sutra Health
               </p>
 
@@ -406,14 +406,14 @@ export default function ArticlesPage() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/conditions"
-                className="border border-[var(--sutra-teal)] bg-[var(--sutra-teal)] px-5 py-3 text-[11px] font-semibold text-white transition-colors hover:bg-[var(--sutra-teal-hover)]"
+                className="border border-[var(--sutra-teal)] bg-[var(--sutra-teal)] px-5 py-3 text-xs font-semibold text-white transition-colors hover:bg-[var(--sutra-teal-hover)]"
               >
                 Browse health concerns →
               </Link>
 
               <Link
                 href="/services"
-                className="border border-[var(--sutra-border-strong)] bg-[var(--sutra-white)] px-5 py-3 text-[11px] font-semibold text-[var(--sutra-ink)] transition-colors hover:border-[var(--sutra-teal)] hover:text-[var(--sutra-teal)]"
+                className="border border-[var(--sutra-border-strong)] bg-[var(--sutra-white)] px-5 py-3 text-xs font-semibold text-[var(--sutra-ink)] transition-colors hover:border-[var(--sutra-teal)] hover:text-[var(--sutra-teal)]"
               >
                 See available services →
               </Link>

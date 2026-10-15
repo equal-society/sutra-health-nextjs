@@ -8,7 +8,7 @@ const PAGE_URL = `${SITE_URL}/services/lifestyle`;
 const BOOKING_URL = "/book-appointment";
 
 export const metadata: Metadata = {
-  title: "Lifestyle Medicine in Faridabad | Sutra Health",
+  title: { absolute: "Lifestyle Medicine in Faridabad | Sutra Health" },
   description:
     "Lifestyle medicine looks at food, movement, sleep, stress and daily routines alongside medical care. Learn how Sutra Health in Faridabad approaches it.",
   alternates: { canonical: PAGE_URL },
@@ -116,11 +116,20 @@ export default function LifestyleMedicinePage() {
         aria-labelledby="lifestyle-title"
         className="relative isolate flex min-h-[500px] items-end overflow-hidden bg-[#173B36] sm:min-h-[560px] lg:min-h-[620px]"
       >
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/services/lifestyle.webp')" }}
+        <video
+        className="absolute inset-0 h-full w-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-hidden="true"
+      >
+        <source
+          src="https://ia800806.us.archive.org/22/items/retreat_202610/Retreat/US/2024-04-15_us.mp4"
+          type="video/mp4"
         />
+      </video>
         <div aria-hidden="true" className="absolute inset-0 bg-[#101C19]/65" />
         <div
           aria-hidden="true"
@@ -168,7 +177,7 @@ export default function LifestyleMedicinePage() {
         <Container>
           <div className="grid gap-6 py-14 sm:py-18 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 lg:py-24">
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">The approach</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">The approach</p>
               <h2 id="overview-title" className="mt-4 max-w-lg font-serif text-3xl leading-[1.12] tracking-[-0.03em] sm:text-4xl lg:text-5xl">
                 What lifestyle medicine means here.
               </h2>
@@ -189,7 +198,7 @@ export default function LifestyleMedicinePage() {
         <Container>
           <div className="py-14 sm:py-18 lg:py-24">
             <div className="max-w-2xl">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">How it works</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">How it works</p>
               <h2 id="process-title" className="mt-4 font-serif text-3xl leading-[1.12] tracking-[-0.03em] sm:text-4xl lg:text-5xl">
                 From first conversation to review.
               </h2>
@@ -216,7 +225,7 @@ export default function LifestyleMedicinePage() {
         <Container>
           <div className="py-14 sm:py-18 lg:py-24">
             <div className="max-w-2xl">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">Explore further</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">Explore further</p>
               <h2 id="lifestyle-reading-title" className="mt-4 font-serif text-3xl leading-[1.12] tracking-[-0.03em] sm:text-4xl lg:text-5xl">
                 Go deeper on lifestyle support.
               </h2>
@@ -248,7 +257,7 @@ export default function LifestyleMedicinePage() {
         <Container>
           <div className="py-14 sm:py-18 lg:py-20">
             <div className="max-w-2xl">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">Common questions</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">Common questions</p>
               <h2 id="lifestyle-faq-title" className="mt-4 font-serif text-3xl leading-tight sm:text-4xl">Before you start</h2>
             </div>
             <div className="mt-7 max-w-4xl divide-y divide-[var(--sutra-border-strong)] border-y border-[var(--sutra-border-strong)]">
