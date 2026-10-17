@@ -169,14 +169,18 @@ export default function ServicesPage() {
         aria-labelledby="services-hero-title"
         className="relative isolate flex min-h-[min(780px,calc(100svh-72px))] items-end overflow-hidden bg-[#18332F] sm:min-h-[min(820px,calc(100svh-80px))]"
       >
-        <Image
-          src="/images/yoga.webp"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
+        <video
+          aria-hidden="true"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          // poster="/images/yoga.webp"
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/videos/hero/hero-01.mp4" type="video/mp4" />
+        </video>
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-[#101C19]/45"

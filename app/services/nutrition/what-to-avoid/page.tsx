@@ -34,12 +34,18 @@ export default function WhattoLimitPage() {
      
 
                 <section className="relative overflow-hidden border-b border-[var(--sutra-border)] bg-[#18332F] text-white">
-  <img
-    src="/images/services/diet.webp"
-    alt=""
+  <video
     aria-hidden="true"
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="metadata"
+    poster="/images/services/diet.webp"
     className="absolute inset-0 h-full w-full object-cover"
-  />
+  >
+    <source src="/videos/services/hero.mp4" type="video/mp4" />
+  </video>
 
   <div
     aria-hidden="true"

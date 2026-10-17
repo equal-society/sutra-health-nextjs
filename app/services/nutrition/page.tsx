@@ -26,11 +26,18 @@ export default function NutritionPage() {
         aria-labelledby="consultation-title"
         className="relative isolate flex min-h-[500px] items-end overflow-hidden bg-[#173B36] sm:min-h-[560px] lg:min-h-[620px]"
       >
-        <div
+        <video
           aria-hidden="true"
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/services/diet.webp')" }}
-        />
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          // poster="/images/services/diet.webp"
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/videos/food-hero-clip.mp4" type="video/mp4" />
+        </video>
 
         <div
           aria-hidden="true"

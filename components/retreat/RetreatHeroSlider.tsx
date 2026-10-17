@@ -1,10 +1,7 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
-const archiveVideo =
-  "/videos/retreat.mp4";
+import HeroVideo from "@/components/shared/RetreatHeroVideo";
 
 export default function RetreatHeroSlider() {
   return (
@@ -41,21 +38,15 @@ export default function RetreatHeroSlider() {
 
       {/* Desktop video hero */}
       <div className="relative hidden min-h-[min(820px,calc(100svh-80px))] overflow-hidden bg-[#18332F] lg:flex lg:items-end">
-        <video
-          className="absolute inset-0 h-full w-full object-cover"
-          src={archiveVideo}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          aria-hidden="true"
+        {/* Poster always; video only on screens 1024px+ (never downloaded on phones) */}
+        <HeroVideo
+          src="/videos/retreat.mp4"
+          poster="/videos/retreat-poster.webp"
+          minWidth={1024}
+          priority={false}
         />
 
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-[#10201C]/35"
-        />
+        <div aria-hidden="true" className="absolute inset-0 bg-[#10201C]/35" />
 
         <div
           aria-hidden="true"
@@ -83,50 +74,18 @@ export default function RetreatHeroSlider() {
               Faridabad setting.
             </p>
 
-            <Link
-              href="/book-appointment"
-              className="mt-7 mr-2 inline-flex min-h-12 items-center bg-[#F7F5EF] px-6 text-sm font-semibold text-[#17413D] transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-            >
-              Ask about the retreat
-              <ArrowUpRight size={16} className="ml-3" aria-hidden="true" />
-            </Link>
-
+           
             <Link
               href="https://bookretreats.com/r/6-day-rejuvenation-in-nature-moments-from-civilization-in-india"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-7 inline-flex min-h-12 items-center border border-white px-6 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+              className="mt-7 mr-2 inline-flex min-h-12 items-center bg-[#F7F5EF] px-6 text-sm font-semibold text-[#17413D] transition-colors hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
-              View retreat booking
+              Book Retreat Programs
               <ArrowUpRight size={16} className="ml-3" aria-hidden="true" />
             </Link>
-          </div>
-        </div>
-      </div>
 
-      {/* Mobile video */}
-      <div className="relative w-full overflow-hidden bg-[#18332F] lg:hidden">
-        <div className="relative aspect-[4/5] min-h-[420px] max-h-[680px] w-full sm:aspect-[16/10] sm:min-h-[440px]">
-          <video
-            className="absolute inset-0 h-full w-full object-cover"
-            src={archiveVideo}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            aria-hidden="true"
-          />
-
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
-          />
-
-          <div className="absolute inset-x-0 bottom-0 px-5 pb-6 pt-20">
-            <p className="text-sm font-semibold text-white">
-              Sutra Health Retreat
-            </p>
+          
           </div>
         </div>
       </div>

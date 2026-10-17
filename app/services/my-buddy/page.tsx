@@ -202,7 +202,18 @@ export default function Page() {
 
       {/* Hero: same layout as the Lifestyle Medicine main page */}
       <section aria-labelledby="page-title" className="relative isolate flex min-h-[500px] items-end overflow-hidden bg-[#173B36] sm:min-h-[560px] lg:min-h-[620px]">
-        <div aria-hidden="true" className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${page.heroImage}')` }} />
+        <video
+          aria-hidden="true"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          // poster={page.heroImage}
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/videos/hero/hero-03.mp4" type="video/mp4" />
+        </video>
         <div aria-hidden="true" className="absolute inset-0 bg-[#101C19]/65" />
         <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#101C19]/80 via-[#101C19]/45 to-[#101C19]/10" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-12 pt-28 sm:px-6 sm:pb-16 md:px-8 lg:px-12">

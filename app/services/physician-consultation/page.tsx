@@ -157,11 +157,18 @@ export default function PhysicianConsultationPage() {
         aria-labelledby="consultation-title"
         className="relative isolate flex min-h-[500px] items-end overflow-hidden bg-[#173B36] sm:min-h-[560px] lg:min-h-[620px]"
       >
-        <div
+        <video
           aria-hidden="true"
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/services/physician-consulation.webp')" }}
-        />
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          // poster="/images/services/physician-consulation.webp"
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/videos/hero/hero-10.mp4" type="video/mp4" />
+        </video>
         <div aria-hidden="true" className="absolute inset-0 bg-[#10211E]/70" />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-10 pt-28 sm:px-6 sm:pb-16 md:px-8 lg:px-12 lg:pb-20">

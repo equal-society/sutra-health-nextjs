@@ -248,12 +248,18 @@ export default function Page() {
 
       {/* Hero: same layout as the Lifestyle Medicine sub-pages */}
             <section className="relative overflow-hidden border-b border-[var(--sutra-border)] bg-[#18332F] text-white">
-  <img
-    src="/images/services/shirodharaa.webp"
-    alt=""
+  <video
     aria-hidden="true"
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="metadata"
+    poster="/images/services/shirodharaa.webp"
     className="absolute inset-0 h-full w-full object-cover"
-  />
+  >
+    <source src="/videos/services/hero.mp4" type="video/mp4" />
+  </video>
 
   <div
     aria-hidden="true"

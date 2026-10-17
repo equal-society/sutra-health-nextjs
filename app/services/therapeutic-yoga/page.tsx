@@ -277,11 +277,18 @@ export default function Page() {
         aria-labelledby="page-title"
         className="relative isolate flex min-h-[500px] items-end overflow-hidden bg-[#173B36] sm:min-h-[560px] lg:min-h-[620px]"
       >
-        <div
+        <video
           aria-hidden="true"
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('${page.heroImage}')` }}
-        />
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={page.heroImage}
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/videos/mussoorie/04-guided-session.mp4" type="video/mp4" />
+        </video>
         <div aria-hidden="true" className="absolute inset-0 bg-[#101C19]/65" />
         <div
           aria-hidden="true"

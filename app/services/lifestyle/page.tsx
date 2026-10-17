@@ -126,7 +126,7 @@ export default function LifestyleMedicinePage() {
         aria-hidden="true"
       >
         <source
-          src="https://ia800806.us.archive.org/22/items/retreat_202610/Retreat/US/2024-04-15_us.mp4"
+          src="/videos/mussoorie/05-floor-practice.mp4"
           type="video/mp4"
         />
       </video>
