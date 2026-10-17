@@ -41,7 +41,6 @@ export default function RetreatHeroSlider() {
         {/* Poster always; video only on screens 1024px+ (never downloaded on phones) */}
         <HeroVideo
           src="/videos/retreat.mp4"
-          poster="/videos/retreat-poster.webp"
           minWidth={1024}
           priority={false}
         />

@@ -100,31 +100,35 @@ export default function DoctorsPage() {
         ===================================================== */}
 
         <section className="relative isolate min-h-[520px] overflow-hidden border-b border-[var(--sutra-border)] bg-[var(--sutra-ink)] sm:min-h-[600px] lg:min-h-[660px]">
-          {/* Background Image */}
-          <div
+          {/* Background video */}
+          <video
             aria-hidden="true"
-            className="absolute inset-0 -z-20 bg-cover bg-center"
-            style={{
-              backgroundImage: "url('/images/doctor-hero.webp')",
-            }}
-          />
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="absolute inset-0 -z-20 h-full w-full object-cover"
+          >
+            <source src="/videos/doctors.mp4" type="video/mp4" />
+          </video>
 
-          {/* Dark Gradient Overlay */}
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 -z-10 bg-gradient-to-r from-[#172B29]/90 via-[#172B29]/70 to-[#172B29]/30"
-          />
+        {/* Black Gradient Overlay */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 bg-gradient-to-r from-black/65 via-black/55 to-black/20"
+        />
 
-          {/* Bottom Gradient */}
-          <div
-            aria-hidden="true"
-            className="absolute inset-x-0 bottom-0 -z-10 h-36 bg-gradient-to-t from-[#172B29]/35 to-transparent"
-          />
+        {/* Bottom Black Gradient */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 bottom-0 -z-10 h-36 bg-gradient-to-t from-black/25 to-transparent"
+        />
 
           <Container>
             <div className="flex min-h-[520px] items-center py-20 sm:min-h-[600px] sm:py-24 lg:min-h-[660px] lg:py-28">
               <div className="max-w-5xl">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#D5C9AE] sm:text-xs">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white sm:text-xs">
                   Doctors &amp; experts
                 </p>
 
@@ -149,7 +153,7 @@ export default function DoctorsPage() {
                   <span className="text-white">at Sutra Health</span>
                 </h1>
 
-                <p className="mt-7 max-w-[680px] text-[16px] leading-8 text-white/85 sm:mt-8 sm:text-[18px] sm:leading-9">
+                <p className="mt-7 max-w-[680px] text-[16px] leading-8 text-white sm:mt-8 sm:text-[18px] sm:leading-9">
                   Meet the practitioners and professionals represented by Sutra
                   Health, with their roles and areas of work in one place.
                 </p>

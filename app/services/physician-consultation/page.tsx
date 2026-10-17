@@ -167,7 +167,7 @@ export default function PhysicianConsultationPage() {
           // poster="/images/services/physician-consulation.webp"
           className="absolute inset-0 h-full w-full object-cover"
         >
-          <source src="/videos/hero/hero-10.mp4" type="video/mp4" />
+          <source src="/videos/physician-consultation.mp4" type="video/mp4" />
         </video>
         <div aria-hidden="true" className="absolute inset-0 bg-[#10211E]/70" />
 

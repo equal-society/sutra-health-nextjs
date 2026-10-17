@@ -213,14 +213,18 @@ export default function AboutPage() {
 
     {/* HERO */}
 <section className="relative isolate min-h-[560px] overflow-hidden bg-[#202522] sm:min-h-[620px] lg:min-h-[680px]">
-  {/* Background Image */}
-  <div
+  {/* Background video */}
+  <video
     aria-hidden="true"
-    className="absolute inset-0 -z-20 bg-cover bg-center"
-    style={{
-      backgroundImage: "url('/images/retreat/rooftop.avif')",
-    }}
-  />
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="metadata"
+    className="absolute inset-0 -z-20 h-full w-full object-cover"
+  >
+    <source src="/videos/about.mp4" type="video/mp4" />
+  </video>
 
   {/* Dark Gradient Overlay */}
   <div

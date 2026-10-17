@@ -74,31 +74,35 @@ export default function ContactPage() {
         {/* =====================================================
             HERO
         ===================================================== */}
-        <section className="relative isolate overflow-hidden border-b border-[var(--sutra-border)] bg-[var(--sutra-teal)]">
+    <section className="relative isolate min-h-[560px] overflow-hidden bg-[#202522] sm:min-h-[620px] lg:min-h-[680px]">
 
-          {/* Background image */}
-          <div
+          {/* Background video */}
+          <video
             aria-hidden="true"
-            className="absolute inset-0 -z-20 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: "url('/images/hero.webp')",
-            }}
-          />
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="absolute inset-0 -z-20 h-full w-full object-cover"
+          >
+            <source src="/videos/contact.mp4" type="video/mp4" />
+          </video>
 
-          {/* Sutra Health overlay */}
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 -z-10 bg-[var(--sutra-ink)]/60"
-          />
+          <div aria-hidden="true" className="absolute inset-0 bg-[#10201C]/35" />
 
-          {/* Bottom gradient for depth/readability */}
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 -z-10 bg-gradient-to-t from-[var(--sutra-ink)]/70 via-transparent to-[var(--sutra-ink)]/20"
-          />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-r from-[#10201C]/85 via-[#10201C]/45 to-transparent"
+        />
+
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-t from-[#10201C]/55 via-transparent to-transparent"
+        />
 
           <Container>
-            <div className="relative z-10  gap-10 py-16 sm:py-20 lg:gap-20 text-white lg:py-24">
+            <div className="relative z-10  gap-10 py-16 sm:py-20 lg:gap-20 text-white lg:py-34">
 
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.22em]  sm:text-xs">
