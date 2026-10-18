@@ -94,7 +94,7 @@ export default function ArticlesPage() {
             preload="metadata"
             className="h-full w-full object-cover"
           >
-            <source src="/videos/article.mp4" type="video/mp4" />
+            <source src="/videos/articles.mp4" type="video/mp4" />
           </video>
         </div>
 
