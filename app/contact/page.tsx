@@ -89,16 +89,9 @@ export default function ContactPage() {
             <source src="/videos/contact.mp4" type="video/mp4" />
           </video>
 
-          <div aria-hidden="true" className="absolute inset-0 bg-[#10201C]/35" />
-
-        <div
+          <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-r from-[#10201C]/85 via-[#10201C]/45 to-transparent"
-        />
-
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-t from-[#10201C]/55 via-transparent to-transparent"
+          className="absolute inset-0 bg-[#10211E]/45"
         />
 
           <Container>

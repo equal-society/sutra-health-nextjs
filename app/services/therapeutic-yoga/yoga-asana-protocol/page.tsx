@@ -74,13 +74,9 @@ export default function YogaAsanaProtocolPage() {
                  </video>
          
                  {/* Base Overlay */}
-                 <div className="absolute inset-0 bg-[#101C19]/40" />
+                 <div className="absolute inset-0 bg-[#101C19]/35" />
          
-                 {/* Text Readability */}
-                 <div className="absolute inset-0 bg-gradient-to-r from-[#101C19]/90 via-[#101C19]/65 to-[#101C19]/25" />
-         
-                 {/* Bottom Depth */}
-                 <div className="absolute inset-0 bg-gradient-to-t from-[#101C19]/55 via-transparent to-[#101C19]/10" />
+                
                </div>
                  <Container><div className="relative z-10 max-w-3xl py-20 sm:py-24 lg:py-28">
                    <p className="text-sm font-semibold uppercase tracking-[0.16em] text-white/80">Traditional Yoga Practice</p>

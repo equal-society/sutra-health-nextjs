@@ -45,13 +45,12 @@ const CATEGORIES: ArchiveCategory[] = [
     id: "sutra-health-nature",
     url: "https://archive.org/details/sutra-health-nature",
   },
-   {
+  {
     title: "Yoga Sequence",
     subtitle: "Yoga asana material",
     id: "surya-yoga-sequence",
     url: "https://archive.org/details/surya-yoga-sequence",
   },
- 
   {
     title: "Lifestyle Doctor",
     subtitle: "Doctor and lifestyle material",
@@ -64,7 +63,7 @@ const CATEGORIES: ArchiveCategory[] = [
     id: "yoga-books",
     url: "https://archive.org/details/yoga-books/Academic/Principal_Crude_Herbal_Drugs_of_Indi/",
   },
-   {
+  {
     title: "Lifestyle Pearls",
     subtitle: "Lifestyle and health guidance",
     id: "Lifestyle-pearls",
@@ -94,33 +93,49 @@ const CATEGORIES: ArchiveCategory[] = [
     id: "sutra_health_lifestyle_food",
     url: "https://archive.org/details/sutra_health_lifestyle_food",
   },
- 
 ];
 
 function archiveThumbUrl(identifier: string) {
-  // Internet Archive generated item thumbnail.
   return `https://archive.org/services/img/${encodeURIComponent(identifier)}`;
 }
 
 export default function ArchivePage() {
   return (
     <main className={styles.page}>
+      {/* Hero */}
       <section className={styles.hero} aria-labelledby="archive-title">
-        <div className={styles.heroBackground} aria-hidden="true" />
+        {/* Full-width background video */}
+        <video
+          className={styles.heroVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+        >
+          <source src="/videos/gallery.mp4" type="video/mp4" />
+        </video>
+
+        {/* Black overlay */}
         <div className={styles.heroOverlay} aria-hidden="true" />
 
         <div className={styles.container}>
           <div className={styles.heroGrid}>
             <div className={styles.heroCopy}>
               <p className={styles.eyebrow}>Sutra Health · Archive</p>
+
               <h1 id="archive-title">
                 Health &amp; Wellbeing
+                <br />
                 Resource Archive
               </h1>
+
               <p className={styles.heroText}>
                 Browse selected material preserved in the Sutra Health archive,
                 from lifestyle and clinic resources to publications and yoga.
               </p>
+
               <a
                 className={styles.primaryLink}
                 href="https://archive.org/details/@sutra_health"
@@ -134,13 +149,21 @@ export default function ArchivePage() {
         </div>
       </section>
 
-      <section className={styles.collection} aria-labelledby="resources-title">
+      {/* Collection */}
+      <section
+        className={styles.collection}
+        aria-labelledby="resources-title"
+      >
         <div className={styles.container}>
           <div className={styles.sectionIntro}>
             <div>
               <p className={styles.eyebrow}>Explore</p>
-              <h2 id="resources-title">Browse the resource collection</h2>
+
+              <h2 id="resources-title">
+                Browse the resource collection
+              </h2>
             </div>
+
             <p>
               {CATEGORIES.length} collections covering retreats, lifestyle
               guidance, clinic material, publications, food, nature, yoga and
@@ -150,7 +173,10 @@ export default function ArchivePage() {
 
           <div className={styles.grid}>
             {CATEGORIES.map((category, index) => (
-              <article className={styles.card} key={category.id}>
+              <article
+                className={styles.card}
+                key={category.id}
+              >
                 <a
                   className={styles.cardLink}
                   href={category.url}
@@ -164,21 +190,31 @@ export default function ArchivePage() {
                       alt=""
                       loading={index < 3 ? "eager" : "lazy"}
                       decoding="async"
-                      fetchPriority={index === 0 ? "high" : "auto"}
+                      fetchPriority={
+                        index === 0 ? "high" : "auto"
+                      }
                     />
-                    <div className={styles.fallback} aria-hidden="true">
+
+                    <div
+                      className={styles.fallback}
+                      aria-hidden="true"
+                    >
                       Sutra Health
                     </div>
+
                     <span className={styles.index}>
                       {String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
+
                   <div className={styles.cardBody}>
                     <div className={styles.cardMeta}>
                       <span>Collection</span>
                       <span aria-hidden="true">↗</span>
                     </div>
+
                     <h3>{category.title}</h3>
+
                     <p>{category.subtitle}</p>
                   </div>
                 </a>
@@ -186,15 +222,19 @@ export default function ArchivePage() {
             ))}
           </div>
 
+          {/* Bottom CTA */}
           <div className={styles.bottomCta}>
             <div>
               <p className={styles.eyebrow}>Internet Archive</p>
+
               <h2>Explore more health resources</h2>
+
               <p>
                 Open the Sutra Health archive to see the material currently
                 available in the collection.
               </p>
             </div>
+
             <a
               className={styles.secondaryLink}
               href="https://archive.org/details/@sutra_health"

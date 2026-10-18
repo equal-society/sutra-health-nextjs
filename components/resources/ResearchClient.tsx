@@ -160,92 +160,94 @@ export default function AcademicResearchPage() {
   return (
     <main className="bg-[#F7F5EF] text-[#202522]">
       {/* Hero */}
-      <section
-        aria-labelledby="academic-research-title"
-        className="relative isolate overflow-hidden border-b border-[#202522]/10 bg-[#202522]"
+     {/* Hero */}
+    <section
+      aria-labelledby="academic-research-title"
+      className="relative isolate min-h-[620px] overflow-hidden border-b border-[#202522]/10 bg-[#202522] sm:min-h-[680px] lg:min-h-[760px]"
+    >
+      {/* Background Video */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
       >
-        {/* Background image */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/images/hero.webp')",
-          }}
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="h-full w-full object-cover"
+        >
+          <source src="/videos/research.mp4" type="video/mp4" />
+        </video>
+      </div>
 
-        {/* Overlay */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-[#202522]/60"
-        />
+      {/* Black Overlay */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-black/45"
+      />
 
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-t from-[#202522]/70 via-[#202522]/20 to-[#202522]/25"
-        />
+    
 
-        <div className="relative z-10 mx-auto max-w-[1440px] px-5 py-3 sm:px-8 lg:px-12">
-          {/* Eyebrow */}
-          <div className="py-6 sm:py-8">
-            <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-white/75 sm:text-xs sm:tracking-[0.24em]">
-              <span
-                className="h-px w-6 shrink-0 bg-white/70 sm:w-8"
-                aria-hidden="true"
-              />
-              Academic &amp; Research
-            </p>
-          </div>
-
-          {/* Main statement */}
-          <div className="border-b border-white/20 py-3">
-            <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-              <h1
-                id="academic-research-title"
-                className="max-w-[1080px] font-[var(--font-lora)] text-[clamp(2.75rem,5.8vw,5.75rem)] leading-[0.93] tracking-[-0.04em] text-white sm:leading-[0.88]"
-              >
-                Research &amp; Evidence
-                <br className="hidden sm:block" />
-                behind Sutra Health
-              </h1>
-            </div>
-          </div>
-
-          {/* Intro */}
-          <div className="py-3 sm:py-5">
-            <p className="max-w-4xl text-[1.125rem] leading-7 tracking-[-0.01em] text-white/90 sm:text-2xl sm:leading-9">
-              Browse selected academic material here, then follow each link to the
-              original publication, presentation or teaching source.
-            </p>
-          </div>
-
-         
-
-          {/* CTA */}
-          <div className="border-b border-white/20 py-6 sm:py-8">
-            <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
-              <Link
-                href="#latest-work"
-                className="inline-flex min-h-11 w-full items-center justify-center gap-3 bg-white px-5 py-3 text-sm font-semibold text-[#17413D] transition-colors hover:bg-[#F7F5EF] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#202522] sm:w-auto"
-              >
-                Explore latest work
-                <span aria-hidden="true">↓</span>
-              </Link>
-
-              <a
-                href="https://academic.lifequality.org.in/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-11 w-full items-center justify-center gap-2 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#202522] sm:w-auto"
-              >
-                Academic site
-                <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-          </div>
-
-        
+      <div className="relative z-10 mx-auto flex min-h-[620px] max-w-[1440px] flex-col justify-end px-5 py-10 sm:min-h-[680px] sm:px-8 sm:py-12  lg:px-12 lg:py-16">
+        {/* Eyebrow */}
+        <div className="py-6 sm:py-8">
+          <p className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-white/75 sm:text-xs sm:tracking-[0.24em]">
+            <span
+              className="h-px w-6 shrink-0 bg-white/70 sm:w-8"
+              aria-hidden="true"
+            />
+            Academic &amp; Research
+          </p>
         </div>
-      </section>
+
+        {/* Main statement */}
+        <div className=" py-3">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <h1
+              id="academic-research-title"
+              className="max-w-[1080px] font-[var(--font-lora)] text-[clamp(2.75rem,5.8vw,5.75rem)] leading-[0.93] tracking-[-0.04em] text-white sm:leading-[0.88]"
+            >
+              Research &amp; Evidence
+              <br className="hidden sm:block" />
+              behind Sutra Health
+            </h1>
+          </div>
+        </div>
+
+        {/* Intro */}
+        <div className="py-3 sm:py-5">
+          <p className="max-w-4xl text-[1.125rem] leading-7 tracking-[-0.01em] text-white sm:text-2xl sm:leading-9">
+            Browse selected academic material here, then follow each link to the
+            original publication, presentation or teaching source.
+          </p>
+        </div>
+
+        {/* CTA */}
+        <div className=" py-6 sm:py-8">
+          <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+            <Link
+              href="#latest-work"
+              className="inline-flex min-h-11 w-full items-center justify-center gap-3 bg-white px-5 py-3 text-sm font-semibold text-[#17413D] transition-colors hover:bg-[#F7F5EF] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black sm:w-auto"
+            >
+              Explore latest work
+              <span aria-hidden="true">↓</span>
+            </Link>
+
+            <a
+              href="https://academic.lifequality.org.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 w-full items-center justify-center gap-2 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black sm:w-auto"
+            >
+              Academic site
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
       {/* Latest work */}
       <section

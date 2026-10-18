@@ -126,14 +126,14 @@ export default function LifestyleMedicinePage() {
         aria-hidden="true"
       >
         <source
-          src="/videos/mussoorie/05-floor-practice.mp4"
+          src="/videos/lifestyle.mp4"
           type="video/mp4"
         />
       </video>
-        <div aria-hidden="true" className="absolute inset-0 bg-[#101C19]/65" />
+       
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-r from-[#101C19]/80 via-[#101C19]/45 to-[#101C19]/10"
+          className="absolute inset-0 bg-[#10211E]/55"
         />
 
         

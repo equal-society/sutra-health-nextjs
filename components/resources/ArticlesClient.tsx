@@ -80,26 +80,31 @@ export default function ArticlesPage() {
           Premium editorial journal introduction
       ===================================================== */}
       <section className="relative isolate overflow-hidden border-b border-[var(--sutra-border)] bg-[var(--sutra-ink)]">
-        {/* Background Image */}
+
+        {/* Background Video */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/images/hero.webp')",
-          }}
+          className="absolute inset-0"
+        >
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="h-full w-full object-cover"
+          >
+            <source src="/videos/article.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        {/* Black Overlay */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-black/35"
         />
 
-        {/* Overlay */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-[var(--sutra-ink)]/65"
-        />
-
-        {/* Bottom readability gradient */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-t from-[var(--sutra-ink)]/65 via-transparent to-[var(--sutra-ink)]/15"
-        />
+     
 
         <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
           <div className="mx-auto max-w-[820px] py-16 text-center sm:py-20 lg:py-24 xl:py-28">
@@ -138,7 +143,6 @@ export default function ArticlesPage() {
               individual medical advice is needed.
             </p>
 
-         
           </div>
         </div>
       </section>

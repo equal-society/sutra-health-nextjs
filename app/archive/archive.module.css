@@ -37,21 +37,22 @@
 
 .hero {
   position: relative;
-  isolation: isolate;
+  min-height: min(760px, calc(100svh - 80px));
   overflow: hidden;
-  min-height: 620px;
-  border-bottom: 1px solid var(--archive-border);
-  background: var(--archive-ink);
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+  background: #10201c;
 }
 
-.heroBackground {
+.heroVideo {
   position: absolute;
   inset: 0;
   z-index: -2;
-  background-image: url("/images/hero.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .heroOverlay {
@@ -61,24 +62,19 @@
   background:
     linear-gradient(
       90deg,
-      rgba(32, 37, 34, 0.88) 0%,
-      rgba(32, 37, 34, 0.68) 48%,
-      rgba(32, 37, 34, 0.38) 100%
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(0, 0, 0, 0.15) 45%,
+      rgba(0, 0, 0, 0.10) 100%
     ),
     linear-gradient(
       0deg,
-      rgba(32, 37, 34, 0.55) 0%,
-      rgba(32, 37, 34, 0.08) 65%
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(0, 0, 0, 0.05) 60%
     );
 }
 
-.heroGrid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  align-items: center;
-  min-height: 620px;
-  padding: 84px 0 78px;
-}
+
+
 
 .heroCopy {
   max-width: 900px;

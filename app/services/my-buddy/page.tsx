@@ -212,14 +212,18 @@ export default function Page() {
           // poster={page.heroImage}
           className="absolute inset-0 h-full w-full object-cover"
         >
-          <source src="/videos/hero/hero-03.mp4" type="video/mp4" />
+          <source src="/videos/buddy.mp4" type="video/mp4" />
         </video>
-        <div aria-hidden="true" className="absolute inset-0 bg-[#101C19]/65" />
-        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#101C19]/80 via-[#101C19]/45 to-[#101C19]/10" />
+
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-[#10211E]/35"
+        />
+
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-12 pt-28 sm:px-6 sm:pb-16 md:px-8 lg:px-12">
-          <p className="text-sm font-medium uppercase tracking-[0.16em] text-white/85">{page.eyebrow}</p>
+          <p className="text-sm font-medium uppercase tracking-[0.16em] text-white">{page.eyebrow}</p>
           <h1 id="page-title" className="mt-4 max-w-3xl font-serif text-[clamp(2.25rem,6vw,4.25rem)] leading-[1.08] tracking-[-0.03em] text-white">{page.h1}</h1>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-white/90 sm:text-xl">{page.lead}</p>
+          <p className="mt-5 max-w-2xl text-lg leading-8 text-white sm:text-xl">{page.lead}</p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link href={page.primary.href} className="inline-flex min-h-12 w-full items-center justify-center bg-[#F7F5EF] px-6 text-base font-semibold text-[#17413D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto">
               {page.primary.label} →

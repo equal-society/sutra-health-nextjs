@@ -160,13 +160,9 @@ function Hero() {
         <HeroVideo src="/videos/hero-video.mp4" poster="/images/hero-poster.webp" />
 
         {/* Base Overlay */}
-        <div className="absolute inset-0 bg-[#101C19]/40" />
-
-        {/* Text Readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#101C19]/90 via-[#101C19]/65 to-[#101C19]/25" />
-
-        {/* Bottom Depth */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#101C19]/55 via-transparent to-[#101C19]/10" />
+        <div className="absolute inset-0 bg-[#101C19]/55" />
+       
+      
       </div>
 
       {/* Hero Content */}

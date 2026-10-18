@@ -256,10 +256,14 @@ export default function Page() {
           // poster={page.heroImage}
           className="absolute inset-0 h-full w-full object-cover"
         >
-          <source src="/videos/pranayam-hero-clip.mp4" type="video/mp4" />
+          <source src="/videos/bsm.mp4" type="video/mp4" />
         </video>
-        <div aria-hidden="true" className="absolute inset-0 bg-[#101C19]/65" />
-        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#101C19]/80 via-[#101C19]/45 to-[#101C19]/10" />
+
+      <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-[#10211E]/55"
+        />
+
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-12 pt-28 sm:px-6 sm:pb-16 md:px-8 lg:px-12">
           <p className="text-sm font-medium uppercase tracking-[0.16em] text-white/85">{page.eyebrow}</p>
           <h1 id="page-title" className="mt-4 max-w-4xl font-serif text-[clamp(2.25rem,6vw,4.25rem)] leading-[1.08] tracking-[-0.03em] text-white">{page.h1}</h1>

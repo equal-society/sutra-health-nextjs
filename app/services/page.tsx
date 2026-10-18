@@ -179,20 +179,13 @@ export default function ServicesPage() {
           // poster="/images/yoga.webp"
           className="absolute inset-0 h-full w-full object-cover"
         >
-          <source src="/videos/hero/hero-01.mp4" type="video/mp4" />
+          <source src="/videos/services.mp4" type="video/mp4" />
         </video>
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[#101C19]/45"
+          className="absolute inset-0 bg-[#10211E]/45"
         />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-r from-[#101C19]/85 via-[#101C19]/55 to-[#101C19]/15"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-t from-[#101C19]/55 via-transparent to-[#101C19]/10"
-        />
+        
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-12 pt-28 sm:px-8 sm:pb-20 sm:pt-36 lg:px-10 lg:pb-24">
           <div className="max-w-3xl">

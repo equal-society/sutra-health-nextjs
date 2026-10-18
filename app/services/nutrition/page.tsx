@@ -36,12 +36,12 @@ export default function NutritionPage() {
           // poster="/images/services/diet.webp"
           className="absolute inset-0 h-full w-full object-cover"
         >
-          <source src="/videos/food-hero-clip.mp4" type="video/mp4" />
+          <source src="/videos/food.mp4" type="video/mp4" />
         </video>
 
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-[#10211E]/65"
+          className="absolute inset-0 bg-[#10211E]/55"
         />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-10 pt-28 sm:px-6 sm:pb-16 md:px-8 lg:px-12 lg:pb-20">

@@ -116,15 +116,10 @@ export default function DoctorsPage() {
         {/* Black Gradient Overlay */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-gradient-to-r from-black/65 via-black/55 to-black/20"
+          className="absolute inset-0 -z-10 bg-gradient-to-r from-black/35 via-black/25 to-black/10"
         />
 
-        {/* Bottom Black Gradient */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 bottom-0 -z-10 h-36 bg-gradient-to-t from-black/25 to-transparent"
-        />
-
+      
           <Container>
             <div className="flex min-h-[520px] items-center py-20 sm:min-h-[600px] sm:py-24 lg:min-h-[660px] lg:py-28">
               <div className="max-w-5xl">

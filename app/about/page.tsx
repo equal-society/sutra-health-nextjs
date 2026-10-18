@@ -223,19 +223,19 @@ export default function AboutPage() {
     preload="metadata"
     className="absolute inset-0 -z-20 h-full w-full object-cover"
   >
-    <source src="/videos/about.mp4" type="video/mp4" />
+    <source src="/videos/about-hero.mp4" type="video/mp4" />
   </video>
 
   {/* Dark Gradient Overlay */}
   <div
     aria-hidden="true"
-    className="absolute inset-0 -z-10 bg-gradient-to-r from-[#172B29]/90 via-[#172B29]/70 to-[#172B29]/25"
+    className="absolute inset-0 -z-10 bg-gradient-to-r from-[#172B29]/35 via-[#172B29]/25 to-[#172B29]/15"
   />
 
   {/* Bottom Overlay */}
   <div
     aria-hidden="true"
-    className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-[#172B29]/35 to-transparent"
+    className="absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-t from-[#172B29]/15 to-transparent"
   />
 
   <Container>

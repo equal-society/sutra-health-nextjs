@@ -119,15 +119,7 @@ export default function VolunteerPage() {
 
           <div aria-hidden="true" className="absolute inset-0 bg-[#10201C]/35" />
 
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-r from-[#10201C]/85 via-[#10201C]/45 to-transparent"
-        />
-
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-t from-[#10201C]/55 via-transparent to-transparent"
-        />
+      
 
           <Container>
             <div className="relative z-10  gap-10 py-14 sm:py-18  lg:gap-20 lg:py-22 xl:py-24">

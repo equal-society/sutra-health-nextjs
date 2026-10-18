@@ -5,35 +5,33 @@ import { useEffect, useState } from "react";
 type HeroVideoProps = {
   src: string;
   alt?: string;
-  minWidth?: number;
   priority?: boolean;
 };
 
 export default function HeroVideo({
   src,
   alt = "",
-  minWidth = 768,
+  priority = false,
 }: HeroVideoProps) {
   const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
-    const wide = window.matchMedia(`(min-width: ${minWidth}px)`);
-    const calm = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
 
-    const update = () => {
-      setShowVideo(wide.matches && !calm.matches);
+    const updateVideoState = () => {
+      setShowVideo(!reducedMotion.matches);
     };
 
-    update();
+    updateVideoState();
 
-    wide.addEventListener("change", update);
-    calm.addEventListener("change", update);
+    reducedMotion.addEventListener("change", updateVideoState);
 
     return () => {
-      wide.removeEventListener("change", update);
-      calm.removeEventListener("change", update);
+      reducedMotion.removeEventListener("change", updateVideoState);
     };
-  }, [minWidth]);
+  }, []);
 
   if (!showVideo) {
     return null;
@@ -45,7 +43,7 @@ export default function HeroVideo({
       muted
       loop
       playsInline
-      preload="metadata"
+      preload={priority ? "auto" : "metadata"}
       aria-label={alt}
       className="absolute inset-0 h-full w-full object-cover"
     >

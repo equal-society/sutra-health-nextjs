@@ -169,8 +169,10 @@ export default function PhysicianConsultationPage() {
         >
           <source src="/videos/physician-consultation.mp4" type="video/mp4" />
         </video>
-        <div aria-hidden="true" className="absolute inset-0 bg-[#10211E]/70" />
-
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-[#10211E]/45"
+        />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-10 pt-28 sm:px-6 sm:pb-16 md:px-8 lg:px-12 lg:pb-20">
           <p className="text-sm font-medium uppercase tracking-[0.12em] text-white/85">Physician consultation · Faridabad</p>
 
