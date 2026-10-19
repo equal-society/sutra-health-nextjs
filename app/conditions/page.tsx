@@ -144,7 +144,7 @@ export default function ConditionsPage() {
             aria-hidden="true"
             className="absolute inset-0 -z-20 bg-cover bg-center"
             style={{
-              backgroundImage: "url('/images/hero.webp')",
+              backgroundImage: "url('/images/yoga-asana.webp')",
             }}
           />
 

@@ -286,7 +286,7 @@ export default function Page() {
     loop
     playsInline
     preload="metadata"
-    poster="/images/services/therapeutic-yoga.webp"
+    poster="/images/services/behaviour-stress-mind.webp"
     className="absolute inset-0 h-full w-full object-cover"
   >
     <source src="/videos/services/hero.mp4" type="video/mp4" />
@@ -297,15 +297,7 @@ export default function Page() {
     className="absolute inset-0 bg-[#10201C]/55"
   />
 
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 bg-gradient-to-r from-[#10201C]/90 via-[#10201C]/60 to-[#10201C]/25"
-  />
 
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 bg-gradient-to-t from-[#10201C]/60 via-transparent to-[#10201C]/10"
-  />
 
   <Container>
     <div className="relative z-10 max-w-5xl py-20 sm:py-24 lg:py-28">

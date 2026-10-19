@@ -62,18 +62,10 @@ export default function WhatToExpectPage() {
 
   <div
     aria-hidden="true"
-    className="absolute inset-0 bg-[#10201C]/55"
+    className="absolute inset-0 bg-[#10201C]/45"
   />
 
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 bg-gradient-to-r from-[#10201C]/90 via-[#10201C]/60 to-[#10201C]/25"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 bg-gradient-to-t from-[#10201C]/60 via-transparent to-[#10201C]/10"
-  />
+ 
 
   <Container>
     <div className="relative z-10 max-w-5xl py-20 sm:py-24 lg:py-28">
@@ -145,7 +137,6 @@ export default function WhatToExpectPage() {
 
           <div className="mt-14 flex flex-col gap-3 border-t border-[var(--sutra-border)] pt-8 sm:flex-row sm:flex-wrap">
             <Link href="/services/physician-consultation" className="inline-flex min-h-12 items-center justify-center border border-[var(--sutra-border-strong)] px-5 py-3 text-sm font-bold text-[var(--sutra-teal)] hover:bg-white">← Back to Physician Consultation</Link>
-            <Link href="/services/physician-consultation/appointment-options" className="inline-flex min-h-12 items-center justify-center border border-[var(--sutra-border-strong)] px-5 py-3 text-sm font-bold text-[var(--sutra-teal)] hover:bg-white">Booking and online options</Link>
             <Link href={BOOKING_URL} className="inline-flex min-h-12 items-center justify-center bg-[var(--sutra-teal)] px-5 py-3 text-sm font-bold text-white hover:opacity-90">Book an appointment ↗</Link>
           </div>
         </Container>

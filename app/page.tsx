@@ -14,11 +14,11 @@ const brandByline =
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Sutra Health | Doctor-Led Integrative Lifestyle Healthcare",
+    absolute: "Lifestyle Medicine Doctor in Faridabad | Sutra Health",
   },
 
   description:
-    "Doctor-led healthcare bringing medical guidance, nutrition, Therapeutic Yoga and everyday lifestyle support together in Faridabad.",
+    "Struggling with diabetes, BP or stress? Get a doctor-led plan built on nutrition, therapeutic yoga and daily habits in Faridabad. Book a consultation.",
 
   alternates: {
     canonical: siteUrl,
@@ -30,10 +30,10 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Sutra Health | Doctor-Led Integrative Lifestyle Healthcare",
+    title: "Lifestyle Medicine Doctor in Faridabad | Sutra Health",
 
     description:
-      "Doctor-led healthcare bringing medical guidance, nutrition, Therapeutic Yoga and everyday lifestyle support together in Faridabad.",
+      "Struggling with diabetes, BP or stress? Get a doctor-led plan built on nutrition, therapeutic yoga and daily habits in Faridabad. Book a consultation.",
 
     url: siteUrl,
 
@@ -56,10 +56,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title: "Sutra Health | Doctor-Led Integrative Lifestyle Healthcare",
+    title: "Lifestyle Medicine Doctor in Faridabad | Sutra Health",
 
     description:
-      "Doctor-led healthcare bringing medical guidance, nutrition, Therapeutic Yoga and everyday lifestyle support together in Faridabad.",
+      "Struggling with diabetes, BP or stress? Get a doctor-led plan built on nutrition, therapeutic yoga and daily habits in Faridabad. Book a consultation.",
 
     images: [`${siteUrl}/images/og-image.webp`],
   },
