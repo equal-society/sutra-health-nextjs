@@ -101,9 +101,5 @@ export const howToImproveGutHealthNaturally: Article = {
         "There is no single food that guarantees better gut health. An overall varied eating pattern and appropriate lifestyle habits are more useful ways to think about digestive wellbeing.",
     },
   ],
-  sources: [
-    "NIDDK — Eating, Diet, & Nutrition for Constipation|https://www.niddk.nih.gov/health-information/digestive-diseases/constipation/eating-diet-nutrition",
-    "NIDDK — Eating, Diet, & Nutrition for Irritable Bowel Syndrome|https://www.niddk.nih.gov/health-information/digestive-diseases/irritable-bowel-syndrome/eating-diet-nutrition",
-    "WHO — Healthy diet|https://www.who.int/news-room/fact-sheets/detail/healthy-diet",
-  ],
+ 
 };

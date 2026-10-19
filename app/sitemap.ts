@@ -30,7 +30,6 @@ const staticPages: Array<{
 const servicePaths = [
   "/services/physician-consultation",
   "/services/physician-consultation/abha",
-  "/services/physician-consultation/appointment-options",
   "/services/physician-consultation/health-awareness-tools",
   "/services/physician-consultation/what-to-expect",
   "/services/lifestyle",
@@ -54,7 +53,6 @@ const servicePaths = [
   "/services/shirodhara/shirodhara-therapy",
   "/services/shirodhara/what-to-expect",
   "/services/my-buddy",
-  "/services/my-buddy/join",
   "/services/my-buddy/wellbeing-lessons",
 ];
 

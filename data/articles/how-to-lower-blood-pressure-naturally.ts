@@ -94,9 +94,5 @@ export const howToLowerBloodPressureNaturally: Article = {
         "Regular, correctly performed blood-pressure measurements can help you and your healthcare professional assess the pattern over time. Do not make medication changes based on home readings alone.",
     },
   ],
-  sources: [
-    "American Heart Association — 2025 High Blood Pressure Guideline: Top Things to Know|https://professional.heart.org/en/science-news/2025-high-blood-pressure-guideline/top-things-to-know",
-    "American Heart Association — Life's Essential 8: How to Manage Blood Pressure|https://www.heart.org/en/healthy-living/healthy-lifestyle/lifes-essential-8/how-to-manage-blood-pressure-fact-sheet",
-    "American Heart Association — Getting Active to Control High Blood Pressure|https://www.heart.org/en/health-topics/high-blood-pressure/changes-you-can-make-to-manage-high-blood-pressure/getting-active-to-control-high-blood-pressure",
-  ],
+ 
 };

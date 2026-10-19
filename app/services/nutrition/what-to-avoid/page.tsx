@@ -99,7 +99,7 @@ export default function WhattoLimitPage() {
           <div className="grid gap-5 lg:grid-cols-[0.72fr_1.28fr] lg:gap-14">
             <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">Nutrition guidance</p><h2 className="mt-3 font-serif text-3xl leading-tight tracking-[-0.03em] sm:text-4xl">Think about the overall pattern</h2></div>
             <div className="max-w-3xl space-y-4 text-base leading-8 text-[var(--sutra-muted)] sm:text-lg">
-              <p>The original page referred to a hospital-based study published in Cell Metabolism that examined an ultra-processed diet under specific study conditions. A study like this should be understood in context; it does not mean that one food alone determines health outcomes. <a href="https://www.cell.com/cell-metabolism/fulltext/S1550-4131(19)30248-7" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">Read the Cell Metabolism study ↗</a></p>
+              <p>The original page referred to a hospital-based study published in Cell Metabolism that examined an ultra-processed diet under specific study conditions. A study like this should be understood in context; it does not mean that one food alone determines health outcomes.</p>
               <p>A practical approach is to notice frequency, portion sizes and how often highly processed options replace more varied meals. Avoid turning general guidance into strict rules unless your healthcare professional has advised a specific restriction.</p>
             </div>
           </div>

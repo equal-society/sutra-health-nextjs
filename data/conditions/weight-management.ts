@@ -83,12 +83,7 @@ export const weightManagement: Condition = {
       source: "Systematic review and meta-analysis",
       url: "https://www.sciencedirect.com/science/article/abs/pii/S0091743516300366",
     },
-    {
-      claim:
-        "In a randomized trial, participants combining yoga with behavioral weight-loss treatment reported fewer dietary lapses (less overeating, stress eating, and difficulty resisting temptation) than a contact-matched control group.",
-      source: "PATH Trial protocol and preliminary findings, RCT",
-      url: "https://www.researchgate.net/publication/401230703",
-    },
+   
     {
       claim:
         "Among participants with high initial weight loss (5%+ in the first 3 months), those also practicing yoga lost significantly more weight by 6 months (-9.0kg vs -6.7kg) than a non-yoga control group.",

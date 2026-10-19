@@ -101,9 +101,5 @@ export const whatIsAHealthyBalancedDiet: Article = {
         "No. Healthy diets vary with individual needs, culture, food availability, preferences and health circumstances.",
     },
   ],
-  sources: [
-    "WHO — Healthy diet|https://www.who.int/news-room/fact-sheets/detail/healthy-diet",
-    "WHO — Healthy diet: India|https://www.who.int/india/health-topics/healthy-diet-1",
-    "WHO & FAO — What are healthy diets?|https://www.who.int/publications/i/item/9789240101876",
-  ],
+ 
 };

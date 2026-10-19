@@ -101,9 +101,5 @@ export const howDoesSleepAffectWeightLoss: Article = {
         "A consistent bedtime and wake time is a practical starting point, along with a quiet sleep environment and reducing evening caffeine or screen use when these interfere with sleep.",
     },
   ],
-  sources: [
-    "CDC — About Sleep|https://www.cdc.gov/sleep/about/",
-    "CDC — Steps for Losing Weight|https://www.cdc.gov/healthy-weight-growth/losing-weight/index.html",
-    "CDC — Tips for Maintaining Healthy Weight|https://www.cdc.gov/healthy-weight-growth/about/tips-for-balancing-food-activity.html",
-  ],
+ 
 };

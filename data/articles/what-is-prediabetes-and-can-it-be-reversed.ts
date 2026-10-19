@@ -97,9 +97,5 @@ export const whatIsPrediabetesAndCanItBeReversed: Article = {
         "A1C, fasting plasma glucose and the 2-hour oral glucose tolerance test are commonly used to identify abnormal glucose levels.",
     },
   ],
-  sources: [
-    "CDC — Prediabetes: Your Chance to Prevent Type 2 Diabetes|https://www.cdc.gov/diabetes/prevention-type-2/prediabetes-prevent-type-2.html",
-    "NIDDK — Recommended Tests for Identifying Prediabetes|https://www.niddk.nih.gov/health-information/professionals/clinical-tools-patient-management/diabetes/game-plan-preventing-type-2-diabetes/prediabetes-screening-how-why/recommended-tests-identifying-prediabetes",
-    "NIDDK — Preventing Type 2 Diabetes|https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-type-2-diabetes",
-  ],
+ 
 };

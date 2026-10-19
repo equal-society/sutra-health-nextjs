@@ -174,7 +174,7 @@ const page: PageData = {
     "title": "Want a buddy to practise with?",
     "text": "Join My Buddy to share these habits with someone.",
     "label": "Become or find a buddy",
-    "href": "/services/my-buddy/join"
+    "href": "https://docs.google.com/forms/d/e/1FAIpQLSdtgQtU1eIuwNpmgpOVOrIi_fZzHv5rOxiJe-sH_SG3NUTRiQ/viewform"
   },
   "disclaimer": "My Buddy is a peer-support initiative. It is not a substitute for professional medical or mental-health care. If you or someone else is in immediate danger, contact local emergency services.",
   "faqTitle": "Common questions",
@@ -251,15 +251,7 @@ export default function Page() {
     className="absolute inset-0 bg-[#10201C]/55"
   />
 
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 bg-gradient-to-r from-[#10201C]/90 via-[#10201C]/60 to-[#10201C]/25"
-  />
-
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 bg-gradient-to-t from-[#10201C]/60 via-transparent to-[#10201C]/10"
-  />
+    
 
   <Container>
     <div className="relative z-10 max-w-5xl py-20 sm:py-24 lg:py-28">
@@ -273,12 +265,7 @@ export default function Page() {
         {page.lead}
       </p>
       <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-        <Link
-          href="/book-appointment"
-          className="inline-flex min-h-12 items-center justify-center bg-white px-6 py-3 text-base font-semibold text-[var(--sutra-teal)] transition-colors hover:bg-[#F7F5EF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-        >
-          Book a consultation ↗
-        </Link>
+       
 
         <Link
           href="/services/my-buddy"

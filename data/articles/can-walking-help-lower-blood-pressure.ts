@@ -101,9 +101,5 @@ export const canWalkingHelpLowerBloodPressure: Article = {
         "Begin with an amount that feels manageable and increase gradually if it remains comfortable. If you have a medical condition or concerns about exercise, ask a healthcare professional about an appropriate starting level.",
     },
   ],
-  sources: [
-    "American Heart Association — Getting Active to Control High Blood Pressure|https://www.heart.org/en/health-topics/high-blood-pressure/changes-you-can-make-to-manage-high-blood-pressure/getting-active-to-control-high-blood-pressure",
-    "American Heart Association — 2025 High Blood Pressure Guideline: Top Things to Know|https://professional.heart.org/en/science-news/2025-high-blood-pressure-guideline/top-things-to-know",
-    "CDC — Health Benefits of Physical Activity for Adults|https://www.cdc.gov/physical-activity-basics/health-benefits/adults.html",
-  ],
+
 };

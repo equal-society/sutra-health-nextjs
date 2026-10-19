@@ -188,7 +188,7 @@ export default function YogaAsanaProtocolPage() {
 
         <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <a
-            href="https://archive.org/details/surya-yoga-sequence/Yoga/yoga_asana/"
+            href="https://archive.org/details/surya-yoga-sequence/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex min-h-11 items-center justify-center gap-2 bg-white px-5 py-3 text-sm font-semibold text-[#17413D] transition-colors hover:bg-[#D6E0CC]"
