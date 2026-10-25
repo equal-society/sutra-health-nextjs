@@ -30,12 +30,12 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
   title: {
-    default: "Lifestyle Medicine Doctor in Faridabad | Sutra Health",
+    default: "Lifestyle Medicine Doctor in Delhi NCR, India | Sutra Health",
     template: "%s | Sutra Health",
   },
 
   description:
-    "Doctor-led lifestyle healthcare in Faridabad: medical care, nutrition and therapeutic yoga from Dr. Rakesh Sarwal. Book a consultation.",
+    "Doctor-led lifestyle healthcare in Delhi NCR, India: medical care, nutrition and therapeutic yoga from Dr. Rakesh Sarwal. Book a consultation.",
 
   robots: {
     index: true,
@@ -43,10 +43,10 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Lifestyle Medicine Doctor in Faridabad | Sutra Health",
+    title: "Lifestyle Medicine Doctor in Delhi NCR, India | Sutra Health",
 
     description:
-      "Doctor-led lifestyle healthcare in Faridabad: medical care, nutrition and therapeutic yoga from Dr. Rakesh Sarwal. Book a consultation.",
+      "Doctor-led lifestyle healthcare in Delhi NCR, India: medical care, nutrition and therapeutic yoga from Dr. Rakesh Sarwal. Book a consultation.",
 
     url: siteUrl,
     siteName: "Sutra Health",
@@ -64,9 +64,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Lifestyle Medicine Doctor in Faridabad | Sutra Health",
+    title: "Lifestyle Medicine Doctor in Delhi NCR, India | Sutra Health",
     description:
-      "Doctor-led lifestyle healthcare in Faridabad: medical care, nutrition and therapeutic yoga from Dr. Rakesh Sarwal. Book a consultation.",
+      "Doctor-led lifestyle healthcare in Delhi NCR, India: medical care, nutrition and therapeutic yoga from Dr. Rakesh Sarwal. Book a consultation.",
     images: ["/images/og-image.webp"],
   },
 };

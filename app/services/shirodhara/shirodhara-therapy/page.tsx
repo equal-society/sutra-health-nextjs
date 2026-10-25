@@ -103,7 +103,7 @@ const page: PageData = {
       ],
       "image": {
         "src": "/images/services/shirodharaa.webp",
-        "alt": "Shirodhara therapy session in progress at Life Quality Faridabad",
+        "alt": "Shirodhara therapy session in progress at Life Quality Delhi NCR, India",
         "caption": "A Shirodhara session at Life Quality."
       },
       "bullets": [],

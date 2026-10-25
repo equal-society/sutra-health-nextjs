@@ -23,15 +23,15 @@ export const organizationSchema = {
   legalName: "Effort For Quality of Life (EQUAL) Society",
   url: `${SITE_URL}/`,
   description:
-    "Life Quality (Sutra Health) is a Faridabad-based not-for-profit society promoting health awareness, wellness, education, family welfare and quality of life through an integrative and community-focused approach.",
+    "Life Quality (Sutra Health) is a Delhi NCR, India-based not-for-profit society promoting health awareness, wellness, education, family welfare and quality of life through an integrative and community-focused approach.",
   slogan: "Promoting Healthier Living and Quality of Life",
   foundingDate: "1997-05-28",
-  email: "info@lifequality.org.in",
+  email: "equal.society@gmail.com",
   telephone: "+91-9013103676",
   address: {
     "@type": "PostalAddress",
     streetAddress: "House No. 229, Roof-Top, Sector 46",
-    addressLocality: "Faridabad",
+    addressLocality: "Delhi NCR, India",
     addressRegion: "Haryana",
     postalCode: "121010",
     addressCountry: "IN",

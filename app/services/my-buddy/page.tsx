@@ -4,8 +4,8 @@ import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/my-buddy`;
-const TITLE = "My Buddy Peer Support Programme in Faridabad | Sutra Health";
-const DESCRIPTION = "My Buddy is a peer-support programme by EQUAL Society in Faridabad. Become a buddy or find one for encouragement, healthy routines and wellbeing.";
+const TITLE = "My Buddy Peer Support Programme in Delhi NCR, India | Sutra Health";
+const DESCRIPTION = "My Buddy is a peer-support programme by EQUAL Society in Delhi NCR, India. Become a buddy or find one for encouragement, healthy routines and wellbeing.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -51,9 +51,9 @@ type PageData = {
 
 const page: PageData = {
   "heroImage": "/images/services/my-buddy.webp",
-  "eyebrow": "Peer support · Faridabad",
+  "eyebrow": "Peer support · Delhi NCR, India",
   "h1": "My Buddy: peer support for encouragement and healthier routines",
-  "lead": "Sometimes having someone to talk to makes the difference. My Buddy is a peer-support programme run by EQUAL Society in Faridabad: you can become a buddy, or get in touch to find one.",
+  "lead": "Sometimes having someone to talk to makes the difference. My Buddy is a peer-support programme run by EQUAL Society in Delhi NCR, India: you can become a buddy, or get in touch to find one.",
   "primary": {
     "label": "Register to become a buddy",
     "href": "https://docs.google.com/forms/d/e/1FAIpQLSdtgQtU1eIuwNpmgpOVOrIi_fZzHv5rOxiJe-sH_SG3NUTRiQ/viewform"
@@ -166,7 +166,7 @@ const schema = {
       "@type": "Service",
       name: "My Buddy",
       url: PAGE_URL,
-      areaServed: { "@type": "City", name: "Faridabad" },
+      areaServed: { "@type": "City", name: "Delhi NCR, India" },
       provider: { "@type": "Organization", name: "Sutra Health", url: `${SITE_URL}/` },
     },
     {

@@ -10,39 +10,39 @@ const B = " | Sutra Health";
 
 export const conditionSeo: Record<string, SeoEntry> = {
   "weight-management": {
-    title: "Weight Management Support in Faridabad" + B,
+    title: "Weight Management Support in Delhi NCR, India" + B,
     description:
-      "Doctor-led weight management in Faridabad: eating patterns, activity, sleep and stress, built around habits you can sustain. Book a consultation.",
+      "Doctor-led weight management in Delhi NCR, India: eating patterns, activity, sleep and stress, built around habits you can sustain. Book a consultation.",
   },
   "diabetes-blood-sugar": {
-    title: "Diabetes & Blood Sugar Care in Faridabad" + B,
+    title: "Diabetes & Blood Sugar Care in Delhi NCR, India" + B,
     description:
-      "Lifestyle support for diabetes and blood sugar in Faridabad: nutrition, activity and yoga, used alongside your medical treatment. Book a consultation.",
+      "Lifestyle support for diabetes and blood sugar in Delhi NCR, India: nutrition, activity and yoga, used alongside your medical treatment. Book a consultation.",
   },
   "high-blood-pressure": {
-    title: "High Blood Pressure Care in Faridabad" + B,
+    title: "High Blood Pressure Care in Delhi NCR, India" + B,
     description:
-      "Lifestyle support for high blood pressure in Faridabad: diet, activity, sleep, stress and yoga, alongside your medical treatment. Book a consultation.",
+      "Lifestyle support for high blood pressure in Delhi NCR, India: diet, activity, sleep, stress and yoga, alongside your medical treatment. Book a consultation.",
   },
   "arthritis-joint-pain": {
-    title: "Arthritis & Joint Pain Care in Faridabad" + B,
+    title: "Arthritis & Joint Pain Care in Delhi NCR, India" + B,
     description:
-      "Lifestyle support for arthritis and joint pain in Faridabad: movement, strength and yoga, after a proper diagnosis. Book a consultation.",
+      "Lifestyle support for arthritis and joint pain in Delhi NCR, India: movement, strength and yoga, after a proper diagnosis. Book a consultation.",
   },
   "migraine-headache": {
-    title: "Migraine & Headache Care in Faridabad" + B,
+    title: "Migraine & Headache Care in Delhi NCR, India" + B,
     description:
-      "Lifestyle support for migraine in Faridabad: sleep, regular meals, hydration, stress and gentle yoga, alongside treatment. Book a consultation.",
+      "Lifestyle support for migraine in Delhi NCR, India: sleep, regular meals, hydration, stress and gentle yoga, alongside treatment. Book a consultation.",
   },
   "digestive-gut-health": {
-    title: "Digestive & Gut Health Care in Faridabad" + B,
+    title: "Digestive & Gut Health Care in Delhi NCR, India" + B,
     description:
-      "Lifestyle support for digestive and gut health in Faridabad: eating patterns, routine, stress and yoga. Book a consultation.",
+      "Lifestyle support for digestive and gut health in Delhi NCR, India: eating patterns, routine, stress and yoga. Book a consultation.",
   },
   "womens-health": {
-    title: "PCOS & Menopause Support in Faridabad" + B,
+    title: "PCOS & Menopause Support in Delhi NCR, India" + B,
     description:
-      "Lifestyle support for PCOS and menopause symptoms in Faridabad, alongside medical care. Other women's health needs are not covered here. Book a consultation.",
+      "Lifestyle support for PCOS and menopause symptoms in Delhi NCR, India, alongside medical care. Other women's health needs are not covered here. Book a consultation.",
   },
 };
 
@@ -129,7 +129,7 @@ export const articleSeo: Record<string, { title?: string; description: string }>
   "how-to-manage-stress": {
     title: "How to Manage Stress: Practical Daily Steps" + B,
     description:
-      "Understand everyday stress and practical ways to support calm, recovery and healthier routines. A guide from Sutra Health in Faridabad.",
+      "Understand everyday stress and practical ways to support calm, recovery and healthier routines. A guide from Sutra Health in Delhi NCR, India.",
   },
   "yoga-for-stress-relief": {
     title: "Yoga for Stress Relief: A Gentle Routine" + B,

@@ -6,14 +6,14 @@ import { organizationSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: { absolute: "Volunteer With Sutra Health | Community Wellness" },
   description:
-    "Explore volunteer opportunities with Sutra Health in Faridabad. Learn how you can support community health, yoga and wellness activities.",
+    "Explore volunteer opportunities with Sutra Health in Delhi NCR, India. Learn how you can support community health, yoga and wellness activities.",
   alternates: {
     canonical: "https://lifequality.org.in/volunteer",
   },
   openGraph: {
     title: "Volunteer With Sutra Health | Community Wellness",
     description:
-      "Discover how to get involved with Sutra Health's community health, yoga and wellness activities in Faridabad.",
+      "Discover how to get involved with Sutra Health's community health, yoga and wellness activities in Delhi NCR, India.",
     url: "https://lifequality.org.in/volunteer",
     siteName: "Sutra Health",
     type: "website",
@@ -109,7 +109,7 @@ export default function VolunteerPage() {
 
                 <p className="mt-7 max-w-[650px] text-[17px]  text-white sm:text-[18px] ">
                   Sutra Health is more than a clinic — it is a living movement.
-                  Join our Faridabad-based volunteer community supporting yoga,
+                  Join our Delhi NCR, India-based volunteer community supporting yoga,
                   community health and wellness activities.
                 </p>
 

@@ -15,11 +15,11 @@ const brandByline =
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Lifestyle Medicine Doctor in Faridabad | Sutra Health",
+    absolute: "Lifestyle Medicine Doctor in Delhi NCR, India | Sutra Health",
   },
 
   description:
-    "Struggling with diabetes, BP or stress? Get a doctor-led plan built on nutrition, therapeutic yoga and daily habits in Faridabad. Book a consultation.",
+    "Struggling with diabetes, BP or stress? Get a doctor-led plan built on nutrition, therapeutic yoga and daily habits in Delhi NCR, India. Book a consultation.",
 
   alternates: {
     canonical: siteUrl,
@@ -31,10 +31,10 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Lifestyle Medicine Doctor in Faridabad | Sutra Health",
+    title: "Lifestyle Medicine Doctor in Delhi NCR, India | Sutra Health",
 
     description:
-      "Struggling with diabetes, BP or stress? Get a doctor-led plan built on nutrition, therapeutic yoga and daily habits in Faridabad. Book a consultation.",
+      "Struggling with diabetes, BP or stress? Get a doctor-led plan built on nutrition, therapeutic yoga and daily habits in Delhi NCR, India. Book a consultation.",
 
     url: siteUrl,
 
@@ -57,10 +57,10 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
 
-    title: "Lifestyle Medicine Doctor in Faridabad | Sutra Health",
+    title: "Lifestyle Medicine Doctor in Delhi NCR, India | Sutra Health",
 
     description:
-      "Struggling with diabetes, BP or stress? Get a doctor-led plan built on nutrition, therapeutic yoga and daily habits in Faridabad. Book a consultation.",
+      "Struggling with diabetes, BP or stress? Get a doctor-led plan built on nutrition, therapeutic yoga and daily habits in Delhi NCR, India. Book a consultation.",
 
     images: [`${siteUrl}/images/og-image.webp`],
   },
@@ -206,7 +206,7 @@ function Hero() {
             "
           >
             <span className="block font-sans text-xs font-semibold uppercase leading-normal tracking-[0.17em] text-white/75">
-              Doctor-led lifestyle medicine in Faridabad
+              Doctor-led lifestyle medicine in Delhi NCR, India
             </span>
             <span className="mt-5 block">Your lifestyle shapes your health.</span>
           </h1>
@@ -465,6 +465,83 @@ function ConditionsPreview() {
 }
 
 /* =========================================================
+   LATEST PUBLICATION
+========================================================= */
+
+function LatestPublication() {
+  return (
+    <section
+      aria-labelledby="latest-publication-title"
+      className="border-y border-[var(--sutra-border)] bg-white"
+    >
+      <Container>
+        <div className="py-16 sm:py-20 lg:py-24">
+          <Eyebrow>Latest publication</Eyebrow>
+
+          <div className="mt-5 border-t border-[var(--sutra-border-strong)] pt-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--sutra-teal)]">
+              Academic publication · 2026
+            </p>
+
+            <h2
+              id="latest-publication-title"
+              className="
+                mt-4
+                max-w-4xl
+                font-serif
+                text-4xl
+                leading-[1.08]
+                tracking-[-0.035em]
+                text-[#202522]
+                sm:text-5xl
+                lg:text-6xl
+              "
+            >
+              Dosha & Panchmahabhutas
+            </h2>
+
+            <p className="mt-5 max-w-3xl text-base leading-8 text-[var(--sutra-muted)] sm:text-lg">
+              Read the latest academic publication exploring the relationship
+              between Dosha and the Panchmahabhutas.
+            </p>
+
+            <div className="mt-7">
+              <a
+                href="https://academic.lifequality.org.in/Dosha-Panchmahabhutas/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  inline-flex
+                  min-h-12
+                  items-center
+                  border
+                  border-[var(--sutra-teal)]
+                  px-6
+                  text-sm
+                  font-semibold
+                  text-[var(--sutra-teal)]
+                  transition-colors
+                  hover:bg-[var(--sutra-teal)]
+                  hover:text-white
+                  focus-visible:outline
+                  focus-visible:outline-2
+                  focus-visible:outline-offset-4
+                  focus-visible:outline-[var(--sutra-teal)]
+                "
+              >
+                Read the publication
+                <span className="ml-3" aria-hidden="true">
+                  ↗
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+/* =========================================================
    APPOINTMENT CTA
 ========================================================= */
 
@@ -668,7 +745,7 @@ const structuredData = {
       address: {
         "@type": "PostalAddress",
         streetAddress: "House No. 229, Roof-Top, Sector 46",
-        addressLocality: "Faridabad",
+        addressLocality: "Delhi NCR, India",
         addressRegion: "Haryana",
         addressCountry: "IN",
       },
@@ -706,7 +783,7 @@ const structuredData = {
 
       "@id": `${siteUrl}/#webpage`,
 
-      name: "Lifestyle Medicine Doctor in Faridabad | Sutra Health",
+      name: "Lifestyle Medicine Doctor in Delhi NCR, India | Sutra Health",
 
       url: siteUrl,
 
@@ -784,6 +861,8 @@ export default function Home() {
         <EverydayHealth />
 
         <ConditionsPreview />
+
+        <LatestPublication />
 
         <PatientStories />
 

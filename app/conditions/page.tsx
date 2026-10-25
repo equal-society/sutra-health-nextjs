@@ -189,7 +189,7 @@ export default function ConditionsPage() {
                   Health Conditions & Lifestyle
                   <br />
                   <span className="text-white">
-                    Support in Faridabad
+                    Support in Delhi NCR, India
                   </span>
                 </h1>
 

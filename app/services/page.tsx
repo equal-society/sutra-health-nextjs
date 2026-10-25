@@ -99,13 +99,13 @@ const faqs = [
 const siteUrl = "https://lifequality.org.in";
 
 export const metadata = {
-  title: "Health Services in Faridabad",
+  title: "Health Services in Delhi NCR, India",
   description:
     "Explore physician consultation, lifestyle medicine, nutrition, therapeutic yoga and behaviour & stress support at Sutra Health.",
   alternates: { canonical: `${siteUrl}/services` },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Health Services in Faridabad | Sutra Health",
+    title: "Health Services in Delhi NCR, India | Sutra Health",
     description:
       "Explore physician consultation, lifestyle medicine, nutrition counselling, Therapeutic Yoga and behaviour support at Sutra Health.",
     url: `${siteUrl}/services`,
@@ -122,7 +122,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Health Services in Faridabad | Sutra Health",
+    title: "Health Services in Delhi NCR, India | Sutra Health",
     description: "Explore physician consultation, lifestyle medicine, nutrition counselling, Therapeutic Yoga and behaviour support at Sutra Health.",
     images: [`${siteUrl}/images/og-image.webp`],
   },
@@ -208,7 +208,7 @@ export default function ServicesPage() {
                 <ArrowUpRight size={16} className="ml-3" aria-hidden="true" />
               </Link>
               <span className="text-sm leading-6 text-white/80">
-                Faridabad · Delhi NCR · Ask about online availability
+                Delhi NCR, India · Delhi NCR · Ask about online availability
               </span>
             </div>
           </div>

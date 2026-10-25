@@ -6,12 +6,12 @@ const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/nutrition`;
 
 export const metadata: Metadata = {
-  title: { absolute: "Nutrition Counselling in Faridabad | Sutra Health" },
+  title: { absolute: "Nutrition Counselling in Delhi NCR, India | Sutra Health" },
   description: "Explore practical nutrition counselling and guidance on food choices, foods to limit, meal routines and hydration at Sutra Health.",
   alternates: { canonical: PAGE_URL }, robots: { index: true, follow: true },
   openGraph: { title: "Nutrition Counselling | Sutra Health", description: "Practical guidance on everyday food choices and routines, shaped around individual needs.", url: PAGE_URL, siteName: "Sutra Health", type: "website", locale: "en_IN", images: [{ url: `${SITE_URL}/images/og-image.webp`, width: 1200, height: 630, alt: "Sutra Health" }] },
 };
-const pageSchema = { "@context": "https://schema.org", "@graph": [ { "@type": "WebPage", url: PAGE_URL, name: "Nutrition Counselling | Sutra Health", description: String(metadata.description), inLanguage: "en-IN" }, { "@type": "Service", name: "Nutrition Counselling", serviceType: "Nutrition counselling", url: PAGE_URL, areaServed: { "@type": "City", name: "Faridabad" }, provider: { "@type": "Organization", name: "Sutra Health", url: `${SITE_URL}/` } }, { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` }, { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services` }, { "@type": "ListItem", position: 3, name: "Nutrition", item: PAGE_URL }] } ] };
+const pageSchema = { "@context": "https://schema.org", "@graph": [ { "@type": "WebPage", url: PAGE_URL, name: "Nutrition Counselling | Sutra Health", description: String(metadata.description), inLanguage: "en-IN" }, { "@type": "Service", name: "Nutrition Counselling", serviceType: "Nutrition counselling", url: PAGE_URL, areaServed: { "@type": "City", name: "Delhi NCR, India" }, provider: { "@type": "Organization", name: "Sutra Health", url: `${SITE_URL}/` } }, { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` }, { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services` }, { "@type": "ListItem", position: 3, name: "Nutrition", item: PAGE_URL }] } ] };
 const topics = [
  { number: "01", title: "What to eat", text: "Explore a varied selection of familiar foods, including seasonal produce, pulses, grains and suitable protein sources.", href: "/services/nutrition/what-to-eat", link: "Read what to eat" },
  { number: "02", title: "What to limit", text: "Review the old site's guidance on added sugar, excess salt, deep-fried foods and highly processed snacks—with practical context.", href: "/services/nutrition/what-to-avoid", link: "Read what to limit" },
@@ -46,7 +46,7 @@ export default function NutritionPage() {
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-10 pt-28 sm:px-6 sm:pb-16 md:px-8 lg:px-12 lg:pb-20">
           <p className="text-sm font-medium uppercase tracking-[0.12em] text-white/85">
-            Nutrition counselling  · Faridabad
+            Nutrition counselling  · Delhi NCR, India
           </p>
 
           <h1

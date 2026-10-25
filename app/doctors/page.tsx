@@ -7,7 +7,7 @@ import Container from "@/components/shared/Container";
 export const metadata: Metadata = {
   title: { absolute: "Dr. Rakesh Sarwal & Our Doctors | Sutra Health" },
   description:
-    "Meet Dr. Rakesh Sarwal (MBBS, MPH, DrPH) and the Sutra Health team in Faridabad. See qualifications, roles and areas of work.",
+    "Meet Dr. Rakesh Sarwal (MBBS, MPH, DrPH) and the Sutra Health team in Delhi NCR, India. See qualifications, roles and areas of work.",
 
   alternates: {
     canonical: "https://lifequality.org.in/doctors",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dr. Rakesh Sarwal & Our Doctors | Sutra Health",
     description:
-      "Meet Dr. Rakesh Sarwal (MBBS, MPH, DrPH) and the Sutra Health team in Faridabad. See qualifications, roles and areas of work.",
+      "Meet Dr. Rakesh Sarwal (MBBS, MPH, DrPH) and the Sutra Health team in Delhi NCR, India. See qualifications, roles and areas of work.",
     url: "https://lifequality.org.in/doctors",
     siteName: "Sutra Health",
     type: "website",
@@ -37,7 +37,7 @@ const experts = [
     name: "Dr. Rakesh Sarwal",
     role: "MBBS, MPH, DrPH (Johns Hopkins), Therapeutic Yoga Consultant",
     description:
-      "Public Health physician and Professor of Community Medicine, with academic and clinical work connected to the Integrated Health Clinic at ESIC Medical College & Hospital, Faridabad. His listed areas of work include lifestyle medicine, nutrition, yoga, health systems and public health policy.",
+      "Public Health physician and Professor of Community Medicine, with academic and clinical work connected to the Integrated Health Clinic at ESIC Medical College & Hospital, Delhi NCR, India. His listed areas of work include lifestyle medicine, nutrition, yoga, health systems and public health policy.",
     image: "/images/doctor.webp",
     profileUrl: "https://academic.lifequality.org.in/",
     featured: true,
@@ -201,7 +201,7 @@ export default function DoctorsPage() {
                 <p className="mt-7 max-w-[650px] text-[15px] leading-8 text-[var(--sutra-muted)] sm:text-[16px]">
                   Public Health physician, Professor of Community Medicine and
                   Head of the Integrated Health Clinic at ESIC Medical College
-                  &amp; Hospital, Faridabad, India.
+                  &amp; Hospital, Delhi NCR, India, India.
                 </p>
 
                 <p className="mt-4 max-w-[650px] text-[15px] leading-8 text-[var(--sutra-muted)] sm:text-[16px]">

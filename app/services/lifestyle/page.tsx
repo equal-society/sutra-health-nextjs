@@ -8,13 +8,13 @@ const PAGE_URL = `${SITE_URL}/services/lifestyle`;
 const BOOKING_URL = "/book-appointment";
 
 export const metadata: Metadata = {
-  title: { absolute: "Lifestyle Medicine in Faridabad | Sutra Health" },
+  title: { absolute: "Lifestyle Medicine in Delhi NCR, India | Sutra Health" },
   description:
-    "Lifestyle medicine looks at food, movement, sleep, stress and daily routines alongside medical care. Learn how Sutra Health in Faridabad approaches it.",
+    "Lifestyle medicine looks at food, movement, sleep, stress and daily routines alongside medical care. Learn how Sutra Health in Delhi NCR, India approaches it.",
   alternates: { canonical: PAGE_URL },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Lifestyle Medicine in Faridabad | Sutra Health",
+    title: "Lifestyle Medicine in Delhi NCR, India | Sutra Health",
     description:
       "How everyday habits can be considered alongside medical care, with links to the six pillars, daily habits and lifestyle coaching.",
     url: PAGE_URL,
@@ -82,7 +82,7 @@ const schema = {
       "@type": "WebPage",
       "@id": `${PAGE_URL}#webpage`,
       url: PAGE_URL,
-      name: "Lifestyle Medicine in Faridabad | Sutra Health",
+      name: "Lifestyle Medicine in Delhi NCR, India | Sutra Health",
       description: String(metadata.description),
       inLanguage: "en-IN",
       isPartOf: { "@type": "WebSite", name: "Sutra Health", url: `${SITE_URL}/` },

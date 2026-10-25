@@ -6,7 +6,7 @@ import YogaPracticeGallery from "./YogaPracticeGallery";
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/therapeutic-yoga/yoga-asana-protocol`;
 const TITLE = "Yoga Asana Practice Guide | Sutra Health";
-const DESCRIPTION = "A yoga asana guide with posture images and video demonstrations. Use it alongside guided therapeutic yoga sessions in Faridabad.";
+const DESCRIPTION = "A yoga asana guide with posture images and video demonstrations. Use it alongside guided therapeutic yoga sessions in Delhi NCR, India.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },

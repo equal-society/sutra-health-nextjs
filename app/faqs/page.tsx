@@ -41,7 +41,7 @@ const faqs = [
   {
     question: "Do you offer online consultations?",
     answer:
-      "Yes. Sutra Health works with people across India. Online consultations are available for lifestyle medicine, nutrition counselling and yoga therapy. In-person sessions are also available in Faridabad, Delhi NCR.",
+      "Yes. Sutra Health works with people across India. Online consultations are available for lifestyle medicine, nutrition counselling and yoga therapy. In-person sessions are also available in Delhi NCR, India, Delhi NCR.",
   },
   {
     question: "How long before I see results?",

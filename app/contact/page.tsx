@@ -5,16 +5,16 @@ import Container from "@/components/shared/Container";
 import ContactForm from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = {
-  title: { absolute: "Contact Us in Faridabad | Sutra Health" },
+  title: { absolute: "Contact Us in Delhi NCR, India | Sutra Health" },
   description:
-    "Visit or contact Sutra Health and EQUAL Society in Sector 46, Faridabad. Ask a question or book a consultation for lifestyle healthcare and yoga therapy.",
+    "Visit or contact Sutra Health and EQUAL Society in Sector 46, Delhi NCR, India. Ask a question or book a consultation for lifestyle healthcare and yoga therapy.",
   alternates: {
     canonical: "https://lifequality.org.in/contact",
   },
   openGraph: {
-    title: "Contact Sutra Health | EQUAL Society, Faridabad",
+    title: "Contact Sutra Health | EQUAL Society, Delhi NCR, India",
     description:
-      "Reach Sutra Health and EQUAL Society in Sector 46, Faridabad by phone, WhatsApp or email.",
+      "Reach Sutra Health and EQUAL Society in Sector 46, Delhi NCR, India by phone, WhatsApp or email.",
     url: "https://lifequality.org.in/contact",
     siteName: "Sutra Health",
     type: "website",
@@ -47,7 +47,7 @@ const contactPoints = [
   },
   {
     label: "Studio",
-    value: "House No. 229, Roof-Top, Sector 46, Faridabad",
+    value: "House No. 229, Roof-Top, Sector 46, Delhi NCR, India",
     href: "https://maps.app.goo.gl/Bso3TJCkvqDSLWKP9",
     note: "Visit the Sutra Health community space",
   },
@@ -112,7 +112,7 @@ export default function ContactPage() {
 
                 <p className="mt-7 max-w-[650px] text-[15px] leading-7  sm:text-[17px] sm:leading-8">
                   A contact point for Sutra Health and EQUAL Society in Sector
-                  46, Faridabad. Get in touch for enquiries, appointments and
+                  46, Delhi NCR, India. Get in touch for enquiries, appointments and
                   other practical questions.
                 </p>
 
@@ -224,7 +224,7 @@ export default function ContactPage() {
               <div>
                 <div className="overflow-hidden border border-[var(--sutra-border)] bg-[var(--sutra-white)]">
                   <iframe
-                    title="Sutra Health location in Sector 46, Faridabad"
+                    title="Sutra Health location in Sector 46, Delhi NCR, India"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.488925408195!2d77.29599867601114!3d28.43467429303718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1fe57a810dd1%3A0x75e55aae4d53097b!2sSutra%20Health!5e0!3m2!1sen!2sin!4v1781511407911!5m2!1sen!2sin"
                     className="h-[380px] w-full border-0 sm:h-[470px]"
                     loading="lazy"
@@ -235,7 +235,7 @@ export default function ContactPage() {
                 <div className="mt-5 flex flex-wrap items-center justify-between gap-4 border-t border-[var(--sutra-border)] pt-5">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--sutra-sage)]">
-                      Sector 46 · Faridabad
+                      Sector 46 · Delhi NCR, India
                     </p>
 
                     <p className="mt-1 text-[13px] text-[var(--sutra-muted)]">

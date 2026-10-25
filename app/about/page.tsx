@@ -7,9 +7,9 @@ import { organizationSchema } from "@/lib/schema";
 
 const SITE_URL = "https://lifequality.org.in";
 
-const PAGE_TITLE = "About Sutra Health | Doctor-Led Care in Faridabad";
+const PAGE_TITLE = "About Sutra Health | Doctor-Led Care in Delhi NCR, India";
 const PAGE_DESCRIPTION =
-  "Sutra Health is doctor-led lifestyle healthcare in Faridabad, connected with EQUAL Society. Learn our story, our community work and the people behind it.";
+  "Sutra Health is doctor-led lifestyle healthcare in Delhi NCR, India, connected with EQUAL Society. Learn our story, our community work and the people behind it.";
 
 export const metadata: Metadata = {
   // "absolute" stops the site template from adding " | Sutra Health" a second time
@@ -84,7 +84,7 @@ const faqs = [
   {
     question: "What is EQUAL Society?",
     answer:
-      "EQUAL (Effort For Quality of Life) Society is a Faridabad-based not-for-profit organisation working across health, family welfare, education and quality of life.",
+      "EQUAL (Effort For Quality of Life) Society is a Delhi NCR, India-based not-for-profit organisation working across health, family welfare, education and quality of life.",
   },
   {
     question: "How is Sutra Health connected with EQUAL Society?",
@@ -252,7 +252,7 @@ export default function AboutPage() {
                   sm:leading-9
                 "
               >
-                Sutra Health is doctor-led lifestyle healthcare in Faridabad,
+                Sutra Health is doctor-led lifestyle healthcare in Delhi NCR, India,
                 connected with EQUAL Society, a community organisation working
                 on health and quality of life.
               </p>

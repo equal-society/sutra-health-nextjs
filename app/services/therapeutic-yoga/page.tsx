@@ -4,8 +4,8 @@ import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/therapeutic-yoga`;
-const TITLE = "Therapeutic Yoga in Faridabad | Sutra Health";
-const DESCRIPTION = "Guided therapeutic yoga in Faridabad: movement, breathing and relaxation adapted to your experience, mobility and health. Book a session.";
+const TITLE = "Therapeutic Yoga in Delhi NCR, India | Sutra Health";
+const DESCRIPTION = "Guided therapeutic yoga in Delhi NCR, India: movement, breathing and relaxation adapted to your experience, mobility and health. Book a session.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -58,7 +58,7 @@ type PageData = {
 
 const page: PageData = {
   heroImage: "/images/services/therapeutic-yoga.webp",
-  eyebrow: "Therapeutic Yoga · Faridabad",
+  eyebrow: "Therapeutic Yoga · Delhi NCR, India",
   h1: "Yoga practices adapted to your mobility and health",
   lead: "Movement, breathing and relaxation can be adapted to your experience, mobility and health, with guidance from an instructor.",
   primary: {
@@ -227,7 +227,7 @@ const schema = {
       "@type": "Service",
       name: "Therapeutic Yoga",
       url: PAGE_URL,
-      areaServed: { "@type": "City", name: "Faridabad" },
+      areaServed: { "@type": "City", name: "Delhi NCR, India" },
       provider: {
         "@type": "Organization",
         name: "Sutra Health",

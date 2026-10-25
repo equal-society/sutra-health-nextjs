@@ -10,7 +10,7 @@ const bookingUrl =
   "https://bookretreats.com/r/6-day-rejuvenation-in-nature-moments-from-civilization-in-india";
 
 const whatsappUrl =
-  "https://wa.me/919013103676?text=Hi%20Sutra%20Health%2C%20I%20want%20to%20know%20more%20about%20your%20wellness%20retreat%20in%20Faridabad.";
+  "https://wa.me/919013103676?text=Hi%20Sutra%20Health%2C%20I%20want%20to%20know%20more%20about%20your%20wellness%20retreat%20in%20Delhi NCR, India.";
 
 export const metadata: Metadata = {
   title: {
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Wellness retreat in Faridabad near Delhi with guided Yoga, meditation, nutrition guidance and traditional wellness experiences.",
+    "Wellness retreat in Delhi NCR, India near Delhi with guided Yoga, meditation, nutrition guidance and traditional wellness experiences.",
 
   alternates: {
     canonical: pageUrl,
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Wellness Retreat Near Delhi | Sutra Health",
     description:
-      "Wellness retreat in Faridabad near Delhi with guided Yoga, meditation, nutrition guidance and traditional wellness experiences.",
+      "Wellness retreat in Delhi NCR, India near Delhi with guided Yoga, meditation, nutrition guidance and traditional wellness experiences.",
     url: pageUrl,
     siteName: "Sutra Health",
     type: "website",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Wellness Retreat Near Delhi | Sutra Health",
     description:
-      "Wellness retreat in Faridabad near Delhi with guided Yoga, meditation, nutrition guidance and traditional wellness experiences.",
+      "Wellness retreat in Delhi NCR, India near Delhi with guided Yoga, meditation, nutrition guidance and traditional wellness experiences.",
     images: [`${siteUrl}/images/retreat/yoga.webp`],
   },
 };
@@ -132,7 +132,7 @@ export default function RetreatProgramsPage() {
             {[
               "Wellness stay near Delhi",
               "Guided Yoga, breath & reflection",
-              "Faridabad, Haryana",
+              "Delhi NCR, India, Haryana",
             ].map((item) => (
               <p
                 key={item}
@@ -155,7 +155,7 @@ export default function RetreatProgramsPage() {
           </h2>
 
           <p className="mt-5 max-w-2xl text-base leading-7 text-[var(--sutra-muted)]">
-            Stay in Faridabad and explore guided wellness practices, practical
+            Stay in Delhi NCR, India and explore guided wellness practices, practical
             health conversations and time away from your usual routine.
           </p>
 
@@ -209,7 +209,7 @@ export default function RetreatProgramsPage() {
               </h2>
 
               <p className="mt-4 text-sm leading-7 text-[var(--sutra-muted)]">
-                Sector 46, Faridabad · near the Aravallis
+                Sector 46, Delhi NCR, India · near the Aravallis
               </p>
             </div>
 

@@ -8,13 +8,13 @@ const BOOKING_URL = "/book-appointment";
 
 
 export const metadata: Metadata = {
-  title: { absolute: "Physician Consultation in Faridabad | Sutra Health" },
+  title: { absolute: "Physician Consultation in Delhi NCR, India | Sutra Health" },
   description:
-    "Book a physician consultation at Sutra Health in Faridabad. Discuss your symptoms, medical history and lifestyle, and agree on sensible next steps.",
+    "Book a physician consultation at Sutra Health in Delhi NCR, India. Discuss your symptoms, medical history and lifestyle, and agree on sensible next steps.",
   alternates: { canonical: PAGE_URL },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Physician Consultation in Faridabad | Sutra Health",
+    title: "Physician Consultation in Delhi NCR, India | Sutra Health",
     description: "Discuss your health concerns, history and next steps with a physician.",
     url: PAGE_URL,
     siteName: "Sutra Health",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Physician Consultation in Faridabad | Sutra Health",
+    title: "Physician Consultation in Delhi NCR, India | Sutra Health",
     description: "Discuss your health concerns, history and next steps with a physician.",
     images: [`${SITE_URL}/images/og-image.webp`],
   },
@@ -108,7 +108,7 @@ const pageSchema = {
       "@type": "WebPage",
       "@id": `${PAGE_URL}#webpage`,
       url: PAGE_URL,
-      name: "Physician Consultation in Faridabad | Sutra Health",
+      name: "Physician Consultation in Delhi NCR, India | Sutra Health",
       description: String(metadata.description),
       inLanguage: "en-IN",
       isPartOf: { "@type": "WebSite", "@id": `${SITE_URL}/#website`, name: "Sutra Health", url: `${SITE_URL}/` },
@@ -118,7 +118,7 @@ const pageSchema = {
       name: "Physician Consultation",
       serviceType: "Physician consultation",
       url: PAGE_URL,
-      areaServed: { "@type": "City", name: "Faridabad" },
+      areaServed: { "@type": "City", name: "Delhi NCR, India" },
       provider: { "@type": "Organization", name: "Sutra Health", url: `${SITE_URL}/` },
     },
     {
@@ -167,13 +167,13 @@ export default function PhysicianConsultationPage() {
           className="absolute inset-0 bg-[#10211E]/45"
         />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-10 pt-28 sm:px-6 sm:pb-16 md:px-8 lg:px-12 lg:pb-20">
-          <p className="text-sm font-medium uppercase tracking-[0.12em] text-white/85">Physician consultation · Faridabad</p>
+          <p className="text-sm font-medium uppercase tracking-[0.12em] text-white/85">Physician consultation · Delhi NCR, India</p>
 
           <h1
             id="consultation-title"
             className="mt-4 max-w-3xl font-serif text-[clamp(2.25rem,6vw,4.25rem)] leading-[1.08] tracking-[-0.025em] text-white"
           >
-          Talk through your health concerns with a physician in Faridabad
+          Talk through your health concerns with a physician in Delhi NCR, India
           </h1>
 
           <p className="mt-5 max-w-2xl text-lg leading-8 text-white/90 sm:text-xl">
