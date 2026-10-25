@@ -7,7 +7,7 @@ import ContactForm from "@/components/contact/ContactForm";
 export const metadata: Metadata = {
   title: { absolute: "Contact Us in Faridabad | Sutra Health" },
   description:
-    "Contact Sutra Health and EQUAL Society in Sector 46, Faridabad for health, wellness, yoga therapy and community-focused activities.",
+    "Visit or contact Sutra Health and EQUAL Society in Sector 46, Faridabad. Ask a question or book a consultation for lifestyle healthcare and yoga therapy.",
   alternates: {
     canonical: "https://lifequality.org.in/contact",
   },

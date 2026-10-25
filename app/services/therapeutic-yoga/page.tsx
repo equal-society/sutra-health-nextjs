@@ -5,8 +5,7 @@ import Container from "@/components/shared/Container";
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/therapeutic-yoga`;
 const TITLE = "Therapeutic Yoga in Faridabad | Sutra Health";
-const DESCRIPTION =
-  "Guided Therapeutic Yoga in Faridabad: movement, breathing and relaxation practices adapted to your experience, mobility and health.";
+const DESCRIPTION = "Guided therapeutic yoga in Faridabad: movement, breathing and relaxation adapted to your experience, mobility and health. Book a session.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },

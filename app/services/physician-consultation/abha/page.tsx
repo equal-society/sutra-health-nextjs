@@ -6,7 +6,7 @@ const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/physician-consultation/abha`;
 const BOOKING_URL = "/book-appointment";
 const ABHA_URL = "https://abha.abdm.gov.in/abha/v3";
-const TITLE = "What Is an ABHA Account? Digital Health Records | Sutra Health";
+const TITLE = "What Is an ABHA Account? | Sutra Health";
 const DESCRIPTION =
   "What an Ayushman Bharat Health Account (ABHA) is, what it is used for, and where to create or manage one on the official portal.";
 

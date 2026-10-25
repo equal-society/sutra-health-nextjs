@@ -6,7 +6,7 @@ const SITE_URL = "https://lifequality.org.in";
 export const metadata: Metadata = {
   title: "Research & Evidence",
   description:
-    "Explore research, publications, teaching and evidence related to lifestyle medicine, nutrition, Yoga and preventive health from Sutra Health and EQUAL Society.",
+    "Research, publications and teaching on lifestyle medicine, nutrition, yoga and preventive health from Sutra Health and EQUAL Society.",
   alternates: { canonical: `${SITE_URL}/resources/research` },
   openGraph: {
     title: "Research & Evidence | Sutra Health",

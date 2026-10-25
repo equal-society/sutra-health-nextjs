@@ -5,7 +5,7 @@ import Container from "@/components/shared/Container";
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/physician-consultation/health-awareness-tools`;
 const BOOKING_URL = "/book-appointment";
-const TITLE = "Health-Awareness Tools: Pulse, HRV and Brain Health | Sutra Health";
+const TITLE = "Pulse, HRV & Brain Health Tools | Sutra Health";
 const DESCRIPTION =
   "Third-party tools for exploring pulse, heart-rate variability and brain health, and why none of them replaces a clinical assessment.";
 

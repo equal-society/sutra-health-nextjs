@@ -6,16 +6,16 @@ import Container from "@/components/shared/Container";
 import { getAllConditions } from "@/data/conditions";
 
 export const metadata: Metadata = {
-  title: "Health Conditions We Support",
+  title: { absolute: "Lifestyle Care for Diabetes, BP & Weight | Sutra Health" },
   description:
-    "Explore lifestyle-focused support for weight management, metabolic health, high blood pressure, joint pain, migraine, digestive health and women's health.",
+    "Explore lifestyle support for diabetes, high blood pressure, weight, joint pain, migraine, digestive health and women's health, alongside medical care.",
   alternates: {
     canonical: "https://lifequality.org.in/conditions",
   },
   openGraph: {
-    title: "Health Conditions We Support | Lifestyle & Integrative Health",
+    title: "Lifestyle Care for Diabetes, BP & Weight | Sutra Health",
     description:
-      "Explore lifestyle-focused support for weight management, metabolic health, blood pressure, joint health, migraine, digestive health and women's health.",
+      "Explore lifestyle support for diabetes, high blood pressure, weight, joint pain, migraine, digestive health and women's health, alongside medical care.",
     url: "https://lifequality.org.in/conditions",
     siteName: "Sutra Health",
     type: "website",
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Health Conditions We Support | Lifestyle & Integrative Health",
+    title: "Lifestyle Care for Diabetes, BP & Weight | Sutra Health",
     description:
-      "Explore lifestyle-focused support for common health concerns through lifestyle, nutrition, movement, breath and mind practices.",
+      "Explore lifestyle support for diabetes, high blood pressure, weight, joint pain, migraine, digestive health and women's health, alongside medical care.",
     images: ["https://lifequality.org.in/images/og-image.webp"],
   },
   robots: {

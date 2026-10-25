@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/shared/Container";
 import YouTubeFacade from "@/components/shared/YouTubeFacade";
+import { organizationSchema } from "@/lib/schema";
 
 const SITE_URL = "https://lifequality.org.in";
 
@@ -128,36 +129,7 @@ const aboutPageSchema = {
   inLanguage: "en-IN",
 };
 
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": `${SITE_URL}/#organization`,
-  name: "Sutra Health",
-  alternateName: "Life Quality",
-  url: `${SITE_URL}/`,
-  description:
-    "Sutra Health is doctor-led lifestyle healthcare in Faridabad, connected with EQUAL (Effort For Quality of Life) Society and its work across health, education, family welfare and quality of life.",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Faridabad",
-    addressRegion: "Haryana",
-    addressCountry: "IN",
-  },
-  areaServed: { "@type": "Country", name: "India" },
-  knowsAbout: [
-    "Integrative Lifestyle Medicine",
-    "Yoga Therapy",
-    "Pranayama",
-    "Nutrition Counselling",
-    "Health and Wellness Education",
-  ],
-  // Only profiles of the organisation itself. Research papers and the
-  // doctor's academic site do not belong here.
-  sameAs: [
-    "https://www.instagram.com/sutrahealth/",
-    "https://www.youtube.com/@sutra-health",
-  ],
-};
+const orgPageSchema = { "@context": "https://schema.org", ...organizationSchema };
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -200,7 +172,7 @@ export default function AboutPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgPageSchema) }}
       />
       <script
         type="application/ld+json"

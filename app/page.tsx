@@ -6,6 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 import Container from "@/components/shared/Container";
 import HeroVideo from "@/components/shared/HeroVideo";
 import { getAllConditions } from "@/data/conditions";
+import { organizationSchema } from "@/lib/schema";
 
 const siteUrl = "https://lifequality.org.in";
 
@@ -187,25 +188,11 @@ function Hero() {
         "
       >
         <div className="max-w-4xl">
-          {/* Eyebrow */}
-          <p
-            className="
-              text-xs
-              font-semibold
-              uppercase
-              tracking-[0.17em]
-              text-white/75
-              sm:text-xs
-            "
-          >
-            Doctor-led integrative lifestyle healthcare
-          </p>
-
           {/* Heading */}
           <h1
             id="home-title"
             className="
-              mt-5
+              mt-0
               max-w-[900px]
               font-serif
               text-[42px]
@@ -218,7 +205,10 @@ function Hero() {
               lg:leading-[1.02]
             "
           >
-            <span className="block">Your lifestyle shapes your health. </span>
+            <span className="block font-sans text-xs font-semibold uppercase leading-normal tracking-[0.17em] text-white/75">
+              Doctor-led lifestyle medicine in Faridabad
+            </span>
+            <span className="mt-5 block">Your lifestyle shapes your health.</span>
           </h1>
 
           {/* Introduction */}
@@ -657,6 +647,9 @@ const structuredData = {
   "@context": "https://schema.org",
 
   "@graph": [
+    // Shared organisation: the clinic, website and pages below all point to it
+    organizationSchema,
+
     {
       "@type": "MedicalClinic",
 
@@ -713,7 +706,7 @@ const structuredData = {
 
       "@id": `${siteUrl}/#webpage`,
 
-      name: "Sutra Health | Integrative Lifestyle Healthcare",
+      name: "Lifestyle Medicine Doctor in Faridabad | Sutra Health",
 
       url: siteUrl,
 

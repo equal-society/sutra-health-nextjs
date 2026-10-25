@@ -5,7 +5,7 @@ import Container from "@/components/shared/Container";
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/behaviour-stress-mind`;
 const TITLE = "Stress & Behaviour Support in Faridabad | Sutra Health";
-const DESCRIPTION = "Practical support for stress, behaviour change and everyday habits in Faridabad, plus self-help guides on positive thinking, nature walks and morning sunlight.";
+const DESCRIPTION = "Practical support for stress, behaviour change and daily habits in Faridabad, plus self-help guides on positive thinking, nature walks and morning sunlight.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },

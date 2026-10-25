@@ -4,7 +4,7 @@ import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/therapeutic-yoga/pranayama`;
-const TITLE = "Pranayama: Yogic Breathing Practices and Safety | Sutra Health";
+const TITLE = "Pranayama: Breathing Practices & Safety | Sutra Health";
 const DESCRIPTION = "A guide to Pranayama: what it is, common yogic breathing practices, how to start safely and who should take advice before trying them.";
 
 export const metadata: Metadata = {

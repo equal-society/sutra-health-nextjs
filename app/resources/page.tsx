@@ -5,12 +5,12 @@ import { ArrowUpRight } from "lucide-react";
 const SITE_URL = "https://lifequality.org.in";
 
 export const metadata: Metadata = {
-  title: "Health Resources | Articles, Guides & Research",
+  title: { absolute: "Health Articles, Guides & Research | Sutra Health" },
   description:
     "Explore practical health articles, guides, research and answers to common lifestyle and wellbeing questions from Sutra Health.",
   alternates: { canonical: `${SITE_URL}/resources` },
   openGraph: {
-    title: "Health Resources",
+    title: "Health Articles, Guides & Research | Sutra Health",
     description:
       "Explore practical health articles, guides, research and frequently asked questions from Sutra Health.",
     url: `${SITE_URL}/resources`,
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Health Resources | Sutra Health",
+    title: "Health Articles, Guides & Research | Sutra Health",
     description:
       "Practical health articles, guides, research and FAQs from Sutra Health.",
     images: [`${SITE_URL}/images/og-image.webp`],

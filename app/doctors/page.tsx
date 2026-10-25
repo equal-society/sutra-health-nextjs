@@ -5,18 +5,18 @@ import Link from "next/link";
 import Container from "@/components/shared/Container";
 
 export const metadata: Metadata = {
-  title: "Doctors & Health Experts",
+  title: { absolute: "Dr. Rakesh Sarwal & Our Doctors | Sutra Health" },
   description:
-    "Meet the practitioners and professionals represented by Sutra Health, including their qualifications, roles and areas of work.",
+    "Meet Dr. Rakesh Sarwal (MBBS, MPH, DrPH) and the Sutra Health team in Faridabad. See qualifications, roles and areas of work.",
 
   alternates: {
     canonical: "https://lifequality.org.in/doctors",
   },
 
   openGraph: {
-    title: "Doctors & Health Experts | Sutra Health",
+    title: "Dr. Rakesh Sarwal & Our Doctors | Sutra Health",
     description:
-      "Explore practitioners represented by Sutra Health, including their professional backgrounds and areas of work.",
+      "Meet Dr. Rakesh Sarwal (MBBS, MPH, DrPH) and the Sutra Health team in Faridabad. See qualifications, roles and areas of work.",
     url: "https://lifequality.org.in/doctors",
     siteName: "Sutra Health",
     type: "website",

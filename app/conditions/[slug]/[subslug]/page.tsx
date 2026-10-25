@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 
 import Container from "@/components/shared/Container";
 import ContextualBookingCTA from "@/components/shared/ContextualBookingCTA";
+import { subpageSeo } from "@/data/seo";
 import {
   getAllSubpageParams,
   getCondition,
@@ -35,9 +36,14 @@ export async function generateMetadata({
 
   const canonicalUrl = `https://lifequality.org.in/conditions/${slug}/${subslug}`;
 
+  const seo = subpageSeo[subslug];
+  const title = seo?.title ?? subpage.question;
+  const description = seo?.description ?? subpage.shortAnswer.slice(0, 155);
+
   return {
-    title: subpage.question,
-    description: subpage.shortAnswer.slice(0, 155),
+    // "absolute" because seo.title already contains the brand
+    title: seo?.title ? { absolute: seo.title } : subpage.question,
+    description,
     alternates: {
       canonical: canonicalUrl,
     },
@@ -46,8 +52,8 @@ export async function generateMetadata({
       follow: true,
     },
     openGraph: {
-      title: subpage.question,
-      description: subpage.shortAnswer.slice(0, 155),
+      title,
+      description,
       type: "article",
       url: canonicalUrl,
       siteName: "Sutra Health",

@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/shared/Container";
 
+import { organizationSchema } from "@/lib/schema";
 export const metadata: Metadata = {
-  title: "Volunteer With Sutra Health | Community Wellness",
+  title: { absolute: "Volunteer With Sutra Health | Community Wellness" },
   description:
     "Explore volunteer opportunities with Sutra Health in Faridabad. Learn how you can support community health, yoga and wellness activities.",
   alternates: {
@@ -47,55 +48,14 @@ const awarenessCalendar = [
   ["1 Dec", "World AIDS Day"],
 ];
 
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "NGO",
-  "@id": "https://lifequality.org.in/#organization",
-  name: "Life Quality",
-  alternateName: ["Sutra Health", "EQUAL Society - Effort For Quality of Life"],
-  legalName: "Effort For Quality of Life (EQUAL) Society",
-  url: "https://lifequality.org.in/",
-  description:
-    "Life Quality (Sutra Health) is a Faridabad-based not-for-profit society promoting health awareness, wellness, education, family welfare and quality of life through an integrative and community-focused approach.",
-  slogan: "Promoting Healthier Living and Quality of Life",
-  foundingDate: "1997-05-28",
-  email: "info@lifequality.org.in",
-  telephone: "+91-9013103676",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "House No. 229, Roof-Top, Sector 46",
-    addressLocality: "Faridabad",
-    addressRegion: "Haryana",
-    postalCode: "121010",
-    addressCountry: "IN",
-  },
-  areaServed: { "@type": "Country", name: "India" },
-  knowsAbout: [
-    "Health Awareness",
-    "Yoga",
-    "Pranayama",
-    "Wellness Education",
-    "Nutrition Education",
-    "Community Health",
-    "Healthy Living",
-  ],
-  medicalSpecialty: ["Lifestyle Medicine", "Integrative Medicine"],
-  sameAs: [
-    "https://www.linkedin.com/in/equal-society-ngo",
-    "https://wa.me/919013103676",
-    "https://in.pinterest.com/equal_society/",
-    "https://www.instagram.com/sutrahealth/",
-    "https://www.facebook.com/people/Sutrahealth-Equal/",
-    "https://www.youtube.com/@sutra-health",
-  ],
-};
+const pageSchema = { "@context": "https://schema.org", ...organizationSchema };
 
 export default function VolunteerPage() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
       />
 
       <main className="bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">

@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 
 import Container from "@/components/shared/Container";
 import ContextualBookingCTA from "@/components/shared/ContextualBookingCTA";
+import { conditionSeo } from "@/data/seo";
 import {
   conditions,
   getCondition,
@@ -63,12 +64,16 @@ export async function generateMetadata({
     return {};
   }
 
-  const title = condition.title;
+  const seo = conditionSeo[condition.slug];
 
-  const description = truncateAtWord(condition.shortDescription, 152);
+  const title = seo?.title ?? condition.title;
+
+  const description =
+    seo?.description ?? truncateAtWord(condition.shortDescription, 152);
 
   return {
-    title,
+    // "absolute" because seo.title already contains the brand
+    title: seo?.title ? { absolute: seo.title } : condition.title,
     description,
 
     alternates: {

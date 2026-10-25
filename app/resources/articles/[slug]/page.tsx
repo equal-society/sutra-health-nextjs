@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { articleSeo } from "@/data/seo";
 
 import {
   articles,
@@ -37,6 +38,14 @@ export function generateStaticParams() {
    METADATA
 ========================================================= */
 
+/** Shortens text at a word boundary so descriptions never end mid-word. */
+function truncateAtWord(text: string, maxLength: number): string {
+  if (text.length <= maxLength) return text;
+  const cut = text.slice(0, maxLength);
+  const lastSpace = cut.lastIndexOf(" ");
+  return `${(lastSpace > 0 ? cut.slice(0, lastSpace) : cut).replace(/[,;:.\s]+$/, "")}...`;
+}
+
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
@@ -51,23 +60,23 @@ export async function generateMetadata({
     };
   }
 
+  const seo = articleSeo[article.slug];
+  const fallbackDescription = `${truncateAtWord(
+    article.excerpt ||
+      `Practical health guidance from Sutra Health about ${article.title.toLowerCase()}.`,
+    135,
+  )} Read the guide.`;
+  const description = seo?.description ?? fallbackDescription;
+  const shareTitle = seo?.title ?? article.title;
+
   return {
     /*
-      IMPORTANT:
-      Use only the article title here.
-
-      If your root layout has:
-      title: { template: "%s | Sutra Health" }
-
-      Next.js will produce:
-      How to Manage Stress Naturally | Sutra Health
-
-      instead of:
-      How to Manage Stress Naturally | Sutra Health | Sutra Health
+      The root layout adds " | Sutra Health" to plain titles.
+      When seo.title is set it already contains the brand, so use "absolute".
     */
-    title: article.title,
+    title: seo?.title ? { absolute: seo.title } : article.title,
 
-    description: `${(article.excerpt || `Practical health guidance from Sutra Health about ${article.title.toLowerCase()}.`).slice(0, 112)} Read the guide.`,
+    description,
 
     alternates: {
       canonical: `/resources/articles/${article.slug}`,
@@ -79,9 +88,9 @@ export async function generateMetadata({
     },
 
     openGraph: {
-      title: article.title,
+      title: shareTitle,
 
-      description: `${(article.excerpt || `Practical health guidance from Sutra Health about ${article.title.toLowerCase()}.`).slice(0, 125)} Read the practical guide.`,
+      description,
 
       type: "article",
 
@@ -102,9 +111,9 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
 
-      title: article.title,
+      title: shareTitle,
 
-      description: `${(article.excerpt || `Practical health guidance from Sutra Health about ${article.title.toLowerCase()}.`).slice(0, 125)} Read the practical guide.`,
+      description,
 
       images: article.image ? [article.image] : [],
     },
