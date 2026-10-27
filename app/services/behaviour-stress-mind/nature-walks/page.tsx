@@ -336,16 +336,12 @@ export default function Page() {
     loop
     playsInline
     preload="metadata"
-    poster="/images/services/indoor-plants-nature-walks.webp"
+    // poster="/images/services/indoor-plants-nature-walks.webp"
     className="absolute inset-0 h-full w-full object-cover"
   >
-    <source src="/videos/services/hero.mp4" type="video/mp4" />
+    <source src="/videos/nature-walk.mp4" type="video/mp4" />
   </video>
 
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 bg-[#10201C]/55"
-  />
 
  
   <Container>

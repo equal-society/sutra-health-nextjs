@@ -75,7 +75,7 @@ export default function HealthAwarenessToolsPage() {
     loop
     playsInline
     preload="metadata"
-    poster="/images/tool.png"
+    poster="/images/tool.webp"
     className="absolute inset-0 h-full w-full object-cover"
   >
     <source src="/videos/services/hero.mp4" type="video/mp4" />

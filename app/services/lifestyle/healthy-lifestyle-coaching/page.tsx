@@ -105,10 +105,10 @@ export default function HealthyLifestyleCoachingPage() {
     loop
     playsInline
     preload="metadata"
-    poster="/images/yoga.webp"
+    // poster="/images/yoga.webp" 
     className="absolute inset-0 h-full w-full object-cover"
   >
-    <source src="/videos/services/hero.mp4" type="video/mp4" />
+    <source src="/videos/contact.mp4" type="video/mp4" />
   </video>
 
   <div

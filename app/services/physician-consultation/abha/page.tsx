@@ -55,7 +55,7 @@ export default function AbhaPage() {
     loop
     playsInline
     preload="metadata"
-    poster="/images/abha.png"
+    poster="/images/abha.webp"
     className="absolute inset-0 h-full w-full object-cover"
   >
     <source src="/videos/services/hero.mp4" type="video/mp4" />

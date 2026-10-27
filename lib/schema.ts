@@ -9,7 +9,7 @@ export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 // Only real profiles of the organisation. No chat links, papers or personal sites.
 export const ORGANIZATION_SAME_AS = [
   "https://www.instagram.com/sutrahealth/",
-  "https://www.facebook.com/people/Sutrahealth-Equal/",
+  "https://www.facebook.com/people/Sutrahealth-Equal/pfbid0vBjcwG9sT32EgK9d9XF7uxA2dz3dbf2KmNRXNPjw1a1Q4gVaT3fhe5maz5Q8wXHUl/",
   "https://www.youtube.com/@sutra-health",
   "https://www.linkedin.com/in/equal-society-ngo",
   "https://in.pinterest.com/equal_society/",
@@ -28,15 +28,21 @@ export const organizationSchema = {
   foundingDate: "1997-05-28",
   email: "equal.society@gmail.com",
   telephone: "+91-9013103676",
+
   address: {
     "@type": "PostalAddress",
     streetAddress: "House No. 229, Roof-Top, Sector 46",
-    addressLocality: "Delhi NCR, India",
+    addressLocality: "Faridabad",
     addressRegion: "Haryana",
     postalCode: "121010",
     addressCountry: "IN",
   },
-  areaServed: { "@type": "Country", name: "India" },
+
+  areaServed: {
+    "@type": "AdministrativeArea",
+    name: "Delhi NCR",
+  },
+
   knowsAbout: [
     "Health Awareness",
     "Yoga",
@@ -46,5 +52,6 @@ export const organizationSchema = {
     "Community Health",
     "Healthy Living",
   ],
+
   sameAs: ORGANIZATION_SAME_AS,
 };

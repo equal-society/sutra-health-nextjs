@@ -5,9 +5,9 @@ import BookAppointmentClient from "@/components/booking/BookAppointmentClient";
 const SITE_URL = "https://lifequality.org.in";
 
 export const metadata: Metadata = {
-  title: "Book a Doctor Consultation in Faridabad",
+  title: "Book a Doctor Consultation in Delhi NCR, India",
   description:
-    "Choose a date and time to book an online or in-person consultation with a Sutra Health doctor in Faridabad. Simple form, confirmation by email.",
+    "Choose a date and time to book an online or in-person consultation with a Sutra Health doctor in Delhi NCR, India. Simple form, confirmation by email.",
   alternates: { canonical: `${SITE_URL}/book-appointment` },
   robots: { index: true, follow: true },
   openGraph: {

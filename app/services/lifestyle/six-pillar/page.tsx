@@ -143,7 +143,7 @@ export default function SixPillarLifestylePage() {
     loop
     playsInline
     preload="metadata"
-    poster="/images/six-pillars.png"
+    poster="/images/six-pillars.webp"
     className="absolute inset-0 h-full w-full object-cover"
   >
     <source src="/videos/services/hero.mp4" type="video/mp4" />

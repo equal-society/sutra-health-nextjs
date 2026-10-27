@@ -251,10 +251,10 @@ export default function Page() {
     loop
     playsInline
     preload="metadata"
-    poster="/images/hero.webp"
+    // poster="/images/hero.webp"
     className="absolute inset-0 h-full w-full object-cover"
   >
-    <source src="/videos/services/hero.mp4" type="video/mp4" />
+    <source src="/videos/soft-sun.mp4" type="video/mp4" />
   </video>
 
   <div

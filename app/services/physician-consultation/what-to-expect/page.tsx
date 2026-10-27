@@ -54,10 +54,10 @@ export default function WhatToExpectPage() {
     loop
     playsInline
     preload="metadata"
-    poster="/images/services/physician-consulation.webp"
+    // poster="/images/services/physician-consulation.webp"
     className="absolute inset-0 h-full w-full object-cover"
   >
-    <source src="/videos/services/hero.mp4" type="video/mp4" />
+    <source src="/videos/what-we-expert.mp4" type="video/mp4" />
   </video>
 
   <div
