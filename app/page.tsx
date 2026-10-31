@@ -208,7 +208,7 @@ function Hero() {
         <div className="max-w-4xl">
 
           <span className="block font-sans text-sm font-semibold uppercase leading-normal tracking-[0.17em] text-white">
-              A better approach to everyday health
+            Take charge of your health, with the right guidance
             </span>
 
             <h1
