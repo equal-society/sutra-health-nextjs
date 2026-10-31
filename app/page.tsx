@@ -160,12 +160,11 @@ function Hero() {
       <div aria-hidden="true" className="absolute inset-0">
         <HeroVideo
           src="/videos/hero-video.mp4"
-          poster="/images/hero-poster.webp"
         />
 
  
 {/* Very light overall overlay */}
-<div className="absolute inset-0 bg-[#101C19]/10" />
+<div className="absolute inset-0 bg-[#101C19]/20" />
 
 {/* Subtle left-to-right gradient for text readability */}
 <div
@@ -208,24 +207,28 @@ function Hero() {
       >
         <div className="max-w-4xl">
 
-          {/* Heading */}
-          <h1
-            id="home-title"
-            className="
-              max-w-[900px]
-              font-serif font-medium
-              text-[42px]
-              leading-[1.06]
-              tracking-[-0.04em]
-              text-white
-              [text-shadow:0_2px_18px_rgba(0,0,0,0.18)]
-              sm:text-6xl
-              lg:text-[76px]
-              lg:leading-[1.02]
-            "
-          >
-            Your health can move in a better direction.
-          </h1>
+          <span className="block font-sans text-sm font-semibold uppercase leading-normal tracking-[0.17em] text-white">
+              A better approach to everyday health
+            </span>
+
+            <h1
+              id="home-title"
+              className="
+                mt-4
+                max-w-[900px]
+                font-serif font-medium
+                text-[42px]
+                leading-[1.06]
+                tracking-[-0.04em]
+                text-white
+                [text-shadow:0_2px_18px_rgba(0,0,0,0.18)]
+                sm:text-6xl
+                lg:text-[76px]
+                lg:leading-[1.02]
+              "
+            >
+              Your lifestyle shapes your health.
+            </h1>
 
           {/* Introduction */}
           <p
