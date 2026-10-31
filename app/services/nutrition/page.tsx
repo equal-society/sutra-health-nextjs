@@ -46,7 +46,7 @@ export default function NutritionPage() {
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-10 pt-28 sm:px-6 sm:pb-16 md:px-8 lg:px-12 lg:pb-20">
           <p className="text-sm font-medium uppercase tracking-[0.12em] text-white/85">
-            Nutrition counselling  · Delhi NCR, India
+            Nutrition counselling
           </p>
 
           <h1

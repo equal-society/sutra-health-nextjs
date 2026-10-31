@@ -5,7 +5,7 @@ import Container from "@/components/shared/Container";
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/my-buddy`;
 const TITLE = "My Buddy Peer Support Programme in Delhi NCR, India | Sutra Health";
-const DESCRIPTION = "My Buddy is a peer-support programme by EQUAL Society in Delhi NCR, India. Become a buddy or find one for encouragement, healthy routines and wellbeing.";
+const DESCRIPTION = "My Buddy is a peer-support programme by EQUAL Society. Become a buddy or find one for encouragement, healthy routines and wellbeing.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -51,7 +51,7 @@ type PageData = {
 
 const page: PageData = {
   "heroImage": "/images/services/my-buddy.webp",
-  "eyebrow": "Peer support · Delhi NCR, India",
+  "eyebrow": "Peer support",
   "h1": "My Buddy: peer support for encouragement and healthier routines",
   "lead": "Sometimes having someone to talk to makes the difference. My Buddy is a peer-support programme run by EQUAL Society in Delhi NCR, India: you can become a buddy, or get in touch to find one.",
   "primary": {
@@ -75,10 +75,12 @@ const page: PageData = {
       {
         "title": "Become a buddy",
         "text": "Support others as they work towards positive habits, confidence and healthier routines by being a caring companion."
+ 
       },
       {
         "title": "Find a buddy",
         "text": "Connect with someone who can offer encouragement as you work on healthy living, emotional wellbeing and a positive mindset."
+        
       }
     ]
   },
@@ -263,9 +265,21 @@ export default function Page() {
               <div className="mt-8 grid gap-x-10 sm:grid-cols-2">
                 {page.points.items.map((item) => (
                   <article key={item.title} className="border-t border-[var(--sutra-border-strong)] py-5">
-                    <h3 className="font-serif text-xl sm:text-2xl">{item.title}</h3>
-                    <p className="mt-2 text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">{item.text}</p>
-                  </article>
+                  <h3 className="font-serif text-xl sm:text-2xl">{item.title}</h3>
+
+                  <p className="mt-2 text-base leading-7 text-[var(--sutra-muted)] sm:text-lg sm:leading-8">
+                    {item.text}
+                  </p>
+
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSdtgQtU1eIuwNpmgpOVOrIi_fZzHv5rOxiJe-sH_SG3NUTRiQ/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex min-h-11 items-center font-semibold text-[var(--sutra-teal)] underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+                  >
+                    Register ↗
+                  </a>
+                </article>
                 ))}
               </div>
             </div>

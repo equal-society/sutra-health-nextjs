@@ -5,7 +5,7 @@ import Container from "@/components/shared/Container";
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/shirodhara`;
 const TITLE = "Shirodhara & Abhyanga Massage in Delhi NCR, India | Sutra Health";
-const DESCRIPTION = "Shirodhara (warm liquid poured over the forehead) and Abhyanga oil massage in Delhi NCR, India, offered as relaxing wellness therapies. Learn what each involves.";
+const DESCRIPTION = "Shirodhara (warm liquid poured over the forehead) and Abhyanga oil massage, offered as relaxing wellness therapies. Learn what each involves.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -51,7 +51,7 @@ type PageData = {
 
 const page: PageData = {
   "heroImage": "/images/services/shirodharaa.webp",
-  "eyebrow": "Traditional wellness therapies · Delhi NCR, India",
+  "eyebrow": "Traditional wellness therapies",
   "h1": "Shirodhara and Abhyanga: traditional oil therapies for relaxation.",
   "lead": "Two Ayurvedic oil therapies offered as relaxing wellness experiences. Find out what each involves before you book.",
   "primary": {
@@ -96,7 +96,7 @@ const page: PageData = {
     "images": [
       {
         "src": "/images/services/shirodhara/shirodhara-therapy.webp",
-        "alt": "Shirodhara therapy session in progress at Life Quality Delhi NCR, India",
+        "alt": "Shirodhara therapy session in progress at Life Quality",
         "caption": "A Shirodhara session."
       },
       {

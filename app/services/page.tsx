@@ -207,9 +207,7 @@ export default function ServicesPage() {
                 Book a consultation
                 <ArrowUpRight size={16} className="ml-3" aria-hidden="true" />
               </Link>
-              <span className="text-sm leading-6 text-white/80">
-                Delhi NCR, India · Delhi NCR · Ask about online availability
-              </span>
+             
             </div>
           </div>
         </div>

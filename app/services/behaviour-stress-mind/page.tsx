@@ -5,7 +5,7 @@ import Container from "@/components/shared/Container";
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/behaviour-stress-mind`;
 const TITLE = "Stress & Behaviour Support in Delhi NCR, India | Sutra Health";
-const DESCRIPTION = "Practical support for stress, behaviour change and daily habits in Delhi NCR, India, plus self-help guides on positive thinking, nature walks and morning sunlight.";
+const DESCRIPTION = "Practical support for stress, behaviour change and daily habits, plus self-help guides on positive thinking, nature walks and morning sunlight.";
 
 export const metadata: Metadata = {
   title: { absolute: TITLE },
@@ -51,7 +51,7 @@ type PageData = {
 
 const page: PageData = {
   "heroImage": "/images/services/behaviour-stress-mind.webp",
-  "eyebrow": "Behaviour, stress and mind · Delhi NCR, India",
+  "eyebrow": "Behaviour, stress and mind",
   "h1": "Support for stress and habit change, when knowing what to do is not enough",
   "lead": "Most of us already know we should sleep better, move more or worry less. This page covers practical support for stress, mindset and routines, plus self-help guides you can start today.",
   "primary": {

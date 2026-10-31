@@ -186,11 +186,7 @@ export default function ConditionsPage() {
                     xl:text-[82px]
                   "
                 >
-                  Health Conditions & Lifestyle
-                  <br />
-                  <span className="text-white">
-                    Support in Delhi NCR, India
-                  </span>
+                  Health Conditions & Lifestyle Support 
                 </h1>
 
                 {/* Primary Introduction */}

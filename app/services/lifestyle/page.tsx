@@ -10,7 +10,7 @@ const BOOKING_URL = "/book-appointment";
 export const metadata: Metadata = {
   title: { absolute: "Lifestyle Medicine in Delhi NCR, India | Sutra Health" },
   description:
-    "Lifestyle medicine looks at food, movement, sleep, stress and daily routines alongside medical care. Learn how Sutra Health in Delhi NCR, India approaches it.",
+    "Lifestyle medicine looks at food, movement, sleep, stress and daily routines alongside medical care. Learn how Sutra Health approaches it.",
   alternates: { canonical: PAGE_URL },
   robots: { index: true, follow: true },
   openGraph: {
@@ -137,7 +137,7 @@ export default function LifestyleMedicinePage() {
         />
 
         
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-12 pt-28 sm:px-6 sm:pb-16 md:px-8 lg:px-12">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-12 pt-24 sm:px-6 sm:pb-16 md:px-8 lg:px-12">
           <p className="text-sm font-medium uppercase tracking-[0.16em] text-white/85">
             Lifestyle Medicine
           </p>

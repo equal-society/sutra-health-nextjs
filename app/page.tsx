@@ -267,6 +267,7 @@ function Hero() {
             >
               Take the Lifestyle Assessment
             </Link>
+            
             <Link
               href="/book-appointment"
               className="
