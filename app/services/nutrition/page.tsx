@@ -61,7 +61,7 @@ export default function NutritionPage() {
 
            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link
-              href="/assessment"
+              href="/book-appointment"
               className="inline-flex min-h-12 w-full items-center justify-center bg-[#F7F5EF] px-6 text-base font-semibold text-[#17413D] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:w-auto"
             >
               Book a Consultation →
