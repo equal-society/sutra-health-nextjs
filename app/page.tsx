@@ -312,7 +312,9 @@ function Hero() {
           <p className="mt-7 text-sm font-medium leading-6 text-white [text-shadow:0_1px_10px_rgba(0,0,0,0.4)]">
             Led by{" "}
             <Link
-              href="/doctors"
+              href="https://academic.lifequality.org.in/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="
                 font-semibold text-white
                 underline decoration-white/60
@@ -320,6 +322,7 @@ function Hero() {
                 transition-colors
                 hover:decoration-white
               "
+              
             >
               Dr. Rakesh Sarwal
             </Link>{" "}
@@ -376,7 +379,7 @@ function EverydayHealth() {
             {/* Description below heading */}
             <p className="mt-5 max-w-3xl text-base leading-7 text-[#65736D] sm:text-lg sm:leading-8">
               Explore doctor-led consultations and practical wellness approaches that
-              bring together medical guidance, nutrition, movement and everyday habits
+              bring together medical guidance, nutrition, yoga and everyday habits
               to support your health.
             </p>
           </div>
