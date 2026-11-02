@@ -182,7 +182,7 @@ function Hero() {
   className="
     absolute inset-0
     bg-gradient-to-t
-    from-[#101C19]/15
+    from-[#101C19]/10
     via-transparent
     to-transparent
   "
@@ -332,27 +332,37 @@ function Hero() {
         </div>
       </div>
     
-{/* Small lifestyle coaching hook */}
+{/* Lifestyle Coaching Editorial Note */}
 <div className="
-  absolute bottom-7 right-6 z-20
-  hidden w-full max-w-[300px]
-  border-l-2 border-white/60
-  bg-[#101C19]/25
-  px-5 py-3
+  absolute bottom-8 right-8 z-20
+  hidden lg:block
+  w-[350px]
+  px-6 py-5
   backdrop-blur-sm
-  lg:block
 ">
-  <p className="text-sm font-semibold leading-6 text-white">
+  <span className="
+    text-[10px] font-semibold uppercase
+    tracking-[0.18em] text-white/75
+  ">
+    Personalised guidance
+  </span>
+
+  <h2 className="
+    mt-3 font-serif text-[25px]
+    leading-tight tracking-[-0.025em]
+    text-white
+  ">
     Why do I need a lifestyle coach?
-  </p>
+  </h2>
 
-  <p className="mt-2 text-xs leading-5 text-white/85">
-    Because each one of us is different, and our needs change over time.
-  </p>
+  <div className="mt-4 space-y-3">
+    <p className="text-sm leading-6 text-white/90">
+      Each one of us is different, and our needs change over time. Inspiration to change needs a realised catalyst.
+    </p>
 
-  <p className="mt-2 text-xs leading-5 text-white/85">
-    Because inspiration to change needs a realized catalyst.
-  </p>
+  </div>
+
+  <div className="mt-5 h-px w-12 bg-white/60" />
 </div>
 
     </section>
