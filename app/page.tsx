@@ -143,6 +143,7 @@ function TextLink({
    HERO
 ========================================================= */
 
+
 function Hero() {
   return (
     <section
@@ -158,46 +159,42 @@ function Hero() {
     >
       {/* Background Video */}
       <div aria-hidden="true" className="absolute inset-0">
-        <HeroVideo
-          src="/videos/hero-video.mp4"
+        <HeroVideo src="/videos/hero-video.mp4" />
+
+        {/* Light overall overlay */}
+        <div className="absolute inset-0 bg-[#101C19]/20" />
+
+        {/* Text readability gradient */}
+        <div
+          className="
+            absolute inset-0
+            bg-gradient-to-r
+            from-[#101C19]/35
+            via-[#101C19]/15
+            to-transparent
+          "
         />
 
- 
-{/* Very light overall overlay */}
-<div className="absolute inset-0 bg-[#101C19]/20" />
-
-{/* Subtle left-to-right gradient for text readability */}
-<div
-  className="
-    absolute inset-0
-    bg-gradient-to-r
-    from-[#101C19]/35
-    via-[#101C19]/15
-    to-transparent
-  "
-/>
-
-{/* Minimal bottom contrast */}
-<div
-  className="
-    absolute inset-0
-    bg-gradient-to-t
-    from-[#101C19]/10
-    via-transparent
-    to-transparent
-  "
-/>
-
+        {/* Subtle bottom contrast */}
+        <div
+          className="
+            absolute inset-0
+            bg-gradient-to-t
+            from-[#101C19]/15
+            via-transparent
+            to-transparent
+          "
+        />
       </div>
 
-      {/* Hero Content */}
+      {/* Main Hero Content */}
       <div
         className="
           relative z-10
           mx-auto flex
           min-h-[580px]
           w-full max-w-7xl
-          items-center
+          flex-col justify-center
           px-5 py-16
           sm:min-h-[640px]
           sm:px-8 sm:py-20
@@ -205,30 +202,38 @@ function Hero() {
           lg:px-12 lg:py-24
         "
       >
-        <div className="max-w-4xl">
-
-          <span className="block font-sans text-sm font-semibold uppercase leading-normal tracking-[0.17em] text-white">
+        {/* Primary Content */}
+        <div className="max-w-4xl lg:max-w-[min(100%,760px)]">
+          <span
+            className="
+              block font-sans
+              text-xs font-semibold uppercase
+              leading-relaxed tracking-[0.15em]
+              text-white
+              sm:text-sm sm:tracking-[0.17em]
+            "
+          >
             Take charge of your health, with the right guidance
-            </span>
+          </span>
 
-            <h1
-              id="home-title"
-              className="
-                mt-4
-                max-w-[900px]
-                font-serif font-medium
-                text-[42px]
-                leading-[1.06]
-                tracking-[-0.04em]
-                text-white
-                [text-shadow:0_2px_18px_rgba(0,0,0,0.18)]
-                sm:text-6xl
-                lg:text-[76px]
-                lg:leading-[1.02]
-              "
-            >
-              Your lifestyle shapes your health.
-            </h1>
+          <h1
+            id="home-title"
+            className="
+              mt-4
+              max-w-[900px]
+              font-serif font-medium
+              text-[40px]
+              leading-[1.08]
+              tracking-[-0.04em]
+              text-white
+              [text-shadow:0_2px_18px_rgba(0,0,0,0.18)]
+              sm:text-6xl
+              lg:text-[76px]
+              lg:leading-[1.02]
+            "
+          >
+            Your lifestyle shapes your health.
+          </h1>
 
           {/* Introduction */}
           <p
@@ -250,7 +255,7 @@ function Hero() {
             to take informed steps towards better health.
           </p>
 
-          {/* Buttons */}
+          {/* CTA Buttons */}
           <div
             className="
               mt-8
@@ -309,7 +314,14 @@ function Hero() {
           </div>
 
           {/* Doctor Credential */}
-          <p className="mt-7 text-sm font-medium leading-6 text-white [text-shadow:0_1px_10px_rgba(0,0,0,0.4)]">
+          <p
+            className="
+              mt-7
+              text-sm font-medium leading-6
+              text-white
+              [text-shadow:0_1px_10px_rgba(0,0,0,0.4)]
+            "
+          >
             Led by{" "}
             <Link
               href="https://academic.lifequality.org.in/"
@@ -321,53 +333,98 @@ function Hero() {
                 underline-offset-4
                 transition-colors
                 hover:decoration-white
+                focus-visible:outline
+                focus-visible:outline-2
+                focus-visible:outline-offset-4
               "
-              
             >
               Dr. Rakesh Sarwal
             </Link>{" "}
             · MBBS, MPH, DrPH (Johns Hopkins)
           </p>
+        </div>
 
+        {/* Lifestyle Coach Hook — Mobile & Tablet */}
+        <div
+          className="
+            mt-12
+            border-l-2 border-white/60
+            bg-[#101C19]/25
+            px-5 py-5
+            backdrop-blur-sm
+            lg:hidden
+          "
+        >
+          <span
+            className="
+              text-[10px] font-semibold uppercase
+              tracking-[0.18em] text-white/75
+            "
+          >
+            Personalised guidance
+          </span>
+
+          <h2
+            className="
+              mt-2 font-serif
+              text-xl
+              tracking-[-0.02em] text-white
+              sm:text-2xl
+            "
+          >
+            Why do I need a lifestyle coach?
+          </h2>
+
+          <div className="mt-3 space-y-2">
+            <p className="text-sm leading-6 text-white/90">
+              Because each one of us is different, and our needs change over time. Because inspiration to change needs a realized catalyst.
+            </p>
+
+          
+          </div>
         </div>
       </div>
-    
-{/* Lifestyle Coaching Editorial Note */}
-<div className="
-  absolute bottom-8 right-8 z-20
-  hidden lg:block
-  w-[350px]
-  px-6 py-5
-  backdrop-blur-sm
-">
-  <span className="
-    text-[10px] font-semibold uppercase
-    tracking-[0.18em] text-white/75
-  ">
-    Personalised guidance
-  </span>
 
-  <h2 className="
-    mt-3 font-serif text-[25px]
-    leading-tight tracking-[-0.025em]
-    text-white
-  ">
-    Why do I need a lifestyle coach?
-  </h2>
+      {/* Lifestyle Coach Hook — Desktop Corner */}
+      <aside
+        aria-label="Why lifestyle coaching matters"
+        className="
+          absolute bottom-9 right-8 z-20
+          hidden w-[420px]
+          bg-[#101C19]/10
+          px-6 py-6
+          backdrop-blur-sm
+          transition-colors duration-300
+          xl:block
+          2xl:right-[max(3rem,calc((100vw-80rem)/2rem))]
+        "
+      >
+        <span
+          className="
+            text-[10px] font-semibold uppercase
+            tracking-[0.18em] text-white/75
+          "
+        >
+          Personalised guidance
+        </span>
 
-  <div className="mt-4 space-y-3">
-    <p className="text-sm leading-6 text-white/90">
-      Each one of us is different, and our needs change over time. Inspiration to change needs a realised catalyst.
-    </p>
+        <h2 className="mt-2 font-serif text-2xl leading-tight tracking-[-0.02em] text-white">
+          Why do I need a lifestyle coach?
+        </h2>
 
-  </div>
+        <div className="mt-3 space-y-2">
+          <p className="text-sm leading-6 text-white/90">
+            Because each one of us is different, and our needs change over time. Because inspiration to change needs a realized catalyst.
+          </p>
 
-  <div className="mt-5 h-px w-12 bg-white/60" />
-</div>
+        </div>
 
+        <div className="mt-4 h-px w-10 bg-white/60" />
+      </aside>
     </section>
   );
 }
+
 
 /* =========================================================
    EVERYDAY HEALTH
