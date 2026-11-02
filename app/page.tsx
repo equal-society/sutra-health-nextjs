@@ -331,6 +331,30 @@ function Hero() {
 
         </div>
       </div>
+    
+{/* Small lifestyle coaching hook */}
+<div className="
+  absolute bottom-7 right-6 z-20
+  hidden w-full max-w-[300px]
+  border-l-2 border-white/60
+  bg-[#101C19]/25
+  px-5 py-3
+  backdrop-blur-sm
+  lg:block
+">
+  <p className="text-sm font-semibold leading-6 text-white">
+    Why do I need a lifestyle coach?
+  </p>
+
+  <p className="mt-2 text-xs leading-5 text-white/85">
+    Because each one of us is different, and our needs change over time.
+  </p>
+
+  <p className="mt-2 text-xs leading-5 text-white/85">
+    Because inspiration to change needs a realized catalyst.
+  </p>
+</div>
+
     </section>
   );
 }
