@@ -348,8 +348,7 @@ function Hero() {
         <div
           className="
             mt-12
-            border-l-2 border-white/60
-            bg-[#101C19]/25
+            bg-[#101C19]/10
             px-5 py-5
             backdrop-blur-sm
             lg:hidden
