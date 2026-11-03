@@ -344,82 +344,10 @@ function Hero() {
           </p>
         </div>
 
-        {/* Lifestyle Coach Hook — Mobile & Tablet */}
-        <div
-          className="
-            mt-12
-            bg-[#101C19]/10
-            px-5 py-5
-            backdrop-blur-sm
-            lg:hidden
-          "
-        >
-          <span
-            className="
-              text-[10px] font-semibold uppercase
-              tracking-[0.18em] text-white/75
-            "
-          >
-            Personalised guidance
-          </span>
-
-          <h2
-            className="
-              mt-2 font-serif
-              text-xl
-              tracking-[-0.02em] text-white
-              sm:text-2xl
-            "
-          >
-            Why do I need a lifestyle coach?
-          </h2>
-
-          <div className="mt-3 space-y-2">
-            <p className="text-sm leading-6 text-white/90">
-              Because each one of us is different, and our needs change over time. Because inspiration to change needs a realized catalyst.
-            </p>
-
-          
-          </div>
-        </div>
+       
       </div>
 
-      {/* Lifestyle Coach Hook — Desktop Corner */}
-      <aside
-        aria-label="Why lifestyle coaching matters"
-        className="
-          absolute bottom-9 right-8 z-20
-          hidden w-[420px]
-          bg-[#101C19]/10
-          px-6 py-6
-          backdrop-blur-sm
-          transition-colors duration-300
-          xl:block
-          2xl:right-[max(3rem,calc((100vw-80rem)/2rem))]
-        "
-      >
-        <span
-          className="
-            text-[10px] font-semibold uppercase
-            tracking-[0.18em] text-white/75
-          "
-        >
-          Personalised guidance
-        </span>
-
-        <h2 className="mt-2 font-serif text-2xl leading-tight tracking-[-0.02em] text-white">
-          Why do I need a lifestyle coach?
-        </h2>
-
-        <div className="mt-3 space-y-2">
-          <p className="text-sm leading-6 text-white/90">
-            Because each one of us is different, and our needs change over time. Because inspiration to change needs a realized catalyst.
-          </p>
-
-        </div>
-
-        <div className="mt-4 h-px w-10 bg-white/60" />
-      </aside>
+    
     </section>
   );
 }
@@ -730,27 +658,70 @@ function PatientStoriesAndFAQs() {
               </div>
             </div>
 
-            {/* FAQs */}
-            <div
-              className="flex min-h-[280px] flex-col justify-between border border-[#E5E1D7] bg-[#F1EEE5] p-6 sm:p-8 lg:p-9"
-            >
-              <div>
-                <Eyebrow>Need a little clarity?</Eyebrow>
+            
 
-                <h2
-                  id="home-faq-title"
-                  className="mt-4 max-w-[520px] font-serif text-[36px] leading-[1.08] tracking-[-0.035em] text-[#202522] sm:text-[44px] lg:text-[48px]"
-                >
-                  Have questions before getting started?
-                </h2>
-              </div>
+{/* FAQs */}
+<div
+  className="
+    flex min-h-[320px] flex-col justify-between
+    border border-[#E5E1D7]
+    bg-[#F1EEE5]
+    p-6 sm:p-8 lg:p-9
+  "
+>
+  <div>
+    <Eyebrow>Need a little clarity?</Eyebrow>
 
-              <div className="mt-8 border-t border-[#202522]/15 pt-5">
-                <TextLink href="/faqs">
-                  Explore All FAQs
-                </TextLink>
-              </div>
-            </div>
+    <h2
+      id="home-faq-title"
+      className="
+        mt-4 max-w-[480px]
+        font-serif text-3xl
+        leading-[1.12] tracking-[-0.035em]
+        text-[#202522]
+        sm:text-[38px]
+        lg:text-[42px]
+      "
+    >
+      Have questions before getting started?
+    </h2>
+
+    {/* Lifestyle Coach FAQ */}
+    <div className="mt-7 border-t border-[#202522]/15 pt-5">
+      <h3
+        className="
+          max-w-[480px]
+          font-serif text-xl
+          leading-snug tracking-[-0.02em]
+          text-[#202522]
+          sm:text-2xl
+        "
+      >
+        Why do I need a lifestyle coach?
+      </h3>
+
+      <p
+        className="
+          mt-3 max-w-[520px]
+          text-sm leading-7
+          text-[#65736D]
+          sm:text-[15px] sm:leading-[1.8]
+        "
+      >
+        Because each one of us is different, and our needs change over time.
+        Because inspiration to change needs a realized catalyst.
+      </p>
+    </div>
+  </div>
+
+  <div className="mt-8 border-t border-[#202522]/15 pt-5">
+    <TextLink href="/faqs">
+      Explore All FAQs
+    </TextLink>
+  </div>
+</div>
+
+
 
           </div>
         </div>
