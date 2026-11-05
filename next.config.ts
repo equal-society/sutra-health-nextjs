@@ -1,3 +1,4 @@
+
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -18,8 +19,18 @@ const nextConfig: NextConfig = {
 
       // Organization and information
       {
+        source: "/equal-society",
+        destination: "/about",
+        permanent: true,
+      },
+      {
         source: "/equal-society.html",
         destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/Contact",
+        destination: "/contact",
         permanent: true,
       },
       {
@@ -28,8 +39,18 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/volunteer",
+        destination: "/volunteer",
+        permanent: true,
+      },
+      {
         source: "/volunteer.html",
         destination: "/volunteer",
+        permanent: true,
+      },
+      {
+        source: "/retreat",
+        destination: "/retreat-programs",
         permanent: true,
       },
       {
@@ -40,7 +61,17 @@ const nextConfig: NextConfig = {
 
       // Physician consultation
       {
+        source: "/programs/IntegrativeMedicine",
+        destination: "/services/physician-consultation",
+        permanent: true,
+      },
+      {
         source: "/programs/IntegrativeMedicine.html",
+        destination: "/services/physician-consultation",
+        permanent: true,
+      },
+      {
+        source: "/consultation",
         destination: "/services/physician-consultation",
         permanent: true,
       },
@@ -52,12 +83,22 @@ const nextConfig: NextConfig = {
 
       // Nutrition
       {
+        source: "/programs/dietary-advice",
+        destination: "/services/nutrition",
+        permanent: true,
+      },
+      {
         source: "/programs/dietary-advice.html",
         destination: "/services/nutrition",
         permanent: true,
       },
 
       // Shirodhara
+      {
+        source: "/programs/shirodhara",
+        destination: "/services/shirodhara",
+        permanent: true,
+      },
       {
         source: "/programs/shirodhara.html",
         destination: "/services/shirodhara",
@@ -66,6 +107,11 @@ const nextConfig: NextConfig = {
 
       // My Buddy
       {
+        source: "/programs/my-buddy",
+        destination: "/services/my-buddy",
+        permanent: true,
+      },
+      {
         source: "/programs/my-buddy.html",
         destination: "/services/my-buddy",
         permanent: true,
@@ -73,8 +119,18 @@ const nextConfig: NextConfig = {
 
       // Therapeutic yoga
       {
+        source: "/Yoga/yoga-asana",
+        destination: "/services/therapeutic-yoga/yoga-asana-protocol",
+        permanent: true,
+      },
+      {
         source: "/Yoga/yoga-asana.html",
         destination: "/services/therapeutic-yoga/yoga-asana-protocol",
+        permanent: true,
+      },
+      {
+        source: "/Yoga/pranayama",
+        destination: "/services/therapeutic-yoga/pranayama",
         permanent: true,
       },
       {
@@ -83,8 +139,18 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/Yoga/meditation",
+        destination: "/services/therapeutic-yoga/meditation",
+        permanent: true,
+      },
+      {
         source: "/Yoga/meditation.html",
         destination: "/services/therapeutic-yoga/meditation",
+        permanent: true,
+      },
+      {
+        source: "/chakrasana-test",
+        destination: "/services/therapeutic-yoga/yoga-asana-protocol",
         permanent: true,
       },
       {
@@ -95,8 +161,18 @@ const nextConfig: NextConfig = {
 
       // Lifestyle
       {
+        source: "/lifestyle",
+        destination: "/services/lifestyle",
+        permanent: true,
+      },
+      {
         source: "/lifestyle.html",
         destination: "/services/lifestyle",
+        permanent: true,
+      },
+      {
+        source: "/LifeStyle/LifeStyleCounseling",
+        destination: "/services/lifestyle/healthy-lifestyle-coaching",
         permanent: true,
       },
       {
@@ -105,8 +181,18 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/LifeStyle/research",
+        destination: "/resources/research",
+        permanent: true,
+      },
+      {
         source: "/LifeStyle/research.html",
         destination: "/resources/research",
+        permanent: true,
+      },
+      {
+        source: "/LifeStyle/nature-walks",
+        destination: "/services/behaviour-stress-mind/nature-walks",
         permanent: true,
       },
       {
@@ -115,8 +201,18 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/LifeStyle/positive-thinking",
+        destination: "/services/behaviour-stress-mind/positive-thinking",
+        permanent: true,
+      },
+      {
         source: "/LifeStyle/positive-thinking.html",
         destination: "/services/behaviour-stress-mind/positive-thinking",
+        permanent: true,
+      },
+      {
+        source: "/LifeStyle/soft-sun-rays",
+        destination: "/services/behaviour-stress-mind/soft-sun-rays",
         permanent: true,
       },
       {
@@ -127,12 +223,22 @@ const nextConfig: NextConfig = {
 
       // Gallery and archive
       {
+        source: "/Gallery",
+        destination: "/archive",
+        permanent: true,
+      },
+      {
         source: "/Gallery.html",
         destination: "/archive",
         permanent: true,
       },
 
       // Assessment
+      {
+        source: "/score",
+        destination: "/assessment",
+        permanent: true,
+      },
       {
         source: "/score.html",
         destination: "/assessment",
