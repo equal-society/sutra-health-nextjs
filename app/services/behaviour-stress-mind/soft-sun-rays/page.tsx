@@ -254,6 +254,7 @@ export default function Page() {
     // poster="/images/hero.webp"
     className="absolute inset-0 h-full w-full object-cover"
   >
+    <source src="/videos/soft-sun.webm" type="video/webm" />
     <source src="/videos/soft-sun.mp4" type="video/mp4" />
   </video>
 

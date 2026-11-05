@@ -10,7 +10,7 @@ const bookingUrl =
   "https://bookretreats.com/r/6-day-rejuvenation-in-nature-moments-from-civilization-in-india";
 
 const whatsappUrl =
-  "https://wa.me/919013103676?text=Hi%20Sutra%20Health%2C%20I%20want%20to%20know%20more%20about%20your%20wellness%20retreat%20in%20Delhi NCR, India.";
+  "https://wa.me/919013103676?text=Hi%20Sutra%20Health%2C%20I%20want%20to%20know%20more%20about%20your%20wellness%20retreat%20in%20Delhi%20NCR%2C%20India.";
 
 export const metadata: Metadata = {
   title: {

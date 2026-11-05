@@ -15,7 +15,7 @@ export const conditionSeo: Record<string, SeoEntry> = {
       "Doctor-led weight management in Delhi NCR, India: eating patterns, activity, sleep and stress, built around habits you can sustain. Book a consultation.",
   },
   "diabetes-blood-sugar": {
-    title: "Diabetes & Blood Sugar Care in Delhi NCR, India" + B,
+    title: "Diabetes & Blood Sugar Care in Delhi NCR" + B,
     description:
       "Lifestyle support for diabetes and blood sugar in Delhi NCR, India: nutrition, activity and yoga, used alongside your medical treatment. Book a consultation.",
   },
@@ -25,24 +25,24 @@ export const conditionSeo: Record<string, SeoEntry> = {
       "Lifestyle support for high blood pressure in Delhi NCR, India: diet, activity, sleep, stress and yoga, alongside your medical treatment. Book a consultation.",
   },
   "arthritis-joint-pain": {
-    title: "Arthritis & Joint Pain Care in Delhi NCR, India" + B,
+    title: "Arthritis & Joint Pain Care in Delhi NCR" + B,
     description:
       "Lifestyle support for arthritis and joint pain in Delhi NCR, India: movement, strength and yoga, after a proper diagnosis. Book a consultation.",
   },
   "migraine-headache": {
-    title: "Migraine & Headache Care in Delhi NCR, India" + B,
+    title: "Migraine & Headache Care in Delhi NCR" + B,
     description:
       "Lifestyle support for migraine in Delhi NCR, India: sleep, regular meals, hydration, stress and gentle yoga, alongside treatment. Book a consultation.",
   },
   "digestive-gut-health": {
-    title: "Digestive & Gut Health Care in Delhi NCR, India" + B,
+    title: "Digestive & Gut Health Care in Delhi NCR" + B,
     description:
       "Lifestyle support for digestive and gut health in Delhi NCR, India: eating patterns, routine, stress and yoga. Book a consultation.",
   },
   "womens-health": {
-    title: "PCOS & Menopause Support in Delhi NCR, India" + B,
+    title: "PCOS & Menopause Support in Delhi NCR" + B,
     description:
-      "Lifestyle support for PCOS and menopause symptoms in Delhi NCR, India, alongside medical care. Other women's health needs are not covered here. Book a consultation.",
+      "Lifestyle support for PCOS and menopause symptoms in Delhi NCR, India, alongside medical care. Other women's health needs are not covered. Book a consultation.",
   },
 };
 

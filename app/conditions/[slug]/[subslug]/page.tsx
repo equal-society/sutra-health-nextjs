@@ -125,6 +125,7 @@ export default async function ConditionSubpage({ params }: PageProps) {
     },
     publisher: {
       "@type": "Organization",
+      "@id": "https://lifequality.org.in/#organization",
       name: "Sutra Health",
       url: "https://lifequality.org.in/",
     },

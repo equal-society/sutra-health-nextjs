@@ -230,6 +230,7 @@ const schema = {
       areaServed: { "@type": "City", name: "Delhi NCR, India" },
       provider: {
         "@type": "Organization",
+        "@id": `${SITE_URL}/#organization`,
         name: "Sutra Health",
         url: `${SITE_URL}/`,
       },

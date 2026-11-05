@@ -7,13 +7,13 @@ const PAGE_URL = `${SITE_URL}/services/lifestyle/healthy-lifestyle-coaching`;
 const BOOKING_URL = "/book-appointment";
 
 export const metadata: Metadata = {
-  title: { absolute: "Healthy Lifestyle Coaching in Delhi NCR, India | Sutra Health" },
+  title: { absolute: "Healthy Lifestyle Coaching in Delhi NCR | Sutra Health" },
   description:
     "Lifestyle coaching at Sutra Health: set realistic health goals and build routines around food, movement, Yoga, breathing and meditation, with regular review.",
   alternates: { canonical: PAGE_URL },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "Healthy Lifestyle Coaching in Delhi NCR, India | Sutra Health",
+    title: "Healthy Lifestyle Coaching in Delhi NCR | Sutra Health",
     description: "Practical, ongoing support to build healthier daily routines.",
     url: PAGE_URL,
     siteName: "Sutra Health",
@@ -60,7 +60,7 @@ const schema = {
       "@type": "WebPage",
       "@id": `${PAGE_URL}#webpage`,
       url: PAGE_URL,
-      name: "Healthy Lifestyle Coaching in Delhi NCR, India | Sutra Health",
+      name: "Healthy Lifestyle Coaching in Delhi NCR | Sutra Health",
       description: String(metadata.description),
       inLanguage: "en-IN",
       isPartOf: { "@type": "WebSite", name: "Sutra Health", url: `${SITE_URL}/` },
@@ -70,7 +70,7 @@ const schema = {
       name: "Healthy Lifestyle Coaching",
       url: PAGE_URL,
       areaServed: { "@type": "City", name: "Delhi NCR, India" },
-      provider: { "@type": "Organization", name: "Sutra Health", url: `${SITE_URL}/` },
+      provider: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: "Sutra Health", url: `${SITE_URL}/` },
     },
     {
       "@type": "BreadcrumbList",

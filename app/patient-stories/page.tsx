@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Container from "@/components/shared/Container";
+import { ORGANIZATION_ID } from "@/lib/schema";
 import { ArrowUpRight } from "lucide-react";
 
 
@@ -59,8 +60,23 @@ const stories = [
   },
 ];
 
+const storiesSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/patient-stories#webpage`,
+  url: `${SITE_URL}/patient-stories`,
+  name: "Patient Experiences",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  about: { "@id": ORGANIZATION_ID },
+};
+
 export default function PatientStoriesPage() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(storiesSchema) }}
+      />
     <main className="bg-white">
       <section aria-labelledby="stories-title">
         <Container>
@@ -114,5 +130,6 @@ export default function PatientStoriesPage() {
         </Container>
       </section>
     </main>
+    </>
   );
 }

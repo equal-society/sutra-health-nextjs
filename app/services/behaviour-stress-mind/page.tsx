@@ -4,7 +4,7 @@ import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/behaviour-stress-mind`;
-const TITLE = "Stress & Behaviour Support in Delhi NCR, India | Sutra Health";
+const TITLE = "Stress & Behaviour Support in Delhi NCR | Sutra Health";
 const DESCRIPTION = "Practical support for stress, behaviour change and daily habits, plus self-help guides on positive thinking, nature walks and morning sunlight.";
 
 export const metadata: Metadata = {
@@ -211,7 +211,7 @@ const schema = {
       name: "Behaviour, Stress & Mind",
       url: PAGE_URL,
       areaServed: { "@type": "City", name: "Delhi NCR, India" },
-      provider: { "@type": "Organization", name: "Sutra Health", url: `${SITE_URL}/` },
+      provider: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: "Sutra Health", url: `${SITE_URL}/` },
     },
     {
       "@type": "BreadcrumbList",

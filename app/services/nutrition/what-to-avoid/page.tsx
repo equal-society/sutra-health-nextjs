@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/shared/Container";
+import Image from "next/image";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/nutrition/what-to-avoid`;
@@ -34,18 +35,15 @@ export default function WhattoLimitPage() {
      
 
                 <section className="relative overflow-hidden border-b border-[var(--sutra-border)] bg-[#18332F] text-white">
-  <video
+  <Image
+    src="/images/services/diet.webp"
+    alt=""
     aria-hidden="true"
-    autoPlay
-    muted
-    loop
-    playsInline
-    preload="metadata"
-    poster="/images/services/diet.webp"
+    fill
+    priority
+    sizes="100vw"
     className="absolute inset-0 h-full w-full object-cover"
-  >
-    <source src="/videos/services/hero.mp4" type="video/mp4" />
-  </video>
+  />
 
   <div
     aria-hidden="true"
@@ -87,7 +85,7 @@ export default function WhattoLimitPage() {
           <div className="grid gap-5 lg:grid-cols-[0.72fr_1.28fr] lg:gap-14">
             <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--sutra-teal)] sm:text-xs">Nutrition guidance</p><h2 className="mt-3 font-serif text-3xl leading-tight tracking-[-0.03em] sm:text-4xl">Foods the old guide advised limiting</h2></div>
             <div className="max-w-3xl space-y-4 text-base leading-8 text-[var(--sutra-muted)] sm:text-lg">
-              <p>The source page listed refined white sugar, excess salt, deep-fried foods such as samosa and pakoda, ultra-processed snacks such as chips and packaged junk foods, commercial bread, and highly sweetened tea. These are the examples retained from the old Life Quality page.</p>
+              <p>The source page listed refined white sugar, excess salt, deep-fried foods such as samosa and pakoda, ultra-processed snacks such as chips and packaged junk foods, commercial bread, and highly sweetened tea. These are the examples retained from the previous version of this page.</p>
               <p>This list is a starting point for reviewing how often these foods appear in your routine—not a claim that every listed food must be completely avoided by every person.</p>
             </div>
           </div>

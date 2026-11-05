@@ -4,7 +4,7 @@ import Container from "@/components/shared/Container";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/my-buddy`;
-const TITLE = "My Buddy Peer Support Programme in Delhi NCR, India | Sutra Health";
+const TITLE = "My Buddy Peer Support Programme in Delhi NCR | Sutra Health";
 const DESCRIPTION = "My Buddy is a peer-support programme by EQUAL Society. Become a buddy or find one for encouragement, healthy routines and wellbeing.";
 
 export const metadata: Metadata = {
@@ -169,7 +169,7 @@ const schema = {
       name: "My Buddy",
       url: PAGE_URL,
       areaServed: { "@type": "City", name: "Delhi NCR, India" },
-      provider: { "@type": "Organization", name: "Sutra Health", url: `${SITE_URL}/` },
+      provider: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: "Sutra Health", url: `${SITE_URL}/` },
     },
     {
       "@type": "BreadcrumbList",

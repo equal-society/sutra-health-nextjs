@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/shared/Container";
+import Image from "next/image";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/shirodhara`;
-const TITLE = "Shirodhara & Abhyanga Massage in Delhi NCR, India | Sutra Health";
+const TITLE = "Shirodhara & Abhyanga Massage in Delhi NCR | Sutra Health";
 const DESCRIPTION = "Shirodhara (warm liquid poured over the forehead) and Abhyanga oil massage, offered as relaxing wellness therapies. Learn what each involves.";
 
 export const metadata: Metadata = {
@@ -92,11 +93,11 @@ const page: PageData = {
   },
   "gallery": {
     "eyebrow": "In practice",
-    "title": "Therapy sessions at Life Quality.",
+    "title": "Therapy sessions at Sutra Health.",
     "images": [
       {
         "src": "/images/services/shirodhara/shirodhara-therapy.webp",
-        "alt": "Shirodhara therapy session in progress at Life Quality",
+        "alt": "Shirodhara therapy session in progress at Sutra Health",
         "caption": "A Shirodhara session."
       },
       {
@@ -199,7 +200,7 @@ const schema = {
       name: "Shirodhara & Abhyanga",
       url: PAGE_URL,
       areaServed: { "@type": "City", name: "Delhi NCR, India" },
-      provider: { "@type": "Organization", name: "Sutra Health", url: `${SITE_URL}/` },
+      provider: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: "Sutra Health", url: `${SITE_URL}/` },
     },
     {
       "@type": "BreadcrumbList",
@@ -234,18 +235,15 @@ export default function Page() {
 
       {/* Hero: same layout as the Lifestyle Medicine main page */}
       <section aria-labelledby="page-title" className="relative isolate flex min-h-[500px] items-end overflow-hidden bg-[#173B36] sm:min-h-[560px] lg:min-h-[620px]">
-        <video
+        <Image
+          src={page.heroImage}
+          alt=""
           aria-hidden="true"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster={page.heroImage}
+          fill
+          priority
+          sizes="100vw"
           className="absolute inset-0 h-full w-full object-cover"
-        >
-          <source src="/videos/services/hero.mp4" type="video/mp4" />
-        </video>
+        />
         <div aria-hidden="true" className="absolute inset-0 bg-[#101C19]/65" />
         <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#101C19]/80 via-[#101C19]/45 to-[#101C19]/10" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-12 pt-28 sm:px-6 sm:pb-16 md:px-8 lg:px-12">

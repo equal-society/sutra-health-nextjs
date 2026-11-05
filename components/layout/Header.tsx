@@ -372,10 +372,13 @@ export default function Header() {
     };
   }, []);
 
-  useEffect(() => {
+  // Close menus when the route changes (state adjusted during render).
+  const [lastPathname, setLastPathname] = useState(pathname);
+  if (lastPathname !== pathname) {
+    setLastPathname(pathname);
     setOpenDropdown(null);
     setMobileOpen(false);
-  }, [pathname]);
+  }
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";

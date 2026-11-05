@@ -221,6 +221,7 @@ export default async function ConditionPage({
     },
     publisher: {
       "@type": "Organization",
+      "@id": "https://lifequality.org.in/#organization",
       name: "Sutra Health",
       url: "https://lifequality.org.in/",
     },

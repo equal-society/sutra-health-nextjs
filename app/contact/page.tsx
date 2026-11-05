@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import Container from "@/components/shared/Container";
 import ContactForm from "@/components/contact/ContactForm";
+import { ORGANIZATION_ID, SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: { absolute: "Contact Us in Delhi NCR, India | Sutra Health" },
@@ -67,9 +68,23 @@ const socialLinks = [
   ["Pinterest", "https://in.pinterest.com/equal_society/"],
 ];
 
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "@id": `${SITE_URL}/contact#webpage`,
+  url: `${SITE_URL}/contact`,
+  name: "Contact Sutra Health",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  about: { "@id": ORGANIZATION_ID },
+};
+
 export default function ContactPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      />
       <main className="bg-[var(--sutra-porcelain)] text-[var(--sutra-ink)]">
         {/* =====================================================
             HERO

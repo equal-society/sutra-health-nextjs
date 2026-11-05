@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/shared/Container";
+import Image from "next/image";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/my-buddy/wellbeing-lessons`;
@@ -233,18 +234,15 @@ export default function Page() {
 
       {/* Hero: same layout as the Lifestyle Medicine sub-pages */}
             <section className="relative overflow-hidden border-b border-[var(--sutra-border)] bg-[#18332F] text-white">
-  <video
+  <Image
+    src="/images/services/my-buddy.webp"
+    alt=""
     aria-hidden="true"
-    autoPlay
-    muted
-    loop
-    playsInline
-    preload="metadata"
-    poster="/images/services/my-buddy.webp"
+    fill
+    priority
+    sizes="100vw"
     className="absolute inset-0 h-full w-full object-cover"
-  >
-    <source src="/videos/services/hero.mp4" type="video/mp4" />
-  </video>
+  />
 
   <div
     aria-hidden="true"

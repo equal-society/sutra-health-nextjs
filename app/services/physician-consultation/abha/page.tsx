@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/shared/Container";
+import Image from "next/image";
 
 const SITE_URL = "https://lifequality.org.in";
 const PAGE_URL = `${SITE_URL}/services/physician-consultation/abha`;
@@ -48,18 +49,15 @@ export default function AbhaPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
             <section className="relative overflow-hidden border-b border-[var(--sutra-border)] bg-[#18332F] text-white">
-  <video
+  <Image
+    src="/images/abha.webp"
+    alt=""
     aria-hidden="true"
-    autoPlay
-    muted
-    loop
-    playsInline
-    preload="metadata"
-    poster="/images/abha.webp"
+    fill
+    priority
+    sizes="100vw"
     className="absolute inset-0 h-full w-full object-cover"
-  >
-    <source src="/videos/services/hero.mp4" type="video/mp4" />
-  </video>
+  />
 
   <div
     aria-hidden="true"
@@ -75,7 +73,7 @@ export default function AbhaPage() {
         What is an ABHA account?
       </h1>
       <p className="mt-6 max-w-3xl text-lg leading-8 text-white/85 sm:text-xl sm:leading-9">
-        An Ayushman Bharat Health Account (ABHA) is a digital health ID used in India's participating digital health services. It is not a consultation, a diagnosis or health insurance.
+        An Ayushman Bharat Health Account (ABHA) is a digital health ID used in India&apos;s participating digital health services. It is not a consultation, a diagnosis or health insurance.
       </p>
       <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
         <Link

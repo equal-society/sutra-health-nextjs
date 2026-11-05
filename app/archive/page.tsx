@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import styles from "./archive.module.css";
+import { ORGANIZATION_ID, SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Archive | Health & Publication Resources",
@@ -99,8 +100,23 @@ function archiveThumbUrl(identifier: string) {
   return `https://archive.org/services/img/${encodeURIComponent(identifier)}`;
 }
 
+const archiveSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": `${SITE_URL}/archive#webpage`,
+  url: `${SITE_URL}/archive`,
+  name: "Sutra Health Archive",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  about: { "@id": ORGANIZATION_ID },
+};
+
 export default function ArchivePage() {
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(archiveSchema) }}
+      />
     <main className={styles.page}>
       {/* Hero */}
       <section className={styles.hero} aria-labelledby="archive-title">
@@ -247,5 +263,6 @@ export default function ArchivePage() {
         </div>
       </section>
     </main>
+    </>
   );
 }

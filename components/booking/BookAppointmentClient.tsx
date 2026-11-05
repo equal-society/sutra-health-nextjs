@@ -49,6 +49,8 @@ export default function BookAppointmentPage() {
   // Load slots whenever date changes
   useEffect(() => {
     if (!form.date) {
+      // Clearing slots when the date is removed; intentional state reset.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSlots([]);
       return;
     }
@@ -613,7 +615,7 @@ export default function BookAppointmentPage() {
                             <p className="mt-1 text-xs leading-5 text-[#536A62]">
                               Your appointment has been successfully
                               booked. Confirmation details have been sent
-                              to your email. If you don't see the email in
+                              to your email. If you don&apos;t see the email in
                               your inbox, please check your Spam or Junk
                               folder.
                             </p>

@@ -2,12 +2,18 @@
 
 import { memo, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { createClient } from "@supabase/supabase-js";
+import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
-);
+// Created on first use so a missing environment variable cannot break `next build`.
+let supabaseClient: SupabaseClient | null = null;
+
+function getSupabase() {
+  supabaseClient ??= createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
+  );
+  return supabaseClient;
+}
 
 type Appointment = {
   id: string;
@@ -136,7 +142,7 @@ export default function DoctorDashboard() {
     try {
       const {
         data: { session },
-      } = await supabase.auth.getSession();
+      } = await getSupabase().auth.getSession();
 
       if (!session?.access_token) {
         router.replace("/doctor-login");
@@ -152,7 +158,7 @@ export default function DoctorDashboard() {
       });
 
       if (response.status === 401 || response.status === 403) {
-        await supabase.auth.signOut();
+        await getSupabase().auth.signOut();
         router.replace("/doctor-login");
         return;
       }
@@ -177,6 +183,8 @@ export default function DoctorDashboard() {
   }
 
   useEffect(() => {
+    // Fetch-on-mount: loadAppointments sets state after an async request.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     loadAppointments();
   }, []);
 
@@ -185,7 +193,7 @@ export default function DoctorDashboard() {
   // --------------------------------------------------
 
   async function handleLogout() {
-    await supabase.auth.signOut();
+    await getSupabase().auth.signOut();
 
     router.replace("/doctor-login");
     router.refresh();
@@ -198,7 +206,7 @@ export default function DoctorDashboard() {
   async function getAccessToken() {
     const {
       data: { session },
-    } = await supabase.auth.getSession();
+    } = await getSupabase().auth.getSession();
 
     if (!session?.access_token) {
       router.replace("/doctor-login");
@@ -367,6 +375,8 @@ export default function DoctorDashboard() {
         );
       }
 
+      // generateWeeklySlots is a hoisted function declaration, safe to call here.
+      // eslint-disable-next-line react-hooks/immutability
       const weeklySlots = generateWeeklySlots(
         availabilityData.weekly_schedule,
       );
@@ -410,6 +420,8 @@ export default function DoctorDashboard() {
       return;
     }
 
+    // Fetch-on-change: loadAvailability sets state after an async request.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     loadAvailability(availabilityDate);
   }, [availabilityDate]);
 
@@ -948,7 +960,7 @@ export default function DoctorDashboard() {
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           <div className="rounded-2xl border border-[#E5E8E1] bg-white p-6">
-            <p className="text-sm text-[#687A73]">Today's Appointments</p>
+            <p className="text-sm text-[#687A73]">Today&apos;s Appointments</p>
 
             <p className="mt-2 text-3xl font-bold text-[#173F35]">
               {todaysAppointments.length}

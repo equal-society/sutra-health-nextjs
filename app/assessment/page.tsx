@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ScoreQuestionnaire from "./ScoreQuestionnaire";
+import { ORGANIZATION_ID, SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "21-Point Lifestyle Assessment",
@@ -27,6 +28,24 @@ export const metadata: Metadata = {
   },
 };
 
+const assessmentSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/assessment#webpage`,
+  url: `${SITE_URL}/assessment`,
+  name: "21-Point Lifestyle Assessment",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  about: { "@id": ORGANIZATION_ID },
+};
+
 export default function ScorePage() {
-  return <ScoreQuestionnaire />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(assessmentSchema) }}
+      />
+      <ScoreQuestionnaire />
+    </>
+  );
 }

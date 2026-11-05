@@ -2,12 +2,18 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { createClient } from "@supabase/supabase-js";
+import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
-);
+// Created on first use so a missing environment variable cannot break `next build`.
+let supabaseClient: SupabaseClient | null = null;
+
+function getSupabase() {
+  supabaseClient ??= createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
+  );
+  return supabaseClient;
+}
 
 export default function DoctorLoginPage() {
   const router = useRouter();
@@ -28,7 +34,7 @@ export default function DoctorLoginPage() {
   const loginEmail = email.trim();
 
   const { error: loginError } =
-    await supabase.auth.signInWithPassword({
+    await getSupabase().auth.signInWithPassword({
       email: loginEmail,
       password,
     });

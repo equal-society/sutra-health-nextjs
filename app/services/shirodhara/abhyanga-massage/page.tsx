@@ -90,7 +90,7 @@ const page: PageData = {
       "image": {
         "src": "/images/services/shirodhara/abhyanga-oil-message.webp",
         "alt": "Abhyanga oil massage treatment",
-        "caption": "Abhyanga oil massage at Life Quality."
+        "caption": "Abhyanga oil massage at Sutra Health."
       },
       "bullets": [],
       "items": [],
@@ -220,18 +220,6 @@ export default function Page() {
 
       {/* Hero: same layout as the Lifestyle Medicine sub-pages */}
             <section className="relative overflow-hidden border-b border-[var(--sutra-border)] bg-[#18332F] text-white">
-  <video
-    aria-hidden="true"
-    autoPlay
-    muted
-    loop
-    playsInline
-    preload="metadata"
-    // poster="/images/services/shirodharaa.webp"
-    className="absolute inset-0 h-full w-full object-cover"
-  >
-    <source src="/videos/services/hero.mp4" type="video/mp4" />
-  </video>
 
   <div
     aria-hidden="true"

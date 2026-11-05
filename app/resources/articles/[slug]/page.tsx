@@ -218,7 +218,6 @@ export default async function ArticlePage({
 
     author: {
       "@type": "Organization",
-      "@id": `${SITE_URL}/#organization`,
       name: "Sutra Health Editorial Team",
       url: SITE_URL,
     },

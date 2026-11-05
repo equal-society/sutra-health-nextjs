@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 
 import BookAppointmentClient from "@/components/booking/BookAppointmentClient";
-
-const SITE_URL = "https://lifequality.org.in";
+import { ORGANIZATION_ID, SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Book a Doctor Consultation in Delhi NCR, India",
+  title: "Book a Doctor Consultation in Delhi NCR",
   description:
     "Choose a date and time to book an online or in-person consultation with a Sutra Health doctor in Delhi NCR, India. Simple form, confirmation by email.",
   alternates: { canonical: `${SITE_URL}/book-appointment` },
@@ -36,6 +35,24 @@ export const metadata: Metadata = {
   },
 };
 
+const bookingSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/book-appointment#webpage`,
+  url: `${SITE_URL}/book-appointment`,
+  name: "Book a Doctor Consultation",
+  isPartOf: { "@id": `${SITE_URL}/#website` },
+  about: { "@id": ORGANIZATION_ID },
+};
+
 export default function BookAppointmentPage() {
-  return <BookAppointmentClient />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(bookingSchema) }}
+      />
+      <BookAppointmentClient />
+    </>
+  );
 }

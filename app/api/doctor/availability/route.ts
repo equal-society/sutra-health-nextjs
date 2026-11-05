@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
+import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabasePublishableKey =
@@ -7,15 +7,20 @@ const supabasePublishableKey =
 const supabaseSecretKey = process.env.SUPABASE_SECRET_KEY!;
 const doctorEmail = process.env.DOCTOR_EMAIL!;
 
-const supabaseAuth = createClient(
-  supabaseUrl,
-  supabasePublishableKey,
-);
+// Clients are created on first request, not when the file loads,
+// so a missing environment variable cannot break `next build`.
+let supabaseAuthClient: SupabaseClient | null = null;
+let supabaseAdminClient: SupabaseClient | null = null;
 
-const supabaseAdmin = createClient(
-  supabaseUrl,
-  supabaseSecretKey,
-);
+function getSupabaseAuth() {
+  supabaseAuthClient ??= createClient(supabaseUrl, supabasePublishableKey);
+  return supabaseAuthClient;
+}
+
+function getSupabaseAdmin() {
+  supabaseAdminClient ??= createClient(supabaseUrl, supabaseSecretKey);
+  return supabaseAdminClient;
+}
 
 // ---------------------------------------------------------
 // Helpers
@@ -58,7 +63,7 @@ async function authenticateDoctor(request: NextRequest) {
   const {
     data: { user },
     error,
-  } = await supabaseAuth.auth.getUser(token);
+  } = await getSupabaseAuth().auth.getUser(token);
 
   if (error || !user) {
     return {
@@ -168,7 +173,7 @@ export async function GET(request: NextRequest) {
     const {
       data: weeklySchedule,
       error: weeklyError,
-    } = await supabaseAdmin
+    } = await getSupabaseAdmin()
       .from("availability_schedule")
       .select(
         "id, day_of_week, start_time, end_time, slot_duration_minutes, active",
@@ -193,7 +198,7 @@ export async function GET(request: NextRequest) {
     const {
       data: override,
       error: overrideError,
-    } = await supabaseAdmin
+    } = await getSupabaseAdmin()
       .from("availability_overrides")
       .select(
         "id, appointment_date, slots, active, created_at, updated_at",
@@ -342,7 +347,7 @@ export async function POST(request: NextRequest) {
     const {
       data: savedOverride,
       error,
-    } = await supabaseAdmin
+    } = await getSupabaseAdmin()
       .from("availability_overrides")
       .upsert(
         {
@@ -415,7 +420,7 @@ export async function DELETE(request: NextRequest) {
       );
     }
 
-    const { error } = await supabaseAdmin
+    const { error } = await getSupabaseAdmin()
       .from("availability_overrides")
       .delete()
       .eq("appointment_date", date);

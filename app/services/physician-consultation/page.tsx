@@ -119,7 +119,7 @@ const pageSchema = {
       serviceType: "Physician consultation",
       url: PAGE_URL,
       areaServed: { "@type": "City", name: "Delhi NCR, India" },
-      provider: { "@type": "Organization", name: "Sutra Health", url: `${SITE_URL}/` },
+      provider: { "@type": "Organization", "@id": `${SITE_URL}/#organization`, name: "Sutra Health", url: `${SITE_URL}/` },
     },
     {
       "@type": "BreadcrumbList",
@@ -160,6 +160,7 @@ export default function PhysicianConsultationPage() {
           // poster="/images/services/physician-consulation.webp"
           className="absolute inset-0 h-full w-full object-cover"
         >
+          <source src="/videos/physician-consultation.webm" type="video/webm" />
           <source src="/videos/physician-consultation.mp4" type="video/mp4" />
         </video>
         <div
@@ -208,7 +209,7 @@ export default function PhysicianConsultationPage() {
                 A physician consultation is a chance to talk through a health concern, your history and your questions with a doctor. It is a good first step if you have symptoms, take regular medicines, or are unsure which service you need.
               </p>
               <p className="mt-4 text-base leading-8 text-[var(--sutra-muted)] sm:text-lg sm:leading-9">
-                What happens next depends on your situation and the physician's judgement. The consultation does not promise a diagnosis or a particular treatment.
+                What happens next depends on your situation and the physician&apos;s judgement. The consultation does not promise a diagnosis or a particular treatment.
               </p>
             </div>
           </div>

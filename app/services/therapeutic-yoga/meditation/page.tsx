@@ -289,6 +289,7 @@ export default function Page() {
     // poster="/images/services/behaviour-stress-mind.webp"
     className="absolute inset-0 h-full w-full object-cover"
   >
+    <source src="/videos/mediation.webm" type="video/webm" />
     <source src="/videos/mediation.mp4" type="video/mp4" />
   </video>
 

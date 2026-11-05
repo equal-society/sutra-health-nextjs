@@ -143,7 +143,6 @@ function TextLink({
    HERO
 ========================================================= */
 
-
 function Hero() {
   return (
     <section
@@ -159,42 +158,46 @@ function Hero() {
     >
       {/* Background Video */}
       <div aria-hidden="true" className="absolute inset-0">
-        <HeroVideo src="/videos/hero-video.mp4" />
-
-        {/* Light overall overlay */}
-        <div className="absolute inset-0 bg-[#101C19]/20" />
-
-        {/* Text readability gradient */}
-        <div
-          className="
-            absolute inset-0
-            bg-gradient-to-r
-            from-[#101C19]/35
-            via-[#101C19]/15
-            to-transparent
-          "
+        <HeroVideo
+          src="/videos/hero-video.mp4"
         />
 
-        {/* Subtle bottom contrast */}
-        <div
-          className="
-            absolute inset-0
-            bg-gradient-to-t
-            from-[#101C19]/15
-            via-transparent
-            to-transparent
-          "
-        />
+ 
+{/* Very light overall overlay */}
+<div className="absolute inset-0 bg-[#101C19]/20" />
+
+{/* Subtle left-to-right gradient for text readability */}
+<div
+  className="
+    absolute inset-0
+    bg-gradient-to-r
+    from-[#101C19]/35
+    via-[#101C19]/15
+    to-transparent
+  "
+/>
+
+{/* Minimal bottom contrast */}
+<div
+  className="
+    absolute inset-0
+    bg-gradient-to-t
+    from-[#101C19]/15
+    via-transparent
+    to-transparent
+  "
+/>
+
       </div>
 
-      {/* Main Hero Content */}
+      {/* Hero Content */}
       <div
         className="
           relative z-10
           mx-auto flex
           min-h-[580px]
           w-full max-w-7xl
-          flex-col justify-center
+          items-center
           px-5 py-16
           sm:min-h-[640px]
           sm:px-8 sm:py-20
@@ -202,38 +205,30 @@ function Hero() {
           lg:px-12 lg:py-24
         "
       >
-        {/* Primary Content */}
-        <div className="max-w-4xl lg:max-w-[min(100%,760px)]">
-          <span
-            className="
-              block font-sans
-              text-xs font-semibold uppercase
-              leading-relaxed tracking-[0.15em]
-              text-white
-              sm:text-sm sm:tracking-[0.17em]
-            "
-          >
-            Take charge of your health, with the right guidance
-          </span>
+        <div className="max-w-4xl">
 
-          <h1
-            id="home-title"
-            className="
-              mt-4
-              max-w-[900px]
-              font-serif font-medium
-              text-[40px]
-              leading-[1.08]
-              tracking-[-0.04em]
-              text-white
-              [text-shadow:0_2px_18px_rgba(0,0,0,0.18)]
-              sm:text-6xl
-              lg:text-[76px]
-              lg:leading-[1.02]
-            "
-          >
-            Your lifestyle shapes your health.
-          </h1>
+          <span className="block font-sans text-sm font-semibold uppercase leading-normal tracking-[0.17em] text-white">
+            Take charge of your health, with the right guidance
+            </span>
+
+            <h1
+              id="home-title"
+              className="
+                mt-4
+                max-w-[900px]
+                font-serif font-medium
+                text-[42px]
+                leading-[1.06]
+                tracking-[-0.04em]
+                text-white
+                [text-shadow:0_2px_18px_rgba(0,0,0,0.18)]
+                sm:text-6xl
+                lg:text-[76px]
+                lg:leading-[1.02]
+              "
+            >
+              Your lifestyle shapes your health.
+            </h1>
 
           {/* Introduction */}
           <p
@@ -255,7 +250,7 @@ function Hero() {
             to take informed steps towards better health.
           </p>
 
-          {/* CTA Buttons */}
+          {/* Buttons */}
           <div
             className="
               mt-8
@@ -314,14 +309,7 @@ function Hero() {
           </div>
 
           {/* Doctor Credential */}
-          <p
-            className="
-              mt-7
-              text-sm font-medium leading-6
-              text-white
-              [text-shadow:0_1px_10px_rgba(0,0,0,0.4)]
-            "
-          >
+          <p className="mt-7 text-sm font-medium leading-6 text-white [text-shadow:0_1px_10px_rgba(0,0,0,0.4)]">
             Led by{" "}
             <Link
               href="https://academic.lifequality.org.in/"
@@ -333,25 +321,19 @@ function Hero() {
                 underline-offset-4
                 transition-colors
                 hover:decoration-white
-                focus-visible:outline
-                focus-visible:outline-2
-                focus-visible:outline-offset-4
               "
+              
             >
               Dr. Rakesh Sarwal
             </Link>{" "}
             · MBBS, MPH, DrPH (Johns Hopkins)
           </p>
+
         </div>
-
-       
       </div>
-
-    
     </section>
   );
 }
-
 
 /* =========================================================
    EVERYDAY HEALTH
@@ -659,7 +641,6 @@ function PatientStoriesAndFAQs() {
             </div>
 
             
-
 {/* FAQs */}
 <div
   className="
@@ -722,7 +703,6 @@ function PatientStoriesAndFAQs() {
 </div>
 
 
-
           </div>
         </div>
       </Container>
@@ -739,43 +719,8 @@ const structuredData = {
   "@context": "https://schema.org",
 
   "@graph": [
-    // Shared organisation: the clinic, website and pages below all point to it
+    // Shared organisation: the website and pages below all point to it
     organizationSchema,
-
-    {
-      "@type": "MedicalClinic",
-
-      "@id": `${siteUrl}/#clinic`,
-
-      name: "Sutra Health",
-
-      url: siteUrl,
-
-      image: `${siteUrl}/images/og-image.webp`,
-
-      telephone: "+919013103676",
-
-      medicalSpecialty: ["PublicHealth", "Lifestyle medicine"],
-
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "House No. 229, Roof-Top, Sector 46",
-        addressLocality: "Delhi NCR, India",
-        addressRegion: "Haryana",
-        addressCountry: "IN",
-      },
-
-      parentOrganization: {
-        "@id": `${siteUrl}/#organization`,
-      },
-
-      sameAs: [
-        "https://www.instagram.com/sutrahealth/",
-        "https://www.facebook.com/people/Sutrahealth-Equal/",
-        "https://www.youtube.com/@sutra-health",
-        "https://www.linkedin.com/in/equal-society-ngo",
-      ],
-    },
 
     {
       "@type": "WebSite",
