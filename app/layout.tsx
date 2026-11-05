@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppFloat from "@/components/shared/WhatsAppFloat";
+import GoogleAnalytics from "@/components/google/GoogleAnalytics";
 
 import { Lora, Manrope } from "next/font/google";
 
@@ -88,6 +89,8 @@ export default function RootLayout({
 <body className={`${lora.variable} ${manrope.variable}`}>        <Header />
 
         {children}
+
+        <GoogleAnalytics /> 
 
         <WhatsAppFloat />
 

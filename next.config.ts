@@ -17,7 +17,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
-      // Organization and information
+      // Organization
       {
         source: "/equal-society",
         destination: "/about",
@@ -28,6 +28,8 @@ const nextConfig: NextConfig = {
         destination: "/about",
         permanent: true,
       },
+
+      // Contact - uppercase and lowercase
       {
         source: "/Contact",
         destination: "/contact",
@@ -39,6 +41,13 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/contact.html",
+        destination: "/contact",
+        permanent: true,
+      },
+
+      // Volunteer
+      {
         source: "/volunteer",
         destination: "/volunteer",
         permanent: true,
@@ -48,6 +57,8 @@ const nextConfig: NextConfig = {
         destination: "/volunteer",
         permanent: true,
       },
+
+      // Retreat
       {
         source: "/retreat",
         destination: "/retreat-programs",
@@ -117,7 +128,19 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
-      // Therapeutic yoga
+      // Singing, Kirtan and Dance
+      {
+        source: "/programs/singing-kirtan-dance",
+        destination: "/services/behaviour-stress-mind",
+        permanent: true,
+      },
+      {
+        source: "/programs/singing-kirtan-dance.html",
+        destination: "/services/behaviour-stress-mind",
+        permanent: true,
+      },
+
+      // Therapeutic Yoga - Yoga Asana
       {
         source: "/Yoga/yoga-asana",
         destination: "/services/therapeutic-yoga/yoga-asana-protocol",
@@ -129,23 +152,13 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/Yoga/pranayama",
-        destination: "/services/therapeutic-yoga/pranayama",
+        source: "/Yoga/asana",
+        destination: "/services/therapeutic-yoga/yoga-asana-protocol",
         permanent: true,
       },
       {
-        source: "/Yoga/pranayama.html",
-        destination: "/services/therapeutic-yoga/pranayama",
-        permanent: true,
-      },
-      {
-        source: "/Yoga/meditation",
-        destination: "/services/therapeutic-yoga/meditation",
-        permanent: true,
-      },
-      {
-        source: "/Yoga/meditation.html",
-        destination: "/services/therapeutic-yoga/meditation",
+        source: "/Yoga/asana.html",
+        destination: "/services/therapeutic-yoga/yoga-asana-protocol",
         permanent: true,
       },
       {
@@ -159,7 +172,31 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
-      // Lifestyle
+      // Therapeutic Yoga - Pranayama
+      {
+        source: "/Yoga/pranayama",
+        destination: "/services/therapeutic-yoga/pranayama",
+        permanent: true,
+      },
+      {
+        source: "/Yoga/pranayama.html",
+        destination: "/services/therapeutic-yoga/pranayama",
+        permanent: true,
+      },
+
+      // Therapeutic Yoga - Meditation
+      {
+        source: "/Yoga/meditation",
+        destination: "/services/therapeutic-yoga/meditation",
+        permanent: true,
+      },
+      {
+        source: "/Yoga/meditation.html",
+        destination: "/services/therapeutic-yoga/meditation",
+        permanent: true,
+      },
+
+      // Lifestyle Counseling
       {
         source: "/lifestyle",
         destination: "/services/lifestyle",
@@ -180,6 +217,8 @@ const nextConfig: NextConfig = {
         destination: "/services/lifestyle/healthy-lifestyle-coaching",
         permanent: true,
       },
+
+      // Lifestyle resources and activities
       {
         source: "/LifeStyle/research",
         destination: "/resources/research",
@@ -221,7 +260,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
 
-      // Gallery and archive
+      // Gallery
       {
         source: "/Gallery",
         destination: "/archive",
@@ -242,6 +281,30 @@ const nextConfig: NextConfig = {
       {
         source: "/score.html",
         destination: "/assessment",
+        permanent: true,
+      },
+
+      // Testimonials
+      {
+        source: "/Components/testimonials",
+        destination: "/patient-stories",
+        permanent: true,
+      },
+      {
+        source: "/Components/testimonials.html",
+        destination: "/patient-stories",
+        permanent: true,
+      },
+
+      // Newsletter
+      {
+        source: "/Newsletter",
+        destination: "/resources/articles",
+        permanent: true,
+      },
+      {
+        source: "/Newsletter.html",
+        destination: "/resources/articles",
         permanent: true,
       },
     ];
