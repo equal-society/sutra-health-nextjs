@@ -1,4 +1,5 @@
 import type { Article } from "./types";
+import { cmsArticles } from "./cms-articles.generated";
 
 import { howToManageStress } from "./how-to-manage-stress";
 import { yogaForStressRelief } from "./yoga-for-stress-relief";
@@ -15,7 +16,7 @@ import { canWalkingHelpLowerBloodPressure } from "./can-walking-help-lower-blood
    ALL ARTICLES
 ========================================================= */
 
-export const articles: Article[] = [
+const legacyArticles: Article[] = [
   howToManageStress,
   yogaForStressRelief,
   whatIsPrediabetesAndCanItBeReversed,
@@ -25,6 +26,15 @@ export const articles: Article[] = [
   howDoesSleepAffectWeightLoss,
   canWalkingHelpLowerBloodPressure,
 ];
+
+// CMS entries replace a legacy entry when their slug matches; otherwise
+// they are appended. This lets editors take ownership of an article
+// without changing its public URL or the existing article components.
+const mergedArticles = new Map<string, Article>();
+legacyArticles.forEach((article) => mergedArticles.set(article.slug, article));
+cmsArticles.forEach((article) => mergedArticles.set(article.slug, article));
+
+export const articles: Article[] = [...mergedArticles.values()];
 
 
 /* =========================================================

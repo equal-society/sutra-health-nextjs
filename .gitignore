@@ -40,3 +40,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Generated Decap CMS article registry
+/data/articles/cms-articles.generated.ts

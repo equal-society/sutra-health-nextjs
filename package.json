@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "predev": "node scripts/build-cms-articles.mjs",
+    "prebuild": "node scripts/build-cms-articles.mjs",
+    "prelint": "node scripts/build-cms-articles.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

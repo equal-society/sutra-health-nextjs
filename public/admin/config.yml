@@ -1,0 +1,140 @@
+
+# Sutra Health Decap CMS
+# Direct publishing: saved entries are committed directly to main.
+
+backend:
+  name: github
+  repo: equal-society/sutra-health-nextjs
+  branch: main
+  base_url: https://sutra-health-cms-auth.equal-society.workers.dev
+  auth_endpoint: auth
+
+publish_mode: simple
+
+media_folder: public/images/resources
+public_folder: /images/resources
+
+site_url: https://lifequality.org.in
+locale: en
+
+collections:
+  - name: articles
+    label: Health Articles
+    label_singular: Health Article
+    folder: content/articles
+    create: true
+    delete: true
+    extension: json
+    format: json
+    slug: "{{slug}}"
+    summary: "{{title}} — {{category}} · {{date}}"
+    sortable_fields:
+      - date
+      - updatedDate
+      - title
+      - category
+
+    fields:
+      - { label: Title, name: title, widget: string, required: true }
+
+      - label: Category
+        name: category
+        widget: select
+        options:
+          - Stress & Mindfulness
+          - Gut Health & Digestion
+          - Nutrition
+          - Yoga & Movement
+          - Sleep & Recovery
+          - Healthy Habits
+          - Women's Health
+          - Men's Health
+          - Health Conditions
+          - Preventive Health
+          - Ayurveda & Indian Wellness
+          - Retreat & Wellbeing
+
+      - label: Article Type
+        name: type
+        widget: select
+        options:
+          - Guide
+          - Explainer
+          - How-to
+          - Yoga Practice
+          - Nutrition Guide
+          - Condition Guide
+          - Research & Evidence
+
+      - { label: Reading Time, name: readTime, widget: string, default: "5 min read", hint: "Example: 5 min read" }
+
+      - { label: Publication Date, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", picker_utc: false }
+
+      - { label: Updated Date, name: updatedDate, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", picker_utc: false, required: false }
+
+      - { label: Short Description, name: excerpt, widget: text, required: true }
+
+      - { label: Featured Image, name: image, widget: image, required: true }
+
+      - label: Tags
+        name: tags
+        widget: list
+        required: false
+        field:
+          label: Tag
+          name: tag
+          widget: string
+
+      - label: Article Content
+        name: content
+        widget: object
+        fields:
+          - { label: Introduction, name: introduction, widget: text, required: true }
+
+          - label: Sections
+            name: sections
+            widget: list
+            min: 1
+            summary: "{{fields.heading}}"
+            fields:
+              - { label: Section Heading, name: heading, widget: string, required: true }
+
+              - label: Paragraphs
+                name: paragraphs
+                widget: list
+                min: 1
+                field:
+                  label: Paragraph
+                  name: paragraph
+                  widget: text
+
+              - label: Bullet Points
+                name: bullets
+                widget: list
+                required: false
+                field:
+                  label: Bullet
+                  name: bullet
+                  widget: string
+
+          - { label: Key Takeaway, name: takeaway, widget: text, required: false }
+
+          - { label: When to Seek Professional Help, name: whenToSeekHelp, widget: text, required: false }
+
+      - label: Frequently Asked Questions
+        name: faqs
+        widget: list
+        required: false
+        summary: "{{fields.question}}"
+        fields:
+          - { label: Question, name: question, widget: string }
+          - { label: Answer, name: answer, widget: text }
+
+      - label: Sources
+        name: sources
+        widget: list
+        required: false
+        field:
+          label: Source URL or citation
+          name: source
+          widget: string
