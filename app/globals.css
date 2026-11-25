@@ -841,3 +841,15 @@ img {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* =========================================================
+   YOGA PRACTICE VIDEO PLAYER
+   Hide Chrome's native buffering spinner. The practice clips
+   are streamed from Archive.org; the small H.264 derivatives
+   keep rebuffers short, and the player's own overlay is only
+   used for the initial load.
+========================================================= */
+
+.yoga-practice-video::-webkit-media-controls-spinner {
+  display: none !important;
+}

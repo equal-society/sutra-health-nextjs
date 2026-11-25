@@ -134,10 +134,19 @@ const practices: Practice[] = [
 ];
 
 function archiveDirectUrl(url: string) {
-  return url.replace(
+  const downloadUrl = url.replace(
     "https://archive.org/details/",
     "https://archive.org/download/"
   );
+
+  /*
+   * Archive.org stores a much smaller H.264 derivative for every source
+   * video (for example 3.8 MB instead of 61 MB). Use it so the browser
+   * does not spend seconds buffering a large file after playback starts.
+   */
+  if (downloadUrl.endsWith(".ia.mp4")) return downloadUrl;
+
+  return downloadUrl.replace(/\.mp4$/, ".ia.mp4");
 }
 
 function youtubeEmbedUrl(url: string) {
@@ -185,54 +194,6 @@ export default function YogaPracticeGallery() {
     setVideoLoading(false);
     setVideoError(false);
   }
-
-  /*
-   * Automatically start Archive.org videos after they are mounted.
-   *
-   * The video is muted because modern browsers can block
-   * automatic playback when audio is enabled.
-   */
-  useEffect(() => {
-    if (!active || active.source !== "archive") return;
-
-    const video = videoRef.current;
-
-    if (!video) return;
-
-    let cancelled = false;
-
-    const startVideo = async () => {
-      try {
-        video.muted = true;
-        video.playsInline = true;
-
-        await video.play();
-
-        if (!cancelled) {
-          setVideoLoading(false);
-        }
-      } catch (error) {
-        console.warn("Archive video autoplay was blocked:", error);
-
-        if (!cancelled) {
-          setVideoLoading(false);
-        }
-      }
-    };
-
-    /*
-     * Give React/browser one render cycle to mount
-     * the video before calling play().
-     */
-    const timer = window.setTimeout(() => {
-      startVideo();
-    }, 50);
-
-    return () => {
-      cancelled = true;
-      window.clearTimeout(timer);
-    };
-  }, [active, retryCount]);
 
   /*
    * Close modal with Escape.
@@ -415,6 +376,13 @@ export default function YogaPracticeGallery() {
                       </button>
                     </div>
                   ) : (
+                    /*
+                     * The custom overlay is only for the initial load. We
+                     * intentionally do not show it on `waiting`: the remote
+                     * Archive.org files can trigger short rebuffers during
+                     * playback, and covering the video with an overlay is
+                     * worse than letting it continue in place.
+                     */
                     <video
                       ref={videoRef}
                       key={`${active.url}-${retryCount}`}
@@ -423,7 +391,7 @@ export default function YogaPracticeGallery() {
                       autoPlay
                       playsInline
                       preload="auto"
-                      className="h-full w-full bg-black"
+                      className="yoga-practice-video h-full w-full bg-black"
                       src={archiveDirectUrl(active.url)}
                       onLoadStart={() => {
                         setVideoLoading(true);
@@ -438,10 +406,7 @@ export default function YogaPracticeGallery() {
 
                           setVideoLoading(false);
                         } catch (error) {
-                          console.warn(
-                            "Video autoplay failed:",
-                            error
-                          );
+                          console.warn("Video autoplay failed:", error);
 
                           setVideoLoading(false);
                         }
@@ -452,8 +417,10 @@ export default function YogaPracticeGallery() {
                       onPlaying={() => {
                         setVideoLoading(false);
                       }}
-                      onWaiting={() => {
-                        setVideoLoading(true);
+                      onTimeUpdate={(event) => {
+                        if (event.currentTarget.currentTime > 0) {
+                          setVideoLoading(false);
+                        }
                       }}
                       onError={() => {
                         setVideoLoading(false);
