@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 type Practice = {
   name: string;
-  icon: string;
+  icon?: string;
   url?: string;
   source: "archive" | "youtube" | "pinterest" | "missing";
 };
@@ -24,22 +24,26 @@ const practices: Practice[] = [
     source: "archive",
   },
   {
+    name: "Trikonasana",
+    source: "missing",
+  },
+  {
     name: "Surya Namaskar",
     icon: "/images/thumbnails/03-surya-namaskar.webp",
     url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_asana/surya-namaskar-2026-06-14.mp4",
     source: "archive",
   },
   {
-    name: "Shavasana",
+    name: "Savasana",
     icon: "/images/thumbnails/04-shavasana.webp",
     url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_unclassed/unclassed-11-2026-08-17.mp4",
     source: "archive",
   },
   {
-    name: "Pawanmuktasana",
-    icon: "/images/thumbnails/05-pawan-mukt-asana.webp",
-    url: "https://www.youtube.com/watch?v=b4unFpb4HW8",
-    source: "youtube",
+    name: "Shirshasana",
+    icon: "/images/thumbnails/10-shirshasana.webp",
+    url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_unclassed/unclassed-17-2026-08-17.mp4",
+    source: "archive",
   },
   {
     name: "Sarvangasana",
@@ -60,28 +64,20 @@ const practices: Practice[] = [
     source: "youtube",
   },
   {
-    name: "Pashchimottanasana",
+    name: "Paschimottanasana",
     icon: "/images/thumbnails/09-paschimottanasana.webp",
     url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_asana/pashchimottanasana-2026-07-16.mp4",
     source: "archive",
   },
   {
-    name: "Shirshasana",
-    icon: "/images/thumbnails/10-shirshasana.webp",
-    url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_unclassed/unclassed-17-2026-08-17.mp4",
-    source: "archive",
-  },
-  {
-    name: "Shashankasana",
-    icon: "/images/thumbnails/11-sheshank-asanaa.webp",
-    url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_asana/shashankasana-2026-06-13.mp4",
-    source: "archive",
-  },
-  {
-    name: "Bhujangasana / Sarpasana",
+    name: "Bhujangasana",
     icon: "/images/thumbnails/12-bhujang-asanaa.webp",
     url: "https://www.youtube.com/watch?v=1LZcfo461S4",
     source: "youtube",
+  },
+  {
+    name: "Makarasana",
+    source: "missing",
   },
   {
     name: "Shalabhasana",
@@ -102,28 +98,36 @@ const practices: Practice[] = [
     source: "archive",
   },
   {
-    name: "Ardh Matsyendrasana",
+    name: "Ardha Matsyendrasana",
     icon: "/images/thumbnails/16-ardha-matsyendrasana.webp",
     url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_asana/ardha-matsyendrasana-2026-08-17.mp4",
     source: "archive",
   },
   {
-    name: "Ustrasana",
-    icon: "/images/thumbnails/17-ustrasana.webp",
-    url: "https://in.pinterest.com/pin/1137158974682061121/",
-    source: "pinterest",
-  },
-  {
-    name: "Simhasana",
-    icon: "/images/thumbnails/18-simhasana.webp",
-    url: "https://www.youtube.com/watch?v=RkvdfKefcDU",
-    source: "youtube",
+    name: "Yoga Mudra",
+    source: "missing",
   },
   {
     name: "Mayurasana",
     icon: "/images/thumbnails/19-mayurasana.webp",
     url: "https://ia800806.us.archive.org/22/items/retreat_202610/Retreat/US/2025-08-04_us.mp4",
     source: "archive",
+  },
+  {
+    name: "Padmasana",
+    source: "missing",
+  },
+  {
+    name: "Siddhasana",
+    source: "missing",
+  },
+  {
+    name: "Svastikasana",
+    source: "missing",
+  },
+  {
+    name: "Vajrasana",
+    source: "missing",
   },
   {
     name: "Pranayama",
@@ -238,13 +242,19 @@ export default function YogaPracticeGallery() {
           >
             {/* Thumbnail */}
             <div className="relative flex aspect-[1.5/1] w-full items-center justify-center overflow-hidden bg-[#EDF2E9]">
-              <Image
-                src={practice.icon}
-                alt={practice.name}
-                fill
-                sizes="(max-width: 640px) 33vw, (max-width: 1024px) 20vw, 14vw"
-                className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-              />
+              {practice.icon ? (
+                <Image
+                  src={practice.icon}
+                  alt={practice.name}
+                  fill
+                  sizes="(max-width: 640px) 33vw, (max-width: 1024px) 20vw, 14vw"
+                  className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                />
+              ) : (
+                <span className="px-2 text-center font-serif text-xs font-semibold text-[#8A9A8F]">
+                  Media pending
+                </span>
+              )}
 
               {/* Number */}
               <span className="absolute left-1.5 top-1.5 rounded-full bg-white/90 px-1.5 py-0.5 text-xs font-semibold text-[#47685A]">
