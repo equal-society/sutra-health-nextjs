@@ -156,7 +156,7 @@ function youtubeEmbedUrl(url: string) {
 
     if (!id) return url;
 
-    return `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&mute=1&rel=0&playsinline=1`;
+    return `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&mute=0&rel=0&playsinline=1`;
   } catch {
     return url;
   }
@@ -387,7 +387,6 @@ export default function YogaPracticeGallery() {
                       ref={videoRef}
                       key={`${active.url}-${retryCount}`}
                       controls
-                      muted
                       autoPlay
                       playsInline
                       preload="auto"
@@ -401,7 +400,9 @@ export default function YogaPracticeGallery() {
                         const video = event.currentTarget;
 
                         try {
-                          video.muted = true;
+                          // Sound is on by default when a pose is clicked.
+                          video.muted = false;
+                          video.volume = 1;
                           await video.play();
 
                           setVideoLoading(false);
