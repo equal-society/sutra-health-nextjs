@@ -11,7 +11,7 @@ type Practice = {
 };
 
 const practices: Practice[] = [
-  {
+  {\
     name: "Warm-up",
     icon: "/images/thumbnails/01-warm-up.webp",
     url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_asana/tadasana-2026-07-29.mp4",
@@ -128,6 +128,18 @@ const practices: Practice[] = [
   {
     name: "Vajrasana",
     source: "missing",
+  },
+  {
+    name: "Shashankasana",
+    icon: "/images/thumbnails/11-sheshank-asanaa.webp",
+    url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_asana/shashankasana-2026-06-13.mp4",
+    source: "archive",
+  },
+  {
+    name: "Simhasana",
+    icon: "/images/thumbnails/18-simhasana.webp",
+    url: "https://www.youtube.com/watch?v=RkvdfKefcDU",
+    source: "youtube",
   },
   {
     name: "Pranayama",
