@@ -11,7 +11,7 @@ type Practice = {
 };
 
 const practices: Practice[] = [
-  {\
+  {
     name: "Warm-up",
     icon: "/images/thumbnails/01-warm-up.webp",
     url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_asana/tadasana-2026-07-29.mp4",
