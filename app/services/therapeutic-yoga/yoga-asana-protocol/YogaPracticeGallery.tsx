@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from "react";
 type Practice = {
   name: string;
   icon?: string;
+  iconFit?: "cover" | "contain";
+  badge?: string;
   url?: string;
   source: "archive" | "youtube" | "pinterest" | "missing";
 };
@@ -28,10 +30,16 @@ const practices: Practice[] = [
     source: "missing",
   },
   {
-    name: "Surya Namaskar",
+    name: "Suryanamaskara",
     icon: "/images/thumbnails/03-surya-namaskar.webp",
     url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_asana/surya-namaskar-2026-06-14.mp4",
     source: "archive",
+  },
+  {
+    name: "Malasana",
+    icon: "/images/thumbnails/malasana.webp",
+    iconFit: "contain",
+    source: "missing",
   },
   {
     name: "Savasana",
@@ -40,7 +48,7 @@ const practices: Practice[] = [
     source: "archive",
   },
   {
-    name: "Shirshasana",
+    name: "Sirshasana",
     icon: "/images/thumbnails/10-shirshasana.webp",
     url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_unclassed/unclassed-17-2026-08-17.mp4",
     source: "archive",
@@ -80,7 +88,7 @@ const practices: Practice[] = [
     source: "missing",
   },
   {
-    name: "Shalabhasana",
+    name: "Salabhasana",
     icon: "/images/thumbnails/13-shalabhasana.webp",
     url: "https://www.youtube.com/watch?v=5Z76Y85KZCk",
     source: "youtube",
@@ -98,7 +106,7 @@ const practices: Practice[] = [
     source: "archive",
   },
   {
-    name: "Ardha Matsyendrasana",
+    name: "Ardha-Matsyendrasana",
     icon: "/images/thumbnails/16-ardha-matsyendrasana.webp",
     url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_asana/ardha-matsyendrasana-2026-08-17.mp4",
     source: "archive",
@@ -119,30 +127,36 @@ const practices: Practice[] = [
   },
   {
     name: "Siddhasana",
+    badge: "a",
     source: "missing",
   },
   {
     name: "Svastikasana",
+    badge: "b",
     source: "missing",
   },
   {
     name: "Vajrasana",
+    badge: "c",
     source: "missing",
   },
   {
     name: "Shashankasana",
+    badge: "d",
     icon: "/images/thumbnails/11-sheshank-asanaa.webp",
     url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_asana/shashankasana-2026-06-13.mp4",
     source: "archive",
   },
   {
     name: "Simhasana",
+    badge: "e",
     icon: "/images/thumbnails/18-simhasana.webp",
     url: "https://www.youtube.com/watch?v=RkvdfKefcDU",
     source: "youtube",
   },
   {
     name: "Pranayama",
+    badge: "20",
     icon: "/images/thumbnails/20-pranayama.webp",
     url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_pranayam/pranayam-16-2026-08-17.mp4",
     source: "archive",
@@ -260,7 +274,11 @@ export default function YogaPracticeGallery() {
                   alt={practice.name}
                   fill
                   sizes="(max-width: 640px) 33vw, (max-width: 1024px) 20vw, 14vw"
-                  className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                  className={`transition-transform duration-300 group-hover:scale-[1.03] ${
+                    practice.iconFit === "contain"
+                      ? "object-contain p-1.5"
+                      : "object-cover"
+                  }`}
                 />
               ) : (
                 <span className="px-2 text-center font-serif text-xs font-semibold text-[#8A9A8F]">
@@ -270,7 +288,8 @@ export default function YogaPracticeGallery() {
 
               {/* Number */}
               <span className="absolute left-1.5 top-1.5 rounded-full bg-white/90 px-1.5 py-0.5 text-xs font-semibold text-[#47685A]">
-                {index === 0 ? "START" : String(index).padStart(2, "0")}
+                {practice.badge ??
+                  (index === 0 ? "START" : String(index).padStart(2, "0"))}
               </span>
             </div>
 
