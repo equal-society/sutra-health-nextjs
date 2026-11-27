@@ -27,6 +27,8 @@ const practices: Practice[] = [
   },
   {
     name: "Trikonasana",
+    icon: "/images/thumbnails/trikonasana.webp",
+    iconFit: "contain",
     source: "missing",
   },
   {
@@ -37,7 +39,7 @@ const practices: Practice[] = [
   },
   {
     name: "Malasana",
-    icon: "/images/thumbnails/malasana.webp",
+    icon: "/images/thumbnails/malasana-v2.webp",
     iconFit: "contain",
     source: "missing",
   },
@@ -85,6 +87,8 @@ const practices: Practice[] = [
   },
   {
     name: "Makarasana",
+    icon: "/images/thumbnails/makarasana.webp",
+    iconFit: "contain",
     source: "missing",
   },
   {
@@ -113,6 +117,8 @@ const practices: Practice[] = [
   },
   {
     name: "Yoga Mudra",
+    icon: "/images/thumbnails/yoga-mudra.webp",
+    iconFit: "contain",
     source: "missing",
   },
   {
@@ -122,34 +128,15 @@ const practices: Practice[] = [
     source: "archive",
   },
   {
-    name: "Padmasana",
-    source: "missing",
-  },
-  {
-    name: "Siddhasana",
-    badge: "a",
-    source: "missing",
-  },
-  {
-    name: "Svastikasana",
-    badge: "b",
-    source: "missing",
-  },
-  {
-    name: "Vajrasana",
-    badge: "c",
-    source: "missing",
-  },
-  {
     name: "Shashankasana",
-    badge: "d",
+    badge: "19 a",
     icon: "/images/thumbnails/11-sheshank-asanaa.webp",
     url: "https://archive.org/details/surya-yoga-sequence/Yoga/yoga_asana/shashankasana-2026-06-13.mp4",
     source: "archive",
   },
   {
     name: "Simhasana",
-    badge: "e",
+    badge: "19 b",
     icon: "/images/thumbnails/18-simhasana.webp",
     url: "https://www.youtube.com/watch?v=RkvdfKefcDU",
     source: "youtube",
