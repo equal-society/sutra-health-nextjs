@@ -58,11 +58,404 @@ const questions = [
 
 
 
+type MeasureField =
+  | "height"
+  | "weight"
+  | "systolic"
+  | "diastolic"
+  | "pulse";
+
+type MeasureValues = Record<MeasureField, string>;
+
+type MeasureErrors = Partial<Record<MeasureField, string>>;
+
+const emptyMeasures: MeasureValues = {
+  height: "",
+  weight: "",
+  systolic: "",
+  diastolic: "",
+  pulse: "",
+};
+
+
+
+function validateMeasurement(
+  value: string,
+  label: string,
+  min: number,
+  max: number,
+  unit: string,
+  requiredMessage: string,
+): string | undefined {
+
+  const trimmed = value.trim();
+
+  if (!trimmed) {
+    return requiredMessage;
+  }
+
+  const number = Number(trimmed);
+
+  if (!Number.isFinite(number)) {
+    return `Enter a valid number for ${label.toLowerCase()}.`;
+  }
+
+  if (number < min || number > max) {
+    return `${label} must be between ${min} and ${max} ${unit}.`;
+  }
+
+  return undefined;
+
+}
+
+
+
+function validateMeasures(values: MeasureValues): MeasureErrors {
+
+  const errors: MeasureErrors = {};
+
+  errors.height = validateMeasurement(
+    values.height,
+    "Height",
+    50,
+    250,
+    "cm",
+    "Height is required to calculate BMI.",
+  );
+
+  errors.weight = validateMeasurement(
+    values.weight,
+    "Weight",
+    10,
+    300,
+    "kg",
+    "Weight is required to calculate BMI.",
+  );
+
+  errors.systolic = validateMeasurement(
+    values.systolic,
+    "Systolic BP",
+    70,
+    250,
+    "mmHg",
+    "Systolic BP is required.",
+  );
+
+  errors.diastolic = validateMeasurement(
+    values.diastolic,
+    "Diastolic BP",
+    40,
+    150,
+    "mmHg",
+    "Diastolic BP is required.",
+  );
+
+  errors.pulse = validateMeasurement(
+    values.pulse,
+    "Pulse rate",
+    30,
+    220,
+    "BPM",
+    "Pulse rate is required.",
+  );
+
+  // Both readings are needed together. If only one is entered,
+  // the missing one is already flagged as required above.
+  if (
+    !errors.systolic &&
+    !errors.diastolic &&
+    Number(values.systolic) <= Number(values.diastolic)
+  ) {
+
+    errors.diastolic =
+      "Systolic pressure should be higher than diastolic pressure.";
+
+  }
+
+  return errors;
+
+}
+
+
+
+type CategoryStyle = {
+
+  label: string;
+
+  className: string;
+
+};
+
+
+
+const bmiCategories = {
+
+  underweight: {
+    label: "Underweight",
+    className: "border-red-300 bg-red-50 text-red-800",
+  },
+
+  healthy: {
+    label: "Healthy Weight",
+    className: "border-green-300 bg-green-50 text-green-800",
+  },
+
+  overweight: {
+    label: "Overweight",
+    className: "border-orange-300 bg-orange-50 text-orange-800",
+  },
+
+  obesity: {
+    label: "Obesity",
+    className: "border-yellow-400 bg-yellow-50 text-yellow-900",
+  },
+
+} satisfies Record<string, CategoryStyle>;
+
+
+
+function getBmiCategory(value: number): CategoryStyle {
+
+  // WHO cutoffs.
+  if (value < 18.5) {
+    return bmiCategories.underweight;
+  }
+
+  if (value < 25) {
+    return bmiCategories.healthy;
+  }
+
+  if (value < 30) {
+    return bmiCategories.overweight;
+  }
+
+  return bmiCategories.obesity;
+
+}
+
+
+
+const bpCategories = {
+
+  low: {
+    label: "Low",
+    className: "border-blue-300 bg-blue-50 text-blue-800",
+  },
+
+  normal: {
+    label: "Normal",
+    className: "border-green-300 bg-green-50 text-green-800",
+  },
+
+  elevated: {
+    label: "Elevated",
+    className: "border-yellow-400 bg-yellow-50 text-yellow-900",
+  },
+
+  stage1: {
+    label: "Stage 1 High BP",
+    className: "border-orange-300 bg-orange-50 text-orange-800",
+  },
+
+  stage2: {
+    label: "Stage 2 High BP",
+    className: "border-red-300 bg-red-50 text-red-800",
+  },
+
+  crisis: {
+    label: "Hypertensive Crisis",
+    className: "border-red-700 bg-red-100 text-red-900",
+  },
+
+} satisfies Record<string, CategoryStyle>;
+
+
+
+function getBloodPressureCategory(
+  systolic: number,
+  diastolic: number,
+): CategoryStyle {
+
+  // Check the most severe range first so mixed readings
+  // are classified by the higher category.
+  if (systolic > 180 || diastolic > 120) {
+    return bpCategories.crisis;
+  }
+
+  if (systolic >= 140 || diastolic >= 90) {
+    return bpCategories.stage2;
+  }
+
+  if (
+    (systolic >= 130 && systolic <= 139) ||
+    (diastolic >= 80 && diastolic <= 89)
+  ) {
+    return bpCategories.stage1;
+  }
+
+  if (systolic >= 120 && systolic <= 129 && diastolic < 80) {
+    return bpCategories.elevated;
+  }
+
+  if (systolic < 90 || diastolic < 60) {
+    return bpCategories.low;
+  }
+
+  return bpCategories.normal;
+
+}
+
+
+
+const pulseCategories = {
+
+  low: {
+    label: "Low pulse",
+    className: "border-blue-300 bg-blue-50 text-blue-800",
+  },
+
+  normal: {
+    label: "Normal",
+    className: "border-green-300 bg-green-50 text-green-800",
+  },
+
+  high: {
+    label: "High pulse",
+    className: "border-orange-400 bg-orange-50 text-red-700",
+  },
+
+} satisfies Record<string, CategoryStyle>;
+
+
+
+function getPulseCategory(value: number): CategoryStyle {
+
+  if (value < 60) {
+    return pulseCategories.low;
+  }
+
+  if (value <= 100) {
+    return pulseCategories.normal;
+  }
+
+  return pulseCategories.high;
+
+}
+
+
+
+function CategoryBadge({ category }: { category: CategoryStyle }) {
+
+  return (
+
+    <span className={`inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold ${category.className}`}>
+
+      {category.label}
+
+    </span>
+
+  );
+
+}
+
+
+
 export default function ScoreQuestionnaire() {
 
   const [answers, setAnswers] = useState<number[]>(questions.map(() => 0));
 
   const [score, setScore] = useState<number | null>(null);
+
+  const [measures, setMeasures] = useState<MeasureValues>(emptyMeasures);
+
+  const [touchedMeasures, setTouchedMeasures] = useState<
+    Record<MeasureField, boolean>
+  >({
+    height: false,
+    weight: false,
+    systolic: false,
+    diastolic: false,
+    pulse: false,
+  });
+
+  const [showMeasureErrors, setShowMeasureErrors] = useState(false);
+
+
+
+  const measureErrors = validateMeasures(measures);
+
+  const heightInCm = Number(measures.height);
+  const weightInKg = Number(measures.weight);
+
+  const bmi =
+    measures.height.trim() !== "" &&
+    measures.weight.trim() !== "" &&
+    Number.isFinite(heightInCm) &&
+    Number.isFinite(weightInKg) &&
+    heightInCm > 0 &&
+    weightInKg > 0
+      ? weightInKg / (heightInCm / 100) ** 2
+      : null;
+
+  const bmiCategory = bmi === null ? null : getBmiCategory(bmi);
+
+  const systolicNumber = Number(measures.systolic);
+  const diastolicNumber = Number(measures.diastolic);
+
+  // Recalculated on every keystroke once both readings are valid.
+  const bpCategory =
+    measures.systolic.trim() !== "" &&
+    measures.diastolic.trim() !== "" &&
+    !measureErrors.systolic &&
+    !measureErrors.diastolic
+      ? getBloodPressureCategory(systolicNumber, diastolicNumber)
+      : null;
+
+  const pulseNumber = Number(measures.pulse);
+
+  const pulseCategory =
+    measures.pulse.trim() !== "" && !measureErrors.pulse
+      ? getPulseCategory(pulseNumber)
+      : null;
+
+
+
+  function visibleError(field: MeasureField): string | undefined {
+
+    return showMeasureErrors || touchedMeasures[field]
+      ? measureErrors[field]
+      : undefined;
+
+  }
+
+
+
+  function updateMeasure(field: MeasureField, value: string) {
+
+    setMeasures((current) => ({ ...current, [field]: value }));
+
+    setScore(null);
+
+    // One blood-pressure reading is never enough — require its pair.
+    if (field === "systolic" || field === "diastolic") {
+
+      setTouchedMeasures((current) => ({
+        ...current,
+        systolic: true,
+        diastolic: true,
+      }));
+
+    }
+
+  }
+
+
+
+  function touchMeasure(field: MeasureField) {
+
+    setTouchedMeasures((current) => ({ ...current, [field]: true }));
+
+  }
 
 
 
@@ -77,6 +470,23 @@ export default function ScoreQuestionnaire() {
 
 
   function calculateScore() {
+
+    setShowMeasureErrors(true);
+
+    const firstInvalidField = (
+      Object.keys(measureErrors) as MeasureField[]
+    ).find((field) => measureErrors[field]);
+
+    if (firstInvalidField) {
+
+      const input = document.getElementById(`measure-${firstInvalidField}`);
+
+      input?.scrollIntoView({ behavior: "smooth", block: "center" });
+      input?.focus({ preventScroll: true });
+
+      return;
+
+    }
 
     setScore(answers.reduce((sum, value) => sum + value, 0));
 
@@ -116,15 +526,261 @@ export default function ScoreQuestionnaire() {
 
             <p className="mt-6 max-w-2xl text-base leading-7 text-white/85 sm:text-lg sm:leading-8">
 
-              Review the statements against your usual routine. The questionnaire covers food choices, activity, sleep, substances and other everyday practices; the result is a simple self-reflection score, not a clinical assessment.
+              Start with your height, weight and blood pressure, then review the statements against your usual routine. The result is a simple self-reflection score, not a clinical assessment.
 
             </p>
 
-            <a href="#questions" className="mt-8 inline-flex min-h-12 items-center bg-[#F7F5EF] px-6 text-sm font-semibold text-[#17413D] transition-colors hover:bg-white">
+            <a href="#health-snapshot" className="mt-8 inline-flex min-h-12 items-center bg-[#F7F5EF] px-6 text-sm font-semibold text-[#17413D] transition-colors hover:bg-white">
 
-              Start the questions <span aria-hidden="true" className="ml-3">↓</span>
+              Start the assessment <span aria-hidden="true" className="ml-3">↓</span>
 
             </a>
+
+          </div>
+
+        </Container>
+
+      </section>
+
+
+
+      <section id="health-snapshot" className="scroll-mt-24 border-b border-[var(--sutra-border)] bg-white">
+
+        <Container>
+
+          <div className="mx-auto max-w-5xl py-12 sm:py-16 lg:py-20">
+
+            <div className="max-w-3xl">
+
+              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--sutra-muted)]">Step 1 · Health snapshot</p>
+
+              <h2 className="mt-3 font-[var(--font-serif)] text-4xl font-medium leading-tight tracking-[-0.03em] sm:text-6xl">
+
+                Record your measurements
+
+              </h2>
+
+              <p className="mt-4 text-base leading-7 text-[var(--sutra-muted)]">
+
+                Enter your height and weight to calculate your BMI, add both blood-pressure readings, and record your pulse rate. These values stay in your browser; nothing is submitted to a server.
+
+              </p>
+
+            </div>
+
+
+
+            <form
+              noValidate
+              onSubmit={(event) => {
+                event.preventDefault();
+                calculateScore();
+              }}
+              className="mt-10 space-y-10"
+            >
+
+              <fieldset>
+
+                <legend className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--sutra-teal)]">Body measurements</legend>
+
+                <div className="mt-5 grid gap-5 sm:grid-cols-3">
+
+                  <div>
+
+                    <label htmlFor="measure-height" className="block text-sm font-medium text-[var(--sutra-ink)]">Height (cm)</label>
+
+                    <input
+                      id="measure-height"
+                      type="number"
+                      inputMode="decimal"
+                      min={50}
+                      max={250}
+                      step="any"
+                      placeholder="For example, 170"
+                      value={measures.height}
+                      onChange={(event) => updateMeasure("height", event.target.value)}
+                      onBlur={() => touchMeasure("height")}
+                      aria-invalid={visibleError("height") ? true : undefined}
+                      aria-describedby={visibleError("height") ? "measure-height-error" : undefined}
+                      className={`mt-2 h-12 w-full border bg-white px-4 text-[15px] text-[var(--sutra-ink)] outline-none transition-colors placeholder:text-[var(--sutra-muted)] focus:border-[var(--sutra-teal)] ${visibleError("height") ? "border-red-500" : "border-[var(--sutra-border-strong)]"}`}
+                    />
+
+                    {visibleError("height") && (
+                      <p id="measure-height-error" role="alert" className="mt-1.5 text-xs leading-5 text-red-700">{visibleError("height")}</p>
+                    )}
+
+                  </div>
+
+                  <div>
+
+                    <label htmlFor="measure-weight" className="block text-sm font-medium text-[var(--sutra-ink)]">Weight (kg)</label>
+
+                    <input
+                      id="measure-weight"
+                      type="number"
+                      inputMode="decimal"
+                      min={10}
+                      max={300}
+                      step="any"
+                      placeholder="For example, 70"
+                      value={measures.weight}
+                      onChange={(event) => updateMeasure("weight", event.target.value)}
+                      onBlur={() => touchMeasure("weight")}
+                      aria-invalid={visibleError("weight") ? true : undefined}
+                      aria-describedby={visibleError("weight") ? "measure-weight-error" : undefined}
+                      className={`mt-2 h-12 w-full border bg-white px-4 text-[15px] text-[var(--sutra-ink)] outline-none transition-colors placeholder:text-[var(--sutra-muted)] focus:border-[var(--sutra-teal)] ${visibleError("weight") ? "border-red-500" : "border-[var(--sutra-border-strong)]"}`}
+                    />
+
+                    {visibleError("weight") && (
+                      <p id="measure-weight-error" role="alert" className="mt-1.5 text-xs leading-5 text-red-700">{visibleError("weight")}</p>
+                    )}
+
+                  </div>
+
+                  <div>
+
+                    <label htmlFor="measure-bmi" className="block text-sm font-medium text-[var(--sutra-ink)]">BMI (calculated)</label>
+
+                    <input
+                      id="measure-bmi"
+                      type="text"
+                      readOnly
+                      value={bmi === null ? "—" : bmi.toFixed(2)}
+                      aria-describedby="measure-bmi-hint"
+                      className="mt-2 h-12 w-full cursor-default border border-[var(--sutra-border-strong)] bg-[var(--sutra-pale-sage)] px-4 font-[var(--font-serif)] text-xl text-[var(--sutra-teal)] outline-none"
+                    />
+
+                    <p id="measure-bmi-hint" className="mt-1.5 text-xs leading-5 text-[var(--sutra-muted)]">Weight ÷ height², updated automatically.</p>
+
+                  </div>
+
+                </div>
+
+              </fieldset>
+
+
+
+              <fieldset className="border-t border-[var(--sutra-border)] pt-8">
+
+                <legend className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--sutra-teal)]">Blood pressure</legend>
+
+                <p className="mt-3 max-w-2xl text-sm leading-6 text-[var(--sutra-muted)]">
+
+                  Both readings are required. If you enter one, please enter the other as well.
+
+                </p>
+
+                <div className="mt-5 grid gap-5 sm:grid-cols-2">
+
+                  <div>
+
+                    <label htmlFor="measure-systolic" className="block text-sm font-medium text-[var(--sutra-ink)]">Systolic BP (mmHg)</label>
+
+                    <input
+                      id="measure-systolic"
+                      type="number"
+                      inputMode="decimal"
+                      min={70}
+                      max={250}
+                      step="any"
+                      placeholder="Upper number, for example 120"
+                      value={measures.systolic}
+                      onChange={(event) => updateMeasure("systolic", event.target.value)}
+                      onBlur={() => touchMeasure("systolic")}
+                      aria-invalid={visibleError("systolic") ? true : undefined}
+                      aria-describedby={visibleError("systolic") ? "measure-systolic-error" : undefined}
+                      className={`mt-2 h-12 w-full border bg-white px-4 text-[15px] text-[var(--sutra-ink)] outline-none transition-colors placeholder:text-[var(--sutra-muted)] focus:border-[var(--sutra-teal)] ${visibleError("systolic") ? "border-red-500" : "border-[var(--sutra-border-strong)]"}`}
+                    />
+
+                    {visibleError("systolic") && (
+                      <p id="measure-systolic-error" role="alert" className="mt-1.5 text-xs leading-5 text-red-700">{visibleError("systolic")}</p>
+                    )}
+
+                  </div>
+
+                  <div>
+
+                    <label htmlFor="measure-diastolic" className="block text-sm font-medium text-[var(--sutra-ink)]">Diastolic BP (mmHg)</label>
+
+                    <input
+                      id="measure-diastolic"
+                      type="number"
+                      inputMode="decimal"
+                      min={40}
+                      max={150}
+                      step="any"
+                      placeholder="Lower number, for example 80"
+                      value={measures.diastolic}
+                      onChange={(event) => updateMeasure("diastolic", event.target.value)}
+                      onBlur={() => touchMeasure("diastolic")}
+                      aria-invalid={visibleError("diastolic") ? true : undefined}
+                      aria-describedby={visibleError("diastolic") ? "measure-diastolic-error" : undefined}
+                      className={`mt-2 h-12 w-full border bg-white px-4 text-[15px] text-[var(--sutra-ink)] outline-none transition-colors placeholder:text-[var(--sutra-muted)] focus:border-[var(--sutra-teal)] ${visibleError("diastolic") ? "border-red-500" : "border-[var(--sutra-border-strong)]"}`}
+                    />
+
+                    {visibleError("diastolic") && (
+                      <p id="measure-diastolic-error" role="alert" className="mt-1.5 text-xs leading-5 text-red-700">{visibleError("diastolic")}</p>
+                    )}
+
+                  </div>
+
+                </div>
+
+                {bpCategory && (
+
+                  <div role="status" aria-live="polite" className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-[var(--sutra-border)] pt-5">
+
+                    <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--sutra-muted)]">BP category</span>
+
+                    <CategoryBadge category={bpCategory} />
+
+                    <span className="text-xs text-[var(--sutra-muted)]">Updates as you change either reading.</span>
+
+                  </div>
+
+                )}
+
+                <div className="mt-5 border-t border-[var(--sutra-border)] pt-6">
+
+                  <label htmlFor="measure-pulse" className="block text-sm font-medium text-[var(--sutra-ink)]">Pulse Rate / Heart Rate (BPM)</label>
+
+                  <input
+                    id="measure-pulse"
+                    type="number"
+                    inputMode="numeric"
+                    min={30}
+                    max={220}
+                    step="1"
+                    placeholder="For example, 72"
+                    value={measures.pulse}
+                    onChange={(event) => updateMeasure("pulse", event.target.value)}
+                    onBlur={() => touchMeasure("pulse")}
+                    aria-invalid={visibleError("pulse") ? true : undefined}
+                    aria-describedby={visibleError("pulse") ? "measure-pulse-error" : undefined}
+                    className={`mt-2 h-12 w-full max-w-sm border bg-white px-4 text-[15px] text-[var(--sutra-ink)] outline-none transition-colors placeholder:text-[var(--sutra-muted)] focus:border-[var(--sutra-teal)] ${visibleError("pulse") ? "border-red-500" : "border-[var(--sutra-border-strong)]"}`}
+                  />
+
+                  {visibleError("pulse") && (
+                    <p id="measure-pulse-error" role="alert" className="mt-1.5 text-xs leading-5 text-red-700">{visibleError("pulse")}</p>
+                  )}
+
+                  {pulseCategory && (
+                    <div role="status" aria-live="polite" className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2">
+
+                      <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--sutra-muted)]">Pulse category</span>
+
+                      <CategoryBadge category={pulseCategory} />
+
+                      <span className="text-xs text-[var(--sutra-muted)]">Updates as you change your pulse rate.</span>
+
+                    </div>
+                  )}
+
+                </div>
+
+              </fieldset>
+
+            </form>
 
           </div>
 
@@ -144,7 +800,7 @@ export default function ScoreQuestionnaire() {
 
               <div className="max-w-3xl">
 
-                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--sutra-muted)]">Before you answer</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--sutra-muted)]">Step 2 · Lifestyle questions</p>
 
                 <h2 className="mt-3 font-[var(--font-serif)] text-4xl font-medium leading-tight tracking-[-0.03em] sm:text-6xl">
 
@@ -252,7 +908,7 @@ export default function ScoreQuestionnaire() {
 
             <div className="mt-9 flex flex-col gap-4 border-t border-[var(--sutra-border-strong)] pt-7 sm:flex-row sm:items-center sm:justify-between">
 
-              <p className="max-w-xl text-sm leading-6 text-[var(--sutra-muted)]">You can change any answer before calculating your result.</p>
+              <p className="max-w-xl text-sm leading-6 text-[var(--sutra-muted)]">You can change any measurement or answer before calculating your result.</p>
 
               <button
 
@@ -293,6 +949,52 @@ export default function ScoreQuestionnaire() {
                     <strong className="font-[var(--font-serif)] text-7xl font-medium leading-none tracking-[-0.05em] text-[var(--sutra-teal)] sm:text-8xl">{score}</strong>
 
                     <span className="text-xl text-[var(--sutra-muted)] sm:text-2xl">/ 21</span>
+
+                  </div>
+
+                </div>
+
+                <div className="mt-6 grid gap-5 border-t border-[var(--sutra-border-strong)] pt-5 sm:grid-cols-3">
+
+                  <div>
+
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--sutra-muted)]">Your BMI</p>
+
+                    <p className="mt-1 font-[var(--font-serif)] text-2xl text-[var(--sutra-ink)]">{bmi?.toFixed(2) ?? "—"}</p>
+
+                    {bmiCategory && (
+                      <div className="mt-2">
+                        <CategoryBadge category={bmiCategory} />
+                      </div>
+                    )}
+
+                  </div>
+
+                  <div>
+
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--sutra-muted)]">Blood pressure</p>
+
+                    <p className="mt-1 font-[var(--font-serif)] text-2xl text-[var(--sutra-ink)]">{measures.systolic}/{measures.diastolic} <span className="text-base text-[var(--sutra-muted)]">mmHg</span></p>
+
+                    {bpCategory && (
+                      <div className="mt-2">
+                        <CategoryBadge category={bpCategory} />
+                      </div>
+                    )}
+
+                  </div>
+
+                  <div>
+
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--sutra-muted)]">Pulse rate</p>
+
+                    <p className="mt-1 font-[var(--font-serif)] text-2xl text-[var(--sutra-ink)]">{measures.pulse} <span className="text-base text-[var(--sutra-muted)]">BPM</span></p>
+
+                    {pulseCategory && (
+                      <div className="mt-2">
+                        <CategoryBadge category={pulseCategory} />
+                      </div>
+                    )}
 
                   </div>
 
